@@ -1,0 +1,8 @@
+	obs_rpoA_rna	obs_rpoB_rna	obs_rpoC_rna	obs_rpoD_rna	obs_rpoE_rna	obs_rpoH_rna	obs_rpoN_rna	obs_rpoS_rna	obs_fliA_rna	obs_fecI_rna
+results_fecI_KO.txt				0.04026647966769071						
+results_fliA_KO.txt								0.011421389716935414		
+results_rpoD_KO.txt										
+results_rpoE_KO.txt								0.00014992540849688275		
+results_rpoH_KO.txt								0.0017246827374344713		
+results_rpoN_KO.txt								0.003666215754789745	0.01906658405703875	
+results_rpoS_KO.txt										

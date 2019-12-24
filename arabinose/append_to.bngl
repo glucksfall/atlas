@@ -1,0 +1,3 @@
+begin actions
+    generate_network({overwrite=>1,verbose=>0})
+end actions

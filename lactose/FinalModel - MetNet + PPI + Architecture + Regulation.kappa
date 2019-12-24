@@ -1,0 +1,293 @@
+%agent: met(name{alpha_GALACTOSE CPD_3801 ACETYL_COA CO_A CPD_3561 beta_lactose PROTON alpha_ALLOLACTOSE WATER alpha_glucose D_ARABINOSE _6_Acetyl_beta_D_Galactose CPD_3785 Fructofuranose MELIBIOSE alpha_lactose beta_ALLOLACTOSE beta_glucose beta_GALACTOSE CAMP},loc{cyt per ex},prot)
+%agent: dna(name{lacZ lacY lacA},type{pro1 pro2 pro3 pro4 rbs cds ter1 ter2},prot)
+%agent: rna(name{lacZ lacY lacA},type{pro1 pro2 pro3 pro4 rbs cds ter1 ter2},prot)
+%agent: prot(name{lacY lacZ lacA lacI crp},dna,met,prot,rna,up,dw)
+%agent: cplx(name{RNAP Ribosome},dna,prot,rna)
+
+%var: 't0_CAMP_cyt' 1.000000e+02
+%var: 't0_WATER_cyt' 1.000000e+02
+%var: 't0_PROTON_per' 1.000000e+02
+%var: 't0_beta_lactose_per' 1.000000e+02
+%var: 'fwd_LACTOSE_MUTAROTATION' 1.000000e-02
+%var: 'rvs_LACTOSE_MUTAROTATION' 1.000000e-02
+%var: 'fwd_GALACTOSE_MUTAROTATION' 1.000000e-02
+%var: 'rvs_GALACTOSE_MUTAROTATION' 1.000000e-02
+%var: 'fwd_GLUCOSE_MUTAROTATION' 1.000000e-02
+%var: 'rvs_GLUCOSE_MUTAROTATION' 1.000000e-02
+%var: 'fwd_TRANS_RXN_24' 1.000000e-04
+%var: 'rvs_TRANS_RXN_24' 0.000000e+00
+%var: 'fwd_TRANS_RXN_24_beta' 1.000000e-04
+%var: 'rvs_TRANS_RXN_24_beta' 0.000000e+00
+%var: 'fwd_TRANS_RXN_94' 1.000000e+00
+%var: 'rvs_TRANS_RXN_94' 0.000000e+00
+%var: 'fwd_RXN0_7215' 1.000000e+00
+%var: 'rvs_RXN0_7215' 0.000000e+00
+%var: 'fwd_RXN0_7217' 1.000000e+00
+%var: 'rvs_RXN0_7217' 0.000000e+00
+%var: 'fwd_RXN_17755' 1.000000e+00
+%var: 'rvs_RXN_17755' 0.000000e+00
+%var: 'fwd_BETAGALACTOSID_RXN' 1.000000e-02
+%var: 'rvs_BETAGALACTOSID_RXN' 0.000000e+00
+%var: 'fwd_BETAGALACTOSID_RXN_alpha' 1.000000e-02
+%var: 'rvs_BETAGALACTOSID_RXN_alpha' 0.000000e+00
+%var: 'fwd_RXN0_5363' 1.000000e+00
+%var: 'rvs_RXN0_5363' 1.000000e-01
+%var: 'fwd_RXN0_5363_beta' 1.000000e+00
+%var: 'rvs_RXN0_5363_beta' 1.000000e-01
+%var: 'fwd_RXN_17726' 1.000000e+00
+%var: 'rvs_RXN_17726' 0.000000e+00
+%var: 'fwd_RXN0_7219' 1.000000e+00
+%var: 'rvs_RXN0_7219' 0.000000e+00
+%var: 'fwd_GALACTOACETYLTRAN_RXN_galactose' 1.000000e+00
+%var: 'rvs_GALACTOACETYLTRAN_RXN_galactose' 0.000000e+00
+%var: 'fwd_complex_assembly_rule_0' 1.000000e+00
+%var: 'rvs_complex_assembly_rule_0' 0.000000e+00
+%var: 't0_lacZ' 4.000000e+00
+%var: 'fwd_complex_assembly_rule_1' 1.000000e+00
+%var: 'rvs_complex_assembly_rule_1' 0.000000e+00
+%var: 'fwd_complex_assembly_rule_2' 1.000000e+00
+%var: 'rvs_complex_assembly_rule_2' 0.000000e+00
+%var: 'fwd_complex_assembly_rule_3' 1.000000e+00
+%var: 'rvs_complex_assembly_rule_3' 0.000000e+00
+%var: 'fwd_docking_lacZ_pro4' 1.000000e+00
+%var: 'rvs_docking_lacZ_pro4' 1.000000e+00
+%var: 'fwd_docking_lacZ_pro3' 1.000000e+00
+%var: 'rvs_docking_lacZ_pro3' 1.000000e+00
+%var: 'fwd_docking_lacZ_pro2' 1.000000e+00
+%var: 'rvs_docking_lacZ_pro2' 1.000000e+00
+%var: 'fwd_docking_lacZ_pro1' 1.000000e+00
+%var: 'rvs_docking_lacZ_pro1' 1.000000e+00
+%var: 'fwd_falloff_lacA_ter1' 1.000000e+00
+%var: 'fwd_falloff_lacA_ter2' 1.000000e+00
+%var: 'fwd_sliding_lacZ_pro4' 1.000000e+00
+%var: 'fwd_sliding_lacZ_pro3' 1.000000e+00
+%var: 'fwd_sliding_lacZ_pro2' 1.000000e+00
+%var: 'fwd_sliding_lacZ_pro1' 1.000000e+00
+%var: 'fwd_sliding_lacZ_rbs' 1.000000e+00
+%var: 'fwd_sliding_lacZ_cds' 1.000000e+00
+%var: 'fwd_sliding_lacY_pro1' 1.000000e+00
+%var: 'fwd_sliding_lacY_rbs' 1.000000e+00
+%var: 'fwd_sliding_lacY_cds' 1.000000e+00
+%var: 'fwd_sliding_lacA_rbs' 1.000000e+00
+%var: 'fwd_sliding_lacA_cds' 1.000000e+00
+%var: 'fwd_sliding_lacA_ter1' 1.000000e+00
+%var: 'fwd_dr_lacZ_rbs' 1.000000e+00
+%var: 'rvs_dr_lacZ_rbs' 1.000000e+00
+%var: 'fwd_dr_lacY_rbs' 1.000000e+00
+%var: 'rvs_dr_lacY_rbs' 1.000000e+00
+%var: 'fwd_dr_lacA_rbs' 1.000000e+00
+%var: 'rvs_dr_lacA_rbs' 1.000000e+00
+%var: 'fwd_fr_lacA_ter1' 1.000000e+00
+%var: 'fwd_fr_lacA_ter2' 1.000000e+00
+%var: 'fwd_sr_lacZ_rbs' 1.000000e+00
+%var: 'fwd_sr_lacZ_cds' 1.000000e+00
+%var: 'fwd_sr_lacY_pro1' 1.000000e+00
+%var: 'fwd_sr_lacY_rbs' 1.000000e+00
+%var: 'fwd_sr_lacY_cds' 1.000000e+00
+%var: 'fwd_sr_lacA_rbs' 1.000000e+00
+%var: 'fwd_sr_lacA_cds' 1.000000e+00
+%var: 'fwd_sr_lacA_ter1' 1.000000e+00
+%var: 't0_dna_lacz_pro4' 1.000000e+00
+%var: 't0_dna_lacz_pro3' 1.000000e+00
+%var: 't0_dna_lacz_pro2' 1.000000e+00
+%var: 't0_dna_lacz_pro1' 1.000000e+00
+%var: 't0_dna_lacz_rbs' 1.000000e+00
+%var: 't0_dna_lacz_cds' 1.000000e+00
+%var: 't0_dna_lacy_pro1' 1.000000e+00
+%var: 't0_dna_lacy_rbs' 1.000000e+00
+%var: 't0_dna_lacy_cds' 1.000000e+00
+%var: 't0_dna_laca_rbs' 1.000000e+00
+%var: 't0_dna_laca_cds' 1.000000e+00
+%var: 't0_dna_laca_ter1' 1.000000e+00
+%var: 't0_dna_laca_ter2' 1.000000e+00
+%var: 't0_RNAP' 5.000000e+00
+%var: 't0_ribosome' 1.000000e+00
+%var: 'fwd_TF_complex_rule_0' 1.000000e+00
+%var: 'rvs_TF_complex_rule_0' 0.000000e+00
+%var: 'fwd_TF_complex_rule_1' 1.000000e+00
+%var: 'rvs_TF_complex_rule_1' 0.000000e+00
+%var: 'fwd_complex_assembly_rule_4' 1.000000e+00
+%var: 'rvs_complex_assembly_rule_4' 0.000000e+00
+%var: 't0_crp' 4.000000e+00
+%var: 't0_lacI' 3.000000e+00
+%var: 'fwd_TF_TFBS_rule_1' 1.000000e+00
+%var: 'rvs_TF_TFBS_rule_1' 0.000000e+00
+%var: 'fwd_TF_TFBS_rule_2' 0.000000e+00
+
+'LACTOSE_MUTAROTATION' met(name{alpha_lactose}[.]) -> met(name{beta_lactose}[.]) @ 'fwd_LACTOSE_MUTAROTATION'
+'LACTOSE_MUTAROTATION_rev' met(name{beta_lactose}[.]) -> met(name{alpha_lactose}[.]) @ 'rvs_LACTOSE_MUTAROTATION'
+'GALACTOSE_MUTAROTATION' met(name{alpha_GALACTOSE}[.]) -> met(name{beta_GALACTOSE}[.]) @ 'fwd_GALACTOSE_MUTAROTATION'
+'GALACTOSE_MUTAROTATION_rev' met(name{beta_GALACTOSE}[.]) -> met(name{alpha_GALACTOSE}[.]) @ 'rvs_GALACTOSE_MUTAROTATION'
+'GLUCOSE_MUTAROTATION' met(name{alpha_glucose}[.]) -> met(name{beta_glucose}[.]) @ 'fwd_GLUCOSE_MUTAROTATION'
+'GLUCOSE_MUTAROTATION_rev' met(name{beta_glucose}[.]) -> met(name{alpha_glucose}[.]) @ 'rvs_GLUCOSE_MUTAROTATION'
+'TRANS_RXN_24' prot(name{lacY}[.]),met(name{PROTON}[.],loc{per}[.]),met(name{alpha_lactose}[.],loc{per}[.]) -> prot(name{lacY}[.]),met(name{PROTON}[.],loc{cyt}[.]),met(name{alpha_lactose}[.],loc{cyt}[.]) @ 'fwd_TRANS_RXN_24'
+'TRANS_RXN_24_rev' prot(name{lacY}[.]),met(name{PROTON}[.],loc{cyt}[.]),met(name{alpha_lactose}[.],loc{cyt}[.]) -> prot(name{lacY}[.]),met(name{PROTON}[.],loc{per}[.]),met(name{alpha_lactose}[.],loc{per}[.]) @ 'rvs_TRANS_RXN_24'
+'TRANS_RXN_24_beta' prot(name{lacY}[.]),met(name{PROTON}[.],loc{per}[.]),met(name{beta_lactose}[.],loc{per}[.]) -> prot(name{lacY}[.]),met(name{PROTON}[.],loc{cyt}[.]),met(name{beta_lactose}[.],loc{cyt}[.]) @ 'fwd_TRANS_RXN_24_beta'
+'TRANS_RXN_24_beta_rev' prot(name{lacY}[.]),met(name{PROTON}[.],loc{cyt}[.]),met(name{beta_lactose}[.],loc{cyt}[.]) -> prot(name{lacY}[.]),met(name{PROTON}[.],loc{per}[.]),met(name{beta_lactose}[.],loc{per}[.]) @ 'rvs_TRANS_RXN_24_beta'
+'TRANS_RXN_94' prot(name{lacY}[.]),met(name{PROTON}[.],loc{per}[.]),met(name{MELIBIOSE}[.],loc{per}[.]) -> prot(name{lacY}[.]),met(name{PROTON}[.],loc{cyt}[.]),met(name{MELIBIOSE}[.],loc{cyt}[.]) @ 'fwd_TRANS_RXN_94'
+'TRANS_RXN_94_rev' prot(name{lacY}[.]),met(name{PROTON}[.],loc{cyt}[.]),met(name{MELIBIOSE}[.],loc{cyt}[.]) -> prot(name{lacY}[.]),met(name{PROTON}[.],loc{per}[.]),met(name{MELIBIOSE}[.],loc{per}[.]) @ 'rvs_TRANS_RXN_94'
+'RXN0_7215' prot(name{lacY}[.]),met(name{PROTON}[.],loc{per}[.]),met(name{CPD_3561}[.],loc{per}[.]) -> prot(name{lacY}[.]),met(name{PROTON}[.],loc{cyt}[.]),met(name{CPD_3561}[.],loc{cyt}[.]) @ 'fwd_RXN0_7215'
+'RXN0_7215_rev' prot(name{lacY}[.]),met(name{PROTON}[.],loc{cyt}[.]),met(name{CPD_3561}[.],loc{cyt}[.]) -> prot(name{lacY}[.]),met(name{PROTON}[.],loc{per}[.]),met(name{CPD_3561}[.],loc{per}[.]) @ 'rvs_RXN0_7215'
+'RXN0_7217' prot(name{lacY}[.]),met(name{PROTON}[.],loc{per}[.]),met(name{CPD_3785}[.],loc{per}[.]) -> prot(name{lacY}[.]),met(name{PROTON}[.],loc{cyt}[.]),met(name{CPD_3785}[.],loc{cyt}[.]) @ 'fwd_RXN0_7217'
+'RXN0_7217_rev' prot(name{lacY}[.]),met(name{PROTON}[.],loc{cyt}[.]),met(name{CPD_3785}[.],loc{cyt}[.]) -> prot(name{lacY}[.]),met(name{PROTON}[.],loc{per}[.]),met(name{CPD_3785}[.],loc{per}[.]) @ 'rvs_RXN0_7217'
+'RXN_17755' prot(name{lacY}[.]),met(name{PROTON}[.],loc{per}[.]),met(name{CPD_3801}[.],loc{per}[.]) -> prot(name{lacY}[.]),met(name{PROTON}[.],loc{cyt}[.]),met(name{CPD_3801}[.],loc{cyt}[.]) @ 'fwd_RXN_17755'
+'RXN_17755_rev' prot(name{lacY}[.]),met(name{PROTON}[.],loc{cyt}[.]),met(name{CPD_3801}[.],loc{cyt}[.]) -> prot(name{lacY}[.]),met(name{PROTON}[.],loc{per}[.]),met(name{CPD_3801}[.],loc{per}[.]) @ 'rvs_RXN_17755'
+'BETAGALACTOSID_RXN' prot(name{lacZ}[.],up[_],dw[_]),met(name{beta_lactose}[.],loc{cyt}[.]),met(name{WATER}[.],loc{cyt}[.]) -> prot(name{lacZ}[.],up[_],dw[_]),met(name{beta_GALACTOSE}[.],loc{cyt}[.]),met(name{beta_glucose}[.],loc{cyt}[.]) @ 'fwd_BETAGALACTOSID_RXN'
+'BETAGALACTOSID_RXN_rev' prot(name{lacZ}[.],up[_],dw[_]),met(name{beta_GALACTOSE}[.],loc{cyt}[.]),met(name{beta_glucose}[.],loc{cyt}[.]) -> prot(name{lacZ}[.],up[_],dw[_]),met(name{beta_lactose}[.],loc{cyt}[.]),met(name{WATER}[.],loc{cyt}[.]) @ 'rvs_BETAGALACTOSID_RXN'
+'BETAGALACTOSID_RXN_alpha' prot(name{lacZ}[.],up[_],dw[_]),met(name{alpha_lactose}[.],loc{cyt}[.]),met(name{WATER}[.],loc{cyt}[.]) -> prot(name{lacZ}[.],up[_],dw[_]),met(name{alpha_GALACTOSE}[.],loc{cyt}[.]),met(name{alpha_glucose}[.],loc{cyt}[.]) @ 'fwd_BETAGALACTOSID_RXN_alpha'
+'BETAGALACTOSID_RXN_alpha_rev' prot(name{lacZ}[.],up[_],dw[_]),met(name{alpha_GALACTOSE}[.],loc{cyt}[.]),met(name{alpha_glucose}[.],loc{cyt}[.]) -> prot(name{lacZ}[.],up[_],dw[_]),met(name{alpha_lactose}[.],loc{cyt}[.]),met(name{WATER}[.],loc{cyt}[.]) @ 'rvs_BETAGALACTOSID_RXN_alpha'
+'RXN0_5363' prot(name{lacZ}[.],up[_],dw[_]),met(name{alpha_lactose}[.],loc{cyt}[.]) -> prot(name{lacZ}[.],up[_],dw[_]),met(name{alpha_ALLOLACTOSE}[.],loc{cyt}[.]) @ 'fwd_RXN0_5363'
+'RXN0_5363_rev' prot(name{lacZ}[.],up[_],dw[_]),met(name{alpha_ALLOLACTOSE}[.],loc{cyt}[.]) -> prot(name{lacZ}[.],up[_],dw[_]),met(name{alpha_lactose}[.],loc{cyt}[.]) @ 'rvs_RXN0_5363'
+'RXN0_5363_beta' prot(name{lacZ}[.],up[_],dw[_]),met(name{beta_lactose}[.],loc{cyt}[.]) -> prot(name{lacZ}[.],up[_],dw[_]),met(name{beta_ALLOLACTOSE}[.],loc{cyt}[.]) @ 'fwd_RXN0_5363_beta'
+'RXN0_5363_beta_rev' prot(name{lacZ}[.],up[_],dw[_]),met(name{beta_ALLOLACTOSE}[.],loc{cyt}[.]) -> prot(name{lacZ}[.],up[_],dw[_]),met(name{beta_lactose}[.],loc{cyt}[.]) @ 'rvs_RXN0_5363_beta'
+'RXN_17726' prot(name{lacZ}[.],up[_],dw[_]),met(name{CPD_3561}[.],loc{cyt}[.]),met(name{WATER}[.],loc{cyt}[.]) -> prot(name{lacZ}[.],up[_],dw[_]),met(name{beta_GALACTOSE}[.],loc{cyt}[.]),met(name{Fructofuranose}[.],loc{cyt}[.]) @ 'fwd_RXN_17726'
+'RXN_17726_rev' prot(name{lacZ}[.],up[_],dw[_]),met(name{beta_GALACTOSE}[.],loc{cyt}[.]),met(name{Fructofuranose}[.],loc{cyt}[.]) -> prot(name{lacZ}[.],up[_],dw[_]),met(name{CPD_3561}[.],loc{cyt}[.]),met(name{WATER}[.],loc{cyt}[.]) @ 'rvs_RXN_17726'
+'RXN0_7219' prot(name{lacZ}[.],up[_],dw[_]),met(name{CPD_3785}[.],loc{cyt}[.]),met(name{WATER}[.],loc{cyt}[.]) -> prot(name{lacZ}[.],up[_],dw[_]),met(name{beta_GALACTOSE}[.],loc{cyt}[.]),met(name{D_ARABINOSE}[.],loc{cyt}[.]) @ 'fwd_RXN0_7219'
+'RXN0_7219_rev' prot(name{lacZ}[.],up[_],dw[_]),met(name{beta_GALACTOSE}[.],loc{cyt}[.]),met(name{D_ARABINOSE}[.],loc{cyt}[.]) -> prot(name{lacZ}[.],up[_],dw[_]),met(name{CPD_3785}[.],loc{cyt}[.]),met(name{WATER}[.],loc{cyt}[.]) @ 'rvs_RXN0_7219'
+'GALACTOACETYLTRAN_RXN_galactose' prot(name{lacA}[.]),met(name{beta_GALACTOSE}[.],loc{cyt}[.]),met(name{ACETYL_COA}[.],loc{cyt}[.]) -> prot(name{lacA}[.]),met(name{_6_Acetyl_beta_D_Galactose}[.],loc{cyt}[.]),met(name{CO_A}[.],loc{cyt}[.]) @ 'fwd_GALACTOACETYLTRAN_RXN_galactose'
+'GALACTOACETYLTRAN_RXN_galactose_rev' prot(name{lacA}[.]),met(name{_6_Acetyl_beta_D_Galactose}[.],loc{cyt}[.]),met(name{CO_A}[.],loc{cyt}[.]) -> prot(name{lacA}[.]),met(name{beta_GALACTOSE}[.],loc{cyt}[.]),met(name{ACETYL_COA}[.],loc{cyt}[.]) @ 'rvs_GALACTOACETYLTRAN_RXN_galactose'
+'complex_assembly_rule_0' prot(name{lacZ}[.],up[.],dw[.]),prot(name{lacZ}[.],up[.],dw[.]) -> prot(name{lacZ}[.],up[1],dw[.]),prot(name{lacZ}[.],up[.],dw[1]) @ 'fwd_complex_assembly_rule_0'
+'complex_assembly_rule_0_rev' prot(name{lacZ}[.],up[1],dw[.]),prot(name{lacZ}[.],up[.],dw[1]) -> prot(name{lacZ}[.],up[.],dw[.]),prot(name{lacZ}[.],up[.],dw[.]) @ 'rvs_complex_assembly_rule_0'
+'complex_assembly_rule_1' prot(name{lacZ}[.],up[1],dw[.]),prot(name{lacZ}[.],up[.],dw[1]),prot(name{lacZ}[.],up[2],dw[.]),prot(name{lacZ}[.],up[.],dw[2]) -> prot(name{lacZ}[.],up[1],dw[4]),prot(name{lacZ}[.],up[2],dw[1]),prot(name{lacZ}[.],up[3],dw[2]),prot(name{lacZ}[.],up[4],dw[3]) @ 'fwd_complex_assembly_rule_1'
+'complex_assembly_rule_1_rev' prot(name{lacZ}[.],up[1],dw[4]),prot(name{lacZ}[.],up[2],dw[1]),prot(name{lacZ}[.],up[3],dw[2]),prot(name{lacZ}[.],up[4],dw[3]) -> prot(name{lacZ}[.],up[1],dw[.]),prot(name{lacZ}[.],up[.],dw[1]),prot(name{lacZ}[.],up[2],dw[.]),prot(name{lacZ}[.],up[.],dw[2]) @ 'rvs_complex_assembly_rule_1'
+'complex_assembly_rule_2' prot(name{lacA}[.],up[.],dw[.]),prot(name{lacA}[.],up[.],dw[.]) -> prot(name{lacA}[.],up[1],dw[.]),prot(name{lacA}[.],up[.],dw[1]) @ 'fwd_complex_assembly_rule_2'
+'complex_assembly_rule_2_rev' prot(name{lacA}[.],up[1],dw[.]),prot(name{lacA}[.],up[.],dw[1]) -> prot(name{lacA}[.],up[.],dw[.]),prot(name{lacA}[.],up[.],dw[.]) @ 'rvs_complex_assembly_rule_2'
+'complex_assembly_rule_3' prot(name{lacA}[.],up[.],dw[.]),prot(name{lacA}[.],up[1],dw[.]),prot(name{lacA}[.],up[.],dw[1]) -> prot(name{lacA}[.],up[1],dw[.]),prot(name{lacA}[.],up[2],dw[1]),prot(name{lacA}[.],up[.],dw[2]) @ 'fwd_complex_assembly_rule_3'
+'complex_assembly_rule_3_rev' prot(name{lacA}[.],up[1],dw[.]),prot(name{lacA}[.],up[2],dw[1]),prot(name{lacA}[.],up[.],dw[2]) -> prot(name{lacA}[.],up[.],dw[.]),prot(name{lacA}[.],up[1],dw[.]),prot(name{lacA}[.],up[.],dw[1]) @ 'rvs_complex_assembly_rule_3'
+'docking_lacZ_pro4' cplx(name{RNAP}[.],dna[.]),dna(name{lacZ}[.],type{pro4}[.],prot[.]) -> cplx(name{RNAP}[.],dna[1]),dna(name{lacZ}[.],type{pro4}[.],prot[1]) @ 'fwd_docking_lacZ_pro4'
+'docking_lacZ_pro4_rev' cplx(name{RNAP}[.],dna[1]),dna(name{lacZ}[.],type{pro4}[.],prot[1]) -> cplx(name{RNAP}[.],dna[.]),dna(name{lacZ}[.],type{pro4}[.],prot[.]) @ 'rvs_docking_lacZ_pro4'
+'docking_lacZ_pro3' cplx(name{RNAP}[.],dna[.]),dna(name{lacZ}[.],type{pro3}[.],prot[.]) -> cplx(name{RNAP}[.],dna[1]),dna(name{lacZ}[.],type{pro3}[.],prot[1]) @ 'fwd_docking_lacZ_pro3'
+'docking_lacZ_pro3_rev' cplx(name{RNAP}[.],dna[1]),dna(name{lacZ}[.],type{pro3}[.],prot[1]) -> cplx(name{RNAP}[.],dna[.]),dna(name{lacZ}[.],type{pro3}[.],prot[.]) @ 'rvs_docking_lacZ_pro3'
+'docking_lacZ_pro2' cplx(name{RNAP}[.],dna[.]),dna(name{lacZ}[.],type{pro2}[.],prot[.]) -> cplx(name{RNAP}[.],dna[1]),dna(name{lacZ}[.],type{pro2}[.],prot[1]) @ 'fwd_docking_lacZ_pro2'
+'docking_lacZ_pro2_rev' cplx(name{RNAP}[.],dna[1]),dna(name{lacZ}[.],type{pro2}[.],prot[1]) -> cplx(name{RNAP}[.],dna[.]),dna(name{lacZ}[.],type{pro2}[.],prot[.]) @ 'rvs_docking_lacZ_pro2'
+'docking_lacZ_pro1' cplx(name{RNAP}[.],dna[.]),dna(name{lacZ}[.],type{pro1}[.],prot[.]) -> cplx(name{RNAP}[.],dna[1]),dna(name{lacZ}[.],type{pro1}[.],prot[1]) @ 'fwd_docking_lacZ_pro1'
+'docking_lacZ_pro1_rev' cplx(name{RNAP}[.],dna[1]),dna(name{lacZ}[.],type{pro1}[.],prot[1]) -> cplx(name{RNAP}[.],dna[.]),dna(name{lacZ}[.],type{pro1}[.],prot[.]) @ 'rvs_docking_lacZ_pro1'
+'falloff_lacA_ter1' cplx(name{RNAP}[.],dna[1]),dna(name{lacA}[.],type{ter1}[.],prot[1]) -> cplx(name{RNAP}[.],dna[.]),dna(name{lacA}[.],type{ter1}[.],prot[.]) @ 'fwd_falloff_lacA_ter1'
+'falloff_lacA_ter2' cplx(name{RNAP}[.],dna[1]),dna(name{lacA}[.],type{ter2}[.],prot[1]) -> cplx(name{RNAP}[.],dna[.]),dna(name{lacA}[.],type{ter2}[.],prot[.]) @ 'fwd_falloff_lacA_ter2'
+'sliding_lacZ_pro4' cplx(name{RNAP}[.],dna[1]),dna(name{lacZ}[.],type{pro4}[.],prot[1]),.,dna(name{lacZ}[.],type{pro3}[.],prot[.]) -> cplx(name{RNAP}[.],dna[1]),dna(name{lacZ}[.],type{pro3}[.],prot[1]),rna(name{lacZ}[.],type{pro3}[.],prot[.]),dna(name{lacZ}[.],type{pro4}[.],prot[.]) @ 'fwd_sliding_lacZ_pro4'
+'sliding_lacZ_pro3' cplx(name{RNAP}[.],dna[1]),dna(name{lacZ}[.],type{pro3}[.],prot[1]),.,dna(name{lacZ}[.],type{pro2}[.],prot[.]) -> cplx(name{RNAP}[.],dna[1]),dna(name{lacZ}[.],type{pro2}[.],prot[1]),rna(name{lacZ}[.],type{pro2}[.],prot[.]),dna(name{lacZ}[.],type{pro3}[.],prot[.]) @ 'fwd_sliding_lacZ_pro3'
+'sliding_lacZ_pro2' cplx(name{RNAP}[.],dna[1]),dna(name{lacZ}[.],type{pro2}[.],prot[1]),.,dna(name{lacZ}[.],type{pro1}[.],prot[.]) -> cplx(name{RNAP}[.],dna[1]),dna(name{lacZ}[.],type{pro1}[.],prot[1]),rna(name{lacZ}[.],type{pro1}[.],prot[.]),dna(name{lacZ}[.],type{pro2}[.],prot[.]) @ 'fwd_sliding_lacZ_pro2'
+'sliding_lacZ_pro1' cplx(name{RNAP}[.],dna[1]),dna(name{lacZ}[.],type{pro1}[.],prot[1]),.,dna(name{lacZ}[.],type{rbs}[.],prot[.]) -> cplx(name{RNAP}[.],dna[1]),dna(name{lacZ}[.],type{rbs}[.],prot[1]),rna(name{lacZ}[.],type{rbs}[.],prot[.]),dna(name{lacZ}[.],type{pro1}[.],prot[.]) @ 'fwd_sliding_lacZ_pro1'
+'sliding_lacZ_rbs' cplx(name{RNAP}[.],dna[1]),dna(name{lacZ}[.],type{rbs}[.],prot[1]),.,dna(name{lacZ}[.],type{cds}[.],prot[.]) -> cplx(name{RNAP}[.],dna[1]),dna(name{lacZ}[.],type{cds}[.],prot[1]),rna(name{lacZ}[.],type{cds}[.],prot[.]),dna(name{lacZ}[.],type{rbs}[.],prot[.]) @ 'fwd_sliding_lacZ_rbs'
+'sliding_lacZ_cds' cplx(name{RNAP}[.],dna[1]),dna(name{lacZ}[.],type{cds}[.],prot[1]),.,dna(name{lacY}[.],type{pro1}[.],prot[.]) -> cplx(name{RNAP}[.],dna[1]),dna(name{lacY}[.],type{pro1}[.],prot[1]),rna(name{lacY}[.],type{pro1}[.],prot[.]),dna(name{lacZ}[.],type{cds}[.],prot[.]) @ 'fwd_sliding_lacZ_cds'
+'sliding_lacY_pro1' cplx(name{RNAP}[.],dna[1]),dna(name{lacY}[.],type{pro1}[.],prot[1]),.,dna(name{lacY}[.],type{rbs}[.],prot[.]) -> cplx(name{RNAP}[.],dna[1]),dna(name{lacY}[.],type{rbs}[.],prot[1]),rna(name{lacY}[.],type{rbs}[.],prot[.]),dna(name{lacY}[.],type{pro1}[.],prot[.]) @ 'fwd_sliding_lacY_pro1'
+'sliding_lacY_rbs' cplx(name{RNAP}[.],dna[1]),dna(name{lacY}[.],type{rbs}[.],prot[1]),.,dna(name{lacY}[.],type{cds}[.],prot[.]) -> cplx(name{RNAP}[.],dna[1]),dna(name{lacY}[.],type{cds}[.],prot[1]),rna(name{lacY}[.],type{cds}[.],prot[.]),dna(name{lacY}[.],type{rbs}[.],prot[.]) @ 'fwd_sliding_lacY_rbs'
+'sliding_lacY_cds' cplx(name{RNAP}[.],dna[1]),dna(name{lacY}[.],type{cds}[.],prot[1]),.,dna(name{lacA}[.],type{rbs}[.],prot[.]) -> cplx(name{RNAP}[.],dna[1]),dna(name{lacA}[.],type{rbs}[.],prot[1]),rna(name{lacA}[.],type{rbs}[.],prot[.]),dna(name{lacY}[.],type{cds}[.],prot[.]) @ 'fwd_sliding_lacY_cds'
+'sliding_lacA_rbs' cplx(name{RNAP}[.],dna[1]),dna(name{lacA}[.],type{rbs}[.],prot[1]),.,dna(name{lacA}[.],type{cds}[.],prot[.]) -> cplx(name{RNAP}[.],dna[1]),dna(name{lacA}[.],type{cds}[.],prot[1]),rna(name{lacA}[.],type{cds}[.],prot[.]),dna(name{lacA}[.],type{rbs}[.],prot[.]) @ 'fwd_sliding_lacA_rbs'
+'sliding_lacA_cds' cplx(name{RNAP}[.],dna[1]),dna(name{lacA}[.],type{cds}[.],prot[1]),.,dna(name{lacA}[.],type{ter1}[.],prot[.]) -> cplx(name{RNAP}[.],dna[1]),dna(name{lacA}[.],type{ter1}[.],prot[1]),rna(name{lacA}[.],type{ter1}[.],prot[.]),dna(name{lacA}[.],type{cds}[.],prot[.]) @ 'fwd_sliding_lacA_cds'
+'sliding_lacA_ter1' cplx(name{RNAP}[.],dna[1]),dna(name{lacA}[.],type{ter1}[.],prot[1]),.,dna(name{lacA}[.],type{ter2}[.],prot[.]) -> cplx(name{RNAP}[.],dna[1]),dna(name{lacA}[.],type{ter2}[.],prot[1]),rna(name{lacA}[.],type{ter2}[.],prot[.]),dna(name{lacA}[.],type{ter1}[.],prot[.]) @ 'fwd_sliding_lacA_ter1'
+'dr_lacZ_rbs' cplx(name{Ribosome}[.],rna[.]),rna(name{lacZ}[.],type{rbs}[.],prot[.]) -> cplx(name{Ribosome}[.],rna[1]),rna(name{lacZ}[.],type{rbs}[.],prot[1]) @ 'fwd_dr_lacZ_rbs'
+'dr_lacZ_rbs_rev' cplx(name{Ribosome}[.],rna[1]),rna(name{lacZ}[.],type{rbs}[.],prot[1]) -> cplx(name{Ribosome}[.],rna[.]),rna(name{lacZ}[.],type{rbs}[.],prot[.]) @ 'rvs_dr_lacZ_rbs'
+'dr_lacY_rbs' cplx(name{Ribosome}[.],rna[.]),rna(name{lacY}[.],type{rbs}[.],prot[.]) -> cplx(name{Ribosome}[.],rna[1]),rna(name{lacY}[.],type{rbs}[.],prot[1]) @ 'fwd_dr_lacY_rbs'
+'dr_lacY_rbs_rev' cplx(name{Ribosome}[.],rna[1]),rna(name{lacY}[.],type{rbs}[.],prot[1]) -> cplx(name{Ribosome}[.],rna[.]),rna(name{lacY}[.],type{rbs}[.],prot[.]) @ 'rvs_dr_lacY_rbs'
+'dr_lacA_rbs' cplx(name{Ribosome}[.],rna[.]),rna(name{lacA}[.],type{rbs}[.],prot[.]) -> cplx(name{Ribosome}[.],rna[1]),rna(name{lacA}[.],type{rbs}[.],prot[1]) @ 'fwd_dr_lacA_rbs'
+'dr_lacA_rbs_rev' cplx(name{Ribosome}[.],rna[1]),rna(name{lacA}[.],type{rbs}[.],prot[1]) -> cplx(name{Ribosome}[.],rna[.]),rna(name{lacA}[.],type{rbs}[.],prot[.]) @ 'rvs_dr_lacA_rbs'
+'fr_lacA_ter1' cplx(name{Ribosome}[.],rna[1]),rna(name{lacA}[.],type{ter1}[.],prot[1]) -> cplx(name{Ribosome}[.],rna[.]),rna(name{lacA}[.],type{ter1}[.],prot[.]) @ 'fwd_fr_lacA_ter1'
+'fr_lacA_ter2' cplx(name{Ribosome}[.],rna[1]),rna(name{lacA}[.],type{ter2}[.],prot[1]) -> cplx(name{Ribosome}[.],rna[.]),rna(name{lacA}[.],type{ter2}[.],prot[.]) @ 'fwd_fr_lacA_ter2'
+'sr_lacZ_rbs' cplx(name{Ribosome}[.],rna[1]),rna(name{lacZ}[.],type{rbs}[.],prot[1]),.,rna(name{lacZ}[.],type{cds}[.],prot[.]) -> cplx(name{Ribosome}[.],rna[1]),rna(name{lacZ}[.],type{cds}[.],prot[1]),prot(name{lacZ}[.],dna[.],met[.],prot[.],rna[.],up[.],dw[.]),rna(name{lacZ}[.],type{cds}[.],prot[.]) @ 'fwd_sr_lacZ_rbs'
+'sr_lacZ_cds' cplx(name{Ribosome}[.],rna[1]),rna(name{lacZ}[.],type{cds}[.],prot[1]),rna(name{lacY}[.],type{pro1}[.],prot[.]) -> cplx(name{Ribosome}[.],rna[1]),rna(name{lacY}[.],type{pro1}[.],prot[1]),rna(name{lacZ}[.],type{cds}[.],prot[.]) @ 'fwd_sr_lacZ_cds'
+'sr_lacY_pro1' cplx(name{Ribosome}[.],rna[1]),rna(name{lacY}[.],type{pro1}[.],prot[1]),rna(name{lacY}[.],type{rbs}[.],prot[.]) -> cplx(name{Ribosome}[.],rna[1]),rna(name{lacY}[.],type{rbs}[.],prot[1]),rna(name{lacY}[.],type{pro1}[.],prot[.]) @ 'fwd_sr_lacY_pro1'
+'sr_lacY_rbs' cplx(name{Ribosome}[.],rna[1]),rna(name{lacY}[.],type{rbs}[.],prot[1]),.,rna(name{lacY}[.],type{cds}[.],prot[.]) -> cplx(name{Ribosome}[.],rna[1]),rna(name{lacY}[.],type{cds}[.],prot[1]),prot(name{lacY}[.],dna[.],met[.],prot[.],rna[.],up[.],dw[.]),rna(name{lacY}[.],type{cds}[.],prot[.]) @ 'fwd_sr_lacY_rbs'
+'sr_lacY_cds' cplx(name{Ribosome}[.],rna[1]),rna(name{lacY}[.],type{cds}[.],prot[1]),rna(name{lacA}[.],type{rbs}[.],prot[.]) -> cplx(name{Ribosome}[.],rna[1]),rna(name{lacA}[.],type{rbs}[.],prot[1]),rna(name{lacY}[.],type{cds}[.],prot[.]) @ 'fwd_sr_lacY_cds'
+'sr_lacA_rbs' cplx(name{Ribosome}[.],rna[1]),rna(name{lacA}[.],type{rbs}[.],prot[1]),.,rna(name{lacA}[.],type{cds}[.],prot[.]) -> cplx(name{Ribosome}[.],rna[1]),rna(name{lacA}[.],type{cds}[.],prot[1]),prot(name{lacA}[.],dna[.],met[.],prot[.],rna[.],up[.],dw[.]),rna(name{lacA}[.],type{cds}[.],prot[.]) @ 'fwd_sr_lacA_rbs'
+'sr_lacA_cds' cplx(name{Ribosome}[.],rna[1]),rna(name{lacA}[.],type{cds}[.],prot[1]),rna(name{lacA}[.],type{ter1}[.],prot[.]) -> cplx(name{Ribosome}[.],rna[1]),rna(name{lacA}[.],type{ter1}[.],prot[1]),rna(name{lacA}[.],type{cds}[.],prot[.]) @ 'fwd_sr_lacA_cds'
+'sr_lacA_ter1' cplx(name{Ribosome}[.],rna[1]),rna(name{lacA}[.],type{ter1}[.],prot[1]),rna(name{lacA}[.],type{ter2}[.],prot[.]) -> cplx(name{Ribosome}[.],rna[1]),rna(name{lacA}[.],type{ter2}[.],prot[1]),rna(name{lacA}[.],type{ter1}[.],prot[.]) @ 'fwd_sr_lacA_ter1'
+'TF_complex_rule_0' prot(name{lacI}[.],met[.]),met(name{beta_ALLOLACTOSE}[.],loc{cyt}[.],prot[.]) -> prot(name{lacI}[.],met[1]),met(name{beta_ALLOLACTOSE}[.],loc{cyt}[.],prot[1]) @ 'fwd_TF_complex_rule_0'
+'TF_complex_rule_0_rev' prot(name{lacI}[.],met[1]),met(name{beta_ALLOLACTOSE}[.],loc{cyt}[.],prot[1]) -> prot(name{lacI}[.],met[.]),met(name{beta_ALLOLACTOSE}[.],loc{cyt}[.],prot[.]) @ 'rvs_TF_complex_rule_0'
+'TF_complex_rule_1' prot(name{crp}[.],met[.],up[1],dw[.]),prot(name{crp}[.],met[.],up[.],dw[1]),met(name{CAMP}[.],loc{cyt}[.],prot[.]) -> prot(name{crp}[.],met[.],up[1],dw[.]),prot(name{crp}[.],met[3],up[.],dw[1]),met(name{CAMP}[.],loc{cyt}[.],prot[3]) @ 'fwd_TF_complex_rule_1'
+'TF_complex_rule_1_rev' prot(name{crp}[.],met[.],up[1],dw[.]),prot(name{crp}[.],met[3],up[.],dw[1]),met(name{CAMP}[.],loc{cyt}[.],prot[3]) -> prot(name{crp}[.],met[.],up[1],dw[.]),prot(name{crp}[.],met[.],up[.],dw[1]),met(name{CAMP}[.],loc{cyt}[.],prot[.]) @ 'rvs_TF_complex_rule_1'
+'complex_assembly_rule_4' prot(name{crp}[.],up[.],dw[.]),prot(name{crp}[.],up[.],dw[.]) -> prot(name{crp}[.],up[1],dw[.]),prot(name{crp}[.],up[.],dw[1]) @ 'fwd_complex_assembly_rule_4'
+'complex_assembly_rule_4_rev' prot(name{crp}[.],up[1],dw[.]),prot(name{crp}[.],up[.],dw[1]) -> prot(name{crp}[.],up[.],dw[.]),prot(name{crp}[.],up[.],dw[.]) @ 'rvs_complex_assembly_rule_4'
+'TF_TFBS_rule_1' prot(name{lacI}[.],dna[.],met[.]),dna(name{lacZ}[.],type{pro1}[.],prot[.]) -> prot(name{lacI}[.],dna[1],met[.]),dna(name{lacZ}[.],type{pro1}[.],prot[1]) @ 'fwd_TF_TFBS_rule_1'
+'TF_TFBS_rule_1_rev' prot(name{lacI}[.],dna[1],met[.]),dna(name{lacZ}[.],type{pro1}[.],prot[1]) -> prot(name{lacI}[.],dna[.],met[.]),dna(name{lacZ}[.],type{pro1}[.],prot[.]) @ 'rvs_TF_TFBS_rule_1'
+'TF_TFBS_rule_2' prot(name{lacI}[.],dna[1],met[.]),dna(name{lacZ}[.],type{pro1}[.],prot[1]),met(name{beta_ALLOLACTOSE}[.],loc{cyt}[.],prot[.]) -> prot(name{lacI}[.],dna[.],met[1]),met(name{beta_ALLOLACTOSE}[.],loc{cyt}[.],prot[1]),dna(name{lacZ}[.],type{pro1}[.],prot[.]) @ 'fwd_TF_TFBS_rule_2'
+
+%obs: 'obs_MELIBIOSE_cyt' |met(name{MELIBIOSE}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_MELIBIOSE_per' |met(name{MELIBIOSE}[.],loc{per}[.],prot[.])|
+%obs: 'obs_MELIBIOSE_ex' |met(name{MELIBIOSE}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_WATER_cyt' |met(name{WATER}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_WATER_per' |met(name{WATER}[.],loc{per}[.],prot[.])|
+%obs: 'obs_WATER_ex' |met(name{WATER}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_D_ARABINOSE_cyt' |met(name{D_ARABINOSE}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_D_ARABINOSE_per' |met(name{D_ARABINOSE}[.],loc{per}[.],prot[.])|
+%obs: 'obs_D_ARABINOSE_ex' |met(name{D_ARABINOSE}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_CO_A_cyt' |met(name{CO_A}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_CO_A_per' |met(name{CO_A}[.],loc{per}[.],prot[.])|
+%obs: 'obs_CO_A_ex' |met(name{CO_A}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_ACETYL_COA_cyt' |met(name{ACETYL_COA}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_ACETYL_COA_per' |met(name{ACETYL_COA}[.],loc{per}[.],prot[.])|
+%obs: 'obs_ACETYL_COA_ex' |met(name{ACETYL_COA}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_PROTON_cyt' |met(name{PROTON}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_PROTON_per' |met(name{PROTON}[.],loc{per}[.],prot[.])|
+%obs: 'obs_PROTON_ex' |met(name{PROTON}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_alpha_glucose_cyt' |met(name{alpha_glucose}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_alpha_glucose_per' |met(name{alpha_glucose}[.],loc{per}[.],prot[.])|
+%obs: 'obs_alpha_glucose_ex' |met(name{alpha_glucose}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_alpha_ALLOLACTOSE_cyt' |met(name{alpha_ALLOLACTOSE}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_alpha_ALLOLACTOSE_per' |met(name{alpha_ALLOLACTOSE}[.],loc{per}[.],prot[.])|
+%obs: 'obs_alpha_ALLOLACTOSE_ex' |met(name{alpha_ALLOLACTOSE}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_beta_ALLOLACTOSE_cyt' |met(name{beta_ALLOLACTOSE}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_beta_ALLOLACTOSE_per' |met(name{beta_ALLOLACTOSE}[.],loc{per}[.],prot[.])|
+%obs: 'obs_beta_ALLOLACTOSE_ex' |met(name{beta_ALLOLACTOSE}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_beta_GALACTOSE_cyt' |met(name{beta_GALACTOSE}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_beta_GALACTOSE_per' |met(name{beta_GALACTOSE}[.],loc{per}[.],prot[.])|
+%obs: 'obs_beta_GALACTOSE_ex' |met(name{beta_GALACTOSE}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_CPD_3785_cyt' |met(name{CPD_3785}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_CPD_3785_per' |met(name{CPD_3785}[.],loc{per}[.],prot[.])|
+%obs: 'obs_CPD_3785_ex' |met(name{CPD_3785}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_alpha_lactose_cyt' |met(name{alpha_lactose}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_alpha_lactose_per' |met(name{alpha_lactose}[.],loc{per}[.],prot[.])|
+%obs: 'obs_alpha_lactose_ex' |met(name{alpha_lactose}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_CPD_3801_cyt' |met(name{CPD_3801}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_CPD_3801_per' |met(name{CPD_3801}[.],loc{per}[.],prot[.])|
+%obs: 'obs_CPD_3801_ex' |met(name{CPD_3801}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_alpha_GALACTOSE_cyt' |met(name{alpha_GALACTOSE}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_alpha_GALACTOSE_per' |met(name{alpha_GALACTOSE}[.],loc{per}[.],prot[.])|
+%obs: 'obs_alpha_GALACTOSE_ex' |met(name{alpha_GALACTOSE}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_CPD_3561_cyt' |met(name{CPD_3561}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_CPD_3561_per' |met(name{CPD_3561}[.],loc{per}[.],prot[.])|
+%obs: 'obs_CPD_3561_ex' |met(name{CPD_3561}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_Fructofuranose_cyt' |met(name{Fructofuranose}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_Fructofuranose_per' |met(name{Fructofuranose}[.],loc{per}[.],prot[.])|
+%obs: 'obs_Fructofuranose_ex' |met(name{Fructofuranose}[.],loc{ex}[.],prot[.])|
+%obs: 'obs__6_Acetyl_beta_D_Galactose_cyt' |met(name{_6_Acetyl_beta_D_Galactose}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs__6_Acetyl_beta_D_Galactose_per' |met(name{_6_Acetyl_beta_D_Galactose}[.],loc{per}[.],prot[.])|
+%obs: 'obs__6_Acetyl_beta_D_Galactose_ex' |met(name{_6_Acetyl_beta_D_Galactose}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_beta_lactose_cyt' |met(name{beta_lactose}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_beta_lactose_per' |met(name{beta_lactose}[.],loc{per}[.],prot[.])|
+%obs: 'obs_beta_lactose_ex' |met(name{beta_lactose}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_beta_glucose_cyt' |met(name{beta_glucose}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_beta_glucose_per' |met(name{beta_glucose}[.],loc{per}[.],prot[.])|
+%obs: 'obs_beta_glucose_ex' |met(name{beta_glucose}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_rnap' |cplx(name{RNAP}[.],dna[.],rna[.])|
+%obs: 'obs_ribosome' |cplx(name{Ribosome}[.],dna[.],rna[.])|
+%obs: 'obs_crp' |prot(name{crp}[.],up[1],dw[.]),prot(name{crp}[.],up[.],dw[1])|
+%obs: 'obs_lacI' |prot(name{lacI}[.],dna[.],met[.])|
+%obs: 'obs_lacZ' |prot(name{lacZ}[.])|
+%obs: 'obs_lacY' |prot(name{lacY}[.])|
+%obs: 'obs_lacA' |prot(name{lacA}[.])|
+%obs: 'test1' |prot(name{lacI}[.],dna[.],met[_])|
+
+%init: 't0_CAMP_cyt' met(name{CAMP}[.],loc{cyt}[.],prot[.])
+%init: 't0_WATER_cyt' met(name{WATER}[.],loc{cyt}[.],prot[.])
+%init: 't0_PROTON_per' met(name{PROTON}[.],loc{per}[.],prot[.])
+%init: 't0_beta_lactose_per' met(name{beta_lactose}[.],loc{per}[.],prot[.])
+%init: 't0_lacZ' prot(name{lacZ}[.],dna[.],met[.],prot[.],rna[.],up[.],dw[.])
+%init: 't0_dna_lacz_pro4' dna(name{lacZ}[.],type{pro4}[.],prot[.])
+%init: 't0_dna_lacz_pro3' dna(name{lacZ}[.],type{pro3}[.],prot[.])
+%init: 't0_dna_lacz_pro2' dna(name{lacZ}[.],type{pro2}[.],prot[.])
+%init: 't0_dna_lacz_pro1' dna(name{lacZ}[.],type{pro1}[.],prot[.])
+%init: 't0_dna_lacz_rbs' dna(name{lacZ}[.],type{rbs}[.],prot[.])
+%init: 't0_dna_lacz_cds' dna(name{lacZ}[.],type{cds}[.],prot[.])
+%init: 't0_dna_lacy_pro1' dna(name{lacY}[.],type{pro1}[.],prot[.])
+%init: 't0_dna_lacy_rbs' dna(name{lacY}[.],type{rbs}[.],prot[.])
+%init: 't0_dna_lacy_cds' dna(name{lacY}[.],type{cds}[.],prot[.])
+%init: 't0_dna_laca_rbs' dna(name{lacA}[.],type{rbs}[.],prot[.])
+%init: 't0_dna_laca_cds' dna(name{lacA}[.],type{cds}[.],prot[.])
+%init: 't0_dna_laca_ter1' dna(name{lacA}[.],type{ter1}[.],prot[.])
+%init: 't0_dna_laca_ter2' dna(name{lacA}[.],type{ter2}[.],prot[.])
+%init: 't0_RNAP' cplx(name{RNAP}[.],dna[.],prot[.],rna[.])
+%init: 't0_ribosome' cplx(name{Ribosome}[.],dna[.],prot[.],rna[.])
+%init: 't0_crp' prot(name{crp}[.],dna[.],met[.],prot[.],rna[.],up[.],dw[.])
+%init: 't0_lacI' prot(name{lacI}[.],dna[.],met[.],prot[.],rna[.],up[.],dw[.])
+
