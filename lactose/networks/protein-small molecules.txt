@@ -1,0 +1,2 @@
+LacI	beta-ALLOLACTOSE
+{crp, crp}	CAMP
