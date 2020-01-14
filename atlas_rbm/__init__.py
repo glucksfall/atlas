@@ -1,4 +1,4 @@
-name = "atlas"
+name = "atlas_rbm"
 
 from ._version import get_versions
 __version__ = get_versions()['version']
