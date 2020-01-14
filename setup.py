@@ -12,11 +12,17 @@ import versioneer
 def main():
 	# additional files
 	data_files = []
-	for dirpath, dirnames, filenames in walk('notebooks'):
+	for dirpath, dirnames, filenames in walk('atlas/notebooks'):
 		tmp = []
 		for filename in filenames:
 			tmp.append(path.join(dirpath, filename))
-		data_files.append((dirpath, tmp))
+		data_files.append(('atlas', tmp))
+
+	for dirpath, dirnames, filenames in walk('atlas/templates'):
+		tmp = []
+		for filename in filenames:
+			tmp.append(path.join(dirpath, filename))
+		data_files.append(('atlas', tmp))
 	#print(data_files)
 
 	# Get the long description from the README file
@@ -71,19 +77,29 @@ def main():
 
 		python_requires='~=3.0',
 		keywords=['systems biology', 'stochastic modeling', 'parameter estimation'],
-		install_requires=['pysb', 'jupyter', 'ipykernel', 'seaborn'],
+		install_requires=['pysb', 'jupyter', 'ipykernel', 'seaborn', 'importlib-resources', 'importlib'],
 
-		# include files
-		# MANIFEST.in, sdist
-		include_package_data=True,
-		# bdist_wheel (only for non-python files inside of the package)
-		packages=find_packages(exclude=['contrib', 'docs', 'tests']),
-		#package_data = {
-			#'pleione' : ['test/*.txt']
-			#},
-		#data_files=[('example', ['example/ucrit-twotails-5percent.txt'])],
-		data_files=data_files,
+		# WARNING: seems to be bdist_wheel only
+		packages=find_packages(exclude=('contrib', 'docs', 'tests')),
+		# using the MANIFEST.in file to exclude same folders from sdist
+		include_package_data=False,
 
+		# WARNING: use this way to install in the package folder and
+		# to have access files using importlib_resources or importlib.resources
+		# bdist_wheel only
+		package_data = {
+			'atlas' : [
+				'notebooks/*',
+				'templates/*',
+				]
+			},
+
+		# WARNING: do not use data_files as the installation path is hard to determine
+		# e.g.: ubuntu 18.04 install to /usr/local/installation_path or /$USER/.local/installation_path
+		#data_files=[('installation_path', ['example/ucrit-twotails-5percent.txt'])],
+		#data_files=data_files,
+
+		# others
 		project_urls={
 			'Manual': 'https://atlas.readthedocs.io',
 			'Bug Reports': 'https://github.com/glucksfall/atlas/issues',
