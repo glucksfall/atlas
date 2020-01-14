@@ -12,13 +12,13 @@ import versioneer
 def main():
 	# additional files
 	data_files = []
-	for dirpath, dirnames, filenames in walk('atlas/notebooks'):
+	for dirpath, dirnames, filenames in walk('atlas_rbm/notebooks'):
 		tmp = []
 		for filename in filenames:
 			tmp.append(path.join(dirpath, filename))
 		data_files.append(('atlas', tmp))
 
-	for dirpath, dirnames, filenames in walk('atlas/templates'):
+	for dirpath, dirnames, filenames in walk('atlas_rbm/templates'):
 		tmp = []
 		for filename in filenames:
 			tmp.append(path.join(dirpath, filename))
@@ -77,10 +77,10 @@ def main():
 
 		python_requires='~=3.0',
 		keywords=['systems biology', 'stochastic modeling', 'parameter estimation'],
-		install_requires=['pysb', 'jupyter', 'ipykernel', 'seaborn', 'importlib-resources', 'importlib'],
+		install_requires=['pysb', 'jupyter', 'ipykernel', 'seaborn', 'importlib-resources'],
 
 		# WARNING: seems to be bdist_wheel only
-		packages=find_packages(exclude=('contrib', 'docs', 'tests', 'notebooks')),
+		packages=find_packages(exclude=('contrib', 'docs', 'tests', 'notebooks', 'templates')),
 		# using the MANIFEST.in file to exclude same folders from sdist
 		include_package_data=False,
 
@@ -88,7 +88,7 @@ def main():
 		# to have access files using importlib_resources or importlib.resources
 		# bdist_wheel only
 		package_data = {
-			'atlas-rbm' : [
+			'atlas_rbm' : [
 				'notebooks/*',
 				'templates/*',
 				]
@@ -101,7 +101,7 @@ def main():
 
 		# others
 		project_urls={
-			'Manual': 'https://atlas.readthedocs.io',
+			'Manual': 'https://atlas_rbm.readthedocs.io',
 			'Bug Reports': 'https://github.com/glucksfall/atlas/issues',
 			'Source': 'https://github.com/glucksfall/atlas',
 		},
