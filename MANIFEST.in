@@ -7,6 +7,9 @@ recursive-exclude contrib *
 recursive-exclude docs *
 recursive-exclude tests *
 
+recursive-exclude notebooks *
+recursive-exclude templates *
+
 recursive-exclude arabinose *
 recursive-exclude central-carbon *
 recursive-exclude fucose *

@@ -80,7 +80,7 @@ def main():
 		install_requires=['pysb', 'jupyter', 'ipykernel', 'seaborn', 'importlib-resources', 'importlib'],
 
 		# WARNING: seems to be bdist_wheel only
-		packages=find_packages(exclude=('contrib', 'docs', 'tests')),
+		packages=find_packages(exclude=('contrib', 'docs', 'tests', 'notebooks')),
 		# using the MANIFEST.in file to exclude same folders from sdist
 		include_package_data=False,
 
@@ -88,7 +88,7 @@ def main():
 		# to have access files using importlib_resources or importlib.resources
 		# bdist_wheel only
 		package_data = {
-			'atlas' : [
+			'atlas-rbm' : [
 				'notebooks/*',
 				'templates/*',
 				]
