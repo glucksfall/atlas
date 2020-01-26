@@ -8,12 +8,12 @@ Atlas is a small software developed to use simple text files that encode biologi
 
    Installation
 
-Indices and tables
-==================
+.. Indices and tables
+.. ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`
 
 .. refs
 .. _KaSim: https://github.com/Kappa-Dev/KaSim
