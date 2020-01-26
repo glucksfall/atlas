@@ -29,6 +29,7 @@ the periplasm or extracellular compartments, the user should employ the prefix
 Examples:
 
 .. code-block:: bash
+
 	spontaneous	LACTOSE-MUTAROTATION	alpha-lactose	beta-lactose
 	spontaneous	GALACTOSE-MUTAROTATION	alpha-GALACTOSE	beta-GALACTOSE
 	spontaneous	GLUCOSE-MUTAROTATION	alpha-glucose	beta-glucose
