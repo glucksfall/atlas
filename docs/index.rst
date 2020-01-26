@@ -1,7 +1,12 @@
 Welcome to Atlas v1.0 documentation!
 ====================================
 
-Atlas is a small software developed to use simple text files that encode biological networks and write Rule-Based Models. Atlas writes RBMs compatible with the PySB python package `PySB`_, PMID `23423320`_ and simulations are compatible with `NFsim`_, PMID `26556387`_ (within the `BioNetGen2`_ software, PMID `27402907`_) and KaSim (`KaSim`_, PMID `29950016`_). Models could be exported to text files in *BioNetGen* (`BioNetGenLanguage`_) or *kappa* language (`Kappa`_) for further calibration (`BioNetFit`_, PMID `26556387`_ or `Pleione`_, PMID `31641245`_) and analysis (`Sterope`_ and `Alcyone`_)
+Atlas is a small software developed to use simple text files that encode biological networks and write Rule-Based Models. Atlas writes RBMs compatible with the PySB python package `PySB`_, PMID `23423320`_ and simulations are compatible with `NFsim`_, PMID `26556387`_ (within the `BioNetGen2`_ software, PMID `27402907`_) and KaSim (`KaSim`_, PMID `29950016`_). Models could be exported to text files in *BioNetGen* (`BioNetGenLanguage`_) or *kappa* language (`Kappa`_) for further calibration (`BioNetFit`_, PMID `26556387`_ or `pleione`_, PMID `31641245`_) and analysis (`sterope`_ and `alcyone`_)
+
+.. toctree:::
+   :maxdepth: 3
+
+   Installation
 
 Indices and tables
 ==================
@@ -31,4 +36,7 @@ Indices and tables
 .. _31641245: https://www.ncbi.nlm.nih.gov/pubmed/31641245
 .. _23423320: https://www.ncbi.nlm.nih.gov/pubmed/23423320
 
-.. _pleiades: https://github.com/glucksfall/pleiades
+.. _pleiades: https://github.com/networkbiolab/pleiades
+.. _pleione: https://github.com/networkbiolab/pleione
+.. _sterope: https://github.com/networkbiolab/sterope
+.. _alcyone: https://github.com/networkbiolab/alcyone
