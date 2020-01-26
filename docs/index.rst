@@ -10,10 +10,10 @@ exported to text files in *BioNetGen* (`BioNetGenLanguage`_) or *kappa* language
 (`Kappa`_) for further calibration (`BioNetFit`_, PMID `26556387`_ or
 `pleione`_, PMID `31641245`_) and analysis (`sterope`_ and `alcyone`_)
 
-.. .. toctree::
-..    :maxdepth: 3
+.. toctree::
+   :maxdepth: 3
 
-..    Installation
+   Installation
 
 Indices and tables
 ==================
