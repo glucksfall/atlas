@@ -80,7 +80,7 @@ Option 2: Clone the Github repository
    .. code-block:: bash
 
     path=/opt/atlas
-    git clone https://github.com/networkbiolab/atlas \$path
+    git clone https://github.com/networkbiolab/atlas $path
     echo export PYTHONPATH="\$PYTHONPATH:\$path" >> $HOME/.profile
 
    .. note::
