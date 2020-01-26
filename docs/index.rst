@@ -14,6 +14,10 @@ exported to text files in *BioNetGen* (`BioNetGenLanguage`_) or *kappa* language
    :maxdepth: 3
 
    Installation
+   Modeling
+   Simulation
+   Export_to
+   Plotting
 
 Indices and tables
 ==================
