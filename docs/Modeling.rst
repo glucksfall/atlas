@@ -1,105 +1,95 @@
 Modeling
 ========
 
-There are two different ways to install Atlas:
+Atlas is a modular software with each script centered in a specific biological
+network
 
-1. **Install Atlas natively (Recommended).**
+1. **Metabolic Networks**
 
-   *OR*
+2. **Interaction Networks**
+   1. **Protein-Protein**
+   2. **Protein-Small Compounds**
+   3. **Protein-DNA binding sites**
+   4. **Protein-RNA**
+   5. **mRNA-regulatory RNA**
+   6. **Sigma Factors-Promoters**
 
-2. **Clone the Github repository.** If you are familiar with git, Atlas can
-   be cloned and the respective folder added to the python path. Further details
-   are below.
+3. **Genome graphs**
 
-.. note::
-	**Need Help?**
-	If you run into any problems with installation, please visit our chat room:
-	https://gitter.im/glucksfall/pleiades
+1: Metabolis Networks
+---------------------
 
-Option 1: Install Atlas natively on your computer
--------------------------------------------------
+Metabolic networks have four columns. The first declares a unique name for the
+enzyme or enzymatic complex; the second declares a unique name for the reaction;
+the third column lists using comma unique names for substrates; and the last row
+list using comma unique names for products. To declare metabolites located at
+the periplasm or extracellular compartments, the user should employ the prefix
+“PER-” and “EX-”, respectively. Use *spontaneous* for non-enzymatic reactions.
 
-The recommended approach is to use system tools, or install them if
-necessary. To install python packages, you could use pip, or download
-the package from `python package index <https://pypi.org/project/atlas-rbm/>`_.
+Examples:
 
-1. **Install with system tools**
+.. code-block:: bash
+	spontaneous	LACTOSE-MUTAROTATION	alpha-lactose	beta-lactose
+	spontaneous	GALACTOSE-MUTAROTATION	alpha-GALACTOSE	beta-GALACTOSE
+	spontaneous	GLUCOSE-MUTAROTATION	alpha-glucose	beta-glucose
+	LACY-MONOMER	TRANS-RXN-24	PER-PROTON, PER-alpha-lactose	PROTON, alpha-lactose
+	LACY-MONOMER	TRANS-RXN-24-beta	PER-PROTON, PER-beta-lactose	PROTON, beta-lactose
+	LACY-MONOMER	TRANS-RXN-94	PER-PROTON, PER-MELIBIOSE	PROTON, MELIBIOSE
+	LACY-MONOMER	RXN0-7215	PER-PROTON, PER-CPD-3561	PROTON, CPD-3561
+	LACY-MONOMER	RXN0-7217	PER-PROTON, PER-CPD-3785	PROTON, CPD-3785
+	LACY-MONOMER	RXN-17755	PER-PROTON, PER-CPD-3801	PROTON, CPD-3801
+	BETAGALACTOSID-CPLX	BETAGALACTOSID-RXN	beta-lactose, WATER	beta-GALACTOSE, beta-glucose
+	BETAGALACTOSID-CPLX	BETAGALACTOSID-RXN-alpha	alpha-lactose, WATER	alpha-GALACTOSE, alpha-glucose
+	BETAGALACTOSID-CPLX	RXN0-5363	alpha-lactose	alpha-ALLOLACTOSE
+	BETAGALACTOSID-CPLX	RXN0-5363-beta	beta-lactose	beta-ALLOLACTOSE
+	BETAGALACTOSID-CPLX	ALLOLACTOSE-DEG-alpha	alpha-ALLOLACTOSE	alpha-GALACTOSE, alpha-glucose
+	BETAGALACTOSID-CPLX	ALLOLACTOSE-DEG-beta	beta-ALLOLACTOSE	beta-GALACTOSE, beta-glucose
+	BETAGALACTOSID-CPLX	RXN-17726	CPD-3561, WATER	beta-GALACTOSE, Fructofuranose
+	BETAGALACTOSID-CPLX	RXN0-7219	CPD-3785, WATER	beta-GALACTOSE, D-ARABINOSE
+	GALACTOACETYLTRAN-CPLX	GALACTOACETYLTRAN-RXN-galactose	beta-GALACTOSE, ACETYL-COA	6-Acetyl-beta-D-Galactose, CO-A
 
-   With pip, you simple need to execute and Atlas will be installed on
-   ``$HOME/.local/lib/python3.6/site-packages`` folder or similar.
+  *OR*
 
-   .. code-block:: bash
+.. code-block:: bash
 
-	pip3 install atlas_rbm --user
+	spontaneous	LACTOSE-MUTAROTATION	alpha-lactose	beta-lactose
+	spontaneous	GALACTOSE-MUTAROTATION	alpha-GALACTOSE	beta-GALACTOSE
+	spontaneous	GLUCOSE-MUTAROTATION	alpha-glucose	beta-glucose
+	lacY	TRANS-RXN-24	PER-PROTON, PER-alpha-lactose	PROTON, alpha-lactose
+	lacY	TRANS-RXN-24-beta	PER-PROTON, PER-beta-lactose	PROTON, beta-lactose
+	lacY	TRANS-RXN-94	PER-PROTON, PER-MELIBIOSE	PROTON, MELIBIOSE
+	lacY	RXN0-7215	PER-PROTON, PER-CPD-3561	PROTON, CPD-3561
+	lacY	RXN0-7217	PER-PROTON, PER-CPD-3785	PROTON, CPD-3785
+	lacY	RXN-17755	PER-PROTON, PER-CPD-3801	PROTON, CPD-3801
+	[lacZ,lacZ,lacZ,lacZ]	BETAGALACTOSID-RXN	beta-lactose, WATER	beta-GALACTOSE, beta-glucose
+	[lacZ,lacZ,lacZ,lacZ]	BETAGALACTOSID-RXN-alpha	alpha-lactose, WATER	alpha-GALACTOSE, alpha-glucose
+	[lacZ,lacZ,lacZ,lacZ]	RXN0-5363	alpha-lactose	alpha-ALLOLACTOSE
+	[lacZ,lacZ,lacZ,lacZ]	RXN0-5363-beta	beta-lactose	beta-ALLOLACTOSE
+	[lacZ,lacZ,lacZ,lacZ]	ALLOLACTOSE-DEG-alpha	alpha-ALLOLACTOSE, WATER	alpha-GALACTOSE, alpha-glucose
+	[lacZ,lacZ,lacZ,lacZ]	ALLOLACTOSE-DEG-beta	beta-ALLOLACTOSE, WATER	beta-GALACTOSE, beta-glucose
+	[lacZ,lacZ,lacZ,lacZ]	RXN-17726	CPD-3561, WATER	beta-GALACTOSE, Fructofuranose
+	[lacZ,lacZ,lacZ,lacZ]	RXN0-7219	CPD-3785, WATER	beta-GALACTOSE, D-ARABINOSE
+	[lacA,lacA,lacA]	GALACTOACETYLTRAN-RXN-galactose	beta-GALACTOSE, ACETYL-COA	6-Acetyl-beta-D-Galactose, CO-A
 
-   If you have system rights, you could install Atlas for all users with
+  *OR*
 
-   .. code-block:: bash
+.. code-block:: bash
 
-	sudo -H pip3 install atlas_rbm
-
-2. **Download from python package index**
-
-   Alternatively, you could download the package (useful when pip fails to download
-   the package because of lack of SSL libraries) and then install with pip. For instance:
-
-   .. code-block:: bash
-
-	wget https://files.pythonhosted.org/packages/ec/ed/8b94e0a29f69a24ddb18ba4a4e6463d3ecede308576774e86baf6a84b998/atlas_rbm-1.0.2-py3-none-any.whl
-	pip3 install atlas_rbm-1.0.2-py3-none-any.whl --user
-
-   .. note::
-	**Why Python3?**:
-	Atlas is intended to be used with >=python3.4 because python2.7 won't receive
-	further development past 2020, including security updates.
-
-   .. note::
-	**pip, Python, and Anaconda**:
-	Be aware which pip you invoque. You could install pip3 with
-	``sudo apt-get install python3-pip`` if you have system rights, or
-	install python3 from source, and adding ``<python3 path>/bin/pip3`` to the
-	path, or linking it in a directory like ``$HOME/bin`` which is commonly
-	added to the path at login. Also be aware that, if you installed
-	Anaconda, pip could be linked to the Anaconda specific version of pip, which
-	will install Atlas into Anaconda's installation folder.
-	Type ``which pip`` or ``which pip3`` to find out the source of pip, and type
-	``python -m site`` or ``python3 -m site`` to find out where is more likely
-	Atlas will be installed.
-
-Option 2: Clone the Github repository
--------------------------------------
-
-1. **Clone with git**
-
-   The source code is uploaded and maintained through Github at
-   `<https://github.com/networkbiolab/atlas>`_. Therefore, you could clone the
-   repository locally, and then add the folder to the ``PYTHONPATH``. Beware
-   that you should install the *pysb* package (`pysb`_) and others packages
-   by any means, specially the Jupyter notebooks.
-
-   .. code-block:: bash
-
-    path=/opt/atlas
-    git clone https://github.com/networkbiolab/atlas $path
-    echo export PYTHONPATH="\$PYTHONPATH:\$path" >> $HOME/.profile
-
-   .. note::
-	Adding the path to ``$HOME/.profile`` allows python to find the package
-	installation folder after each user login. Similarly, adding the path to
-	``$HOME/.bashrc`` allows python to find the package after each terminal
-	invocation. Other options include setting the ``PYTHONPATH`` environmental
-	variable in a sh file (see the example folder) or invoke ``python3 setup.py clean build install``
-	to install Atlas as it was downloaded from the PyPI server.
-
-.. refs
-.. _KaSim: https://github.com/Kappa-Dev/KaSim
-.. _NFsim: https://github.com/RuleWorld/nfsim
-.. _BioNetGen2: https://github.com/RuleWorld/bionetgen
-.. _PISKaS: https://github.com/DLab/PISKaS
-.. _BioNetFit: https://github.com/RuleWorld/BioNetFit
-.. _SLURM: https://slurm.schedmd.com/
-.. _pysb: http://pysb.org/
-
-.. _Kappa: https://www.kappalanguage.org/
-.. _BioNetGen: http://www.csb.pitt.edu/Faculty/Faeder/?page_id=409
-.. _pandas: https://pandas.pydata.org/
+	spontaneous	LACTOSE-MUTAROTATION	alpha-lactose	beta-lactose
+	spontaneous	GALACTOSE-MUTAROTATION	alpha-GALACTOSE	beta-GALACTOSE
+	spontaneous	GLUCOSE-MUTAROTATION	alpha-glucose	beta-glucose
+	lacY	TRANS-RXN-24	PER-PROTON, PER-alpha-lactose	PROTON, alpha-lactose
+	lacY	TRANS-RXN-24-beta	PER-PROTON, PER-beta-lactose	PROTON, beta-lactose
+	lacY	TRANS-RXN-94	PER-PROTON, PER-MELIBIOSE	PROTON, MELIBIOSE
+	lacY	RXN0-7215	PER-PROTON, PER-CPD-3561	PROTON, CPD-3561
+	lacY	RXN0-7217	PER-PROTON, PER-CPD-3785	PROTON, CPD-3785
+	lacY	RXN-17755	PER-PROTON, PER-CPD-3801	PROTON, CPD-3801
+	lacZ	BETAGALACTOSID-RXN	beta-lactose, WATER	beta-GALACTOSE, beta-glucose
+	lacZ	BETAGALACTOSID-RXN-alpha	alpha-lactose, WATER	alpha-GALACTOSE, alpha-glucose
+	lacZ	RXN0-5363	alpha-lactose	alpha-ALLOLACTOSE
+	lacZ	RXN0-5363-beta	beta-lactose	beta-ALLOLACTOSE
+	lacZ	ALLOLACTOSE-DEG-alpha	alpha-ALLOLACTOSE, WATER	alpha-GALACTOSE, alpha-glucose
+	lacZ	ALLOLACTOSE-DEG-beta	beta-ALLOLACTOSE, WATER	beta-GALACTOSE, beta-glucose
+	lacZ	RXN-17726	CPD-3561, WATER	beta-GALACTOSE, Fructofuranose
+	lacZ	RXN0-7219	CPD-3785, WATER	beta-GALACTOSE, D-ARABINOSE
+	lacA	GALACTOACETYLTRAN-RXN-galactose	beta-GALACTOSE, ACETYL-COA	6-Acetyl-beta-D-Galactose, CO-A
