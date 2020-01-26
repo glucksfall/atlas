@@ -7,6 +7,7 @@ network
 1. **Metabolic Networks**
 
 2. **Interaction Networks**
+
    1. **Protein-Protein**
    2. **Protein-Small Compounds**
    3. **Protein-DNA binding sites**
@@ -16,7 +17,7 @@ network
 
 3. **Genome graphs**
 
-1: Metabolis Networks
+1: Metabolic Networks
 ---------------------
 
 Metabolic networks have four columns. The first declares a unique name for the
@@ -49,7 +50,7 @@ Examples:
 	BETAGALACTOSID-CPLX	RXN0-7219	CPD-3785, WATER	beta-GALACTOSE, D-ARABINOSE
 	GALACTOACETYLTRAN-CPLX	GALACTOACETYLTRAN-RXN-galactose	beta-GALACTOSE, ACETYL-COA	6-Acetyl-beta-D-Galactose, CO-A
 
-  *OR*
+*OR*
 
 .. code-block:: bash
 
@@ -72,7 +73,7 @@ Examples:
 	[lacZ,lacZ,lacZ,lacZ]	RXN0-7219	CPD-3785, WATER	beta-GALACTOSE, D-ARABINOSE
 	[lacA,lacA,lacA]	GALACTOACETYLTRAN-RXN-galactose	beta-GALACTOSE, ACETYL-COA	6-Acetyl-beta-D-Galactose, CO-A
 
-  *OR*
+*OR*
 
 .. code-block:: bash
 
