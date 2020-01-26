@@ -1,7 +1,7 @@
 Installation
 ============
 
-There are two different ways to install pleione:
+There are two different ways to install Atlas:
 
 1. **Install Atlas natively (Recommended).**
 
