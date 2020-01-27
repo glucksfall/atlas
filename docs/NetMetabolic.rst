@@ -14,6 +14,7 @@ Examples:
 
 .. code-block:: bash
 
+	GENE	REACTION	SUBSTRATES	PRODUCTS
 	spontaneous	LACTOSE-MUTAROTATION	alpha-lactose	beta-lactose
 	spontaneous	GALACTOSE-MUTAROTATION	alpha-GALACTOSE	beta-GALACTOSE
 	spontaneous	GLUCOSE-MUTAROTATION	alpha-glucose	beta-glucose
@@ -37,6 +38,7 @@ Examples:
 
 .. code-block:: bash
 
+	GENE	REACTION	SUBSTRATES	PRODUCTS
 	spontaneous	LACTOSE-MUTAROTATION	alpha-lactose	beta-lactose
 	spontaneous	GALACTOSE-MUTAROTATION	alpha-GALACTOSE	beta-GALACTOSE
 	spontaneous	GLUCOSE-MUTAROTATION	alpha-glucose	beta-glucose
@@ -60,6 +62,7 @@ Examples:
 
 .. code-block:: bash
 
+	GENE	REACTION	SUBSTRATES	PRODUCTS
 	spontaneous	LACTOSE-MUTAROTATION	alpha-lactose	beta-lactose
 	spontaneous	GALACTOSE-MUTAROTATION	alpha-GALACTOSE	beta-GALACTOSE
 	spontaneous	GLUCOSE-MUTAROTATION	alpha-glucose	beta-glucose
@@ -257,7 +260,7 @@ GitHub repository `here <https://github.com/networkbiolab/atlas/blob/master/lact
 	must be set to zero to define an irreversible reaction.
 
 .. note::
-	**Uniqueness of reactions names** Atlas will write *Rules* for unique
+	**Uniqueness of Rule names**. Atlas will write *Rules* for unique
 	metabolic reactions. Identical names will be reported for further curation.
 
 .. note::
