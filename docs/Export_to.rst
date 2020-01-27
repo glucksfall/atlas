@@ -3,7 +3,8 @@ Export to
 
 The PySB python package could export to different languages
 (See more `here <https://pysb.readthedocs.io/en/stable/modules/export/>`_).
-Use the following code to export to BioNetGen and *kappa* language.
+Use the following code to export to BioNetGen and *kappa* language, putting
+it at the end of the main code.
 
 .. code-block:: bash
 
