@@ -28,7 +28,7 @@ Examples:
 Finally, execute the "*Rules from protein-small compounds.ipynb*" to obtain the
 *Rules* to model the defined interaction network. The complete rule-based
 model can be found in the arabinose folder from the Network Biology Lab
-GitHub repository `here <https://github.com/networkbiolab/atlas/blob/master/arabinose/Model%20arabinose%20operon%20Met%20%2B%20PPI%20%2B%20TXTL.ipynb>`_.
+GitHub repository `here <https://github.com/networkbiolab/atlas/blob/master/arabinose/Model%20arabinose%20operon%20Met%20%2B%20PPI%20%2B%20TXTL%20%2B%20GRN.ipynb>`_.
 
 .. code:: python3
 
