@@ -6,7 +6,7 @@ The PySB python package could export to different languages
 Use the following code to export to BioNetGen and *kappa* language, putting
 it at the end of the main code.
 
-.. code-block:: bash
+.. code-block:: python3
 
 	from pysb.export import export
 	with open('model.kappa', 'w') as outfile:
