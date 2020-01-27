@@ -146,17 +146,19 @@ GitHub repository `here <https://github.com/networkbiolab/atlas/blob/master/arab
 	must be set to zero to define an irreversible reaction.
 
 .. note::
-	**Uniqueness of Rule names** Atlas will write *Rules* for unique
-	metabolic reactions. Identical names will be reported for further curation.
+	**Uniqueness of Rule names**. Atlas will write *Rules* with numbered
+	names. Use only one file to model the many interactions the system has.
 
 .. note::
 	**Simulation**. The model can be simulated only with the instantiation of
 	``Monomers`` and ``Initials`` (`More here <https://pysb.readthedocs.io/en/stable/tutorial.html#introduction>`_).
 	Run *Monomer+Initials+Observables from metabolic network.ipynb* to obtain
 	automatically the necessary ``Monomers`` and ``Initials`` (including
-	proteins and enzymatic complexes).
+	proteins and enzymatic complexes). Manually add the necessary ``Monomers``
+	and ``Initials`` for non-enzymatic proteins.
 
 	**Plotting**. The model can be observed only with the instantation of
 	``Observables`` (`More here <https://pysb.readthedocs.io/en/stable/tutorial.html#simulation-and-analysis>`_).
 	Run *Monomer+Initials+Observables from metabolic network.ipynb* to obtain
-	automatically the all possible ``Observables`` for metabolites.
+	automatically the all possible ``Observables`` for enzymatic proteins. Other
+	observables for proteins should be added manually.
