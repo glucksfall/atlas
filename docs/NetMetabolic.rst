@@ -255,8 +255,8 @@ GitHub repository `here <https://github.com/networkbiolab/atlas/blob/master/lact
 		Parameter('rvs_GALACTOACETYLTRAN_RXN_galactose', 1))
 
 .. note::
-	**Reversibility of reactions**. Atlas writes reversible *Rules* for each
-	reaction declared in the network file. The ``Parameter('rvs_ReactionName', 1))``
+	**Reversibility of Rules**. Atlas writes reversible *Rules* for each
+	reaction declared in the network file. The ``Parameter('rvs_RuleName', 1))``
 	must be set to zero to define an irreversible reaction.
 
 .. note::

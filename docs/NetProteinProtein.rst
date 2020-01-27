@@ -78,7 +78,7 @@ GitHub repository `here <https://github.com/networkbiolab/atlas/blob/master/lact
 		Parameter('rvs_complex_assembly_rule_3', 0))
 
 .. note::
-	**Reversibility of reactions**. Atlas writes irreversible *Rules* for each
+	**Reversibility of Rules**. Atlas writes irreversible *Rules* for each
 	reaction declared in the network file. The ``Parameter('rvs_RuleName', 0))``
 	must be set to non-zero to define an reversible reaction.
 
