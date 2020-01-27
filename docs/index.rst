@@ -16,8 +16,8 @@ exported to text files in *BioNetGen* (`BioNetGenLanguage`_) or *kappa* language
    Installation
    Modeling
    Simulation
-   Export_to
    Plotting
+   Export_to
 
 Indices and tables
 ==================
