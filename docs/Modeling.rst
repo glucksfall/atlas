@@ -4,21 +4,26 @@ Modeling
 Atlas is a modular software with each script centered in a specific biological
 network
 
-1. :ref:`Metabolic-Networks`
+#. :ref:`Net-Metabolic`
 
-2. **Interaction Networks**
+#. **Interaction Networks**
 
-   1. **Protein-Protein**
-   2. **Protein-Small Compounds**
-   3. **Protein-DNA binding sites**
-   4. **Protein-RNA**
-   5. **mRNA-regulatory RNA**
-   6. **Sigma Factors-Promoters**
+   #. :ref:`Net-ProteinProtein`
+   #. :ref:`Net-Protein-SmallCompounds`
+   #. **Protein-RNA Interaction Networks**
+   #. **RNA-RNA Interaction Networks**
+   #. :ref:`Net-TFsDNABindingSites`
+   #. :ref:`Net-SFsPromoters`
 
-3. **Genome graphs**
+#. :ref:`Net-GenomeGraphs`
 
 .. toctree::
    :maxdepth: 3
    :hidden:
 
-   MetabolicNetworks
+   NetMetabolic
+   NetProteinProtein
+   NetProteinSmallCompounds
+   NetTFsDNABindingSites
+   NetSFsPromoters
+   NetGenomeGraphs
