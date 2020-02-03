@@ -41,5 +41,5 @@ Simulation could be done within the PySB python package (See more at `PySB docum
 
 	stdv = 0
 	for i in range(0, runs):
-		stdv = (data[i] - avrg)**2
+		stdv += (data[i] - avrg)**2
 	stdv = (stdv / (runs-1))**0.5
