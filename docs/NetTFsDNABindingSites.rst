@@ -3,262 +3,314 @@
 Transcription Factor-DNA Binding Site Interaction Networks
 ==========================================================
 
-Metabolic networks have four columns. The first declares a unique name for the
-enzyme or enzymatic complex; the second declares a unique name for the reaction;
-the third column lists using comma unique names for substrates; and the last row
-list using comma unique names for products. To declare metabolites located at
-the periplasm or extracellular compartments, the user should employ the prefix
-“PER-” and “EX-”, respectively. Use *spontaneous* for non-enzymatic reactions.
+The transcription factor-DNA binding site network represents the physical
+interaction bewteen proteins and DNA. The network have two columns and for the
+former network, the first column lists using comma all components of a TF
+enclosed in brackets (optionally with small compounds) and in the second column
+declares the DNA binding site. Users should use the prefix “SMALL-” for small
+compounds and the prefix “BS-” to encode DNA binding sites using unique names.
+The second type of GRN shows in the first column the RNA polymerase holoenzyme
+complex (components in brackets) and in the second the promoter. Users should
+name promoters with the gene name followed by the suffix “-pro#” where # is an
+integer.
 
 Examples:
 
 .. code-block:: bash
 
-	spontaneous	LACTOSE-MUTAROTATION	alpha-lactose	beta-lactose
-	spontaneous	GALACTOSE-MUTAROTATION	alpha-GALACTOSE	beta-GALACTOSE
-	spontaneous	GLUCOSE-MUTAROTATION	alpha-glucose	beta-glucose
-	LACY-MONOMER	TRANS-RXN-24	PER-PROTON, PER-alpha-lactose	PROTON, alpha-lactose
-	LACY-MONOMER	TRANS-RXN-24-beta	PER-PROTON, PER-beta-lactose	PROTON, beta-lactose
-	LACY-MONOMER	TRANS-RXN-94	PER-PROTON, PER-MELIBIOSE	PROTON, MELIBIOSE
-	LACY-MONOMER	RXN0-7215	PER-PROTON, PER-CPD-3561	PROTON, CPD-3561
-	LACY-MONOMER	RXN0-7217	PER-PROTON, PER-CPD-3785	PROTON, CPD-3785
-	LACY-MONOMER	RXN-17755	PER-PROTON, PER-CPD-3801	PROTON, CPD-3801
-	BETAGALACTOSID-CPLX	BETAGALACTOSID-RXN	beta-lactose, WATER	beta-GALACTOSE, beta-glucose
-	BETAGALACTOSID-CPLX	BETAGALACTOSID-RXN-alpha	alpha-lactose, WATER	alpha-GALACTOSE, alpha-glucose
-	BETAGALACTOSID-CPLX	RXN0-5363	alpha-lactose	alpha-ALLOLACTOSE
-	BETAGALACTOSID-CPLX	RXN0-5363-beta	beta-lactose	beta-ALLOLACTOSE
-	BETAGALACTOSID-CPLX	ALLOLACTOSE-DEG-alpha	alpha-ALLOLACTOSE	alpha-GALACTOSE, alpha-glucose
-	BETAGALACTOSID-CPLX	ALLOLACTOSE-DEG-beta	beta-ALLOLACTOSE	beta-GALACTOSE, beta-glucose
-	BETAGALACTOSID-CPLX	RXN-17726	CPD-3561, WATER	beta-GALACTOSE, Fructofuranose
-	BETAGALACTOSID-CPLX	RXN0-7219	CPD-3785, WATER	beta-GALACTOSE, D-ARABINOSE
-	GALACTOACETYLTRAN-CPLX	GALACTOACETYLTRAN-RXN-galactose	beta-GALACTOSE, ACETYL-COA	6-Acetyl-beta-D-Galactose, CO-A
+	SOURCE	TARGET
+	# araBAD and araC
+	[crp, SMALL-CAMP, crp, SMALL-CAMP]	BS-83-104
+	[crp, SMALL-CAMP, crp, SMALL-CAMP]	[BS-83-104, BS-araB-pro1]
 
-*OR*
+	araC	BS-35-51
+	araC	BS-56-72
+	araC	BS-109-125
+	araC	BS-130-146
+	araC	BS-267-283
 
-.. code-block:: bash
+	[araC, BS-56-72]	[araC, BS-267-283, BS-araC-pro1]
 
-	spontaneous	LACTOSE-MUTAROTATION	alpha-lactose	beta-lactose
-	spontaneous	GALACTOSE-MUTAROTATION	alpha-GALACTOSE	beta-GALACTOSE
-	spontaneous	GLUCOSE-MUTAROTATION	alpha-glucose	beta-glucose
-	lacY	TRANS-RXN-24	PER-PROTON, PER-alpha-lactose	PROTON, alpha-lactose
-	lacY	TRANS-RXN-24-beta	PER-PROTON, PER-beta-lactose	PROTON, beta-lactose
-	lacY	TRANS-RXN-94	PER-PROTON, PER-MELIBIOSE	PROTON, MELIBIOSE
-	lacY	RXN0-7215	PER-PROTON, PER-CPD-3561	PROTON, CPD-3561
-	lacY	RXN0-7217	PER-PROTON, PER-CPD-3785	PROTON, CPD-3785
-	lacY	RXN-17755	PER-PROTON, PER-CPD-3801	PROTON, CPD-3801
-	[lacZ,lacZ,lacZ,lacZ]	BETAGALACTOSID-RXN	beta-lactose, WATER	beta-GALACTOSE, beta-glucose
-	[lacZ,lacZ,lacZ,lacZ]	BETAGALACTOSID-RXN-alpha	alpha-lactose, WATER	alpha-GALACTOSE, alpha-glucose
-	[lacZ,lacZ,lacZ,lacZ]	RXN0-5363	alpha-lactose	alpha-ALLOLACTOSE
-	[lacZ,lacZ,lacZ,lacZ]	RXN0-5363-beta	beta-lactose	beta-ALLOLACTOSE
-	[lacZ,lacZ,lacZ,lacZ]	ALLOLACTOSE-DEG-alpha	alpha-ALLOLACTOSE, WATER	alpha-GALACTOSE, alpha-glucose
-	[lacZ,lacZ,lacZ,lacZ]	ALLOLACTOSE-DEG-beta	beta-ALLOLACTOSE, WATER	beta-GALACTOSE, beta-glucose
-	[lacZ,lacZ,lacZ,lacZ]	RXN-17726	CPD-3561, WATER	beta-GALACTOSE, Fructofuranose
-	[lacZ,lacZ,lacZ,lacZ]	RXN0-7219	CPD-3785, WATER	beta-GALACTOSE, D-ARABINOSE
-	[lacA,lacA,lacA]	GALACTOACETYLTRAN-RXN-galactose	beta-GALACTOSE, ACETYL-COA	6-Acetyl-beta-D-Galactose, CO-A
+	[araC, SMALL-alpha-L-arabinopyranose]	BS-35-51
+	[araC, BS-56-72]	SMALL-alpha-L-arabinopyranose
+	[araC, BS-267-283]	SMALL-alpha-L-arabinopyranose
 
-*OR*
+	[araC, SMALL-alpha-L-arabinopyranose, BS-56-72]	[araC, SMALL-alpha-L-arabinopyranose, BS-35-51, BS-araB-pro1]
 
-.. code-block:: bash
+	# araFGH
+	[araC, SMALL-alpha-L-arabinopyranose]	BS-158-174
+	[araC, SMALL-alpha-L-arabinopyranose]	BS-137-153
+	[araC, SMALL-alpha-L-arabinopyranose]	BS-83-99
+	[araC, SMALL-alpha-L-arabinopyranose]	BS-62-78
 
-	spontaneous	LACTOSE-MUTAROTATION	alpha-lactose	beta-lactose
-	spontaneous	GALACTOSE-MUTAROTATION	alpha-GALACTOSE	beta-GALACTOSE
-	spontaneous	GLUCOSE-MUTAROTATION	alpha-glucose	beta-glucose
-	lacY	TRANS-RXN-24	PER-PROTON, PER-alpha-lactose	PROTON, alpha-lactose
-	lacY	TRANS-RXN-24-beta	PER-PROTON, PER-beta-lactose	PROTON, beta-lactose
-	lacY	TRANS-RXN-94	PER-PROTON, PER-MELIBIOSE	PROTON, MELIBIOSE
-	lacY	RXN0-7215	PER-PROTON, PER-CPD-3561	PROTON, CPD-3561
-	lacY	RXN0-7217	PER-PROTON, PER-CPD-3785	PROTON, CPD-3785
-	lacY	RXN-17755	PER-PROTON, PER-CPD-3801	PROTON, CPD-3801
-	lacZ	BETAGALACTOSID-RXN	beta-lactose, WATER	beta-GALACTOSE, beta-glucose
-	lacZ	BETAGALACTOSID-RXN-alpha	alpha-lactose, WATER	alpha-GALACTOSE, alpha-glucose
-	lacZ	RXN0-5363	alpha-lactose	alpha-ALLOLACTOSE
-	lacZ	RXN0-5363-beta	beta-lactose	beta-ALLOLACTOSE
-	lacZ	ALLOLACTOSE-DEG-alpha	alpha-ALLOLACTOSE, WATER	alpha-GALACTOSE, alpha-glucose
-	lacZ	ALLOLACTOSE-DEG-beta	beta-ALLOLACTOSE, WATER	beta-GALACTOSE, beta-glucose
-	lacZ	RXN-17726	CPD-3561, WATER	beta-GALACTOSE, Fructofuranose
-	lacZ	RXN0-7219	CPD-3785, WATER	beta-GALACTOSE, D-ARABINOSE
-	lacA	GALACTOACETYLTRAN-RXN-galactose	beta-GALACTOSE, ACETYL-COA	6-Acetyl-beta-D-Galactose, CO-A
+	[araC, SMALL-alpha-L-arabinopyranose, BS-83-99]	[araC, SMALL-alpha-L-arabinopyranose, BS-62-78, BS-araF-pro1]
 
-.. note::
-	**Visualization in Cytoscape.** Transform the four-columns file into a
-	two-columns file with the helper script "*Expand metabolic network.ipynb*", paste
-	the results in a new file, and import the network into Cytoscape. Colors and
-	arrows remains to the user for customization.
+	# araE
+	[araC, SMALL-alpha-L-arabinopyranose]	BS-57-73
+	[araC, SMALL-alpha-L-arabinopyranose]	BS-36-52
 
-	.. image:: Fig_Lactose_MetNetwork.png
+	[araC, SMALL-alpha-L-arabinopyranose, BS-57-73]	[araC, SMALL-alpha-L-arabinopyranose, BS-36-52, BS-araE-pro1]
 
-Finally, execute the "*Rules from metabolic network.ipynb*" to obtain the
-*Rules* to model the defined metabolic network. The complete rule-based
-model can be found in the lactose folder from the Network Biology Lab
-GitHub repository `here <https://github.com/networkbiolab/atlas/blob/master/lactose/Models/Model3%20MetNet%20fully%20automatized.ipynb/>`_.
+Finally, execute the "*Rules from tf-tfbs.ipynb*" to obtain the
+*Rules* to model the defined interaction network. The complete rule-based
+model can be found in the arabinose folder from the Network Biology Lab
+GitHub repository `here <https://github.com/networkbiolab/atlas/blob/master/arabinose/Model%20arabinose%20operon%20Met%20%2B%20PPI%20%2B%20TXTL%20%2B%20GRN.ipynb>`_.
 
 .. code:: python3
 
-	Rule('LACTOSE_MUTAROTATION',
-		met(name = 'alpha_lactose', loc = 'cyt') |
-		met(name = 'beta_lactose', loc = 'cyt'),
-		Parameter('fwd_LACTOSE_MUTAROTATION', 1),
-		Parameter('rvs_LACTOSE_MUTAROTATION', 1))
+	# [crp, SMALL_CAMP, crp, SMALL_CAMP] interacts with BS_83_104
+	Rule('TranscriptionFactorMet_AssemblyRule_1',
+		prot(name = 'crp', dna = None, met = 2, up = None, dw = 1) %
+		met(name = 'CAMP', prot = 3) %
+		prot(name = 'crp', dna = None, met = 3, up = 1, dw = None) %
+		met(name = 'CAMP', prot = 2) +
+		dna(name = 'BS_83_104', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'crp', dna = None, met = 2, up = None, dw = 1) %
+		met(name = 'CAMP', prot = 3) %
+		prot(name = 'crp', dna = 4, met = 3, up = 1, dw = None) %
+		met(name = 'CAMP', prot = 2) %
+		dna(name = 'BS_83_104', prot = 4, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_TranscriptionFactorMet_AssemblyRule_1', 0),
+		Parameter('rvs_TranscriptionFactorMet_AssemblyRule_1', 0))
 
-	Rule('GALACTOSE_MUTAROTATION',
-		met(name = 'alpha_GALACTOSE', loc = 'cyt') |
-		met(name = 'beta_GALACTOSE', loc = 'cyt'),
-		Parameter('fwd_GALACTOSE_MUTAROTATION', 1),
-		Parameter('rvs_GALACTOSE_MUTAROTATION', 1))
+	# [crp, SMALL_CAMP, crp, SMALL_CAMP] interacts with [BS_83_104, BS_araB_pro1]
+	Rule('TranscriptionFactorMet_AssemblyRule_2',
+		prot(name = 'crp', dna = None, met = 2, up = None, dw = 1) %
+		met(name = 'CAMP', prot = 3) %
+		prot(name = 'crp', dna = None, met = 3, up = 1, dw = None) %
+		met(name = 'CAMP', prot = 2) +
+		dna(name = 'BS_83_104', prot = None, free = 'True', up = WILD, dw = WILD) %
+		dna(name = 'araB', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'crp', dna = None, met = 2, up = None, dw = 1) %
+		met(name = 'CAMP', prot = 3) %
+		prot(name = 'crp', dna = 4, met = 3, up = 1, dw = None) %
+		met(name = 'CAMP', prot = 2) %
+		dna(name = 'BS_83_104', prot = 4, free = 'False', up = WILD, dw = WILD) %
+		dna(name = 'araB', type = 'pro1', prot = None, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_TranscriptionFactorMet_AssemblyRule_2', 0),
+		Parameter('rvs_TranscriptionFactorMet_AssemblyRule_2', 0))
 
-	Rule('GLUCOSE_MUTAROTATION',
-		met(name = 'alpha_glucose', loc = 'cyt') |
-		met(name = 'beta_glucose', loc = 'cyt'),
-		Parameter('fwd_GLUCOSE_MUTAROTATION', 1),
-		Parameter('rvs_GLUCOSE_MUTAROTATION', 1))
+	# araC interacts with BS_35_51
+	Rule('TranscriptionFactorMet_AssemblyRule_3',
+		prot(name = 'araC', dna = None, met = None, up = None, dw = None) +
+		dna(name = 'BS_35_51', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'araC', dna = 1, met = None, up = None, dw = None) %
+		dna(name = 'BS_35_51', prot = 1, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_TranscriptionFactorMet_AssemblyRule_3', 0),
+		Parameter('rvs_TranscriptionFactorMet_AssemblyRule_3', 0))
 
-	Rule('TRANS_RXN_24',
-		prot(name = 'LACY_MONOMER') +
-		met(name = 'PROTON', loc = 'per') +
-		met(name = 'alpha_lactose', loc = 'per') |
-		prot(name = 'LACY_MONOMER') +
-		met(name = 'PROTON', loc = 'cyt') +
-		met(name = 'alpha_lactose', loc = 'cyt'),
-		Parameter('fwd_TRANS_RXN_24', 1),
-		Parameter('rvs_TRANS_RXN_24', 1))
+	# araC interacts with BS_56_72
+	Rule('TranscriptionFactorMet_AssemblyRule_4',
+		prot(name = 'araC', dna = None, met = None, up = None, dw = None) +
+		dna(name = 'BS_56_72', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'araC', dna = 1, met = None, up = None, dw = None) %
+		dna(name = 'BS_56_72', prot = 1, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_TranscriptionFactorMet_AssemblyRule_4', 0),
+		Parameter('rvs_TranscriptionFactorMet_AssemblyRule_4', 0))
 
-	Rule('TRANS_RXN_24_beta',
-		prot(name = 'LACY_MONOMER') +
-		met(name = 'PROTON', loc = 'per') +
-		met(name = 'beta_lactose', loc = 'per') |
-		prot(name = 'LACY_MONOMER') +
-		met(name = 'PROTON', loc = 'cyt') +
-		met(name = 'beta_lactose', loc = 'cyt'),
-		Parameter('fwd_TRANS_RXN_24_beta', 1),
-		Parameter('rvs_TRANS_RXN_24_beta', 1))
+	# araC interacts with BS_109_125
+	Rule('TranscriptionFactorMet_AssemblyRule_5',
+		prot(name = 'araC', dna = None, met = None, up = None, dw = None) +
+		dna(name = 'BS_109_125', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'araC', dna = 1, met = None, up = None, dw = None) %
+		dna(name = 'BS_109_125', prot = 1, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_TranscriptionFactorMet_AssemblyRule_5', 0),
+		Parameter('rvs_TranscriptionFactorMet_AssemblyRule_5', 0))
 
-	Rule('TRANS_RXN_94',
-		prot(name = 'LACY_MONOMER') +
-		met(name = 'PROTON', loc = 'per') +
-		met(name = 'MELIBIOSE', loc = 'per') |
-		prot(name = 'LACY_MONOMER') +
-		met(name = 'PROTON', loc = 'cyt') +
-		met(name = 'MELIBIOSE', loc = 'cyt'),
-		Parameter('fwd_TRANS_RXN_94', 1),
-		Parameter('rvs_TRANS_RXN_94', 1))
+	# araC interacts with BS_130_146
+	Rule('TranscriptionFactorMet_AssemblyRule_6',
+		prot(name = 'araC', dna = None, met = None, up = None, dw = None) +
+		dna(name = 'BS_130_146', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'araC', dna = 1, met = None, up = None, dw = None) %
+		dna(name = 'BS_130_146', prot = 1, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_TranscriptionFactorMet_AssemblyRule_6', 0),
+		Parameter('rvs_TranscriptionFactorMet_AssemblyRule_6', 0))
 
-	Rule('RXN0_7215', prot(name = 'LACY_MONOMER') +
-		met(name = 'PROTON', loc = 'per') +
-		met(name = 'CPD_3561', loc = 'per') |
-		prot(name = 'LACY_MONOMER') +
-		met(name = 'PROTON', loc = 'cyt') +
-		met(name = 'CPD_3561', loc = 'cyt'),
-		Parameter('fwd_RXN0_7215', 1),
-		Parameter('rvs_RXN0_7215', 1))
+	# araC interacts with BS_267_283
+	Rule('TranscriptionFactorMet_AssemblyRule_7',
+		prot(name = 'araC', dna = None, met = None, up = None, dw = None) +
+		dna(name = 'BS_267_283', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'araC', dna = 1, met = None, up = None, dw = None) %
+		dna(name = 'BS_267_283', prot = 1, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_TranscriptionFactorMet_AssemblyRule_7', 0),
+		Parameter('rvs_TranscriptionFactorMet_AssemblyRule_7', 0))
 
-	Rule('RXN0_7217', prot(name = 'LACY_MONOMER') +
-		met(name = 'PROTON', loc = 'per') +
-		met(name = 'CPD_3785', loc = 'per') |
-		prot(name = 'LACY_MONOMER') +
-		met(name = 'PROTON', loc = 'cyt') +
-		met(name = 'CPD_3785', loc = 'cyt'),
-		Parameter('fwd_RXN0_7217', 1),
-		Parameter('rvs_RXN0_7217', 1))
+	# [araC, BS_56_72] interacts with [araC, BS_267_283, BS_araC_pro1]
+	Rule('TranscriptionFactorMet_AssemblyRule_8',
+		prot(name = 'araC', dna = 1, met = None, up = None, dw = None) %
+		dna(name = 'BS_56_72', prot = 1, free = 'False', up = WILD, dw = WILD) +
+		prot(name = 'araC', dna = 2, met = None, up = None, dw = None) %
+		dna(name = 'BS_267_283', prot = 2, free = 'False', up = WILD, dw = WILD) %
+		dna(name = 'araC', type = 'pro1', prot = None, free = 'False', up = WILD, dw = WILD) |
+		prot(name = 'araC', dna = None, met = None, up = None, dw = 1) %
+		dna(name = 'BS_56_72', prot = 2, free = 'False', up = WILD, dw = WILD) %
+		prot(name = 'araC', dna = 2, met = None, up = 1, dw = None) %
+		dna(name = 'BS_267_283', prot = None, free = 'False', up = WILD, dw = WILD) %
+		dna(name = 'araC', type = 'pro1', prot = None, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_TranscriptionFactorMet_AssemblyRule_8', 0),
+		Parameter('rvs_TranscriptionFactorMet_AssemblyRule_8', 0))
 
-	Rule('RXN_17755', prot(name = 'LACY_MONOMER') +
-		met(name = 'PROTON', loc = 'per') +
-		met(name = 'CPD_3801', loc = 'per') |
-		prot(name = 'LACY_MONOMER') +
-		met(name = 'PROTON', loc = 'cyt') +
-		met(name = 'CPD_3801', loc = 'cyt'),
-		Parameter('fwd_RXN_17755', 1),
-		Parameter('rvs_RXN_17755', 1))
+	# [araC, SMALL_alpha_L_arabinopyranose] interacts with BS_35_51
+	Rule('TranscriptionFactorMet_AssemblyRule_9',
+		prot(name = 'araC', dna = None, met = 1, up = None, dw = None) %
+		met(name = 'alpha_L_arabinopyranose', prot = 1) +
+		dna(name = 'BS_35_51', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'araC', dna = 2, met = 1, up = None, dw = None) %
+		met(name = 'alpha_L_arabinopyranose', prot = 1) %
+		dna(name = 'BS_35_51', prot = 2, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_TranscriptionFactorMet_AssemblyRule_9', 0),
+		Parameter('rvs_TranscriptionFactorMet_AssemblyRule_9', 0))
 
-	Rule('BETAGALACTOSID_RXN',
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'beta_lactose', loc = 'cyt') +
-		met(name = 'WATER', loc = 'cyt') |
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'beta_GALACTOSE', loc = 'cyt') +
-		met(name = 'beta_glucose', loc = 'cyt'),
-		Parameter('fwd_BETAGALACTOSID_RXN', 1),
-		Parameter('rvs_BETAGALACTOSID_RXN', 1))
+	# [araC, BS_56_72] interacts with SMALL_alpha_L_arabinopyranose
+	Rule('TranscriptionFactorMet_AssemblyRule_10',
+		prot(name = 'araC', dna = 1, met = None, up = None, dw = None) %
+		dna(name = 'BS_56_72', prot = 1, free = 'False', up = WILD, dw = WILD) +
+		met(name = 'alpha_L_arabinopyranose', prot = None) |
+		prot(name = 'araC', dna = 2, met = 1, up = None, dw = None) %
+		dna(name = 'BS_56_72', prot = 2, free = 'False', up = WILD, dw = WILD) %
+		met(name = 'alpha_L_arabinopyranose', prot = 1),
+		Parameter('fwd_TranscriptionFactorMet_AssemblyRule_10', 0),
+		Parameter('rvs_TranscriptionFactorMet_AssemblyRule_10', 0))
 
-	Rule('BETAGALACTOSID_RXN_alpha',
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'alpha_lactose', loc = 'cyt') +
-		met(name = 'WATER', loc = 'cyt') |
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'alpha_GALACTOSE', loc = 'cyt') +
-		met(name = 'alpha_glucose', loc = 'cyt'),
-		Parameter('fwd_BETAGALACTOSID_RXN_alpha', 1),
-		Parameter('rvs_BETAGALACTOSID_RXN_alpha', 1))
+	# [araC, BS_267_283] interacts with SMALL_alpha_L_arabinopyranose
+	Rule('TranscriptionFactorMet_AssemblyRule_11',
+		prot(name = 'araC', dna = 1, met = None, up = None, dw = None) %
+		dna(name = 'BS_267_283', prot = 1, free = 'False', up = WILD, dw = WILD) +
+		met(name = 'alpha_L_arabinopyranose', prot = None) |
+		prot(name = 'araC', dna = 2, met = 1, up = None, dw = None) %
+		dna(name = 'BS_267_283', prot = 2, free = 'False', up = WILD, dw = WILD) %
+		met(name = 'alpha_L_arabinopyranose', prot = 1),
+		Parameter('fwd_TranscriptionFactorMet_AssemblyRule_11', 0),
+		Parameter('rvs_TranscriptionFactorMet_AssemblyRule_11', 0))
 
-	Rule('RXN0_5363',
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'alpha_lactose', loc = 'cyt') |
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'alpha_ALLOLACTOSE', loc = 'cyt'),
-		Parameter('fwd_RXN0_5363', 1),
-		Parameter('rvs_RXN0_5363', 1))
+	# [araC, SMALL_alpha_L_arabinopyranose, BS_56_72] interacts with [araC, SMALL_alpha_L_arabinopyranose, BS_35_51, BS_araB_pro1]
+	Rule('TranscriptionFactorMet_AssemblyRule_12',
+		prot(name = 'araC', dna = 2, met = 1, up = None, dw = None) %
+		met(name = 'alpha_L_arabinopyranose', prot = 1) %
+		dna(name = 'BS_56_72', prot = 2, free = 'False', up = WILD, dw = WILD) +
+		prot(name = 'araC', dna = 4, met = 3, up = None, dw = None) %
+		met(name = 'alpha_L_arabinopyranose', prot = 3) %
+		dna(name = 'BS_35_51', prot = 4, free = 'False', up = WILD, dw = WILD) %
+		dna(name = 'araB', type = 'pro1', prot = None, free = 'False', up = WILD, dw = WILD) |
+		prot(name = 'araC', dna = None, met = 2, up = None, dw = 1) %
+		met(name = 'alpha_L_arabinopyranose', prot = 3) %
+		dna(name = 'BS_56_72', prot = 4, free = 'False', up = WILD, dw = WILD) %
+		prot(name = 'araC', dna = 4, met = 3, up = 1, dw = None) %
+		met(name = 'alpha_L_arabinopyranose', prot = 2) %
+		dna(name = 'BS_35_51', prot = None, free = 'False', up = WILD, dw = WILD) %
+		dna(name = 'araB', type = 'pro1', prot = None, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_TranscriptionFactorMet_AssemblyRule_12', 0),
+		Parameter('rvs_TranscriptionFactorMet_AssemblyRule_12', 0))
 
-	Rule('RXN0_5363_beta',
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'beta_lactose', loc = 'cyt') |
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'beta_ALLOLACTOSE', loc = 'cyt'),
-		Parameter('fwd_RXN0_5363_beta', 1),
-		Parameter('rvs_RXN0_5363_beta', 1))
+	# [araC, SMALL_alpha_L_arabinopyranose] interacts with BS_158_174
+	Rule('TranscriptionFactorMet_AssemblyRule_13',
+		prot(name = 'araC', dna = None, met = 1, up = None, dw = None) %
+		met(name = 'alpha_L_arabinopyranose', prot = 1) +
+		dna(name = 'BS_158_174', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'araC', dna = 2, met = 1, up = None, dw = None) %
+		met(name = 'alpha_L_arabinopyranose', prot = 1) %
+		dna(name = 'BS_158_174', prot = 2, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_TranscriptionFactorMet_AssemblyRule_13', 0),
+		Parameter('rvs_TranscriptionFactorMet_AssemblyRule_13', 0))
 
-	Rule('ALLOLACTOSE_DEG_alpha',
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'alpha_ALLOLACTOSE', loc = 'cyt') |
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'alpha_GALACTOSE', loc = 'cyt'),
-		Parameter('fwd_ALLOLACTOSE_DEG_alpha', 1),
-		Parameter('rvs_ALLOLACTOSE_DEG_alpha', 1))
+	# [araC, SMALL_alpha_L_arabinopyranose] interacts with BS_137_153
+	Rule('TranscriptionFactorMet_AssemblyRule_14',
+		prot(name = 'araC', dna = None, met = 1, up = None, dw = None) %
+		met(name = 'alpha_L_arabinopyranose', prot = 1) +
+		dna(name = 'BS_137_153', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'araC', dna = 2, met = 1, up = None, dw = None) %
+		met(name = 'alpha_L_arabinopyranose', prot = 1) %
+		dna(name = 'BS_137_153', prot = 2, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_TranscriptionFactorMet_AssemblyRule_14', 0),
+		Parameter('rvs_TranscriptionFactorMet_AssemblyRule_14', 0))
 
-	Rule('ALLOLACTOSE_DEG_beta',
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'beta_ALLOLACTOSE', loc = 'cyt') |
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'beta_GALACTOSE', loc = 'cyt'),
-		Parameter('fwd_ALLOLACTOSE_DEG_beta', 1),
-		Parameter('rvs_ALLOLACTOSE_DEG_beta', 1))
+	# [araC, SMALL_alpha_L_arabinopyranose] interacts with BS_83_99
+	Rule('TranscriptionFactorMet_AssemblyRule_15',
+		prot(name = 'araC', dna = None, met = 1, up = None, dw = None) %
+		met(name = 'alpha_L_arabinopyranose', prot = 1) +
+		dna(name = 'BS_83_99', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'araC', dna = 2, met = 1, up = None, dw = None) %
+		met(name = 'alpha_L_arabinopyranose', prot = 1) %
+		dna(name = 'BS_83_99', prot = 2, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_TranscriptionFactorMet_AssemblyRule_15', 0),
+		Parameter('rvs_TranscriptionFactorMet_AssemblyRule_15', 0))
 
-	Rule('RXN_17726',
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'CPD_3561', loc = 'cyt') +
-		met(name = 'WATER', loc = 'cyt') |
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'beta_GALACTOSE', loc = 'cyt') +
-		met(name = 'Fructofuranose', loc = 'cyt'),
-		Parameter('fwd_RXN_17726', 1),
-		Parameter('rvs_RXN_17726', 1))
+	# [araC, SMALL_alpha_L_arabinopyranose] interacts with BS_62_78
+	Rule('TranscriptionFactorMet_AssemblyRule_16',
+		prot(name = 'araC', dna = None, met = 1, up = None, dw = None) %
+		met(name = 'alpha_L_arabinopyranose', prot = 1) +
+		dna(name = 'BS_62_78', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'araC', dna = 2, met = 1, up = None, dw = None) %
+		met(name = 'alpha_L_arabinopyranose', prot = 1) %
+		dna(name = 'BS_62_78', prot = 2, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_TranscriptionFactorMet_AssemblyRule_16', 0),
+		Parameter('rvs_TranscriptionFactorMet_AssemblyRule_16', 0))
 
-	Rule('RXN0_7219',
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'CPD_3785', loc = 'cyt') +
-		met(name = 'WATER', loc = 'cyt') |
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'beta_GALACTOSE', loc = 'cyt') +
-		met(name = 'D_ARABINOSE', loc = 'cyt'),
-		Parameter('fwd_RXN0_7219', 1),
-		Parameter('rvs_RXN0_7219', 1))
+	# [araC, SMALL_alpha_L_arabinopyranose, BS_83_99] interacts with [araC, SMALL_alpha_L_arabinopyranose, BS_62_78, BS_araF_pro1]
+	Rule('TranscriptionFactorMet_AssemblyRule_17',
+		prot(name = 'araC', dna = 2, met = 1, up = None, dw = None) %
+		met(name = 'alpha_L_arabinopyranose', prot = 1) %
+		dna(name = 'BS_83_99', prot = 2, free = 'False', up = WILD, dw = WILD) +
+		prot(name = 'araC', dna = 4, met = 3, up = None, dw = None) %
+		met(name = 'alpha_L_arabinopyranose', prot = 3) %
+		dna(name = 'BS_62_78', prot = 4, free = 'False', up = WILD, dw = WILD) %
+		dna(name = 'araF', type = 'pro1', prot = None, free = 'False', up = WILD, dw = WILD) |
+		prot(name = 'araC', dna = None, met = 2, up = None, dw = 1) %
+		met(name = 'alpha_L_arabinopyranose', prot = 3) %
+		dna(name = 'BS_83_99', prot = 4, free = 'False', up = WILD, dw = WILD) %
+		prot(name = 'araC', dna = 4, met = 3, up = 1, dw = None) %
+		met(name = 'alpha_L_arabinopyranose', prot = 2) %
+		dna(name = 'BS_62_78', prot = None, free = 'False', up = WILD, dw = WILD) %
+		dna(name = 'araF', type = 'pro1', prot = None, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_TranscriptionFactorMet_AssemblyRule_17', 0),
+		Parameter('rvs_TranscriptionFactorMet_AssemblyRule_17', 0))
 
-	Rule('GALACTOACETYLTRAN_RXN_galactose',
-		cplx(name = 'GALACTOACETYLTRAN_CPLX') +
-		met(name = 'beta_GALACTOSE', loc = 'cyt') +
-		met(name = 'ACETYL_COA', loc = 'cyt') |
-		cplx(name = 'GALACTOACETYLTRAN_CPLX') +
-		met(name = '_6_Acetyl_beta_D_Galactose', loc = 'cyt') +
-		met(name = 'CO_A', loc = 'cyt'),
-		Parameter('fwd_GALACTOACETYLTRAN_RXN_galactose', 1),
-		Parameter('rvs_GALACTOACETYLTRAN_RXN_galactose', 1))
+	# [araC, SMALL_alpha_L_arabinopyranose] interacts with BS_57_73
+	Rule('TranscriptionFactorMet_AssemblyRule_18',
+		prot(name = 'araC', dna = None, met = 1, up = None, dw = None) %
+		met(name = 'alpha_L_arabinopyranose', prot = 1) +
+		dna(name = 'BS_57_73', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'araC', dna = 2, met = 1, up = None, dw = None) %
+		met(name = 'alpha_L_arabinopyranose', prot = 1) %
+		dna(name = 'BS_57_73', prot = 2, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_TranscriptionFactorMet_AssemblyRule_18', 0),
+		Parameter('rvs_TranscriptionFactorMet_AssemblyRule_18', 0))
+
+	# [araC, SMALL_alpha_L_arabinopyranose] interacts with BS_36_52
+	Rule('TranscriptionFactorMet_AssemblyRule_19',
+		prot(name = 'araC', dna = None, met = 1, up = None, dw = None) %
+		met(name = 'alpha_L_arabinopyranose', prot = 1) +
+		dna(name = 'BS_36_52', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'araC', dna = 2, met = 1, up = None, dw = None) %
+		met(name = 'alpha_L_arabinopyranose', prot = 1) %
+		dna(name = 'BS_36_52', prot = 2, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_TranscriptionFactorMet_AssemblyRule_19', 0),
+		Parameter('rvs_TranscriptionFactorMet_AssemblyRule_19', 0))
+
+	# [araC, SMALL_alpha_L_arabinopyranose, BS_57_73] interacts with [araC, SMALL_alpha_L_arabinopyranose, BS_36_52, BS_araE_pro1]
+	Rule('TranscriptionFactorMet_AssemblyRule_20',
+		prot(name = 'araC', dna = 2, met = 1, up = None, dw = None) %
+		met(name = 'alpha_L_arabinopyranose', prot = 1) %
+		dna(name = 'BS_57_73', prot = 2, free = 'False', up = WILD, dw = WILD) +
+		prot(name = 'araC', dna = 4, met = 3, up = None, dw = None) %
+		met(name = 'alpha_L_arabinopyranose', prot = 3) %
+		dna(name = 'BS_36_52', prot = 4, free = 'False', up = WILD, dw = WILD) %
+		dna(name = 'araE', type = 'pro1', prot = None, free = 'False', up = WILD, dw = WILD) |
+		prot(name = 'araC', dna = None, met = 2, up = None, dw = 1) %
+		met(name = 'alpha_L_arabinopyranose', prot = 3) %
+		dna(name = 'BS_57_73', prot = 4, free = 'False', up = WILD, dw = WILD) %
+		prot(name = 'araC', dna = 4, met = 3, up = 1, dw = None) %
+		met(name = 'alpha_L_arabinopyranose', prot = 2) %
+		dna(name = 'BS_36_52', prot = None, free = 'False', up = WILD, dw = WILD) %
+		dna(name = 'araE', type = 'pro1', prot = None, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_TranscriptionFactorMet_AssemblyRule_20', 0),
+		Parameter('rvs_TranscriptionFactorMet_AssemblyRule_20', 0))
 
 .. note::
-	**Reversibility of reactions**. Atlas writes reversible *Rules* for each
-	reaction declared in the network file. The ``Parameter('rvs_ReactionName', 1))``
-	must be set to zero to define an irreversible reaction.
-
-.. note::
-	**Uniqueness of reactions names** Atlas will write *Rules* for unique
-	metabolic reactions. Identical names will be reported for further curation.
+	**Reversibility of reactions**. Atlas writes dead *Rules* for each
+	reaction declared in the network file. The ``Parameter('fwd_ReactionName', 0))``
+	must be set to non-zero to activate the rule and ``Parameter('rvs_ReactionName', 0))``
+	must be set to non-zero to define a reversible reaction.
 
 .. note::
 	**Simulation**. The model can be simulated only with the instantiation of
