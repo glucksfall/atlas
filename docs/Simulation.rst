@@ -8,8 +8,7 @@ documentation
 <https://pysb.readthedocs.io/en/stable/tutorial.html#simulation-and-analysis>`_)
 . Here is the relevant code that able the simulation of any PySB model, albeit
 PySB exports the model, calls the simulator, and imports the results under the
-hood. (See
-:ref:`Plotting-page` for a simple example on how to plot simulation results.
+hood. See :ref:`Plotting-page` for a simple example on how to plot simulation results.
 
 .. code-block:: python3
 
