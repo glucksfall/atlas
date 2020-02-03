@@ -9,180 +9,532 @@ Examples:
 
 .. code-block:: bash
 
+	SOURCE	TARGET
+	# Docking to promoters
+	[rpoA, rpoA, rpoB, rpoC, rpoD]	BS-rpoA-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoD]	BS-rpoB-pro1
+	# [rpoA, rpoA, rpoB, rpoC, rpoD]	BS-rpoC-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoD]	BS-rpoD-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoD]	BS-rpoE-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoD]	BS-rpoH-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoD]	BS-rpoN-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoD]	BS-rpoS-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoD]	BS-fliA-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoD]	BS-fecI-pro1
 
+	[rpoA, rpoA, rpoB, rpoC, rpoE]	BS-rpoD-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoE]	BS-rpoE-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoE]	BS-rpoH-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoE]	BS-rpoN-pro1
 
-Finally, execute the "*Rules from metabolic network.ipynb*" to obtain the
-*Rules* to model the defined metabolic network. The complete rule-based
-model can be found in the lactose folder from the Network Biology Lab
-GitHub repository `here <https://github.com/networkbiolab/atlas/blob/master/lactose/Models/Model3%20MetNet%20fully%20automatized.ipynb/>`_.
+	[rpoA, rpoA, rpoB, rpoC, rpoH]	BS-rpoA-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoH]	BS-rpoD-pro1
+
+	[rpoA, rpoA, rpoB, rpoC, rpoN]	BS-rpoA-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoN]	BS-rpoD-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoN]	BS-rpoH-pro1
+
+	[rpoA, rpoA, rpoB, rpoC, rpoS]	BS-fecI-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoS]	BS-rpoA-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoS]	BS-rpoB-pro1
+	# [rpoA, rpoA, rpoB, rpoC, rpoS]	BS-rpoC-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoS]	BS-rpoD-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoS]	BS-rpoE-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoS]	BS-rpoH-pro1
+	[rpoA, rpoA, rpoB, rpoC, rpoS]	BS-rpoN-pro1
+
+	[rpoA, rpoA, rpoB, rpoC, fliA]	BS-rpoD-pro1
+	[rpoA, rpoA, rpoB, rpoC, fliA]	BS-rpoN-pro1
+	[rpoA, rpoA, rpoB, rpoC, fliA]	BS-fliA-pro1
+
+Finally, execute the "*Rules from SigmaFactors x Architecture.ipynb*" to obtain the
+*Rules* to model the defined interaction network. The complete rule-based
+model can be found in the sigma folder from the Network Biology Lab
+GitHub repository `here <https://github.com/networkbiolab/atlas/blob/master/sigma/Model%20sigma.ipynb/>`_.
 
 .. code:: python3
 
-	Rule('LACTOSE_MUTAROTATION',
-		met(name = 'alpha_lactose', loc = 'cyt') |
-		met(name = 'beta_lactose', loc = 'cyt'),
-		Parameter('fwd_LACTOSE_MUTAROTATION', 1),
-		Parameter('rvs_LACTOSE_MUTAROTATION', 1))
+	# [rpoA, rpoA, rpoB, rpoC, rpoD] interacts with BS_rpoA_pro1
+	Rule('docking_1_rpoA_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoD', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'rpoA', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoD', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'rpoA', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_1_rpoA_pro1', 0),
+		Parameter('rvs_docking_1_rpoA_pro1', 0))
 
-	Rule('GALACTOSE_MUTAROTATION',
-		met(name = 'alpha_GALACTOSE', loc = 'cyt') |
-		met(name = 'beta_GALACTOSE', loc = 'cyt'),
-		Parameter('fwd_GALACTOSE_MUTAROTATION', 1),
-		Parameter('rvs_GALACTOSE_MUTAROTATION', 1))
+	# [rpoA, rpoA, rpoB, rpoC, rpoD] interacts with BS_rpoB_pro1
+	Rule('docking_2_rpoB_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoD', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'rpoB', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoD', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'rpoB', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_2_rpoB_pro1', 0),
+		Parameter('rvs_docking_2_rpoB_pro1', 0))
 
-	Rule('GLUCOSE_MUTAROTATION',
-		met(name = 'alpha_glucose', loc = 'cyt') |
-		met(name = 'beta_glucose', loc = 'cyt'),
-		Parameter('fwd_GLUCOSE_MUTAROTATION', 1),
-		Parameter('rvs_GLUCOSE_MUTAROTATION', 1))
+	# [rpoA, rpoA, rpoB, rpoC, rpoD] interacts with BS_rpoD_pro1
+	Rule('docking_3_rpoD_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoD', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'rpoD', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoD', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'rpoD', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_3_rpoD_pro1', 0),
+		Parameter('rvs_docking_3_rpoD_pro1', 0))
 
-	Rule('TRANS_RXN_24',
-		prot(name = 'LACY_MONOMER') +
-		met(name = 'PROTON', loc = 'per') +
-		met(name = 'alpha_lactose', loc = 'per') |
-		prot(name = 'LACY_MONOMER') +
-		met(name = 'PROTON', loc = 'cyt') +
-		met(name = 'alpha_lactose', loc = 'cyt'),
-		Parameter('fwd_TRANS_RXN_24', 1),
-		Parameter('rvs_TRANS_RXN_24', 1))
+	# [rpoA, rpoA, rpoB, rpoC, rpoD] interacts with BS_rpoE_pro1
+	Rule('docking_4_rpoE_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoD', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'rpoE', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoD', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'rpoE', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_4_rpoE_pro1', 0),
+		Parameter('rvs_docking_4_rpoE_pro1', 0))
 
-	Rule('TRANS_RXN_24_beta',
-		prot(name = 'LACY_MONOMER') +
-		met(name = 'PROTON', loc = 'per') +
-		met(name = 'beta_lactose', loc = 'per') |
-		prot(name = 'LACY_MONOMER') +
-		met(name = 'PROTON', loc = 'cyt') +
-		met(name = 'beta_lactose', loc = 'cyt'),
-		Parameter('fwd_TRANS_RXN_24_beta', 1),
-		Parameter('rvs_TRANS_RXN_24_beta', 1))
+	# [rpoA, rpoA, rpoB, rpoC, rpoD] interacts with BS_rpoH_pro1
+	Rule('docking_5_rpoH_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoD', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'rpoH', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoD', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'rpoH', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_5_rpoH_pro1', 0),
+		Parameter('rvs_docking_5_rpoH_pro1', 0))
 
-	Rule('TRANS_RXN_94',
-		prot(name = 'LACY_MONOMER') +
-		met(name = 'PROTON', loc = 'per') +
-		met(name = 'MELIBIOSE', loc = 'per') |
-		prot(name = 'LACY_MONOMER') +
-		met(name = 'PROTON', loc = 'cyt') +
-		met(name = 'MELIBIOSE', loc = 'cyt'),
-		Parameter('fwd_TRANS_RXN_94', 1),
-		Parameter('rvs_TRANS_RXN_94', 1))
+	# [rpoA, rpoA, rpoB, rpoC, rpoD] interacts with BS_rpoN_pro1
+	Rule('docking_6_rpoN_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoD', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'rpoN', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoD', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'rpoN', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_6_rpoN_pro1', 0),
+		Parameter('rvs_docking_6_rpoN_pro1', 0))
 
-	Rule('RXN0_7215', prot(name = 'LACY_MONOMER') +
-		met(name = 'PROTON', loc = 'per') +
-		met(name = 'CPD_3561', loc = 'per') |
-		prot(name = 'LACY_MONOMER') +
-		met(name = 'PROTON', loc = 'cyt') +
-		met(name = 'CPD_3561', loc = 'cyt'),
-		Parameter('fwd_RXN0_7215', 1),
-		Parameter('rvs_RXN0_7215', 1))
+	# [rpoA, rpoA, rpoB, rpoC, rpoD] interacts with BS_rpoS_pro1
+	Rule('docking_7_rpoS_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoD', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'rpoS', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoD', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'rpoS', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_7_rpoS_pro1', 0),
+		Parameter('rvs_docking_7_rpoS_pro1', 0))
 
-	Rule('RXN0_7217', prot(name = 'LACY_MONOMER') +
-		met(name = 'PROTON', loc = 'per') +
-		met(name = 'CPD_3785', loc = 'per') |
-		prot(name = 'LACY_MONOMER') +
-		met(name = 'PROTON', loc = 'cyt') +
-		met(name = 'CPD_3785', loc = 'cyt'),
-		Parameter('fwd_RXN0_7217', 1),
-		Parameter('rvs_RXN0_7217', 1))
+	# [rpoA, rpoA, rpoB, rpoC, rpoD] interacts with BS_fliA_pro1
+	Rule('docking_8_fliA_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoD', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'fliA', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoD', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'fliA', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_8_fliA_pro1', 0),
+		Parameter('rvs_docking_8_fliA_pro1', 0))
 
-	Rule('RXN_17755', prot(name = 'LACY_MONOMER') +
-		met(name = 'PROTON', loc = 'per') +
-		met(name = 'CPD_3801', loc = 'per') |
-		prot(name = 'LACY_MONOMER') +
-		met(name = 'PROTON', loc = 'cyt') +
-		met(name = 'CPD_3801', loc = 'cyt'),
-		Parameter('fwd_RXN_17755', 1),
-		Parameter('rvs_RXN_17755', 1))
+	# [rpoA, rpoA, rpoB, rpoC, rpoD] interacts with BS_fecI_pro1
+	Rule('docking_9_fecI_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoD', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'fecI', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoD', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'fecI', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_9_fecI_pro1', 0),
+		Parameter('rvs_docking_9_fecI_pro1', 0))
 
-	Rule('BETAGALACTOSID_RXN',
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'beta_lactose', loc = 'cyt') +
-		met(name = 'WATER', loc = 'cyt') |
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'beta_GALACTOSE', loc = 'cyt') +
-		met(name = 'beta_glucose', loc = 'cyt'),
-		Parameter('fwd_BETAGALACTOSID_RXN', 1),
-		Parameter('rvs_BETAGALACTOSID_RXN', 1))
+	# [rpoA, rpoA, rpoB, rpoC, rpoE] interacts with BS_rpoD_pro1
+	Rule('docking_10_rpoD_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoE', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'rpoD', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoE', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'rpoD', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_10_rpoD_pro1', 0),
+		Parameter('rvs_docking_10_rpoD_pro1', 0))
 
-	Rule('BETAGALACTOSID_RXN_alpha',
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'alpha_lactose', loc = 'cyt') +
-		met(name = 'WATER', loc = 'cyt') |
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'alpha_GALACTOSE', loc = 'cyt') +
-		met(name = 'alpha_glucose', loc = 'cyt'),
-		Parameter('fwd_BETAGALACTOSID_RXN_alpha', 1),
-		Parameter('rvs_BETAGALACTOSID_RXN_alpha', 1))
+	# [rpoA, rpoA, rpoB, rpoC, rpoE] interacts with BS_rpoE_pro1
+	Rule('docking_11_rpoE_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoE', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'rpoE', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoE', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'rpoE', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_11_rpoE_pro1', 0),
+		Parameter('rvs_docking_11_rpoE_pro1', 0))
 
-	Rule('RXN0_5363',
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'alpha_lactose', loc = 'cyt') |
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'alpha_ALLOLACTOSE', loc = 'cyt'),
-		Parameter('fwd_RXN0_5363', 1),
-		Parameter('rvs_RXN0_5363', 1))
+	# [rpoA, rpoA, rpoB, rpoC, rpoE] interacts with BS_rpoH_pro1
+	Rule('docking_12_rpoH_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoE', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'rpoH', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoE', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'rpoH', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_12_rpoH_pro1', 0),
+		Parameter('rvs_docking_12_rpoH_pro1', 0))
 
-	Rule('RXN0_5363_beta',
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'beta_lactose', loc = 'cyt') |
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'beta_ALLOLACTOSE', loc = 'cyt'),
-		Parameter('fwd_RXN0_5363_beta', 1),
-		Parameter('rvs_RXN0_5363_beta', 1))
+	# [rpoA, rpoA, rpoB, rpoC, rpoE] interacts with BS_rpoN_pro1
+	Rule('docking_13_rpoN_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoE', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'rpoN', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoE', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'rpoN', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_13_rpoN_pro1', 0),
+		Parameter('rvs_docking_13_rpoN_pro1', 0))
 
-	Rule('ALLOLACTOSE_DEG_alpha',
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'alpha_ALLOLACTOSE', loc = 'cyt') |
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'alpha_GALACTOSE', loc = 'cyt'),
-		Parameter('fwd_ALLOLACTOSE_DEG_alpha', 1),
-		Parameter('rvs_ALLOLACTOSE_DEG_alpha', 1))
+	# [rpoA, rpoA, rpoB, rpoC, rpoH] interacts with BS_rpoA_pro1
+	Rule('docking_14_rpoA_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoH', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'rpoA', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoH', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'rpoA', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_14_rpoA_pro1', 0),
+		Parameter('rvs_docking_14_rpoA_pro1', 0))
 
-	Rule('ALLOLACTOSE_DEG_beta',
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'beta_ALLOLACTOSE', loc = 'cyt') |
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'beta_GALACTOSE', loc = 'cyt'),
-		Parameter('fwd_ALLOLACTOSE_DEG_beta', 1),
-		Parameter('rvs_ALLOLACTOSE_DEG_beta', 1))
+	# [rpoA, rpoA, rpoB, rpoC, rpoH] interacts with BS_rpoD_pro1
+	Rule('docking_15_rpoD_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoH', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'rpoD', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoH', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'rpoD', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_15_rpoD_pro1', 0),
+		Parameter('rvs_docking_15_rpoD_pro1', 0))
 
-	Rule('RXN_17726',
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'CPD_3561', loc = 'cyt') +
-		met(name = 'WATER', loc = 'cyt') |
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'beta_GALACTOSE', loc = 'cyt') +
-		met(name = 'Fructofuranose', loc = 'cyt'),
-		Parameter('fwd_RXN_17726', 1),
-		Parameter('rvs_RXN_17726', 1))
+	# [rpoA, rpoA, rpoB, rpoC, rpoN] interacts with BS_rpoA_pro1
+	Rule('docking_16_rpoA_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoN', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'rpoA', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoN', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'rpoA', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_16_rpoA_pro1', 0),
+		Parameter('rvs_docking_16_rpoA_pro1', 0))
 
-	Rule('RXN0_7219',
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'CPD_3785', loc = 'cyt') +
-		met(name = 'WATER', loc = 'cyt') |
-		cplx(name = 'BETAGALACTOSID_CPLX') +
-		met(name = 'beta_GALACTOSE', loc = 'cyt') +
-		met(name = 'D_ARABINOSE', loc = 'cyt'),
-		Parameter('fwd_RXN0_7219', 1),
-		Parameter('rvs_RXN0_7219', 1))
+	# [rpoA, rpoA, rpoB, rpoC, rpoN] interacts with BS_rpoD_pro1
+	Rule('docking_17_rpoD_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoN', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'rpoD', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoN', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'rpoD', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_17_rpoD_pro1', 0),
+		Parameter('rvs_docking_17_rpoD_pro1', 0))
 
-	Rule('GALACTOACETYLTRAN_RXN_galactose',
-		cplx(name = 'GALACTOACETYLTRAN_CPLX') +
-		met(name = 'beta_GALACTOSE', loc = 'cyt') +
-		met(name = 'ACETYL_COA', loc = 'cyt') |
-		cplx(name = 'GALACTOACETYLTRAN_CPLX') +
-		met(name = '_6_Acetyl_beta_D_Galactose', loc = 'cyt') +
-		met(name = 'CO_A', loc = 'cyt'),
-		Parameter('fwd_GALACTOACETYLTRAN_RXN_galactose', 1),
-		Parameter('rvs_GALACTOACETYLTRAN_RXN_galactose', 1))
+	# [rpoA, rpoA, rpoB, rpoC, rpoN] interacts with BS_rpoH_pro1
+	Rule('docking_18_rpoH_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoN', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'rpoH', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoN', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'rpoH', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_18_rpoH_pro1', 0),
+		Parameter('rvs_docking_18_rpoH_pro1', 0))
+
+	# [rpoA, rpoA, rpoB, rpoC, rpoS] interacts with BS_fecI_pro1
+	Rule('docking_19_fecI_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoS', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'fecI', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoS', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'fecI', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_19_fecI_pro1', 0),
+		Parameter('rvs_docking_19_fecI_pro1', 0))
+
+	# [rpoA, rpoA, rpoB, rpoC, rpoS] interacts with BS_rpoA_pro1
+	Rule('docking_20_rpoA_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoS', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'rpoA', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoS', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'rpoA', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_20_rpoA_pro1', 0),
+		Parameter('rvs_docking_20_rpoA_pro1', 0))
+
+	# [rpoA, rpoA, rpoB, rpoC, rpoS] interacts with BS_rpoB_pro1
+	Rule('docking_21_rpoB_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoS', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'rpoB', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoS', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'rpoB', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_21_rpoB_pro1', 0),
+		Parameter('rvs_docking_21_rpoB_pro1', 0))
+
+	# [rpoA, rpoA, rpoB, rpoC, rpoS] interacts with BS_rpoD_pro1
+	Rule('docking_22_rpoD_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoS', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'rpoD', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoS', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'rpoD', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_22_rpoD_pro1', 0),
+		Parameter('rvs_docking_22_rpoD_pro1', 0))
+
+	# [rpoA, rpoA, rpoB, rpoC, rpoS] interacts with BS_rpoE_pro1
+	Rule('docking_23_rpoE_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoS', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'rpoE', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoS', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'rpoE', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_23_rpoE_pro1', 0),
+		Parameter('rvs_docking_23_rpoE_pro1', 0))
+
+	# [rpoA, rpoA, rpoB, rpoC, rpoS] interacts with BS_rpoH_pro1
+	Rule('docking_24_rpoH_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoS', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'rpoH', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoS', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'rpoH', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_24_rpoH_pro1', 0),
+		Parameter('rvs_docking_24_rpoH_pro1', 0))
+
+	# [rpoA, rpoA, rpoB, rpoC, rpoS] interacts with BS_rpoN_pro1
+	Rule('docking_25_rpoN_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoS', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'rpoN', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'rpoS', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'rpoN', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_25_rpoN_pro1', 0),
+		Parameter('rvs_docking_25_rpoN_pro1', 0))
+
+	# [rpoA, rpoA, rpoB, rpoC, fliA] interacts with BS_rpoD_pro1
+	Rule('docking_26_rpoD_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'fliA', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'rpoD', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'fliA', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'rpoD', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_26_rpoD_pro1', 0),
+		Parameter('rvs_docking_26_rpoD_pro1', 0))
+
+	# [rpoA, rpoA, rpoB, rpoC, fliA] interacts with BS_rpoN_pro1
+	Rule('docking_27_rpoN_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'fliA', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'rpoN', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'fliA', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'rpoN', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_27_rpoN_pro1', 0),
+		Parameter('rvs_docking_27_rpoN_pro1', 0))
+
+	# [rpoA, rpoA, rpoB, rpoC, fliA] interacts with BS_fliA_pro1
+	Rule('docking_28_fliA_pro1',
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'fliA', dna = None, met = None, up = 4, dw = None) +
+		dna(name = 'fliA', type = 'pro1', prot = None, free = 'True', up = WILD, dw = WILD) |
+		prot(name = 'rpoA', dna = None, met = None, up = None, dw = 1) %
+		prot(name = 'rpoA', dna = None, met = None, up = 1, dw = 2) %
+		prot(name = 'rpoB', dna = None, met = None, up = 2, dw = 3) %
+		prot(name = 'rpoC', dna = None, met = None, up = 3, dw = 4) %
+		prot(name = 'fliA', dna = 5, met = None, up = 4, dw = None) %
+		dna(name = 'fliA', type = 'pro1', prot = 5, free = 'False', up = WILD, dw = WILD),
+		Parameter('fwd_docking_28_fliA_pro1', 0),
+		Parameter('rvs_docking_28_fliA_pro1', 0))
 
 .. note::
-	**Reversibility of reactions**. Atlas writes reversible *Rules* for each
-	reaction declared in the network file. The ``Parameter('rvs_ReactionName', 1))``
-	must be set to zero to define an irreversible reaction.
-
-.. note::
-	**Uniqueness of reactions names** Atlas will write *Rules* for unique
-	metabolic reactions. Identical names will be reported for further curation.
+	**Reversibility of reactions**. Atlas writes dead *Rules* for each
+	reaction declared in the network file. The ``Parameter('fwd_ReactionName', 0))``
+	must be set to non-zero to activate the rule and ``Parameter('rvs_ReactionName', 0))``
+	must be set to non-zero to define a reversible reaction.
 
 .. note::
 	**Simulation**. The model can be simulated only with the instantiation of
