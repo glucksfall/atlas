@@ -21,11 +21,11 @@ Option 1: Install Atlas natively on your computer
 
 The recommended approach is to use system tools, or install them if
 necessary. To install python packages, you could use pip, or download
-the package from `python package index <https://pypi.org/project/atlas-rbm/>`_.
+the package from the `python package index <https://pypi.org/project/atlas-rbm/>`_.
 
 1. **Install with system tools**
 
-   With pip, you simple need to execute and Atlas will be installed on
+   With pip, you need to execute and Atlas will be installed on
    ``$HOME/.local/lib/python3.6/site-packages`` folder or similar.
 
    .. code-block:: bash
@@ -38,7 +38,7 @@ the package from `python package index <https://pypi.org/project/atlas-rbm/>`_.
 
 	sudo -H pip3 install atlas_rbm
 
-2. **Download from python package index**
+2. **Download from the python package index**
 
    Alternatively, you could download the package (useful when pip fails to download
    the package because of lack of SSL libraries) and then install with pip. For instance:
@@ -75,7 +75,7 @@ Option 2: Clone the Github repository
    `<https://github.com/networkbiolab/atlas>`_. Therefore, you could clone the
    repository locally, and then add the folder to the ``PYTHONPATH``. Beware
    that you should install the *pysb* package (`pysb`_) and others packages
-   by any means, specially the Jupyter notebooks.
+   by any means, specially the Jupyter Notebook project (`<https://jupyter.org>`_).
 
    .. code-block:: bash
 
