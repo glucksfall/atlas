@@ -1,3 +1,5 @@
+.. _Plotting-page:
+
 Plotting
 ========
 
@@ -8,11 +10,15 @@ access the data, the dataframes columns reproduce the names of the ``Observables
 The following example could be adapted to show the dynamics of any ``Observable``.
 
 .. note::
-	Importantly, PySB allows the inspection of the model to find which ``Monomers``
-	(and complexes of monomers) exists in the model, but as the model network-free,
-	the possible complexes are up to the user concern. Atlas produces automatically
-	``Observables`` for metabolites, and other components and complexes could also
-	be observed and plotted.
+	Importantly, PySB allows the inspection of the model to find which
+	``Monomers`` (and complexes of monomers) exists in the model, but as the
+	simulation is network-free, the possible formed complexes are up to the user
+	concern.
+
+.. note::
+	Atlas produces automatically ``Observables`` for metabolites, and other
+	components and complexes could also be observed and plotted, but their
+	declaration in the model is entirely up to the user.
 
 .. code-block:: python3
 
