@@ -9,69 +9,214 @@ DOI:
 __author__  = 'Rodrigo Santibáñez'
 __license__ = 'gpl-3.0'
 
-import argparse, os, pkg_resources, re, shutil, subprocess, sys
-try:
-	import importlib.resources # python3.7 stdlib
-except:
-	import importlib_resources # not part of the stdlib
+from pysb import *
+from pysb.pathfinder import set_path
+from pysb.simulator import ScipyOdeSimulator, BngSimulator
 
-def argsparser():
-	parser = argparse.ArgumentParser(description = 'Reconstruction of Rule-Based Models from biological networks.', \
-		epilog = '',
-		formatter_class = argparse.RawTextHelpFormatter)
+import pandas
+import seaborn
+import matplotlib.pyplot as plt
 
-	# required arguments
-	parser.add_argument('--network', metavar = 'str', type = str, required = True , help = 'a biolical network')
-	# other options
-	parser.add_argument('--output' , metavar = 'str', type = str, required = False, default = 'model.ipynb', help = 'model name (jupyter notebook)')
-	parser.add_argument('--type_of', metavar = 'str', type = str, required = False, default = 'metabolic'  , help = 'type of biological network.')
+def read_network(file):
+	with open(file, 'r') as infile:
+		data = pandas.read_csv(infile, delimiter = '\t', header = 0, comment = '#')
 
-	args = parser.parse_args()
+	return data
 
-	return args
+def monomers_from_metabolic_network(model, data, verbose = False):
+	tmp = list(data.iloc[:, 2].values) + list(data.iloc[:, 3].values)
+	tmp = [ ' '.join(x.replace('PER-', '').split(', ')) for x in tmp]
+	tmp = ' '.join(tmp).split(' ')
 
-def opts():
-	return {
-		'network' : args.network,
-		'model'   : args.output + '.ipynb',
-		'type'    : args.type_of,
-		# non-user defined options
-		'atlas'   : 'atlas_rbm',
-		'dirpath1': 'notebooks/',
-		'dirpath2': 'templates/',
-		'mets'    : 'Rules from metabolic network.ipynb',
-		'monomers': 'Monomer+Initials+Observables from metabolic network.ipynb',
-		'template': 'model_template.ipynb',
-		}
+	# find unique metabolites and correct names
+	metabolites = list(set(tmp))
+	for index, met in enumerate(metabolites):
+		if met[0].isdigit():
+			metabolites[index] = '_' + met
 
-def xnb(filepath):
-	cmd = os.path.expanduser('jupyter nbconvert --ClearOutputPreprocessor.enabled=True \
-		--ExecutePreprocessor.timeout=None --allow-errors --to notebook --execute --inplace {:s}'.format(filepath))
-	cmd = re.findall(r'(?:[^\s,"]|"+(?:=|\\.|[^"])*"+)+', cmd)
-	out, err = subprocess.Popen(cmd, shell = False, stdout = subprocess.PIPE, stderr = subprocess.PIPE).communicate()
-	#print(out, err)
+	code = "Monomer('met',\n		['name', 'loc', 'prot'],\n" \
+		"		{ 'name' :\n			[ " + \
+		', '.join([ '\'' + x.replace('-', '_') + '\'' for x in sorted(metabolites)]) + " ], \n" \
+		"		  'loc' : ['cyt', 'per', 'ex']})"
 
-if __name__ == '__main__':
-	args = argsparser()
-	opts = opts()
+	if verbose:
+		print(code)
+	code = code.replace('\n', '')
+	exec(code)
 
-	if opts['type'] == 'metabolic':
-		filepath = opts['network']
-		shutil.copy2(filepath, './data_metabolism.txt')
+	tmp = list(data.iloc[:, 0].values)
+	tmp = [ ' '.join(x.replace('PER-', '').replace('MEM-', '').split(', ')) for x in tmp]
+	tmp = ' '.join(tmp).split(' ')
 
-		for ipynb in [opts['mets'], opts['monomers']]:
-			filepath = opts['dirpath1'] + ipynb
-			filepath = pkg_resources.resource_filename(opts['atlas'], filepath)
-			shutil.copy2(filepath, './' + ipynb.replace(' ', '_'))
+	complexes = []
+	p_monomers = []
+	proteins = list(set(tmp)) # unique elements
+	for index, protein in enumerate(proteins):
+		if protein[0].isdigit():
+			protein[index] = '_' + protein
+		if 'CPLX' in protein:
+			complexes.append(protein)
+		else:
+			if 'spontaneous' != protein:
+				p_monomers.append(protein)
 
-			xnb(ipynb.replace(' ', '_'))
+	code = "Monomer('prot',\n		['name', 'loc', 'prot'],\n" \
+		  "		{ 'name' :\n			[ " + \
+		  ', '.join([ '\'' + x.replace('-', '_') + '\'' for x in sorted(p_monomers)]) + " ], \n" \
+		  "		  'loc' : ['cyt', 'mem', 'per', 'ex']})"
 
-	else:
-		sys.exit()
+	if verbose:
+		print(code)
+	code = code.replace('\n', '')
+	exec(code)
 
-	# execute model
-	filepath = opts['dirpath2'] + opts['template']
-	filepath = pkg_resources.resource_filename(opts['atlas'], filepath)
-	shutil.copy2(filepath, './' + opts['model'].replace(' ', '_'))
+	code = "Monomer('cplx',\n		['name', 'loc', 'prot'],\n" \
+		  "		{ 'name' :\n			[ " + \
+		  ', '.join([ '\'' + x.replace('-', '_') + '\'' for x in sorted(complexes)]) + " ], \n" \
+		  "		  'loc' : ['cyt', 'mem', 'per', 'ex']})"
 
-	xnb(opts['model'])
+	if verbose:
+		print(code)
+	code = code.replace('\n', '')
+	exec(code)
+
+	return metabolites, p_monomers, complexes
+
+def rules_from_metabolic_network(model, data, verbose = False):
+	for rxn in data.values:
+		# first, determine enzyme composition
+		if 'CPLX' in rxn[0]: # the enzyme is a complex alias
+			enzyme = 'cplx(name = \'{:s}\', loc = \'cyt\')'.format(rxn[0].replace('-', '_'))
+
+		elif rxn[0].startswith('['): # an enzymatic complex described by its monomers
+			monomers = rxn[0][1:-1].split(', ')
+			enzyme = []
+
+			## create link indexes
+			dw = [None] * len(monomers)
+			start_link = 1
+			for index in range(len(monomers)-1):
+				dw[index] = start_link
+				start_link += 1
+			up = dw[-1:] + dw[:-1]
+
+			for index, monomer in enumerate(monomers):
+				enzyme.append('prot(name = \'{:s}\', loc = \'cyt\', up = {:s}, dw = {:s})'.format(monomer, str(up[index]), str(dw[index])))
+			enzyme = ' %\n	'.join(enzyme)
+
+		else: # the enzyme is a monomer
+			enzyme = 'prot(name = \'{:s}\', loc = \'cyt\')'.format(rxn[0].replace('-', '_'))
+
+		# second, correct reaction names starting with a digit
+		name = rxn[1].replace('-', '_')
+		if name[0].isdigit():
+			name = '_' + name
+
+		# third, correct metabolite names with dashes and create a list
+		substrates = rxn[2].replace('-', '_').split(', ')
+		products = rxn[3].replace('-', '_').split(', ')
+
+		# fourth, write LHS and RHS
+		LHS = []
+		RHS = []
+
+		for subs in substrates:
+			if subs[0].isdigit():
+				subs = '_' + subs
+
+			if 'PER' in subs:
+				LHS.append('met(name = \'{:s}\', loc = \'per\', prot = None)'.format(subs.replace('PER_', '')))
+			else:
+				LHS.append('met(name = \'{:s}\', loc = \'cyt\', prot = None)'.format(subs))
+
+		for prod in products:
+			if prod[0].isdigit():
+				prod = '_' + prod
+
+			if 'PER' in prod: # inverse transport reaction
+				RHS.append('met(name = \'{:s}\', loc = \'per\', prot = None)'.format(prod.replace('PER_', '')))
+			else:
+				RHS.append('met(name = \'{:s}\', loc = \'cyt\', prot = None)'.format(prod))
+
+		# fifth, match number of agents at both sides of the Rule
+		if len(substrates) < len(products):
+			for index in range(len(substrates), len(products)):
+				LHS.append('None')
+		elif len(products) < len(substrates):
+			for index in range(len(products), len(substrates)):
+				RHS.append('None')
+
+		# pretty print Rule
+		LHS = ' +\n	'.join(LHS)
+		RHS = ' +\n	'.join(RHS)
+
+		if rxn[0] == 'spontaneous':
+			code = 'Rule(\'{:s}\',\n' \
+				   '	{:s} |\n'\
+				   '	{:s}, \n' \
+				   '	Parameter(\'fwd_{:s}\', {:f}), \n' \
+				   '	Parameter(\'rvs_{:s}\', {:f}))' \
+				   .format(name, LHS, RHS, name, float(rxn[4]), name, float(rxn[5]))
+
+		else: # need an enzyme
+			code = 'Rule(\'{:s}\',\n' \
+				   '	{:s} +\n	{:s} | \n' \
+				   '	{:s} +\n	{:s}, \n' \
+				   '	Parameter(\'fwd_{:s}\', {:f}), \n' \
+				   '	Parameter(\'rvs_{:s}\', {:f}))' \
+				   .format(name, enzyme, LHS, enzyme, RHS, name, float(rxn[4]), name, float(rxn[5])).replace('-', '_')
+
+		if verbose:
+			print(code)
+
+		# finally, execute code
+		code = code.replace('\n', '')
+		try:
+			exec(code)
+		except:
+			continue
+
+	#	 with open('reactions.py', 'a+') as outfile:
+	#		 outfile.write(Rule)
+	#		 outfile.write('\n\n')
+
+def observables_from_metabolic_network(model, data, monomers):
+	for name in sorted(monomers[0]):
+		name = name.replace('-','_')
+		for loc in ['cyt', 'per', 'ex']:
+			code = 'Observable(\'obs_{:s}_{:s}\', met(name = \'{:s}\', loc = \'{:s}\', prot = None))'.format(name, loc, name, loc)
+			code = code.replace('\t', '')
+			exec(code)
+
+	for name in sorted(monomers[0]):
+		name = name.replace('-','_')
+		for loc in ['cyt', 'per', 'ex']:
+			code = 'Initial(met(name = \'{:s}\', loc = \'{:s}\', prot = None), Parameter(\'t0_{:s}_{:s}\', 0))'.format(name, loc, name, loc)
+			code = code.replace('\t', '')
+			exec(code)
+
+	for name in sorted(monomers[1]):
+		name = name.replace('-','_')
+		for loc in ['cyt', 'mem', 'per', 'ex']:
+			code = 'Initial(prot(name = \'{:s}\', loc = \'{:s}\', prot = None), Parameter(\'t0_{:s}_{:s}\', 0))'.format(name, loc, name, loc)
+			code = code.replace('\t', '')
+			exec(code)
+
+	for name in sorted(monomers[2]):
+		name = name.replace('-','_')
+		for loc in ['cyt', 'mem', 'per', 'ex']:
+			code = 'Initial(cplx(name = \'{:s}\', loc = \'{:s}\', prot = None), Parameter(\'t0_{:s}_{:s}\', 0))'.format(name, loc, name, loc)
+			code = code.replace('\t', '')
+			exec(code)
+
+	return 0
+
+def construct_model_from_metabolic_network(network):
+	data = read_network(network)
+
+	model = Model()
+	[metabolites, p_monomers, complexes] = monomers_from_metabolic_network(model, data, verbose = False)
+	rules_from_metabolic_network(model, data)
+	observables_from_metabolic_network(model, data, [metabolites, p_monomers, complexes])
+
+	return model
