@@ -13,9 +13,10 @@ from pysb import *
 from pysb.pathfinder import set_path
 from pysb.simulator import ScipyOdeSimulator, BngSimulator
 
+import re
 import pandas
-import seaborn
-import matplotlib.pyplot as plt
+
+from .construct_model_from_interaction_network import *
 
 def read_network(file):
 	with open(file, 'r') as infile:
@@ -26,7 +27,7 @@ def read_network(file):
 def monomers_from_metabolic_network(model, data, verbose = False):
 	# find unique metabolites and correct names
 	tmp = list(data.iloc[:, 2].values) + list(data.iloc[:, 3].values)
-	tmp = [ ' '.join(x.replace('PER-', '').replace('EX-', '').split(', ')) for x in tmp]
+	tmp = [ ' '.join(x.replace('PER-', '').replace('EX-', '').split(',')) for x in tmp]
 
 	metabolites = list(set(' '.join(tmp).split(' ')))
 	for index, met in enumerate(metabolites):
@@ -60,26 +61,24 @@ def monomers_from_metabolic_network(model, data, verbose = False):
 			if 'spontaneous' != protein:
 				p_monomers.append(protein)
 
-	code = "Monomer('prot',\n		['name', 'loc', 'prot', 'up', 'dw'],\n" \
+	code = "Monomer('prot',\n		['name', 'loc', 'met', 'prot', 'up', 'dw'],\n" \
 		  "		{ 'name' :\n			[ " + \
 		  ', '.join([ '\'' + x.replace('-', '_') + '\'' for x in sorted(p_monomers)]) + " ], \n" \
 		  "		  'loc' : ['cyt', 'mem', 'per', 'ex']})"
 
 	if verbose:
 		print(code)
-	code = code.replace('\n', '')
-	exec(code)
+	exec(code.replace('\n', ''))
 
 	if len(complexes) > 0:
-		code = "Monomer('cplx',\n		['name', 'loc', 'prot', 'up', 'dw'],\n" \
+		code = "Monomer('cplx',\n		['name', 'loc', 'met', 'prot', 'up', 'dw'],\n" \
 			"		{ 'name' :\n			[ " + \
 			', '.join([ '\'' + x.replace('-', '_') + '\'' for x in sorted(complexes)]) + " ], \n" \
 			"		  'loc' : ['cyt', 'mem', 'per', 'ex']})"
 
 		if verbose:
 			print(code)
-		code = code.replace('\n', '')
-		exec(code)
+		exec(code.replace('\n', ''))
 
 	return metabolites, p_monomers, complexes
 
@@ -159,38 +158,30 @@ def rules_from_metabolic_network(model, data, verbose = False):
 
 		if rxn[0] == 'spontaneous':
 			code = 'Rule(\'{:s}\',\n' \
-				   '	{:s} |\n'\
-				   '	{:s}, \n' \
-				   '	Parameter(\'fwd_{:s}\', {:f}), \n' \
-				   '	Parameter(\'rvs_{:s}\', {:f}))' \
-				   .format(name, LHS, RHS, name, float(rxn[4]), name, float(rxn[5]))
+				'	{:s} |\n'\
+				'	{:s}, \n' \
+				'	Parameter(\'fwd_{:s}\', {:f}), \n' \
+				'	Parameter(\'rvs_{:s}\', {:f}))'
+			code = code.format(name, LHS, RHS, name, float(rxn[4]), name, float(rxn[5]))
 
 		else: # need an enzyme
 			code = 'Rule(\'{:s}\',\n' \
-				   '	{:s} +\n	{:s} | \n' \
-				   '	{:s} +\n	{:s}, \n' \
-				   '	Parameter(\'fwd_{:s}\', {:f}), \n' \
-				   '	Parameter(\'rvs_{:s}\', {:f}))' \
-				   .format(name, enzyme, LHS, enzyme, RHS, name, float(rxn[4]), name, float(rxn[5])).replace('-', '_')
+				'	{:s} +\n	{:s} | \n' \
+				'	{:s} +\n	{:s}, \n' \
+				'	Parameter(\'fwd_{:s}\', {:f}), \n' \
+				'	Parameter(\'rvs_{:s}\', {:f}))'
+			code = code.format(name, enzyme, LHS, enzyme, RHS, name, float(rxn[4]), name, float(rxn[5])).replace('-', '_')
 
 		if verbose:
 			print(code)
-
-		# finally, execute code
-		try:
-			exec(code.replace('\n', ''))
-		except:
-			continue
-
-	#	 with open('reactions.py', 'a+') as outfile:
-	#		 outfile.write(Rule)
-	#		 outfile.write('\n\n')
+		exec(code.replace('\n', ''))
 
 def observables_from_metabolic_network(model, data, monomers, verbose = False):
 	for name in sorted(monomers[0]):
 		name = name.replace('-','_')
 		for loc in ['cyt', 'per', 'ex']:
-			code = 'Observable(\'obs_{:s}_{:s}\', met(name = \'{:s}\', loc = \'{:s}\', prot = None))'.format(name, loc, name, loc)
+			code = 'Observable(\'obs_{:s}_{:s}\', met(name = \'{:s}\', loc = \'{:s}\', prot = None))'
+			code = code.format(name, loc, name, loc)
 			if verbose:
 				print(code)
 			exec(code.replace('\t', ''))
@@ -198,7 +189,8 @@ def observables_from_metabolic_network(model, data, monomers, verbose = False):
 	for name in sorted(monomers[0]):
 		name = name.replace('-','_')
 		for loc in ['cyt', 'per', 'ex']:
-			code = 'Initial(met(name = \'{:s}\', loc = \'{:s}\', prot = None), Parameter(\'t0_{:s}_{:s}\', 0))'.format(name, loc, name, loc)
+			code = 'Initial(met(name = \'{:s}\', loc = \'{:s}\', prot = None), Parameter(\'t0_{:s}_{:s}\', 0))'
+			code = code.format(name, loc, name, loc)
 			if verbose:
 				print(code)
 			exec(code.replace('\t', ''))
@@ -206,7 +198,8 @@ def observables_from_metabolic_network(model, data, monomers, verbose = False):
 	for name in sorted(monomers[1]):
 		name = name.replace('-','_')
 		for loc in ['cyt', 'mem', 'per', 'ex']:
-			code = 'Initial(prot(name = \'{:s}\', loc = \'{:s}\', prot = None, up = None, dw = None), Parameter(\'t0_{:s}_{:s}\', 0))'.format(name, loc, name, loc)
+			code = 'Initial(prot(name = \'{:s}\', loc = \'{:s}\', met = None, prot = None, up = None, dw = None), Parameter(\'t0_{:s}_{:s}\', 0))'
+			code = code.format(name, loc, name, loc)
 			if verbose:
 				print(code)
 			exec(code.replace('\t', ''))
@@ -214,7 +207,8 @@ def observables_from_metabolic_network(model, data, monomers, verbose = False):
 	for name in sorted(monomers[2]):
 		name = name.replace('-','_')
 		for loc in ['cyt', 'mem', 'per', 'ex']:
-			code = 'Initial(cplx(name = \'{:s}\', loc = \'{:s}\', prot = None, up = None, dw = None), Parameter(\'t0_{:s}_{:s}\', 0))'.format(name, loc, name, loc)
+			code = 'Initial(cplx(name = \'{:s}\', loc = \'{:s}\', met = None, prot = None, up = None, dw = None), Parameter(\'t0_{:s}_{:s}\', 0))'
+			code = code.format(name, loc, name, loc)
 			if verbose:
 				print(code)
 			exec(code.replace('\t', ''))
