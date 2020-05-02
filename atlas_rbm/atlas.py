@@ -24,12 +24,11 @@ def read_network(file):
 	return data
 
 def monomers_from_metabolic_network(model, data, verbose = False):
-	tmp = list(data.iloc[:, 2].values) + list(data.iloc[:, 3].values)
-	tmp = [ ' '.join(x.replace('PER-', '').split(', ')) for x in tmp]
-	tmp = ' '.join(tmp).split(' ')
-
 	# find unique metabolites and correct names
-	metabolites = list(set(tmp))
+	tmp = list(data.iloc[:, 2].values) + list(data.iloc[:, 3].values)
+	tmp = [ ' '.join(x.replace('PER-', '').replace('EX-', '').split(', ')) for x in tmp]
+
+	metabolites = list(set(' '.join(tmp).split(' ')))
 	for index, met in enumerate(metabolites):
 		if met[0].isdigit():
 			metabolites[index] = '_' + met
@@ -41,16 +40,17 @@ def monomers_from_metabolic_network(model, data, verbose = False):
 
 	if verbose:
 		print(code)
-	code = code.replace('\n', '')
-	exec(code)
+	exec(code.replace('\n', ''))
 
+	# find unique proteins, protein complexes and correct names
 	tmp = list(data.iloc[:, 0].values)
+	tmp = [ x.replace('[', '').replace(']', '').split(',') if x.startswith('[') else [x] for x in tmp ]
+	tmp = [ i for j in tmp for i in j ]
 	tmp = [ ' '.join(x.replace('PER-', '').replace('MEM-', '').split(', ')) for x in tmp]
-	tmp = ' '.join(tmp).split(' ')
 
 	complexes = []
 	p_monomers = []
-	proteins = list(set(tmp)) # unique elements
+	proteins = list(set(' '.join(tmp).split(' ')))
 	for index, protein in enumerate(proteins):
 		if protein[0].isdigit():
 			protein[index] = '_' + protein
@@ -60,7 +60,7 @@ def monomers_from_metabolic_network(model, data, verbose = False):
 			if 'spontaneous' != protein:
 				p_monomers.append(protein)
 
-	code = "Monomer('prot',\n		['name', 'loc', 'prot'],\n" \
+	code = "Monomer('prot',\n		['name', 'loc', 'prot', 'up', 'dw'],\n" \
 		  "		{ 'name' :\n			[ " + \
 		  ', '.join([ '\'' + x.replace('-', '_') + '\'' for x in sorted(p_monomers)]) + " ], \n" \
 		  "		  'loc' : ['cyt', 'mem', 'per', 'ex']})"
@@ -70,15 +70,16 @@ def monomers_from_metabolic_network(model, data, verbose = False):
 	code = code.replace('\n', '')
 	exec(code)
 
-	code = "Monomer('cplx',\n		['name', 'loc', 'prot'],\n" \
-		  "		{ 'name' :\n			[ " + \
-		  ', '.join([ '\'' + x.replace('-', '_') + '\'' for x in sorted(complexes)]) + " ], \n" \
-		  "		  'loc' : ['cyt', 'mem', 'per', 'ex']})"
+	if len(complexes) > 0:
+		code = "Monomer('cplx',\n		['name', 'loc', 'prot', 'up', 'dw'],\n" \
+			"		{ 'name' :\n			[ " + \
+			', '.join([ '\'' + x.replace('-', '_') + '\'' for x in sorted(complexes)]) + " ], \n" \
+			"		  'loc' : ['cyt', 'mem', 'per', 'ex']})"
 
-	if verbose:
-		print(code)
-	code = code.replace('\n', '')
-	exec(code)
+		if verbose:
+			print(code)
+		code = code.replace('\n', '')
+		exec(code)
 
 	return metabolites, p_monomers, complexes
 
@@ -89,7 +90,7 @@ def rules_from_metabolic_network(model, data, verbose = False):
 			enzyme = 'cplx(name = \'{:s}\', loc = \'cyt\')'.format(rxn[0].replace('-', '_'))
 
 		elif rxn[0].startswith('['): # an enzymatic complex described by its monomers
-			monomers = rxn[0][1:-1].split(', ')
+			monomers = rxn[0][1:-1].split(',')
 			enzyme = []
 
 			## create link indexes
@@ -101,11 +102,17 @@ def rules_from_metabolic_network(model, data, verbose = False):
 			up = dw[-1:] + dw[:-1]
 
 			for index, monomer in enumerate(monomers):
-				enzyme.append('prot(name = \'{:s}\', loc = \'cyt\', up = {:s}, dw = {:s})'.format(monomer, str(up[index]), str(dw[index])))
+				if monomer.startswith('MEM-'):
+					enzyme.append('prot(name = \'{:s}\', loc = \'mem\', up = {:s}, dw = {:s})'.format(monomer.replace('MEM-', ''), str(up[index]), str(dw[index])))
+				else:
+					enzyme.append('prot(name = \'{:s}\', loc = \'cyt\', up = {:s}, dw = {:s})'.format(monomer, str(up[index]), str(dw[index])))
 			enzyme = ' %\n	'.join(enzyme)
 
 		else: # the enzyme is a monomer
-			enzyme = 'prot(name = \'{:s}\', loc = \'cyt\')'.format(rxn[0].replace('-', '_'))
+			if rxn[0].startswith('MEM-'):
+				enzyme = 'prot(name = \'{:s}\', loc = \'mem\')'.format(rxn[0].replace('MEM-', '').replace('-', '_'))
+			else:
+				enzyme = 'prot(name = \'{:s}\', loc = \'cyt\')'.format(rxn[0].replace('-', '_'))
 
 		# second, correct reaction names starting with a digit
 		name = rxn[1].replace('-', '_')
@@ -170,9 +177,8 @@ def rules_from_metabolic_network(model, data, verbose = False):
 			print(code)
 
 		# finally, execute code
-		code = code.replace('\n', '')
 		try:
-			exec(code)
+			exec(code.replace('\n', ''))
 		except:
 			continue
 
@@ -180,43 +186,48 @@ def rules_from_metabolic_network(model, data, verbose = False):
 	#		 outfile.write(Rule)
 	#		 outfile.write('\n\n')
 
-def observables_from_metabolic_network(model, data, monomers):
+def observables_from_metabolic_network(model, data, monomers, verbose = False):
 	for name in sorted(monomers[0]):
 		name = name.replace('-','_')
 		for loc in ['cyt', 'per', 'ex']:
 			code = 'Observable(\'obs_{:s}_{:s}\', met(name = \'{:s}\', loc = \'{:s}\', prot = None))'.format(name, loc, name, loc)
-			code = code.replace('\t', '')
-			exec(code)
+			if verbose:
+				print(code)
+			exec(code.replace('\t', ''))
 
 	for name in sorted(monomers[0]):
 		name = name.replace('-','_')
 		for loc in ['cyt', 'per', 'ex']:
 			code = 'Initial(met(name = \'{:s}\', loc = \'{:s}\', prot = None), Parameter(\'t0_{:s}_{:s}\', 0))'.format(name, loc, name, loc)
-			code = code.replace('\t', '')
-			exec(code)
+			if verbose:
+				print(code)
+			exec(code.replace('\t', ''))
 
 	for name in sorted(monomers[1]):
 		name = name.replace('-','_')
 		for loc in ['cyt', 'mem', 'per', 'ex']:
-			code = 'Initial(prot(name = \'{:s}\', loc = \'{:s}\', prot = None), Parameter(\'t0_{:s}_{:s}\', 0))'.format(name, loc, name, loc)
-			code = code.replace('\t', '')
-			exec(code)
+			code = 'Initial(prot(name = \'{:s}\', loc = \'{:s}\', prot = None, up = None, dw = None), Parameter(\'t0_{:s}_{:s}\', 0))'.format(name, loc, name, loc)
+			if verbose:
+				print(code)
+			exec(code.replace('\t', ''))
 
 	for name in sorted(monomers[2]):
 		name = name.replace('-','_')
 		for loc in ['cyt', 'mem', 'per', 'ex']:
-			code = 'Initial(cplx(name = \'{:s}\', loc = \'{:s}\', prot = None), Parameter(\'t0_{:s}_{:s}\', 0))'.format(name, loc, name, loc)
-			code = code.replace('\t', '')
-			exec(code)
+			code = 'Initial(cplx(name = \'{:s}\', loc = \'{:s}\', prot = None, up = None, dw = None), Parameter(\'t0_{:s}_{:s}\', 0))'.format(name, loc, name, loc)
+			if verbose:
+				print(code)
+			exec(code.replace('\t', ''))
 
-	return 0
+	return model
 
-def construct_model_from_metabolic_network(network):
+def construct_model_from_metabolic_network(network, verbose = False):
 	data = read_network(network)
 
 	model = Model()
-	[metabolites, p_monomers, complexes] = monomers_from_metabolic_network(model, data, verbose = False)
-	rules_from_metabolic_network(model, data)
-	observables_from_metabolic_network(model, data, [metabolites, p_monomers, complexes])
+	[metabolites, p_monomers, complexes] = \
+		monomers_from_metabolic_network(model, data, verbose = verbose)
+	rules_from_metabolic_network(model, data, verbose = verbose)
+	observables_from_metabolic_network(model, data, [metabolites, p_monomers, complexes], verbose)
 
 	return model
