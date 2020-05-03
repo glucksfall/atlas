@@ -26,6 +26,11 @@ def set_parameter(model, name, new_value):
 			i.value = new_value
 	return model
 
+def set_observable(model, pattern = '', alias = ''):
+	model = alias_model_components(model)
+	exec('Observable(\'' + alias + '\',' + pattern + ')')
+	return model
+
 class set_initial:
 	def monomers(model, name, loc = 'cyt', new_value = 0):
 		for i in model.parameters._elements:
@@ -42,9 +47,9 @@ class set_initial:
 	def prot(model, name, loc = 'cyt', new_value = 0):
 		return set_initial.monomers(model, name, loc, new_value)
 
-	def pattern(model, name, alias = '', new_value = 0):
+	def pattern(model, pattern, alias = '', new_value = 0):
 		model = alias_model_components(model)
-		exec('Initial(' + name + ', Parameter(\'t0_' + alias + '\', ' + str(new_value) + '))')
+		exec('Initial(' + pattern + ', Parameter(\'t0_' + alias + '\', ' + str(new_value) + '))')
 		return model
 
 def ode(model, start = 0, finish = 10, points = 10, path = '/opt/'):
@@ -86,6 +91,34 @@ def kasim(model, start = 0, finish = 10, points = 10, n_runs = 20, path = '/opt/
 	sims = modes(sims, n_runs)
 	return {'sims' : sims['sims'], 'avrg' : sims['avrg'], 'stdv' : sims['stdv']}
 
-def plot(data, observable, loc = 'cyt', *args, **kwargs):
-	label = kwargs.get('label', None)
-	plt.plot(data.index, data['obs_' + observable + '_' + loc.lower()], label = label)
+class plot:
+	def monomer(data, observable, loc = 'cyt', plt_kws = {}, *args, **kwargs):
+		kind = kwargs.get('kind', None)
+
+		if kind == 'scatter' or kind is not None:
+			plt.scatter(data.index, data[observable], **plt_kws)
+		elif kind == 'plot':
+			plt.plot(data.index, data[observable], **plt_kws)
+		else:
+			plt.plot(data.index, data[observable], **plt_kws)
+
+		try:
+			plt.legend(frameon = False, loc = 'right')
+		except:
+			pass
+
+	def metabolite(data, observable, loc = 'cyt', *args, **kwargs):
+		plot.monomer(data, 'obs_met_' + observable + '_' + loc.lower(), *args, **kwargs)
+
+	def protein(data, observable, loc = 'cyt', *args, **kwargs):
+		plot.monomer(data, 'obs_prot_' + observable + '_' + loc.lower(), *args, **kwargs)
+
+	def protein_complex(data, observable, loc = 'cyt', *args, **kwargs):
+		plot.monomer(data, observable, loc = loc, *args, **kwargs)
+
+	def pattern(data, observable, plt_kws = {}, *args, **kwargs):
+		plt.plot(data.index, data[observable], **plt_kws)
+		try:
+			plt.legend(frameon = False, loc = 'right')
+		except:
+			pass
