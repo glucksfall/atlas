@@ -16,7 +16,7 @@ from pysb import *
 from pysb.core import *
 from pysb.util import alias_model_components
 
-def combine_models(model, new_model):
+def combine_models(model, new_model, verbose = False):
 	# find monomers in common and uniques
 	monomer_names1 = []
 	monomer_names2 = []
@@ -40,16 +40,18 @@ def combine_models(model, new_model):
 	for common in commons:
 		for monomer in model.monomers:
 			if common == monomer.name:
-				a = monomer.site_states['name']
+				sites1 = monomer.sites
+				states1 = monomer.site_states['name']
 		for monomer in new_model.monomers:
 			if common == monomer.name:
-				b = monomer.site_states['name']
+				sites2 = monomer.sites
+				states2 = monomer.site_states['name']
 
 		new_monomers.append(
 			"Monomer('{:s}', {:s}, {{'name': {:s}, 'loc': {:s}}})".format(
-				str(monomer.name),
-				str(monomer.sites),
-				str(list(set(a+b))),
+				str(common),
+				str(sorted(list(set(sites1+sites2)))),
+				str(sorted(list(set(states1+states2)))),
 				str(monomer.site_states['loc'])))
 
 	new_rules = []
@@ -76,26 +78,36 @@ def combine_models(model, new_model):
 	for observable in new_model.observables:
 		new_observables.append(str(observable))
 
-	new_model.rules = ComponentSet()
 	new_model.monomers = ComponentSet()
 	new_model.parameters = ComponentSet()
-	new_model.observables = ComponentSet()
 	new_model.initials = []
+	new_model.rules = ComponentSet()
+	new_model.observables = ComponentSet()
 
 	for new_monomer in new_monomers:
+		if verbose:
+			print(new_monomer)
 		exec(new_monomer)
 
 	for new_parameter in sorted(set(new_parameters)):
+		if verbose:
+			print(new_parameter)
 		exec(new_parameter)
 
 	alias_model_components(new_model)
 	for new_initial in sorted(set(new_initials)):
+		if verbose:
+			print(new_initial)
 		exec(new_initial)
 
 	for new_rule in sorted(set(new_rules)):
+		if verbose:
+			print(new_rule)
 		exec(new_rule)
 
 	for new_observable in sorted(set(new_observables)):
+		if verbose:
+			print(new_observable)
 		exec(new_observable)
 
 	return new_model
