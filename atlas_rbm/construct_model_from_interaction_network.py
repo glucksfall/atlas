@@ -45,10 +45,10 @@ def monomers_from_interaction_network(model, data, verbose = False):
 
 	# find unique proteins, protein complexes and correct names
 	tmp = list(data.iloc[:, 0].values) + list(data.iloc[:, 1].values)
-	tmp = [ x for x in tmp if not x.startswith('SMALL-') or not x.startswith('RNA-')]
+	tmp = [ x for x in tmp if not x.startswith('SMALL-')]
 	tmp = [ x.replace('[', '').replace(']', '').split(',') if x.startswith('[') else [x] for x in tmp ]
 	tmp = [ i for j in tmp for i in j ]
-	tmp = [ ' '.join(x.replace('PER-', '').replace('MEM-', '').split(', ')) for x in tmp if not x.startswith('SMALL-') or not x.startswith('RNA-')]
+	tmp = [ ' '.join(x.replace('PER-', '').replace('MEM-', '').split(', ')) for x in tmp if not x.startswith('SMALL-')]
 
 	complexes = []
 	p_monomers = []
@@ -396,7 +396,8 @@ def construct_model_from_interaction_network(network, verbose = False):
 
 	for index, _ in enumerate(data.index):
 		## complete rule
-		name = 'PhysicalInteractionRule_' + str(index+1)
+		name = 'PhysicalInteractionRule_{{:0{:d}d}}'.format(len(str(len(data.index))))
+		name = name.format(index+1)
 		code = 'Rule(\'{:s}\',\n' \
 			'	{:s} | \n	{:s},\n' \
 			'	Parameter(\'fwd_{:s}\', {:f}),\n' \

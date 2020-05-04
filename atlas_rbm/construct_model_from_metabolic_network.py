@@ -28,16 +28,16 @@ def expand_network(infile_path, path = 'expanded.txt'):
 	data = read_network(infile_path)
 
 	with open(path, 'w+') as outfile:
-	for enzyme, reaction in zip(data.iloc[:,0], data.iloc[:,1]):
-		outfile.write('{:s}\tGENE_PROD\t{:s}\tRXN\n'.format(enzyme, reaction))
+		for enzyme, reaction in zip(data.iloc[:,0], data.iloc[:,1]):
+			outfile.write('{:s}\tGENE_PROD\t{:s}\tRXN\n'.format(enzyme, reaction))
 	with open(path, 'a') as outfile:
-	for reaction, substrates in zip(data.iloc[:,1], data.iloc[:,2]):
-		for substrate in substrates.split(', '):
-			outfile.write('{:s}\tRXN\t{:s}\tMET\n'.format(reaction, substrate))
+		for reaction, substrates in zip(data.iloc[:,1], data.iloc[:,2]):
+			for substrate in substrates.split(', '):
+				outfile.write('{:s}\tRXN\t{:s}\tMET\n'.format(reaction, substrate))
 	with open(path, 'a') as outfile:
-	for reaction, products in zip(data.iloc[:,1], data.iloc[:,3]):
-		for product in products.split(', '):
-			outfile.write('{:s}\tRXN\t{:s}\tMET\n'.format(reaction, product))
+		for reaction, products in zip(data.iloc[:,1], data.iloc[:,3]):
+			for product in products.split(', '):
+				outfile.write('{:s}\tRXN\t{:s}\tMET\n'.format(reaction, product))
 	return None
 
 def monomers_from_metabolic_network(model, data, verbose = False):

@@ -95,6 +95,7 @@ class plot:
 	def monomer(data, observable, loc = 'cyt', plt_kws = {}, *args, **kwargs):
 		kind = kwargs.get('kind', None)
 
+		observable = observable.replace('-', '_')
 		if kind == 'scatter' or kind is not None:
 			plt.scatter(data.index, data[observable], **plt_kws)
 		elif kind == 'plot':
