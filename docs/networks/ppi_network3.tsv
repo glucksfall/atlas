@@ -1,0 +1,5 @@
+SOURCE	TARGET	FWD_RATE	RVS_RATE
+lacZ	lacZ	1.0	0.0
+[lacZ,lacZ]	[lacZ,lacZ]	1.0	0.0
+lacA	lacA	1.0	0.0
+lacA	[lacA,lacA]	1.0	0.0
