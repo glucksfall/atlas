@@ -11,6 +11,7 @@ __license__ = 'gpl-3.0'
 
 from .construct_model_from_metabolic_network import *
 from .construct_model_from_interaction_network import *
+from .construct_model_from_genome_graph import *
 
 from pysb import *
 from pysb.core import *
@@ -27,6 +28,10 @@ def combine_models(model, new_model, verbose = False):
 
 	commons = list(set(monomer_names1).intersection(monomer_names2))
 	uniques = list(set(monomer_names1).symmetric_difference(monomer_names2))
+
+	if verbose:
+		print('common Monomers are: ' + ', '.join(commons))
+		print('unique Monomers are: ' + ', '.join(uniques))
 
 	new_monomers = []
 	for unique in uniques:
@@ -50,9 +55,10 @@ def combine_models(model, new_model, verbose = False):
 		new_monomers.append(
 			"Monomer('{:s}', {:s}, {{'name': {:s}, 'loc': {:s}}})".format(
 				str(common),
-				str(sorted(list(set(sites1+sites2)))),
-				str(sorted(list(set(states1+states2)))),
-				str(monomer.site_states['loc'])))
+				str(sorted(set(sites1+sites2))),
+				str(sorted(set(states1+states2))),
+				"['cyt', 'mem', 'per', 'ex']"))
+				#str(monomer.site_states['loc'])))
 
 	new_rules = []
 	for rule in model.rules:

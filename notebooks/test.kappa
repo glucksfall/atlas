@@ -1,378 +1,296 @@
-%agent: prot(dw,loc{cyt mem per ex},met,name{araA araB araC araD araE araF araG araH crp lacI},prot,up)
-%agent: met(loc{cyt mem per ex},name{ADP ALLOLACTOSE ATP CAMP L_RIBULOSE L_RIBULOSE_5_P PROTON Pi WATER XYLULOSE_5_PHOSPHATE alpha_L_arabinofuranose alpha_L_arabinopyranose beta_L_arabinofuranose beta_L_arabinopyranose},prot)
+%agent: met(name{ACETYL_COA CO_A CPD_3561 CPD_3785 CPD_3801 D_ARABINOSE Fructofuranose MELIBIOSE PROTON WATER _6_Acetyl_beta_D_Galactose alpha_ALLOLACTOSE alpha_GALACTOSE alpha_glucose alpha_lactose beta_ALLOLACTOSE beta_GALACTOSE beta_glucose beta_lactose},loc{cyt per ex},prot)
+%agent: prot(dna,dw,loc{cyt mem per ex},met,name{lacA lacY lacZ},prot,rna,up)
 
-%var: 'fwd_ABC_2_RXN_alpha_af' 1.000000e+00
-%var: 'fwd_ABC_2_RXN_alpha_ap' 1.000000e+00
-%var: 'fwd_ABC_2_RXN_beta_af' 1.000000e+00
-%var: 'fwd_ABC_2_RXN_beta_ap' 1.000000e+00
-%var: 'fwd_ARABISOM_RXN_alpha_ap' 1.000000e+00
-%var: 'fwd_ARABISOM_RXN_beta_ap' 1.000000e+00
-%var: 'fwd_PhysicalInteractionRule_01' 1.000000e+00
-%var: 'fwd_PhysicalInteractionRule_02' 1.000000e+00
-%var: 'fwd_PhysicalInteractionRule_03' 1.000000e+00
-%var: 'fwd_PhysicalInteractionRule_04' 1.000000e+00
-%var: 'fwd_PhysicalInteractionRule_05' 1.000000e+00
-%var: 'fwd_PhysicalInteractionRule_06' 1.000000e+00
-%var: 'fwd_PhysicalInteractionRule_07' 1.000000e+00
-%var: 'fwd_PhysicalInteractionRule_08' 1.000000e+00
-%var: 'fwd_PhysicalInteractionRule_09' 1.000000e+00
-%var: 'fwd_PhysicalInteractionRule_10' 1.000000e+00
-%var: 'fwd_PhysicalInteractionRule_11' 1.000000e+00
-%var: 'fwd_PhysicalInteractionRule_12' 1.000000e+00
-%var: 'fwd_PhysicalInteractionRule_13' 1.000000e+00
-%var: 'fwd_PhysicalInteractionRule_14' 1.000000e+00
-%var: 'fwd_PhysicalInteractionRule_15' 1.000000e+00
-%var: 'fwd_PhysicalInteractionRule_16' 1.000000e+00
-%var: 'fwd_PhysicalInteractionRule_17' 1.000000e+00
-%var: 'fwd_PhysicalInteractionRule_18' 1.000000e+00
-%var: 'fwd_PhysicalInteractionRule_19' 1.000000e+00
-%var: 'fwd_PhysicalInteractionRule_20' 1.000000e+00
-%var: 'fwd_PhysicalInteractionRule_21' 1.000000e+00
-%var: 'fwd_PhysicalInteractionRule_22' 1.000000e+00
-%var: 'fwd_PhysicalInteractionRule_23' 1.000000e+00
-%var: 'fwd_PhysicalInteractionRule_24' 1.000000e+00
-%var: 'fwd_RIBULPEPIM_RXN' 1.000000e+00
-%var: 'fwd_RXN0_5116' 1.000000e+00
-%var: 'fwd_TRANS_RXN_10_alpha_af' 1.000000e+00
-%var: 'fwd_TRANS_RXN_10_alpha_ap' 1.000000e-04
-%var: 'fwd_TRANS_RXN_10_beta_af' 1.000000e+00
-%var: 'fwd_TRANS_RXN_10_beta_ap' 1.000000e-04
-%var: 'rvs_ABC_2_RXN_alpha_af' 0.000000e+00
-%var: 'rvs_ABC_2_RXN_alpha_ap' 0.000000e+00
-%var: 'rvs_ABC_2_RXN_beta_af' 0.000000e+00
-%var: 'rvs_ABC_2_RXN_beta_ap' 0.000000e+00
-%var: 'rvs_ARABISOM_RXN_alpha_ap' 0.000000e+00
-%var: 'rvs_ARABISOM_RXN_beta_ap' 0.000000e+00
-%var: 'rvs_PhysicalInteractionRule_01' 1.000000e+00
-%var: 'rvs_PhysicalInteractionRule_02' 1.000000e+00
-%var: 'rvs_PhysicalInteractionRule_03' 1.000000e+00
-%var: 'rvs_PhysicalInteractionRule_04' 1.000000e+00
-%var: 'rvs_PhysicalInteractionRule_05' 1.000000e+00
-%var: 'rvs_PhysicalInteractionRule_06' 1.000000e+00
-%var: 'rvs_PhysicalInteractionRule_07' 1.000000e+00
-%var: 'rvs_PhysicalInteractionRule_08' 1.000000e+00
-%var: 'rvs_PhysicalInteractionRule_09' 1.000000e+00
-%var: 'rvs_PhysicalInteractionRule_10' 1.000000e+00
-%var: 'rvs_PhysicalInteractionRule_11' 1.000000e+00
-%var: 'rvs_PhysicalInteractionRule_12' 1.000000e+00
-%var: 'rvs_PhysicalInteractionRule_13' 1.000000e+00
-%var: 'rvs_PhysicalInteractionRule_14' 1.000000e+00
-%var: 'rvs_PhysicalInteractionRule_15' 1.000000e+00
-%var: 'rvs_PhysicalInteractionRule_16' 1.000000e+00
-%var: 'rvs_PhysicalInteractionRule_17' 1.000000e+00
-%var: 'rvs_PhysicalInteractionRule_18' 1.000000e+00
-%var: 'rvs_PhysicalInteractionRule_19' 1.000000e+00
-%var: 'rvs_PhysicalInteractionRule_20' 1.000000e+00
-%var: 'rvs_PhysicalInteractionRule_21' 1.000000e+00
-%var: 'rvs_PhysicalInteractionRule_22' 1.000000e+00
-%var: 'rvs_PhysicalInteractionRule_23' 1.000000e+00
-%var: 'rvs_PhysicalInteractionRule_24' 1.000000e+00
-%var: 'rvs_RIBULPEPIM_RXN' 0.000000e+00
-%var: 'rvs_RXN0_5116' 0.000000e+00
-%var: 'rvs_TRANS_RXN_10_alpha_af' 0.000000e+00
-%var: 'rvs_TRANS_RXN_10_alpha_ap' 0.000000e+00
-%var: 'rvs_TRANS_RXN_10_beta_af' 0.000000e+00
-%var: 'rvs_TRANS_RXN_10_beta_ap' 0.000000e+00
-%var: 't0_ADP_cyt' 0.000000e+00
-%var: 't0_ADP_ex' 0.000000e+00
-%var: 't0_ADP_per' 0.000000e+00
-%var: 't0_ALLOLACTOSE_cyt' 0.000000e+00
-%var: 't0_ALLOLACTOSE_ex' 0.000000e+00
-%var: 't0_ALLOLACTOSE_per' 0.000000e+00
-%var: 't0_ATP_cyt' 1.000000e+02
-%var: 't0_ATP_ex' 0.000000e+00
-%var: 't0_ATP_per' 0.000000e+00
-%var: 't0_CAMP_cyt' 0.000000e+00
-%var: 't0_CAMP_ex' 0.000000e+00
-%var: 't0_CAMP_per' 0.000000e+00
-%var: 't0_L_RIBULOSE_5_P_cyt' 0.000000e+00
-%var: 't0_L_RIBULOSE_5_P_ex' 0.000000e+00
-%var: 't0_L_RIBULOSE_5_P_per' 0.000000e+00
-%var: 't0_L_RIBULOSE_cyt' 0.000000e+00
-%var: 't0_L_RIBULOSE_ex' 0.000000e+00
-%var: 't0_L_RIBULOSE_per' 0.000000e+00
+%var: 'fwd_ALLOLACTOSE_DEG_alpha' 1.000000e+00
+%var: 'fwd_ALLOLACTOSE_DEG_beta' 1.000000e+00
+%var: 'fwd_BETAGALACTOSID_RXN' 1.000000e+00
+%var: 'fwd_BETAGALACTOSID_RXN_alpha' 1.000000e+00
+%var: 'fwd_GALACTOACETYLTRAN_RXN_galactose' 1.000000e+00
+%var: 'fwd_GALACTOSE_MUTAROTATION' 1.000000e+00
+%var: 'fwd_GLUCOSE_MUTAROTATION' 1.000000e+00
+%var: 'fwd_LACTOSE_MUTAROTATION' 1.000000e+00
+%var: 'fwd_PhysicalInteractionRule_1' 1.000000e+00
+%var: 'fwd_PhysicalInteractionRule_2' 1.000000e+00
+%var: 'fwd_PhysicalInteractionRule_3' 1.000000e+00
+%var: 'fwd_PhysicalInteractionRule_4' 1.000000e+00
+%var: 'fwd_RXN0_5363' 1.000000e+00
+%var: 'fwd_RXN0_5363_beta' 1.000000e+00
+%var: 'fwd_RXN0_7215' 1.000000e+00
+%var: 'fwd_RXN0_7217' 1.000000e+00
+%var: 'fwd_RXN0_7219' 1.000000e+00
+%var: 'fwd_RXN_17726' 1.000000e+00
+%var: 'fwd_RXN_17755' 1.000000e+00
+%var: 'fwd_TRANS_RXN_24' 1.000000e+00
+%var: 'fwd_TRANS_RXN_24_beta' 1.000000e+00
+%var: 'fwd_TRANS_RXN_94' 1.000000e+00
+%var: 'rvs_ALLOLACTOSE_DEG_alpha' 0.000000e+00
+%var: 'rvs_ALLOLACTOSE_DEG_beta' 0.000000e+00
+%var: 'rvs_BETAGALACTOSID_RXN' 0.000000e+00
+%var: 'rvs_BETAGALACTOSID_RXN_alpha' 0.000000e+00
+%var: 'rvs_GALACTOACETYLTRAN_RXN_galactose' 1.000000e+00
+%var: 'rvs_GALACTOSE_MUTAROTATION' 1.000000e+00
+%var: 'rvs_GLUCOSE_MUTAROTATION' 1.000000e+00
+%var: 'rvs_LACTOSE_MUTAROTATION' 1.000000e+00
+%var: 'rvs_PhysicalInteractionRule_1' 0.000000e+00
+%var: 'rvs_PhysicalInteractionRule_2' 0.000000e+00
+%var: 'rvs_PhysicalInteractionRule_3' 0.000000e+00
+%var: 'rvs_PhysicalInteractionRule_4' 0.000000e+00
+%var: 'rvs_RXN0_5363' 1.000000e+00
+%var: 'rvs_RXN0_5363_beta' 1.000000e+00
+%var: 'rvs_RXN0_7215' 1.000000e+00
+%var: 'rvs_RXN0_7217' 1.000000e+00
+%var: 'rvs_RXN0_7219' 1.000000e+00
+%var: 'rvs_RXN_17726' 1.000000e+00
+%var: 'rvs_RXN_17755' 1.000000e+00
+%var: 'rvs_TRANS_RXN_24' 0.000000e+00
+%var: 'rvs_TRANS_RXN_24_beta' 0.000000e+00
+%var: 'rvs_TRANS_RXN_94' 1.000000e+00
+%var: 't0_ACETYL_COA_cyt' 0.000000e+00
+%var: 't0_ACETYL_COA_ex' 0.000000e+00
+%var: 't0_ACETYL_COA_per' 0.000000e+00
+%var: 't0_CO_A_cyt' 0.000000e+00
+%var: 't0_CO_A_ex' 0.000000e+00
+%var: 't0_CO_A_per' 0.000000e+00
+%var: 't0_CPD_3561_cyt' 0.000000e+00
+%var: 't0_CPD_3561_ex' 0.000000e+00
+%var: 't0_CPD_3561_per' 0.000000e+00
+%var: 't0_CPD_3785_cyt' 0.000000e+00
+%var: 't0_CPD_3785_ex' 0.000000e+00
+%var: 't0_CPD_3785_per' 0.000000e+00
+%var: 't0_CPD_3801_cyt' 0.000000e+00
+%var: 't0_CPD_3801_ex' 0.000000e+00
+%var: 't0_CPD_3801_per' 0.000000e+00
+%var: 't0_D_ARABINOSE_cyt' 0.000000e+00
+%var: 't0_D_ARABINOSE_ex' 0.000000e+00
+%var: 't0_D_ARABINOSE_per' 0.000000e+00
+%var: 't0_Fructofuranose_cyt' 0.000000e+00
+%var: 't0_Fructofuranose_ex' 0.000000e+00
+%var: 't0_Fructofuranose_per' 0.000000e+00
+%var: 't0_MELIBIOSE_cyt' 0.000000e+00
+%var: 't0_MELIBIOSE_ex' 0.000000e+00
+%var: 't0_MELIBIOSE_per' 0.000000e+00
 %var: 't0_PROTON_cyt' 0.000000e+00
 %var: 't0_PROTON_ex' 0.000000e+00
 %var: 't0_PROTON_per' 1.000000e+02
-%var: 't0_Pi_cyt' 0.000000e+00
-%var: 't0_Pi_ex' 0.000000e+00
-%var: 't0_Pi_per' 0.000000e+00
 %var: 't0_WATER_cyt' 1.000000e+02
 %var: 't0_WATER_ex' 0.000000e+00
 %var: 't0_WATER_per' 0.000000e+00
-%var: 't0_XYLULOSE_5_PHOSPHATE_cyt' 0.000000e+00
-%var: 't0_XYLULOSE_5_PHOSPHATE_ex' 0.000000e+00
-%var: 't0_XYLULOSE_5_PHOSPHATE_per' 0.000000e+00
-%var: 't0_alpha_L_arabinofuranose_cyt' 0.000000e+00
-%var: 't0_alpha_L_arabinofuranose_ex' 0.000000e+00
-%var: 't0_alpha_L_arabinofuranose_per' 0.000000e+00
-%var: 't0_alpha_L_arabinopyranose_cyt' 0.000000e+00
-%var: 't0_alpha_L_arabinopyranose_ex' 0.000000e+00
-%var: 't0_alpha_L_arabinopyranose_per' 1.000000e+02
-%var: 't0_araA_cyt' 1.000000e+00
-%var: 't0_araA_ex' 0.000000e+00
-%var: 't0_araA_mem' 0.000000e+00
-%var: 't0_araA_per' 0.000000e+00
-%var: 't0_araB_cyt' 1.000000e+00
-%var: 't0_araB_ex' 0.000000e+00
-%var: 't0_araB_mem' 0.000000e+00
-%var: 't0_araB_per' 0.000000e+00
-%var: 't0_araC_cyt' 1.000000e+00
-%var: 't0_araC_ex' 0.000000e+00
-%var: 't0_araC_mem' 0.000000e+00
-%var: 't0_araC_per' 0.000000e+00
-%var: 't0_araD_cyt' 1.000000e+00
-%var: 't0_araD_ex' 0.000000e+00
-%var: 't0_araD_mem' 0.000000e+00
-%var: 't0_araD_per' 0.000000e+00
-%var: 't0_araE_cyt' 1.000000e+00
-%var: 't0_araE_ex' 0.000000e+00
-%var: 't0_araE_mem' 0.000000e+00
-%var: 't0_araE_per' 0.000000e+00
-%var: 't0_araF_cyt' 1.000000e+00
-%var: 't0_araF_ex' 0.000000e+00
-%var: 't0_araF_mem' 0.000000e+00
-%var: 't0_araF_per' 0.000000e+00
-%var: 't0_araG_cyt' 2.000000e+00
-%var: 't0_araG_ex' 0.000000e+00
-%var: 't0_araG_mem' 0.000000e+00
-%var: 't0_araG_per' 0.000000e+00
-%var: 't0_araH_cyt' 2.000000e+00
-%var: 't0_araH_ex' 0.000000e+00
-%var: 't0_araH_mem' 0.000000e+00
-%var: 't0_araH_per' 0.000000e+00
-%var: 't0_beta_L_arabinofuranose_cyt' 0.000000e+00
-%var: 't0_beta_L_arabinofuranose_ex' 0.000000e+00
-%var: 't0_beta_L_arabinofuranose_per' 0.000000e+00
-%var: 't0_beta_L_arabinopyranose_cyt' 0.000000e+00
-%var: 't0_beta_L_arabinopyranose_ex' 0.000000e+00
-%var: 't0_beta_L_arabinopyranose_per' 0.000000e+00
-%var: 't0_crp_cyt' 0.000000e+00
-%var: 't0_crp_ex' 0.000000e+00
-%var: 't0_crp_mem' 0.000000e+00
-%var: 't0_crp_per' 0.000000e+00
-%var: 't0_lacI_cyt' 0.000000e+00
-%var: 't0_lacI_ex' 0.000000e+00
-%var: 't0_lacI_mem' 0.000000e+00
-%var: 't0_lacI_per' 0.000000e+00
+%var: 't0__6_Acetyl_beta_D_Galactose_cyt' 0.000000e+00
+%var: 't0__6_Acetyl_beta_D_Galactose_ex' 0.000000e+00
+%var: 't0__6_Acetyl_beta_D_Galactose_per' 0.000000e+00
+%var: 't0_alpha_ALLOLACTOSE_cyt' 0.000000e+00
+%var: 't0_alpha_ALLOLACTOSE_ex' 0.000000e+00
+%var: 't0_alpha_ALLOLACTOSE_per' 0.000000e+00
+%var: 't0_alpha_GALACTOSE_cyt' 0.000000e+00
+%var: 't0_alpha_GALACTOSE_ex' 0.000000e+00
+%var: 't0_alpha_GALACTOSE_per' 0.000000e+00
+%var: 't0_alpha_glucose_cyt' 0.000000e+00
+%var: 't0_alpha_glucose_ex' 0.000000e+00
+%var: 't0_alpha_glucose_per' 0.000000e+00
+%var: 't0_alpha_lactose_cyt' 0.000000e+00
+%var: 't0_alpha_lactose_ex' 0.000000e+00
+%var: 't0_alpha_lactose_per' 0.000000e+00
+%var: 't0_beta_ALLOLACTOSE_cyt' 0.000000e+00
+%var: 't0_beta_ALLOLACTOSE_ex' 0.000000e+00
+%var: 't0_beta_ALLOLACTOSE_per' 0.000000e+00
+%var: 't0_beta_GALACTOSE_cyt' 0.000000e+00
+%var: 't0_beta_GALACTOSE_ex' 0.000000e+00
+%var: 't0_beta_GALACTOSE_per' 0.000000e+00
+%var: 't0_beta_glucose_cyt' 0.000000e+00
+%var: 't0_beta_glucose_ex' 0.000000e+00
+%var: 't0_beta_glucose_per' 0.000000e+00
+%var: 't0_beta_lactose_cyt' 0.000000e+00
+%var: 't0_beta_lactose_ex' 0.000000e+00
+%var: 't0_beta_lactose_per' 1.000000e+02
+%var: 't0_lacA_cyt' 3.000000e+00
+%var: 't0_lacA_ex' 0.000000e+00
+%var: 't0_lacA_mem' 0.000000e+00
+%var: 't0_lacA_per' 0.000000e+00
+%var: 't0_lacY_cyt' 0.000000e+00
+%var: 't0_lacY_ex' 0.000000e+00
+%var: 't0_lacY_mem' 1.000000e+00
+%var: 't0_lacY_per' 0.000000e+00
+%var: 't0_lacZ_cyt' 4.000000e+00
+%var: 't0_lacZ_ex' 0.000000e+00
+%var: 't0_lacZ_mem' 0.000000e+00
+%var: 't0_lacZ_per' 0.000000e+00
 
-'ABC_2_RXN_alpha_af' prot(dw[1],loc{cyt}[.],name{araF}[.],up[.]),prot(dw[2],loc{cyt}[.],name{araH}[.],up[1]),prot(dw[3],loc{cyt}[.],name{araH}[.],up[2]),prot(dw[4],loc{cyt}[.],name{araG}[.],up[3]),prot(dw[.],loc{cyt}[.],name{araG}[.],up[4]),met(loc{cyt}[.],name{WATER}[.],prot[.]),met(loc{cyt}[.],name{ATP}[.],prot[.]),met(loc{per}[.],name{alpha_L_arabinofuranose}[.],prot[.]),. -> prot(dw[1],loc{cyt}[.],name{araF}[.],up[.]),prot(dw[2],loc{cyt}[.],name{araH}[.],up[1]),prot(dw[3],loc{cyt}[.],name{araH}[.],up[2]),prot(dw[4],loc{cyt}[.],name{araG}[.],up[3]),prot(dw[.],loc{cyt}[.],name{araG}[.],up[4]),met(loc{cyt}[.],name{Pi}[.],prot[.]),met(loc{cyt}[.],name{ADP}[.],prot[.]),met(loc{cyt}[.],name{PROTON}[.],prot[.]),met(loc{cyt}[.],name{alpha_L_arabinofuranose}[.],prot[.]) @ 'fwd_ABC_2_RXN_alpha_af'
-'ABC_2_RXN_alpha_af_rev' prot(dw[1],loc{cyt}[.],name{araF}[.],up[.]),prot(dw[2],loc{cyt}[.],name{araH}[.],up[1]),prot(dw[3],loc{cyt}[.],name{araH}[.],up[2]),prot(dw[4],loc{cyt}[.],name{araG}[.],up[3]),prot(dw[.],loc{cyt}[.],name{araG}[.],up[4]),met(loc{cyt}[.],name{Pi}[.],prot[.]),met(loc{cyt}[.],name{ADP}[.],prot[.]),met(loc{cyt}[.],name{PROTON}[.],prot[.]),met(loc{cyt}[.],name{alpha_L_arabinofuranose}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],name{araF}[.],up[.]),prot(dw[2],loc{cyt}[.],name{araH}[.],up[1]),prot(dw[3],loc{cyt}[.],name{araH}[.],up[2]),prot(dw[4],loc{cyt}[.],name{araG}[.],up[3]),prot(dw[.],loc{cyt}[.],name{araG}[.],up[4]),met(loc{cyt}[.],name{WATER}[.],prot[.]),met(loc{cyt}[.],name{ATP}[.],prot[.]),met(loc{per}[.],name{alpha_L_arabinofuranose}[.],prot[.]),. @ 'rvs_ABC_2_RXN_alpha_af'
-'ABC_2_RXN_alpha_ap' prot(dw[1],loc{cyt}[.],name{araF}[.],up[.]),prot(dw[2],loc{cyt}[.],name{araH}[.],up[1]),prot(dw[3],loc{cyt}[.],name{araH}[.],up[2]),prot(dw[4],loc{cyt}[.],name{araG}[.],up[3]),prot(dw[.],loc{cyt}[.],name{araG}[.],up[4]),met(loc{cyt}[.],name{WATER}[.],prot[.]),met(loc{cyt}[.],name{ATP}[.],prot[.]),met(loc{per}[.],name{alpha_L_arabinopyranose}[.],prot[.]),. -> prot(dw[1],loc{cyt}[.],name{araF}[.],up[.]),prot(dw[2],loc{cyt}[.],name{araH}[.],up[1]),prot(dw[3],loc{cyt}[.],name{araH}[.],up[2]),prot(dw[4],loc{cyt}[.],name{araG}[.],up[3]),prot(dw[.],loc{cyt}[.],name{araG}[.],up[4]),met(loc{cyt}[.],name{Pi}[.],prot[.]),met(loc{cyt}[.],name{ADP}[.],prot[.]),met(loc{cyt}[.],name{PROTON}[.],prot[.]),met(loc{cyt}[.],name{alpha_L_arabinopyranose}[.],prot[.]) @ 'fwd_ABC_2_RXN_alpha_ap'
-'ABC_2_RXN_alpha_ap_rev' prot(dw[1],loc{cyt}[.],name{araF}[.],up[.]),prot(dw[2],loc{cyt}[.],name{araH}[.],up[1]),prot(dw[3],loc{cyt}[.],name{araH}[.],up[2]),prot(dw[4],loc{cyt}[.],name{araG}[.],up[3]),prot(dw[.],loc{cyt}[.],name{araG}[.],up[4]),met(loc{cyt}[.],name{Pi}[.],prot[.]),met(loc{cyt}[.],name{ADP}[.],prot[.]),met(loc{cyt}[.],name{PROTON}[.],prot[.]),met(loc{cyt}[.],name{alpha_L_arabinopyranose}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],name{araF}[.],up[.]),prot(dw[2],loc{cyt}[.],name{araH}[.],up[1]),prot(dw[3],loc{cyt}[.],name{araH}[.],up[2]),prot(dw[4],loc{cyt}[.],name{araG}[.],up[3]),prot(dw[.],loc{cyt}[.],name{araG}[.],up[4]),met(loc{cyt}[.],name{WATER}[.],prot[.]),met(loc{cyt}[.],name{ATP}[.],prot[.]),met(loc{per}[.],name{alpha_L_arabinopyranose}[.],prot[.]),. @ 'rvs_ABC_2_RXN_alpha_ap'
-'ABC_2_RXN_beta_af' prot(dw[1],loc{cyt}[.],name{araF}[.],up[.]),prot(dw[2],loc{cyt}[.],name{araH}[.],up[1]),prot(dw[3],loc{cyt}[.],name{araH}[.],up[2]),prot(dw[4],loc{cyt}[.],name{araG}[.],up[3]),prot(dw[.],loc{cyt}[.],name{araG}[.],up[4]),met(loc{cyt}[.],name{WATER}[.],prot[.]),met(loc{cyt}[.],name{ATP}[.],prot[.]),met(loc{per}[.],name{beta_L_arabinofuranose}[.],prot[.]),. -> prot(dw[1],loc{cyt}[.],name{araF}[.],up[.]),prot(dw[2],loc{cyt}[.],name{araH}[.],up[1]),prot(dw[3],loc{cyt}[.],name{araH}[.],up[2]),prot(dw[4],loc{cyt}[.],name{araG}[.],up[3]),prot(dw[.],loc{cyt}[.],name{araG}[.],up[4]),met(loc{cyt}[.],name{Pi}[.],prot[.]),met(loc{cyt}[.],name{ADP}[.],prot[.]),met(loc{cyt}[.],name{PROTON}[.],prot[.]),met(loc{cyt}[.],name{beta_L_arabinofuranose}[.],prot[.]) @ 'fwd_ABC_2_RXN_beta_af'
-'ABC_2_RXN_beta_af_rev' prot(dw[1],loc{cyt}[.],name{araF}[.],up[.]),prot(dw[2],loc{cyt}[.],name{araH}[.],up[1]),prot(dw[3],loc{cyt}[.],name{araH}[.],up[2]),prot(dw[4],loc{cyt}[.],name{araG}[.],up[3]),prot(dw[.],loc{cyt}[.],name{araG}[.],up[4]),met(loc{cyt}[.],name{Pi}[.],prot[.]),met(loc{cyt}[.],name{ADP}[.],prot[.]),met(loc{cyt}[.],name{PROTON}[.],prot[.]),met(loc{cyt}[.],name{beta_L_arabinofuranose}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],name{araF}[.],up[.]),prot(dw[2],loc{cyt}[.],name{araH}[.],up[1]),prot(dw[3],loc{cyt}[.],name{araH}[.],up[2]),prot(dw[4],loc{cyt}[.],name{araG}[.],up[3]),prot(dw[.],loc{cyt}[.],name{araG}[.],up[4]),met(loc{cyt}[.],name{WATER}[.],prot[.]),met(loc{cyt}[.],name{ATP}[.],prot[.]),met(loc{per}[.],name{beta_L_arabinofuranose}[.],prot[.]),. @ 'rvs_ABC_2_RXN_beta_af'
-'ABC_2_RXN_beta_ap' prot(dw[1],loc{cyt}[.],name{araF}[.],up[.]),prot(dw[2],loc{cyt}[.],name{araH}[.],up[1]),prot(dw[3],loc{cyt}[.],name{araH}[.],up[2]),prot(dw[4],loc{cyt}[.],name{araG}[.],up[3]),prot(dw[.],loc{cyt}[.],name{araG}[.],up[4]),met(loc{cyt}[.],name{WATER}[.],prot[.]),met(loc{cyt}[.],name{ATP}[.],prot[.]),met(loc{per}[.],name{beta_L_arabinopyranose}[.],prot[.]),. -> prot(dw[1],loc{cyt}[.],name{araF}[.],up[.]),prot(dw[2],loc{cyt}[.],name{araH}[.],up[1]),prot(dw[3],loc{cyt}[.],name{araH}[.],up[2]),prot(dw[4],loc{cyt}[.],name{araG}[.],up[3]),prot(dw[.],loc{cyt}[.],name{araG}[.],up[4]),met(loc{cyt}[.],name{Pi}[.],prot[.]),met(loc{cyt}[.],name{ADP}[.],prot[.]),met(loc{cyt}[.],name{PROTON}[.],prot[.]),met(loc{cyt}[.],name{beta_L_arabinopyranose}[.],prot[.]) @ 'fwd_ABC_2_RXN_beta_ap'
-'ABC_2_RXN_beta_ap_rev' prot(dw[1],loc{cyt}[.],name{araF}[.],up[.]),prot(dw[2],loc{cyt}[.],name{araH}[.],up[1]),prot(dw[3],loc{cyt}[.],name{araH}[.],up[2]),prot(dw[4],loc{cyt}[.],name{araG}[.],up[3]),prot(dw[.],loc{cyt}[.],name{araG}[.],up[4]),met(loc{cyt}[.],name{Pi}[.],prot[.]),met(loc{cyt}[.],name{ADP}[.],prot[.]),met(loc{cyt}[.],name{PROTON}[.],prot[.]),met(loc{cyt}[.],name{beta_L_arabinopyranose}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],name{araF}[.],up[.]),prot(dw[2],loc{cyt}[.],name{araH}[.],up[1]),prot(dw[3],loc{cyt}[.],name{araH}[.],up[2]),prot(dw[4],loc{cyt}[.],name{araG}[.],up[3]),prot(dw[.],loc{cyt}[.],name{araG}[.],up[4]),met(loc{cyt}[.],name{WATER}[.],prot[.]),met(loc{cyt}[.],name{ATP}[.],prot[.]),met(loc{per}[.],name{beta_L_arabinopyranose}[.],prot[.]),. @ 'rvs_ABC_2_RXN_beta_ap'
-'ARABISOM_RXN_alpha_ap' prot(loc{cyt}[.],name{araA}[.]),met(loc{cyt}[.],name{alpha_L_arabinopyranose}[.],prot[.]) -> prot(loc{cyt}[.],name{araA}[.]),met(loc{cyt}[.],name{L_RIBULOSE}[.],prot[.]) @ 'fwd_ARABISOM_RXN_alpha_ap'
-'ARABISOM_RXN_alpha_ap_rev' prot(loc{cyt}[.],name{araA}[.]),met(loc{cyt}[.],name{L_RIBULOSE}[.],prot[.]) -> prot(loc{cyt}[.],name{araA}[.]),met(loc{cyt}[.],name{alpha_L_arabinopyranose}[.],prot[.]) @ 'rvs_ARABISOM_RXN_alpha_ap'
-'ARABISOM_RXN_beta_ap' prot(loc{cyt}[.],name{araA}[.]),met(loc{cyt}[.],name{beta_L_arabinopyranose}[.],prot[.]) -> prot(loc{cyt}[.],name{araA}[.]),met(loc{cyt}[.],name{L_RIBULOSE}[.],prot[.]) @ 'fwd_ARABISOM_RXN_beta_ap'
-'ARABISOM_RXN_beta_ap_rev' prot(loc{cyt}[.],name{araA}[.]),met(loc{cyt}[.],name{L_RIBULOSE}[.],prot[.]) -> prot(loc{cyt}[.],name{araA}[.]),met(loc{cyt}[.],name{beta_L_arabinopyranose}[.],prot[.]) @ 'rvs_ARABISOM_RXN_beta_ap'
-'PhysicalInteractionRule_01' prot(dw[.],loc{per}[.],met[.],name{araF}[.],up[.]),met(loc{per}[.],name{alpha_L_arabinofuranose}[.],prot[.]) -> prot(dw[.],loc{per}[.],met[1],name{araF}[.],up[.]),met(loc{per}[.],name{alpha_L_arabinofuranose}[.],prot[1]) @ 'fwd_PhysicalInteractionRule_01'
-'PhysicalInteractionRule_01_rev' prot(dw[.],loc{per}[.],met[1],name{araF}[.],up[.]),met(loc{per}[.],name{alpha_L_arabinofuranose}[.],prot[1]) -> prot(dw[.],loc{per}[.],met[.],name{araF}[.],up[.]),met(loc{per}[.],name{alpha_L_arabinofuranose}[.],prot[.]) @ 'rvs_PhysicalInteractionRule_01'
-'PhysicalInteractionRule_02' prot(dw[.],loc{per}[.],met[.],name{araF}[.],up[.]),met(loc{per}[.],name{beta_L_arabinofuranose}[.],prot[.]) -> prot(dw[.],loc{per}[.],met[1],name{araF}[.],up[.]),met(loc{per}[.],name{beta_L_arabinofuranose}[.],prot[1]) @ 'fwd_PhysicalInteractionRule_02'
-'PhysicalInteractionRule_02_rev' prot(dw[.],loc{per}[.],met[1],name{araF}[.],up[.]),met(loc{per}[.],name{beta_L_arabinofuranose}[.],prot[1]) -> prot(dw[.],loc{per}[.],met[.],name{araF}[.],up[.]),met(loc{per}[.],name{beta_L_arabinofuranose}[.],prot[.]) @ 'rvs_PhysicalInteractionRule_02'
-'PhysicalInteractionRule_03' prot(dw[.],loc{per}[.],met[.],name{araF}[.],up[.]),met(loc{per}[.],name{alpha_L_arabinopyranose}[.],prot[.]) -> prot(dw[.],loc{per}[.],met[1],name{araF}[.],up[.]),met(loc{per}[.],name{alpha_L_arabinopyranose}[.],prot[1]) @ 'fwd_PhysicalInteractionRule_03'
-'PhysicalInteractionRule_03_rev' prot(dw[.],loc{per}[.],met[1],name{araF}[.],up[.]),met(loc{per}[.],name{alpha_L_arabinopyranose}[.],prot[1]) -> prot(dw[.],loc{per}[.],met[.],name{araF}[.],up[.]),met(loc{per}[.],name{alpha_L_arabinopyranose}[.],prot[.]) @ 'rvs_PhysicalInteractionRule_03'
-'PhysicalInteractionRule_04' prot(dw[.],loc{per}[.],met[.],name{araF}[.],up[.]),met(loc{per}[.],name{beta_L_arabinopyranose}[.],prot[.]) -> prot(dw[.],loc{per}[.],met[1],name{araF}[.],up[.]),met(loc{per}[.],name{beta_L_arabinopyranose}[.],prot[1]) @ 'fwd_PhysicalInteractionRule_04'
-'PhysicalInteractionRule_04_rev' prot(dw[.],loc{per}[.],met[1],name{araF}[.],up[.]),met(loc{per}[.],name{beta_L_arabinopyranose}[.],prot[1]) -> prot(dw[.],loc{per}[.],met[.],name{araF}[.],up[.]),met(loc{per}[.],name{beta_L_arabinopyranose}[.],prot[.]) @ 'rvs_PhysicalInteractionRule_04'
-'PhysicalInteractionRule_05' prot(dw[1],loc{cyt}[.],met[.],name{crp}[.],up[.]),prot(dw[.],loc{cyt}[.],met[.],name{crp}[.],up[1]),met(loc{cyt}[.],name{CAMP}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],met[.],name{crp}[.],up[.]),prot(dw[.],loc{cyt}[.],met[2],name{crp}[.],up[1]),met(loc{cyt}[.],name{CAMP}[.],prot[2]) @ 'fwd_PhysicalInteractionRule_05'
-'PhysicalInteractionRule_05_rev' prot(dw[1],loc{cyt}[.],met[.],name{crp}[.],up[.]),prot(dw[.],loc{cyt}[.],met[2],name{crp}[.],up[1]),met(loc{cyt}[.],name{CAMP}[.],prot[2]) -> prot(dw[1],loc{cyt}[.],met[.],name{crp}[.],up[.]),prot(dw[.],loc{cyt}[.],met[.],name{crp}[.],up[1]),met(loc{cyt}[.],name{CAMP}[.],prot[.]) @ 'rvs_PhysicalInteractionRule_05'
-'PhysicalInteractionRule_06' prot(dw[1],loc{cyt}[.],met[2],name{crp}[.],up[.]),met(loc{cyt}[.],name{CAMP}[.],prot[2]),prot(dw[.],loc{cyt}[.],met[.],name{crp}[.],up[1]),met(loc{cyt}[.],name{CAMP}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],met[2],name{crp}[.],up[.]),met(loc{cyt}[.],name{CAMP}[.],prot[2]),prot(dw[.],loc{cyt}[.],met[3],name{crp}[.],up[1]),met(loc{cyt}[.],name{CAMP}[.],prot[3]) @ 'fwd_PhysicalInteractionRule_06'
-'PhysicalInteractionRule_06_rev' prot(dw[1],loc{cyt}[.],met[2],name{crp}[.],up[.]),met(loc{cyt}[.],name{CAMP}[.],prot[2]),prot(dw[.],loc{cyt}[.],met[3],name{crp}[.],up[1]),met(loc{cyt}[.],name{CAMP}[.],prot[3]) -> prot(dw[1],loc{cyt}[.],met[2],name{crp}[.],up[.]),met(loc{cyt}[.],name{CAMP}[.],prot[2]),prot(dw[.],loc{cyt}[.],met[.],name{crp}[.],up[1]),met(loc{cyt}[.],name{CAMP}[.],prot[.]) @ 'rvs_PhysicalInteractionRule_06'
-'PhysicalInteractionRule_07' prot(dw[1],loc{cyt}[.],met[.],name{lacI}[.],up[.]),prot(dw[.],loc{cyt}[.],met[.],name{lacI}[.],up[1]),met(loc{cyt}[.],name{ALLOLACTOSE}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],met[.],name{lacI}[.],up[.]),prot(dw[.],loc{cyt}[.],met[2],name{lacI}[.],up[1]),met(loc{cyt}[.],name{ALLOLACTOSE}[.],prot[2]) @ 'fwd_PhysicalInteractionRule_07'
-'PhysicalInteractionRule_07_rev' prot(dw[1],loc{cyt}[.],met[.],name{lacI}[.],up[.]),prot(dw[.],loc{cyt}[.],met[2],name{lacI}[.],up[1]),met(loc{cyt}[.],name{ALLOLACTOSE}[.],prot[2]) -> prot(dw[1],loc{cyt}[.],met[.],name{lacI}[.],up[.]),prot(dw[.],loc{cyt}[.],met[.],name{lacI}[.],up[1]),met(loc{cyt}[.],name{ALLOLACTOSE}[.],prot[.]) @ 'rvs_PhysicalInteractionRule_07'
-'PhysicalInteractionRule_08' prot(dw[1],loc{cyt}[.],met[2],name{lacI}[.],up[.]),met(loc{cyt}[.],name{ALLOLACTOSE}[.],prot[2]),prot(dw[.],loc{cyt}[.],met[.],name{lacI}[.],up[1]),met(loc{cyt}[.],name{ALLOLACTOSE}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],met[2],name{lacI}[.],up[.]),met(loc{cyt}[.],name{ALLOLACTOSE}[.],prot[2]),prot(dw[.],loc{cyt}[.],met[3],name{lacI}[.],up[1]),met(loc{cyt}[.],name{ALLOLACTOSE}[.],prot[3]) @ 'fwd_PhysicalInteractionRule_08'
-'PhysicalInteractionRule_08_rev' prot(dw[1],loc{cyt}[.],met[2],name{lacI}[.],up[.]),met(loc{cyt}[.],name{ALLOLACTOSE}[.],prot[2]),prot(dw[.],loc{cyt}[.],met[3],name{lacI}[.],up[1]),met(loc{cyt}[.],name{ALLOLACTOSE}[.],prot[3]) -> prot(dw[1],loc{cyt}[.],met[2],name{lacI}[.],up[.]),met(loc{cyt}[.],name{ALLOLACTOSE}[.],prot[2]),prot(dw[.],loc{cyt}[.],met[.],name{lacI}[.],up[1]),met(loc{cyt}[.],name{ALLOLACTOSE}[.],prot[.]) @ 'rvs_PhysicalInteractionRule_08'
-'PhysicalInteractionRule_09' prot(dw[1],loc{cyt}[.],met[.],name{araG}[.],up[.]),prot(dw[.],loc{cyt}[.],met[.],name{araG}[.],up[1]),met(loc{cyt}[.],name{ATP}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],met[.],name{araG}[.],up[.]),prot(dw[.],loc{cyt}[.],met[2],name{araG}[.],up[1]),met(loc{cyt}[.],name{ATP}[.],prot[2]) @ 'fwd_PhysicalInteractionRule_09'
-'PhysicalInteractionRule_09_rev' prot(dw[1],loc{cyt}[.],met[.],name{araG}[.],up[.]),prot(dw[.],loc{cyt}[.],met[2],name{araG}[.],up[1]),met(loc{cyt}[.],name{ATP}[.],prot[2]) -> prot(dw[1],loc{cyt}[.],met[.],name{araG}[.],up[.]),prot(dw[.],loc{cyt}[.],met[.],name{araG}[.],up[1]),met(loc{cyt}[.],name{ATP}[.],prot[.]) @ 'rvs_PhysicalInteractionRule_09'
-'PhysicalInteractionRule_10' prot(dw[.],loc{cyt}[.],met[.],name{araC}[.],up[.]),met(loc{cyt}[.],name{alpha_L_arabinopyranose}[.],prot[.]) -> prot(dw[.],loc{cyt}[.],met[1],name{araC}[.],up[.]),met(loc{cyt}[.],name{alpha_L_arabinopyranose}[.],prot[1]) @ 'fwd_PhysicalInteractionRule_10'
-'PhysicalInteractionRule_10_rev' prot(dw[.],loc{cyt}[.],met[1],name{araC}[.],up[.]),met(loc{cyt}[.],name{alpha_L_arabinopyranose}[.],prot[1]) -> prot(dw[.],loc{cyt}[.],met[.],name{araC}[.],up[.]),met(loc{cyt}[.],name{alpha_L_arabinopyranose}[.],prot[.]) @ 'rvs_PhysicalInteractionRule_10'
-'PhysicalInteractionRule_11' prot(dw[1],loc{cyt}[.],met[.],name{araC}[.],up[.]),prot(dw[.],loc{cyt}[.],met[.],name{araC}[.],up[1]),met(loc{cyt}[.],name{alpha_L_arabinopyranose}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],met[.],name{araC}[.],up[.]),prot(dw[.],loc{cyt}[.],met[2],name{araC}[.],up[1]),met(loc{cyt}[.],name{alpha_L_arabinopyranose}[.],prot[2]) @ 'fwd_PhysicalInteractionRule_11'
-'PhysicalInteractionRule_11_rev' prot(dw[1],loc{cyt}[.],met[.],name{araC}[.],up[.]),prot(dw[.],loc{cyt}[.],met[2],name{araC}[.],up[1]),met(loc{cyt}[.],name{alpha_L_arabinopyranose}[.],prot[2]) -> prot(dw[1],loc{cyt}[.],met[.],name{araC}[.],up[.]),prot(dw[.],loc{cyt}[.],met[.],name{araC}[.],up[1]),met(loc{cyt}[.],name{alpha_L_arabinopyranose}[.],prot[.]) @ 'rvs_PhysicalInteractionRule_11'
-'PhysicalInteractionRule_12' prot(dw[1],loc{cyt}[.],met[2],name{araC}[.],up[.]),met(loc{cyt}[.],name{alpha_L_arabinopyranose}[.],prot[2]),prot(dw[.],loc{cyt}[.],met[.],name{araC}[.],up[1]),met(loc{cyt}[.],name{alpha_L_arabinopyranose}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],met[2],name{araC}[.],up[.]),met(loc{cyt}[.],name{alpha_L_arabinopyranose}[.],prot[2]),prot(dw[.],loc{cyt}[.],met[3],name{araC}[.],up[1]),met(loc{cyt}[.],name{alpha_L_arabinopyranose}[.],prot[3]) @ 'fwd_PhysicalInteractionRule_12'
-'PhysicalInteractionRule_12_rev' prot(dw[1],loc{cyt}[.],met[2],name{araC}[.],up[.]),met(loc{cyt}[.],name{alpha_L_arabinopyranose}[.],prot[2]),prot(dw[.],loc{cyt}[.],met[3],name{araC}[.],up[1]),met(loc{cyt}[.],name{alpha_L_arabinopyranose}[.],prot[3]) -> prot(dw[1],loc{cyt}[.],met[2],name{araC}[.],up[.]),met(loc{cyt}[.],name{alpha_L_arabinopyranose}[.],prot[2]),prot(dw[.],loc{cyt}[.],met[.],name{araC}[.],up[1]),met(loc{cyt}[.],name{alpha_L_arabinopyranose}[.],prot[.]) @ 'rvs_PhysicalInteractionRule_12'
-'PhysicalInteractionRule_13' prot(dw[.],name{araA}[.],up[.]),prot(dw[.],name{araA}[.],up[.]) -> prot(dw[1],name{araA}[.],up[.]),prot(dw[.],name{araA}[.],up[1]) @ 'fwd_PhysicalInteractionRule_13'
-'PhysicalInteractionRule_13_rev' prot(dw[1],name{araA}[.],up[.]),prot(dw[.],name{araA}[.],up[1]) -> prot(dw[.],name{araA}[.],up[.]),prot(dw[.],name{araA}[.],up[.]) @ 'rvs_PhysicalInteractionRule_13'
-'PhysicalInteractionRule_14' prot(dw[2],name{araA}[.],up[.]),prot(dw[.],name{araA}[.],up[2]),prot(dw[1],name{araA}[.],up[.]),prot(dw[.],name{araA}[.],up[1]) -> prot(dw[1],name{araA}[.],up[.]),prot(dw[2],name{araA}[.],up[1]),prot(dw[3],name{araA}[.],up[2]),prot(dw[.],name{araA}[.],up[3]) @ 'fwd_PhysicalInteractionRule_14'
-'PhysicalInteractionRule_14_rev' prot(dw[1],name{araA}[.],up[.]),prot(dw[2],name{araA}[.],up[1]),prot(dw[3],name{araA}[.],up[2]),prot(dw[.],name{araA}[.],up[3]) -> prot(dw[2],name{araA}[.],up[.]),prot(dw[.],name{araA}[.],up[2]),prot(dw[1],name{araA}[.],up[.]),prot(dw[.],name{araA}[.],up[1]) @ 'rvs_PhysicalInteractionRule_14'
-'PhysicalInteractionRule_15' prot(dw[4],name{araA}[.],up[.]),prot(dw[.],name{araA}[.],up[4]),prot(dw[1],name{araA}[.],up[.]),prot(dw[2],name{araA}[.],up[1]),prot(dw[3],name{araA}[.],up[2]),prot(dw[.],name{araA}[.],up[3]) -> prot(dw[1],name{araA}[.],up[.]),prot(dw[2],name{araA}[.],up[1]),prot(dw[3],name{araA}[.],up[2]),prot(dw[4],name{araA}[.],up[3]),prot(dw[5],name{araA}[.],up[4]),prot(dw[.],name{araA}[.],up[5]) @ 'fwd_PhysicalInteractionRule_15'
-'PhysicalInteractionRule_15_rev' prot(dw[1],name{araA}[.],up[.]),prot(dw[2],name{araA}[.],up[1]),prot(dw[3],name{araA}[.],up[2]),prot(dw[4],name{araA}[.],up[3]),prot(dw[5],name{araA}[.],up[4]),prot(dw[.],name{araA}[.],up[5]) -> prot(dw[4],name{araA}[.],up[.]),prot(dw[.],name{araA}[.],up[4]),prot(dw[1],name{araA}[.],up[.]),prot(dw[2],name{araA}[.],up[1]),prot(dw[3],name{araA}[.],up[2]),prot(dw[.],name{araA}[.],up[3]) @ 'rvs_PhysicalInteractionRule_15'
-'PhysicalInteractionRule_16' prot(dw[1],name{araA}[.],up[.]),prot(dw[.],name{araA}[.],up[1]),prot(dw[.],name{araA}[.],up[.]) -> prot(dw[1],name{araA}[.],up[.]),prot(dw[2],name{araA}[.],up[1]),prot(dw[.],name{araA}[.],up[2]) @ 'fwd_PhysicalInteractionRule_16'
-'PhysicalInteractionRule_16_rev' prot(dw[1],name{araA}[.],up[.]),prot(dw[2],name{araA}[.],up[1]),prot(dw[.],name{araA}[.],up[2]) -> prot(dw[1],name{araA}[.],up[.]),prot(dw[.],name{araA}[.],up[1]),prot(dw[.],name{araA}[.],up[.]) @ 'rvs_PhysicalInteractionRule_16'
-'PhysicalInteractionRule_17' prot(dw[3],name{araA}[.],up[.]),prot(dw[4],name{araA}[.],up[3]),prot(dw[.],name{araA}[.],up[4]),prot(dw[1],name{araA}[.],up[.]),prot(dw[2],name{araA}[.],up[1]),prot(dw[.],name{araA}[.],up[2]) -> prot(dw[1],name{araA}[.],up[.]),prot(dw[2],name{araA}[.],up[1]),prot(dw[3],name{araA}[.],up[2]),prot(dw[4],name{araA}[.],up[3]),prot(dw[5],name{araA}[.],up[4]),prot(dw[.],name{araA}[.],up[5]) @ 'fwd_PhysicalInteractionRule_17'
-'PhysicalInteractionRule_17_rev' prot(dw[1],name{araA}[.],up[.]),prot(dw[2],name{araA}[.],up[1]),prot(dw[3],name{araA}[.],up[2]),prot(dw[4],name{araA}[.],up[3]),prot(dw[5],name{araA}[.],up[4]),prot(dw[.],name{araA}[.],up[5]) -> prot(dw[3],name{araA}[.],up[.]),prot(dw[4],name{araA}[.],up[3]),prot(dw[.],name{araA}[.],up[4]),prot(dw[1],name{araA}[.],up[.]),prot(dw[2],name{araA}[.],up[1]),prot(dw[.],name{araA}[.],up[2]) @ 'rvs_PhysicalInteractionRule_17'
-'PhysicalInteractionRule_18' prot(dw[.],name{araB}[.],up[.]),prot(dw[.],name{araB}[.],up[.]) -> prot(dw[1],name{araB}[.],up[.]),prot(dw[.],name{araB}[.],up[1]) @ 'fwd_PhysicalInteractionRule_18'
-'PhysicalInteractionRule_18_rev' prot(dw[1],name{araB}[.],up[.]),prot(dw[.],name{araB}[.],up[1]) -> prot(dw[.],name{araB}[.],up[.]),prot(dw[.],name{araB}[.],up[.]) @ 'rvs_PhysicalInteractionRule_18'
-'PhysicalInteractionRule_19' prot(dw[.],name{araD}[.],up[.]),prot(dw[.],name{araD}[.],up[.]) -> prot(dw[1],name{araD}[.],up[.]),prot(dw[.],name{araD}[.],up[1]) @ 'fwd_PhysicalInteractionRule_19'
-'PhysicalInteractionRule_19_rev' prot(dw[1],name{araD}[.],up[.]),prot(dw[.],name{araD}[.],up[1]) -> prot(dw[.],name{araD}[.],up[.]),prot(dw[.],name{araD}[.],up[.]) @ 'rvs_PhysicalInteractionRule_19'
-'PhysicalInteractionRule_20' prot(dw[2],name{araD}[.],up[.]),prot(dw[.],name{araD}[.],up[2]),prot(dw[1],name{araD}[.],up[.]),prot(dw[.],name{araD}[.],up[1]) -> prot(dw[1],name{araD}[.],up[.]),prot(dw[2],name{araD}[.],up[1]),prot(dw[3],name{araD}[.],up[2]),prot(dw[.],name{araD}[.],up[3]) @ 'fwd_PhysicalInteractionRule_20'
-'PhysicalInteractionRule_20_rev' prot(dw[1],name{araD}[.],up[.]),prot(dw[2],name{araD}[.],up[1]),prot(dw[3],name{araD}[.],up[2]),prot(dw[.],name{araD}[.],up[3]) -> prot(dw[2],name{araD}[.],up[.]),prot(dw[.],name{araD}[.],up[2]),prot(dw[1],name{araD}[.],up[.]),prot(dw[.],name{araD}[.],up[1]) @ 'rvs_PhysicalInteractionRule_20'
-'PhysicalInteractionRule_21' prot(dw[.],name{araG}[.],up[.]),prot(dw[.],name{araG}[.],up[.]) -> prot(dw[1],name{araG}[.],up[.]),prot(dw[.],name{araG}[.],up[1]) @ 'fwd_PhysicalInteractionRule_21'
-'PhysicalInteractionRule_21_rev' prot(dw[1],name{araG}[.],up[.]),prot(dw[.],name{araG}[.],up[1]) -> prot(dw[.],name{araG}[.],up[.]),prot(dw[.],name{araG}[.],up[.]) @ 'rvs_PhysicalInteractionRule_21'
-'PhysicalInteractionRule_22' prot(dw[.],name{araH}[.],up[.]),prot(dw[.],name{araH}[.],up[.]) -> prot(dw[1],name{araH}[.],up[.]),prot(dw[.],name{araH}[.],up[1]) @ 'fwd_PhysicalInteractionRule_22'
-'PhysicalInteractionRule_22_rev' prot(dw[1],name{araH}[.],up[.]),prot(dw[.],name{araH}[.],up[1]) -> prot(dw[.],name{araH}[.],up[.]),prot(dw[.],name{araH}[.],up[.]) @ 'rvs_PhysicalInteractionRule_22'
-'PhysicalInteractionRule_23' prot(dw[2],name{araH}[.],up[.]),prot(dw[.],name{araH}[.],up[2]),prot(dw[1],name{araG}[.],up[.]),prot(dw[.],name{araG}[.],up[1]) -> prot(dw[1],name{araH}[.],up[.]),prot(dw[2],name{araH}[.],up[1]),prot(dw[3],name{araG}[.],up[2]),prot(dw[.],name{araG}[.],up[3]) @ 'fwd_PhysicalInteractionRule_23'
-'PhysicalInteractionRule_23_rev' prot(dw[1],name{araH}[.],up[.]),prot(dw[2],name{araH}[.],up[1]),prot(dw[3],name{araG}[.],up[2]),prot(dw[.],name{araG}[.],up[3]) -> prot(dw[2],name{araH}[.],up[.]),prot(dw[.],name{araH}[.],up[2]),prot(dw[1],name{araG}[.],up[.]),prot(dw[.],name{araG}[.],up[1]) @ 'rvs_PhysicalInteractionRule_23'
-'PhysicalInteractionRule_24' prot(dw[.],name{araF}[.],up[.]),prot(dw[1],name{araH}[.],up[.]),prot(dw[2],name{araH}[.],up[1]),prot(dw[3],name{araG}[.],up[2]),prot(dw[.],name{araG}[.],up[3]) -> prot(dw[1],name{araF}[.],up[.]),prot(dw[2],name{araH}[.],up[1]),prot(dw[3],name{araH}[.],up[2]),prot(dw[4],name{araG}[.],up[3]),prot(dw[.],name{araG}[.],up[4]) @ 'fwd_PhysicalInteractionRule_24'
-'PhysicalInteractionRule_24_rev' prot(dw[1],name{araF}[.],up[.]),prot(dw[2],name{araH}[.],up[1]),prot(dw[3],name{araH}[.],up[2]),prot(dw[4],name{araG}[.],up[3]),prot(dw[.],name{araG}[.],up[4]) -> prot(dw[.],name{araF}[.],up[.]),prot(dw[1],name{araH}[.],up[.]),prot(dw[2],name{araH}[.],up[1]),prot(dw[3],name{araG}[.],up[2]),prot(dw[.],name{araG}[.],up[3]) @ 'rvs_PhysicalInteractionRule_24'
-'RIBULPEPIM_RXN' prot(loc{cyt}[.],name{araD}[.]),met(loc{cyt}[.],name{L_RIBULOSE_5_P}[.],prot[.]) -> prot(loc{cyt}[.],name{araD}[.]),met(loc{cyt}[.],name{XYLULOSE_5_PHOSPHATE}[.],prot[.]) @ 'fwd_RIBULPEPIM_RXN'
-'RIBULPEPIM_RXN_rev' prot(loc{cyt}[.],name{araD}[.]),met(loc{cyt}[.],name{XYLULOSE_5_PHOSPHATE}[.],prot[.]) -> prot(loc{cyt}[.],name{araD}[.]),met(loc{cyt}[.],name{L_RIBULOSE_5_P}[.],prot[.]) @ 'rvs_RIBULPEPIM_RXN'
-'RXN0_5116' prot(loc{cyt}[.],name{araB}[.]),met(loc{cyt}[.],name{L_RIBULOSE}[.],prot[.]),met(loc{cyt}[.],name{ATP}[.],prot[.]),. -> prot(loc{cyt}[.],name{araB}[.]),met(loc{cyt}[.],name{PROTON}[.],prot[.]),met(loc{cyt}[.],name{L_RIBULOSE_5_P}[.],prot[.]),met(loc{cyt}[.],name{ADP}[.],prot[.]) @ 'fwd_RXN0_5116'
-'RXN0_5116_rev' prot(loc{cyt}[.],name{araB}[.]),met(loc{cyt}[.],name{PROTON}[.],prot[.]),met(loc{cyt}[.],name{L_RIBULOSE_5_P}[.],prot[.]),met(loc{cyt}[.],name{ADP}[.],prot[.]) -> prot(loc{cyt}[.],name{araB}[.]),met(loc{cyt}[.],name{L_RIBULOSE}[.],prot[.]),met(loc{cyt}[.],name{ATP}[.],prot[.]),. @ 'rvs_RXN0_5116'
-'TRANS_RXN_10_alpha_af' prot(loc{cyt}[.],name{araE}[.]),met(loc{per}[.],name{PROTON}[.],prot[.]),met(loc{per}[.],name{alpha_L_arabinofuranose}[.],prot[.]) -> prot(loc{cyt}[.],name{araE}[.]),met(loc{cyt}[.],name{PROTON}[.],prot[.]),met(loc{cyt}[.],name{alpha_L_arabinofuranose}[.],prot[.]) @ 'fwd_TRANS_RXN_10_alpha_af'
-'TRANS_RXN_10_alpha_af_rev' prot(loc{cyt}[.],name{araE}[.]),met(loc{cyt}[.],name{PROTON}[.],prot[.]),met(loc{cyt}[.],name{alpha_L_arabinofuranose}[.],prot[.]) -> prot(loc{cyt}[.],name{araE}[.]),met(loc{per}[.],name{PROTON}[.],prot[.]),met(loc{per}[.],name{alpha_L_arabinofuranose}[.],prot[.]) @ 'rvs_TRANS_RXN_10_alpha_af'
-'TRANS_RXN_10_alpha_ap' prot(loc{cyt}[.],name{araE}[.]),met(loc{per}[.],name{PROTON}[.],prot[.]),met(loc{per}[.],name{alpha_L_arabinopyranose}[.],prot[.]) -> prot(loc{cyt}[.],name{araE}[.]),met(loc{cyt}[.],name{PROTON}[.],prot[.]),met(loc{cyt}[.],name{alpha_L_arabinopyranose}[.],prot[.]) @ 'fwd_TRANS_RXN_10_alpha_ap'
-'TRANS_RXN_10_alpha_ap_rev' prot(loc{cyt}[.],name{araE}[.]),met(loc{cyt}[.],name{PROTON}[.],prot[.]),met(loc{cyt}[.],name{alpha_L_arabinopyranose}[.],prot[.]) -> prot(loc{cyt}[.],name{araE}[.]),met(loc{per}[.],name{PROTON}[.],prot[.]),met(loc{per}[.],name{alpha_L_arabinopyranose}[.],prot[.]) @ 'rvs_TRANS_RXN_10_alpha_ap'
-'TRANS_RXN_10_beta_af' prot(loc{cyt}[.],name{araE}[.]),met(loc{per}[.],name{PROTON}[.],prot[.]),met(loc{per}[.],name{beta_L_arabinofuranose}[.],prot[.]) -> prot(loc{cyt}[.],name{araE}[.]),met(loc{cyt}[.],name{PROTON}[.],prot[.]),met(loc{cyt}[.],name{beta_L_arabinofuranose}[.],prot[.]) @ 'fwd_TRANS_RXN_10_beta_af'
-'TRANS_RXN_10_beta_af_rev' prot(loc{cyt}[.],name{araE}[.]),met(loc{cyt}[.],name{PROTON}[.],prot[.]),met(loc{cyt}[.],name{beta_L_arabinofuranose}[.],prot[.]) -> prot(loc{cyt}[.],name{araE}[.]),met(loc{per}[.],name{PROTON}[.],prot[.]),met(loc{per}[.],name{beta_L_arabinofuranose}[.],prot[.]) @ 'rvs_TRANS_RXN_10_beta_af'
-'TRANS_RXN_10_beta_ap' prot(loc{cyt}[.],name{araE}[.]),met(loc{per}[.],name{PROTON}[.],prot[.]),met(loc{per}[.],name{beta_L_arabinopyranose}[.],prot[.]) -> prot(loc{cyt}[.],name{araE}[.]),met(loc{cyt}[.],name{PROTON}[.],prot[.]),met(loc{cyt}[.],name{beta_L_arabinopyranose}[.],prot[.]) @ 'fwd_TRANS_RXN_10_beta_ap'
-'TRANS_RXN_10_beta_ap_rev' prot(loc{cyt}[.],name{araE}[.]),met(loc{cyt}[.],name{PROTON}[.],prot[.]),met(loc{cyt}[.],name{beta_L_arabinopyranose}[.],prot[.]) -> prot(loc{cyt}[.],name{araE}[.]),met(loc{per}[.],name{PROTON}[.],prot[.]),met(loc{per}[.],name{beta_L_arabinopyranose}[.],prot[.]) @ 'rvs_TRANS_RXN_10_beta_ap'
+'ALLOLACTOSE_DEG_alpha' prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{alpha_ALLOLACTOSE}[.],loc{cyt}[.],prot[.]),met(name{WATER}[.],loc{cyt}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{alpha_GALACTOSE}[.],loc{cyt}[.],prot[.]),met(name{alpha_glucose}[.],loc{cyt}[.],prot[.]) @ 'fwd_ALLOLACTOSE_DEG_alpha'
+'ALLOLACTOSE_DEG_alpha_rev' prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{alpha_GALACTOSE}[.],loc{cyt}[.],prot[.]),met(name{alpha_glucose}[.],loc{cyt}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{alpha_ALLOLACTOSE}[.],loc{cyt}[.],prot[.]),met(name{WATER}[.],loc{cyt}[.],prot[.]) @ 'rvs_ALLOLACTOSE_DEG_alpha'
+'ALLOLACTOSE_DEG_beta' prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{beta_ALLOLACTOSE}[.],loc{cyt}[.],prot[.]),met(name{WATER}[.],loc{cyt}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{beta_GALACTOSE}[.],loc{cyt}[.],prot[.]),met(name{beta_glucose}[.],loc{cyt}[.],prot[.]) @ 'fwd_ALLOLACTOSE_DEG_beta'
+'ALLOLACTOSE_DEG_beta_rev' prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{beta_GALACTOSE}[.],loc{cyt}[.],prot[.]),met(name{beta_glucose}[.],loc{cyt}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{beta_ALLOLACTOSE}[.],loc{cyt}[.],prot[.]),met(name{WATER}[.],loc{cyt}[.],prot[.]) @ 'rvs_ALLOLACTOSE_DEG_beta'
+'BETAGALACTOSID_RXN' prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{beta_lactose}[.],loc{cyt}[.],prot[.]),met(name{WATER}[.],loc{cyt}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{beta_GALACTOSE}[.],loc{cyt}[.],prot[.]),met(name{beta_glucose}[.],loc{cyt}[.],prot[.]) @ 'fwd_BETAGALACTOSID_RXN'
+'BETAGALACTOSID_RXN_rev' prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{beta_GALACTOSE}[.],loc{cyt}[.],prot[.]),met(name{beta_glucose}[.],loc{cyt}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{beta_lactose}[.],loc{cyt}[.],prot[.]),met(name{WATER}[.],loc{cyt}[.],prot[.]) @ 'rvs_BETAGALACTOSID_RXN'
+'BETAGALACTOSID_RXN_alpha' prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{alpha_lactose}[.],loc{cyt}[.],prot[.]),met(name{WATER}[.],loc{cyt}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{alpha_GALACTOSE}[.],loc{cyt}[.],prot[.]),met(name{alpha_glucose}[.],loc{cyt}[.],prot[.]) @ 'fwd_BETAGALACTOSID_RXN_alpha'
+'BETAGALACTOSID_RXN_alpha_rev' prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{alpha_GALACTOSE}[.],loc{cyt}[.],prot[.]),met(name{alpha_glucose}[.],loc{cyt}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{alpha_lactose}[.],loc{cyt}[.],prot[.]),met(name{WATER}[.],loc{cyt}[.],prot[.]) @ 'rvs_BETAGALACTOSID_RXN_alpha'
+'GALACTOACETYLTRAN_RXN_galactose' prot(dw[1],loc{cyt}[.],name{lacA}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacA}[.],up[1]),prot(dw[.],loc{cyt}[.],name{lacA}[.],up[2]),met(name{beta_GALACTOSE}[.],loc{cyt}[.],prot[.]),met(name{ACETYL_COA}[.],loc{cyt}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],name{lacA}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacA}[.],up[1]),prot(dw[.],loc{cyt}[.],name{lacA}[.],up[2]),met(name{_6_Acetyl_beta_D_Galactose}[.],loc{cyt}[.],prot[.]),met(name{CO_A}[.],loc{cyt}[.],prot[.]) @ 'fwd_GALACTOACETYLTRAN_RXN_galactose'
+'GALACTOACETYLTRAN_RXN_galactose_rev' prot(dw[1],loc{cyt}[.],name{lacA}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacA}[.],up[1]),prot(dw[.],loc{cyt}[.],name{lacA}[.],up[2]),met(name{_6_Acetyl_beta_D_Galactose}[.],loc{cyt}[.],prot[.]),met(name{CO_A}[.],loc{cyt}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],name{lacA}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacA}[.],up[1]),prot(dw[.],loc{cyt}[.],name{lacA}[.],up[2]),met(name{beta_GALACTOSE}[.],loc{cyt}[.],prot[.]),met(name{ACETYL_COA}[.],loc{cyt}[.],prot[.]) @ 'rvs_GALACTOACETYLTRAN_RXN_galactose'
+'GALACTOSE_MUTAROTATION' met(name{alpha_GALACTOSE}[.],loc{cyt}[.],prot[.]) -> met(name{beta_GALACTOSE}[.],loc{cyt}[.],prot[.]) @ 'fwd_GALACTOSE_MUTAROTATION'
+'GALACTOSE_MUTAROTATION_rev' met(name{beta_GALACTOSE}[.],loc{cyt}[.],prot[.]) -> met(name{alpha_GALACTOSE}[.],loc{cyt}[.],prot[.]) @ 'rvs_GALACTOSE_MUTAROTATION'
+'GLUCOSE_MUTAROTATION' met(name{alpha_glucose}[.],loc{cyt}[.],prot[.]) -> met(name{beta_glucose}[.],loc{cyt}[.],prot[.]) @ 'fwd_GLUCOSE_MUTAROTATION'
+'GLUCOSE_MUTAROTATION_rev' met(name{beta_glucose}[.],loc{cyt}[.],prot[.]) -> met(name{alpha_glucose}[.],loc{cyt}[.],prot[.]) @ 'rvs_GLUCOSE_MUTAROTATION'
+'LACTOSE_MUTAROTATION' met(name{alpha_lactose}[.],loc{cyt}[.],prot[.]) -> met(name{beta_lactose}[.],loc{cyt}[.],prot[.]) @ 'fwd_LACTOSE_MUTAROTATION'
+'LACTOSE_MUTAROTATION_rev' met(name{beta_lactose}[.],loc{cyt}[.],prot[.]) -> met(name{alpha_lactose}[.],loc{cyt}[.],prot[.]) @ 'rvs_LACTOSE_MUTAROTATION'
+'PhysicalInteractionRule_1' prot(dw[.],name{lacZ}[.],up[.]),prot(dw[.],name{lacZ}[.],up[.]) -> prot(dw[1],name{lacZ}[.],up[.]),prot(dw[.],name{lacZ}[.],up[1]) @ 'fwd_PhysicalInteractionRule_1'
+'PhysicalInteractionRule_1_rev' prot(dw[1],name{lacZ}[.],up[.]),prot(dw[.],name{lacZ}[.],up[1]) -> prot(dw[.],name{lacZ}[.],up[.]),prot(dw[.],name{lacZ}[.],up[.]) @ 'rvs_PhysicalInteractionRule_1'
+'PhysicalInteractionRule_2' prot(dw[2],name{lacZ}[.],up[.]),prot(dw[.],name{lacZ}[.],up[2]),prot(dw[1],name{lacZ}[.],up[.]),prot(dw[.],name{lacZ}[.],up[1]) -> prot(dw[1],name{lacZ}[.],up[.]),prot(dw[2],name{lacZ}[.],up[1]),prot(dw[3],name{lacZ}[.],up[2]),prot(dw[.],name{lacZ}[.],up[3]) @ 'fwd_PhysicalInteractionRule_2'
+'PhysicalInteractionRule_2_rev' prot(dw[1],name{lacZ}[.],up[.]),prot(dw[2],name{lacZ}[.],up[1]),prot(dw[3],name{lacZ}[.],up[2]),prot(dw[.],name{lacZ}[.],up[3]) -> prot(dw[2],name{lacZ}[.],up[.]),prot(dw[.],name{lacZ}[.],up[2]),prot(dw[1],name{lacZ}[.],up[.]),prot(dw[.],name{lacZ}[.],up[1]) @ 'rvs_PhysicalInteractionRule_2'
+'PhysicalInteractionRule_3' prot(dw[.],name{lacA}[.],up[.]),prot(dw[.],name{lacA}[.],up[.]) -> prot(dw[1],name{lacA}[.],up[.]),prot(dw[.],name{lacA}[.],up[1]) @ 'fwd_PhysicalInteractionRule_3'
+'PhysicalInteractionRule_3_rev' prot(dw[1],name{lacA}[.],up[.]),prot(dw[.],name{lacA}[.],up[1]) -> prot(dw[.],name{lacA}[.],up[.]),prot(dw[.],name{lacA}[.],up[.]) @ 'rvs_PhysicalInteractionRule_3'
+'PhysicalInteractionRule_4' prot(dw[.],name{lacA}[.],up[.]),prot(dw[1],name{lacA}[.],up[.]),prot(dw[.],name{lacA}[.],up[1]) -> prot(dw[1],name{lacA}[.],up[.]),prot(dw[2],name{lacA}[.],up[1]),prot(dw[.],name{lacA}[.],up[2]) @ 'fwd_PhysicalInteractionRule_4'
+'PhysicalInteractionRule_4_rev' prot(dw[1],name{lacA}[.],up[.]),prot(dw[2],name{lacA}[.],up[1]),prot(dw[.],name{lacA}[.],up[2]) -> prot(dw[.],name{lacA}[.],up[.]),prot(dw[1],name{lacA}[.],up[.]),prot(dw[.],name{lacA}[.],up[1]) @ 'rvs_PhysicalInteractionRule_4'
+'RXN0_5363' prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{alpha_lactose}[.],loc{cyt}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{alpha_ALLOLACTOSE}[.],loc{cyt}[.],prot[.]) @ 'fwd_RXN0_5363'
+'RXN0_5363_rev' prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{alpha_ALLOLACTOSE}[.],loc{cyt}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{alpha_lactose}[.],loc{cyt}[.],prot[.]) @ 'rvs_RXN0_5363'
+'RXN0_5363_beta' prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{beta_lactose}[.],loc{cyt}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{beta_ALLOLACTOSE}[.],loc{cyt}[.],prot[.]) @ 'fwd_RXN0_5363_beta'
+'RXN0_5363_beta_rev' prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{beta_ALLOLACTOSE}[.],loc{cyt}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{beta_lactose}[.],loc{cyt}[.],prot[.]) @ 'rvs_RXN0_5363_beta'
+'RXN0_7215' prot(loc{mem}[.],name{lacY}[.]),met(name{PROTON}[.],loc{per}[.],prot[.]),met(name{CPD_3561}[.],loc{per}[.],prot[.]) -> prot(loc{mem}[.],name{lacY}[.]),met(name{PROTON}[.],loc{cyt}[.],prot[.]),met(name{CPD_3561}[.],loc{cyt}[.],prot[.]) @ 'fwd_RXN0_7215'
+'RXN0_7215_rev' prot(loc{mem}[.],name{lacY}[.]),met(name{PROTON}[.],loc{cyt}[.],prot[.]),met(name{CPD_3561}[.],loc{cyt}[.],prot[.]) -> prot(loc{mem}[.],name{lacY}[.]),met(name{PROTON}[.],loc{per}[.],prot[.]),met(name{CPD_3561}[.],loc{per}[.],prot[.]) @ 'rvs_RXN0_7215'
+'RXN0_7217' prot(loc{mem}[.],name{lacY}[.]),met(name{PROTON}[.],loc{per}[.],prot[.]),met(name{CPD_3785}[.],loc{per}[.],prot[.]) -> prot(loc{mem}[.],name{lacY}[.]),met(name{PROTON}[.],loc{cyt}[.],prot[.]),met(name{CPD_3785}[.],loc{cyt}[.],prot[.]) @ 'fwd_RXN0_7217'
+'RXN0_7217_rev' prot(loc{mem}[.],name{lacY}[.]),met(name{PROTON}[.],loc{cyt}[.],prot[.]),met(name{CPD_3785}[.],loc{cyt}[.],prot[.]) -> prot(loc{mem}[.],name{lacY}[.]),met(name{PROTON}[.],loc{per}[.],prot[.]),met(name{CPD_3785}[.],loc{per}[.],prot[.]) @ 'rvs_RXN0_7217'
+'RXN0_7219' prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{CPD_3785}[.],loc{cyt}[.],prot[.]),met(name{WATER}[.],loc{cyt}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{beta_GALACTOSE}[.],loc{cyt}[.],prot[.]),met(name{D_ARABINOSE}[.],loc{cyt}[.],prot[.]) @ 'fwd_RXN0_7219'
+'RXN0_7219_rev' prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{beta_GALACTOSE}[.],loc{cyt}[.],prot[.]),met(name{D_ARABINOSE}[.],loc{cyt}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{CPD_3785}[.],loc{cyt}[.],prot[.]),met(name{WATER}[.],loc{cyt}[.],prot[.]) @ 'rvs_RXN0_7219'
+'RXN_17726' prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{CPD_3561}[.],loc{cyt}[.],prot[.]),met(name{WATER}[.],loc{cyt}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{beta_GALACTOSE}[.],loc{cyt}[.],prot[.]),met(name{Fructofuranose}[.],loc{cyt}[.],prot[.]) @ 'fwd_RXN_17726'
+'RXN_17726_rev' prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{beta_GALACTOSE}[.],loc{cyt}[.],prot[.]),met(name{Fructofuranose}[.],loc{cyt}[.],prot[.]) -> prot(dw[1],loc{cyt}[.],name{lacZ}[.],up[.]),prot(dw[2],loc{cyt}[.],name{lacZ}[.],up[1]),prot(dw[3],loc{cyt}[.],name{lacZ}[.],up[2]),prot(dw[.],loc{cyt}[.],name{lacZ}[.],up[3]),met(name{CPD_3561}[.],loc{cyt}[.],prot[.]),met(name{WATER}[.],loc{cyt}[.],prot[.]) @ 'rvs_RXN_17726'
+'RXN_17755' prot(loc{mem}[.],name{lacY}[.]),met(name{PROTON}[.],loc{per}[.],prot[.]),met(name{CPD_3801}[.],loc{per}[.],prot[.]) -> prot(loc{mem}[.],name{lacY}[.]),met(name{PROTON}[.],loc{cyt}[.],prot[.]),met(name{CPD_3801}[.],loc{cyt}[.],prot[.]) @ 'fwd_RXN_17755'
+'RXN_17755_rev' prot(loc{mem}[.],name{lacY}[.]),met(name{PROTON}[.],loc{cyt}[.],prot[.]),met(name{CPD_3801}[.],loc{cyt}[.],prot[.]) -> prot(loc{mem}[.],name{lacY}[.]),met(name{PROTON}[.],loc{per}[.],prot[.]),met(name{CPD_3801}[.],loc{per}[.],prot[.]) @ 'rvs_RXN_17755'
+'TRANS_RXN_24' prot(loc{mem}[.],name{lacY}[.]),met(name{PROTON}[.],loc{per}[.],prot[.]),met(name{alpha_lactose}[.],loc{per}[.],prot[.]) -> prot(loc{mem}[.],name{lacY}[.]),met(name{PROTON}[.],loc{cyt}[.],prot[.]),met(name{alpha_lactose}[.],loc{cyt}[.],prot[.]) @ 'fwd_TRANS_RXN_24'
+'TRANS_RXN_24_rev' prot(loc{mem}[.],name{lacY}[.]),met(name{PROTON}[.],loc{cyt}[.],prot[.]),met(name{alpha_lactose}[.],loc{cyt}[.],prot[.]) -> prot(loc{mem}[.],name{lacY}[.]),met(name{PROTON}[.],loc{per}[.],prot[.]),met(name{alpha_lactose}[.],loc{per}[.],prot[.]) @ 'rvs_TRANS_RXN_24'
+'TRANS_RXN_24_beta' prot(loc{mem}[.],name{lacY}[.]),met(name{PROTON}[.],loc{per}[.],prot[.]),met(name{beta_lactose}[.],loc{per}[.],prot[.]) -> prot(loc{mem}[.],name{lacY}[.]),met(name{PROTON}[.],loc{cyt}[.],prot[.]),met(name{beta_lactose}[.],loc{cyt}[.],prot[.]) @ 'fwd_TRANS_RXN_24_beta'
+'TRANS_RXN_24_beta_rev' prot(loc{mem}[.],name{lacY}[.]),met(name{PROTON}[.],loc{cyt}[.],prot[.]),met(name{beta_lactose}[.],loc{cyt}[.],prot[.]) -> prot(loc{mem}[.],name{lacY}[.]),met(name{PROTON}[.],loc{per}[.],prot[.]),met(name{beta_lactose}[.],loc{per}[.],prot[.]) @ 'rvs_TRANS_RXN_24_beta'
+'TRANS_RXN_94' prot(loc{mem}[.],name{lacY}[.]),met(name{PROTON}[.],loc{per}[.],prot[.]),met(name{MELIBIOSE}[.],loc{per}[.],prot[.]) -> prot(loc{mem}[.],name{lacY}[.]),met(name{PROTON}[.],loc{cyt}[.],prot[.]),met(name{MELIBIOSE}[.],loc{cyt}[.],prot[.]) @ 'fwd_TRANS_RXN_94'
+'TRANS_RXN_94_rev' prot(loc{mem}[.],name{lacY}[.]),met(name{PROTON}[.],loc{cyt}[.],prot[.]),met(name{MELIBIOSE}[.],loc{cyt}[.],prot[.]) -> prot(loc{mem}[.],name{lacY}[.]),met(name{PROTON}[.],loc{per}[.],prot[.]),met(name{MELIBIOSE}[.],loc{per}[.],prot[.]) @ 'rvs_TRANS_RXN_94'
 
-%obs: 'obs_met_ADP_cyt' |met(loc{cyt}[.],name{ADP}[.],prot[.])|
-%obs: 'obs_met_ADP_ex' |met(loc{ex}[.],name{ADP}[.],prot[.])|
-%obs: 'obs_met_ADP_per' |met(loc{per}[.],name{ADP}[.],prot[.])|
-%obs: 'obs_met_ATP_cyt' |met(loc{cyt}[.],name{ATP}[.],prot[.])|
-%obs: 'obs_met_ATP_ex' |met(loc{ex}[.],name{ATP}[.],prot[.])|
-%obs: 'obs_met_ATP_per' |met(loc{per}[.],name{ATP}[.],prot[.])|
-%obs: 'obs_met_L_RIBULOSE_5_P_cyt' |met(loc{cyt}[.],name{L_RIBULOSE_5_P}[.],prot[.])|
-%obs: 'obs_met_L_RIBULOSE_5_P_ex' |met(loc{ex}[.],name{L_RIBULOSE_5_P}[.],prot[.])|
-%obs: 'obs_met_L_RIBULOSE_5_P_per' |met(loc{per}[.],name{L_RIBULOSE_5_P}[.],prot[.])|
-%obs: 'obs_met_L_RIBULOSE_cyt' |met(loc{cyt}[.],name{L_RIBULOSE}[.],prot[.])|
-%obs: 'obs_met_L_RIBULOSE_ex' |met(loc{ex}[.],name{L_RIBULOSE}[.],prot[.])|
-%obs: 'obs_met_L_RIBULOSE_per' |met(loc{per}[.],name{L_RIBULOSE}[.],prot[.])|
-%obs: 'obs_met_PROTON_cyt' |met(loc{cyt}[.],name{PROTON}[.],prot[.])|
-%obs: 'obs_met_PROTON_ex' |met(loc{ex}[.],name{PROTON}[.],prot[.])|
-%obs: 'obs_met_PROTON_per' |met(loc{per}[.],name{PROTON}[.],prot[.])|
-%obs: 'obs_met_Pi_cyt' |met(loc{cyt}[.],name{Pi}[.],prot[.])|
-%obs: 'obs_met_Pi_ex' |met(loc{ex}[.],name{Pi}[.],prot[.])|
-%obs: 'obs_met_Pi_per' |met(loc{per}[.],name{Pi}[.],prot[.])|
-%obs: 'obs_met_WATER_cyt' |met(loc{cyt}[.],name{WATER}[.],prot[.])|
-%obs: 'obs_met_WATER_ex' |met(loc{ex}[.],name{WATER}[.],prot[.])|
-%obs: 'obs_met_WATER_per' |met(loc{per}[.],name{WATER}[.],prot[.])|
-%obs: 'obs_met_XYLULOSE_5_PHOSPHATE_cyt' |met(loc{cyt}[.],name{XYLULOSE_5_PHOSPHATE}[.],prot[.])|
-%obs: 'obs_met_XYLULOSE_5_PHOSPHATE_ex' |met(loc{ex}[.],name{XYLULOSE_5_PHOSPHATE}[.],prot[.])|
-%obs: 'obs_met_XYLULOSE_5_PHOSPHATE_per' |met(loc{per}[.],name{XYLULOSE_5_PHOSPHATE}[.],prot[.])|
-%obs: 'obs_met_alpha_L_arabinofuranose_cyt' |met(loc{cyt}[.],name{alpha_L_arabinofuranose}[.],prot[.])|
-%obs: 'obs_met_alpha_L_arabinofuranose_ex' |met(loc{ex}[.],name{alpha_L_arabinofuranose}[.],prot[.])|
-%obs: 'obs_met_alpha_L_arabinofuranose_per' |met(loc{per}[.],name{alpha_L_arabinofuranose}[.],prot[.])|
-%obs: 'obs_met_alpha_L_arabinopyranose_cyt' |met(loc{cyt}[.],name{alpha_L_arabinopyranose}[.],prot[.])|
-%obs: 'obs_met_alpha_L_arabinopyranose_ex' |met(loc{ex}[.],name{alpha_L_arabinopyranose}[.],prot[.])|
-%obs: 'obs_met_alpha_L_arabinopyranose_per' |met(loc{per}[.],name{alpha_L_arabinopyranose}[.],prot[.])|
-%obs: 'obs_met_beta_L_arabinofuranose_cyt' |met(loc{cyt}[.],name{beta_L_arabinofuranose}[.],prot[.])|
-%obs: 'obs_met_beta_L_arabinofuranose_ex' |met(loc{ex}[.],name{beta_L_arabinofuranose}[.],prot[.])|
-%obs: 'obs_met_beta_L_arabinofuranose_per' |met(loc{per}[.],name{beta_L_arabinofuranose}[.],prot[.])|
-%obs: 'obs_met_beta_L_arabinopyranose_cyt' |met(loc{cyt}[.],name{beta_L_arabinopyranose}[.],prot[.])|
-%obs: 'obs_met_beta_L_arabinopyranose_ex' |met(loc{ex}[.],name{beta_L_arabinopyranose}[.],prot[.])|
-%obs: 'obs_met_beta_L_arabinopyranose_per' |met(loc{per}[.],name{beta_L_arabinopyranose}[.],prot[.])|
-%obs: 'obs_prot_araA_cyt' |prot(dw[.],loc{cyt}[.],met[.],name{araA}[.],prot[.],up[.])|
-%obs: 'obs_prot_araA_ex' |prot(dw[.],loc{ex}[.],met[.],name{araA}[.],prot[.],up[.])|
-%obs: 'obs_prot_araA_per' |prot(dw[.],loc{per}[.],met[.],name{araA}[.],prot[.],up[.])|
-%obs: 'obs_prot_araB_cyt' |prot(dw[.],loc{cyt}[.],met[.],name{araB}[.],prot[.],up[.])|
-%obs: 'obs_prot_araB_ex' |prot(dw[.],loc{ex}[.],met[.],name{araB}[.],prot[.],up[.])|
-%obs: 'obs_prot_araB_per' |prot(dw[.],loc{per}[.],met[.],name{araB}[.],prot[.],up[.])|
-%obs: 'obs_prot_araC_cyt' |prot(dw[.],loc{cyt}[.],met[.],name{araC}[.],prot[.],up[.])|
-%obs: 'obs_prot_araC_ex' |prot(dw[.],loc{ex}[.],met[.],name{araC}[.],prot[.],up[.])|
-%obs: 'obs_prot_araC_per' |prot(dw[.],loc{per}[.],met[.],name{araC}[.],prot[.],up[.])|
-%obs: 'obs_prot_araD_cyt' |prot(dw[.],loc{cyt}[.],met[.],name{araD}[.],prot[.],up[.])|
-%obs: 'obs_prot_araD_ex' |prot(dw[.],loc{ex}[.],met[.],name{araD}[.],prot[.],up[.])|
-%obs: 'obs_prot_araD_per' |prot(dw[.],loc{per}[.],met[.],name{araD}[.],prot[.],up[.])|
-%obs: 'obs_prot_araF_cyt' |prot(dw[.],loc{cyt}[.],met[.],name{araF}[.],prot[.],up[.])|
-%obs: 'obs_prot_araF_ex' |prot(dw[.],loc{ex}[.],met[.],name{araF}[.],prot[.],up[.])|
-%obs: 'obs_prot_araF_per' |prot(dw[.],loc{per}[.],met[.],name{araF}[.],prot[.],up[.])|
-%obs: 'obs_prot_araG_cyt' |prot(dw[.],loc{cyt}[.],met[.],name{araG}[.],prot[.],up[.])|
-%obs: 'obs_prot_araG_ex' |prot(dw[.],loc{ex}[.],met[.],name{araG}[.],prot[.],up[.])|
-%obs: 'obs_prot_araG_per' |prot(dw[.],loc{per}[.],met[.],name{araG}[.],prot[.],up[.])|
-%obs: 'obs_prot_araH_cyt' |prot(dw[.],loc{cyt}[.],met[.],name{araH}[.],prot[.],up[.])|
-%obs: 'obs_prot_araH_ex' |prot(dw[.],loc{ex}[.],met[.],name{araH}[.],prot[.],up[.])|
-%obs: 'obs_prot_araH_per' |prot(dw[.],loc{per}[.],met[.],name{araH}[.],prot[.],up[.])|
-%obs: 'obs_prot_crp_cyt' |prot(dw[.],loc{cyt}[.],met[.],name{crp}[.],prot[.],up[.])|
-%obs: 'obs_prot_crp_ex' |prot(dw[.],loc{ex}[.],met[.],name{crp}[.],prot[.],up[.])|
-%obs: 'obs_prot_crp_per' |prot(dw[.],loc{per}[.],met[.],name{crp}[.],prot[.],up[.])|
-%obs: 'obs_prot_lacI_cyt' |prot(dw[.],loc{cyt}[.],met[.],name{lacI}[.],prot[.],up[.])|
-%obs: 'obs_prot_lacI_ex' |prot(dw[.],loc{ex}[.],met[.],name{lacI}[.],prot[.],up[.])|
-%obs: 'obs_prot_lacI_per' |prot(dw[.],loc{per}[.],met[.],name{lacI}[.],prot[.],up[.])|
+%obs: 'obs_met_ACETYL_COA_cyt' |met(name{ACETYL_COA}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_met_ACETYL_COA_ex' |met(name{ACETYL_COA}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_met_ACETYL_COA_per' |met(name{ACETYL_COA}[.],loc{per}[.],prot[.])|
+%obs: 'obs_met_CO_A_cyt' |met(name{CO_A}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_met_CO_A_ex' |met(name{CO_A}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_met_CO_A_per' |met(name{CO_A}[.],loc{per}[.],prot[.])|
+%obs: 'obs_met_CPD_3561_cyt' |met(name{CPD_3561}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_met_CPD_3561_ex' |met(name{CPD_3561}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_met_CPD_3561_per' |met(name{CPD_3561}[.],loc{per}[.],prot[.])|
+%obs: 'obs_met_CPD_3785_cyt' |met(name{CPD_3785}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_met_CPD_3785_ex' |met(name{CPD_3785}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_met_CPD_3785_per' |met(name{CPD_3785}[.],loc{per}[.],prot[.])|
+%obs: 'obs_met_CPD_3801_cyt' |met(name{CPD_3801}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_met_CPD_3801_ex' |met(name{CPD_3801}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_met_CPD_3801_per' |met(name{CPD_3801}[.],loc{per}[.],prot[.])|
+%obs: 'obs_met_D_ARABINOSE_cyt' |met(name{D_ARABINOSE}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_met_D_ARABINOSE_ex' |met(name{D_ARABINOSE}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_met_D_ARABINOSE_per' |met(name{D_ARABINOSE}[.],loc{per}[.],prot[.])|
+%obs: 'obs_met_Fructofuranose_cyt' |met(name{Fructofuranose}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_met_Fructofuranose_ex' |met(name{Fructofuranose}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_met_Fructofuranose_per' |met(name{Fructofuranose}[.],loc{per}[.],prot[.])|
+%obs: 'obs_met_MELIBIOSE_cyt' |met(name{MELIBIOSE}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_met_MELIBIOSE_ex' |met(name{MELIBIOSE}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_met_MELIBIOSE_per' |met(name{MELIBIOSE}[.],loc{per}[.],prot[.])|
+%obs: 'obs_met_PROTON_cyt' |met(name{PROTON}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_met_PROTON_ex' |met(name{PROTON}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_met_PROTON_per' |met(name{PROTON}[.],loc{per}[.],prot[.])|
+%obs: 'obs_met_WATER_cyt' |met(name{WATER}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_met_WATER_ex' |met(name{WATER}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_met_WATER_per' |met(name{WATER}[.],loc{per}[.],prot[.])|
+%obs: 'obs_met__6_Acetyl_beta_D_Galactose_cyt' |met(name{_6_Acetyl_beta_D_Galactose}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_met__6_Acetyl_beta_D_Galactose_ex' |met(name{_6_Acetyl_beta_D_Galactose}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_met__6_Acetyl_beta_D_Galactose_per' |met(name{_6_Acetyl_beta_D_Galactose}[.],loc{per}[.],prot[.])|
+%obs: 'obs_met_alpha_ALLOLACTOSE_cyt' |met(name{alpha_ALLOLACTOSE}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_met_alpha_ALLOLACTOSE_ex' |met(name{alpha_ALLOLACTOSE}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_met_alpha_ALLOLACTOSE_per' |met(name{alpha_ALLOLACTOSE}[.],loc{per}[.],prot[.])|
+%obs: 'obs_met_alpha_GALACTOSE_cyt' |met(name{alpha_GALACTOSE}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_met_alpha_GALACTOSE_ex' |met(name{alpha_GALACTOSE}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_met_alpha_GALACTOSE_per' |met(name{alpha_GALACTOSE}[.],loc{per}[.],prot[.])|
+%obs: 'obs_met_alpha_glucose_cyt' |met(name{alpha_glucose}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_met_alpha_glucose_ex' |met(name{alpha_glucose}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_met_alpha_glucose_per' |met(name{alpha_glucose}[.],loc{per}[.],prot[.])|
+%obs: 'obs_met_alpha_lactose_cyt' |met(name{alpha_lactose}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_met_alpha_lactose_ex' |met(name{alpha_lactose}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_met_alpha_lactose_per' |met(name{alpha_lactose}[.],loc{per}[.],prot[.])|
+%obs: 'obs_met_beta_ALLOLACTOSE_cyt' |met(name{beta_ALLOLACTOSE}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_met_beta_ALLOLACTOSE_ex' |met(name{beta_ALLOLACTOSE}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_met_beta_ALLOLACTOSE_per' |met(name{beta_ALLOLACTOSE}[.],loc{per}[.],prot[.])|
+%obs: 'obs_met_beta_GALACTOSE_cyt' |met(name{beta_GALACTOSE}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_met_beta_GALACTOSE_ex' |met(name{beta_GALACTOSE}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_met_beta_GALACTOSE_per' |met(name{beta_GALACTOSE}[.],loc{per}[.],prot[.])|
+%obs: 'obs_met_beta_glucose_cyt' |met(name{beta_glucose}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_met_beta_glucose_ex' |met(name{beta_glucose}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_met_beta_glucose_per' |met(name{beta_glucose}[.],loc{per}[.],prot[.])|
+%obs: 'obs_met_beta_lactose_cyt' |met(name{beta_lactose}[.],loc{cyt}[.],prot[.])|
+%obs: 'obs_met_beta_lactose_ex' |met(name{beta_lactose}[.],loc{ex}[.],prot[.])|
+%obs: 'obs_met_beta_lactose_per' |met(name{beta_lactose}[.],loc{per}[.],prot[.])|
+%obs: 'obs_prot_lacA_cyt' |prot(dw[.],loc{cyt}[.],met[.],name{lacA}[.],prot[.],up[.])|
+%obs: 'obs_prot_lacA_ex' |prot(dw[.],loc{ex}[.],met[.],name{lacA}[.],prot[.],up[.])|
+%obs: 'obs_prot_lacA_per' |prot(dw[.],loc{per}[.],met[.],name{lacA}[.],prot[.],up[.])|
+%obs: 'obs_prot_lacZ_cyt' |prot(dw[.],loc{cyt}[.],met[.],name{lacZ}[.],prot[.],up[.])|
+%obs: 'obs_prot_lacZ_ex' |prot(dw[.],loc{ex}[.],met[.],name{lacZ}[.],prot[.],up[.])|
+%obs: 'obs_prot_lacZ_per' |prot(dw[.],loc{per}[.],met[.],name{lacZ}[.],prot[.],up[.])|
 
-%init: 't0_ADP_cyt' met(loc{cyt}[.],name{ADP}[.],prot[.])
-%init: 't0_ADP_ex' met(loc{ex}[.],name{ADP}[.],prot[.])
-%init: 't0_ADP_per' met(loc{per}[.],name{ADP}[.],prot[.])
-%init: 't0_ALLOLACTOSE_cyt' met(loc{cyt}[.],name{ALLOLACTOSE}[.],prot[.])
-%init: 't0_ALLOLACTOSE_ex' met(loc{ex}[.],name{ALLOLACTOSE}[.],prot[.])
-%init: 't0_ALLOLACTOSE_per' met(loc{per}[.],name{ALLOLACTOSE}[.],prot[.])
-%init: 't0_ATP_cyt' met(loc{cyt}[.],name{ATP}[.],prot[.])
-%init: 't0_ATP_ex' met(loc{ex}[.],name{ATP}[.],prot[.])
-%init: 't0_ATP_per' met(loc{per}[.],name{ATP}[.],prot[.])
-%init: 't0_CAMP_cyt' met(loc{cyt}[.],name{CAMP}[.],prot[.])
-%init: 't0_CAMP_ex' met(loc{ex}[.],name{CAMP}[.],prot[.])
-%init: 't0_CAMP_per' met(loc{per}[.],name{CAMP}[.],prot[.])
-%init: 't0_L_RIBULOSE_cyt' met(loc{cyt}[.],name{L_RIBULOSE}[.],prot[.])
-%init: 't0_L_RIBULOSE_ex' met(loc{ex}[.],name{L_RIBULOSE}[.],prot[.])
-%init: 't0_L_RIBULOSE_per' met(loc{per}[.],name{L_RIBULOSE}[.],prot[.])
-%init: 't0_L_RIBULOSE_5_P_cyt' met(loc{cyt}[.],name{L_RIBULOSE_5_P}[.],prot[.])
-%init: 't0_L_RIBULOSE_5_P_ex' met(loc{ex}[.],name{L_RIBULOSE_5_P}[.],prot[.])
-%init: 't0_L_RIBULOSE_5_P_per' met(loc{per}[.],name{L_RIBULOSE_5_P}[.],prot[.])
-%init: 't0_PROTON_cyt' met(loc{cyt}[.],name{PROTON}[.],prot[.])
-%init: 't0_PROTON_ex' met(loc{ex}[.],name{PROTON}[.],prot[.])
-%init: 't0_PROTON_per' met(loc{per}[.],name{PROTON}[.],prot[.])
-%init: 't0_Pi_cyt' met(loc{cyt}[.],name{Pi}[.],prot[.])
-%init: 't0_Pi_ex' met(loc{ex}[.],name{Pi}[.],prot[.])
-%init: 't0_Pi_per' met(loc{per}[.],name{Pi}[.],prot[.])
-%init: 't0_WATER_cyt' met(loc{cyt}[.],name{WATER}[.],prot[.])
-%init: 't0_WATER_ex' met(loc{ex}[.],name{WATER}[.],prot[.])
-%init: 't0_WATER_per' met(loc{per}[.],name{WATER}[.],prot[.])
-%init: 't0_XYLULOSE_5_PHOSPHATE_cyt' met(loc{cyt}[.],name{XYLULOSE_5_PHOSPHATE}[.],prot[.])
-%init: 't0_XYLULOSE_5_PHOSPHATE_ex' met(loc{ex}[.],name{XYLULOSE_5_PHOSPHATE}[.],prot[.])
-%init: 't0_XYLULOSE_5_PHOSPHATE_per' met(loc{per}[.],name{XYLULOSE_5_PHOSPHATE}[.],prot[.])
-%init: 't0_alpha_L_arabinofuranose_cyt' met(loc{cyt}[.],name{alpha_L_arabinofuranose}[.],prot[.])
-%init: 't0_alpha_L_arabinofuranose_ex' met(loc{ex}[.],name{alpha_L_arabinofuranose}[.],prot[.])
-%init: 't0_alpha_L_arabinofuranose_per' met(loc{per}[.],name{alpha_L_arabinofuranose}[.],prot[.])
-%init: 't0_alpha_L_arabinopyranose_cyt' met(loc{cyt}[.],name{alpha_L_arabinopyranose}[.],prot[.])
-%init: 't0_alpha_L_arabinopyranose_ex' met(loc{ex}[.],name{alpha_L_arabinopyranose}[.],prot[.])
-%init: 't0_alpha_L_arabinopyranose_per' met(loc{per}[.],name{alpha_L_arabinopyranose}[.],prot[.])
-%init: 't0_beta_L_arabinofuranose_cyt' met(loc{cyt}[.],name{beta_L_arabinofuranose}[.],prot[.])
-%init: 't0_beta_L_arabinofuranose_ex' met(loc{ex}[.],name{beta_L_arabinofuranose}[.],prot[.])
-%init: 't0_beta_L_arabinofuranose_per' met(loc{per}[.],name{beta_L_arabinofuranose}[.],prot[.])
-%init: 't0_beta_L_arabinopyranose_cyt' met(loc{cyt}[.],name{beta_L_arabinopyranose}[.],prot[.])
-%init: 't0_beta_L_arabinopyranose_ex' met(loc{ex}[.],name{beta_L_arabinopyranose}[.],prot[.])
-%init: 't0_beta_L_arabinopyranose_per' met(loc{per}[.],name{beta_L_arabinopyranose}[.],prot[.])
-%init: 't0_araA_cyt' prot(dw[.],loc{cyt}[.],met[.],name{araA}[.],prot[.],up[.])
-%init: 't0_araA_ex' prot(dw[.],loc{ex}[.],met[.],name{araA}[.],prot[.],up[.])
-%init: 't0_araA_mem' prot(dw[.],loc{mem}[.],met[.],name{araA}[.],prot[.],up[.])
-%init: 't0_araA_per' prot(dw[.],loc{per}[.],met[.],name{araA}[.],prot[.],up[.])
-%init: 't0_araB_cyt' prot(dw[.],loc{cyt}[.],met[.],name{araB}[.],prot[.],up[.])
-%init: 't0_araB_ex' prot(dw[.],loc{ex}[.],met[.],name{araB}[.],prot[.],up[.])
-%init: 't0_araB_mem' prot(dw[.],loc{mem}[.],met[.],name{araB}[.],prot[.],up[.])
-%init: 't0_araB_per' prot(dw[.],loc{per}[.],met[.],name{araB}[.],prot[.],up[.])
-%init: 't0_araC_cyt' prot(dw[.],loc{cyt}[.],met[.],name{araC}[.],prot[.],up[.])
-%init: 't0_araC_ex' prot(dw[.],loc{ex}[.],met[.],name{araC}[.],prot[.],up[.])
-%init: 't0_araC_mem' prot(dw[.],loc{mem}[.],met[.],name{araC}[.],prot[.],up[.])
-%init: 't0_araC_per' prot(dw[.],loc{per}[.],met[.],name{araC}[.],prot[.],up[.])
-%init: 't0_araD_cyt' prot(dw[.],loc{cyt}[.],met[.],name{araD}[.],prot[.],up[.])
-%init: 't0_araD_ex' prot(dw[.],loc{ex}[.],met[.],name{araD}[.],prot[.],up[.])
-%init: 't0_araD_mem' prot(dw[.],loc{mem}[.],met[.],name{araD}[.],prot[.],up[.])
-%init: 't0_araD_per' prot(dw[.],loc{per}[.],met[.],name{araD}[.],prot[.],up[.])
-%init: 't0_araE_cyt' prot(dw[.],loc{cyt}[.],met[.],name{araE}[.],prot[.],up[.])
-%init: 't0_araE_ex' prot(dw[.],loc{ex}[.],met[.],name{araE}[.],prot[.],up[.])
-%init: 't0_araE_mem' prot(dw[.],loc{mem}[.],met[.],name{araE}[.],prot[.],up[.])
-%init: 't0_araE_per' prot(dw[.],loc{per}[.],met[.],name{araE}[.],prot[.],up[.])
-%init: 't0_araF_cyt' prot(dw[.],loc{cyt}[.],met[.],name{araF}[.],prot[.],up[.])
-%init: 't0_araF_ex' prot(dw[.],loc{ex}[.],met[.],name{araF}[.],prot[.],up[.])
-%init: 't0_araF_mem' prot(dw[.],loc{mem}[.],met[.],name{araF}[.],prot[.],up[.])
-%init: 't0_araF_per' prot(dw[.],loc{per}[.],met[.],name{araF}[.],prot[.],up[.])
-%init: 't0_araG_cyt' prot(dw[.],loc{cyt}[.],met[.],name{araG}[.],prot[.],up[.])
-%init: 't0_araG_ex' prot(dw[.],loc{ex}[.],met[.],name{araG}[.],prot[.],up[.])
-%init: 't0_araG_mem' prot(dw[.],loc{mem}[.],met[.],name{araG}[.],prot[.],up[.])
-%init: 't0_araG_per' prot(dw[.],loc{per}[.],met[.],name{araG}[.],prot[.],up[.])
-%init: 't0_araH_cyt' prot(dw[.],loc{cyt}[.],met[.],name{araH}[.],prot[.],up[.])
-%init: 't0_araH_ex' prot(dw[.],loc{ex}[.],met[.],name{araH}[.],prot[.],up[.])
-%init: 't0_araH_mem' prot(dw[.],loc{mem}[.],met[.],name{araH}[.],prot[.],up[.])
-%init: 't0_araH_per' prot(dw[.],loc{per}[.],met[.],name{araH}[.],prot[.],up[.])
-%init: 't0_crp_cyt' prot(dw[.],loc{cyt}[.],met[.],name{crp}[.],prot[.],up[.])
-%init: 't0_crp_ex' prot(dw[.],loc{ex}[.],met[.],name{crp}[.],prot[.],up[.])
-%init: 't0_crp_mem' prot(dw[.],loc{mem}[.],met[.],name{crp}[.],prot[.],up[.])
-%init: 't0_crp_per' prot(dw[.],loc{per}[.],met[.],name{crp}[.],prot[.],up[.])
-%init: 't0_lacI_cyt' prot(dw[.],loc{cyt}[.],met[.],name{lacI}[.],prot[.],up[.])
-%init: 't0_lacI_ex' prot(dw[.],loc{ex}[.],met[.],name{lacI}[.],prot[.],up[.])
-%init: 't0_lacI_mem' prot(dw[.],loc{mem}[.],met[.],name{lacI}[.],prot[.],up[.])
-%init: 't0_lacI_per' prot(dw[.],loc{per}[.],met[.],name{lacI}[.],prot[.],up[.])
+%init: 't0_ACETYL_COA_cyt' met(name{ACETYL_COA}[.],loc{cyt}[.],prot[.])
+%init: 't0_ACETYL_COA_ex' met(name{ACETYL_COA}[.],loc{ex}[.],prot[.])
+%init: 't0_ACETYL_COA_per' met(name{ACETYL_COA}[.],loc{per}[.],prot[.])
+%init: 't0_CO_A_cyt' met(name{CO_A}[.],loc{cyt}[.],prot[.])
+%init: 't0_CO_A_ex' met(name{CO_A}[.],loc{ex}[.],prot[.])
+%init: 't0_CO_A_per' met(name{CO_A}[.],loc{per}[.],prot[.])
+%init: 't0_CPD_3561_cyt' met(name{CPD_3561}[.],loc{cyt}[.],prot[.])
+%init: 't0_CPD_3561_ex' met(name{CPD_3561}[.],loc{ex}[.],prot[.])
+%init: 't0_CPD_3561_per' met(name{CPD_3561}[.],loc{per}[.],prot[.])
+%init: 't0_CPD_3785_cyt' met(name{CPD_3785}[.],loc{cyt}[.],prot[.])
+%init: 't0_CPD_3785_ex' met(name{CPD_3785}[.],loc{ex}[.],prot[.])
+%init: 't0_CPD_3785_per' met(name{CPD_3785}[.],loc{per}[.],prot[.])
+%init: 't0_CPD_3801_cyt' met(name{CPD_3801}[.],loc{cyt}[.],prot[.])
+%init: 't0_CPD_3801_ex' met(name{CPD_3801}[.],loc{ex}[.],prot[.])
+%init: 't0_CPD_3801_per' met(name{CPD_3801}[.],loc{per}[.],prot[.])
+%init: 't0_D_ARABINOSE_cyt' met(name{D_ARABINOSE}[.],loc{cyt}[.],prot[.])
+%init: 't0_D_ARABINOSE_ex' met(name{D_ARABINOSE}[.],loc{ex}[.],prot[.])
+%init: 't0_D_ARABINOSE_per' met(name{D_ARABINOSE}[.],loc{per}[.],prot[.])
+%init: 't0_Fructofuranose_cyt' met(name{Fructofuranose}[.],loc{cyt}[.],prot[.])
+%init: 't0_Fructofuranose_ex' met(name{Fructofuranose}[.],loc{ex}[.],prot[.])
+%init: 't0_Fructofuranose_per' met(name{Fructofuranose}[.],loc{per}[.],prot[.])
+%init: 't0_MELIBIOSE_cyt' met(name{MELIBIOSE}[.],loc{cyt}[.],prot[.])
+%init: 't0_MELIBIOSE_ex' met(name{MELIBIOSE}[.],loc{ex}[.],prot[.])
+%init: 't0_MELIBIOSE_per' met(name{MELIBIOSE}[.],loc{per}[.],prot[.])
+%init: 't0_PROTON_cyt' met(name{PROTON}[.],loc{cyt}[.],prot[.])
+%init: 't0_PROTON_ex' met(name{PROTON}[.],loc{ex}[.],prot[.])
+%init: 't0_PROTON_per' met(name{PROTON}[.],loc{per}[.],prot[.])
+%init: 't0_WATER_cyt' met(name{WATER}[.],loc{cyt}[.],prot[.])
+%init: 't0_WATER_ex' met(name{WATER}[.],loc{ex}[.],prot[.])
+%init: 't0_WATER_per' met(name{WATER}[.],loc{per}[.],prot[.])
+%init: 't0__6_Acetyl_beta_D_Galactose_cyt' met(name{_6_Acetyl_beta_D_Galactose}[.],loc{cyt}[.],prot[.])
+%init: 't0__6_Acetyl_beta_D_Galactose_ex' met(name{_6_Acetyl_beta_D_Galactose}[.],loc{ex}[.],prot[.])
+%init: 't0__6_Acetyl_beta_D_Galactose_per' met(name{_6_Acetyl_beta_D_Galactose}[.],loc{per}[.],prot[.])
+%init: 't0_alpha_ALLOLACTOSE_cyt' met(name{alpha_ALLOLACTOSE}[.],loc{cyt}[.],prot[.])
+%init: 't0_alpha_ALLOLACTOSE_ex' met(name{alpha_ALLOLACTOSE}[.],loc{ex}[.],prot[.])
+%init: 't0_alpha_ALLOLACTOSE_per' met(name{alpha_ALLOLACTOSE}[.],loc{per}[.],prot[.])
+%init: 't0_alpha_GALACTOSE_cyt' met(name{alpha_GALACTOSE}[.],loc{cyt}[.],prot[.])
+%init: 't0_alpha_GALACTOSE_ex' met(name{alpha_GALACTOSE}[.],loc{ex}[.],prot[.])
+%init: 't0_alpha_GALACTOSE_per' met(name{alpha_GALACTOSE}[.],loc{per}[.],prot[.])
+%init: 't0_alpha_glucose_cyt' met(name{alpha_glucose}[.],loc{cyt}[.],prot[.])
+%init: 't0_alpha_glucose_ex' met(name{alpha_glucose}[.],loc{ex}[.],prot[.])
+%init: 't0_alpha_glucose_per' met(name{alpha_glucose}[.],loc{per}[.],prot[.])
+%init: 't0_alpha_lactose_cyt' met(name{alpha_lactose}[.],loc{cyt}[.],prot[.])
+%init: 't0_alpha_lactose_ex' met(name{alpha_lactose}[.],loc{ex}[.],prot[.])
+%init: 't0_alpha_lactose_per' met(name{alpha_lactose}[.],loc{per}[.],prot[.])
+%init: 't0_beta_ALLOLACTOSE_cyt' met(name{beta_ALLOLACTOSE}[.],loc{cyt}[.],prot[.])
+%init: 't0_beta_ALLOLACTOSE_ex' met(name{beta_ALLOLACTOSE}[.],loc{ex}[.],prot[.])
+%init: 't0_beta_ALLOLACTOSE_per' met(name{beta_ALLOLACTOSE}[.],loc{per}[.],prot[.])
+%init: 't0_beta_GALACTOSE_cyt' met(name{beta_GALACTOSE}[.],loc{cyt}[.],prot[.])
+%init: 't0_beta_GALACTOSE_ex' met(name{beta_GALACTOSE}[.],loc{ex}[.],prot[.])
+%init: 't0_beta_GALACTOSE_per' met(name{beta_GALACTOSE}[.],loc{per}[.],prot[.])
+%init: 't0_beta_glucose_cyt' met(name{beta_glucose}[.],loc{cyt}[.],prot[.])
+%init: 't0_beta_glucose_ex' met(name{beta_glucose}[.],loc{ex}[.],prot[.])
+%init: 't0_beta_glucose_per' met(name{beta_glucose}[.],loc{per}[.],prot[.])
+%init: 't0_beta_lactose_cyt' met(name{beta_lactose}[.],loc{cyt}[.],prot[.])
+%init: 't0_beta_lactose_ex' met(name{beta_lactose}[.],loc{ex}[.],prot[.])
+%init: 't0_beta_lactose_per' met(name{beta_lactose}[.],loc{per}[.],prot[.])
+%init: 't0_lacA_cyt' prot(dna[.],dw[.],loc{cyt}[.],met[.],name{lacA}[.],prot[.],rna[.],up[.])
+%init: 't0_lacA_ex' prot(dna[.],dw[.],loc{ex}[.],met[.],name{lacA}[.],prot[.],rna[.],up[.])
+%init: 't0_lacA_mem' prot(dna[.],dw[.],loc{mem}[.],met[.],name{lacA}[.],prot[.],rna[.],up[.])
+%init: 't0_lacA_per' prot(dna[.],dw[.],loc{per}[.],met[.],name{lacA}[.],prot[.],rna[.],up[.])
+%init: 't0_lacY_cyt' prot(dna[.],dw[.],loc{cyt}[.],met[.],name{lacY}[.],prot[.],rna[.],up[.])
+%init: 't0_lacY_ex' prot(dna[.],dw[.],loc{ex}[.],met[.],name{lacY}[.],prot[.],rna[.],up[.])
+%init: 't0_lacY_mem' prot(dna[.],dw[.],loc{mem}[.],met[.],name{lacY}[.],prot[.],rna[.],up[.])
+%init: 't0_lacY_per' prot(dna[.],dw[.],loc{per}[.],met[.],name{lacY}[.],prot[.],rna[.],up[.])
+%init: 't0_lacZ_cyt' prot(dna[.],dw[.],loc{cyt}[.],met[.],name{lacZ}[.],prot[.],rna[.],up[.])
+%init: 't0_lacZ_ex' prot(dna[.],dw[.],loc{ex}[.],met[.],name{lacZ}[.],prot[.],rna[.],up[.])
+%init: 't0_lacZ_mem' prot(dna[.],dw[.],loc{mem}[.],met[.],name{lacZ}[.],prot[.],rna[.],up[.])
+%init: 't0_lacZ_per' prot(dna[.],dw[.],loc{per}[.],met[.],name{lacZ}[.],prot[.],rna[.],up[.])
 

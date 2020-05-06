@@ -1,13 +1,13 @@
-SOURCE	TARGET
-lacZ-pro4	lacZ-pro3
-lacZ-pro3	lacZ-pro2
-lacZ-pro2	lacZ-pro1
-lacZ-pro1	lacZ-rbs
-lacZ-rbs	lacZ-cds
-lacZ-cds	lacY-pro1
-lacY-pro1	lacY-rbs
-lacY-rbs	lacY-cds
-lacY-cds	lacA-rbs
-lacA-rbs	lacA-cds
-lacA-cds	lacA-ter1
-lacA-ter1	lacA-ter2
+SOURCE	TARGET	FWD_RATE
+lacZ-pro4	lacZ-pro3	1.0
+lacZ-pro3	lacZ-pro2	1.0
+lacZ-pro2	lacZ-pro1	1.0
+lacZ-pro1	lacZ-rbs	1.0
+lacZ-rbs	lacZ-cds	1.0
+lacZ-cds	lacY-pro1	1.0
+lacY-pro1	lacY-rbs	1.0
+lacY-rbs	lacY-cds	1.0
+lacY-cds	lacA-rbs	1.0
+lacA-rbs	lacA-cds	1.0
+lacA-cds	lacA-ter1	1.0
+lacA-ter1	lacA-ter2	1.0
