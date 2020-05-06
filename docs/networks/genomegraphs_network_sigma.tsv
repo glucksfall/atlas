@@ -1,0 +1,38 @@
+SOURCE	TARGET	FWD_RATE
+rpoA-pro1	rpoA-rbs	1.0
+rpoA-rbs	rpoA-cds	1.0
+rpoA-cds	rpoA-ter1	1.0
+
+rpoB-pro1	rpoB-rbs	1.0
+rpoB-rbs	rpoB-cds	1.0
+rpoB-cds	rpoC-rbs	1.0
+rpoC-rbs	rpoC-cds	1.0
+rpoC-cds	rpoC-ter1	1.0
+
+rpoD-pro1	rpoD-rbs	1.0
+rpoD-rbs	rpoD-cds	1.0
+rpoD-cds	rpoD-ter1	1.0
+
+rpoE-pro1	rpoE-rbs	1.0
+rpoE-rbs	rpoE-cds	1.0
+rpoE-cds	rpoE-ter1	1.0
+
+rpoH-pro1	rpoH-rbs	1.0
+rpoH-rbs	rpoH-cds	1.0
+rpoH-cds	rpoH-ter1	1.0
+
+rpoN-pro1	rpoN-rbs	1.0
+rpoN-rbs	rpoN-cds	1.0
+rpoN-cds	rpoN-ter1	1.0
+
+rpoS-pro1	rpoS-rbs	1.0
+rpoS-rbs	rpoS-cds	1.0
+rpoS-cds	rpoS-ter1	1.0
+
+fliA-pro1	fliA-rbs	1.0
+fliA-rbs	fliA-cds	1.0
+fliA-cds	fliA-ter1	1.0
+
+fecI-pro1	fecI-rbs	1.0
+fecI-rbs	fecI-cds	1.0
+fecI-cds	fecI-ter1	1.0

@@ -1,0 +1,25 @@
+SOURCE	TARGET	FWD_RATE
+araB-pro1	araB-rbs	1.0
+araB-rbs	araB-cds	1.0
+araB-cds	araA-rbs	1.0
+araA-rbs	araA-cds	1.0
+araA-cds	araD-rbs	1.0
+araD-rbs	araD-cds	1.0
+araD-cds	araD-ter1	1.0
+
+araC-pro1	araC-BS-56-72	1.0
+araC-BS-56-72	araC-rbs	1.0
+araC-rbs	araC-cds	1.0
+araC-cds	araC-ter1	1.0
+
+araE-pro1	araE-rbs	1.0
+araE-rbs	araE-cds	1.0
+araE-cds	araE-ter1	1.0
+
+araF-pro1	araF-rbs	1.0
+araF-rbs	araF-cds	1.0
+araF-cds	araG-rbs	1.0
+araG-rbs	araG-cds	1.0
+araG-cds	araH-rbs	1.0
+araH-rbs	araH-cds	1.0
+araH-cds	araH-ter1	1.0
