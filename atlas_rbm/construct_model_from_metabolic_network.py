@@ -77,7 +77,7 @@ def monomers_from_metabolic_network(model, data, verbose = False):
 			if 'spontaneous' != protein:
 				p_monomers.append(protein)
 
-	code = "Monomer('prot',\n		['name', 'loc', 'met', 'prot', 'up', 'dw'],\n" \
+	code = "Monomer('prot',\n		['name', 'loc', 'dna', 'met', 'prot', 'rna', 'up', 'dw'],\n" \
 		  "		{ 'name' :\n			[ " + \
 		  ', '.join([ '\'' + x.replace('-', '_') + '\'' for x in sorted(p_monomers)]) + " ], \n" \
 		  "		  'loc' : ['cyt', 'mem', 'per', 'ex']})"
@@ -214,7 +214,7 @@ def observables_from_metabolic_network(model, data, monomers, verbose = False):
 	for name in sorted(monomers[1]):
 		name = name.replace('-','_')
 		for loc in ['cyt', 'mem', 'per', 'ex']:
-			code = 'Initial(prot(name = \'{:s}\', loc = \'{:s}\', met = None, prot = None, up = None, dw = None), Parameter(\'t0_{:s}_{:s}\', 0))'
+			code = 'Initial(prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None), Parameter(\'t0_{:s}_{:s}\', 0))'
 			code = code.format(name, loc, name, loc)
 			if verbose:
 				print(code)
@@ -223,7 +223,7 @@ def observables_from_metabolic_network(model, data, monomers, verbose = False):
 	for name in sorted(monomers[2]):
 		name = name.replace('-','_')
 		for loc in ['cyt', 'mem', 'per', 'ex']:
-			code = 'Initial(cplx(name = \'{:s}\', loc = \'{:s}\', met = None, prot = None, up = None, dw = None), Parameter(\'t0_{:s}_{:s}\', 0))'
+			code = 'Initial(cplx(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None), Parameter(\'t0_{:s}_{:s}\', 0))'
 			code = code.format(name, loc, name, loc)
 			if verbose:
 				print(code)
@@ -231,7 +231,7 @@ def observables_from_metabolic_network(model, data, monomers, verbose = False):
 
 	return model
 
-def construct_model_from_metabolic_network(network, model = None, verbose = False):
+def construct_model_from_metabolic_network(network, verbose = False):
 	data = read_network(network)
 
 	model = Model()
