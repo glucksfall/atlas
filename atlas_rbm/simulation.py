@@ -96,10 +96,16 @@ class plot:
 		kind = kwargs.get('kind', None)
 
 		observable = observable.replace('-', '_')
-		if kind == 'scatter' or kind is not None:
-			plt.scatter(data.index, data[observable], **plt_kws)
-		elif kind == 'plot':
+		if kind == 'plot':
 			plt.plot(data.index, data[observable], **plt_kws)
+		elif kind == 'scatter':
+			plt.scatter(data.index, data[observable], **plt_kws)
+		elif kind == 'fill_between':
+			plt.fill_between(
+				data['avrg'].index,
+				data['avrg'][observable] + data['stdv'][observable],
+				data['avrg'][observable] - data['stdv'][observable],
+				**plt_kws)
 		else:
 			plt.plot(data.index, data[observable], **plt_kws)
 

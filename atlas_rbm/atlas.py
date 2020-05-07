@@ -45,21 +45,35 @@ def combine_models(model, new_model, verbose = False):
 	for common in commons:
 		for monomer in model.monomers:
 			if common == monomer.name:
-				sites1 = monomer.sites
-				states1 = monomer.site_states['name']
+				sites_in_model = monomer.sites
+				names_in_model = monomer.site_states['name']
+				if (common == 'dna' or common == 'rna'):
+					types_in_model = monomer.site_states['type']
+				else:
+					loc_in_model = monomer.site_states['loc']
 		for monomer in new_model.monomers:
 			if common == monomer.name:
-				sites2 = monomer.sites
-				states2 = monomer.site_states['name']
+				sites_in_new_model = monomer.sites
+				names_in_new_model = monomer.site_states['name']
+				if (common == 'dna' or common == 'rna'):
+					types_in_new_model = monomer.site_states['type']
+				else:
+					loc_in_new_model = monomer.site_states['loc']
 
-		new_monomers.append(
-			"Monomer('{:s}', {:s}, {{'name': {:s}, 'loc': {:s}}})".format(
-				str(common),
-				str(sorted(set(sites1+sites2))),
-				str(sorted(set(states1+states2))),
-				"['cyt', 'mem', 'per', 'ex']"))
-				#str(monomer.site_states['loc'])))
-
+		if (common == 'dna' or common == 'rna'):
+			new_monomers.append(
+				"Monomer('{:s}', {:s}, {{'name': {:s}, 'type': {:s}}})".format(
+					str(common),
+					str(sorted(set(sites_in_model + sites_in_new_model))),
+					str(sorted(set(names_in_model + names_in_new_model))),
+					str(sorted(set(types_in_model + types_in_new_model)))))
+		else:
+			new_monomers.append(
+				"Monomer('{:s}', {:s}, {{'name': {:s}, 'loc': {:s}}})".format(
+					str(common),
+					str(sorted(set(sites_in_model + sites_in_new_model))),
+					str(sorted(set(names_in_model + names_in_new_model))),
+					str(sorted(set(loc_in_model + loc_in_new_model)))))
 	new_rules = []
 	for rule in model.rules:
 		new_rules.append(str(rule))
@@ -117,3 +131,12 @@ def combine_models(model, new_model, verbose = False):
 		exec(new_observable)
 
 	return new_model
+
+def get_rule(model, name, verbose = False):
+	for rule in model.rules:
+		if name.replace('-','_') == rule.name:
+			print(rule)
+			break
+
+def get_parameter(model, name, verbose = False):
+	print(model.parameters._map[name])
