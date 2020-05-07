@@ -21,6 +21,6 @@ araB	araB	1.0	1.0
 araD	araD	1.0	1.0
 [araD,araD]	[araD,araD]	1.0	1.0
 araG	araG	1.0	1.0
-araH	araH	1.0	1.0
-[araH,araH]	[araG,araG]	1.0	1.0
+araH	araH	1.0	0.0
+[araH,araH]	[araG,araG]	1.0	0.0
 araF	[araH,araH,araG,araG]	1.0	1.0
