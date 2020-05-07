@@ -50,10 +50,12 @@ def monomers_from_metabolic_network(model, data, verbose = False):
 		if met[0].isdigit():
 			metabolites[index] = '_' + met
 
-	code = "Monomer('met',\n		['name', 'loc', 'prot'],\n" \
-		"		{ 'name' :\n			[ " + \
-		', '.join([ '\'' + x.replace('-', '_') + '\'' for x in sorted(metabolites)]) + " ], \n" \
-		"		  'loc' : ['cyt', 'per', 'ex']})"
+	code = "Monomer('met',\n" \
+		"	['name', 'loc', 'prot'],\n" \
+		"	{{ 'name' : [ {:s} ],\n" \
+		"	'loc' : ['cyt', 'per', 'ex']}})"
+
+	code = code.format(', '.join([ '\'' + x.replace('-', '_') + '\'' for x in sorted(metabolites)]))
 
 	if verbose:
 		print(code)
@@ -77,20 +79,24 @@ def monomers_from_metabolic_network(model, data, verbose = False):
 			if 'spontaneous' != protein:
 				p_monomers.append(protein)
 
-	code = "Monomer('prot',\n		['name', 'loc', 'dna', 'met', 'prot', 'rna', 'up', 'dw'],\n" \
-		  "		{ 'name' :\n			[ " + \
-		  ', '.join([ '\'' + x.replace('-', '_') + '\'' for x in sorted(p_monomers)]) + " ], \n" \
-		  "		  'loc' : ['cyt', 'mem', 'per', 'ex']})"
+	code = "Monomer('prot',\n" \
+		"	['name', 'loc', 'dna', 'met', 'prot', 'rna', 'up', 'dw'],\n" \
+		"	{{ 'name' : [ {:s} ],\n" \
+		"	'loc' : ['cyt', 'mem', 'per', 'ex']}})"
+
+	code = code.format(', '.join([ '\'' + x.replace('-', '_') + '\'' for x in sorted(p_monomers)]))
 
 	if verbose:
 		print(code)
 	exec(code.replace('\n', ''))
 
 	if len(complexes) > 0:
-		code = "Monomer('cplx',\n		['name', 'loc', 'met', 'prot', 'up', 'dw'],\n" \
-			"		{ 'name' :\n			[ " + \
-			', '.join([ '\'' + x.replace('-', '_') + '\'' for x in sorted(complexes)]) + " ], \n" \
-			"		  'loc' : ['cyt', 'mem', 'per', 'ex']})"
+		code = "Monomer('cplx',\n" \
+			"	['name', 'loc', 'met', 'prot', 'up', 'dw'],\n" \
+			"	{{ 'name' : [ {:s} ],\n" \
+			"	'loc' : ['cyt', 'mem', 'per', 'ex']})"
+
+		code = code.format(', '.join([ '\'' + x.replace('-', '_') + '\'' for x in sorted(complexes)]))
 
 		if verbose:
 			print(code)

@@ -18,9 +18,5 @@ def to_kappa(model, outfile):
 		outfile.write(export(model, 'kappa'))
 
 def to_bngl(model, outfile, path):
-	set_path('bng', path)
-	generate_network(model)
-	generate_equations(model)
-
 	with open(outfile, 'w') as outfile:
 		outfile.write(export(model, 'bngl'))
