@@ -1,0 +1,59 @@
+SOURCE	TARGET	FWD_RATE	RVS_RATE
+PER-araF	SMALL-PER-alpha-L-arabinofuranose	1.0	1.0
+PER-araF	SMALL-PER-beta-L-arabinofuranose	1.0	1.0
+PER-araF	SMALL-PER-alpha-L-arabinopyranose	1.0	1.0
+PER-araF	SMALL-PER-beta-L-arabinopyranose	1.0	1.0
+[crp,crp]	SMALL-CAMP	1.0	1.0
+[crp,SMALL-CAMP,crp]	SMALL-CAMP	1.0	1.0
+[lacI,lacI]	SMALL-ALLOLACTOSE	1.0	1.0
+[lacI,SMALL-ALLOLACTOSE,lacI]	SMALL-ALLOLACTOSE	1.0	1.0
+[araG,araG]	SMALL-ATP	1.0	1.0
+araC	SMALL-alpha-L-arabinopyranose	1.0	1.0
+[araC,araC]	SMALL-alpha-L-arabinopyranose	1.0	1.0
+[araC,SMALL-alpha-L-arabinopyranose,araC]	SMALL-alpha-L-arabinopyranose	1.0	1.0
+
+araA	araA	1.0	1.0
+[araA,araA]	[araA,araA]	1.0	1.0
+[araA,araA]	[araA,araA,araA,araA]	1.0	1.0
+[araA,araA]	araA	1.0	1.0
+[araA,araA,araA]	[araA,araA,araA]	1.0	1.0
+araB	araB	1.0	1.0
+araC	araC	1.0	1.0
+araD	araD	1.0	1.0
+[araD,araD]	[araD,araD]	1.0	1.0
+araG	araG	1.0	1.0
+araH	araH	1.0	1.0
+[araH,araH]	[araG,araG]	1.0	1.0
+araF	[araH,araH,araG,araG]	1.0	1.0
+
+# araBAD and araC
+[crp,SMALL-CAMP,crp,SMALL-CAMP]	BS-83-104	1.0	1.0
+[crp,SMALL-CAMP,crp,SMALL-CAMP]	[BS-83-104,BS-araB-pro1]	1.0	1.0
+
+araC	BS-35-51	1.0	1.0
+araC	BS-56-72	1.0	1.0
+araC	BS-109-125	1.0	1.0
+araC	BS-130-146	1.0	1.0
+araC	BS-267-283	1.0	1.0
+
+[araC,BS-56-72]	[araC,BS-267-283,BS-araC-pro1]	1.0	1.0
+
+[araC,SMALL-alpha-L-arabinopyranose]	BS-35-51	1.0	1.0
+[araC,BS-56-72]	SMALL-alpha-L-arabinopyranose	1.0	1.0
+[araC,BS-267-283]	SMALL-alpha-L-arabinopyranose	1.0	1.0
+
+[araC,SMALL-alpha-L-arabinopyranose,BS-56-72]	[araC,SMALL-alpha-L-arabinopyranose,BS-35-51,BS-araB-pro1]	1.0	1.0
+
+# araFGH
+[araC,SMALL-alpha-L-arabinopyranose]	BS-158-174	1.0	1.0
+[araC,SMALL-alpha-L-arabinopyranose]	BS-137-153	1.0	1.0
+[araC,SMALL-alpha-L-arabinopyranose]	BS-83-99	1.0	1.0
+[araC,SMALL-alpha-L-arabinopyranose]	BS-62-78	1.0	1.0
+
+[araC,SMALL-alpha-L-arabinopyranose,BS-83-99]	[araC,SMALL-alpha-L-arabinopyranose,BS-62-78,BS-araF-pro1]	1.0	1.0
+
+# araE
+[araC,SMALL-alpha-L-arabinopyranose]	BS-57-73	1.0	1.0
+[araC,SMALL-alpha-L-arabinopyranose]	BS-36-52	1.0	1.0
+
+[araC,SMALL-alpha-L-arabinopyranose,BS-57-73]	[araC,SMALL-alpha-L-arabinopyranose,BS-36-52,BS-araE-pro1]	1.0	1.0
