@@ -34,20 +34,26 @@ def set_observable(model, pattern = '', alias = ''):
 class set_initial:
 	def monomers(model, name, loc = 'cyt', new_value = 0):
 		for i in model.parameters._elements:
-			if 't0_' + name + '_' + loc.lower() == i.name:
+			if name + '_' + loc.lower() == i.name:
 				i.value = new_value
 		return model
 
-	def met(model, name, loc = 'cyt', new_value = 0):
-		return set_initial.monomers(model, name, loc, new_value)
-
 	def cplx(model, name, loc = 'cyt', new_value = 0):
-		return set_initial.monomers(model, name, loc, new_value)
+		return set_initial.monomers(model, 't0_cplx_' + name, loc, new_value)
+
+	def dna(model, name, loc = 'cyt', new_value = 0):
+		return set_initial.monomers(model, 't0_dna_' + name, loc, new_value)
+
+	def met(model, name, loc = 'cyt', new_value = 0):
+		return set_initial.monomers(model, 't0_met_' + name, loc, new_value)
 
 	def prot(model, name, loc = 'cyt', new_value = 0):
-		return set_initial.monomers(model, name, loc, new_value)
+		return set_initial.monomers(model, 't0_prot_' + name, loc, new_value)
 
-	def pattern(model, pattern, alias = '', new_value = 0):
+	def rna(model, name, loc = 'cyt', new_value = 0):
+		return set_initial.monomers(model, 't0_rna_' + name, loc, new_value)
+
+	def pattern(model, pattern, alias = 'alias_pattern', new_value = 0):
 		model = alias_model_components(model)
 		exec('Initial(' + pattern + ', Parameter(\'t0_' + alias + '\', ' + str(new_value) + '))')
 		return model
@@ -71,7 +77,7 @@ def modes(sims, n_runs):
 
 	stdv = 0
 	for i in range(n_runs):
-		stdv = (data[i] - avrg)**2
+		stdv += (data[i] - avrg)**2
 	stdv = (stdv / (n_runs-1))**0.5
 
 	return {'sims' : data, 'avrg' : avrg, 'stdv' : stdv}
@@ -114,6 +120,9 @@ class plot:
 		except:
 			pass
 
+	def dna(data, observable, *args, **kwargs):
+		plot.monomer(data, 'obs_dna_' + observable, *args, **kwargs)
+
 	def metabolite(data, observable, loc = 'cyt', *args, **kwargs):
 		plot.monomer(data, 'obs_met_' + observable + '_' + loc.lower(), *args, **kwargs)
 
@@ -122,6 +131,9 @@ class plot:
 
 	def protein_complex(data, observable, loc = 'cyt', *args, **kwargs):
 		plot.monomer(data, observable, loc = loc, *args, **kwargs)
+
+	def rna(data, observable, *args, **kwargs):
+		plot.monomer(data, 'obs_rna_' + observable, *args, **kwargs)
 
 	def pattern(data, observable, plt_kws = {}, *args, **kwargs):
 		plt.plot(data.index, data[observable], **plt_kws)

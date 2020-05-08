@@ -610,7 +610,7 @@ def observables_from_interaction_network(model, data, monomers, verbose = False)
 		name = name.replace('-','_')
 		for loc in ['cyt', 'per', 'ex']:
 			code = "Initial(met(name = \'{:s}\', loc = \'{:s}\', prot = None),\n" \
-				"	Parameter(\'t0_{:s}_{:s}\', 0))"
+				"	Parameter(\'t0_met_{:s}_{:s}\', 0))"
 			code = code.format(name, loc, name, loc)
 			if verbose:
 				print(code)
@@ -620,7 +620,7 @@ def observables_from_interaction_network(model, data, monomers, verbose = False)
 		name = name.replace('-','_')
 		for loc in ['cyt', 'mem', 'per', 'ex']:
 			code = 'Initial(prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None),\n' \
-				'	Parameter(\'t0_{:s}_{:s}\', 0))'
+				'	Parameter(\'t0_prot_{:s}_{:s}\', 0))'
 			code = code.format(name, loc, name, loc)
 			if verbose:
 				print(code)
@@ -630,7 +630,7 @@ def observables_from_interaction_network(model, data, monomers, verbose = False)
 		name = name.replace('-','_')
 		for loc in ['cyt', 'mem', 'per', 'ex']:
 			code = 'Initial(cplx(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None),\n' \
-				'	Parameter(\'t0_{:s}_{:s}\', 0))'
+				'	Parameter(\'t0_cplx_{:s}_{:s}\', 0))'
 			code = code.format(name, loc, name, loc)
 			if verbose:
 				print(code)
