@@ -12,6 +12,7 @@ __license__ = 'gpl-3.0'
 from .construct_model_from_metabolic_network import *
 from .construct_model_from_interaction_network import *
 from .construct_model_from_genome_graph import *
+from .construct_model_from_sigma_specificity_network import *
 
 from pysb import *
 from pysb.core import *
