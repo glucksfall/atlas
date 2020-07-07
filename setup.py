@@ -33,7 +33,7 @@ def main():
 	setup(
 		name='atlas_rbm',
 		license='GPLv3+',
-		version='1.0.2',
+		version='1.1.0',
 		#version=versioneer.get_version(),
 		description='Atlas: Reconstruction of Rule-Based Models from biological networks',
 		long_description=long_description,
@@ -76,8 +76,8 @@ def main():
 		],
 
 		python_requires='~=3.0',
-		keywords=['systems biology', 'stochastic modeling', 'parameter estimation'],
-		install_requires=['pysb', 'jupyter', 'ipykernel', 'seaborn', 'importlib-resources'],
+		keywords=['systems biology', 'systems modeling', 'ordinary differential equations', 'parameter estimation'],
+		install_requires=['pysb', 'PythonCyc', 'jupyter', 'ipykernel', 'seaborn', 'importlib-resources'],
 
 		# WARNING: seems to be bdist_wheel only
 		packages=find_packages(exclude=('contrib', 'docs', 'tests', 'notebooks', 'templates')),

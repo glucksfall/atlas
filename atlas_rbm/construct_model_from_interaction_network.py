@@ -124,24 +124,26 @@ def monomers_from_interaction_network(model, data, verbose = False):
 
 	return metabolites, p_monomers, complexes
 
-def from_ProtProt_network(data, i):
-	## write LHS (problematic because we need to find complexes in the LHS)
-	agents = (data.iloc[i, 0] + ',' + data.iloc[i, 1])
+def from_ProtProt_network(data, i): # a network of only proteins interactions
+	## write LHS
+	agents = data.iloc[i, 0] + ',' + data.iloc[i, 1]
 	names = agents.split(',')
+	location = data.iloc[i, 4].split(',')
 
 	LHS = []
 	next_in_complex = False
 	for molecule in names:
-		if molecule[0] == '[': # we are dealing with the first monomer of a complex
-			next_in_complex = True
-			LHS.append('prot(name = \'{:s}\', up = {{:s}}, dw = {{:s}})'.format(molecule[1:]))
-		elif molecule[-1] == ']': # we are dealing with the last monomer of a complex
-			next_in_complex = False
-			LHS.append('prot(name = \'{:s}\', up = {{:s}}, dw = {{:s}})'.format(molecule[:-1]))
-		elif next_in_complex:
-			LHS.append('prot(name = \'{:s}\', up = {{:s}}, dw = {{:s}})'.format(molecule))
-		else: # we have a monomer
-			LHS.append('prot(name = \'{:s}\', up = None, dw = None)'.format(molecule))
+		for loc in location:
+			if molecule[0] == '[': # we are dealing with the first monomer of a complex
+				next_in_complex = True
+				LHS.append('prot(name = \'{:s}\', loc = \'{:s}\', up = {{:s}}, dw = {{:s}})'.format(molecule[1:], loc.lower()))
+			elif molecule[-1] == ']': # we are dealing with the last monomer of a complex
+				next_in_complex = False
+				LHS.append('prot(name = \'{:s}\', loc = \'{:s}\', up = {{:s}}, dw = {{:s}})'.format(molecule[:-1], loc.lower()))
+			elif next_in_complex:
+				LHS.append('prot(name = \'{:s}\', loc = \'{:s}\', up = {{:s}}, dw = {{:s}})'.format(molecule, loc.lower()))
+			else: # we have a monomer
+				LHS.append('prot(name = \'{:s}\', loc = \'{:s}\', up = None, dw = None)'.format(molecule, loc.lower()))
 
 	## look for where starts and ends a complex in the LHS
 	monomers = [(m.start(), m.end()) for m in re.finditer(r'[A-Za-z-_]+', agents)]
@@ -181,10 +183,11 @@ def from_ProtProt_network(data, i):
 	## final join
 	LHS = ' +\n	'.join(LHS)
 
-	## write RHS (no problem, always bind molecules in a chain)
-	agents = (data.iloc[i, 0] + ',' + data.iloc[i, 1])
+	## write RHS
+	agents = data.iloc[i, 0] + ',' + data.iloc[i, 1]
 	agents = agents.replace('[', '').replace(']', '')
 	agents = agents.split(',')
+	location = data.iloc[i, 4].split(',')
 
 	RHS = []
 	# numbering links
@@ -194,8 +197,11 @@ def from_ProtProt_network(data, i):
 	dw[-1] = 'None'
 
 	for index, molecule in enumerate(agents):
-		RHS.append('prot(name = \'{:s}\', up = {:s}, dw = {:s})' \
-				.format(molecule, str(up[index]), str(dw[index])))
+		for loc in location:
+			RHS.append('prot(name = \'{:s}\', loc = \'{:s}\', up = {:s}, dw = {:s})' \
+				.format(molecule, loc.lower(), str(up[index]), str(dw[index])))
+
+	## final join
 	RHS = ' %\n	'.join(RHS)
 
 	return LHS, RHS
