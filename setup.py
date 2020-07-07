@@ -72,7 +72,6 @@ def main():
 			'Operating System :: Unix',
 			'Operating System :: Microsoft :: Windows',
 			'Operating System :: MacOS',
-
 		],
 
 		python_requires='~=3.0',
