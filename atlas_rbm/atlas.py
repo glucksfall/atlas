@@ -75,6 +75,7 @@ def combine_models(model, new_model, verbose = False):
 					str(sorted(set(sites_in_model + sites_in_new_model))),
 					str(sorted(set(names_in_model + names_in_new_model))),
 					str(sorted(set(loc_in_model + loc_in_new_model)))))
+
 	new_rules = []
 	for rule in model.rules:
 		new_rules.append(str(rule))
