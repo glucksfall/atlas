@@ -19,8 +19,12 @@ import pandas
 def read_network(infile_path):
 	with open(infile_path, 'r') as infile:
 		data = pandas.read_csv(infile, delimiter = '\t', header = 0, comment = '#')
-		data[data.duplicated(['REACTION'])].to_csv('./conflicting_reactions.txt', sep = '\t', index = False)
-		data = data[~data.duplicated(['REACTION'], keep = 'first')]
+
+	return data
+
+def check_network(data):
+	data[data.duplicated(['REACTION'])].to_csv('./conflicting_reactions.txt', sep = '\t', index = False)
+	data = data[~data.duplicated(['REACTION'], keep = 'first')]
 
 	return data
 
@@ -38,6 +42,7 @@ def expand_network(infile_path, path = 'expanded.txt'):
 		for reaction, products in zip(data.iloc[:,1], data.iloc[:,3]):
 			for product in products.split(', '):
 				outfile.write('{:s}\tRXN\t{:s}\tMET\n'.format(reaction, product))
+
 	return None
 
 def monomers_from_metabolic_network(model, data, verbose = False):
@@ -236,7 +241,15 @@ def observables_from_metabolic_network(model, data, monomers, verbose = False):
 			exec(code.replace('\t', ' ').replace('\n', ' '))
 
 def construct_model_from_metabolic_network(network, verbose = False):
-	data = read_network(network)
+	if isinstance(network, str):
+		data = read_network(network)
+	elif isinstance(network, pandas.DataFrame)
+		data = network
+	elif isinstance(network, numpy.array)
+		data = pandas.DataFrame(data = network)
+	else:
+		raise Exception("The network format is not yet supported.")
+	data = check_network(data)
 
 	model = Model()
 	[metabolites, p_monomers, complexes] = \
