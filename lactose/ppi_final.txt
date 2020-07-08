@@ -1,5 +1,0 @@
-lacZ	lacZ
-{lacZ, lacZ}	{lacZ, lacZ}
-lacA	lacA
-lacA	{lacA, lacA}
-crp	crp
