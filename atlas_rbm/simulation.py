@@ -45,6 +45,8 @@ class set_initial:
 		return set_initial.monomers(model, 't0_dna_' + name, loc, new_value)
 
 	def met(model, name, loc = 'cyt', new_value = 0):
+		if name[0].isdigit():
+			name = '_' + name
 		return set_initial.monomers(model, 't0_met_' + name, loc, new_value)
 
 	def prot(model, name, loc = 'cyt', new_value = 0):
@@ -53,7 +55,7 @@ class set_initial:
 	def rna(model, name, loc = 'cyt', new_value = 0):
 		return set_initial.monomers(model, 't0_rna_' + name, loc, new_value)
 
-	def pattern(model, pattern, alias = 'alias_pattern', new_value = 0):
+	def from_pattern(model, pattern, alias = 'alias_pattern', new_value = 0):
 		model = alias_model_components(model)
 		exec('Initial(' + pattern + ', Parameter(\'t0_' + alias + '\', ' + str(new_value) + '))')
 		return model
@@ -124,6 +126,8 @@ class plot:
 		plot.monomer(data, 'obs_dna_' + observable, *args, **kwargs)
 
 	def metabolite(data, observable, loc = 'cyt', *args, **kwargs):
+		if observable[0].isdigit():
+			observable = '_' + observable
 		plot.monomer(data, 'obs_met_' + observable + '_' + loc.lower(), *args, **kwargs)
 
 	def protein(data, observable, loc = 'cyt', *args, **kwargs):

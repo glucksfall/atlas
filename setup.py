@@ -76,7 +76,7 @@ def main():
 
 		python_requires='~=3.0',
 		keywords=['systems biology', 'systems modeling', 'ordinary differential equations', 'parameter estimation'],
-		install_requires=['pysb', 'PythonCyc', 'jupyter', 'ipykernel', 'seaborn', 'importlib-resources'],
+		install_requires=['pysb', 'PythonCyc', 'jupyter', 'ipykernel', 'seaborn', 'importlib-resources', 'pyvipr'],
 
 		# WARNING: seems to be bdist_wheel only
 		packages=find_packages(exclude=('contrib', 'docs', 'tests', 'notebooks', 'templates')),

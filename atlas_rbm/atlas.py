@@ -134,11 +134,45 @@ def combine_models(model, new_model, verbose = False):
 
 	return new_model
 
+def get_parameter(model, name, verbose = False):
+	#print(model.parameters._map[name])
+	return model.parameters._map[name]
+
+def replace_parameter(model, name, new_value, verbose = False):
+	for i in model.parameters._elements:
+		if name == i.name:
+			i.value = new_value
+	return model
+
 def get_rule(model, name, verbose = False):
 	for rule in model.rules:
 		if name.replace('-','_') == rule.name:
-			print(rule)
+			#print(rule)
 			break
 
-def get_parameter(model, name, verbose = False):
-	print(model.parameters._map[name])
+	return rule
+
+def replace_rule(model, name, new_rule, verbose = False):
+	alias_model_components(model)
+
+	lst = []
+	for idx, rule in enumerate(model.rules._map.keys()):
+		if rule != name:
+			lst.append(model.rules[idx])
+
+	model.rules = ComponentSet()
+	for rule in lst:
+		model.rules.add(rule)
+
+	exec(new_rule)
+	model.reset_equations()
+	if verbose:
+		print('Original rule {:s} replaced by {:s}'.format(name, new_rule))
+
+	return model
+
+def add_rule(model, new_rule, verbose = False):
+	alias_model_components(model)
+	exec(new_rule)
+
+	return model
