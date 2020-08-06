@@ -66,6 +66,7 @@ def main():
 			'Programming Language :: Python :: 3.5',
 			'Programming Language :: Python :: 3.6',
 			'Programming Language :: Python :: 3.7',
+			'Programming Language :: Python :: 3.8',
 
 			# other classifiers added by author
 			'Environment :: Console',
@@ -75,8 +76,23 @@ def main():
 		],
 
 		python_requires='~=3.0',
-		keywords=['systems biology', 'systems modeling', 'ordinary differential equations', 'parameter estimation'],
-		install_requires=['pysb', 'PythonCyc', 'jupyter', 'ipykernel', 'seaborn', 'importlib-resources', 'pyvipr'],
+		keywords=[
+			'systems biology',
+			'systems modeling',
+			'rule-based modeling',
+			'ordinary differential equations',
+			'stochastic simulation',
+			'parameter estimation'
+			],
+		install_requires=[
+			'pysb>=1.11.0',
+			'PythonCyc',
+			'jupyter',
+			'ipykernel',
+			'seaborn',
+			'importlib-resources',
+			'pyvipr'
+			],
 
 		# WARNING: seems to be bdist_wheel only
 		packages=find_packages(exclude=('contrib', 'docs', 'tests', 'notebooks', 'templates')),

@@ -22,12 +22,24 @@ def read_network(file):
 
 	return data
 
+def check_network(data):
+	# find duplicated reactions (reactions must has a unique name)
+	duplicated = len(data[data.duplicated(['SOURCE', 'TARGET'])].index)
+
+	if duplicated > 0:
+		data[data.duplicated(['SOURCE', 'TARGET'])].to_csv('./conflicting_interactions.txt', sep = '\t', index = False)
+		data = data[~data.duplicated(['SOURCE', 'TARGET'], keep = 'first')]
+		print('It was found possible duplicated interactions in the network.\n' \
+			'Please check the conflicting_interactions.txt and correct them if necessary.')
+
+	return data
+
 def monomers_from_interaction_network(model, data, verbose = False):
 	# find unique metabolites and correct names
 	tmp = list(data.iloc[:, 0].values) + list(data.iloc[:, 1].values)
 	tmp = [ x.replace('[', '').replace(']', '').split(',') if x.startswith('[') else [x] for x in tmp ]
 	tmp = [ i for j in tmp for i in j ]
-	tmp = [ ' '.join(x.replace('SMALL-', '').replace('PER-', '').replace('EX-', '').split(',')) for x in tmp if x.startswith('SMALL-')]
+	tmp = [ ' '.join(x.replace('SMALL-', '').replace('MEM-', '').replace('PER-', '').replace('WALL-', '').replace('EX-', '').split(',')) for x in tmp if x.startswith('SMALL-')]
 
 	metabolites = list(set(' '.join(tmp).split(' ')))
 	if len(tmp) > 0:
@@ -38,7 +50,7 @@ def monomers_from_interaction_network(model, data, verbose = False):
 		code = "Monomer('met',\n" \
 			"	['name', 'loc', 'prot'],\n" \
 			"	{{ 'name' : [ {:s} ], \n" \
-			"	'loc' : ['cyt', 'per', 'ex']}})"
+			"	'loc' : ['cyt', 'mem', 'per', 'wall', 'ex']}})"
 
 		code = code.format(', '.join([ '\'' + x.replace('-', '_') + '\'' for x in sorted(metabolites)]))
 
@@ -48,13 +60,13 @@ def monomers_from_interaction_network(model, data, verbose = False):
 	else:
 		metabolites = []
 
-	# find unique proteins, protein complexes and correct names
+	# find unique proteins and protein complexes, and correct names
 	tmp = list(data.iloc[:, 0].values) + list(data.iloc[:, 1].values)
 	tmp = [ x for x in tmp if not (x.startswith('SMALL-') or x.startswith('BS-') or x.startswith('RNA-'))]
 	tmp = [ x.replace('[', '').replace(']', '').split(',') if x.startswith('[') else [x] for x in tmp ]
 	tmp = [ i for j in tmp for i in j ]
 	tmp = [ x for x in tmp if not (x.startswith('SMALL-') or x.startswith('BS-') or x.startswith('RNA-'))]
-	tmp = [ ' '.join(x.replace('PER-', '').replace('MEM-', '').split(', ')) for x in tmp]
+	tmp = [ ' '.join(x.replace('MEM-', '').replace('PER-', '').replace('WALL-', '').replace('EX-', '').split(',')) for x in tmp]
 
 	complexes = []
 	p_monomers = []
@@ -71,7 +83,7 @@ def monomers_from_interaction_network(model, data, verbose = False):
 	code = "Monomer('prot',\n" \
 		"	['name', 'loc', 'dna', 'met', 'prot', 'rna', 'up', 'dw'],\n" \
 		"	{{ 'name' : [ {:s} ], \n" \
-		"	'loc' : ['cyt', 'mem', 'per', 'ex']}})"
+		"	'loc' : ['cyt', 'mem', 'per', 'wall', 'ex']}})"
 
 	code = code.format(', '.join([ '\'' + x.replace('-', '_') + '\'' for x in sorted(p_monomers)]))
 
@@ -83,7 +95,7 @@ def monomers_from_interaction_network(model, data, verbose = False):
 		code = "Monomer('cplx',\n" \
 			"	['name', 'loc', 'met', 'prot', 'up', 'dw'],\n" \
 			"	{{ 'name' : [ {:s} ],\n" \
-			"	'loc' : ['cyt', 'mem', 'per', 'ex']}})"
+			"	'loc' : ['cyt', 'mem', 'per', 'wall', 'ex']}})"
 
 		code = code.format(', '.join([ '\'' + x.replace('-', '_') + '\'' for x in sorted(complexes)]))
 
@@ -122,7 +134,7 @@ def monomers_from_interaction_network(model, data, verbose = False):
 			print(code)
 		exec(code.replace('\n', ''))
 
-	return metabolites, p_monomers, complexes
+	return metabolites, p_monomers, complexes, zip(list(data.iloc[:, 0]), list(data.iloc[:, 1]))
 
 def from_ProtProt_network(data, i): # a network of only proteins interactions
 	## write LHS
@@ -145,7 +157,7 @@ def from_ProtProt_network(data, i): # a network of only proteins interactions
 			else: # we have a monomer
 				LHS.append('prot(name = \'{:s}\', loc = \'{:s}\', up = None, dw = None)'.format(molecule, loc.lower()))
 
-	## look for where starts and ends a complex in the LHS
+	## look for where a complex starts and ends in the LHS
 	monomers = [(m.start(), m.end()) for m in re.finditer(r'[A-Za-z-_]+', agents)]
 	complexes = [(m.start()+1, m.end()-1) for m in re.finditer(r'\[[A-Za-z-_,]+\]', agents)]
 
@@ -604,7 +616,7 @@ def from_ProtDNA_network(data, i):
 def observables_from_interaction_network(model, data, monomers, verbose = False):
 	for name in sorted(monomers[1]):
 		name = name.replace('-','_')
-		for loc in ['cyt', 'per', 'ex']:
+		for loc in ['cyt', 'mem', 'per', 'wall', 'ex']:
 			code = 'Observable(\'obs_prot_{:s}_{:s}\',\n' \
 				'	prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None))'
 			code = code.format(name, loc, name, loc)
@@ -614,7 +626,7 @@ def observables_from_interaction_network(model, data, monomers, verbose = False)
 
 	for name in sorted(monomers[0]):
 		name = name.replace('-','_')
-		for loc in ['cyt', 'per', 'ex']:
+		for loc in ['cyt', 'mem', 'per', 'wall', 'ex']:
 			code = "Initial(met(name = \'{:s}\', loc = \'{:s}\', prot = None),\n" \
 				"	Parameter(\'t0_met_{:s}_{:s}\', 0))"
 			code = code.format(name, loc, name, loc)
@@ -624,7 +636,7 @@ def observables_from_interaction_network(model, data, monomers, verbose = False)
 
 	for name in sorted(monomers[1]):
 		name = name.replace('-','_')
-		for loc in ['cyt', 'mem', 'per', 'ex']:
+		for loc in ['cyt', 'mem', 'per', 'wall', 'ex']:
 			code = 'Initial(prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None),\n' \
 				'	Parameter(\'t0_prot_{:s}_{:s}\', 0))'
 			code = code.format(name, loc, name, loc)
@@ -634,7 +646,7 @@ def observables_from_interaction_network(model, data, monomers, verbose = False)
 
 	for name in sorted(monomers[2]):
 		name = name.replace('-','_')
-		for loc in ['cyt', 'mem', 'per', 'ex']:
+		for loc in ['cyt', 'mem', 'per', 'wall', 'ex']:
 			code = 'Initial(cplx(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None),\n' \
 				'	Parameter(\'t0_cplx_{:s}_{:s}\', 0))'
 			code = code.format(name, loc, name, loc)
@@ -642,15 +654,80 @@ def observables_from_interaction_network(model, data, monomers, verbose = False)
 				print(code)
 			exec(code.replace('\t', ''))
 
+	names = []
+	for x,y in monomers[3]:
+		names.append('[' + (x + ',' + y).replace('[','').replace(']','') + ']')
+
+	for name in sorted(set(names)):
+		if name.startswith('['):
+			monomers = name[1:-1].split(',')
+			enzyme = []
+
+			from collections import Counter
+			stoichiometry = Counter(monomers)
+			cplx_composition = ''
+			for key, value in stoichiometry.items():
+				cplx_composition += '_{:s}x{:d}'.format(key, value)
+
+			## create link indexes
+			dw = [None] * len(monomers)
+			start_link = 1
+			for index in range(len(monomers)-1):
+				dw[index] = start_link
+				start_link += 1
+			up = dw[-1:] + dw[:-1]
+
+			for index, monomer in enumerate(monomers):
+				if monomer.startswith('MEM-'):
+					monomer = monomer.replace('MEM-', '')
+					location = 'mem'
+				elif monomer.startswith('PER-'):
+					monomer = monomer.replace('PER-', '')
+					location = 'per'
+				elif monomer.startswith('WALL-'):
+					monomer = monomer.replace('WALL-', '')
+					location = 'wall'
+				elif monomer.startswith('EX-'):
+					monomer = monomer.replace('EX-', '')
+					location = 'ex'
+				else:
+					location = 'cyt'
+				enzyme.append('prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = {:s}, dw = {:s})'.format(
+					monomer, location, str(up[index]), str(dw[index])))
+
+			enzyme = ' %\n	'.join(enzyme)
+
+			code = 'Initial({:s}, Parameter(\'t0_cplx{:s}_{:s}\', 0))'
+			code = code.format(enzyme, cplx_composition, location)
+
+			if verbose:
+				print(code)
+			exec(code.replace('\t', ' ').replace('\n', ' '))
+
+			code = 'Observable(\'obs_cplx{:s}_{:s}\', {:s})'
+			code = code.format(cplx_composition, location, enzyme)
+
+			if verbose:
+				print(code)
+			exec(code.replace('\t', ' ').replace('\n', ' '))
+
 	return model
 
 def construct_model_from_interaction_network(network, verbose = False):
-	data = read_network(network)
+	if isinstance(network, str):
+		data = read_network(network)
+	elif isinstance(network, pandas.DataFrame):
+		data = network
+	elif isinstance(network, numpy.array):
+		data = pandas.DataFrame(data = network)
+	else:
+		raise Exception("The network format is not yet supported.")
+	data = check_network(data)
 
 	model = Model()
-	[metabolites, p_monomers, complexes] = \
+	[metabolites, p_monomers, complexes, hypernodes] = \
 		monomers_from_interaction_network(model, data, verbose)
-	observables_from_interaction_network(model, data, [metabolites, p_monomers, complexes], verbose)
+	observables_from_interaction_network(model, data, [metabolites, p_monomers, complexes, hypernodes], verbose)
 
 	RULE_LHS = []
 	RULE_RHS = []

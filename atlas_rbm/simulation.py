@@ -12,9 +12,9 @@ __license__ = 'gpl-3.0'
 from pysb import *
 from pysb.bng import generate_network, generate_equations
 from pysb.pathfinder import set_path
-from pysb.simulator import ScipyOdeSimulator, BngSimulator, KappaSimulator
+from pysb.simulator import ScipyOdeSimulator, BngSimulator, CupSodaSimulator, KappaSimulator, StochKitSimulator
 from pysb.util import alias_model_components
-from pylab import linspace
+from matplotlib.pylab import linspace
 
 import pandas
 import seaborn
@@ -60,12 +60,19 @@ class set_initial:
 		exec('Initial(' + pattern + ', Parameter(\'t0_' + alias + '\', ' + str(new_value) + '))')
 		return model
 
-def ode(model, start = 0, finish = 10, points = 10, path = '/opt/'):
-	set_path('bng', path)
-	generate_network(model)
-	generate_equations(model)
+def scipyODE(model, start = 0, finish = 10, points = 10):
+	return ScipyOdeSimulator(model, linspace(start, finish, points+1)).run().dataframe
 
+def bngODE(model, start = 0, finish = 10, points = 10, path = '/opt/'):
+	set_path('bng', path)
 	return BngSimulator(model, linspace(start, finish, points+1)).run(method = 'ode').dataframe
+
+#def cupsoda(model, start = 0, finish = 10, points = 10, path = '/opt/´'):
+	#set_path('cupsoda', path)
+	#generate_network(model)
+	#generate_equations(model)
+
+	#return CupSodaSimulator(model, linspace(start, finish, points+1)).run().dataframe
 
 def modes(sims, n_runs):
 	data = []
@@ -84,12 +91,24 @@ def modes(sims, n_runs):
 
 	return {'sims' : data, 'avrg' : avrg, 'stdv' : stdv}
 
-def ssa(model, start = 0, finish = 10, points = 10, n_runs = 20, path = '/opt/'):
+def bngSSA(model, start = 0, finish = 10, points = 10, n_runs = 20, path = '/opt/'):
 	set_path('bng', path)
-	generate_network(model)
-	generate_equations(model)
 
 	sims = BngSimulator(model, linspace(start, finish, points+1)).run(method = 'ssa', n_runs = n_runs).dataframe
+	sims = modes(sims, n_runs)
+	return {'sims' : sims['sims'], 'avrg' : sims['avrg'], 'stdv' : sims['stdv']}
+
+def bngPLA(model, start = 0, finish = 10, points = 10, n_runs = 20, path = '/opt/'):
+	set_path('bng', path)
+
+	sims = BngSimulator(model, linspace(start, finish, points+1)).run(method = 'pla', n_runs = n_runs).dataframe
+	sims = modes(sims, n_runs)
+	return {'sims' : sims['sims'], 'avrg' : sims['avrg'], 'stdv' : sims['stdv']}
+
+def bngNF(model, start = 0, finish = 10, points = 10, n_runs = 20, path = '/opt/'):
+	set_path('bng', path)
+
+	sims = BngSimulator(model, linspace(start, finish, points+1)).run(method = 'nf', n_runs = n_runs).dataframe
 	sims = modes(sims, n_runs)
 	return {'sims' : sims['sims'], 'avrg' : sims['avrg'], 'stdv' : sims['stdv']}
 
@@ -99,45 +118,74 @@ def kasim(model, start = 0, finish = 10, points = 10, n_runs = 20, path = '/opt/
 	sims = modes(sims, n_runs)
 	return {'sims' : sims['sims'], 'avrg' : sims['avrg'], 'stdv' : sims['stdv']}
 
+def stochkit(model, start = 0, finish = 10, points = 10, n_runs = 20, path = '/opt/'):
+	set_path('stochkit_ssa', path)
+	sims = StochKitSimulator(model, linspace(start, finish, points+1)).run(n_runs = n_runs).dataframe
+	sims = modes(sims, n_runs)
+	return {'sims' : sims['sims'], 'avrg' : sims['avrg'], 'stdv' : sims['stdv']}
+
 class plot:
-	def monomer(data, observable, loc = 'cyt', plt_kws = {}, *args, **kwargs):
+	def monomer(data, observable, loc = 'cyt', ax = plt, plt_kws = {}, *args, **kwargs):
 		kind = kwargs.get('kind', None)
+		weight = kwargs.get('weight', 1)
 
 		observable = observable.replace('-', '_')
 		if kind == 'plot':
-			plt.plot(data.index, data[observable], **plt_kws)
+			try:
+				plt_kws['markersize'] = plt_kws.pop('s')
+			except:
+				pass
+			ax.plot(data.index, data[observable], **plt_kws)
 		elif kind == 'scatter':
-			plt.scatter(data.index, data[observable], **plt_kws)
+			try:
+				plt_kws['s'] = plt_kws.pop('markersize')
+			except:
+				pass
+			ax.scatter(data.index, data[observable], **plt_kws)
 		elif kind == 'fill_between':
-			plt.fill_between(
+			try:
+				plt_kws['linewidth'] = plt_kws.pop('s')
+			except:
+				pass
+			ax.fill_between(
 				data['avrg'].index,
-				data['avrg'][observable] + data['stdv'][observable],
-				data['avrg'][observable] - data['stdv'][observable],
+				data['avrg'][observable] + data['stdv'][observable] * weight,
+				data['avrg'][observable] - data['stdv'][observable] * weight,
 				**plt_kws)
 		else:
-			plt.plot(data.index, data[observable], **plt_kws)
+			try:
+				plt_kws['markersize'] = plt_kws.pop('s')
+			except:
+				pass
+			ax.plot(data.index, data[observable], **plt_kws)
 
 		try:
-			plt.legend(frameon = False, loc = 'right')
+			ax.legend(frameon = False, loc = 'best')
 		except:
 			pass
+		return None
 
 	def dna(data, observable, *args, **kwargs):
 		plot.monomer(data, 'obs_dna_' + observable, *args, **kwargs)
+		return None
 
 	def metabolite(data, observable, loc = 'cyt', *args, **kwargs):
 		if observable[0].isdigit():
 			observable = '_' + observable
 		plot.monomer(data, 'obs_met_' + observable + '_' + loc.lower(), *args, **kwargs)
+		return None
 
 	def protein(data, observable, loc = 'cyt', *args, **kwargs):
 		plot.monomer(data, 'obs_prot_' + observable + '_' + loc.lower(), *args, **kwargs)
+		return None
 
-	def protein_complex(data, observable, loc = 'cyt', *args, **kwargs):
-		plot.monomer(data, observable, loc = loc, *args, **kwargs)
+	def cplx(data, observable, loc = 'cyt', *args, **kwargs):
+		plot.monomer(data, 'obs_cplx_' + observable + '_' + loc.lower(), *args, **kwargs)
+		return None
 
 	def rna(data, observable, *args, **kwargs):
 		plot.monomer(data, 'obs_rna_' + observable, *args, **kwargs)
+		return None
 
 	def pattern(data, observable, plt_kws = {}, *args, **kwargs):
 		plt.plot(data.index, data[observable], **plt_kws)
@@ -145,3 +193,4 @@ class plot:
 			plt.legend(frameon = False, loc = 'right')
 		except:
 			pass
+		return None

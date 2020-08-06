@@ -146,8 +146,8 @@ def rules_from_metabolic_network(model, data, verbose = False):
 					location = 'ex'
 				else:
 					location = 'cyt'
-
 				enzyme.append('prot(name = \'{:s}\', loc = \'{:s}\', up = {:s}, dw = {:s})'.format(monomer, location, str(up[index]), str(dw[index])))
+
 			enzyme = ' %\n	'.join(enzyme)
 
 		else: # the enzyme is a monomer
@@ -233,7 +233,7 @@ def rules_from_metabolic_network(model, data, verbose = False):
 def observables_from_metabolic_network(model, data, monomers, verbose = False):
 	for name in sorted(monomers[0]):
 		name = name.replace('-','_')
-		for loc in ['cyt', 'per', 'ex']:
+		for loc in ['cyt', 'mem', 'per', 'wall', 'ex']:
 			code = 'Observable(\'obs_met_{:s}_{:s}\', met(name = \'{:s}\', loc = \'{:s}\', prot = None))'
 			code = code.format(name, loc, name, loc)
 			if verbose:
@@ -301,12 +301,20 @@ def observables_from_metabolic_network(model, data, monomers, verbose = False):
 					location = 'ex'
 				else:
 					location = 'cyt'
+				enzyme.append('prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = {:s}, dw = {:s})'.format(
+					monomer, location, str(up[index]), str(dw[index])))
 
-				enzyme.append('prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = {:s}, dw = {:s})'.format(monomer, location, str(up[index]), str(dw[index])))
 			enzyme = ' %\n	'.join(enzyme)
 
 			code = 'Initial({:s}, Parameter(\'t0_cplx{:s}_{:s}\', 0))'
 			code = code.format(enzyme, cplx_composition, location)
+
+			if verbose:
+				print(code)
+			exec(code.replace('\t', ' ').replace('\n', ' '))
+
+			code = 'Observable(\'obs_cplx{:s}_{:s}\', {:s})'
+			code = code.format(cplx_composition, location, enzyme)
 
 			if verbose:
 				print(code)
