@@ -14,7 +14,10 @@ from pysb.util import *
 from pysb.core import *
 
 import re
+import numpy
 import pandas
+
+from .utils import location_keys, location_values
 
 def read_network(infile_path):
 	with open(infile_path, 'r') as infile:

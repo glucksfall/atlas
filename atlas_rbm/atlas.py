@@ -14,6 +14,8 @@ from .construct_model_from_interaction_network import *
 from .construct_model_from_genome_graph import *
 from .construct_model_from_sigma_specificity_network import *
 
+import pandas
+
 from pysb import *
 from pysb.core import *
 from pysb.util import alias_model_components

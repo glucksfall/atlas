@@ -60,19 +60,16 @@ class set_initial:
 		exec('Initial(' + pattern + ', Parameter(\'t0_' + alias + '\', ' + str(new_value) + '))')
 		return model
 
-def scipyODE(model, start = 0, finish = 10, points = 10):
+def scipy(model, start = 0, finish = 10, points = 10):
 	return ScipyOdeSimulator(model, linspace(start, finish, points+1)).run().dataframe
 
 def bngODE(model, start = 0, finish = 10, points = 10, path = '/opt/'):
 	set_path('bng', path)
 	return BngSimulator(model, linspace(start, finish, points+1)).run(method = 'ode').dataframe
 
-#def cupsoda(model, start = 0, finish = 10, points = 10, path = '/opt/´'):
-	#set_path('cupsoda', path)
-	#generate_network(model)
-	#generate_equations(model)
-
-	#return CupSodaSimulator(model, linspace(start, finish, points+1)).run().dataframe
+def cupsoda(model, start = 0, finish = 10, points = 10, path = '/opt/´'):
+	set_path('cupsoda', path)
+	return CupSodaSimulator(model, linspace(start, finish, points+1)).run().dataframe
 
 def modes(sims, n_runs):
 	data = []

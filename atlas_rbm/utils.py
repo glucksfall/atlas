@@ -17,9 +17,6 @@ import pythoncyc
 import subprocess
 import itertools
 
-from .construct_model_from_metabolic_network import read_network
-from .export import to_kappa
-
 def checkPathwayTools(verbose = True):
 	try:
 		availableOrgs = pythoncyc.all_orgids()
@@ -33,14 +30,14 @@ def checkPathwayTools(verbose = True):
 	else:
 		if verbose:
 			print('PathwayTools is not running.\n' \
-				'Please, execute utils.execPathwayTools(path) or utils.execPToolsDocker(dockername).')
+				'Please, execute execPathwayTools(path) or execPToolsDocker(dockername).')
 		return False
 
 def execPathwayTools(path = '/opt/pathway-tools/'):
 	if not checkPathwayTools(verbose = False):
 		from platform import system
 		if 'Windows' in system():
-			cmd = '{:s}/pathway-tools -lisp -python-local-only'.format(path)
+			cmd = '"{:s}\ptools.bat" -lisp -python-local-only'.format(path)
 		else:
 			cmd = 'nohup {:s}/pathway-tools -lisp -python-local-only &'.format(path)
 		cmd = re.findall(r'(?:[^\s,"]|"+(?:=|\\.|[^"])*"+)+', cmd)
@@ -54,15 +51,24 @@ def execPathwayTools(path = '/opt/pathway-tools/'):
 	checkPathwayTools(verbose = True)
 	return None
 
-def execPToolsDocker(dockername = 'ptools'):
+def execPToolsDocker(dockername = 'ptools', path = '/opt'):
+	# Ubuntu 20.04 and 18.04 bug
 	if not checkPathwayTools(verbose = False):
-		cmd = 'docker run --rm -d -v /opt:/opt --network host {:s}'.format(dockername)
+		from platform import system
+		if 'Linux' in system():
+			pass
+		else:
+			return "Please run execPathwayTools()"
+
+	if not checkPathwayTools(verbose = False):
+		cmd = 'docker run --rm --detach --volume {:s}:{:s} --network host {:s}'.format(path, path, dockername)
 		cmd = re.findall(r'(?:[^\s,"]|"+(?:=|\\.|[^"])*"+)+', cmd)
 		out, err = subprocess.Popen(cmd, shell = False, stdout = subprocess.PIPE, stderr = subprocess.PIPE).communicate()
 		print('Docker {:s} is running (ID {:s})'.format(dockername, out.decode()[:-1]))
 	else:
 		print('Doing nothing since PathwayTools is running.')
 		return None
+
 	while not checkPathwayTools(verbose = False):
 		pass
 	checkPathwayTools(verbose = True)
@@ -99,36 +105,46 @@ def getData(code, string, verbose = False):
 	if verbose:
 		print('query is', string)
 
-	if string != None:
-		if isinstance(string, list) and len(string) > 1:
-			info = []
-			for query in string:
+	if isinstance(string, list) and len(string) > 1:
+		info = []
+		for query in string:
+			if query != None:
 				data = organism.get_frame_objects(query)
 				if data != None:
 					info.append(data[0])
 				else:
 					info.append(None)
-			return info
+			else:
+				info.append(None)
+		return info
 
-		elif isinstance(string, list) and len(string) == 1:
+	elif isinstance(string, list) and len(string) == 1:
+		if string[0] != None:
 			data = organism.get_frame_objects(string)
 			if data != None:
-				return data[0][0]
+				return data[0]
 			else:
-				return None
-
+				return [None]
 		else:
+			return [None]
+
+	elif isinstance(string, str):
+		if string != None:
 			data = organism.get_frame_objects([string])
 			if data != None:
 				return data[0]
 			else:
-				return None
+				return [None]
+		else:
+			return [None]
 
 	else:
-		return None
+		return [None]
 
 def analyzeConnectivity(model, path = 'kasa'):
 	import pysb
+	from .export import to_kappa
+
 	if isinstance(model, str):
 		cmd = '{:s} {:s}'.format(path, model)
 	elif isinstance(model, pysb.core.Model):
@@ -143,7 +159,7 @@ def analyzeConnectivity(model, path = 'kasa'):
 	out, err = subprocess.Popen(cmd, shell = False, stdout = subprocess.PIPE, stderr = subprocess.PIPE).communicate()
 	#print(out, err)
 
-	output = out.split(b'------------------------------------------------------------')
+	output = out.replace(b'\r', b'').split(b'------------------------------------------------------------') # Windows compatibility
 	if output[1] == b'\nevery rule may be applied\n':
 		print('Every rule may be applied.')
 	else:
@@ -157,10 +173,13 @@ def analyzeConnectivity(model, path = 'kasa'):
 	else:
 		print('There are some non creatable agents:', output[4].decode()[:-2])
 
-	os.remove('output/contact.dot')
-	os.remove('output/influence.dot')
-	os.remove('output/profiling.html')
-	os.rmdir('output')
+	try:
+		os.remove('output/contact.dot')
+		os.remove('output/influence.dot')
+		os.remove('output/profiling.html')
+		os.rmdir('output')
+	except:
+		print('Another process could be holding the files/directories and preventing its deletion.')
 
 	return None
 
@@ -169,10 +188,45 @@ def analyseConnectivity(model, path = 'kasa'):
 
 	return None
 
+def location_keys():
+	dct = {
+		'CYT' : 'cytosol',
+		'iMEM' : 'inner membrane',
+		'PER' : 'periplasmic space',
+		'MEM' : 'membrane',
+		'oMEM' : 'outer membrane',
+		'EX' : 'extracellular space',
+		'bNUC' : 'bacterial nucleoid',
+		'WALL' : 'cell wall',
+		'cPROJ' : 'cell projection',
+		'CYTOSK' : 'cytoskeleton',
+		}
+
+	return dct
+
+def location_values():
+	dct = {
+		'unknown' : 'CYT',
+		'cytosol' : 'CYT',
+		'inner membrane' : 'iMEM',
+		'inner membrane (sensu Actinobacteria)' : 'iMEM',
+		'inner membrane (sensu Gram-negative Bacteria)' : 'iMEM',
+		'periplasmic space' : 'PER',
+		'membrane' : 'MEM',
+		'outer membrane' : 'oMEM',
+		'extracellular space' : 'EX',
+		'bacterial nucleoid' : 'bNUC',
+		'cell wall' : 'WALL',
+		'cell projection' : 'cPROJ',
+		'cytoskeleton' : 'CYTOSK',
+		}
+
+	return dct
+
 class metabolicNetwork:
 	def FromGeneList(code, genes, fmt = 'genes', precalculated = None):
 		if fmt not in ['genes', 'product', 'complex']:
-			raise Exception('Valid format is: \'genes\', \'product\', or \'complex\'`')
+			raise Exception('Valid format is: \'genes\', \'product\', and \'complex\'')
 
 		if isinstance(genes, str):
 			genes = [genes]
@@ -190,58 +244,280 @@ class metabolicNetwork:
 			df_genes = precalculated
 
 		Network = ''
-		#proteins = []
-		# get reactions of gene:
+		# get reactions of product of gene, and complexes of product of gene:
 		for gene in genes:
-			prod = getData(code, df_genes.loc[gene, 'gene name'])['product'][-1]
-			try:
-				prod = getData(code, prod)['component_of'][-1] # the gene product act as complex
-			except:
-				prod = getData(code, df_genes.loc[gene, 'gene name'])['product'][0]
-			#proteins.append(prod)
-
-			enzrnxs = getData(code, prod)['catalyzes']
-
 			rxns = []
-			for enzrxn in enzrnxs:
-				rxns.append(getData(code, enzrxn)['reaction'])
-			rxns
+			prods = getData(code, df_genes.loc[gene, 'gene name'])['product'] # always a list
 
-			for rxn in rxns:
-				if 'gene' in fmt:
-					Network += '{:s}\t{:s}\t{:s}\t{:s}\t1.0\t1.0\n'.format(
-						gene, rxn[0], ','.join(getData(code, rxn[0])['left']), ','.join(getData(code, rxn[0])['right']))
+			if prods != None:
+				for prod in prods:
+					enzrxns = getData(code, prod)['catalyzes'] # always a list
+
+					if enzrxns != None:
+						for enzrxn in enzrxns:
+							rxns.append([prod, getData(code, enzrxn)['reaction'][0]])
+		#             print(idx, '\t', name, '\t', prod, rxns)
+
+					component_of = getData(code, prod)['component_of'] # always a list
+					if component_of != None:
+						for component in component_of:
+							enzrxns = getData(code, component)['catalyzes']
+							if enzrxns != None:
+								for enzrxn in enzrxns:
+									rxns.append([component, getData(code, enzrxn)['reaction'][0]])
+		#                     print(idx, '\t', name, '\t', component, rxns)
+
+							component_of = getData(code, component)['component_of'] # always a list
+							if component_of != None:
+								for component in component_of:
+									enzrxns = getData(code, component)['catalyzes']
+									if enzrxns != None:
+										for enzrxn in enzrxns:
+											rxns.append([component, getData(code, enzrxn)['reaction'][0]])
+		#                             print(idx, '\t', name, '\t', component, rxns)
+
+									component_of = getData(code, component)['component_of'] # always a list
+									if component_of != None:
+										for component in component_of:
+											enzrxns = getData(code, component)['catalyzes']
+											if enzrxns != None:
+												for enzrxn in enzrxns:
+													rxns.append([component, getData(code, enzrxn)['reaction'][0]])
+		#                                     print(idx, '\t', name, '\t', component, rxns)
+
+											# CPLX0-3964 found in this level (ECOLI)
+											component_of = getData(code, component)['component_of'] # always a list
+											if component_of != None:
+												for component in component_of:
+													enzrxns = getData(code, component)['catalyzes']
+													if enzrxns != None:
+														for enzrxn in enzrxns:
+															rxns.append([component, getData(code, enzrxn)['reaction'][0]])
+		#                                             print(idx, '\t', name, '\t', component, rxns)
+
+			# we got all reactions from the product of a gene, now we format the network
+			for prod, rxn in rxns:
+				direction = getData(code, rxn)['reaction_direction']
+				if direction == '|PHYSIOL-LEFT-TO-RIGHT|' or direction == '|LEFT-TO-RIGHT|':
+					fwd = 1.0
+					rvs = 0.0
+				elif direction == '|PHYSIOL-RIGHT-TO-LEFT|' or direction == '|RIGHT-TO-LEFT|':
+					fwd = 0.0
+					rvs = 1.0
+				elif direction == '|REVERSIBLE|':
+					fwd = 1.0
+					rvs = 1.0
+				else:
+					fwd = 1.0
+					rvs = 0.0
+
+				left = ','.join(getData(code, rxn)['left'])
+				right = ','.join(getData(code, rxn)['right'])
+
+				# location of genes products, but no complexes
+				if 'genes' in fmt or 'product' in fmt:
+					products = getData(code, df_genes.loc[gene, 'gene name'])['product']
+					locations = []
+					for product in products:
+						locations.append(getData(code, product)['locations'])
+
+				if 'genes' in fmt:
+					for loc in locations[0]:
+						location = getData(code, loc)['common_name']
+						Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(gene, location, rxn, left, right, fwd, rvs)
+
 				elif 'product' in fmt:
-					Network += '{:s}\t{:s}\t{:s}\t{:s}\t1.0\t1.0\n'.format(
-						prod, rxn[0], ','.join(getData(code, rxn[0])['left']), ','.join(getData(code, rxn[0])['right']))
+					for loc in locations[0]:
+						location = getData(code, loc)['common_name']
+						Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(prod, location, rxn, left, right, fwd, rvs)
+
 				elif 'complex' in fmt:
 					organism = selectOrganism(code)
+					genes = organism.genes_of_protein(prod)
 					monomers, stoichiometry = organism.monomers_of_protein(prod)
+					locations = []
+					for monomer in monomers:
+						locations.append(getData(code, monomer)['locations'])
 
-					genes = []
-					for monomer, coefficient in zip(monomers, stoichiometry):
-						gene = getData('ECOLI', organism.genes_of_protein(monomer)[0])['common_name']
-						genes.append(gene)
+					import itertools
+					locations = list(itertools.product(*locations))
 
-					cplx = []
-					for gene, coefficient in zip(genes, stoichiometry):
-						cplx.append([gene for x in range(coefficient)])
+					for location in locations:
+						tmp = []
+						for loc, coefficient in zip(location, stoichiometry):
+							tmp.append([getData(code, loc)['common_name'] for x in range(coefficient)])
+						loc = [x for y in tmp for x in y]
 
-					cplx = ','.join([x for y in cplx for x in y])
-					cplx = '[{:s}]'.format(cplx)
+						if len(loc) > 1:
+							loc = ','.join(loc)
+							loc = '[{:s}]'.format(loc)
+						else:
+							loc = loc[0]
 
-					Network += '{:s}\t{:s}\t{:s}\t{:s}\t1.0\t1.0\n'.format(
-						cplx, rxn[0], ','.join(getData(code, rxn[0])['left']), ','.join(getData(code, rxn[0])['right']))
+						cplx = []
+						for gene, coefficient in zip(genes, stoichiometry):
+							cplx.append([getData(code, gene)['common_name'] for x in range(coefficient)])
+						cplx = [x for y in cplx for x in y]
+
+						if len(cplx) > 1:
+							cplx = ','.join(cplx)
+							cplx = '[{:s}]'.format(cplx)
+						else:
+							cplx = cplx[0]
+
+						Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(cplx, loc, rxn, left, right, fwd, rvs)
 
 		infile = io.StringIO(Network.replace('|',''))
-		header = ['GENE OR COMPLEX', 'REACTION', 'SUBSTRATES', 'PRODUCTS', 'FWD_RATE', 'RVS_RATE']
+		header = ['GENE OR COMPLEX', 'ENZYME LOCATION', 'REACTION', 'SUBSTRATES', 'PRODUCTS', 'FWD_RATE', 'RVS_RATE']
 		return pandas.read_csv(infile, delimiter = '\t', names = header)
 
-	def addReaction(network, gene = 'spontaneous', reaction = 'RXN-', substrates = [], products = [], fwd_rate = 1.0, rvs_rate = 1.0):
+	def FromEnzymeList(code, enzymes, fmt = 'product'):
+		if fmt not in ['genes', 'product', 'complex']:
+			raise Exception('Valid format is: \'genes\', \'product\', and \'complex\'')
+
+		# check data type
+		if isinstance(enzymes, str):
+			enzymes = [enzymes]
+		elif isinstance(enzymes, list):
+			enzymes = enzymes
+		else:
+			raise Exception('Not supported data type yet.')
+
+		# remove duplicated queries
+		enzymes = sorted(set(enzymes))
+
+		Network = ''
+		# get reactions of gene:
+		for enzyme in enzymes:
+			enzrnxs = getData(code, enzyme)['catalyzes']
+
+			if enzrnxs == None:
+				print('Code {:s} is not an enzyme. ' \
+					'Please check spelling or post an issue with the information of https://ecocyc.org/{:s}/NEW-IMAGE?object={:s}'.format(enzyme, code, enzyme))
+			else:
+				try:
+					rxns = []
+					for enzrxn in enzrnxs:
+						rxns.append(getData(code, enzrxn)['reaction'])
+
+					for rxn in rxns:
+						# reversibility of reactions
+						direction = getData(code, rxn[0])['reaction_direction']
+						if direction == '|PHYSIOL-LEFT-TO-RIGHT|' or direction == '|LEFT-TO-RIGHT|':
+							fwd = 1.0
+							rvs = 0.0
+						elif direction == '|PHYSIOL-RIGHT-TO-LEFT|' or direction == '|RIGHT-TO-LEFT|':
+							fwd = 0.0
+							rvs = 1.0
+						elif direction == '|REVERSIBLE|':
+							fwd = 1.0
+							rvs = 1.0
+						else:
+							fwd = 1.0
+							rvs = 0.0
+
+						left = ','.join(getData(code, rxn)['left'])
+						right = ','.join(getData(code, rxn)['right'])
+
+						organism = selectOrganism(code)
+						genes = organism.genes_of_protein(enzyme)
+						monomers, stoichiometry = organism.monomers_of_protein(enzyme)
+
+						# format network
+						if 'gene' in fmt:
+							for gene in genes:
+								name = getData(code, gene)['common_name']
+								products = getData(code, gene)['product']
+								if isinstance(products, list):
+									for product in products:
+										locations = getData(code, product)['locations']
+										if locations != None:
+											for location in locations:
+												loc = getData(code, location)['common_name']
+												Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(name, loc, rxn[0], left, right, fwd, rvs)
+										else:
+											Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(name, 'unknown', rxn[0], left, right, fwd, rvs)
+
+						elif 'product' in fmt:
+							locations = getData(code, enzyme)['locations']
+							if isinstance(locations, list):
+								for location in locations:
+									loc = getData(code, location)['common_name']
+									Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(enzyme, loc, rxn[0], left, right, fwd, rvs)
+							else:
+								for monomer in monomers:
+									locations = getData(code, monomer)['locations']
+									if locations != None:
+										for location in locations:
+											loc = getData(code, location)['common_name']
+											Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(enzyme, loc, rxn[0], left, right, fwd, rvs)
+									else:
+										Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(enzyme, 'unknown', rxn[0], left, right, fwd, rvs)
+
+						elif 'complex' in fmt:
+							locations = []
+							for monomer in monomers:
+								locations.append(getData(code, monomer)['locations'])
+
+							if locations[0] != None:
+								import itertools
+								locations = list(itertools.product(*locations))
+
+								for location in locations:
+									tmp = []
+									for loc, coefficient in zip(location, stoichiometry):
+										tmp.append([getData(code, loc)['common_name'] for x in range(coefficient)])
+									loc = [x for y in tmp for x in y]
+
+									if len(loc) > 1:
+										loc = ','.join(loc)
+										loc = '[{:s}]'.format(loc)
+									else:
+										loc = loc[0]
+
+									cplx = []
+									for gene, coefficient in zip(genes, stoichiometry):
+										cplx.append([getData(code, gene)['common_name'] for x in range(coefficient)])
+									cplx = [x for y in cplx for x in y]
+
+									if len(cplx) > 1:
+										cplx = ','.join(cplx)
+										cplx = '[{:s}]'.format(cplx)
+									else:
+										cplx = cplx[0]
+
+									Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(cplx, loc, rxn[0], left, right, fwd, rvs)
+							else:
+								Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format('unknown', 'unknown', rxn[0], left, right, fwd, rvs)
+
+				except:
+					enzyme = enzyme.replace('|', '')
+					print(
+						'Unable to retrieve data for {:s}. ' \
+						'Please, review the information at https://biocyc.org/{:s}/NEW-IMAGE?object={:s} ' \
+						'and post an issue at https://github.com/networkbiolab/atlas if you believe it is a software error.'.format(enzyme, code, enzyme))
+
+		infile = io.StringIO(Network.replace('|',''))
+		header = ['GENE OR COMPLEX', 'ENZYME LOCATION', 'REACTION', 'SUBSTRATES', 'PRODUCTS', 'FWD_RATE', 'RVS_RATE']
+		return pandas.read_csv(infile, delimiter = '\t', names = header)
+
+	def addReaction(network, gene = 'spontaneous', location = [], reaction = 'RXN-', substrates = [], products = [], fwd_rate = 1.0, rvs_rate = 1.0):
 		if reaction == 'RXN-':
 			import string, random
 			name = ''.join(random.choices(string.ascii_uppercase + string.digits, k = 10))
 			reaction = reaction + name
+
+		if isinstance(location, list):
+			for loc in locations:
+				if loc not in list(set(location_keys().keys())):
+					warning = True
+
+			if warning:
+				print('At least one location could not be set. See utils.location_keys().keys() for valid identifiers of location.')
+				return network
+
+			location = [location_keys()[loc] for loc in location]
+			location = ','.join(location)
 
 		if isinstance(substrates, list):
 			substrates = ','.join(substrates)
@@ -251,6 +527,7 @@ class metabolicNetwork:
 
 		network = network.append({
 			'GENE OR COMPLEX' : gene,
+			'ENZYME LOCATION' : location,
 			'REACTION' : reaction,
 			'SUBSTRATES' : substrates,
 			'PRODUCTS' : products,
@@ -381,7 +658,7 @@ class metabolicNetwork:
 
 		return network
 
-	def setCompartment(network, geneLst, compartmentLst):
+	def setEnzymeLocation(network, geneLst, compartmentLst):
 		if isinstance(geneLst, list):
 			pass
 		else:
@@ -393,25 +670,24 @@ class metabolicNetwork:
 			compartmentLst = [compartmentLst]
 
 		if not len(geneLst) == len(compartmentLst):
-			raise Exception('Genes or complexes list and Compartments list do not have the same length')
+			raise Exception('The genes list and the compartments list do not have the same length.')
 
+		warning = False
 		for gene, compartment in zip(geneLst, compartmentLst):
-			if compartment not in ['CYT', 'MEM', 'PER', 'WALL', 'EX']:
-				break
+			if compartment not in list(set(location_keys().keys())):
+				warning = True
 			else:
-				if gene.startswith('MEM-') or gene.startswith('PER-') or gene.startswith('WALL-') or gene.startswith('EX-'):
-					gene = '-'.join(gene.split('-')[1:])
+				network.loc[network['GENE OR COMPLEX'].str.match(gene), 'ENZYME LOCATION'] = location_keys()[compartment]
 
-				if compartment != 'CYT':
-					network.loc[network['GENE OR COMPLEX'].str.match(gene), 'GENE OR COMPLEX'] = compartment + '-' + gene
-				else:
-					network.loc[network['GENE OR COMPLEX'].str.match(gene), 'GENE OR COMPLEX'] = gene
+		if warning:
+			print('At least one location could not be set. See utils.location_keys().keys() for valid identifiers of location.')
 
 		return network
 
 	def expand_network(infile_path, path = 'expanded.txt'):
 		if isinstance(infile_path, str):
-			data = read_network(infile_path)
+			with open(infile_path, 'r') as infile:
+				data = pandas.read_csv(infile, delimiter = '\t', header = 0, comment = '#')
 		elif isinstance(infile_path, pandas.DataFrame):
 			data = infile_path
 		else:
@@ -421,11 +697,11 @@ class metabolicNetwork:
 			outfile.write('SOURCE\tTARGET\tEDGE_ATTRIBUTE\tSOURCE_NODE_ATTRIBUTE\tTARGET_NODE_ATTRIBUTE\n')
 
 		with open(path, 'a') as outfile:
-			for enzyme, reaction in zip(data.iloc[:,0], data.iloc[:,1]):
+			for enzyme, reaction in zip(data['GENE OR COMPLEX'], data['REACTION']):
 				outfile.write('{:s}\t{:s}\tNO_ARROW\tGENE_PROD\tRXN\n'.format(enzyme, reaction))
 
 		with open(path, 'a') as outfile:
-			for reaction, substrates, fwd, rvs in zip(data.iloc[:,1], data.iloc[:,2], data.iloc[:,4], data.iloc[:,5]):
+			for reaction, substrates, fwd, rvs in zip(data['REACTION'], data['SUBSTRATES'], data['FWD_RATE'], data['RVS_RATE']):
 				reversibility = 'NO_REVERSIBLE'
 				if fwd != 0 and rvs != 0:
 					reversibility = 'REVERSIBLE'
@@ -433,7 +709,7 @@ class metabolicNetwork:
 					outfile.write('{:s}\t{:s}\t{:s}\tMET\tRXN\n'.format(substrate, reaction, reversibility))
 
 		with open(path, 'a') as outfile:
-			for reaction, products, fwd, rvs in zip(data.iloc[:,1], data.iloc[:,3], data.iloc[:,4], data.iloc[:,5]):
+			for reaction, products, fwd, rvs in zip(data['REACTION'], data['PRODUCTS'], data['FWD_RATE'], data['RVS_RATE']):
 				reversibility = 'NO_REVERSIBLE'
 				if fwd != 0 and rvs != 0:
 					reversibility = 'REVERSIBLE'
@@ -465,7 +741,7 @@ class interactionNetwork:
 		Network = ''
 		organism = selectOrganism(code)
 		for gene in genes:
-			prod = organism.all_products_of_gene(precalculated.loc[gene, 'gene name'])
+			prod = organism.all_products_of_gene(df_genes.loc[gene, 'gene name'])
 			products = [ x.replace('|', '') for x in prod ]
 
 			for product in products:
@@ -481,7 +757,7 @@ class interactionNetwork:
 					genes = []
 					for monomer, coefficient in zip(monomers, stoichiometry):
 						code = organism.genes_of_protein(monomer)
-						gene = getData('ECOLI', code[0])['common_name']
+						gene = getData(code, code[0])['common_name']
 						genes.append(gene)
 
 						if coefficient > 1:
@@ -525,11 +801,19 @@ class interactionNetwork:
 		return pandas.read_csv(infile, delimiter = '\t', names = header)
 
 	def addInteraction(network, source = ['A'], target = ['B'], fwd_rate = 1.0, rvs_rate = 1.0, location = 'CYT'):
+		if location not in location_keys().keys():
+			print('Valid location acronyms are: {:s}'.format(','.join(location_keys().keys())))
+
 		if isinstance(source, list):
 			source = '[' + ','.join(source) + ']'
 
 		if isinstance(target, list):
 			target = '[' + ','.join(target) + ']'
+
+		if isinstance(location, list):
+			location = '[' + ','.join([location_keys()[x] for x in location]) + ']'
+		elif isinstance(location, str):
+			location = location_keys()[location]
 
 		network = network.append({
 			'SOURCE' : source,
