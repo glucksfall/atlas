@@ -747,58 +747,87 @@ class interactionNetwork:
 			for product in products:
 				monomers, stoichiometry = organism.monomers_of_protein(product)
 
-				if len(stoichiometry) == 1 and stoichiometry[0] > 1:
-					Network += '{:s}\t{:s}\t1.0\t1.0\tCYT\n'.format(gene, gene)
-					for idx in range(3, stoichiometry[0]+1):
-						Network += '{:s}\t[{:s}]\t1.0\t1.0\tCYT\n'.format(
-							gene, ','.join([gene for x in range(idx-1)]))
+				if len(stoichiometry) == 1 and stoichiometry[0] > 1: # homomers, e.g. lacZ tetramer
+					loc = []
+					for monomer in monomers:
+						locations = getData(code, monomer)['locations']
+						for location in locations:
+							loc.append(getData(code, location)['common_name'])
 
-				elif len(stoichiometry) > 1:
+					Network += '{:s}\t{:s}\t[{:s}]\t1.0\t1.0\n'.format(gene, gene, ','.join(loc * 2))
+					for idx in range(3, stoichiometry[0]+1):
+						Network += '{:s}\t[{:s}]\t[{:s}]\t1.0\t1.0\n'.format(
+							gene, ','.join([gene for x in range(idx-1)]), ','.join(loc * idx))
+
+				elif len(stoichiometry) > 1: # heteromers, each index is the stoichiometry of a component
 					genes = []
 					for monomer, coefficient in zip(monomers, stoichiometry):
-						code = organism.genes_of_protein(monomer)
-						gene = getData(code, code[0])['common_name']
+						tmp = organism.genes_of_protein(monomer)
+						gene = getData(code, tmp[0])['common_name']
 						genes.append(gene)
 
-						if coefficient > 1:
-							Network += '{:s}\t{:s}\t1.0\t1.0\tCYT\n'.format(gene, gene)
-							for idx in range(3, coefficient+1):
-								Network += '{:s}\t[{:s}]\t1.0\t1.0\tCYT\n'.format(
-									gene, ','.join([gene for x in range(idx-1)]))
+						if coefficient > 1: # assembly of homomers from the heteromer, e.g. A+A, B+B
+							locations = getData(code, monomer)['locations']
+							for location in locations:
+								loc = [getData(code, location)['common_name']]
+								Network += '{:s}\t{:s}\t[{:s}]\t1.0\t1.0\n'.format(gene, gene, ','.join(loc * 2))
+								for idx in range(3, coefficient+1):
+									Network += '{:s}\t[{:s}]\t[{:s}]\t1.0\t1.0\n'.format(
+										gene, ','.join([gene for x in range(idx-1)]), ','.join(loc * idx))
 
-					for a,b in itertools.combinations(range(len(stoichiometry)), 2):
-						if stoichiometry[a] == 1 and stoichiometry[b] == 1:
-							Network += '{:s}\t{:s}\t1.0\t1.0\tCYT\n'.format(
-								','.join([genes[a] for x in range(stoichiometry[a])]),
-								','.join([genes[b] for x in range(stoichiometry[b])]))
+					for a,b in itertools.combinations(range(len(stoichiometry)), 2): # assembly of homomers, e.g AA + BB
+						tmp = [getData(code, x)['locations'] for x in monomers]
+						tmp = list(itertools.product(*tmp))
 
-						elif stoichiometry[a] == 1 and stoichiometry[b] > 1:
-							Network += '{:s}\t[{:s}]\t1.0\t1.0\tCYT\n'.format(
-								','.join([genes[a] for x in range(stoichiometry[a])]),
-								','.join([genes[b] for x in range(stoichiometry[b])]))
+						for loc in tmp:
+							names = []
+							for location in loc:
+								names.append(getData(code, location)['common_name'])
 
-						elif stoichiometry[a] > 1 and stoichiometry[b] == 1:
-							Network += '[{:s}]\t{:s}\t1.0\t1.0\tCYT\n'.format(
-								','.join([genes[a] for x in range(stoichiometry[a])]),
-								','.join([genes[b] for x in range(stoichiometry[b])]))
+							loc = ','.join([names[a] for x in range(stoichiometry[a])] + [names[b] for x in range(stoichiometry[b])])
+							if stoichiometry[a] == 1 and stoichiometry[b] == 1:
+								Network += '{:s}\t{:s}\t[{:s}]\t1.0\t1.0\n'.format(
+									','.join([genes[a] for x in range(stoichiometry[a])]),
+									','.join([genes[b] for x in range(stoichiometry[b])]), loc)
 
-						elif stoichiometry[a] > 1 and stoichiometry[b] > 1:
-							Network += '[{:s}]\t[{:s}]\t1.0\t1.0\tCYT\n'.format(
-								','.join([genes[a] for x in range(stoichiometry[a])]),
-								','.join([genes[b] for x in range(stoichiometry[b])]))
+							elif stoichiometry[a] == 1 and stoichiometry[b] > 1:
+								Network += '{:s}\t[{:s}]\t[{:s}]\t1.0\t1.0\n'.format(
+									','.join([genes[a] for x in range(stoichiometry[a])]),
+									','.join([genes[b] for x in range(stoichiometry[b])]), loc)
 
-					# random mechanism of assembly
+							elif stoichiometry[a] > 1 and stoichiometry[b] == 1:
+								Network += '[{:s}]\t{:s}\t[{:s}]\t1.0\t1.0\n'.format(
+									','.join([genes[a] for x in range(stoichiometry[a])]),
+									','.join([genes[b] for x in range(stoichiometry[b])]), loc)
+
+							elif stoichiometry[a] > 1 and stoichiometry[b] > 1:
+								Network += '[{:s}]\t[{:s}]\t[{:s}]\t1.0\t1.0\n'.format(
+									','.join([genes[a] for x in range(stoichiometry[a])]),
+									','.join([genes[b] for x in range(stoichiometry[b])]), loc)
+
+					# enumeration of all ordered mechanisms of assembly: e.g. ABC -> A+B+C, A+C+B, B+A+C, B+C+A, C+A+B, C+B+A
 					new = [[x] * y for x,y in zip(genes, stoichiometry)]
 					new = [x for y in new for x in y]
 
-					for new2 in itertools.permutations(new):
-						for idx in range(1,len(new2)-1):
-							Network += '{:s}\t[{:s}]\t1.0\t1.0\tCYT\n'.format(
-								new2[idx+1], ','.join([x for x in new2[0:idx+1]]))
+					tmp = [[x] * y for x,y in zip(monomers, stoichiometry)]
+					tmp = [x for y in tmp for x in y]
+					tmp = [getData(code, x)['locations'] for x in tmp]
+					tmp = list(itertools.product(*tmp))
+
+					for locs in tmp:
+						for new2, loc2 in zip(itertools.permutations(new), itertools.permutations(locs)):
+							names = []
+							for loc in loc2:
+								names.append(getData(code, loc)['common_name'])
+
+							for idx in range(1,len(new2)-1):
+								Network += '{:s}\t[{:s}]\t[{:s}]\t1.0\t1.0\n'.format(
+									new2[idx+1], ','.join([x for x in new2[0:idx+1]]), ','.join(names[0:idx+2]))
 
 		infile = io.StringIO(Network.replace('|',''))
-		header = ['SOURCE', 'TARGET', 'FWD_RATE', 'RVS_RATE', 'LOCATION']
-		return pandas.read_csv(infile, delimiter = '\t', names = header)
+		header = ['SOURCE', 'TARGET', 'LOCATION', 'FWD_RATE', 'RVS_RATE']
+		df = pandas.read_csv(infile, delimiter = '\t', names = header)
+		return df[~df.duplicated(['SOURCE', 'TARGET', 'LOCATION'], keep = 'first')].reset_index(drop = True)
 
 	def addInteraction(network, source = ['A'], target = ['B'], fwd_rate = 1.0, rvs_rate = 1.0, location = 'CYT'):
 		if location not in location_keys().keys():
