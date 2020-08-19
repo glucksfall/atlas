@@ -20,7 +20,7 @@ from pysb import *
 from pysb.core import *
 from pysb.util import alias_model_components
 
-def combine_models(model, new_model, verbose = False):
+def _combine_two_models(model, new_model, verbose = False):
 	# find monomers in common and uniques
 	monomer_names1 = []
 	monomer_names2 = []
@@ -133,6 +133,18 @@ def combine_models(model, new_model, verbose = False):
 		if verbose:
 			print(new_observable)
 		exec(new_observable)
+
+	return new_model
+
+def combine_models(models, verbose = True):
+	if isinstance(models, list):
+		pass
+	else:
+		return models
+
+	new_model = models[0]
+	for model in models[1:]:
+		new_model = _combine_two_models(new_model, model, verbose = verbose)
 
 	return new_model
 

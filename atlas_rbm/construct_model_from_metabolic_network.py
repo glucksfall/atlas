@@ -112,9 +112,9 @@ def rules_from_metabolic_network(model, data, verbose = False):
 	for idx in data.index:
 		rxn = data.loc[idx]
 		if isinstance(rxn['ENZYME LOCATION'], str):
-			rxn['ENZYME LOCATION'] = [rxn['ENZYME LOCATION']]
+			rxn['ENZYME LOCATION'] = rxn['ENZYME LOCATION'].replace('[', '').replace(']', '').split(',')
 
-		# first, determine enzyme composition
+		# first: determine enzyme composition
 		if 'CPLX' in rxn['GENE OR COMPLEX']: # the enzyme is an alias of a protein complex
 			for location in rxn['ENZYME LOCATION']:
 				location = location_values()[location].lower()
@@ -144,38 +144,47 @@ def rules_from_metabolic_network(model, data, verbose = False):
 				location = location_values()[location].lower()
 				enzyme = 'prot(name = \'{:s}\', loc = \'{:s}\')'.format(rxn['GENE OR COMPLEX'].replace('-', '_'), location)
 
-		# second, correct reaction names starting with a digit
+		# second: correct reaction names starting with a digit
 		name = rxn['REACTION'].replace('-', '_')
 		if name[0].isdigit():
 			name = '_' + name
 
-		# third, correct metabolite names with dashes and create a list
+		# third: correct metabolite names with dashes, prefix underscore for metabolite names starting by a digit, and create a list
 		substrates = rxn['SUBSTRATES'].replace('-', '_').split(',')
+		substrates = [ '_' + subs if subs[0].isdigit() else subs for subs in substrates ]
 		products = rxn['PRODUCTS'].replace('-', '_').split(',')
+		products = [ '_' + prod if prod[0].isdigit() else prod for prod in products ]
 
-		# fourth, write LHS and RHS
+		# fourth: write LHS and RHS
 		LHS = []
 		RHS = []
 
-		for subs in substrates:
-			if subs[0].isdigit():
-				subs = '_' + subs
+		if rxn['GENE OR COMPLEX'] == 'spontaneous':
+			locations = rxn['ENZYME LOCATION']
+		else:
+			locations = location_values().keys()
 
-			if 'PER' in subs:
-				LHS.append('met(name = \'{:s}\', loc = \'per\', prot = None)'.format(subs.replace('PER_', '')))
-			else:
-				LHS.append('met(name = \'{:s}\', loc = \'cyt\', prot = None)'.format(subs))
+		for subs in substrates:
+			islocated = False
+			for loc in locations:
+				loc = location_values()[loc]
+				if loc in subs:
+					LHS.append('met(name = \'{:s}\', loc = \'{:s}\', prot = None)'.format(subs.replace(loc + '_', ''), loc.lower()))
+					islocated = True
+			if not islocated:
+				LHS.append('met(name = \'{:s}\', loc = \'{:s}\', prot = None)'.format(subs, 'cyt'))
 
 		for prod in products:
-			if prod[0].isdigit():
-				prod = '_' + prod
+			islocated = False
+			for loc in locations:
+				loc = location_values()[loc]
+				if loc in prod:
+					RHS.append('met(name = \'{:s}\', loc = \'{:s}\', prot = None)'.format(prod.replace(loc + '_', ''), loc.lower()))
+					islocated = True
+			if not islocated:
+				RHS.append('met(name = \'{:s}\', loc = \'{:s}\', prot = None)'.format(prod, 'cyt'))
 
-			if 'PER' in prod:
-				RHS.append('met(name = \'{:s}\', loc = \'per\', prot = None)'.format(prod.replace('PER_', '')))
-			else:
-				RHS.append('met(name = \'{:s}\', loc = \'cyt\', prot = None)'.format(prod))
-
-		# fifth, match the number of agents at both sides of the Rule (pySB checks and kappa v4 requires the matching)
+		# fifth: match the number of agents at both sides of the Rule (pySB checks and kappa v4 requires the matching)
 		if len(substrates) < len(products):
 			for index in range(len(substrates), len(products)):
 				LHS.append('None')
@@ -188,12 +197,19 @@ def rules_from_metabolic_network(model, data, verbose = False):
 		RHS = ' +\n	'.join(RHS)
 
 		if rxn['GENE OR COMPLEX'] == 'spontaneous':
-			code = 'Rule(\'{:s}\',\n' \
-				'	{:s} |\n'\
-				'	{:s},\n' \
-				'	Parameter(\'fwd_{:s}\', {:f}), \n' \
-				'	Parameter(\'rvs_{:s}\', {:f}))'
-			code = code.format(name, LHS, RHS, name, float(rxn['FWD_RATE']), name, float(rxn['RVS_RATE']))
+			for location in rxn['ENZYME LOCATION']:
+				loc = location_values()[location]
+				code = 'Rule(\'{:s}\',\n' \
+					'	{:s} |\n'\
+					'	{:s},\n' \
+					'	Parameter(\'fwd_{:s}\', {:f}), \n' \
+					'	Parameter(\'rvs_{:s}\', {:f}))'
+				code = code.format(name + '_' + loc, LHS, RHS, name + '_' + loc, float(rxn['FWD_RATE']), name + '_' + loc, float(rxn['RVS_RATE']))
+				code = code.replace('loc = \'cyt\'', 'loc = \'{:s}\''.format(loc.lower()))
+
+				if verbose:
+					print(code)
+				exec(code.replace('\t', ' ').replace('\n', ' '))
 
 		else: # reaction needs an enzyme
 			code = 'Rule(\'{:s}\',\n' \
@@ -201,11 +217,12 @@ def rules_from_metabolic_network(model, data, verbose = False):
 				'	{:s} +\n	{:s}, \n' \
 				'	Parameter(\'fwd_{:s}\', {:f}), \n' \
 				'	Parameter(\'rvs_{:s}\', {:f}))'
-			code = code.format(name, enzyme, LHS, enzyme, RHS, name, float(rxn['FWD_RATE']), name, float(rxn['RVS_RATE'])).replace('-', '_')
+			code = code.format(name, enzyme, LHS, enzyme, RHS, name, float(rxn['FWD_RATE']), name, float(rxn['RVS_RATE']))
+			code = code.replace('-', '_')
 
-		if verbose:
-			print(code)
-		exec(code.replace('\t', ' ').replace('\n', ' '))
+			if verbose:
+				print(code)
+			exec(code.replace('\t', ' ').replace('\n', ' '))
 
 def observables_from_metabolic_network(model, data, monomers, verbose = False):
 	for name in sorted(monomers[0]):
