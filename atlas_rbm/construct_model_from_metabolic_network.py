@@ -116,8 +116,8 @@ def rules_from_metabolic_network(model, data, verbose = False):
 
 		# first: determine enzyme composition
 		if 'CPLX' in rxn['GENE OR COMPLEX']: # the enzyme is an alias of a protein complex
-			for location in rxn['ENZYME LOCATION']:
-				location = location_values()[location].lower()
+			if len(rxn['ENZYME LOCATION']) == 1:
+				location = location_values()[rxn['ENZYME LOCATION'][0]].lower()
 				enzyme = 'cplx(name = \'{:s}\', loc = \'{:s}\')'.format(rxn['GENE OR COMPLEX'].replace('-', '_'), location)
 
 		elif rxn['GENE OR COMPLEX'].startswith('['): # an enzymatic complex described by its monomers
@@ -132,17 +132,26 @@ def rules_from_metabolic_network(model, data, verbose = False):
 				start_link += 1
 			up = dw[-1:] + dw[:-1]
 
-			for index, monomer in enumerate(monomers):
-				for location in rxn['ENZYME LOCATION']:
-					location = location_values()[location].lower()
-					enzyme.append('prot(name = \'{:s}\', loc = \'{:s}\', up = {:s}, dw = {:s})'.format(monomer, location, str(up[index]), str(dw[index])))
+			if len(monomers) == len(rxn['ENZYME LOCATION']):
+				for index, (monomer, location) in enumerate(zip(monomers, rxn['ENZYME LOCATION'])):
+					loc = location_values()[location].lower()
+					enzyme.append('prot(name = \'{:s}\', loc = \'{:s}\', up = {:s}, dw = {:s})'.format(monomer, loc, str(up[index]), str(dw[index])))
+
+			elif len(rxn['ENZYME LOCATION']) == 1:
+				for index, monomer in enumerate(monomers):
+					loc = location_values()[rxn['ENZYME LOCATION']].lower()
+					enzyme.append('prot(name = \'{:s}\', loc = \'{:s}\', up = {:s}, dw = {:s})'.format(monomer, loc, str(up[index]), str(dw[index])))
+
+			elif len(monomers) != len(rxn['ENZYME LOCATION']):
+				for index, monomer in enumerate(monomers):
+					loc = location_values()[rxn['ENZYME LOCATION'][0]].lower()
+					enzyme.append('prot(name = \'{:s}\', loc = \'{:s}\', up = {:s}, dw = {:s})'.format(monomer, loc, str(up[index]), str(dw[index])))
 
 			enzyme = ' %\n	'.join(enzyme)
 
 		else: # the enzyme is a monomer
-			for location in rxn['ENZYME LOCATION']:
-				location = location_values()[location].lower()
-				enzyme = 'prot(name = \'{:s}\', loc = \'{:s}\')'.format(rxn['GENE OR COMPLEX'].replace('-', '_'), location)
+			loc = location_values()[rxn['ENZYME LOCATION'][0]].lower()
+			enzyme = 'prot(name = \'{:s}\', loc = \'{:s}\')'.format(rxn['GENE OR COMPLEX'].replace('-', '_'), loc)
 
 		# second: correct reaction names starting with a digit
 		name = rxn['REACTION'].replace('-', '_')
@@ -263,7 +272,6 @@ def observables_from_metabolic_network(model, data, monomers, verbose = False):
 
 	names = monomers[3]
 	for name in sorted(set(names)):
-		verbose = True
 		if name.startswith('['):
 			monomers = name[1:-1].split(',')
 			complex_pysb = []
@@ -282,7 +290,7 @@ def observables_from_metabolic_network(model, data, monomers, verbose = False):
 				start_link += 1
 			up = dw[-1:] + dw[:-1]
 
-			for location in utils.location_keys().keys():
+			for location in location_keys().keys():
 				complex_pysb = []
 				for index, monomer in enumerate(monomers):
 					complex_pysb.append('prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = {:s}, dw = {:s})'.format(
