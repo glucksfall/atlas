@@ -311,7 +311,6 @@ def observables_from_metabolic_network(model, data, monomers, verbose = False):
 				if verbose:
 					print(code)
 				exec(code.replace('\t', ' ').replace('\n', ' '))
-				print()
 
 	return None
 
