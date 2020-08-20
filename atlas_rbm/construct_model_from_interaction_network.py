@@ -673,8 +673,8 @@ def observables_from_interaction_network(model, data, monomers, verbose = False)
 			exec(code.replace('\t', ''))
 
 	names = []
-	for x,y in monomers[3]:
-		names.append('[' + (x + ',' + y).replace('[','').replace(']','') + ']')
+	for left, right in monomers[3]:
+		names.append('[' + (left + ',' + right).replace('[','').replace(']','') + ']')
 
 	for name in sorted(set(names)):
 		if name.startswith('['):

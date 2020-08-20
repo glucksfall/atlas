@@ -136,7 +136,7 @@ def _combine_two_models(model, new_model, verbose = False):
 
 	return new_model
 
-def combine_models(models, verbose = True):
+def combine_models(models, verbose = False):
 	if isinstance(models, list):
 		pass
 	else:

@@ -261,7 +261,9 @@ def observables_from_metabolic_network(model, data, monomers, verbose = False):
 				print(code)
 			exec(code.replace('\t', ' ').replace('\n', ' '))
 
-	for name in sorted(set(monomers[3])):
+	names = monomers[3]
+	for name in sorted(set(names)):
+		verbose = True
 		if name.startswith('['):
 			monomers = name[1:-1].split(',')
 			complex_pysb = []
@@ -280,28 +282,28 @@ def observables_from_metabolic_network(model, data, monomers, verbose = False):
 				start_link += 1
 			up = dw[-1:] + dw[:-1]
 
-			for index, monomer in enumerate(monomers):
-				for location in location_keys().keys():
+			for location in utils.location_keys().keys():
+				complex_pysb = []
+				for index, monomer in enumerate(monomers):
 					complex_pysb.append('prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = {:s}, dw = {:s})'.format(
 						monomer, location.lower(), str(up[index]), str(dw[index])))
 
-			complex_pysb = ' %\n	'.join(complex_pysb)
+				complex_pysb = ' %\n	'.join(complex_pysb)
 
-			code = 'Initial({:s}, Parameter(\'t0_cplx{:s}_{:s}\', 0))'
-			for location in location_keys().keys():
+				code = 'Initial({:s},\n\tParameter(\'t0_cplx{:s}_{:s}\', 0))'
 				code = code.format(complex_pysb, cplx_composition, location.lower())
 
-			if verbose:
-				print(code)
-			exec(code.replace('\t', ' ').replace('\n', ' '))
+				if verbose:
+					print(code)
+				exec(code.replace('\t', ' ').replace('\n', ' '))
 
-			code = 'Observable(\'obs_cplx{:s}_{:s}\',\n{:s})'
-			for location in location_keys().keys():
+				code = 'Observable(\'obs_cplx{:s}_{:s}\',\n\t{:s})'
 				code = code.format(cplx_composition, location.lower(), complex_pysb)
 
-			if verbose:
-				print(code)
-			exec(code.replace('\t', ' ').replace('\n', ' '))
+				if verbose:
+					print(code)
+				exec(code.replace('\t', ' ').replace('\n', ' '))
+				print()
 
 	return None
 
