@@ -759,7 +759,7 @@ def observables_from_interaction_network(model, data, monomers, verbose = False,
 def construct_model_from_interaction_network(network, verbose = False, toFile = False):
 	if toFile:
 		with open(toFile, 'w') as outfile:
-			pass
+			outfile.write('from pysb import *\nModel()\n\n')
 
 	if isinstance(network, str):
 		data = read_network(network)

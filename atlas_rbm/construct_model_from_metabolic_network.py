@@ -25,7 +25,7 @@ def read_network(infile_path):
 
 	return data
 
-def check_network(data):
+def check_metabolic_network(data):
 	# find duplicated reactions (reactions must has a unique name)
 	duplicated = len(data[data.duplicated(['REACTION'])].index)
 
@@ -42,7 +42,7 @@ def monomers_from_metabolic_network(model, data, verbose = False, toFile = False
 	tmp = list(data['SUBSTRATES'].values) + list(data['PRODUCTS'].values)
 	tmp = ','.join(tmp)
 	for key in location_keys().keys():
-		tmp = tmp.replace(key + '-', '').replace('+', 'plus')
+		tmp = tmp.replace(key + '-', '').replace(key + '_', '').replace('+', 'plus')
 
 	metabolites = list(set(tmp.split(',')))
 	for index, met in enumerate(metabolites):
@@ -79,7 +79,9 @@ def monomers_from_metabolic_network(model, data, verbose = False, toFile = False
 	for index, protein in enumerate(proteins):
 		if protein[0].isdigit():
 			proteins[index] = '_' + protein
-		if 'CPLX' in protein:
+
+	for index, protein in enumerate(proteins):
+		if ('CPLX' in protein) or ('CPL' in protein) or ('COMPLEX' in protein) or ('DIMER' in protein):
 			complexes.append(protein)
 		else:
 			if 'spontaneous' != protein or 'unknown' != protein:
@@ -107,6 +109,10 @@ def monomers_from_metabolic_network(model, data, verbose = False, toFile = False
 			"	{{ 'name' : [ {:s} ],\n" \
 			"	'loc' : [{:s}]}})\n"
 
+		for index, cplx in enumerate(complexes):
+			if cplx[0].isdigit():
+				complexes[index] = '_' + cplx
+
 		all_cplx = [ '\'' + x.replace('-', '_') + '\'' for x in sorted(complexes)]
 		code = code.format(', '.join(all_cplx), ', '.join(all_locs))
 
@@ -127,7 +133,11 @@ def rules_from_metabolic_network(model, data, verbose = False, toFile = False):
 			rxn['ENZYME LOCATION'] = rxn['ENZYME LOCATION'].replace('[', '').replace(']', '').split(',')
 
 		# first: determine enzyme composition
-		if 'CPLX' in rxn['GENE OR COMPLEX']: # the enzyme is an alias of a protein complex
+		if ('CPLX' in rxn['GENE OR COMPLEX']) or ('CPL' in rxn['GENE OR COMPLEX']) or ('COMPLEX' in rxn['GENE OR COMPLEX']) or ('DIMER' in rxn['GENE OR COMPLEX']): # the enzyme is an alias of a protein complex
+			# correct name
+			if rxn['GENE OR COMPLEX'][0].isdigit():
+				rxn['GENE OR COMPLEX'] = '_' + rxn['GENE OR COMPLEX']
+
 			if len(rxn['ENZYME LOCATION']) == 1:
 				location = location_values()[rxn['ENZYME LOCATION'][0]].lower()
 				enzyme = 'cplx(name = \'{:s}\', loc = \'{:s}\')'.format(rxn['GENE OR COMPLEX'].replace('-', '_'), location)
@@ -135,6 +145,11 @@ def rules_from_metabolic_network(model, data, verbose = False, toFile = False):
 		elif rxn['GENE OR COMPLEX'].startswith('['): # an enzymatic complex described by its monomers
 			monomers = rxn['GENE OR COMPLEX'][1:-1].split(',')
 			enzyme = []
+
+			# correct names
+			for index, monomer in enumerate(monomers):
+				if monomer[0].isdigit():
+					monomers[index] = '_' + monomer
 
 			## create link indexes
 			dw = [None] * len(monomers)
@@ -162,6 +177,10 @@ def rules_from_metabolic_network(model, data, verbose = False, toFile = False):
 			enzyme = ' %\n	'.join(enzyme)
 
 		else: # the enzyme is a monomer
+			# correct name
+			if rxn['GENE OR COMPLEX'][0].isdigit():
+				rxn['GENE OR COMPLEX'] = '_' + rxn['GENE OR COMPLEX']
+
 			loc = location_values()[rxn['ENZYME LOCATION'][0]].lower()
 			enzyme = 'prot(name = \'{:s}\', loc = \'{:s}\')'.format(rxn['GENE OR COMPLEX'].replace('-', '_'), loc)
 
@@ -170,10 +189,10 @@ def rules_from_metabolic_network(model, data, verbose = False, toFile = False):
 		if name[0].isdigit():
 			name = '_' + name
 
-		# third: correct metabolite names with dashes, prefix underscore for metabolite names starting by a digit, and create a list
-		substrates = rxn['SUBSTRATES'].replace('-', '_').split(',')
+		# third: correct metabolite names with dashes or plus signs, prefix underscore for metabolite names starting by a digit, and create a list
+		substrates = rxn['SUBSTRATES'].replace('-', '_').replace('+', 'plus').split(',')
 		substrates = [ '_' + subs if subs[0].isdigit() else subs for subs in substrates ]
-		products = rxn['PRODUCTS'].replace('-', '_').split(',')
+		products = rxn['PRODUCTS'].replace('-', '_').replace('+', 'plus').split(',')
 		products = [ '_' + prod if prod[0].isdigit() else prod for prod in products ]
 
 		# fourth: write LHS and RHS
@@ -358,12 +377,10 @@ def observables_from_metabolic_network(model, data, monomers, verbose = False, t
 				else:
 					exec(code.replace('\t', ' ').replace('\n', ' '))
 
-	return None
-
 def construct_model_from_metabolic_network(network, verbose = False, toFile = False):
 	if toFile:
 		with open(toFile, 'w') as outfile:
-			pass
+			outfile.write('from pysb import *\nModel()\n\n')
 
 	if isinstance(network, str):
 		data = read_network(network)
@@ -373,7 +390,7 @@ def construct_model_from_metabolic_network(network, verbose = False, toFile = Fa
 		data = pandas.DataFrame(data = network)
 	else:
 		raise Exception("The network data type is not yet supported.")
-	data = check_network(data)
+	data = check_metabolic_network(data)
 
 	model = Model()
 	[metabolites, p_monomers, complexes, hypernodes] = \

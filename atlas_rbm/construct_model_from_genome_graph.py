@@ -25,7 +25,7 @@ def read_network(infile_path):
 
 	return data
 
-def check_network(data):
+def check_genome_graph(data):
 	# find duplicated reactions (reactions must has a unique name)
 	duplicated = len(data[data.duplicated(['UPSTREAM', 'DOWNSTREAM'])].index)
 
@@ -343,7 +343,7 @@ def ribosome_falloff_rules(model, data, verbose = False, toFile = False):
 def construct_model_from_genome_graph(network, verbose = False, toFile = False):
 	if toFile:
 		with open(toFile, 'w') as outfile:
-			pass
+			outfile.write('from pysb import *\nModel()\n\n')
 
 	if isinstance(network, str):
 		data = read_network(network)
@@ -353,7 +353,7 @@ def construct_model_from_genome_graph(network, verbose = False, toFile = False):
 		data = pandas.DataFrame(data = network)
 	else:
 		raise Exception("The network format is not yet supported.")
-	data = check_network(data)
+	data = check_genome_graph(data)
 
 	model = Model()
 	monomers_from_genome_graph(model, data, verbose, toFile)
@@ -369,9 +369,10 @@ def construct_model_from_genome_graph(network, verbose = False, toFile = False):
 	ribosome_falloff_rules(model, data, verbose, toFile)
 
 	# TODO
-	# write docking, slide, and falloff of RNASE from RNA
-	# write docking, slide, and falloff of PROTEASE from protein
+	# write docking, slide, and falloff of RNASE-CPLX from RNA
+	# write docking, slide, and falloff of PROTEASE-CPLX from protein
 	# write initials from genome graph
 	# write observables from genome graph
+	#observables_from_genome_graph(model, data, verbose, toFile)
 
 	return model
