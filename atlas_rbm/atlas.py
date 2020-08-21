@@ -14,6 +14,7 @@ from .construct_model_from_interaction_network import *
 from .construct_model_from_genome_graph import *
 from .construct_model_from_sigma_specificity_network import *
 
+import re
 import pandas
 
 from pysb import *
@@ -103,11 +104,13 @@ def _combine_two_models(model1, model2, verbose = False):
 	for observable in model2.observables:
 		new_observables.append(str(observable))
 
-	model2.monomers = ComponentSet()
-	model2.parameters = ComponentSet()
-	model2.initials = []
-	model2.rules = ComponentSet()
-	model2.observables = ComponentSet()
+	#model2.monomers = ComponentSet()
+	#model2.parameters = ComponentSet()
+	#model2.initials = []
+	#model2.rules = ComponentSet()
+	#model2.observables = ComponentSet()
+
+	model = Model()
 
 	for new_monomer in new_monomers:
 		if verbose:
@@ -121,7 +124,7 @@ def _combine_two_models(model1, model2, verbose = False):
 			print(new_parameter)
 		exec(new_parameter)
 
-	alias_model_components(model2)
+	#alias_model_components(model2)
 
 	df = pandas.DataFrame(data = [ x.split('t0') for x in new_initials ])
 	unique_initials = [ 't0'.join(df.loc[idx]) for idx in df.drop_duplicates([1]).index ]
@@ -140,7 +143,7 @@ def _combine_two_models(model1, model2, verbose = False):
 			print(new_observable)
 		exec(new_observable)
 
-	return model2
+	return model
 
 def combine_models(models, verbose = False):
 	if isinstance(models, list):

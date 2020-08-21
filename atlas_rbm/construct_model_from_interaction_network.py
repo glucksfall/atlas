@@ -37,7 +37,7 @@ def check_network(data):
 
 	return data
 
-def monomers_from_interaction_network(model, data, verbose = False):
+def monomers_from_interaction_network(model, data, verbose = False, toFile = False):
 	# find unique metabolites and correct names
 	tmp = list(data['SOURCE'].values) + list(data['TARGET'].values)
 	tmp = [ x.replace('[', '').replace(']', '').split(',') if x.startswith('[') else [x] for x in tmp ]
@@ -56,7 +56,7 @@ def monomers_from_interaction_network(model, data, verbose = False):
 		code = "Monomer('met',\n" \
 			"	['name', 'loc', 'prot'],\n" \
 			"	{{ 'name' : [ {:s} ], \n" \
-			"	'loc' : [{:s}]}})"
+			"	'loc' : [{:s}]}})\n"
 
 		all_mets = [ '\'' + x.replace('-', '_') + '\'' for x in sorted(metabolites) ]
 		all_locs = [ '\'' + x.lower() + '\'' for x in sorted(location_keys().keys()) ]
@@ -64,7 +64,11 @@ def monomers_from_interaction_network(model, data, verbose = False):
 
 		if verbose:
 			print(code)
-		exec(code.replace('\n', ''))
+		if toFile:
+			with open(toFile, 'a+') as outfile:
+				outfile.write(code)
+		else:
+			exec(code.replace('\n', ''))
 	else:
 		metabolites = []
 
@@ -92,7 +96,7 @@ def monomers_from_interaction_network(model, data, verbose = False):
 	code = "Monomer('prot',\n" \
 		"	['name', 'loc', 'dna', 'met', 'prot', 'rna', 'up', 'dw'],\n" \
 		"	{{ 'name' : [ {:s} ], \n" \
-		"	'loc' : [{:s}]}})"
+		"	'loc' : [{:s}]}})\n"
 
 	all_proteins = [ '\'' + x.replace('-', '_') + '\'' for x in sorted(p_monomers)]
 	all_locs = [ '\'' + x.lower() + '\'' for x in sorted(location_keys().keys()) ]
@@ -100,20 +104,28 @@ def monomers_from_interaction_network(model, data, verbose = False):
 
 	if verbose:
 		print(code)
-	exec(code.replace('\n', ''))
+	if toFile:
+		with open(toFile, 'a+') as outfile:
+			outfile.write(code)
+	else:
+		exec(code.replace('\n', ''))
 
 	if len(complexes) > 0:
 		code = "Monomer('cplx',\n" \
 			"	['name', 'loc', 'met', 'prot', 'up', 'dw'],\n" \
 			"	{{ 'name' : [ {:s} ],\n" \
-			"	'loc' : ['cyt', 'mem', 'per', 'wall', 'ex']}})"
+			"	'loc' : ['cyt', 'mem', 'per', 'wall', 'ex']}})\n"
 
 		all_cplx = [ '\'' + x.replace('-', '_') + '\'' for x in sorted(complexes)]
 		code = code.format(', '.join(all_cplx), ', '.join(all_locs))
 
 		if verbose:
 			print(code)
-		exec(code.replace('\n', ''))
+		if toFile:
+			with open(toFile, 'a+') as outfile:
+				outfile.write(code)
+		else:
+			exec(code.replace('\n', ''))
 
 	# find DNA binding sites and types
 	tmp = list(data['SOURCE'].values) + list(data['TARGET'].values)
@@ -136,7 +148,7 @@ def monomers_from_interaction_network(model, data, verbose = False):
 		code = "Monomer('dna',\n" \
 			"	['name', 'type', 'prot', 'rna', 'up', 'dw'],\n" \
 			"	{{ 'name' : [ {:s} ],\n" \
-			"	'type' : [{:s}]}})"
+			"	'type' : [{:s}]}})\n"
 
 		code = code.format(
 			', '.join([ '\'' + x.replace('-', '_') + '\'' for x in sorted(dnas) ]),
@@ -144,7 +156,11 @@ def monomers_from_interaction_network(model, data, verbose = False):
 
 		if verbose:
 			print(code)
-		exec(code.replace('\n', ''))
+		if toFile:
+			with open(toFile, 'a+') as outfile:
+				outfile.write(code)
+		else:
+			exec(code.replace('\n', ''))
 
 	return metabolites, p_monomers, complexes, zip(list(data['SOURCE']), list(data['TARGET']))
 
@@ -631,46 +647,58 @@ def from_ProtDNA_network(data, i):
 
 	return LHS, RHS
 
-def observables_from_interaction_network(model, data, monomers, verbose = False):
+def observables_from_interaction_network(model, data, monomers, verbose = False, toFile = False):
 	for name in sorted(monomers[1]):
 		name = name.replace('-','_')
 		for loc in location_keys().keys():
-			code = 'Observable(\'obs_prot_{:s}_{:s}\',\n' \
-				'	prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None))'
+			code = 'Observable(\'obs_prot_{:s}_{:s}\', prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None))\n'
 			code = code.format(name, loc.lower(), name, loc.lower())
 			if verbose:
 				print(code)
-			exec(code.replace('\t', ''))
+			if toFile:
+				with open(toFile, 'a+') as outfile:
+					outfile.write(code)
+			else:
+				exec(code.replace('\t', ''))
 
 	for name in sorted(monomers[0]):
 		name = name.replace('-','_')
 		for loc in location_keys().keys():
-			code = "Initial(met(name = \'{:s}\', loc = \'{:s}\', prot = None),\n" \
-				"	Parameter(\'t0_met_{:s}_{:s}\', 0))"
+			code = "Initial(met(name = \'{:s}\', loc = \'{:s}\', prot = None), Parameter(\'t0_met_{:s}_{:s}\', 0))\n"
 			code = code.format(name, loc.lower(), name, loc.lower())
 			if verbose:
 				print(code)
-			exec(code.replace('\t', ''))
+			if toFile:
+				with open(toFile, 'a+') as outfile:
+					outfile.write(code)
+			else:
+				exec(code.replace('\t', ''))
 
 	for name in sorted(monomers[1]):
 		name = name.replace('-','_')
 		for loc in location_keys().keys():
-			code = 'Initial(prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None),\n' \
-				'	Parameter(\'t0_prot_{:s}_{:s}\', 0))'
+			code = 'Initial(prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None), Parameter(\'t0_prot_{:s}_{:s}\', 0))\n'
 			code = code.format(name, loc.lower(), name, loc.lower())
 			if verbose:
 				print(code)
-			exec(code.replace('\t', ''))
+			if toFile:
+				with open(toFile, 'a+') as outfile:
+					outfile.write(code)
+			else:
+				exec(code.replace('\t', ''))
 
 	for name in sorted(monomers[2]):
 		name = name.replace('-','_')
 		for loc in location_keys().keys():
-			code = 'Initial(cplx(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None),\n' \
-				'	Parameter(\'t0_cplx_{:s}_{:s}\', 0))'
+			code = 'Initial(cplx(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None), Parameter(\'t0_cplx_{:s}_{:s}\', 0))\n'
 			code = code.format(name, loc.lower(), name, loc.lower())
 			if verbose:
 				print(code)
-			exec(code.replace('\t', ''))
+			if toFile:
+				with open(toFile, 'a+') as outfile:
+					outfile.write(code)
+			else:
+				exec(code.replace('\t', ''))
 
 	names = []
 	for left, right in monomers[3]:
@@ -703,24 +731,36 @@ def observables_from_interaction_network(model, data, monomers, verbose = False)
 				complex_pysb = ' %\n	'.join(complex_pysb)
 
 				code = 'Initial({:s},\n' \
-					'	Parameter(\'t0_cplx{:s}_{:s}\', 0))'
+					'	Parameter(\'t0_cplx{:s}_{:s}\', 0))\n'
 				code = code.format(complex_pysb, cplx_composition, location.lower())
 
 				if verbose:
 					print(code)
-				exec(code.replace('\t', ' ').replace('\n', ' '))
+				if toFile:
+					with open(toFile, 'a+') as outfile:
+						outfile.write(code)
+				else:
+					exec(code.replace('\t', ' ').replace('\n', ' '))
 
 				code = 'Observable(\'obs_cplx{:s}_{:s}\',\n' \
-					'	{:s})'
+					'	{:s})\n'
 				code = code.format(cplx_composition, location.lower(), complex_pysb)
 
 				if verbose:
 					print(code)
-				exec(code.replace('\t', ' ').replace('\n', ' '))
+				if toFile:
+					with open(toFile, 'a+') as outfile:
+						outfile.write(code)
+				else:
+					exec(code.replace('\t', ' ').replace('\n', ' '))
 
 	return model
 
-def construct_model_from_interaction_network(network, verbose = False):
+def construct_model_from_interaction_network(network, verbose = False, toFile = False):
+	if toFile:
+		with open(toFile, 'w') as outfile:
+			pass
+
 	if isinstance(network, str):
 		data = read_network(network)
 	elif isinstance(network, pandas.DataFrame):
@@ -733,8 +773,8 @@ def construct_model_from_interaction_network(network, verbose = False):
 
 	model = Model()
 	[metabolites, p_monomers, complexes, hypernodes] = \
-		monomers_from_interaction_network(model, data, verbose)
-	observables_from_interaction_network(model, data, [metabolites, p_monomers, complexes, hypernodes], verbose)
+		monomers_from_interaction_network(model, data, verbose, toFile)
+	observables_from_interaction_network(model, data, [metabolites, p_monomers, complexes, hypernodes], verbose, toFile)
 
 	RULE_LHS = []
 	RULE_RHS = []
@@ -755,12 +795,16 @@ def construct_model_from_interaction_network(network, verbose = False):
 		code = 'Rule(\'{:s}\',\n' \
 			'	{:s} | \n	{:s},\n' \
 			'	Parameter(\'fwd_{:s}\', {:f}),\n' \
-			'	Parameter(\'rvs_{:s}\', {:f}))'
+			'	Parameter(\'rvs_{:s}\', {:f}))\n'
 		code = code.format(name, RULE_LHS[index], RULE_RHS[index], name, data['FWD_RATE'].iloc[index], name, data['RVS_RATE'].iloc[index])
 		code = code.replace('-', '_').replace('{:s}', 'None')
 
 		if verbose:
 			print(code)
-		exec(code.replace('\t', ''))
+		if toFile:
+			with open(toFile, 'a+') as outfile:
+				outfile.write(code)
+		else:
+			exec(code.replace('\t', ''))
 
 	return model

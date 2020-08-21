@@ -25,9 +25,21 @@ def read_network(infile_path):
 
 	return data
 
-def monomers_from_genome_graph(model, data, verbose = False):
+def check_network(data):
+	# find duplicated reactions (reactions must has a unique name)
+	duplicated = len(data[data.duplicated(['UPSTREAM', 'DOWNSTREAM'])].index)
+
+	if duplicated > 0:
+		data[data.duplicated(['UPSTREAM', 'DOWNSTREAM'])].to_csv('./conflicting_interactions.txt', sep = '\t', index = False)
+		data = data[~data.duplicated(['UPSTREAM', 'DOWNSTREAM'], keep = 'first')]
+		print('It was found possible duplicated interactions in the network.\n' \
+			'Please check the conflicting_interactions.txt and correct them if necessary.')
+
+	return data
+
+def monomers_from_genome_graph(model, data, verbose = False, toFile = False):
 	# find DNA parts
-	architecture = list(data.SOURCE) + [data.TARGET.iloc[-1]]
+	architecture = list(data['UPSTREAM']) + [data['DOWNSTREAM'].iloc[-1]]
 
 	names = []
 	types = []
@@ -45,53 +57,70 @@ def monomers_from_genome_graph(model, data, verbose = False):
 	code = "Monomer('dna',\n" \
 		"	['name', 'type', 'prot', 'rna', 'up', 'dw'],\n" \
 		"	{{ 'name' : [{:s}],\n" \
-		"	'type' : [{:s}]}})"
+		"	'type' : [{:s}]}})\n"
 
 	code = code.format(
-		', '.join([ '\'' + x + '\'' for x in sorted(set(names))]),
-		', '.join([ '\'' + x + '\'' for x in sorted(set(types + ['BS']))]))
+		', '.join([ '\'' + x.replace('[', '').replace(']', '') + '\'' for x in sorted(set(names))]),
+		', '.join([ '\'' + x.replace('[', '').replace(']', '') + '\'' for x in sorted(set(types + ['BS']))]))
 
 	if verbose:
 		print(code)
-	exec(code.replace('\n', ''))
+	if toFile:
+		with open(toFile, 'a+') as outfile:
+			outfile.write(code)
+	else:
+		exec(code.replace('\n', ''))
 
 	# rna
 	code = "Monomer('rna',\n" \
 		"	['name', 'type', 'prot', 'rna'],\n" \
 		"	{{ 'name' : [{:s}],\n" \
-		"	'type' : [{:s}]}})"
+		"	'type' : [{:s}]}})\n"
 
 	code = code.format(
-		', '.join([ '\'' + x + '\'' for x in sorted(set(names))]),
-		', '.join([ '\'' + x + '\'' for x in sorted(set(types + ['BS']))]))
+		', '.join([ '\'' + x.replace('[', '').replace(']', '') + '\'' for x in sorted(set(names))]),
+		', '.join([ '\'' + x.replace('[', '').replace(']', '') + '\'' for x in sorted(set(types + ['BS']))]))
 
 	if verbose:
 		print(code)
-	exec(code.replace('\n', ''))
+	if toFile:
+		with open(toFile, 'a+') as outfile:
+			outfile.write(code)
+	else:
+		exec(code.replace('\n', ''))
 
 	# prot
 	code = "Monomer('prot',\n" \
 		"	['name', 'loc', 'dna', 'met', 'prot', 'rna', 'up', 'dw'],\n" \
 		"	{{ 'name' : [{:s}],\n" \
-		"	'loc' : ['cyt', 'mem', 'per', 'ex']}})"
-	names = [ x for x in names if not x.startswith('BS') ]
+		"	'loc' : ['cyt', 'mem']}})\n"
+	names = [ x.replace('[', '').replace(']', '') for x in names if not x.startswith('BS') ]
 	code = code.format(', '.join([ '\'' + x + '\'' for x in sorted(set(names))]))
 
 	if verbose:
 		print(code)
-	exec(code.replace('\n', ''))
+	if toFile:
+		with open(toFile, 'a+') as outfile:
+			outfile.write(code)
+	else:
+		exec(code.replace('\n', ''))
 
 	# complexes
 	code = "Monomer('cplx',\n" \
 		"	['name', 'loc', 'dna', 'prot', 'rna'],\n" \
-		"	{ 'name' : ['RNAP', 'Ribosome'],\n" \
-		"	'loc' : ['cyt', 'mem', 'per', 'ex']})"
+		"	{ 'name' : ['RNAP_CPLX', 'RIBOSOME_CPLX'],\n" \
+		"	'loc' : ['cyt']})\n"
+
 	if verbose:
 		print(code)
-	exec(code.replace('\n', ''))
+	if toFile:
+		with open(toFile, 'a+') as outfile:
+			outfile.write(code)
+	else:
+		exec(code.replace('\n', ''))
 
-def polymerase_docking_rules(model, data, verbose = False):
-	architecture = list(data.SOURCE) + [data.TARGET.iloc[-1]]
+def polymerase_docking_rules(model, data, verbose = False, toFile = False):
+	architecture = list(data['UPSTREAM']) + [data['DOWNSTREAM'].iloc[-1]]
 
 	for idx, dna_part in enumerate(architecture):
 		if 'pro' in dna_part: # docking rules
@@ -99,21 +128,28 @@ def polymerase_docking_rules(model, data, verbose = False):
 			type = dna_part.split('-')[1]
 
 			code = 'Rule(\'docking_{:s}\',\n' \
-				'	cplx(name = \'RNAP\', dna = None) +\n' \
+				'	cplx(name = \'RNAP-CPLX\', dna = None) +\n' \
 				'	dna(name = \'{:s}\', type = \'{:s}\', prot = None) |\n' \
-				'	cplx(name = \'RNAP\', dna = 1) %\n' \
+				'	cplx(name = \'RNAP-CPLX\', dna = 1) %\n' \
 				'	dna(name = \'{:s}\', type = \'{:s}\', prot = 1),\n' \
 				'	Parameter(\'fwd_docking_{:s}\', {:f}),\n' \
-				'	Parameter(\'rvs_docking_{:s}\', {:f}))'
-			code = code.format(dna_part, name, type, name, type, dna_part, float(data.iloc[idx, 2]), dna_part, float(data.iloc[idx, 3]))
+				'	Parameter(\'rvs_docking_{:s}\', {:f}))\n'
+			code = code.format(
+					dna_part, name, type, name, type,
+					dna_part, float(data['RNAP_FWD_DOCK_RATE'].iloc[idx]),
+					dna_part, float(data['RNAP_RVS_DOCK_RATE'].iloc[idx]))
 
-			code = code.replace('-', '_')
+			code = code.replace('-', '_').replace('[', '').replace(']', '')
 			if verbose:
 				print(code)
-			exec(code)
+			if toFile:
+				with open(toFile, 'a+') as outfile:
+					outfile.write(code)
+			else:
+				exec(code)
 
-def polymerase_sliding_rules(model, data, verbose = False):
-	for idx, (dna_part1, dna_part2) in enumerate(zip(data.SOURCE, data.TARGET)):
+def polymerase_sliding_rules(model, data, verbose = False, toFile = False):
+	for idx, (dna_part1, dna_part2) in enumerate(zip(data['UPSTREAM'], data['DOWNSTREAM'])):
 		dna_part1, dna_part2 = (dna_part1, dna_part2)
 		name1 = dna_part1.split('-')[0]
 		type1 = dna_part1.split('-')[1]
@@ -134,24 +170,30 @@ def polymerase_sliding_rules(model, data, verbose = False):
 			type2 = dna_part2.split('-')[0]
 
 		code = 'Rule(\'sliding_{:s}\',\n' \
-			'	cplx(name = \'RNAP\', dna = 1) %\n' \
+			'	cplx(name = \'RNAP-CPLX\', dna = 1) %\n' \
 			'	dna(name = \'{:s}\', type = \'{:s}\', prot = 1) +\n' \
 			'	None +\n' \
 			'	dna(name = \'{:s}\', type = \'{:s}\', prot = None) >>\n' \
-			'	cplx(name = \'RNAP\', dna = 1) %\n' \
+			'	cplx(name = \'RNAP-CPLX\', dna = 1) %\n' \
 			'	dna(name = \'{:s}\', type = \'{:s}\', prot = 1) +\n' \
 			'	rna(name = \'{:s}\', type = \'{:s}\', prot = None, rna = None) +\n' \
 			'	dna(name = \'{:s}\', type = \'{:s}\', prot = None),\n' \
-			'	Parameter(\'fwd_sliding_{:s}\', {:f}))'
-		code = code.format(dna_part1, name1, type1, name2, type2, name2, type2, name2, type2, name1, type1, dna_part1, float(data.iloc[idx, 4]))
+			'	Parameter(\'fwd_sliding_{:s}\', {:f}))\n'
+		code = code.format(
+			dna_part1, name1, type1, name2, type2, name2, type2, name2, type2, name1, type1,
+			dna_part1, float(data['RNAP_FWD_SLIDE_RATE'].iloc[idx]))
 
-		code = code.replace('-', '_')
+		code = code.replace('-', '_').replace('[', '').replace(']', '')
 		if verbose:
 			print(code)
-		exec(code)
+		if toFile:
+			with open(toFile, 'a+') as outfile:
+				outfile.write(code)
+		else:
+			exec(code)
 
-def polymerase_falloff_rules(model, data, verbose = False):
-	architecture = list(data.SOURCE) + [data.TARGET.iloc[-1]]
+def polymerase_falloff_rules(model, data, verbose = False, toFile = False):
+	architecture = list(data['UPSTREAM']) + [data['DOWNSTREAM'].iloc[-1]]
 
 	for idx, dna_part in enumerate(architecture):
 		if 'ter' in dna_part: # falloff rules
@@ -159,20 +201,26 @@ def polymerase_falloff_rules(model, data, verbose = False):
 			type = dna_part.split('-')[1]
 
 			code = 'Rule(\'falloff_{:s}\',\n' \
-				'	cplx(name = \'RNAP\', dna = 1) %\n' \
+				'	cplx(name = \'RNAP-CPLX\', dna = 1) %\n' \
 				'	dna(name = \'{:s}\', type = \'{:s}\', prot = 1) >>\n' \
-				'	cplx(name = \'RNAP\', dna = None) +\n' \
+				'	cplx(name = \'RNAP-CPLX\', dna = None) +\n' \
 				'	dna(name = \'{:s}\', type = \'{:s}\', prot = None),\n' \
-				'	Parameter(\'fwd_falloff_{:s}\', {:f}))'
-			code = code.format(dna_part, name, type, name, type, dna_part, float(data.iloc[idx-1, 5]))
+				'	Parameter(\'fwd_falloff_{:s}\', {:f}))\n'
+			code = code.format(
+				dna_part, name, type, name, type,
+				dna_part, float(data['RNAP_FWD_FALL_RATE'].iloc[idx-1]))
 
-			code = code.replace('-', '_')
+			code = code.replace('-', '_').replace('[', '').replace(']', '')
 			if verbose:
 				print(code)
-			exec(code)
+			if toFile:
+				with open(toFile, 'a+') as outfile:
+					outfile.write(code)
+			else:
+				exec(code)
 
-def ribosome_docking_rules(model, data, verbose = False):
-	architecture = list(data.SOURCE) + [data.TARGET.iloc[-1]]
+def ribosome_docking_rules(model, data, verbose = False, toFile = False):
+	architecture = list(data['UPSTREAM']) + [data['DOWNSTREAM'].iloc[-1]]
 
 	for idx, dna_part in enumerate(architecture):
 		if 'rbs' in dna_part: # docking rules
@@ -180,21 +228,28 @@ def ribosome_docking_rules(model, data, verbose = False):
 			type = dna_part.split('-')[1]
 
 			code = 'Rule(\'dr_{:s}\',\n' \
-				'	cplx(name = \'Ribosome\', rna = None) +\n' \
+				'	cplx(name = \'RIBOSOME-CPLX\', rna = None) +\n' \
 				'	rna(name = \'{:s}\', type = \'{:s}\', prot = None) |\n' \
-				'	cplx(name = \'Ribosome\', rna = 1) %\n' \
+				'	cplx(name = \'RIBOSOME-CPLX\', rna = 1) %\n' \
 				'	rna(name = \'{:s}\', type = \'{:s}\', prot = 1),\n' \
 				'	Parameter(\'fwd_dr_{:s}\', {:f}),\n' \
-				'	Parameter(\'rvs_dr_{:s}\', {:f}))'
-			code = code.format(dna_part, name, type, name, type, dna_part, float(data.iloc[idx, 6]), dna_part, float(data.iloc[idx, 7]))
+				'	Parameter(\'rvs_dr_{:s}\', {:f}))\n'
+			code = code.format(
+				dna_part, name, type, name, type,
+				dna_part, float(data['RIB_FWD_DOCK_RATE'].iloc[idx]),
+				dna_part, float(data['RIB_RVS_DOCK_RATE'].iloc[idx]))
 
-			code = code.replace('-', '_')
+			code = code.replace('-', '_').replace('[', '').replace(']', '')
 			if verbose:
 				print(code)
-			exec(code)
+			if toFile:
+				with open(toFile, 'a+') as outfile:
+					outfile.write(code)
+			else:
+				exec(code)
 
-def ribosome_sliding_rules(model, data, verbose = False):
-	for idx, (dna_part1, dna_part2) in enumerate(zip(data.SOURCE, data.TARGET)):
+def ribosome_sliding_rules(model, data, verbose = False, toFile = False):
+	for idx, (dna_part1, dna_part2) in enumerate(zip(data['UPSTREAM'], data['DOWNSTREAM'])):
 		dna_part1, dna_part2 = (dna_part1, dna_part2)
 
 		if 'BS' in dna_part1:  # catch binding sites to add to sliding rules
@@ -223,35 +278,43 @@ def ribosome_sliding_rules(model, data, verbose = False):
 		if forward:
 			if 'cds' in type2:
 				code = 'Rule(\'sr_{:s}\',\n' \
-					'	cplx(name = \'Ribosome\', rna = 1) %\n' \
+					'	cplx(name = \'RIBOSOME-CPLX\', rna = 1) %\n' \
 					'	rna(name = \'{:s}\', type = \'{:s}\', prot = 1) +\n' \
 					'	None +\n' \
 					'	rna(name = \'{:s}\', type = \'{:s}\', prot = None) >> \n' \
-					'	cplx(name = \'Ribosome\', rna = 1) %\n' \
+					'	cplx(name = \'RIBOSOME-CPLX\', rna = 1) %\n' \
 					'	rna(name = \'{:s}\', type = \'{:s}\', prot = 1) +\n' \
 					'	prot(name = \'{:s}\', loc = \'cyt\', dna = None, met = None, prot = None, rna = None, up = None, dw = None) +\n' \
 					'	rna(name = \'{:s}\', type = \'{:s}\', prot = None),\n' \
-					'	Parameter(\'fwd_sr_{:s}\', {:f}))'
-				code = code.format(dna_part1, name1, type1, name2, type2, name2, type2, name2, name2, type2, dna_part1, float(data.iloc[idx, 8]))
+					'	Parameter(\'fwd_sr_{:s}\', {:f}))\n'
+				code = code.format(
+					dna_part1, name1, type1, name2, type2, name2, type2, name2, name2, type2,
+					dna_part1, float(data['RIB_FWD_SLIDE_RATE'].iloc[idx]))
 
 			else: # sliding without protein synthesis
 				code = 'Rule(\'sr_{:s}\',\n' \
-					'	cplx(name = \'Ribosome\', rna = 1) %\n' \
+					'	cplx(name = \'RIBOSOME-CPLX\', rna = 1) %\n' \
 					'	rna(name = \'{:s}\', type = \'{:s}\', prot = 1) +\n' \
 					'	rna(name = \'{:s}\', type = \'{:s}\', prot = None) >>\n' \
-					'	cplx(name = \'Ribosome\', rna = 1) %\n' \
+					'	cplx(name = \'RIBOSOME-CPLX\', rna = 1) %\n' \
 					'	rna(name = \'{:s}\', type = \'{:s}\', prot = 1) +\n' \
 					'	rna(name = \'{:s}\', type = \'{:s}\', prot = None),\n' \
-					'	Parameter(\'fwd_sr_{:s}\', {:f}))'
-				code = code.format(dna_part1, name1, type1, name2, type2, name2, type2, name1, type1, dna_part1, float(data.iloc[idx, 8]))
+					'	Parameter(\'fwd_sr_{:s}\', {:f}))\n'
+				code = code.format(
+					dna_part1, name1, type1, name2, type2, name2, type2, name1, type1,
+					dna_part1, float(data['RIB_FWD_SLIDE_RATE'].iloc[idx]))
 
-			code = code.replace('-', '_')
+			code = code.replace('-', '_').replace('[', '').replace(']', '')
 			if verbose:
 				print(code)
-			exec(code)
+			if toFile:
+				with open(toFile, 'a+') as outfile:
+					outfile.write(code)
+			else:
+				exec(code)
 
-def ribosome_falloff_rules(model, data, verbose = False):
-	architecture = list(data.SOURCE) + [data.TARGET.iloc[-1]]
+def ribosome_falloff_rules(model, data, verbose = False, toFile = False):
+	architecture = list(data['UPSTREAM']) + [data['DOWNSTREAM'].iloc[-1]]
 
 	for idx, dna_part in enumerate(architecture):
 		if 'ter' in dna_part: # falloff rules
@@ -259,28 +322,56 @@ def ribosome_falloff_rules(model, data, verbose = False):
 			type = dna_part.split('-')[1]
 
 			code = 'Rule(\'fr_{:s}\',\n' \
-				'	cplx(name = \'Ribosome\', rna = 1) %\n' \
+				'	cplx(name = \'RIBOSOME-CPLX\', rna = 1) %\n' \
 				'	rna(name = \'{:s}\', type = \'{:s}\', prot = 1) >>\n' \
-				'	cplx(name = \'Ribosome\', rna = None) +\n' \
+				'	cplx(name = \'RIBOSOME-CPLX\', rna = None) +\n' \
 				'	rna(name = \'{:s}\', type = \'{:s}\', prot = None),\n' \
-				'	Parameter(\'fwd_fr_{:s}\', 0))'
-			code = code.format(dna_part, name, type, name, type, dna_part, float(data.iloc[idx-1, 9]))
+				'	Parameter(\'fwd_fr_{:s}\', 0))\n'
+			code = code.format(
+				dna_part, name, type, name, type,
+				dna_part, float(data['RIB_FWD_FALL_RATE'].iloc[idx-1]))
 
-			code = code.replace('-', '_')
+			code = code.replace('-', '_').replace('[', '').replace(']', '')
 			if verbose:
 				print(code)
-			exec(code)
+			if toFile:
+				with open(toFile, 'a+') as outfile:
+					outfile.write(code)
+			else:
+				exec(code)
 
-def construct_model_from_genome_graph(network, verbose = False):
-	data = read_network(network)
+def construct_model_from_genome_graph(network, verbose = False, toFile = False):
+	if toFile:
+		with open(toFile, 'w') as outfile:
+			pass
+
+	if isinstance(network, str):
+		data = read_network(network)
+	elif isinstance(network, pandas.DataFrame):
+		data = network
+	elif isinstance(network, numpy.array):
+		data = pandas.DataFrame(data = network)
+	else:
+		raise Exception("The network format is not yet supported.")
+	data = check_network(data)
 
 	model = Model()
-	monomers_from_genome_graph(model, data, verbose)
-	polymerase_docking_rules(model, data, verbose)
-	polymerase_sliding_rules(model, data, verbose)
-	polymerase_falloff_rules(model, data, verbose)
-	ribosome_docking_rules(model, data, verbose)
-	ribosome_sliding_rules(model, data, verbose)
-	ribosome_falloff_rules(model, data, verbose)
+	monomers_from_genome_graph(model, data, verbose, toFile)
+
+	# write docking, slide, and falloff of RNA Polymerase from DNA
+	polymerase_docking_rules(model, data, verbose, toFile)
+	polymerase_sliding_rules(model, data, verbose, toFile)
+	polymerase_falloff_rules(model, data, verbose, toFile)
+
+	# write docking, slide, and falloff of RIBOSOME-CPLX from RNA
+	ribosome_docking_rules(model, data, verbose, toFile)
+	ribosome_sliding_rules(model, data, verbose, toFile)
+	ribosome_falloff_rules(model, data, verbose, toFile)
+
+	# TODO
+	# write docking, slide, and falloff of RNASE from RNA
+	# write docking, slide, and falloff of PROTEASE from protein
+	# write initials from genome graph
+	# write observables from genome graph
 
 	return model
