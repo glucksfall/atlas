@@ -274,110 +274,115 @@ def rules_from_metabolic_network(model, data, verbose = False, toFile = False):
 			else:
 				exec(code.replace('\t', ' ').replace('\n', ' '))
 
-def observables_from_metabolic_network(model, data, monomers, verbose = False, toFile = False):
-	for name in sorted(monomers[0]):
-		name = name.replace('-','_')
-		for loc in location_keys().keys():
-			code = 'Observable(\'obs_met_{:s}_{:s}\', met(name = \'{:s}\', loc = \'{:s}\', prot = None))\n'
-			code = code.format(name, loc.lower(), name, loc.lower())
-			if verbose:
-				print(code)
-			if toFile:
-				with open(toFile, 'a+') as outfile:
-					outfile.write(code)
-			else:
-				exec(code.replace('\t', ' ').replace('\n', ' '))
+def observables_from_metabolic_network(model, data, monomers, verbose = False, toFile = False, noInitials = False, noObservables = False):
+	if not noObservables:
+		for name in sorted(monomers[0]):
+			name = name.replace('-','_')
+			for loc in location_keys().keys():
+				code = 'Observable(\'obs_met_{:s}_{:s}\', met(name = \'{:s}\', loc = \'{:s}\', prot = None))\n'
+				code = code.format(name, loc.lower(), name, loc.lower())
+				if verbose:
+					print(code)
+				if toFile:
+					with open(toFile, 'a+') as outfile:
+						outfile.write(code)
+				else:
+					exec(code.replace('\t', ' ').replace('\n', ' '))
 
-	for name in sorted(monomers[0]):
-		name = name.replace('-','_')
-		for loc in location_keys().keys():
-			code = 'Initial(met(name = \'{:s}\', loc = \'{:s}\', prot = None), Parameter(\'t0_met_{:s}_{:s}\', 0))\n'
-			code = code.format(name, loc.lower(), name, loc.lower())
-			if verbose:
-				print(code)
-			if toFile:
-				with open(toFile, 'a+') as outfile:
-					outfile.write(code)
-			else:
-				exec(code.replace('\t', ' ').replace('\n', ' '))
+	if not noInitials:
+		for name in sorted(monomers[0]):
+			name = name.replace('-','_')
+			for loc in location_keys().keys():
+				code = 'Initial(met(name = \'{:s}\', loc = \'{:s}\', prot = None), Parameter(\'t0_met_{:s}_{:s}\', 0))\n'
+				code = code.format(name, loc.lower(), name, loc.lower())
+				if verbose:
+					print(code)
+				if toFile:
+					with open(toFile, 'a+') as outfile:
+						outfile.write(code)
+				else:
+					exec(code.replace('\t', ' ').replace('\n', ' '))
 
-	for name in sorted(monomers[1]):
-		name = name.replace('-','_')
-		for loc in location_keys().keys():
-			code = 'Initial(prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None), Parameter(\'t0_prot_{:s}_{:s}\', 0))\n'
-			code = code.format(name, loc.lower(), name, loc.lower())
-			if verbose:
-				print(code)
-			if toFile:
-				with open(toFile, 'a+') as outfile:
-					outfile.write(code)
-			else:
-				exec(code.replace('\t', ' ').replace('\n', ' '))
+		for name in sorted(monomers[1]):
+			name = name.replace('-','_')
+			for loc in location_keys().keys():
+				code = 'Initial(prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None), Parameter(\'t0_prot_{:s}_{:s}\', 0))\n'
+				code = code.format(name, loc.lower(), name, loc.lower())
+				if verbose:
+					print(code)
+				if toFile:
+					with open(toFile, 'a+') as outfile:
+						outfile.write(code)
+				else:
+					exec(code.replace('\t', ' ').replace('\n', ' '))
 
-	for name in sorted(monomers[2]):
-		name = name.replace('-','_')
-		for loc in location_keys().keys():
-			code = 'Initial(cplx(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None), Parameter(\'t0_cplx_{:s}_{:s}\', 0))\n'
-			code = code.format(name, loc.lower(), name, loc.lower())
-			if verbose:
-				print(code)
-			if toFile:
-				with open(toFile, 'a+') as outfile:
-					outfile.write(code)
-			else:
-				exec(code.replace('\t', ' ').replace('\n', ' '))
+		for name in sorted(monomers[2]):
+			name = name.replace('-','_')
+			for loc in location_keys().keys():
+				code = 'Initial(cplx(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None), Parameter(\'t0_cplx_{:s}_{:s}\', 0))\n'
+				code = code.format(name, loc.lower(), name, loc.lower())
+				if verbose:
+					print(code)
+				if toFile:
+					with open(toFile, 'a+') as outfile:
+						outfile.write(code)
+				else:
+					exec(code.replace('\t', ' ').replace('\n', ' '))
 
-	names = monomers[3]
-	for name in sorted(set(names)):
-		if name.startswith('['):
-			monomers = name[1:-1].split(',')
-			complex_pysb = []
-
-			from collections import Counter
-			stoichiometry = Counter(monomers)
-			cplx_composition = ''
-			for key, value in stoichiometry.items():
-				cplx_composition += '_{:s}x{:d}'.format(key, value)
-
-			## create link indexes
-			dw = [None] * len(monomers)
-			start_link = 1
-			for index in range(len(monomers)-1):
-				dw[index] = start_link
-				start_link += 1
-			up = dw[-1:] + dw[:-1]
-
-			for location in location_keys().keys():
+	if not noInitials or not noObservables:
+		names = monomers[3]
+		for name in sorted(set(names)):
+			if name.startswith('['):
+				monomers = name[1:-1].split(',')
 				complex_pysb = []
-				for index, monomer in enumerate(monomers):
-					complex_pysb.append('prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = {:s}, dw = {:s})'.format(
-						monomer, location.lower(), str(up[index]), str(dw[index])))
 
-				complex_pysb = ' %\n	'.join(complex_pysb)
+				from collections import Counter
+				stoichiometry = Counter(monomers)
+				cplx_composition = ''
+				for key, value in stoichiometry.items():
+					cplx_composition += '_{:s}x{:d}'.format(key, value)
 
-				code = 'Initial({:s},\n\tParameter(\'t0_cplx{:s}_{:s}\', 0))\n'
-				code = code.format(complex_pysb, cplx_composition, location.lower())
+				## create link indexes
+				dw = [None] * len(monomers)
+				start_link = 1
+				for index in range(len(monomers)-1):
+					dw[index] = start_link
+					start_link += 1
+				up = dw[-1:] + dw[:-1]
 
-				if verbose:
-					print(code)
-				if toFile:
-					with open(toFile, 'a+') as outfile:
-						outfile.write(code)
-				else:
-					exec(code.replace('\t', ' ').replace('\n', ' '))
+				for location in location_keys().keys():
+					complex_pysb = []
+					for index, monomer in enumerate(monomers):
+						complex_pysb.append('prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = {:s}, dw = {:s})'.format(
+							monomer, location.lower(), str(up[index]), str(dw[index])))
 
-				code = 'Observable(\'obs_cplx{:s}_{:s}\',\n\t{:s})\n'
-				code = code.format(cplx_composition, location.lower(), complex_pysb)
+					complex_pysb = ' %\n	'.join(complex_pysb)
 
-				if verbose:
-					print(code)
-				if toFile:
-					with open(toFile, 'a+') as outfile:
-						outfile.write(code)
-				else:
-					exec(code.replace('\t', ' ').replace('\n', ' '))
+					if not noInitials:
+						code = 'Initial({:s},\n\tParameter(\'t0_cplx{:s}_{:s}\', 0))\n'
+						code = code.format(complex_pysb, cplx_composition, location.lower())
 
-def construct_model_from_metabolic_network(network, verbose = False, toFile = False):
+						if verbose:
+							print(code)
+						if toFile:
+							with open(toFile, 'a+') as outfile:
+								outfile.write(code)
+						else:
+							exec(code.replace('\t', ' ').replace('\n', ' '))
+
+					if not noObservables:
+						code = 'Observable(\'obs_cplx{:s}_{:s}\',\n\t{:s})\n'
+						code = code.format(cplx_composition, location.lower(), complex_pysb)
+
+						if verbose:
+							print(code)
+						if toFile:
+							with open(toFile, 'a+') as outfile:
+								outfile.write(code)
+						else:
+							exec(code.replace('\t', ' ').replace('\n', ' '))
+
+def construct_model_from_metabolic_network(network, verbose = False, toFile = False, noInitials = False, noObservables = False):
 	if toFile:
 		with open(toFile, 'w') as outfile:
 			outfile.write('from pysb import *\nModel()\n\n')
@@ -396,6 +401,6 @@ def construct_model_from_metabolic_network(network, verbose = False, toFile = Fa
 	[metabolites, p_monomers, complexes, hypernodes] = \
 		monomers_from_metabolic_network(model, data, verbose, toFile)
 	observables_from_metabolic_network(model, data, [metabolites, p_monomers, complexes, hypernodes], verbose, toFile)
-	rules_from_metabolic_network(model, data, verbose, toFile)
+	rules_from_metabolic_network(model, data, verbose, toFile, noInitials, noObservables)
 
 	return model
