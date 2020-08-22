@@ -340,6 +340,114 @@ def ribosome_falloff_rules(model, data, verbose = False, toFile = False):
 			else:
 				exec(code)
 
+def observables_from_genome_graph(model, data, verbose = False, toFile = False):
+	architecture = data['UPSTREAM'] + ',' + data['DOWNSTREAM']
+	operons = []
+	for dna_part in architecture:
+		if dna_part.startswith('['):
+			operon = []
+			operon.append(dna_part.split(',')[0][1:])
+		elif dna_part.endswith(']'):
+			operon.append(dna_part.split(',')[0])
+			operon.append(dna_part.split(',')[1][:-1])
+			operons.append(','.join(operon))
+		else:
+			operon.append(dna_part.split(',')[0])
+
+	for operon in list(set(operons)):
+		operon = operon.split(',')
+		for monomer in operon:
+			## create link indexes
+			dw = [None] * len(operon)
+			start_link = 1
+			for index in range(len(operon)-1):
+				dw[index] = start_link
+				start_link += 1
+			up = dw[-1:] + dw[:-1]
+
+			complex_pysb = []
+			for index, monomer in enumerate(operon):
+				complex_pysb.append('dna(name = \'{:s}\', type = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = {:s}, dw = {:s})'.format(
+					monomer.split('-')[0], monomer.split('-')[1], 'cyt', str(up[index]), str(dw[index])))
+
+			complex_pysb = ' %\n	'.join(complex_pysb)
+
+		code = 'Initial({:s},\n' \
+			'	Parameter(\'t0_dna_{:s}\', 0))\n'
+		code = code.format(complex_pysb, monomer.split('-')[0])
+
+		if verbose:
+			print(code)
+		if toFile:
+			with open(toFile, 'a+') as outfile:
+				outfile.write(code)
+		else:
+			exec(code.replace('\t', ' ').replace('\n', ' '))
+
+		code = 'Observable(\'obs_dna_{:s}\',\n' \
+			'	{:s})\n'
+		code = code.format(monomer.split('-')[0], complex_pysb)
+
+		if verbose:
+			print(code)
+		if toFile:
+			with open(toFile, 'a+') as outfile:
+				outfile.write(code)
+		else:
+			exec(code.replace('\t', ' ').replace('\n', ' '))
+
+	# rnas start at any promoter and ends at any terminator
+	for operon in list(set(operons)):
+		operon = operon.split(',')
+		rna_forms = []
+
+		for operon in operons:
+			a = [(m.start(0), m.end(0)) for m in re.finditer(r'\w+-pro\d?', operon)]
+			b = [(m.start(0), m.end(0)) for m in re.finditer(r'\w+-ter\d?', operon)]
+
+			for lst in itertools.product(a, b):
+				rna_forms.append(string[lst[0][0]:lst[1][1]].split(','))
+
+		for idx, rna_form in enumerate(rna_forms):
+			## create link indexes
+			dw = [None] * (len(rna_form)-1)
+			start_link = 1
+			for index in range(len(rna_form)-2):
+				dw[index] = start_link
+				start_link += 1
+			up = dw[-1:] + dw[:-1]
+
+			complex_pysb = []
+			for index, monomer in enumerate(rna_form[1:]):
+				complex_pysb.append('rna(name = \'{:s}\', type = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = {:s}, dw = {:s})'.format(
+					monomer.split('-')[0], monomer.split('-')[1], 'cyt', str(up[index]), str(dw[index])))
+
+			complex_pysb = ' %\n	'.join(complex_pysb)
+
+			code = 'Initial({:s},\n' \
+				'	Parameter(\'t0_rna_{:s}_form{:d}\', 0))\n'
+			code = code.format(complex_pysb, monomer.split('-')[0], idx+1)
+
+			if verbose:
+				print(code)
+			if toFile:
+				with open(toFile, 'a+') as outfile:
+					outfile.write(code)
+			else:
+				exec(code.replace('\t', ' ').replace('\n', ' '))
+
+			code = 'Observable(\'obs_rna_{:s}_form{:d}\',\n' \
+				'	{:s})\n'
+			code = code.format(monomer.split('-')[0], idx+1, complex_pysb)
+
+			if verbose:
+				print(code)
+			if toFile:
+				with open(toFile, 'a+') as outfile:
+					outfile.write(code)
+			else:
+				exec(code.replace('\t', ' ').replace('\n', ' '))
+
 def construct_model_from_genome_graph(network, verbose = False, toFile = False):
 	if toFile:
 		with open(toFile, 'w') as outfile:
