@@ -510,8 +510,6 @@ def construct_model_from_genome_graph(network, verbose = False, toFile = False):
 	# TODO
 	# write docking, slide, and falloff of RNASE-CPLX from RNA
 	# write docking, slide, and falloff of PROTEASE-CPLX from protein
-	# write initials from genome graph
-	# write observables from genome graph
 	observables_from_genome_graph(model, data, verbose, toFile)
 
 	return model
