@@ -17,6 +17,48 @@ import pythoncyc
 import subprocess
 import itertools
 
+def read_network(infile_path):
+	with open(infile_path, 'r') as infile:
+		data = pandas.read_csv(infile, delimiter = '\t', header = 0, comment = '#')
+
+	return data
+
+def check_metabolic_network(data):
+	# find duplicated reactions (reactions must has a unique name)
+	duplicated = len(data[data.duplicated(['REACTION'])].index)
+
+	if duplicated > 0:
+		data[data.duplicated(['REACTION'])].to_csv('./conflicting_reactions.txt', sep = '\t', index = False)
+		data = data[~data.duplicated(['REACTION'], keep = 'first')]
+		print('It was found duplicated reaction names in the network.\n' \
+			'Please check the conflicting_reactions.txt and correct them if necessary.')
+
+	return data
+
+def check_interaction_network(data):
+	# find duplicated reactions (reactions must has a unique name)
+	duplicated = len(data[data.duplicated(['SOURCE', 'TARGET'])].index)
+
+	if duplicated > 0:
+		data[data.duplicated(['SOURCE', 'TARGET'])].to_csv('./conflicting_interactions.txt', sep = '\t', index = False)
+		data = data[~data.duplicated(['SOURCE', 'TARGET'], keep = 'first')]
+		print('It was found possible duplicated interactions in the network.\n' \
+			'Please check the conflicting_interactions.txt and correct them if necessary.')
+
+	return data
+
+def check_genome_graph(data):
+	# find duplicated reactions (reactions must has a unique name)
+	duplicated = len(data[data.duplicated(['UPSTREAM', 'DOWNSTREAM'])].index)
+
+	if duplicated > 0:
+		data[data.duplicated(['UPSTREAM', 'DOWNSTREAM'])].to_csv('./conflicting_interactions.txt', sep = '\t', index = False)
+		data = data[~data.duplicated(['UPSTREAM', 'DOWNSTREAM'], keep = 'first')]
+		print('It was found possible duplicated interactions in the network.\n' \
+			'Please check the conflicting_interactions.txt and correct them if necessary.')
+
+	return data
+
 def checkPathwayTools(verbose = True):
 	try:
 		availableOrgs = pythoncyc.all_orgids()

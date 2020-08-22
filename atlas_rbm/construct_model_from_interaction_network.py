@@ -17,25 +17,7 @@ import re
 import numpy
 import pandas
 
-from .utils import location_keys, location_values
-
-def read_network(infile_path):
-	with open(infile_path, 'r') as infile:
-		data = pandas.read_csv(infile, delimiter = '\t', header = 0, comment = '#')
-
-	return data
-
-def check_network(data):
-	# find duplicated reactions (reactions must has a unique name)
-	duplicated = len(data[data.duplicated(['SOURCE', 'TARGET'])].index)
-
-	if duplicated > 0:
-		data[data.duplicated(['SOURCE', 'TARGET'])].to_csv('./conflicting_interactions.txt', sep = '\t', index = False)
-		data = data[~data.duplicated(['SOURCE', 'TARGET'], keep = 'first')]
-		print('It was found possible duplicated interactions in the network.\n' \
-			'Please check the conflicting_interactions.txt and correct them if necessary.')
-
-	return data
+from .utils import read_network, check_interaction_network, location_keys, location_values
 
 def monomers_from_interaction_network(model, data, verbose = False, toFile = False):
 	# find unique metabolites and correct names
@@ -769,7 +751,7 @@ def construct_model_from_interaction_network(network, verbose = False, toFile = 
 		data = pandas.DataFrame(data = network)
 	else:
 		raise Exception("The network format is not yet supported.")
-	data = check_network(data)
+	data = check_interaction_network(data)
 
 	model = Model()
 	[metabolites, p_monomers, complexes, hypernodes] = \

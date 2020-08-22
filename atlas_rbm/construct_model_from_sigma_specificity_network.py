@@ -17,85 +17,14 @@ import re
 import numpy
 import pandas
 
-from .utils import location_keys, location_values
+from .utils import read_network, check_genome_graph, check_interaction_network
+from .construct_model_from_genome_graph import monomers_from_genome_graph
 
-def read_network(infile_path):
-	with open(infile_path, 'r') as infile:
-		data = pandas.read_csv(infile, delimiter = '\t', header = 0, comment = '#')
-
-	return data
-
-def monomers_from_genome_graph(model, data, verbose = False):
-	# find DNA parts
-	architecture = list(data.SOURCE) + [data.TARGET.iloc[-1]]
-
-	names = []
-	types = []
-	for dna_part in architecture:
-		if 'BS' in dna_part:
-			names.append('_'.join(
-				[dna_part.split('-')[0],
-				dna_part.split('-')[2],
-				dna_part.split('-')[3]]))
-		else:
-			names.append(dna_part.split('-')[0])
-		types.append(dna_part.split('-')[1])
-
-	# dna
-	code = "Monomer('dna',\n" \
-		"	['name', 'type', 'prot', 'rna', 'up', 'dw'],\n" \
-		"	{{ 'name' : [{:s}],\n" \
-		"	'type' : [{:s}]}})"
-
-	code = code.format(
-		', '.join([ '\'' + x + '\'' for x in sorted(set(names))]),
-		', '.join([ '\'' + x + '\'' for x in sorted(set(types + ['BS']))]))
-
-	if verbose:
-		print(code)
-	exec(code.replace('\n', ''))
-
-	# rna
-	code = "Monomer('rna',\n" \
-		"	['name', 'type', 'prot', 'rna'],\n" \
-		"	{{ 'name' : [{:s}],\n" \
-		"	'type' : [{:s}]}})"
-
-	code = code.format(
-		', '.join([ '\'' + x + '\'' for x in sorted(set(names))]),
-		', '.join([ '\'' + x + '\'' for x in sorted(set(types + ['BS']))]))
-
-	if verbose:
-		print(code)
-	exec(code.replace('\n', ''))
-
-	# prot
-	code = "Monomer('prot',\n" \
-		"	['name', 'loc', 'dna', 'met', 'prot', 'rna', 'up', 'dw'],\n" \
-		"	{{ 'name' : [{:s}],\n" \
-		"	'loc' : ['cyt', 'mem', 'per', 'ex']}})"
-	names = [ x for x in names if not x.startswith('BS') ]
-	code = code.format(', '.join([ '\'' + x + '\'' for x in sorted(set(names))]))
-
-	if verbose:
-		print(code)
-	exec(code.replace('\n', ''))
-
-	# complexes
-	code = "Monomer('cplx',\n" \
-		"	['name', 'loc', 'dna', 'prot', 'rna'],\n" \
-		"	{ 'name' : ['RNAP', 'Ribosome'],\n" \
-		"	'loc' : ['cyt', 'mem', 'per', 'ex']})"
-	if verbose:
-		print(code)
-	exec(code.replace('\n', ''))
-
-def polymerase_docking_rules(model, data, data_arq, verbose = False):
-	description = []
+def polymerase_docking_rules(data, data_arq, verbose, toFile):
 	RULE_LHS = []
 	for i in data.index:
 		# data
-		agents = (data.iloc[i, 0] + ',' + data.iloc[i, 1])
+		agents = (data['SOURCE'].iloc[i] + ',' + data['TARGET'].iloc[i])
 		names = agents.split(',')
 
 		## form the LHS
@@ -112,19 +41,14 @@ def polymerase_docking_rules(model, data, data_arq, verbose = False):
 				molecule = name
 			else:
 				molecule = name
-				linked = 'None'
 
-			if 'BS' in name:
-				if 'pro' in name:
-					molecule = '{:s}\', type = \'{:s}'.format(molecule.split('-')[-2], molecule.split('-')[-1])
-				LHS.append('dna(name = \'{:s}\', prot = dna_link, up = bs_link, dw = bs_link)' \
-						.format(molecule))
+			if 'pro' in name.lower():
+				molecule = '{:s}\', type = \'{:s}'.format(molecule.split('-')[-2], molecule.split('-')[-1])
+				LHS.append('dna(name = \'{:s}\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule))
 			elif 'SMALL' in name:
-				LHS.append('met(name = \'{:s}\', prot = met_link)' \
-						.format(molecule.replace('SMALL-', '')))
+				LHS.append('met(name = \'{:s}\', prot = met_link)'.format(molecule.replace('SMALL-', '')))
 			else:
-				LHS.append('prot(name = \'{:s}\', dna = dna_link, met = met_link, up = prot_link, dw = prot_link)' \
-						.format(molecule))
+				LHS.append('prot(name = \'{:s}\', dna = dna_link, met = met_link, up = prot_link, dw = prot_link)'.format(molecule))
 
 		## look for where starts and ends a complex in the LHS
 		complexes = [(m.start()+1, m.end()-1) for m in re.finditer(r'\[[A-Za-z0-9-_,]+\]', agents)]
@@ -152,7 +76,6 @@ def polymerase_docking_rules(model, data, data_arq, verbose = False):
 		## create numbered links
 		starter_link = 1
 		for index, agent in enumerate(LHS):
-			count_monomers = len(agent.split('%'))
 			count_small = agent.count('met(')
 			count_prots = agent.count('prot(')
 			count_dnas = agent.count('dna(')
@@ -208,8 +131,6 @@ def polymerase_docking_rules(model, data, data_arq, verbose = False):
 		LHS = ' +\n	'.join(LHS)
 		RULE_LHS.append(LHS)
 
-		description.append('# ' + data.iloc[i, 0] + ' interacts with ' + data.iloc[i, 1])
-
 	RULE_RHS = []
 	for i in data.index:
 		## data
@@ -230,24 +151,19 @@ def polymerase_docking_rules(model, data, data_arq, verbose = False):
 			else:
 				molecule = name
 
-			if 'BS' in name:
-				if 'pro' in name:
-					molecule = '{:s}\', type = \'{:s}'.format(molecule.split('-')[-2], molecule.split('-')[-1])
-				RHS.append('dna(name = \'{:s}\', prot = dna_link, up = bs_link, dw = bs_link)' \
-						.format(molecule))
+			if 'pro' in name:
+				molecule = '{:s}\', type = \'{:s}'.format(molecule.split('-')[-2], molecule.split('-')[-1])
+				RHS.append('dna(name = \'{:s}\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule))
 			elif 'SMALL' in name:
-				RHS.append('met(name = \'{:s}\', prot = met_link)' \
-						.format(molecule.replace('SMALL-', '')))
+				RHS.append('met(name = \'{:s}\', prot = met_link)'.format(molecule.replace('SMALL-', '')))
 			else:
-				RHS.append('prot(name = \'{:s}\', dna = dna_link, met = met_link, up = prot_link, dw = prot_link)' \
-						.format(molecule))
+				RHS.append('prot(name = \'{:s}\', dna = dna_link, met = met_link, up = prot_link, dw = prot_link)'.format(molecule))
 
 		## join complexes
 		RHS = ' %\n	'.join(RHS)
 
 		## create numbered links
 		agent = RHS
-		count_monomers = len(agent.split('%'))
 		count_small = agent.count('met(')
 		count_prots = agent.count('prot(')
 		count_dnas = agent.count('dna(')
@@ -303,37 +219,37 @@ def polymerase_docking_rules(model, data, data_arq, verbose = False):
 
 		RULE_RHS.append(RHS)
 
-	index = 0
-	for i in data.index:
-		for dna_part1, dna_part2 in zip(data_arq.iloc[:,0], data_arq.iloc[:,1]):
-			if data.iloc[i, 1][3:] == dna_part1:
+	for index, sigma in enumerate(data.index):
+		for dna_part1 in data_arq['UPSTREAM']:
+			if data['TARGET'].iloc[sigma] == dna_part1.replace('[', ''):
 				## complete rule
 				code = 'Rule(\'docking_{:d}_{:s}\',\n' \
 					'	{:s} |\n' \
 					'	{:s},\n' \
 					'	Parameter(\'fwd_docking_{:d}_{:s}\', {:f}),\n' \
-					'	Parameter(\'rvs_docking_{:d}_{:s}\', {:f}))'
+					'	Parameter(\'rvs_docking_{:d}_{:s}\', {:f}))\n'
 
 				code = code.format(
-					index+1, dna_part1, RULE_LHS[index], RULE_RHS[index], index+1, dna_part1,
-					data.iloc[i, 2], index+1, dna_part1, data.iloc[i, 3])
+					index+1, dna_part1.replace('[', ''), RULE_LHS[index], RULE_RHS[index],
+					index+1, dna_part1.replace('[', ''), data['FWD_DOCK_RATE'].iloc[sigma],
+					index+1, dna_part1.replace('[', ''), data['RVS_DOCK_RATE'].iloc[sigma])
 
 				code = code.replace('-', '_')
 				if verbose:
 					print(code)
-				exec(code)
+				if toFile:
+					with open(toFile, 'a+') as outfile:
+						outfile.write(code)
+				else:
+					exec(code)
 
-				index += 1
-
-def polymerase_sliding_from_promoters_rules(model, data, data_arq, verbose):
-	description = []
+def polymerase_sliding_from_promoters_rules(data, data_arq, verbose, toFile):
 	RULE_LHS = []
-
-	for i in data.index:
-		for dna_part1, dna_part2 in zip(data_arq.iloc[:,0], data_arq.iloc[:,1]):
-			if data.iloc[i, 1][3:] == dna_part1:
+	for idx, sigma in enumerate(data.index):
+		for dna_part1, dna_part2 in zip(data_arq['UPSTREAM'], data_arq['DOWNSTREAM']):
+			if data['TARGET'].iloc[sigma] == dna_part1.replace('[', ''):
 				# data
-				agents = (data.iloc[i, 0][:-1] + ',' + data.iloc[i, 1]) + ']' + ',BS-' + dna_part2
+				agents = (data['SOURCE'].iloc[sigma][:-1] + ',' + data['TARGET'].iloc[sigma]) + ']' + ',BS-' + dna_part2
 				names = agents.split(',')
 
 				## form the LHS
@@ -351,17 +267,14 @@ def polymerase_sliding_from_promoters_rules(model, data, data_arq, verbose):
 					else:
 						molecule = name
 
-					if 'BS' in name:
-						if 'pro' in name or 'rbs' in name:
-							molecule = '{:s}\', type = \'{:s}'.format(molecule.split('-')[-2], molecule.split('-')[-1])
-						LHS.append('dna(name = \'{:s}\', prot = dna_link, up = bs_link, dw = bs_link)' \
-								   .format(molecule))
+	#                 if 'BS' in name:
+					if 'pro' in name.lower() or 'rbs' in name.lower():
+						molecule = '{:s}\', type = \'{:s}'.format(molecule.split('-')[-2], molecule.split('-')[-1])
+						LHS.append('dna(name = \'{:s}\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule))
 					elif 'SMALL' in name:
-						LHS.append('met(name = \'{:s}\', prot = met_link)' \
-								   .format(molecule.replace('SMALL-', '')))
+						LHS.append('met(name = \'{:s}\', prot = met_link)'.format(molecule.replace('SMALL-', '')))
 					else:
-						LHS.append('prot(name = \'{:s}\', dna = dna_link, met = met_link, up = prot_link, dw = prot_link)' \
-								   .format(molecule))
+						LHS.append('prot(name = \'{:s}\', dna = dna_link, met = met_link, up = prot_link, dw = prot_link)'.format(molecule))
 
 				## look for where starts and ends a complex in the LHS
 				complexes = [(m.start()+1, m.end()-1) for m in re.finditer(r'\[[A-Za-z0-9-_, ]+\]', agents)]
@@ -389,7 +302,6 @@ def polymerase_sliding_from_promoters_rules(model, data, data_arq, verbose):
 				## create numbered links
 				starter_link = 1
 				for index, agent in enumerate(LHS):
-					count_monomers = len(agent.split('%'))
 					count_small = agent.count('met(')
 					count_prots = agent.count('prot(')
 					count_dnas = agent.count('dna(')
@@ -445,14 +357,12 @@ def polymerase_sliding_from_promoters_rules(model, data, data_arq, verbose):
 				LHS = ' +\n	'.join(LHS) + ' + None'
 				RULE_LHS.append(LHS)
 
-				description.append('# ' + data.iloc[i, 0] + ' slides to ' + dna_part2)
-
 	RULE_RHS = []
-	for i in data.index:
-		for dna_part1, dna_part2 in zip(data_arq.iloc[:,0], data_arq.iloc[:,1]):
-			if data.iloc[i, 1][3:] == dna_part1:
+	for idx, sigma in enumerate(data.index):
+		for dna_part1, dna_part2 in zip(data_arq['UPSTREAM'], data_arq['DOWNSTREAM']):
+			if data['TARGET'].iloc[sigma] == dna_part1.replace('[', ''):
 				# data
-				agents = (','.join(data.iloc[i, 0].split(',')[:-1]) + ',BS-' + dna_part2) + '],' + data.iloc[i, 0].split(',')[-1][:-1] + ',BS-' + dna_part1
+				agents = (','.join(data['SOURCE'].iloc[sigma].split(',')[:-1]) + ',BS-' + dna_part2) + '],' + data['TARGET'].iloc[sigma].split(',')[-1][:-1] + ',BS-' + dna_part1
 				names = agents.split(',')
 
 				## form the RHS
@@ -511,7 +421,6 @@ def polymerase_sliding_from_promoters_rules(model, data, data_arq, verbose):
 				## create numbered links
 				starter_link = 1
 				for index, agent in enumerate(RHS):
-					count_monomers = len(agent.split('%'))
 					count_small = agent.count('met(')
 					count_prots = agent.count('prot(')
 					count_dnas = agent.count('dna(')
@@ -565,39 +474,36 @@ def polymerase_sliding_from_promoters_rules(model, data, data_arq, verbose):
 
 				## RHS final join
 				RHS = ' +\n	'.join(RHS)
-				RHS = RHS.split('	')
+				RHS = RHS.split('\t')
 				RHS[4], RHS[5] = RHS[5], RHS[4]
 				RHS[4] = RHS[4][:-2] + '%\n'
-				RHS = '	'.join(RHS)
+				RHS = '\t'.join(RHS)
 				RULE_RHS.append(RHS)
 
-				msg = '# ' + data.iloc[i, 0] + ' slides to ' + data.iloc[i, 1]
-				description.append(msg)
-
-	index = 0
-	for i in data.index:
-		for dna_part1, dna_part2 in zip(data_arq.iloc[:,0], data_arq.iloc[:,1]):
-			if data.iloc[i, 1][3:] == dna_part1:
+	for index, sigma in enumerate(data.index):
+		for dna_part1, dna_part2 in zip(data_arq['UPSTREAM'], data_arq['DOWNSTREAM']):
+			if data['TARGET'].iloc[sigma] == dna_part1.replace('[', ''):
 				## complete rule
 				code = 'Rule(\'sliding_{:d}_{:s}\',\n' \
 					'	{:s} >>\n' \
 					'	{:s},\n' \
 					'	Parameter(\'fwd_sliding_{:d}_{:s}\', {:f}))' \
 
-				code = code.format(index+1, dna_part1 + '_' + dna_part2.split('-')[-1],
-							RULE_LHS[index], RULE_RHS[index], index+1, dna_part1 + '_' + dna_part2.split('-')[-1], data.iloc[i, 4])
+				code = code.format(
+					index+1, dna_part1.replace('[', '') + '_' + dna_part2.split('-')[-1], RULE_LHS[index], RULE_RHS[index],
+					index+1, dna_part1.replace('[', '') + '_' + dna_part2.split('-')[-1], data.iloc[i, 4])
 
 				code = code.replace('-', '_')
 				if verbose:
 					print(code)
-				exec(code)
+				if toFile:
+					with open(toFile, 'a+') as outfile:
+						outfile.write(code)
+				else:
+					exec(code)
 
-		index += 1
-
-def polymerase_sliding_from_others_rules(model, data, data_arq, verbose):
-	description = []
+def polymerase_sliding_from_others_rules(data, data_arq, verbose, toFile):
 	RULE_LHS = []
-
 	for dna_part1, dna_part2 in zip(data_arq.iloc[:,0], data_arq.iloc[:,1]):
 		for i in data.index:
 			if 'pro' not in dna_part1:
@@ -660,7 +566,6 @@ def polymerase_sliding_from_others_rules(model, data, data_arq, verbose):
 				## create numbered links
 				starter_link = 1
 				for index, agent in enumerate(LHS):
-					count_monomers = len(agent.split('%'))
 					count_small = agent.count('met(')
 					count_prots = agent.count('prot(')
 					count_dnas = agent.count('dna(')
@@ -786,7 +691,6 @@ def polymerase_sliding_from_others_rules(model, data, data_arq, verbose):
 				## create numbered links
 				starter_link = 1
 				for index, agent in enumerate(RHS):
-					count_monomers = len(agent.split('%'))
 					count_small = agent.count('met(')
 					count_prots = agent.count('prot(')
 					count_dnas = agent.count('dna(')
@@ -864,7 +768,7 @@ def polymerase_sliding_from_others_rules(model, data, data_arq, verbose):
 			exec(code)
 			index += 1
 
-def polymerase_falloff_rules(model, data, data_arq, verbose):
+def polymerase_falloff_rules(data, data_arq, verbose, toFile):
 	description = []
 	RULE_LHS = []
 
@@ -927,7 +831,6 @@ def polymerase_falloff_rules(model, data, data_arq, verbose):
 			## create numbered links
 			starter_link = 1
 			for index, agent in enumerate(LHS):
-				count_monomers = len(agent.split('%'))
 				count_small = agent.count('met(')
 				count_prots = agent.count('prot(')
 				count_dnas = agent.count('dna(')
@@ -1047,7 +950,6 @@ def polymerase_falloff_rules(model, data, data_arq, verbose):
 			## create numbered links
 			starter_link = 1
 			for index, agent in enumerate(RHS):
-				count_monomers = len(agent.split('%'))
 				count_small = agent.count('met(')
 				count_prots = agent.count('prot(')
 				count_dnas = agent.count('dna(')
@@ -1122,14 +1024,59 @@ def polymerase_falloff_rules(model, data, data_arq, verbose):
 			exec(code)
 			index += 1
 
-def construct_model_from_sigma_specificity_network(promoters = '', architecture = '', verbose = False):
-	data_promoters = read_network(promoters)
-	data_architecture = read_network(architecture)
+def construct_model_from_sigma_specificity_network(promoters, architecture, verbose = False, toFile = False):
+	if toFile:
+		with open(toFile, 'w') as outfile:
+			outfile.write('from pysb import *\nModel()\n\n')
+
+	# check promoters
+	if isinstance(promoters, str):
+		data_promoters = read_network(promoters)
+	elif isinstance(promoters, pandas.DataFrame):
+		data_promoters = promoters
+	elif isinstance(promoters, numpy.array):
+		columns = [
+			'SOURCE',
+			'TARGET',
+			'FWD_DOCK_RATE',
+			'RVS_DOCK_RATE',
+			'FWD_SLIDE_RATE'
+			]
+		data_promoters = pandas.DataFrame(data = promoters, columns = columns)
+	else:
+		raise Exception("The format of the promoter specifities network is not yet supported.")
+	data_promoters = check_interaction_network(data_promoters)
+
+	# check architecture
+	if isinstance(architecture, str):
+		data_architecture = read_network(architecture)
+	elif isinstance(architecture, pandas.DataFrame):
+		data_architecture = architecture
+	elif isinstance(architecture, numpy.array):
+		columns = [
+			'UPSTREAM',
+			'DOWNSTREAM',
+			'RNAP_FWD_DOCK_RATE',
+			'RNAP_RVS_DOCK_RATE',
+			'RNAP_FWD_SLIDE_RATE',
+			'RNAP_FWD_FALL_RATE',
+			'RIB_FWD_DOCK_RATE',
+			'RIB_RVS_DOCK_RATE',
+			'RIB_FWD_SLIDE_RATE',
+			'RIB_FWD_FALL_RATE'
+			]
+		data_architecture = pandas.DataFrame(data = architecture, columns = columns)
+	else:
+		raise Exception("The format of the architecture network is not yet supported.")
+	data_architecture = check_genome_graph(data_architecture)
 
 	model = Model()
-	monomers_from_genome_graph(model, data_architecture, verbose)
-	polymerase_docking_rules(model, data_promoters, data_architecture, verbose)
-	polymerase_sliding_from_promoters_rules(model, data_promoters, data_architecture, verbose)
-	polymerase_sliding_from_others_rules(model, data_promoters, data_architecture, verbose)
+	monomers_from_genome_graph(data_architecture, verbose, toFile)
+
+	# write docking, slide, and falloff of RNA Polymerase from DNA
+	polymerase_docking_rules(data_promoters, data_architecture, verbose, toFile)
+	polymerase_sliding_from_promoters_rules(data_promoters, data_architecture, verbose, toFile)
+	polymerase_sliding_from_others_rules(data_promoters, data_architecture, verbose, toFile)
+	polymerase_falloff_rules(data_promoters, data_architecture, verbose, toFile)
 
 	return model

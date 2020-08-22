@@ -17,25 +17,7 @@ import re
 import numpy
 import pandas
 
-from .utils import location_keys, location_values
-
-def read_network(infile_path):
-	with open(infile_path, 'r') as infile:
-		data = pandas.read_csv(infile, delimiter = '\t', header = 0, comment = '#')
-
-	return data
-
-def check_metabolic_network(data):
-	# find duplicated reactions (reactions must has a unique name)
-	duplicated = len(data[data.duplicated(['REACTION'])].index)
-
-	if duplicated > 0:
-		data[data.duplicated(['REACTION'])].to_csv('./conflicting_reactions.txt', sep = '\t', index = False)
-		data = data[~data.duplicated(['REACTION'], keep = 'first')]
-		print('It was found duplicated reaction names in the network.\n' \
-			'Please check the conflicting_reactions.txt and correct them if necessary.')
-
-	return data
+from .utils import read_network, check_metabolic_network, location_keys, location_values
 
 def monomers_from_metabolic_network(model, data, verbose = False, toFile = False):
 	# find unique metabolites and correct names
@@ -400,7 +382,7 @@ def construct_model_from_metabolic_network(network, verbose = False, toFile = Fa
 	model = Model()
 	[metabolites, p_monomers, complexes, hypernodes] = \
 		monomers_from_metabolic_network(model, data, verbose, toFile)
-	observables_from_metabolic_network(model, data, [metabolites, p_monomers, complexes, hypernodes], verbose, toFile)
-	rules_from_metabolic_network(model, data, verbose, toFile, noInitials, noObservables)
+	observables_from_metabolic_network(model, data, [metabolites, p_monomers, complexes, hypernodes], verbose, toFile, noInitials, noObservables)
+	rules_from_metabolic_network(model, data, verbose, toFile)
 
 	return model

@@ -17,27 +17,9 @@ import re
 import numpy
 import pandas
 
-from .utils import location_keys, location_values
+from .utils import read_network, check_genome_graph
 
-def read_network(infile_path):
-	with open(infile_path, 'r') as infile:
-		data = pandas.read_csv(infile, delimiter = '\t', header = 0, comment = '#')
-
-	return data
-
-def check_genome_graph(data):
-	# find duplicated reactions (reactions must has a unique name)
-	duplicated = len(data[data.duplicated(['UPSTREAM', 'DOWNSTREAM'])].index)
-
-	if duplicated > 0:
-		data[data.duplicated(['UPSTREAM', 'DOWNSTREAM'])].to_csv('./conflicting_interactions.txt', sep = '\t', index = False)
-		data = data[~data.duplicated(['UPSTREAM', 'DOWNSTREAM'], keep = 'first')]
-		print('It was found possible duplicated interactions in the network.\n' \
-			'Please check the conflicting_interactions.txt and correct them if necessary.')
-
-	return data
-
-def monomers_from_genome_graph(model, data, verbose = False, toFile = False):
+def monomers_from_genome_graph(data, verbose = False, toFile = False):
 	# find DNA parts
 	architecture = list(data['UPSTREAM']) + [data['DOWNSTREAM'].iloc[-1]]
 
@@ -122,19 +104,19 @@ def monomers_from_genome_graph(model, data, verbose = False, toFile = False):
 	else:
 		exec(code.replace('\n', ''))
 
-def polymerase_docking_rules(model, data, verbose = False, toFile = False):
+def polymerase_docking_rules(data, verbose = False, toFile = False):
 	architecture = list(data['UPSTREAM']) + [data['DOWNSTREAM'].iloc[-1]]
 
 	for idx, dna_part in enumerate(architecture):
-		if 'pro' in dna_part: # docking rules
+		if 'pro' in dna_part.lower(): # docking rules
 			name = dna_part.split('-')[0]
 			type = dna_part.split('-')[1]
 
 			code = 'Rule(\'docking_{:s}\',\n' \
-				'	cplx(name = \'RNAP-CPLX\', dna = None) +\n' \
-				'	dna(name = \'{:s}\', type = \'{:s}\', prot = None) |\n' \
-				'	cplx(name = \'RNAP-CPLX\', dna = 1) %\n' \
-				'	dna(name = \'{:s}\', type = \'{:s}\', prot = 1),\n' \
+				'	cplx(name = \'RNAP-CPLX\', loc = \'cyt\', dna = None) +\n' \
+				'	dna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = None) |\n' \
+				'	cplx(name = \'RNAP-CPLX\', loc = \'cyt\', dna = 1) %\n' \
+				'	dna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = 1),\n' \
 				'	Parameter(\'fwd_docking_{:s}\', {:f}),\n' \
 				'	Parameter(\'rvs_docking_{:s}\', {:f}))\n'
 			code = code.format(
@@ -151,9 +133,9 @@ def polymerase_docking_rules(model, data, verbose = False, toFile = False):
 			else:
 				exec(code)
 
-def polymerase_sliding_rules(model, data, verbose = False, toFile = False):
+def polymerase_sliding_rules(data, verbose = False, toFile = False):
 	for idx, (dna_part1, dna_part2) in enumerate(zip(data['UPSTREAM'], data['DOWNSTREAM'])):
-		dna_part1, dna_part2 = (dna_part1, dna_part2)
+		#dna_part1, dna_part2 = (dna_part1, dna_part2)
 		name1 = dna_part1.split('-')[0]
 		type1 = dna_part1.split('-')[1]
 		name2 = dna_part2.split('-')[0]
@@ -173,14 +155,14 @@ def polymerase_sliding_rules(model, data, verbose = False, toFile = False):
 			type2 = dna_part2.split('-')[0]
 
 		code = 'Rule(\'sliding_{:s}\',\n' \
-			'	cplx(name = \'RNAP-CPLX\', dna = 1) %\n' \
-			'	dna(name = \'{:s}\', type = \'{:s}\', prot = 1) +\n' \
+			'	cplx(name = \'RNAP-CPLX\', loc = \'cyt\', dna = 1) %\n' \
+			'	dna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = 1) +\n' \
 			'	None +\n' \
-			'	dna(name = \'{:s}\', type = \'{:s}\', prot = None) >>\n' \
-			'	cplx(name = \'RNAP-CPLX\', dna = 1) %\n' \
-			'	dna(name = \'{:s}\', type = \'{:s}\', prot = 1) +\n' \
-			'	rna(name = \'{:s}\', type = \'{:s}\', prot = None, rna = None) +\n' \
-			'	dna(name = \'{:s}\', type = \'{:s}\', prot = None),\n' \
+			'	dna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = None) >>\n' \
+			'	cplx(name = \'RNAP-CPLX\', loc = \'cyt\', dna = 1) %\n' \
+			'	dna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = 1) +\n' \
+			'	rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', dna = None, met = None, prot = None, rna = None) +\n' \
+			'	dna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = None),\n' \
 			'	Parameter(\'fwd_sliding_{:s}\', {:f}))\n'
 		code = code.format(
 			dna_part1, name1, type1, name2, type2, name2, type2, name2, type2, name1, type1,
@@ -195,7 +177,7 @@ def polymerase_sliding_rules(model, data, verbose = False, toFile = False):
 		else:
 			exec(code)
 
-def polymerase_falloff_rules(model, data, verbose = False, toFile = False):
+def polymerase_falloff_rules(data, verbose = False, toFile = False):
 	architecture = list(data['UPSTREAM']) + [data['DOWNSTREAM'].iloc[-1]]
 
 	for idx, dna_part in enumerate(architecture):
@@ -204,10 +186,10 @@ def polymerase_falloff_rules(model, data, verbose = False, toFile = False):
 			type = dna_part.split('-')[1]
 
 			code = 'Rule(\'falloff_{:s}\',\n' \
-				'	cplx(name = \'RNAP-CPLX\', dna = 1) %\n' \
-				'	dna(name = \'{:s}\', type = \'{:s}\', prot = 1) >>\n' \
-				'	cplx(name = \'RNAP-CPLX\', dna = None) +\n' \
-				'	dna(name = \'{:s}\', type = \'{:s}\', prot = None),\n' \
+				'	cplx(name = \'RNAP-CPLX\', loc = \'cyt\', dna = 1) %\n' \
+				'	dna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = 1) >>\n' \
+				'	cplx(name = \'RNAP-CPLX\', loc = \'cyt\', dna = None) +\n' \
+				'	dna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = None),\n' \
 				'	Parameter(\'fwd_falloff_{:s}\', {:f}))\n'
 			code = code.format(
 				dna_part, name, type, name, type,
@@ -222,7 +204,7 @@ def polymerase_falloff_rules(model, data, verbose = False, toFile = False):
 			else:
 				exec(code)
 
-def ribosome_docking_rules(model, data, verbose = False, toFile = False):
+def ribosome_docking_rules(data, verbose = False, toFile = False):
 	architecture = list(data['UPSTREAM']) + [data['DOWNSTREAM'].iloc[-1]]
 
 	for idx, dna_part in enumerate(architecture):
@@ -231,10 +213,10 @@ def ribosome_docking_rules(model, data, verbose = False, toFile = False):
 			type = dna_part.split('-')[1]
 
 			code = 'Rule(\'dr_{:s}\',\n' \
-				'	cplx(name = \'RIBOSOME-CPLX\', rna = None) +\n' \
-				'	rna(name = \'{:s}\', type = \'{:s}\', prot = None) |\n' \
-				'	cplx(name = \'RIBOSOME-CPLX\', rna = 1) %\n' \
-				'	rna(name = \'{:s}\', type = \'{:s}\', prot = 1),\n' \
+				'	cplx(name = \'RIBOSOME-CPLX\', loc = \'cyt\', rna = None) +\n' \
+				'	rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = None) |\n' \
+				'	cplx(name = \'RIBOSOME-CPLX\', loc = \'cyt\', rna = 1) %\n' \
+				'	rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = 1),\n' \
 				'	Parameter(\'fwd_dr_{:s}\', {:f}),\n' \
 				'	Parameter(\'rvs_dr_{:s}\', {:f}))\n'
 			code = code.format(
@@ -251,9 +233,9 @@ def ribosome_docking_rules(model, data, verbose = False, toFile = False):
 			else:
 				exec(code)
 
-def ribosome_sliding_rules(model, data, verbose = False, toFile = False):
+def ribosome_sliding_rules(data, verbose = False, toFile = False):
 	for idx, (dna_part1, dna_part2) in enumerate(zip(data['UPSTREAM'], data['DOWNSTREAM'])):
-		dna_part1, dna_part2 = (dna_part1, dna_part2)
+		#dna_part1, dna_part2 = (dna_part1, dna_part2)
 
 		if 'BS' in dna_part1:  # catch binding sites to add to sliding rules
 			name1 = '_'.join(
@@ -281,14 +263,14 @@ def ribosome_sliding_rules(model, data, verbose = False, toFile = False):
 		if forward:
 			if 'cds' in type2:
 				code = 'Rule(\'sr_{:s}\',\n' \
-					'	cplx(name = \'RIBOSOME-CPLX\', rna = 1) %\n' \
-					'	rna(name = \'{:s}\', type = \'{:s}\', prot = 1) +\n' \
+					'	cplx(name = \'RIBOSOME-CPLX\', loc = \'cyt\', rna = 1) %\n' \
+					'	rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = 1) +\n' \
 					'	None +\n' \
-					'	rna(name = \'{:s}\', type = \'{:s}\', prot = None) >> \n' \
+					'	rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = None) >> \n' \
 					'	cplx(name = \'RIBOSOME-CPLX\', rna = 1) %\n' \
-					'	rna(name = \'{:s}\', type = \'{:s}\', prot = 1) +\n' \
+					'	rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = 1) +\n' \
 					'	prot(name = \'{:s}\', loc = \'cyt\', dna = None, met = None, prot = None, rna = None, up = None, dw = None) +\n' \
-					'	rna(name = \'{:s}\', type = \'{:s}\', prot = None),\n' \
+					'	rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = None),\n' \
 					'	Parameter(\'fwd_sr_{:s}\', {:f}))\n'
 				code = code.format(
 					dna_part1, name1, type1, name2, type2, name2, type2, name2, name2, type2,
@@ -296,12 +278,12 @@ def ribosome_sliding_rules(model, data, verbose = False, toFile = False):
 
 			else: # sliding without protein synthesis
 				code = 'Rule(\'sr_{:s}\',\n' \
-					'	cplx(name = \'RIBOSOME-CPLX\', rna = 1) %\n' \
-					'	rna(name = \'{:s}\', type = \'{:s}\', prot = 1) +\n' \
-					'	rna(name = \'{:s}\', type = \'{:s}\', prot = None) >>\n' \
-					'	cplx(name = \'RIBOSOME-CPLX\', rna = 1) %\n' \
-					'	rna(name = \'{:s}\', type = \'{:s}\', prot = 1) +\n' \
-					'	rna(name = \'{:s}\', type = \'{:s}\', prot = None),\n' \
+					'	cplx(name = \'RIBOSOME-CPLX\', loc = \'cyt\', rna = 1) %\n' \
+					'	rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = 1) +\n' \
+					'	rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = None) >>\n' \
+					'	cplx(name = \'RIBOSOME-CPLX\', loc = \'cyt\', rna = 1) %\n' \
+					'	rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = 1) +\n' \
+					'	rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = None),\n' \
 					'	Parameter(\'fwd_sr_{:s}\', {:f}))\n'
 				code = code.format(
 					dna_part1, name1, type1, name2, type2, name2, type2, name1, type1,
@@ -316,7 +298,7 @@ def ribosome_sliding_rules(model, data, verbose = False, toFile = False):
 			else:
 				exec(code)
 
-def ribosome_falloff_rules(model, data, verbose = False, toFile = False):
+def ribosome_falloff_rules(data, verbose = False, toFile = False):
 	architecture = list(data['UPSTREAM']) + [data['DOWNSTREAM'].iloc[-1]]
 
 	for idx, dna_part in enumerate(architecture):
@@ -325,10 +307,10 @@ def ribosome_falloff_rules(model, data, verbose = False, toFile = False):
 			type = dna_part.split('-')[1]
 
 			code = 'Rule(\'fr_{:s}\',\n' \
-				'	cplx(name = \'RIBOSOME-CPLX\', rna = 1) %\n' \
-				'	rna(name = \'{:s}\', type = \'{:s}\', prot = 1) >>\n' \
-				'	cplx(name = \'RIBOSOME-CPLX\', rna = None) +\n' \
-				'	rna(name = \'{:s}\', type = \'{:s}\', prot = None),\n' \
+				'	cplx(name = \'RIBOSOME-CPLX\', loc = \'cyt\', rna = 1) %\n' \
+				'	rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = 1) >>\n' \
+				'	cplx(name = \'RIBOSOME-CPLX\', loc = \'cyt\', rna = None) +\n' \
+				'	rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = None),\n' \
 				'	Parameter(\'fwd_fr_{:s}\', 0))\n'
 			code = code.format(
 				dna_part, name, type, name, type,
@@ -343,7 +325,7 @@ def ribosome_falloff_rules(model, data, verbose = False, toFile = False):
 			else:
 				exec(code)
 
-def observables_from_genome_graph(model, data, verbose = False, toFile = False):
+def observables_from_genome_graph(data, verbose = False, toFile = False):
 	architecture = data['UPSTREAM'] + ',' + data['DOWNSTREAM']
 	operons = []
 	for dna_part in architecture:
@@ -489,27 +471,39 @@ def construct_model_from_genome_graph(network, verbose = False, toFile = False):
 	elif isinstance(network, pandas.DataFrame):
 		data = network
 	elif isinstance(network, numpy.array):
-		data = pandas.DataFrame(data = network)
+		columns = [
+			'UPSTREAM',
+			'DOWNSTREAM',
+			'RNAP_FWD_DOCK_RATE',
+			'RNAP_RVS_DOCK_RATE',
+			'RNAP_FWD_SLIDE_RATE',
+			'RNAP_FWD_FALL_RATE',
+			'RIB_FWD_DOCK_RATE',
+			'RIB_RVS_DOCK_RATE',
+			'RIB_FWD_SLIDE_RATE',
+			'RIB_FWD_FALL_RATE'
+			]
+		data = pandas.DataFrame(data = network, columns = columns)
 	else:
 		raise Exception("The network format is not yet supported.")
 	data = check_genome_graph(data)
 
 	model = Model()
-	monomers_from_genome_graph(model, data, verbose, toFile)
+	monomers_from_genome_graph(data, verbose, toFile)
 
 	# write docking, slide, and falloff of RNA Polymerase from DNA
-	polymerase_docking_rules(model, data, verbose, toFile)
-	polymerase_sliding_rules(model, data, verbose, toFile)
-	polymerase_falloff_rules(model, data, verbose, toFile)
+	polymerase_docking_rules(data, verbose, toFile)
+	polymerase_sliding_rules(data, verbose, toFile)
+	polymerase_falloff_rules(data, verbose, toFile)
 
 	# write docking, slide, and falloff of RIBOSOME-CPLX from RNA
-	ribosome_docking_rules(model, data, verbose, toFile)
-	ribosome_sliding_rules(model, data, verbose, toFile)
-	ribosome_falloff_rules(model, data, verbose, toFile)
+	ribosome_docking_rules(data, verbose, toFile)
+	ribosome_sliding_rules(data, verbose, toFile)
+	ribosome_falloff_rules(data, verbose, toFile)
 
 	# TODO
 	# write docking, slide, and falloff of RNASE-CPLX from RNA
 	# write docking, slide, and falloff of PROTEASE-CPLX from protein
-	observables_from_genome_graph(model, data, verbose, toFile)
+	observables_from_genome_graph(data, verbose, toFile)
 
 	return model
