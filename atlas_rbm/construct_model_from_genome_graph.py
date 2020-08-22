@@ -44,6 +44,7 @@ def monomers_from_genome_graph(model, data, verbose = False, toFile = False):
 	names = []
 	types = []
 	for dna_part in architecture:
+		dna_part = dna_part.replace('[', '').replace(']', '')
 		if 'BS' in dna_part:
 			names.append('_'.join(
 				[dna_part.split('-')[0],
@@ -55,13 +56,14 @@ def monomers_from_genome_graph(model, data, verbose = False, toFile = False):
 
 	# dna
 	code = "Monomer('dna',\n" \
-		"	['name', 'type', 'prot', 'rna', 'up', 'dw'],\n" \
+		"	['name', 'type', 'loc', 'dna', 'met', 'prot', 'rna', 'up', 'dw'],\n" \
 		"	{{ 'name' : [{:s}],\n" \
-		"	'type' : [{:s}]}})\n"
+		"	'type' : [{:s}],\n" \
+		"	'loc' : ['cyt']}})\n"
 
 	code = code.format(
-		', '.join([ '\'' + x.replace('[', '').replace(']', '') + '\'' for x in sorted(set(names))]),
-		', '.join([ '\'' + x.replace('[', '').replace(']', '') + '\'' for x in sorted(set(types + ['BS']))]))
+		', '.join([ '\'' + x + '\'' for x in sorted(set(names))]),
+		', '.join([ '\'' + x + '\'' for x in sorted(set(types + ['BS']))]))
 
 	if verbose:
 		print(code)
@@ -73,13 +75,14 @@ def monomers_from_genome_graph(model, data, verbose = False, toFile = False):
 
 	# rna
 	code = "Monomer('rna',\n" \
-		"	['name', 'type', 'prot', 'rna'],\n" \
+		"	['name', 'type', 'loc', 'dna', 'met', 'prot', 'rna', 'up', 'dw'],\n" \
 		"	{{ 'name' : [{:s}],\n" \
-		"	'type' : [{:s}]}})\n"
+		"	'type' : [{:s}],\n" \
+		"	'loc' : ['cyt']}})\n"
 
 	code = code.format(
-		', '.join([ '\'' + x.replace('[', '').replace(']', '') + '\'' for x in sorted(set(names))]),
-		', '.join([ '\'' + x.replace('[', '').replace(']', '') + '\'' for x in sorted(set(types + ['BS']))]))
+		', '.join([ '\'' + x + '\'' for x in sorted(set(names))]),
+		', '.join([ '\'' + x + '\'' for x in sorted(set(types + ['BS']))]))
 
 	if verbose:
 		print(code)
@@ -94,7 +97,7 @@ def monomers_from_genome_graph(model, data, verbose = False, toFile = False):
 		"	['name', 'loc', 'dna', 'met', 'prot', 'rna', 'up', 'dw'],\n" \
 		"	{{ 'name' : [{:s}],\n" \
 		"	'loc' : ['cyt', 'mem']}})\n"
-	names = [ x.replace('[', '').replace(']', '') for x in names if not x.startswith('BS') ]
+	names = [ x for x in names if not x.startswith('BS') ]
 	code = code.format(', '.join([ '\'' + x + '\'' for x in sorted(set(names))]))
 
 	if verbose:
@@ -107,7 +110,7 @@ def monomers_from_genome_graph(model, data, verbose = False, toFile = False):
 
 	# complexes
 	code = "Monomer('cplx',\n" \
-		"	['name', 'loc', 'dna', 'prot', 'rna'],\n" \
+		"	['name', 'loc', 'dna', 'met', 'prot', 'rna'],\n" \
 		"	{ 'name' : ['RNAP_CPLX', 'RIBOSOME_CPLX'],\n" \
 		"	'loc' : ['cyt']})\n"
 
@@ -354,27 +357,60 @@ def observables_from_genome_graph(model, data, verbose = False, toFile = False):
 		else:
 			operon.append(dna_part.split(',')[0])
 
+	# prots
 	for operon in list(set(operons)):
-		operon = operon.split(',')
-		for monomer in operon:
-			## create link indexes
-			dw = [None] * len(operon)
-			start_link = 1
-			for index in range(len(operon)-1):
-				dw[index] = start_link
-				start_link += 1
-			up = dw[-1:] + dw[:-1]
+		names = [(m.start(0), m.end(0)) for m in re.finditer(r'\w+-cds\d?', operon)]
 
-			complex_pysb = []
-			for index, monomer in enumerate(operon):
-				complex_pysb.append('dna(name = \'{:s}\', type = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = {:s}, dw = {:s})'.format(
-					monomer.split('-')[0], monomer.split('-')[1], 'cyt', str(up[index]), str(dw[index])))
+		prots = []
+		for lst in names:
+			prots.append(operon[lst[0]:lst[1]].split('-')[0])
 
-			complex_pysb = ' %\n	'.join(complex_pysb)
+		for name in prots:
+			code = 'Initial(prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None),\n' \
+			'	Parameter(\'t0_prot_{:s}_{:s}\', 0))\n'
+			code = code.format(name, 'cyt', name, 'cyt')
+
+			if verbose:
+				print(code)
+			if toFile:
+				with open(toFile, 'a+') as outfile:
+					outfile.write(code)
+			else:
+				exec(code.replace('\t', ' ').replace('\n', ' '))
+
+			code = 'Observable(\'obs_prot_{:s}_{:s}\',\n' \
+				'	prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None))\n'
+			code = code.format(name, 'cyt', name, 'cyt')
+
+			if verbose:
+				print(code)
+			if toFile:
+				with open(toFile, 'a+') as outfile:
+					outfile.write(code)
+			else:
+				exec(code.replace('\t', ''))
+
+		operon_name = ''.join(prots)
+
+		# dnas
+		## create link indexes
+		dw = [None] * len(operon.split(','))
+		start_link = 1
+		for index in range(len(operon.split(','))-1):
+			dw[index] = start_link
+			start_link += 1
+		up = dw[-1:] + dw[:-1]
+
+		complex_pysb = []
+		for index, monomer in enumerate(operon.split(',')):
+			complex_pysb.append('dna(name = \'{:s}\', type = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = {:s}, dw = {:s})'.format(
+				monomer.split('-')[0], monomer.split('-')[1], 'cyt', str(up[index]), str(dw[index])))
+
+		complex_pysb = ' %\n	'.join(complex_pysb)
 
 		code = 'Initial({:s},\n' \
 			'	Parameter(\'t0_dna_{:s}\', 0))\n'
-		code = code.format(complex_pysb, monomer.split('-')[0])
+		code = code.format(complex_pysb, operon_name)
 
 		if verbose:
 			print(code)
@@ -386,7 +422,7 @@ def observables_from_genome_graph(model, data, verbose = False, toFile = False):
 
 		code = 'Observable(\'obs_dna_{:s}\',\n' \
 			'	{:s})\n'
-		code = code.format(monomer.split('-')[0], complex_pysb)
+		code = code.format(operon_name, complex_pysb)
 
 		if verbose:
 			print(code)
@@ -396,17 +432,12 @@ def observables_from_genome_graph(model, data, verbose = False, toFile = False):
 		else:
 			exec(code.replace('\t', ' ').replace('\n', ' '))
 
-	# rnas start at any promoter and ends at any terminator
-	for operon in list(set(operons)):
-		operon = operon.split(',')
+		# rnas start at any promoter and ends at any terminator
 		rna_forms = []
-
-		for operon in operons:
-			a = [(m.start(0), m.end(0)) for m in re.finditer(r'\w+-pro\d?', operon)]
-			b = [(m.start(0), m.end(0)) for m in re.finditer(r'\w+-ter\d?', operon)]
-
-			for lst in itertools.product(a, b):
-				rna_forms.append(string[lst[0][0]:lst[1][1]].split(','))
+		a = [(m.start(0), m.end(0)) for m in re.finditer(r'\w+-pro\d?', operon)]
+		b = [(m.start(0), m.end(0)) for m in re.finditer(r'\w+-ter\d?', operon)]
+		for lst in itertools.product(a, b):
+			rna_forms.append(operon[lst[0][0]:lst[1][1]].split(','))
 
 		for idx, rna_form in enumerate(rna_forms):
 			## create link indexes
@@ -426,7 +457,7 @@ def observables_from_genome_graph(model, data, verbose = False, toFile = False):
 
 			code = 'Initial({:s},\n' \
 				'	Parameter(\'t0_rna_{:s}_form{:d}\', 0))\n'
-			code = code.format(complex_pysb, monomer.split('-')[0], idx+1)
+			code = code.format(complex_pysb, operon_name, idx+1)
 
 			if verbose:
 				print(code)
@@ -438,7 +469,7 @@ def observables_from_genome_graph(model, data, verbose = False, toFile = False):
 
 			code = 'Observable(\'obs_rna_{:s}_form{:d}\',\n' \
 				'	{:s})\n'
-			code = code.format(monomer.split('-')[0], idx+1, complex_pysb)
+			code = code.format(operon_name, idx+1, complex_pysb)
 
 			if verbose:
 				print(code)
@@ -481,6 +512,6 @@ def construct_model_from_genome_graph(network, verbose = False, toFile = False):
 	# write docking, slide, and falloff of PROTEASE-CPLX from protein
 	# write initials from genome graph
 	# write observables from genome graph
-	#observables_from_genome_graph(model, data, verbose, toFile)
+	observables_from_genome_graph(model, data, verbose, toFile)
 
 	return model
