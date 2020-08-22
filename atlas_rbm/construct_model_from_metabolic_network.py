@@ -185,7 +185,7 @@ def rules_from_metabolic_network(model, data, verbose = False, toFile = False):
 			enzyme = 'prot(name = \'{:s}\', loc = \'{:s}\')'.format(rxn['GENE OR COMPLEX'].replace('-', '_'), loc)
 
 		# second: correct reaction names starting with a digit
-		name = rxn['REACTION'].replace('-', '_')
+		name = rxn['REACTION'].replace('-', '_').replace('.', 'dot')
 		if name[0].isdigit():
 			name = '_' + name
 
