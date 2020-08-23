@@ -27,11 +27,8 @@ def monomers_from_genome_graph(data, verbose = False, toFile = False):
 	types = []
 	for dna_part in architecture:
 		dna_part = dna_part.replace('[', '').replace(']', '')
-		if 'BS' in dna_part:
-			names.append('_'.join(
-				[dna_part.split('-')[0],
-				dna_part.split('-')[2],
-				dna_part.split('-')[3]]))
+		if dna_part.startswith('BS'):
+			names.append('_'.join([dna_part.split('-')[0], dna_part.split('-')[2], dna_part.split('-')[3]]))
 		else:
 			names.append(dna_part.split('-')[0])
 		types.append(dna_part.split('-')[1])

@@ -23,20 +23,23 @@ def monomers_from_metabolic_network(model, data, verbose = False, toFile = False
 	# find unique metabolites and correct names
 	tmp = list(data['SUBSTRATES'].values) + list(data['PRODUCTS'].values)
 	tmp = ','.join(tmp)
-	for key in location_keys().keys():
-		tmp = tmp.replace(key + '-', '').replace(key + '_', '').replace('+', 'plus')
 
+	# correct names
 	metabolites = list(set(tmp.split(',')))
 	for index, met in enumerate(metabolites):
-		if met[0].isdigit():
-			metabolites[index] = '_' + met
+		for key in location_keys().keys():
+			if met.startswith(key + '-'):
+				metabolites[index] = met[len(key + '-'):]
+			if met[0].isdigit():
+				metabolites[index] = '_' + met
+	metabolites = list(set(metabolites))
 
 	code = "Monomer('met',\n" \
 		"	['name', 'loc', 'prot'],\n" \
 		"	{{ 'name' : [ {:s} ],\n" \
 		"	'loc' : [{:s}]}})\n"
 
-	all_mets = [ '\'' + x.replace('-', '_') + '\'' for x in sorted(metabolites) ]
+	all_mets = [ '\'' + x.replace('-', '_').replace('+', 'plus') + '\'' for x in sorted(metabolites) ]
 	all_locs = [ '\'' + x.lower() + '\'' for x in sorted(location_keys().keys()) ]
 	code = code.format(', '.join(all_mets), ', '.join(all_locs))
 
@@ -167,7 +170,7 @@ def rules_from_metabolic_network(model, data, verbose = False, toFile = False):
 			enzyme = 'prot(name = \'{:s}\', loc = \'{:s}\')'.format(rxn['GENE OR COMPLEX'].replace('-', '_'), loc)
 
 		# second: correct reaction names starting with a digit
-		name = rxn['REACTION'].replace('-', '_').replace('.', 'dot')
+		name = rxn['REACTION'].replace('-', '_').replace('.', 'dot').replace('+', 'plus')
 		if name[0].isdigit():
 			name = '_' + name
 
@@ -192,8 +195,8 @@ def rules_from_metabolic_network(model, data, verbose = False, toFile = False):
 			islocated = False
 			for loc in locations:
 				loc = location_values()[loc]
-				if loc in subs:
-					LHS.append('met(name = \'{:s}\', loc = \'{:s}\', prot = None)'.format(subs.replace(loc + '_', ''), loc.lower()))
+				if subs.startswith(loc + '_'):
+					LHS.append('met(name = \'{:s}\', loc = \'{:s}\', prot = None)'.format(subs[len(loc + '_'):], loc.lower()))
 					islocated = True
 			if not islocated:
 				LHS.append('met(name = \'{:s}\', loc = \'{:s}\', prot = None)'.format(subs, 'cyt'))
@@ -202,8 +205,8 @@ def rules_from_metabolic_network(model, data, verbose = False, toFile = False):
 			islocated = False
 			for loc in locations:
 				loc = location_values()[loc]
-				if loc in prod:
-					RHS.append('met(name = \'{:s}\', loc = \'{:s}\', prot = None)'.format(prod.replace(loc + '_', ''), loc.lower()))
+				if prod.startswith(loc + '_'):
+					RHS.append('met(name = \'{:s}\', loc = \'{:s}\', prot = None)'.format(prod[len(loc + '_'):], loc.lower()))
 					islocated = True
 			if not islocated:
 				RHS.append('met(name = \'{:s}\', loc = \'{:s}\', prot = None)'.format(prod, 'cyt'))

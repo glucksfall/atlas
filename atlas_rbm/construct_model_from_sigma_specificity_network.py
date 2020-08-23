@@ -18,7 +18,7 @@ import numpy
 import pandas
 
 from .utils import read_network, check_genome_graph, check_interaction_network
-from .construct_model_from_genome_graph import monomers_from_genome_graph
+from .construct_model_from_genome_graph import monomers_from_genome_graph, observables_from_genome_graph
 
 def polymerase_docking_rules(data, data_arq, verbose, toFile):
 	RULE_LHS = []
@@ -134,7 +134,7 @@ def polymerase_docking_rules(data, data_arq, verbose, toFile):
 	RULE_RHS = []
 	for i in data.index:
 		## data
-		agents = (data.iloc[i, 0] + ',' + data.iloc[i, 1]).replace('[', '').replace(']', '')
+		agents = (data['SOURCE'].iloc[i] + ',' + data['TARGET'].iloc[i]).replace('[', '').replace(']', '')
 		names = agents.split(',')
 
 		## write the RHS
@@ -151,7 +151,7 @@ def polymerase_docking_rules(data, data_arq, verbose, toFile):
 			else:
 				molecule = name
 
-			if 'pro' in name:
+			if 'pro' in name.lower():
 				molecule = '{:s}\', type = \'{:s}'.format(molecule.split('-')[-2], molecule.split('-')[-1])
 				RHS.append('dna(name = \'{:s}\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule))
 			elif 'SMALL' in name:
@@ -219,9 +219,9 @@ def polymerase_docking_rules(data, data_arq, verbose, toFile):
 
 		RULE_RHS.append(RHS)
 
-	for index, sigma in enumerate(data.index):
+	for index in data.index:
 		for dna_part1 in data_arq['UPSTREAM']:
-			if data['TARGET'].iloc[sigma] == dna_part1.replace('[', ''):
+			if data['TARGET'].iloc[index] == dna_part1.replace('[', ''):
 				## complete rule
 				code = 'Rule(\'docking_{:d}_{:s}\',\n' \
 					'	{:s} |\n' \
@@ -231,8 +231,8 @@ def polymerase_docking_rules(data, data_arq, verbose, toFile):
 
 				code = code.format(
 					index+1, dna_part1.replace('[', ''), RULE_LHS[index], RULE_RHS[index],
-					index+1, dna_part1.replace('[', ''), data['FWD_DOCK_RATE'].iloc[sigma],
-					index+1, dna_part1.replace('[', ''), data['RVS_DOCK_RATE'].iloc[sigma])
+					index+1, dna_part1.replace('[', ''), data['FWD_DOCK_RATE'].iloc[index],
+					index+1, dna_part1.replace('[', ''), data['RVS_DOCK_RATE'].iloc[index])
 
 				code = code.replace('-', '_')
 				if verbose:
@@ -267,7 +267,6 @@ def polymerase_sliding_from_promoters_rules(data, data_arq, verbose, toFile):
 					else:
 						molecule = name
 
-	#                 if 'BS' in name:
 					if 'pro' in name.lower() or 'rbs' in name.lower():
 						molecule = '{:s}\', type = \'{:s}'.format(molecule.split('-')[-2], molecule.split('-')[-1])
 						LHS.append('dna(name = \'{:s}\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule))
@@ -328,9 +327,9 @@ def polymerase_sliding_from_promoters_rules(data, data_arq, verbose, toFile):
 
 					if count_dnas > 1:
 						dw = ['WILD'] * count_dnas
-			#			 for dna_index in range(count_dnas-1):
-			#				 dw[dna_index] = starter_link
-			#				 starter_link += 1
+						#for dna_index in range(count_dnas-1):
+							#dw[dna_index] = starter_link
+							#starter_link += 1
 						up = dw[-1:] + dw[:-1]
 						## and replace indexes
 						c = list(zip(up, dw))
@@ -362,7 +361,7 @@ def polymerase_sliding_from_promoters_rules(data, data_arq, verbose, toFile):
 		for dna_part1, dna_part2 in zip(data_arq['UPSTREAM'], data_arq['DOWNSTREAM']):
 			if data['TARGET'].iloc[sigma] == dna_part1.replace('[', ''):
 				# data
-				agents = (','.join(data['SOURCE'].iloc[sigma].split(',')[:-1]) + ',BS-' + dna_part2) + '],' + data['TARGET'].iloc[sigma].split(',')[-1][:-1] + ',BS-' + dna_part1
+				agents = (','.join(data['SOURCE'].iloc[sigma].split(',')) + ',BS-' + dna_part2) + '],' + data['TARGET'].iloc[sigma].split(',')[-1][:-1] + ',BS-' + dna_part1
 				names = agents.split(',')
 
 				## form the RHS
@@ -380,17 +379,13 @@ def polymerase_sliding_from_promoters_rules(data, data_arq, verbose, toFile):
 					else:
 						molecule = name
 
-					if 'BS' in name:
-						if 'pro' in name or 'rbs' in name or 'cds' in name:
-							molecule = '{:s}\', type = \'{:s}'.format(molecule.split('-')[-2], molecule.split('-')[-1])
-						RHS.append('dna(name = \'{:s}\', prot = dna_link, up = bs_link, dw = bs_link)' \
-								.format(molecule))
+					if 'pro' in name.lower() or 'rbs' in name.lower() or 'cds' in name.lower():
+						molecule = '{:s}\', type = \'{:s}'.format(molecule.split('-')[-2], molecule.split('-')[-1])
+						RHS.append('dna(name = \'{:s}\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule))
 					elif 'SMALL' in name:
-						RHS.append('met(name = \'{:s}\', prot = met_link)' \
-								.format(molecule.replace('SMALL-', '')))
+						RHS.append('met(name = \'{:s}\', prot = met_link)'.format(molecule.replace('SMALL-', '')))
 					else:
-						RHS.append('prot(name = \'{:s}\', dna = dna_link, met = met_link, up = prot_link, dw = prot_link)' \
-								.format(molecule))
+						RHS.append('prot(name = \'{:s}\', dna = dna_link, met = met_link, up = prot_link, dw = prot_link)'.format(molecule))
 
 				molecule = '{:s}\', type = \'{:s}'.format(dna_part2.split('-')[0], dna_part2.split('-')[1])
 				RHS.append('rna(name = \'{:s}\', prot = None)'.format(molecule))
@@ -447,9 +442,9 @@ def polymerase_sliding_from_promoters_rules(data, data_arq, verbose, toFile):
 
 					if count_dnas > 1:
 						dw = ['WILD'] * count_dnas
-			#			 for dna_index in range(count_dnas-1):
-			#				 dw[dna_index] = starter_link
-			#				 starter_link += 1
+						#for dna_index in range(count_dnas-1):
+							#dw[dna_index] = starter_link
+							#starter_link += 1
 						up = dw[-1:] + dw[:-1]
 						## and replace indexes
 						c = list(zip(up, dw))
@@ -487,11 +482,11 @@ def polymerase_sliding_from_promoters_rules(data, data_arq, verbose, toFile):
 				code = 'Rule(\'sliding_{:d}_{:s}\',\n' \
 					'	{:s} >>\n' \
 					'	{:s},\n' \
-					'	Parameter(\'fwd_sliding_{:d}_{:s}\', {:f}))' \
+					'	Parameter(\'fwd_sliding_{:d}_{:s}\', {:f}))\n' \
 
 				code = code.format(
-					index+1, dna_part1.replace('[', '') + '_' + dna_part2.split('-')[-1], RULE_LHS[index], RULE_RHS[index],
-					index+1, dna_part1.replace('[', '') + '_' + dna_part2.split('-')[-1], data.iloc[i, 4])
+					index+1, dna_part1.replace('[', '') + '_' + dna_part2.split('-')[-1], RULE_LHS[index], RULE_RHS[index].replace('[', ''),
+					index+1, dna_part1.replace('[', '') + '_' + dna_part2.split('-')[-1], data['FWD_SLIDE_RATE'].iloc[sigma])
 
 				code = code.replace('-', '_')
 				if verbose:
@@ -503,270 +498,266 @@ def polymerase_sliding_from_promoters_rules(data, data_arq, verbose, toFile):
 					exec(code)
 
 def polymerase_sliding_from_others_rules(data, data_arq, verbose, toFile):
-	RULE_LHS = []
-	for dna_part1, dna_part2 in zip(data_arq.iloc[:,0], data_arq.iloc[:,1]):
-		for i in data.index:
-			if 'pro' not in dna_part1:
-				# data
-				agents = (','.join(data.iloc[i, 0].split(',')[0:4]) + ',BS-' + dna_part1).replace(']', '') + ']' + ',BS-' + dna_part2
-				names = agents.split(',')
+	architecture = data_arq['UPSTREAM'] + ',' + data_arq['DOWNSTREAM']
+	operons = []
+	for dna_part in architecture:
+		if dna_part.startswith('['):
+			operon = []
+			operon.append(dna_part.split(',')[0][1:])
+		elif dna_part.endswith(']'):
+			operon.append(dna_part.split(',')[0])
+			operon.append(dna_part.split(',')[1][:-1])
+			operons.append(','.join(operon))
+		else:
+			operon.append(dna_part.split(',')[0])
 
-				## form the LHS
-				LHS = []
-				next_in_complex = False
-				for name in names:
-					if name[0] == '[': # we are dealing with the first monomer of a complex
-						molecule = name[1:]
-						next_in_complex = True
-					elif name[-1] == ']': # we are dealing with the last monomer of a complex
-						molecule = name[:-1]
-						next_in_complex = False
-					elif next_in_complex: # we are dealing with a monomer part of a complex
-						molecule = name
-					else:
-						molecule = name
+	rna_forms = []
+	for operon in list(set(operons)):
+		a = [(m.start(0), m.end(0)) for m in re.finditer(r'\w+-pro\d?', operon)]
+		b = [(m.start(0), m.end(0)) for m in re.finditer(r'\w+-ter\d?', operon)]
+		for lst in itertools.product(a, b):
+			rna_forms.append(operon[lst[0][0]:lst[1][1]].split(',')[1:])
 
-					if 'BS' in name:
-						molecule = '{:s}\', type = \'{:s}'.format(molecule.split('-')[-2], molecule.split('-')[-1])
-						LHS.append('dna(name = \'{:s}\', prot = dna_link, up = bs_link, dw = bs_link)' \
-								.format(molecule))
-					elif 'SMALL' in name:
-						LHS.append('met(name = \'{:s}\', prot = met_link)' \
-								.format(molecule.replace('SMALL-', '')))
-					else:
-						LHS.append('prot(name = \'{:s}\', dna = dna_link, met = met_link, up = prot_link, dw = prot_link)' \
-								.format(molecule))
+	for rna_form in rna_forms:
+		for idx, dna_part in enumerate(rna_form[:-1]):
+			## form the LHS
+			agents = (','.join(data['SOURCE'].iloc[i].split(',')[:-1]) + ',BS-' + rna_form[idx].replace('[', '')).replace(']', '') + ']' + ',BS-' + rna_form[idx+1]
+			names = agents.split(',')
 
-				if 'ter' not in dna_part2:
-					LHS.append('None')
+			LHS = []
+			next_in_complex = False
+			for name in names:
+				if name[0] == '[': # we are dealing with the first monomer of a complex
+					molecule = name[1:]
+					next_in_complex = True
+				elif name[-1] == ']': # we are dealing with the last monomer of a complex
+					molecule = name[:-1]
+					next_in_complex = False
+				elif next_in_complex: # we are dealing with a monomer part of a complex
+					molecule = name
+				else:
+					molecule = name
 
-				## look for where starts and ends a complex in the LHS
-				complexes = [(m.start()+1, m.end()-1) for m in re.finditer(r'\[[A-Za-z0-9-_, ]+\]', agents)]
-				monomers = [(m.start(), m.end()) for m in re.finditer(r'[A-Za-z0-9-_]+', agents)]
+				if 'BS' in name:
+					molecule = '{:s}\', type = \'{:s}'.format(molecule.split('-')[-2], molecule.split('-')[-1])
+					LHS.append('dna(name = \'{:s}\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule))
+				elif 'SMALL' in name:
+					LHS.append('met(name = \'{:s}\', prot = met_link)'.format(molecule.replace('SMALL-', '')))
+				else:
+					LHS.append('prot(name = \'{:s}\', dna = dna_link, met = met_link, up = prot_link, dw = prot_link)'.format(molecule))
 
-				positions = []
-				for cplx_pos in reversed(complexes):
-					pos_i = None
-					pos_f = None
-					for index, kmer_pos in enumerate(monomers):
-						if cplx_pos[0] == kmer_pos[0]:
-							pos_i = index
-						if cplx_pos[1] == kmer_pos[1]:
-							pos_f = index
-							positions.append((pos_i, pos_f))
-							break
+			# match the synthesis of RNA in RHS
+			if not len(rna_form[:-2]) == idx:
+				LHS.append('None')
 
-				## join complexes following start and end positions
-				for position in positions:
-					## join agents and remove from LHS list because they were joined into one position
-					LHS[position[0]] = ' %\n    '.join(LHS[position[0]:position[1]+1])
-					for index in reversed(range(position[0]+1, position[1]+1)):
-						LHS.pop(index)
+			## look for where starts and ends a complex in the LHS
+			complexes = [(m.start()+1, m.end()-1) for m in re.finditer(r'\[[A-Za-z0-9-_, ]+\]', agents)]
+			monomers = [(m.start(), m.end()) for m in re.finditer(r'[A-Za-z0-9-_]+', agents)]
 
-				## create numbered links
-				starter_link = 1
-				for index, agent in enumerate(LHS):
-					count_small = agent.count('met(')
-					count_prots = agent.count('prot(')
-					count_dnas = agent.count('dna(')
+			positions = []
+			for cplx_pos in reversed(complexes):
+				pos_i = None
+				pos_f = None
+				for index, kmer_pos in enumerate(monomers):
+					if cplx_pos[0] == kmer_pos[0]:
+						pos_i = index
+					if cplx_pos[1] == kmer_pos[1]:
+						pos_f = index
+						positions.append((pos_i, pos_f))
+						break
 
-					if count_prots > 1:
-						dw = [None] * count_prots
-						for prot_index in range(count_prots-1):
-							dw[prot_index] = starter_link
+			## join complexes following start and end positions
+			for position in positions:
+				## join agents and remove from LHS list because they were joined into one position
+				LHS[position[0]] = ' %\n\t'.join(LHS[position[0]:position[1]+1])
+				for index in reversed(range(position[0]+1, position[1]+1)):
+					LHS.pop(index)
+
+			## create numbered links
+			starter_link = 1
+			for index, agent in enumerate(LHS):
+				count_small = agent.count('met(')
+				count_prots = agent.count('prot(')
+				count_dnas = agent.count('dna(')
+
+				if count_prots > 1:
+					dw = [None] * count_prots
+					for prot_index in range(count_prots-1):
+						dw[prot_index] = starter_link
+						starter_link += 1
+					up = dw[-1:] + dw[:-1]
+					## and replace indexes
+					c = list(zip(up, dw))
+					c = [elt for sublist in c for elt in sublist]
+					LHS[index] = LHS[index].replace('prot_link', '{}').format(*c)
+
+				if count_small >= 1 and count_prots >= 1:
+					dw = [None] * (count_small + count_prots)
+					for met_index in numpy.arange(0, count_small + count_prots, 2):
+						dw[met_index] = starter_link
+						dw[met_index-1] = starter_link
+						starter_link += 1
+					## and replace indexes
+					LHS[index] = LHS[index].replace('met_link', '{}').format(*tuple(dw))
+
+				if count_dnas > 1:
+					dw = ['WILD'] * count_dnas
+		#             for dna_index in range(count_dnas-1):
+		#                 dw[dna_index] = starter_link
+		#                 starter_link += 1
+					up = dw[-1:] + dw[:-1]
+					## and replace indexes
+					c = list(zip(up, dw))
+					c = [elt for sublist in c for elt in sublist]
+					LHS[index] = LHS[index].replace('bs_link', '{}').format(*c)
+
+				if count_dnas >= 1 and count_prots >= 1: # a protein is complexed with the dna
+					dw = [None] * (count_prots + count_dnas)
+					for dna_index in range(count_prots + count_dnas):
+						if dna_index == count_prots:
+							dw[dna_index] = starter_link
+							dw[dna_index-1] = starter_link
 							starter_link += 1
-						up = dw[-1:] + dw[:-1]
-						## and replace indexes
-						c = list(zip(up, dw))
-						c = [elt for sublist in c for elt in sublist]
-						LHS[index] = LHS[index].replace('prot_link', '{}').format(*c)
+					## and replace indexes
+					LHS[index] = LHS[index].replace('True', 'False').replace('dna_link', '{}').format(*dw)
 
-					if count_small >= 1 and count_prots >= 1:
-						dw = [None] * (count_small + count_prots)
-						for met_index in numpy.arange(0, count_small + count_prots, 2):
-							dw[met_index] = starter_link
-							dw[met_index-1] = starter_link
+				## final replace
+				LHS[index] = LHS[index].replace('prot_link', 'None')
+				LHS[index] = LHS[index].replace('met_link', 'None')
+				LHS[index] = LHS[index].replace('bs_link', 'WILD')
+				LHS[index] = LHS[index].replace('dna_link', 'None')
+
+			## LHS final join
+			LHS = ' +\n\t'.join(LHS)
+			RULE_LHS.append(LHS)
+
+			## form the RHS
+			agents = (','.join(data['SOURCE'].iloc[i].split(',')[:-1]) + ',BS-' + rna_form[idx+1].replace('[', '')).replace(']', '') + ']' + ',BS-' + rna_form[idx]
+			names = agents.split(',')
+
+			RHS = []
+			next_in_complex = False
+			for name in names:
+				if name[0] == '[': # we are dealing with the first monomer of a complex
+					molecule = name[1:]
+					next_in_complex = True
+				elif name[-1] == ']': # we are dealing with the last monomer of a complex
+					molecule = name[:-1]
+					next_in_complex = False
+				elif next_in_complex: # we are dealing with a monomer part of a complex
+					molecule = name
+				else:
+					molecule = name
+
+				if 'BS' in name:
+					molecule = '{:s}\', type = \'{:s}'.format(molecule.split('-')[-2], molecule.split('-')[-1])
+					RHS.append('dna(name = \'{:s}\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule))
+				elif 'SMALL' in name:
+					RHS.append('met(name = \'{:s}\', prot = met_link)'.format(molecule.replace('SMALL-', '')))
+				else:
+					RHS.append('prot(name = \'{:s}\', dna = dna_link, met = met_link, up = prot_link, dw = prot_link)'.format(molecule))
+
+			# synthesis of RNA
+			if not len(rna_form[:-2]) == idx:
+				molecule = '{:s}\', type = \'{:s}'.format(rna_form[idx+1].split('-')[0], rna_form[idx+1].split('-')[1])
+				RHS.append('rna(name = \'{:s}\', prot = None)'.format(molecule))
+
+			## look for where starts and ends a complex in the RHS
+			complexes = [(m.start()+1, m.end()-1) for m in re.finditer(r'\[[A-Za-z0-9-_, ]+\]', agents)]
+			monomers = [(m.start(), m.end()) for m in re.finditer(r'[A-Za-z0-9-_]+', agents)]
+
+			positions = []
+			for cplx_pos in reversed(complexes):
+				pos_i = None
+				pos_f = None
+				for index, kmer_pos in enumerate(monomers):
+					if cplx_pos[0] == kmer_pos[0]:
+						pos_i = index
+					if cplx_pos[1] == kmer_pos[1]:
+						pos_f = index
+						positions.append((pos_i, pos_f))
+						break
+
+			## join complexes following start and end positions
+			for position in positions:
+				## join agents and remove from RHS list because they were joined into one position
+				RHS[position[0]] = ' %\n\t'.join(RHS[position[0]:position[1]+1])
+				for index in reversed(range(position[0]+1, position[1]+1)):
+					RHS.pop(index)
+
+			## create numbered links
+			starter_link = 1
+			for index, agent in enumerate(RHS):
+				count_small = agent.count('met(')
+				count_prots = agent.count('prot(')
+				count_dnas = agent.count('dna(')
+
+				if count_prots > 1:
+					dw = [None] * count_prots
+					for prot_index in range(count_prots-1):
+						dw[prot_index] = starter_link
+						starter_link += 1
+					up = dw[-1:] + dw[:-1]
+					## and replace indexes
+					c = list(zip(up, dw))
+					c = [elt for sublist in c for elt in sublist]
+					RHS[index] = RHS[index].replace('prot_link', '{}').format(*c)
+
+				if count_small >= 1 and count_prots >= 1:
+					dw = [None] * (count_small + count_prots)
+					for met_index in numpy.arange(0, count_small + count_prots, 2):
+						dw[met_index] = starter_link
+						dw[met_index-1] = starter_link
+						starter_link += 1
+					## and replace indexes
+					RHS[index] = RHS[index].replace('met_link', '{}').format(*tuple(dw))
+
+				if count_dnas > 1:
+					dw = ['WILD'] * count_dnas
+		#             for dna_index in range(count_dnas-1):
+		#                 dw[dna_index] = starter_link
+		#                 starter_link += 1
+					up = dw[-1:] + dw[:-1]
+					## and replace indexes
+					c = list(zip(up, dw))
+					c = [elt for sublist in c for elt in sublist]
+					RHS[index] = RHS[index].replace('bs_link', '{}').format(*c)
+
+				if count_dnas >= 1 and count_prots >= 1: # a protein is complexed with the dna
+					dw = [None] * (count_prots + count_dnas)
+					for dna_index in range(count_prots + count_dnas):
+						if dna_index == count_prots:
+							dw[dna_index] = starter_link
+							dw[dna_index-1] = starter_link
 							starter_link += 1
-						## and replace indexes
-						LHS[index] = LHS[index].replace('met_link', '{}').format(*tuple(dw))
+					## and replace indexes
+					RHS[index] = RHS[index].replace('True', 'False').replace('dna_link', '{}').format(*dw)
 
-					if count_dnas > 1:
-						dw = ['WILD'] * count_dnas
-			#             for dna_index in range(count_dnas-1):
-			#                 dw[dna_index] = starter_link
-			#                 starter_link += 1
-						up = dw[-1:] + dw[:-1]
-						## and replace indexes
-						c = list(zip(up, dw))
-						c = [elt for sublist in c for elt in sublist]
-						LHS[index] = LHS[index].replace('bs_link', '{}').format(*c)
+				## final replace
+				RHS[index] = RHS[index].replace('prot_link', 'None')
+				RHS[index] = RHS[index].replace('met_link', 'None')
+				RHS[index] = RHS[index].replace('bs_link', 'WILD')
+				RHS[index] = RHS[index].replace('dna_link', 'None')
 
-					if count_dnas >= 1 and count_prots >= 1: # a protein is complexed with the dna
-						dw = [None] * (count_prots + count_dnas)
-						for dna_index in range(count_prots + count_dnas):
-							if dna_index == count_prots:
-								dw[dna_index] = starter_link
-								dw[dna_index-1] = starter_link
-								starter_link += 1
-						## and replace indexes
-						LHS[index] = LHS[index].replace('True', 'False').replace('dna_link', '{}').format(*dw)
+			## RHS final join
+			RHS = ' +\n\t'.join(RHS)
+			RULE_RHS.append(RHS)
 
-					## final replace
-					LHS[index] = LHS[index].replace('prot_link', 'None')
-					LHS[index] = LHS[index].replace('met_link', 'None')
-					LHS[index] = LHS[index].replace('bs_link', 'WILD')
-					LHS[index] = LHS[index].replace('dna_link', 'None')
-
-				## LHS final join
-				LHS = ' +\n    '.join(LHS)
-				RULE_LHS.append(LHS)
-
-				description.append('# ' + ', '.join(data.iloc[i, 0].split(', ')[0:4]) + '] slides to ' + dna_part2)
-
-			break # do not remove
-
-	description = []
-	RULE_RHS = []
-
-	for dna_part1, dna_part2 in zip(data_arq.iloc[:,0], data_arq.iloc[:,1]):
-		for i in data.index:
-			if 'pro' not in dna_part1:
-				# data
-				agents = (','.join(data.iloc[i, 0].split(',')[0:4]) + ',BS-' + dna_part2).replace(']', '') + ']' + ',BS-' + dna_part1
-				names = agents.split(',')
-
-				## form the RHS
-				RHS = []
-				next_in_complex = False
-				for name in names:
-					if name[0] == '[': # we are dealing with the first monomer of a complex
-						molecule = name[1:]
-						next_in_complex = True
-					elif name[-1] == ']': # we are dealing with the last monomer of a complex
-						molecule = name[:-1]
-						next_in_complex = False
-					elif next_in_complex: # we are dealing with a monomer part of a complex
-						molecule = name
-					else:
-						molecule = name
-
-					if 'BS' in name:
-						molecule = '{:s}\', type = \'{:s}'.format(molecule.split('-')[-2], molecule.split('-')[-1])
-						RHS.append('dna(name = \'{:s}\', prot = dna_link, up = bs_link, dw = bs_link)' \
-								.format(molecule))
-					elif 'SMALL' in name:
-						RHS.append('met(name = \'{:s}\', prot = met_link)' \
-								.format(molecule.replace('SMALL-', '')))
-					else:
-						RHS.append('prot(name = \'{:s}\', dna = dna_link, met = met_link, up = prot_link, dw = prot_link)' \
-								.format(molecule))
-
-				if 'ter' not in dna_part2:
-					molecule = '{:s}\', type = \'{:s}'.format(dna_part2.split('-')[0], dna_part2.split('-')[1])
-					RHS.append('rna(name = \'{:s}\', prot = None)'.format(molecule))
-
-				## look for where starts and ends a complex in the RHS
-				complexes = [(m.start()+1, m.end()-1) for m in re.finditer(r'\[[A-Za-z0-9-_, ]+\]', agents)]
-				monomers = [(m.start(), m.end()) for m in re.finditer(r'[A-Za-z0-9-_]+', agents)]
-
-				positions = []
-				for cplx_pos in reversed(complexes):
-					pos_i = None
-					pos_f = None
-					for index, kmer_pos in enumerate(monomers):
-						if cplx_pos[0] == kmer_pos[0]:
-							pos_i = index
-						if cplx_pos[1] == kmer_pos[1]:
-							pos_f = index
-							positions.append((pos_i, pos_f))
-							break
-
-				## join complexes following start and end positions
-				for position in positions:
-					## join agents and remove from RHS list because they were joined into one position
-					RHS[position[0]] = ' %\n    '.join(RHS[position[0]:position[1]+1])
-					for index in reversed(range(position[0]+1, position[1]+1)):
-						RHS.pop(index)
-
-				## create numbered links
-				starter_link = 1
-				for index, agent in enumerate(RHS):
-					count_small = agent.count('met(')
-					count_prots = agent.count('prot(')
-					count_dnas = agent.count('dna(')
-
-					if count_prots > 1:
-						dw = [None] * count_prots
-						for prot_index in range(count_prots-1):
-							dw[prot_index] = starter_link
-							starter_link += 1
-						up = dw[-1:] + dw[:-1]
-						## and replace indexes
-						c = list(zip(up, dw))
-						c = [elt for sublist in c for elt in sublist]
-						RHS[index] = RHS[index].replace('prot_link', '{}').format(*c)
-
-					if count_small >= 1 and count_prots >= 1:
-						dw = [None] * (count_small + count_prots)
-						for met_index in numpy.arange(0, count_small + count_prots, 2):
-							dw[met_index] = starter_link
-							dw[met_index-1] = starter_link
-							starter_link += 1
-						## and replace indexes
-						RHS[index] = RHS[index].replace('met_link', '{}').format(*tuple(dw))
-
-					if count_dnas > 1:
-						dw = ['WILD'] * count_dnas
-			#             for dna_index in range(count_dnas-1):
-			#                 dw[dna_index] = starter_link
-			#                 starter_link += 1
-						up = dw[-1:] + dw[:-1]
-						## and replace indexes
-						c = list(zip(up, dw))
-						c = [elt for sublist in c for elt in sublist]
-						RHS[index] = RHS[index].replace('bs_link', '{}').format(*c)
-
-					if count_dnas >= 1 and count_prots >= 1: # a protein is complexed with the dna
-						dw = [None] * (count_prots + count_dnas)
-						for dna_index in range(count_prots + count_dnas):
-							if dna_index == count_prots:
-								dw[dna_index] = starter_link
-								dw[dna_index-1] = starter_link
-								starter_link += 1
-						## and replace indexes
-						RHS[index] = RHS[index].replace('True', 'False').replace('dna_link', '{}').format(*dw)
-
-					## final replace
-					RHS[index] = RHS[index].replace('prot_link', 'None')
-					RHS[index] = RHS[index].replace('met_link', 'None')
-					RHS[index] = RHS[index].replace('bs_link', 'WILD')
-					RHS[index] = RHS[index].replace('dna_link', 'None')
-
-				## RHS final join
-				RHS = ' +\n\t'.join(RHS)
-				RULE_RHS.append(RHS)
-
-				description.append('# ' + ', '.join(data.iloc[i, 0].split(', ')[0:4]) + '] slides to ' + dna_part2)
-
-			break # do not remove
-
-	index = 0
-	for idx, (dna_part1, dna_part2) in enumerate(zip(data_arq.iloc[:,0], data_arq.iloc[:,1])):
-		dna_part1, dna_part2 = (dna_part1, dna_part2)
-		if 'pro' not in dna_part1:
 			## complete rule
-			code = 'Rule(\'sliding_{:s}\',\n' \
+			code = 'Rule(\'sliding_{:s}_to_{:s}\',\n' \
 				'	{:s} >>\n' \
 				'	{:s},\n' \
-				'	Parameter(\'fwd_sliding_{:s}\', {:f}))'
+				'	Parameter(\'fwd_sliding_{:s}_to_{:2}\', {:f}))'
 
-			code = code.format(dna_part2, RULE_LHS[index], RULE_RHS[index], dna_part2, data_arq.iloc[idx, 4])
+			code = code.format(rna_form[idx], rna_form[idx+1], LHS, RHS, rna_form[idx], rna_form[idx+1], 1).replace('-', '_')
 
-			code = code.replace('-', '_')
 			if verbose:
 				print(code)
-			exec(code)
-			index += 1
+			if toFile:
+				with open(toFile, 'a+') as outfile:
+					outfile.write(code)
+			else:
+				exec(code)
 
 def polymerase_falloff_rules(data, data_arq, verbose, toFile):
 	description = []
@@ -1078,5 +1069,6 @@ def construct_model_from_sigma_specificity_network(promoters, architecture, verb
 	polymerase_sliding_from_promoters_rules(data_promoters, data_architecture, verbose, toFile)
 	polymerase_sliding_from_others_rules(data_promoters, data_architecture, verbose, toFile)
 	polymerase_falloff_rules(data_promoters, data_architecture, verbose, toFile)
+	observables_from_genome_graph(data_architecture, verbose, toFile)
 
 	return model
