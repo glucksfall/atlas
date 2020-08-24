@@ -3,12 +3,13 @@ exclude .gitignore
 
 exclude __pycache__
 
-recursive-exclude contrib *
+recursive-exclude cytoscape-sessions
 recursive-exclude docs *
-recursive-exclude tests *
-
+recursive-exclude examples *
 recursive-exclude notebooks *
-recursive-exclude templates *
+recursive-exclude PTools-22 *
+recursive-exclude PTools-24 *
+recursive-exclude tutorial *
 
 recursive-exclude arabinose *
 recursive-exclude central-carbon *

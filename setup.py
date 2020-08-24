@@ -33,7 +33,7 @@ def main():
 	setup(
 		name='atlas_rbm',
 		license='GPLv3+',
-		version='1.1.0',
+		version='1.2.0',
 		#version=versioneer.get_version(),
 		description='Atlas: Reconstruction of Rule-Based Models from biological networks',
 		long_description=long_description,
@@ -100,12 +100,11 @@ def main():
 		include_package_data=False,
 
 		# WARNING: use this way to install in the package folder and
-		# to have access files using importlib_resources or importlib.resources
+		# to have access to files using importlib_resources or importlib.resources
 		# bdist_wheel only
 		package_data = {
 			'atlas_rbm' : [
 				'notebooks/*',
-				'templates/*',
 				]
 			},
 
