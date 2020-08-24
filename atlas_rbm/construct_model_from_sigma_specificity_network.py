@@ -19,6 +19,7 @@ import pandas
 
 from .utils import read_network, check_genome_graph, check_interaction_network
 from .construct_model_from_genome_graph import monomers_from_genome_graph, observables_from_genome_graph
+from .construct_model_from_genome_graph import ribosome_docking_rules, ribosome_sliding_rules, ribosome_falloff_rules
 
 def polymerase_docking_rules(data, data_arq, verbose, toFile):
 	RULE_LHS = []
@@ -361,7 +362,7 @@ def polymerase_sliding_from_promoters_rules(data, data_arq, verbose, toFile):
 		for dna_part1, dna_part2 in zip(data_arq['UPSTREAM'], data_arq['DOWNSTREAM']):
 			if data['TARGET'].iloc[sigma] == dna_part1.replace('[', ''):
 				# data
-				agents = (','.join(data['SOURCE'].iloc[sigma].split(',')) + ',BS-' + dna_part2) + '],' + data['TARGET'].iloc[sigma].split(',')[-1][:-1] + ',BS-' + dna_part1
+				agents = ','.join(data['SOURCE'].iloc[sigma].split(',')[:-1]) + ',BS-' + dna_part2 + '],' + data['TARGET'].iloc[sigma].split(',')[-1]
 				names = agents.split(',')
 
 				## form the RHS
@@ -479,10 +480,10 @@ def polymerase_sliding_from_promoters_rules(data, data_arq, verbose, toFile):
 		for dna_part1, dna_part2 in zip(data_arq['UPSTREAM'], data_arq['DOWNSTREAM']):
 			if data['TARGET'].iloc[sigma] == dna_part1.replace('[', ''):
 				## complete rule
-				code = 'Rule(\'sliding_{:d}_{:s}\',\n' \
+				code = 'Rule(\'sliding_{:d}_{:s}_holoenzyme\',\n' \
 					'	{:s} >>\n' \
 					'	{:s},\n' \
-					'	Parameter(\'fwd_sliding_{:d}_{:s}\', {:f}))\n' \
+					'	Parameter(\'fwd_sliding_{:d}_{:s}_holoenzyme\', {:f}))\n' \
 
 				code = code.format(
 					index+1, dna_part1.replace('[', '') + '_' + dna_part2.split('-')[-1], RULE_LHS[index], RULE_RHS[index].replace('[', ''),
@@ -511,17 +512,12 @@ def polymerase_sliding_from_others_rules(data, data_arq, verbose, toFile):
 		else:
 			operon.append(dna_part.split(',')[0])
 
-	rna_forms = []
-	for operon in list(set(operons)):
-		a = [(m.start(0), m.end(0)) for m in re.finditer(r'\w+-pro\d?', operon)]
-		b = [(m.start(0), m.end(0)) for m in re.finditer(r'\w+-ter\d?', operon)]
-		for lst in itertools.product(a, b):
-			rna_forms.append(operon[lst[0][0]:lst[1][1]].split(',')[1:])
-
-	for rna_form in rna_forms:
-		for idx, dna_part in enumerate(rna_form[:-1]):
+	for rna_form in operons:
+		rna_form = rna_form.split(',')
+		for idx, dna_part in enumerate(rna_form[1:]):
 			## form the LHS
-			agents = (','.join(data['SOURCE'].iloc[i].split(',')[:-1]) + ',BS-' + rna_form[idx].replace('[', '')).replace(']', '') + ']' + ',BS-' + rna_form[idx+1]
+			# we append the BS- prefix to differentiate a protein from any other type of agent
+			agents = (','.join(data['SOURCE'].iloc[0].split(',')[:-1]) + ',BS-' + rna_form[idx].replace('[', '')).replace(']', '') + ']' + ',BS-' + rna_form[idx+1]
 			names = agents.split(',')
 
 			LHS = []
@@ -547,7 +543,7 @@ def polymerase_sliding_from_others_rules(data, data_arq, verbose, toFile):
 					LHS.append('prot(name = \'{:s}\', dna = dna_link, met = met_link, up = prot_link, dw = prot_link)'.format(molecule))
 
 			# match the synthesis of RNA in RHS
-			if not len(rna_form[:-2]) == idx:
+			if not len(rna_form) == idx:
 				LHS.append('None')
 
 			## look for where starts and ends a complex in the LHS
@@ -629,10 +625,9 @@ def polymerase_sliding_from_others_rules(data, data_arq, verbose, toFile):
 
 			## LHS final join
 			LHS = ' +\n\t'.join(LHS)
-			RULE_LHS.append(LHS)
 
 			## form the RHS
-			agents = (','.join(data['SOURCE'].iloc[i].split(',')[:-1]) + ',BS-' + rna_form[idx+1].replace('[', '')).replace(']', '') + ']' + ',BS-' + rna_form[idx]
+			agents = (','.join(data['SOURCE'].iloc[0].split(',')[:-1]) + ',BS-' + rna_form[idx+1].replace('[', '')).replace(']', '') + ']' + ',BS-' + rna_form[idx]
 			names = agents.split(',')
 
 			RHS = []
@@ -658,7 +653,7 @@ def polymerase_sliding_from_others_rules(data, data_arq, verbose, toFile):
 					RHS.append('prot(name = \'{:s}\', dna = dna_link, met = met_link, up = prot_link, dw = prot_link)'.format(molecule))
 
 			# synthesis of RNA
-			if not len(rna_form[:-2]) == idx:
+			if not len(rna_form) == idx:
 				molecule = '{:s}\', type = \'{:s}'.format(rna_form[idx+1].split('-')[0], rna_form[idx+1].split('-')[1])
 				RHS.append('rna(name = \'{:s}\', prot = None)'.format(molecule))
 
@@ -740,16 +735,16 @@ def polymerase_sliding_from_others_rules(data, data_arq, verbose, toFile):
 				RHS[index] = RHS[index].replace('dna_link', 'None')
 
 			## RHS final join
-			RHS = ' +\n\t'.join(RHS)
-			RULE_RHS.append(RHS)
+			RHS = ' +\n	'.join(RHS)
 
 			## complete rule
-			code = 'Rule(\'sliding_{:s}_to_{:s}\',\n' \
+			code = 'Rule(\'sliding_{:d}_{:s}_to_{:s}\',\n' \
 				'	{:s} >>\n' \
 				'	{:s},\n' \
-				'	Parameter(\'fwd_sliding_{:s}_to_{:2}\', {:f}))'
+				'	Parameter(\'fwd_sliding_{:d}_{:s}_to_{:s}\', {:f}))\n'
 
-			code = code.format(rna_form[idx], rna_form[idx+1], LHS, RHS, rna_form[idx], rna_form[idx+1], 1).replace('-', '_')
+			code = code.format(idx, rna_form[idx], rna_form[idx+1],
+				LHS, RHS, idx, rna_form[idx], rna_form[idx+1], 1).replace('-', '_')
 
 			if verbose:
 				print(code)
@@ -760,13 +755,11 @@ def polymerase_sliding_from_others_rules(data, data_arq, verbose, toFile):
 				exec(code)
 
 def polymerase_falloff_rules(data, data_arq, verbose, toFile):
-	description = []
 	RULE_LHS = []
-
 	for dna_part1, dna_part2 in zip(data_arq.iloc[:,0], data_arq.iloc[:,1]):
 		if 'ter' in dna_part2:
 			# data
-			agents = (','.join(data.iloc[i, 0].split(',')[0:4])).replace(']', '') + ',BS-' + dna_part2 + ']'
+			agents = (','.join(data['SOURCE'].iloc[0].split(',')[:-1])).replace(']', '') + ',BS-' + dna_part2.replace(']', '') + ']'
 			names = agents.split(',')
 
 			## form the LHS
@@ -785,16 +778,13 @@ def polymerase_falloff_rules(data, data_arq, verbose, toFile):
 					molecule = name
 
 				if 'BS' in name:
-					if 'ter' in name:
-						molecule = '{:s}\', type = \'{:s}'.format(molecule.split('-')[-2], molecule.split('-')[-1])
-					LHS.append('dna(name = \'{:s}\', prot = dna_link, free = \'True\', up = bs_link, dw = bs_link)' \
-							.format(molecule))
+	#                 if 'ter' in name:
+					molecule = '{:s}\', type = \'{:s}'.format(molecule.split('-')[-2], molecule.split('-')[-1])
+					LHS.append('dna(name = \'{:s}\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule))
 				elif 'SMALL' in name:
-					LHS.append('met(name = \'{:s}\', prot = met_link)' \
-							.format(molecule.replace('SMALL-', '')))
+					LHS.append('met(name = \'{:s}\', prot = met_link)'.format(molecule.replace('SMALL-', '')))
 				else:
-					LHS.append('prot(name = \'{:s}\', dna = dna_link, met = met_link, up = prot_link, dw = prot_link)' \
-							.format(molecule))
+					LHS.append('prot(name = \'{:s}\', dna = dna_link, met = met_link, up = prot_link, dw = prot_link)'.format(molecule))
 
 			## look for where starts and ends a complex in the LHS
 			complexes = [(m.start()+1, m.end()-1) for m in re.finditer(r'\[[A-Za-z0-9-_, ]+\]', agents)]
@@ -815,7 +805,7 @@ def polymerase_falloff_rules(data, data_arq, verbose, toFile):
 			## join complexes following start and end positions
 			for position in positions:
 				## join agents and remove from LHS list because they were joined into one position
-				LHS[position[0]] = ' %\n    '.join(LHS[position[0]:position[1]+1])
+				LHS[position[0]] = ' %\n	'.join(LHS[position[0]:position[1]+1])
 				for index in reversed(range(position[0]+1, position[1]+1)):
 					LHS.pop(index)
 
@@ -874,18 +864,14 @@ def polymerase_falloff_rules(data, data_arq, verbose, toFile):
 				LHS[index] = LHS[index].replace('dna_link', 'None')
 
 			## LHS final join
-			LHS = ' +\n    '.join(LHS)
+			LHS = ' +\n	'.join(LHS)
 			RULE_LHS.append(LHS)
 
-			description.append('# ' + data.iloc[i, 0] + ' falloff from ' + dna_part2)
-
-	description = []
 	RULE_RHS = []
-
-	for dna_part1, dna_part2 in zip(data_arq.iloc[:,0], data_arq.iloc[:,1]):
+	for dna_part1, dna_part2 in zip(data_arq['UPSTREAM'], data_arq['DOWNSTREAM']):
 		if 'ter' in dna_part2:
 			# data
-			agents = ','.join(data.iloc[i, 0].split(',')[0:4]) + '],BS-' + dna_part2
+			agents = ','.join(data['SOURCE'].iloc[0].split(',')[:-1]) + '],BS-' + dna_part2.replace(']', '')
 			names = agents.split(',')
 
 			## form the RHS
@@ -906,14 +892,11 @@ def polymerase_falloff_rules(data, data_arq, verbose, toFile):
 				if 'BS' in name:
 					if 'ter' in name:
 						molecule = '{:s}\', type = \'{:s}'.format(molecule.split('-')[-2], molecule.split('-')[-1])
-					RHS.append('dna(name = \'{:s}\', prot = dna_link, free = \'True\', up = bs_link, dw = bs_link)' \
-							.format(molecule))
+					RHS.append('dna(name = \'{:s}\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule))
 				elif 'SMALL' in name:
-					RHS.append('met(name = \'{:s}\', prot = met_link)' \
-							.format(molecule.replace('SMALL-', '')))
+					RHS.append('met(name = \'{:s}\', prot = met_link)'.format(molecule.replace('SMALL-', '')))
 				else:
-					RHS.append('prot(name = \'{:s}\', dna = dna_link, met = met_link, up = prot_link, dw = prot_link)' \
-							.format(molecule))
+					RHS.append('prot(name = \'{:s}\', dna = dna_link, met = met_link, up = prot_link, dw = prot_link)'.format(molecule))
 
 			## look for where starts and ends a complex in the RHS
 			complexes = [(m.start()+1, m.end()-1) for m in re.finditer(r'\[[A-Za-z0-9-_, ]+\]', agents)]
@@ -934,7 +917,7 @@ def polymerase_falloff_rules(data, data_arq, verbose, toFile):
 			## join complexes following start and end positions
 			for position in positions:
 				## join agents and remove from RHS list because they were joined into one position
-				RHS[position[0]] = ' %\n    '.join(RHS[position[0]:position[1]+1])
+				RHS[position[0]] = ' %\n	'.join(RHS[position[0]:position[1]+1])
 				for index in reversed(range(position[0]+1, position[1]+1)):
 					RHS.pop(index)
 
@@ -993,27 +976,30 @@ def polymerase_falloff_rules(data, data_arq, verbose, toFile):
 				RHS[index] = RHS[index].replace('dna_link', 'None')
 
 			## RHS final join
-			RHS = ' +\n    '.join(RHS)
+			RHS = ' +\n	'.join(RHS)
 			RULE_RHS.append(RHS)
 
-			description.append('# ' + data.iloc[i, 0] + ' falloff from ' + dna_part2)
-
 	index = 0
-	for idx, (dna_part1, dna_part2) in enumerate(zip(data_arq.iloc[:,0], data_arq.iloc[:,1])):
-		dna_part1, dna_part2 = (dna_part1, dna_part2)
+	for idx, (dna_part1, dna_part2) in enumerate(zip(data_arq['UPSTREAM'], data_arq['DOWNSTREAM'])):
 		if 'ter' in dna_part2:
 			## complete rule
-			code = 'Rule(\'falloff_{:s}\', \n' \
+			code = 'Rule(\'falloff_from_{:s}\', \n' \
 				'	{:s} >> \n' \
 				'	{:s}, \n' \
-				'	Parameter(\'fwd_falloff_{:s}\', {:f}))'
+				'	Parameter(\'fwd_falloff_from_{:s}\', {:f}))\n'
 
-			code = code.format(dna_part2, RULE_LHS[index], RULE_RHS[index], dna_part2, data_arq.iloc[idx, 5])
+			code = code.format(dna_part2.replace('[', '').replace(']', ''), RULE_LHS[index], RULE_RHS[index],
+							dna_part2.replace('[', '').replace(']', ''), data_arq['RNAP_FWD_FALL_RATE'].iloc[idx])
 			code = code.replace('-', '_')
+			index += 1
+
 			if verbose:
 				print(code)
-			exec(code)
-			index += 1
+			if toFile:
+				with open(toFile, 'a+') as outfile:
+					outfile.write(code)
+			else:
+				exec(code)
 
 def construct_model_from_sigma_specificity_network(promoters, architecture, verbose = False, toFile = False):
 	if toFile:
@@ -1064,11 +1050,21 @@ def construct_model_from_sigma_specificity_network(promoters, architecture, verb
 	model = Model()
 	monomers_from_genome_graph(data_architecture, verbose, toFile)
 
-	# write docking, slide, and falloff of RNA Polymerase from DNA
+	# write docking, slide, and falloff of RNA Polymerase (full form) from DNA:
 	polymerase_docking_rules(data_promoters, data_architecture, verbose, toFile)
 	polymerase_sliding_from_promoters_rules(data_promoters, data_architecture, verbose, toFile)
 	polymerase_sliding_from_others_rules(data_promoters, data_architecture, verbose, toFile)
 	polymerase_falloff_rules(data_promoters, data_architecture, verbose, toFile)
+
+	# write docking, slide, and falloff of Ribosome (CPLX alias) from RNA:
+	ribosome_docking_rules(data_architecture, verbose, toFile)
+	ribosome_sliding_rules(data_architecture, verbose, toFile)
+	ribosome_falloff_rules(data_architecture, verbose, toFile)
+
+	# TODO
 	observables_from_genome_graph(data_architecture, verbose, toFile)
 
-	return model
+	if toFile:
+		return None
+	else:
+		return model

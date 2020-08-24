@@ -21,12 +21,12 @@ from .utils import read_network, check_genome_graph
 
 def monomers_from_genome_graph(data, verbose = False, toFile = False):
 	# find DNA parts
-	architecture = list(data['UPSTREAM']) + [data['DOWNSTREAM'].iloc[-1]]
+	architecture = list(data['UPSTREAM']) + list(data['DOWNSTREAM'])
+	architecture = [ x.replace('[', '').replace(']', '') for x in architecture ]
 
 	names = []
 	types = []
-	for dna_part in architecture:
-		dna_part = dna_part.replace('[', '').replace(']', '')
+	for dna_part in list(set(architecture)):
 		if dna_part.startswith('BS'):
 			names.append('_'.join([dna_part.split('-')[0], dna_part.split('-')[2], dna_part.split('-')[3]]))
 		else:
@@ -488,7 +488,7 @@ def construct_model_from_genome_graph(network, verbose = False, toFile = False):
 	model = Model()
 	monomers_from_genome_graph(data, verbose, toFile)
 
-	# write docking, slide, and falloff of RNA Polymerase from DNA
+	# write docking, slide, and falloff of RNAP-CPLX (without sigma factor) from DNA
 	polymerase_docking_rules(data, verbose, toFile)
 	polymerase_sliding_rules(data, verbose, toFile)
 	polymerase_falloff_rules(data, verbose, toFile)
