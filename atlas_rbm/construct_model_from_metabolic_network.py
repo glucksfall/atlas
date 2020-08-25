@@ -25,14 +25,14 @@ def monomers_from_metabolic_network(model, data, verbose = False, toFile = False
 	tmp = ','.join(tmp)
 
 	# correct names
-	metabolites = list(set(tmp.split(',')))
+	metabolites = sorted(set(tmp.split(',')))
 	for index, met in enumerate(metabolites):
 		for key in location_keys().keys():
 			if met.startswith(key + '-'):
 				metabolites[index] = met[len(key + '-'):]
 			if met[0].isdigit():
 				metabolites[index] = '_' + met
-	metabolites = list(set(metabolites))
+	metabolites = sorted(set(metabolites))
 
 	code = "Monomer('met',\n" \
 		"	['name', 'loc', 'prot'],\n" \
@@ -60,7 +60,7 @@ def monomers_from_metabolic_network(model, data, verbose = False, toFile = False
 
 	complexes = []
 	p_monomers = []
-	proteins = list(set(' '.join(tmp).split(' ')))
+	proteins = sorted(set(' '.join(tmp).split(' ')))
 	for index, protein in enumerate(proteins):
 		if protein[0].isdigit():
 			proteins[index] = '_' + protein

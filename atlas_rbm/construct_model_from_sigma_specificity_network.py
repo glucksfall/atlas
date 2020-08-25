@@ -28,9 +28,9 @@ def monomers_from_genome_graph(data, verbose = False, toFile = False):
 
 	names = []
 	types = []
-	for dna_part in list(set(architecture)):
+	for dna_part in sorted(set(architecture)):
 		if dna_part.startswith('BS-'):
-			names.append('_'.join(dna_part.split('-')))
+			names.append('_'.join(dna_part.replace('BS-', '').split('-')))
 		else:
 			names.append(dna_part.split('-')[0])
 			types.append(dna_part.split('-')[1])
@@ -52,7 +52,7 @@ def monomers_from_genome_graph(data, verbose = False, toFile = False):
 		with open(toFile, 'a+') as outfile:
 			outfile.write(code)
 	else:
-		exec(code.replace('\n', ''))
+		exec(code)
 
 	# rna
 	code = "Monomer('rna',\n" \
@@ -71,7 +71,7 @@ def monomers_from_genome_graph(data, verbose = False, toFile = False):
 		with open(toFile, 'a+') as outfile:
 			outfile.write(code)
 	else:
-		exec(code.replace('\n', ''))
+		exec(code)
 
 	# prot
 	code = "Monomer('prot',\n" \
@@ -87,7 +87,7 @@ def monomers_from_genome_graph(data, verbose = False, toFile = False):
 		with open(toFile, 'a+') as outfile:
 			outfile.write(code)
 	else:
-		exec(code.replace('\n', ''))
+		exec(code)
 
 	# complexes
 	code = "Monomer('cplx',\n" \
@@ -101,7 +101,7 @@ def monomers_from_genome_graph(data, verbose = False, toFile = False):
 		with open(toFile, 'a+') as outfile:
 			outfile.write(code)
 	else:
-		exec(code.replace('\n', ''))
+		exec(code)
 
 def polymerase_docking_rules(data, data_arq, verbose = False, toFile = False):
 	RULE_LHS = []
@@ -223,10 +223,10 @@ def polymerase_sliding_from_promoters_rules(data, data_arq, verbose = False, toF
 					else:
 						molecule = name
 
-					if molecule.split('-')[-1][0:3].lower() == 'pro':
+					if molecule.split('-')[-1][0:3].lower() in ['pro', 'rbs', 'cds', 'ter']:
 						LHS.append('dna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule.split('-')[-2], molecule.split('-')[-1]))
 					elif molecule.startswith('BS-'):
-						LHS.append('dna(name = \'{:s}\', type = \'BS\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule.replace('BS-')))
+						LHS.append('dna(name = \'{:s}\', type = \'BS\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule.replace('BS-', '')))
 					elif molecule.startswith('SMALL'):
 						LHS.append('met(name = \'{:s}\', loc = \'cyt\', prot = met_link)'.format(molecule.replace('SMALL-', '')))
 					else:
@@ -260,18 +260,22 @@ def polymerase_sliding_from_promoters_rules(data, data_arq, verbose = False, toF
 					else:
 						molecule = name
 
-					if molecule.split('-')[-1][0:3].lower() == 'pro':
+					if molecule.split('-')[-1][0:3].lower() in ['pro', 'rbs', 'cds', 'ter']:
 						RHS.append('dna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule.split('-')[-2], molecule.split('-')[-1]))
 					elif molecule.startswith('BS-'):
-						RHS.append('dna(name = \'{:s}\', type = \'BS\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule.replace('BS-')))
+						RHS.append('dna(name = \'{:s}\', type = \'BS\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule.replace('BS-', '')))
 					elif molecule.startswith('SMALL'):
 						RHS.append('met(name = \'{:s}\', loc = \'cyt\', prot = met_link)'.format(molecule.replace('SMALL-', '')))
 					else:
 						RHS.append('prot(name = \'{:s}\', loc = \'cyt\', dna = dna_link, met = met_link, up = prot_link, dw = prot_link)'.format(molecule))
 
 				# append the RNA synthetized from the rule application
-				RHS.append('rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', dna = None, met = None, prot = None, rna = None, up = None, dw = None)'.format(
-					dna_part2.split('-')[0], dna_part2.split('-')[1]))
+				if dna_part2.startswith('BS'):
+					RHS.append('rna(name = \'{:s}\', type = \'BS\', loc = \'cyt\', dna = None, met = None, prot = None, rna = None, up = None, dw = None)'.format(
+						dna_part2.replace('BS-', '')))
+				else:
+					RHS.append('rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', dna = None, met = None, prot = None, rna = None, up = None, dw = None)'.format(
+						dna_part2.split('-')[0], dna_part2.split('-')[1]))
 
 				## join complexes
 				RHS = connectAgents(agents, RHS)
@@ -340,7 +344,7 @@ def polymerase_sliding_from_others_rules(data, data_arq, verbose = False, toFile
 				if molecule.split('-')[-1][0:3].lower() in ['pro', 'rbs', 'cds', 'ter']:
 					LHS.append('dna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule.split('-')[-2], molecule.split('-')[-1]))
 				elif molecule.startswith('BS-'):
-					LHS.append('dna(name = \'{:s}\', type = \'BS\', loc = \'cyt\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule.replace('BS-')))
+					LHS.append('dna(name = \'{:s}\', type = \'BS\', loc = \'cyt\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule.replace('BS-', '')))
 				elif molecule.startswith('SMALL-'):
 					LHS.append('met(name = \'{:s}\', loc = \'cyt\', prot = met_link)'.format(molecule.replace('SMALL-', '')))
 				else:
@@ -354,7 +358,7 @@ def polymerase_sliding_from_others_rules(data, data_arq, verbose = False, toFile
 			LHS = connectAgents(agents, LHS)
 
 			## LHS final join
-			LHS = ' +\n\t'.join(LHS)
+			LHS = ' +\n	'.join(LHS)
 
 			## form the RHS
 			agents = ','.join(data['SOURCE'].iloc[0].split(',')[:-1]) + ',' + rna_form[idx+1] + '],' + rna_form[idx]
@@ -377,7 +381,7 @@ def polymerase_sliding_from_others_rules(data, data_arq, verbose = False, toFile
 				if molecule.split('-')[-1][0:3].lower() in ['pro', 'rbs', 'cds', 'ter']:
 					RHS.append('dna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule.split('-')[-2], molecule.split('-')[-1]))
 				elif molecule.startswith('BS-'):
-					RHS.append('dna(name = \'{:s}\', type = \'BS\', loc = \'cyt\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule.replace('BS-')))
+					RHS.append('dna(name = \'{:s}\', type = \'BS\', loc = \'cyt\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule.replace('BS-', '')))
 				elif molecule.startswith('SMALL-'):
 					RHS.append('met(name = \'{:s}\', loc = \'cyt\', prot = met_link)'.format(molecule.replace('SMALL-', '')))
 				else:
@@ -385,8 +389,12 @@ def polymerase_sliding_from_others_rules(data, data_arq, verbose = False, toFile
 
 			# synthesis of RNA, except when sliding into a terminator
 			if 'ter' not in rna_form[idx+1]:
-				RHS.append('rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', dna = None, met = None, prot = None, rna = None, up = None, dw = None)'.format(
-					rna_form[idx+1].split('-')[0], rna_form[idx+1].split('-')[1]))
+				if rna_form[idx+1].startswith('BS'):
+					RHS.append('rna(name = \'{:s}\', type = \'BS\', loc = \'cyt\', dna = None, met = None, prot = None, rna = None, up = None, dw = None)'.format(
+						rna_form[idx+1].replace('BS-', '')))
+				else:
+					RHS.append('rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', dna = None, met = None, prot = None, rna = None, up = None, dw = None)'.format(
+						rna_form[idx+1].split('-')[0], rna_form[idx+1].split('-')[1]))
 
 			## join complexes
 			RHS = connectAgents(agents, RHS)
@@ -544,10 +552,10 @@ def ribosome_sliding_rules(data, verbose = False, toFile = False):
 		#dna_part1, dna_part2 = (dna_part1, dna_part2)
 
 		if 'BS' in dna_part1:  # catch DNA binding sites to add to sliding rules
-			name1 = dna_part1.replace('BS-')
+			name1 = dna_part1.replace('BS-', '')
 			type1 = 'BS'
 		elif 'BS' in dna_part2:
-			name2 = dna_part2.replace('BS-')
+			name2 = dna_part2.replace('BS-', '')
 			type2 = 'BS'
 		else:
 			name1 = dna_part1.split('-')[0]
@@ -563,8 +571,8 @@ def ribosome_sliding_rules(data, verbose = False, toFile = False):
 				'	None >>\n' \
 				'	cplx(name = \'RIBOSOME-CPLX\', rna = 1) %\n' \
 				'	rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = 1) +\n' \
-				'	rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = None),\n' \
-				'	prot(name = \'{:s}\', loc = \'cyt\', dna = None, met = None, prot = None, rna = None, up = None, dw = None) +\n' \
+				'	rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = None) +\n' \
+				'	prot(name = \'{:s}\', loc = \'cyt\', dna = None, met = None, prot = None, rna = None, up = None, dw = None),\n' \
 				'	Parameter(\'fwd_sr_{:s}\', {:f}))\n'
 			code = code.format(
 				dna_part1,
@@ -626,7 +634,7 @@ def observables_from_genome_graph(data, verbose = False, toFile = False):
 			operon.append(dna_part.split(',')[0])
 
 	# prots
-	for operon in list(set(operons)):
+	for operon in sorted(set(operons)):
 		names = [(m.start(0), m.end(0)) for m in re.finditer(r'\w+-cds\d?', operon)]
 
 		prots = []
@@ -644,7 +652,7 @@ def observables_from_genome_graph(data, verbose = False, toFile = False):
 				with open(toFile, 'a+') as outfile:
 					outfile.write(code)
 			else:
-				exec(code.replace('\t', ' ').replace('\n', ' '))
+				exec(code)
 
 			code = 'Observable(\'obs_prot_{:s}_{:s}\',\n' \
 				'	prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None))\n'
@@ -656,7 +664,7 @@ def observables_from_genome_graph(data, verbose = False, toFile = False):
 				with open(toFile, 'a+') as outfile:
 					outfile.write(code)
 			else:
-				exec(code.replace('\t', ''))
+				exec(code)
 
 		operon_name = ''.join(prots)
 
@@ -671,8 +679,12 @@ def observables_from_genome_graph(data, verbose = False, toFile = False):
 
 		complex_pysb = []
 		for index, monomer in enumerate(operon.split(',')):
-			complex_pysb.append('dna(name = \'{:s}\', type = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = {:s}, dw = {:s})'.format(
-				monomer.split('-')[0], monomer.split('-')[1], 'cyt', str(up[index]), str(dw[index])))
+			if monomer.startswith('BS'):
+				complex_pysb.append('dna(name = \'{:s}\', type = \'BS\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = {:s}, dw = {:s})'.format(
+					monomer.replace('BS-', '').replace('-', '_'), 'cyt', str(up[index]), str(dw[index])))
+			else:
+				complex_pysb.append('dna(name = \'{:s}\', type = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = {:s}, dw = {:s})'.format(
+					monomer.split('-')[0], monomer.split('-')[1], 'cyt', str(up[index]), str(dw[index])))
 
 		complex_pysb = ' %\n	'.join(complex_pysb)
 
@@ -686,7 +698,7 @@ def observables_from_genome_graph(data, verbose = False, toFile = False):
 			with open(toFile, 'a+') as outfile:
 				outfile.write(code)
 		else:
-			exec(code.replace('\t', ' ').replace('\n', ' '))
+			exec(code)
 
 		code = 'Observable(\'obs_dna_{:s}\',\n' \
 			'	{:s})\n'
@@ -698,7 +710,7 @@ def observables_from_genome_graph(data, verbose = False, toFile = False):
 			with open(toFile, 'a+') as outfile:
 				outfile.write(code)
 		else:
-			exec(code.replace('\t', ' ').replace('\n', ' '))
+			exec(code)
 
 		# rnas start at any promoter and ends at any terminator
 		rna_forms = []
@@ -718,8 +730,12 @@ def observables_from_genome_graph(data, verbose = False, toFile = False):
 
 			complex_pysb = []
 			for index, monomer in enumerate(rna_form[1:]):
-				complex_pysb.append('rna(name = \'{:s}\', type = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = {:s}, dw = {:s})'.format(
-					monomer.split('-')[0], monomer.split('-')[1], 'cyt', str(up[index]), str(dw[index])))
+				if monomer.startswith('BS'):
+					complex_pysb.append('rna(name = \'{:s}\', type = \'BS\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = {:s}, dw = {:s})'.format(
+						monomer.replace('BS-', '').replace('-', '_'), 'cyt', str(up[index]), str(dw[index])))
+				else:
+					complex_pysb.append('rna(name = \'{:s}\', type = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = {:s}, dw = {:s})'.format(
+						monomer.split('-')[0], monomer.split('-')[1], 'cyt', str(up[index]), str(dw[index])))
 
 			complex_pysb = ' %\n	'.join(complex_pysb)
 
@@ -733,7 +749,7 @@ def observables_from_genome_graph(data, verbose = False, toFile = False):
 				with open(toFile, 'a+') as outfile:
 					outfile.write(code)
 			else:
-				exec(code.replace('\t', ' ').replace('\n', ' '))
+				exec(code)
 
 			code = 'Observable(\'obs_rna_{:s}_form{:d}\',\n' \
 				'	{:s})\n'
@@ -745,7 +761,7 @@ def observables_from_genome_graph(data, verbose = False, toFile = False):
 				with open(toFile, 'a+') as outfile:
 					outfile.write(code)
 			else:
-				exec(code.replace('\t', ' ').replace('\n', ' '))
+				exec(code)
 
 def construct_model_from_sigma_specificity_network(promoters, architecture, verbose = False, toFile = False):
 	if toFile:

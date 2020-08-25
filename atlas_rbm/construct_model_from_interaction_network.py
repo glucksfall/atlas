@@ -29,7 +29,7 @@ def monomers_from_interaction_network(model, data, verbose = False, toFile = Fal
 	for key in location_keys().keys():
 		tmp = tmp.replace(key + '-', '')
 
-	metabolites = list(set(tmp.split(',')))
+	metabolites = sorted(set(tmp.split(',')))
 	if len(tmp) > 0:
 		for index, met in enumerate(metabolites):
 			if met[0].isdigit():
@@ -65,7 +65,7 @@ def monomers_from_interaction_network(model, data, verbose = False, toFile = Fal
 
 	complexes = []
 	p_monomers = []
-	proteins = list(set(' '.join(tmp).split(' ')))
+	proteins = sorted(set(' '.join(tmp).split(' ')))
 	for index, protein in enumerate(proteins):
 		if protein[0].isdigit():
 			protein[index] = '_' + protein
@@ -114,7 +114,7 @@ def monomers_from_interaction_network(model, data, verbose = False, toFile = Fal
 	tmp = [ x.replace('[', '').replace(']', '').split(',') if x.startswith('[') else [x] for x in tmp ]
 	tmp = [ i for j in tmp for i in j ]
 	tmp = [ ' '.join(x.split(', ')) for x in tmp if (x.startswith('BS-') and x[3].isdigit()) ]
-	dnas = list(set(' '.join(tmp).split(' ')))
+	dnas = sorted(set(' '.join(tmp).split(' ')))
 
 	tmp = list(data['SOURCE'].values) + list(data['TARGET'].values)
 	tmp = [ x.replace('[', '').replace(']', '').split(',') if x.startswith('[') else [x] for x in tmp ]
