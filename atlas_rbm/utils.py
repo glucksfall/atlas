@@ -59,6 +59,86 @@ def check_genome_graph(data):
 
 	return data
 
+def connectAgents(agents, lst):
+	## look for where starts and ends a complex in the list of agents
+	complexes = [(m.start()+1, m.end()-1) for m in re.finditer(r'\[[A-Za-z0-9-_, ]+\]', agents)]
+	monomers = [(m.start(), m.end()) for m in re.finditer(r'[A-Za-z0-9-_]+', agents)]
+
+	positions = []
+	for cplx_pos in reversed(complexes):
+		pos_i = None
+		pos_f = None
+		for index, kmer_pos in enumerate(monomers):
+			if cplx_pos[0] == kmer_pos[0]:
+				pos_i = index
+			if cplx_pos[1] == kmer_pos[1]:
+				pos_f = index
+				positions.append((pos_i, pos_f))
+				break
+
+	## join complexes following start and end positions
+	for position in positions:
+		## join two agents and remove them from the LHS or the RHS list because they were merged into one position
+		lst[position[0]] = ' %\n	'.join(lst[position[0]:position[1]+1])
+		for index in reversed(range(position[0]+1, position[1]+1)):
+			lst.pop(index)
+
+	## create numbered links
+	starter_link = 1
+	for index, agent in enumerate(lst):
+		count_small = agent.count('met(')
+		count_prots = agent.count('prot(')
+		count_dnas = agent.count('dna(')
+
+		if count_prots > 1:
+			dw = [None] * count_prots
+			for prot_index in range(count_prots-1):
+				dw[prot_index] = starter_link
+				starter_link += 1
+			up = dw[-1:] + dw[:-1]
+			## and replace indexes
+			c = list(zip(up, dw))
+			c = [elt for sublist in c for elt in sublist]
+			lst[index] = lst[index].replace('prot_link', '{}').format(*c)
+
+		if count_small >= 1 and count_prots >= 1:
+			dw = [None] * (count_small + count_prots)
+			for met_index in numpy.arange(0, count_small + count_prots, 2):
+				dw[met_index] = starter_link
+				dw[met_index-1] = starter_link
+				starter_link += 1
+			## and replace indexes
+			lst[index] = lst[index].replace('met_link', '{}').format(*tuple(dw))
+
+		if count_dnas > 1:
+			dw = ['WILD'] * count_dnas
+			#for dna_index in range(count_dnas-1):
+				#dw[dna_index] = starter_link
+				#starter_link += 1
+			up = dw[-1:] + dw[:-1]
+			## and replace indexes
+			c = list(zip(up, dw))
+			c = [elt for sublist in c for elt in sublist]
+			lst[index] = lst[index].replace('bs_link', '{}').format(*c)
+
+		if count_dnas >= 1 and count_prots >= 1: # a protein is complexed with the dna
+			dw = [None] * (count_prots + count_dnas)
+			for dna_index in range(count_prots + count_dnas):
+				if dna_index == count_prots:
+					dw[dna_index] = starter_link
+					dw[dna_index-1] = starter_link
+					starter_link += 1
+			## and replace indexes
+			lst[index] = lst[index].replace('True', 'False').replace('dna_link', '{}').format(*dw)
+
+		## final replace
+		lst[index] = lst[index].replace('prot_link', 'None')
+		lst[index] = lst[index].replace('met_link', 'None')
+		lst[index] = lst[index].replace('bs_link', 'WILD')
+		lst[index] = lst[index].replace('dna_link', 'None')
+
+	return lst
+
 def checkPathwayTools(verbose = True):
 	try:
 		availableOrgs = pythoncyc.all_orgids()
