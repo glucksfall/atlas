@@ -1,0 +1,27 @@
+UPSTREAM	DOWNSTREAM	RNAP_FWD_DOCK_RATE	RNAP_RVS_DOCK_RATE	RNAP_FWD_SLIDE_RATE	RNAP_FWD_FALL_RATE	RIB_FWD_DOCK_RATE	RIB_RVS_DOCK_RATE	RIB_FWD_SLIDE_RATE	RIB_FWD_FALL_RATE
+[lacZ-pro4	lacZ-pro3	1.0	1.0	1.0
+lacZ-pro3	lacZ-pro2	1.0	1.0	1.0
+lacZ-pro2	lacZ-pro1	1.0	1.0	1.0
+lacZ-pro1	lacZ-rbs	1.0	1.0	1.0
+lacZ-rbs	lacZ-cds			1.0		1.0	1.0	1.0	1.0
+lacZ-cds	lacY-pro1			1.0
+lacY-pro1	lacY-rbs	1.0	1.0	1.0
+lacY-rbs	lacY-cds			1.0		1.0	1.0	1.0	1.0
+lacY-cds	lacA-rbs			1.0
+lacA-rbs	lacA-cds			1.0		1.0	1.0	1.0	1.0
+lacA-cds	lacA-ter1			1.0	1.0
+lacA-ter1	lacA-ter2]			1.0	1.0
+
+[rpoA-pro1	rpoA-rbs	1.0	1.0	1.0
+rpoA-rbs	rpoA-cds			1.0		1.0	1.0	1.0	1.0
+rpoA-cds	rpoA-ter1]			1.0	1.0
+
+[rpoB-pro1	rpoB-rbs	1.0	1.0	1.0
+rpoB-rbs	rpoB-cds			1.0		1.0	1.0	1.0	1.0
+rpoB-cds	rpoC-rbs			1.0
+rpoC-rbs	rpoC-cds			1.0		1.0	1.0	1.0	1.0
+rpoC-cds	rpoC-ter1]			1.0	1.0
+
+[rpoD-pro1	rpoD-rbs	1.0	1.0	1.0
+rpoD-rbs	rpoD-cds			1.0		1.0	1.0	1.0	1.0
+rpoD-cds	rpoD-ter1]			1.0	1.0

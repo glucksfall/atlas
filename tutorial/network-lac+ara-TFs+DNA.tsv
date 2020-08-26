@@ -1,0 +1,35 @@
+SOURCE	TARGET	FWD_RATE	RVS_RATE	LOCATION
+# araBAD and araC
+[crp,SMALL-CAMP,crp,SMALL-CAMP]	BS-araB-83-104	1.0	1.0	cytosol
+
+araC	BS-araB-35-51	1.0	1.0	cytosol
+araC	BS-araB-56-72	1.0	1.0	cytosol
+araC	BS-araB-109-125	1.0	1.0	cytosol
+araC	BS-araB-130-146	1.0	1.0	cytosol
+araC	BS-araB-267-283	1.0	1.0	cytosol
+
+# Dimerization
+[araC,BS-araB-56-72]	[araC,BS-araB-267-283]	1.0	1.0	cytosol
+
+[araC,SMALL-alpha-L-arabinopyranose]	BS-araC-35-51	1.0	1.0	cytosol
+[araC,BS-araC-56-72]	SMALL-alpha-L-arabinopyranose	1.0	1.0	cytosol
+[araC,BS-araC-267-283]	SMALL-alpha-L-arabinopyranose	1.0	1.0	cytosol
+
+# Dimerization
+[araC,SMALL-alpha-L-arabinopyranose,BS-araB-56-72]	[araC,SMALL-alpha-L-arabinopyranose,BS-araB-35-51]	1.0	1.0	cytosol
+
+# araFGH operon
+[araC,SMALL-alpha-L-arabinopyranose]	BS-araF-158-174	1.0	1.0	cytosol
+[araC,SMALL-alpha-L-arabinopyranose]	BS-araF-137-153	1.0	1.0	cytosol
+[araC,SMALL-alpha-L-arabinopyranose]	BS-araF-83-99	1.0	1.0	cytosol
+[araC,SMALL-alpha-L-arabinopyranose]	BS-araF-62-78	1.0	1.0	cytosol
+
+# Dimerization
+[araC,SMALL-alpha-L-arabinopyranose,BS-araF-83-99]	[araC,SMALL-alpha-L-arabinopyranose,BS-araF-62-78]	1.0	1.0	cytosol
+
+# araE operon
+[araC,SMALL-alpha-L-arabinopyranose]	BS-araE-57-73	1.0	1.0	cytosol
+[araC,SMALL-alpha-L-arabinopyranose]	BS-araE-36-52	1.0	1.0	cytosol
+
+# Dimerization
+[araC,SMALL-alpha-L-arabinopyranose,BS-araE-57-73]	[araC,SMALL-alpha-L-arabinopyranose,BS-araE-36-52]	1.0	1.0	cytosol

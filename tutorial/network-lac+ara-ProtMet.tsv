@@ -1,0 +1,8 @@
+SOURCE	TARGET	FWD_RATE	RVS_RATE	LOCATION
+[crp,crp]	SMALL-CAMP	1.0	1.0	cytosol
+[crp,SMALL-CAMP,crp]	SMALL-CAMP	1.0	1.0	cytosol
+[lacI,lacI]	SMALL-ALLOLACTOSE	1.0	1.0	cytosol
+[lacI,SMALL-ALLOLACTOSE,lacI]	SMALL-ALLOLACTOSE	1.0	1.0	cytosol
+araC	SMALL-alpha-L-arabinopyranose	1.0	1.0	cytosol
+[araC,araC]	SMALL-alpha-L-arabinopyranose	1.0	1.0	cytosol
+[araC,SMALL-alpha-L-arabinopyranose,araC]	SMALL-alpha-L-arabinopyranose	1.0	1.0	cytosol

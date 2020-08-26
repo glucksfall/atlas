@@ -1,0 +1,6 @@
+SOURCE	TARGET	FWD_DOCK_RATE	RVS_DOCK_RATE	FWD_SLIDE_RATE
+#Docking to promoters
+[rpoA,rpoA,rpoB,rpoC,rpoD]	araB-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoD]	araC-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoD]	araE-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoD]	araF-pro1	1.0	1.0	1.0

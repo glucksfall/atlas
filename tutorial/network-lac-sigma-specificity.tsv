@@ -1,0 +1,7 @@
+SOURCE	TARGET	FWD_DOCK_RATE	RVS_DOCK_RATE	FWD_SLIDE_RATE
+#Docking to promoters
+[rpoA,rpoA,rpoB,rpoC,rpoD]	lacZ-pro4	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoD]	lacZ-pro3	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoD]	lacZ-pro2	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoD]	lacZ-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoD]	lacY-pro1	1.0	1.0	1.0
