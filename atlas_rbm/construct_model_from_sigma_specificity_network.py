@@ -226,7 +226,7 @@ def polymerase_sliding_from_promoters_rules(data, data_arq, verbose = False, toF
 					if molecule.split('-')[-1][0:3].lower() in ['pro', 'rbs', 'cds', 'ter']:
 						LHS.append('dna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule.split('-')[-2], molecule.split('-')[-1]))
 					elif molecule.startswith('BS-'):
-						LHS.append('dna(name = \'{:s}\', type = \'BS\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule.replace('BS-', '')))
+						LHS.append('dna(name = \'{:s}\', type = \'BS\', loc = \'cyt\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule.replace('BS-', '')))
 					elif molecule.startswith('SMALL'):
 						LHS.append('met(name = \'{:s}\', loc = \'cyt\', prot = met_link)'.format(molecule.replace('SMALL-', '')))
 					else:
@@ -263,7 +263,7 @@ def polymerase_sliding_from_promoters_rules(data, data_arq, verbose = False, toF
 					if molecule.split('-')[-1][0:3].lower() in ['pro', 'rbs', 'cds', 'ter']:
 						RHS.append('dna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule.split('-')[-2], molecule.split('-')[-1]))
 					elif molecule.startswith('BS-'):
-						RHS.append('dna(name = \'{:s}\', type = \'BS\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule.replace('BS-', '')))
+						RHS.append('dna(name = \'{:s}\', type = \'BS\', loc = \'cyt\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule.replace('BS-', '')))
 					elif molecule.startswith('SMALL'):
 						RHS.append('met(name = \'{:s}\', loc = \'cyt\', prot = met_link)'.format(molecule.replace('SMALL-', '')))
 					else:

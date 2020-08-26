@@ -12,6 +12,7 @@ __license__ = 'gpl-3.0'
 import io
 import os
 import re
+import numpy
 import pandas
 import pythoncyc
 import subprocess
@@ -103,7 +104,11 @@ def connectAgents(agents, lst):
 
 		if count_small >= 1 and count_prots >= 1:
 			dw = [None] * (count_small + count_prots)
-			for met_index in numpy.arange(0, count_small + count_prots, 2):
+			if count_small % 2 == 0:
+				number = 2
+			else:
+				number = 3
+			for met_index in numpy.arange(0, count_small + count_prots, number):
 				dw[met_index] = starter_link
 				dw[met_index-1] = starter_link
 				starter_link += 1
