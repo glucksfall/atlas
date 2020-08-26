@@ -225,9 +225,11 @@ def from_interaction_network(data, i):
 	return LHS, RHS
 
 def observables_from_interaction_network(model, data, monomers, verbose = False, toFile = False):
+	#locations = location_keys().keys() # reduce compilation time
+	locations = ['cyt']
 	for name in sorted(monomers[0]):
 		name = name.replace('-','_')
-		for loc in location_keys().keys():
+		for loc in locations:
 			code = 'Observable(\'obs_met_{:s}_{:s}\', met(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None))\n'
 			code = code.format(name, loc.lower(), name, loc.lower())
 			if verbose:
@@ -250,7 +252,7 @@ def observables_from_interaction_network(model, data, monomers, verbose = False,
 
 	for name in sorted(monomers[1]):
 		name = name.replace('-','_')
-		for loc in location_keys().keys():
+		for loc in locations:
 			code = 'Observable(\'obs_prot_{:s}_{:s}\', prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None))\n'
 			code = code.format(name, loc.lower(), name, loc.lower())
 			if verbose:
@@ -273,7 +275,7 @@ def observables_from_interaction_network(model, data, monomers, verbose = False,
 
 	for name in sorted(monomers[2]):
 		name = name.replace('-','_')
-		for loc in location_keys().keys():
+		for loc in locations:
 			code = 'Initial(cplx(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None), Parameter(\'t0_cplx_{:s}_{:s}\', 0))\n'
 			code = code.format(name, loc.lower(), name, loc.lower())
 			if verbose:
@@ -284,60 +286,64 @@ def observables_from_interaction_network(model, data, monomers, verbose = False,
 			else:
 				exec(code.replace('\t', ''))
 
-	### TODO: Generalize to any kind of complex: prot+met+dna+rna+BS ###
-	#names = []
-	#for left, right in monomers[3]:
-		#names.append('[' + (left + ',' + right).replace('[','').replace(']','') + ']')
+	names = []
+	for left, right in zip(list(data['SOURCE']), list(data['TARGET'])):
+		names.append('[' + (left + ',' + right).replace('[','').replace(']','') + ']')
 
-	#for name in sorted(set(names)):
-		#if name.startswith('['):
-			#monomers = name[1:-1].split(',')
+	for name in sorted(set(names)):
+		# initials with DNA parts are required to be concrete (so enumeration of all possible DNA-protein complexes)
+		# that why we removed them from the list
+		if name.startswith('[') and not 'BS' in name and not 'DNA' in name:
+			monomers = name[1:-1].split(',')
 
-			#from collections import Counter
-			#stoichiometry = Counter(monomers)
-			#cplx_composition = ''
-			#for key, value in stoichiometry.items():
-				#cplx_composition += '_{:s}x{:d}'.format(key, value)
+			from collections import Counter
+			stoichiometry = Counter(monomers)
+			cplx_composition = ''
+			for key, value in stoichiometry.items():
+				cplx_composition += '_{:s}x{:d}'.format(key.replace('SMALL-', ''), value)
 
-			### create link indexes
-			#dw = [None] * len(monomers)
-			#start_link = 1
-			#for index in range(len(monomers)-1):
-				#dw[index] = start_link
-				#start_link += 1
-			#up = dw[-1:] + dw[:-1]
+			#for location in location_keys().keys(): # reduce compilation time
+			for loc in locations:
+				complex_pysb = []
+				for index, molecule in enumerate(monomers):
+					if molecule.split('-')[-1][0:3].lower() in ['pro', 'rbs', 'cds', 'ter']:
+						complex_pysb.append('dna(name = \'{:s}\', type = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = dna_link, rna = None, up = None, dw = ANY)'.format(molecule.split('-')[-2], molecule.split('-')[-1], loc.lower()))
+					elif molecule.startswith('BS-'):
+						complex_pysb.append('dna(name = \'{:s}\', type = \'BS\', loc = \'{:s}\', dna = None, met = None, prot = dna_link, rna = None, up = None, dw = None)'.format(molecule.replace('BS-', ''), loc.lower()))
+					elif molecule.startswith('SMALL'):
+						complex_pysb.append('met(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = met_link, rna = None)'.format(molecule.replace('SMALL-', ''), loc.lower()))
+					else:
+						complex_pysb.append('prot(name = \'{:s}\', loc = \'{:s}\', dna = dna_link, met = met_link, prot = None, rna = None, up = prot_link, dw = prot_link)'.format(molecule, loc.lower()))
 
-			#for location in location_keys().keys():
-				#complex_pysb = []
-				#for index, monomer in enumerate(monomers):
-					#complex_pysb.append('prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = {:s}, dw = {:s})'.format(
-						#monomer, location.lower(), str(up[index]), str(dw[index])))
+				## join complexes
+				complex_pysb = connectAgents(name, complex_pysb)
 
-				#complex_pysb = ' %\n	'.join(complex_pysb)
+				## final join
+				complex_pysb = ' %\n	'.join(complex_pysb)
 
-				#code = 'Initial({:s},\n' \
-					#'	Parameter(\'t0_cplx{:s}_{:s}\', 0))\n'
-				#code = code.format(complex_pysb, cplx_composition, location.lower())
+				code = 'Initial({:s},\n' \
+					'	Parameter(\'t0_cplx{:s}_{:s}\', 0))\n'
+				code = code.format(complex_pysb, cplx_composition, loc.lower()).replace('-', '_')
 
-				#if verbose:
-					#print(code)
-				#if toFile:
-					#with open(toFile, 'a+') as outfile:
-						#outfile.write(code)
-				#else:
-					#exec(code.replace('\t', ' ').replace('\n', ' '))
+				if verbose:
+					print(code)
+				if toFile:
+					with open(toFile, 'a+') as outfile:
+						outfile.write(code)
+				else:
+					exec(code.replace('\t', ' ').replace('\n', ' '))
 
-				#code = 'Observable(\'obs_cplx{:s}_{:s}\',\n' \
-					#'	{:s})\n'
-				#code = code.format(cplx_composition, location.lower(), complex_pysb)
+				code = 'Observable(\'obs_cplx{:s}_{:s}\',\n' \
+					'	{:s})\n'
+				code = code.format(cplx_composition, loc.lower(), complex_pysb).replace('-', '_')
 
-				#if verbose:
-					#print(code)
-				#if toFile:
-					#with open(toFile, 'a+') as outfile:
-						#outfile.write(code)
-				#else:
-					#exec(code.replace('\t', ' ').replace('\n', ' '))
+				if verbose:
+					print(code)
+				if toFile:
+					with open(toFile, 'a+') as outfile:
+						outfile.write(code)
+				else:
+					exec(code.replace('\t', ' ').replace('\n', ' '))
 
 	return model
 

@@ -260,10 +260,12 @@ def rules_from_metabolic_network(model, data, verbose = False, toFile = False):
 				exec(code.replace('\t', ' ').replace('\n', ' '))
 
 def observables_from_metabolic_network(model, data, monomers, verbose = False, toFile = False, noInitials = False, noObservables = False):
+	#locations = location_keys().keys() # reduce compilation time
+	locations = ['cyt']
 	if not noObservables:
 		for name in sorted(monomers[0]):
 			name = name.replace('-','_')
-			for loc in location_keys().keys():
+			for loc in locations:
 				code = 'Observable(\'obs_met_{:s}_{:s}\', met(name = \'{:s}\', loc = \'{:s}\', prot = None))\n'
 				code = code.format(name, loc.lower(), name, loc.lower())
 				if verbose:
@@ -277,7 +279,7 @@ def observables_from_metabolic_network(model, data, monomers, verbose = False, t
 	if not noInitials:
 		for name in sorted(monomers[0]):
 			name = name.replace('-','_')
-			for loc in location_keys().keys():
+			for loc in locations:
 				code = 'Initial(met(name = \'{:s}\', loc = \'{:s}\', prot = None), Parameter(\'t0_met_{:s}_{:s}\', 0))\n'
 				code = code.format(name, loc.lower(), name, loc.lower())
 				if verbose:
@@ -290,7 +292,7 @@ def observables_from_metabolic_network(model, data, monomers, verbose = False, t
 
 		for name in sorted(monomers[1]):
 			name = name.replace('-','_')
-			for loc in location_keys().keys():
+			for loc in locations:
 				code = 'Initial(prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None), Parameter(\'t0_prot_{:s}_{:s}\', 0))\n'
 				code = code.format(name, loc.lower(), name, loc.lower())
 				if verbose:
@@ -303,7 +305,7 @@ def observables_from_metabolic_network(model, data, monomers, verbose = False, t
 
 		for name in sorted(monomers[2]):
 			name = name.replace('-','_')
-			for loc in location_keys().keys():
+			for loc in locations:
 				code = 'Initial(cplx(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None), Parameter(\'t0_cplx_{:s}_{:s}\', 0))\n'
 				code = code.format(name, loc.lower(), name, loc.lower())
 				if verbose:
@@ -335,7 +337,7 @@ def observables_from_metabolic_network(model, data, monomers, verbose = False, t
 					start_link += 1
 				up = dw[-1:] + dw[:-1]
 
-				for location in location_keys().keys():
+				for location in locations:
 					complex_pysb = []
 					for index, monomer in enumerate(monomers):
 						complex_pysb.append('prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = {:s}, dw = {:s})'.format(
