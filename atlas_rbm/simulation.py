@@ -32,28 +32,73 @@ def set_observable(model, pattern = '', alias = ''):
 	return model
 
 class set_initial:
-	def monomers(model, name, loc = 'cyt', new_value = 0):
+	def monomers(model, name, type, loc = 'cyt', new_value = 0):
+		notFound = True
 		for i in model.parameters._elements:
-			if name + '_' + loc.lower() == i.name:
-				i.value = new_value
-		return model
+			if name.startswith('t0_met_') or name.startswith('t0_prot_') or name.startswith('t0_cplx_'):
+				if name + '_' + loc.lower() == i.name:
+					i.value = new_value
+					notFound = False
+			elif name.startswith('t0_dna_') or name.startswith('t0_rna'):
+				if name == i.name:
+					i.value = new_value
+					notFound = False
+
+		if notFound:
+			print('Initial not found. Creating Initial...'.format(name))
+		return model, notFound
 
 	def cplx(model, name, loc = 'cyt', new_value = 0):
-		return set_initial.monomers(model, 't0_cplx_' + name, loc, new_value)
+		model, notFound = set_initial.monomers(model, 't0_cplx_' + name, '', loc, new_value)
+		if notFound:
+			model = alias_model_components(model)
+			exec('Initial(cplx(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None), ' \
+				'Parameter(\'t0_cplx_{:s}_{:s}\', {:f}))'.format(name, loc.lower(), name, loc.lower(), new_value))
+			exec('Observable(\'obs_cplx_{:s}_{:s}\', ' \
+				'cplx(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None))'.format(name, loc.lower(), name, loc.lower()))
+		return model
 
-	def dna(model, name, loc = 'cyt', new_value = 0):
-		return set_initial.monomers(model, 't0_dna_' + name, loc, new_value)
+	def dna(model, name, type = '', loc = 'cyt', new_value = 0):
+		model, notFound = set_initial.monomers(model, 't0_dna_' + name, type, loc, new_value)
+		if notFound:
+			model = alias_model_components(model)
+			exec('Initial(dna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', dna = None, met = None, prot = None, rna = None, up = None, dw = None), ' \
+				'Parameter(\'t0_dna_{:s}\', {:f}))'.format(name, type, name, new_value))
+			exec('Observable(\'obs_dna_{:s}_{:s}\', ' \
+				'dna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', dna = None, met = None, prot = None, rna = None, up = ANY, dw = ANY))'.format(name, type, name, type))
+		return model
 
 	def met(model, name, loc = 'cyt', new_value = 0):
 		if name[0].isdigit():
 			name = '_' + name
-		return set_initial.monomers(model, 't0_met_' + name, loc, new_value)
+		model, notFound = set_initial.monomers(model, 't0_met_' + name, '', loc, new_value)
+		if notFound:
+			model = alias_model_components(model)
+			exec('Initial(met(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None), ' \
+				'Parameter(\'t0_dna_{:s}_{:s}\', {:f}))'.format(name, loc.lower(), name, loc.lower(), new_value))
+			exec('Observable(\'obs_met_{:s}_{:s}\', ' \
+				'met(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None))'.format(name, loc.lower(), name, loc.lower()))
+		return model
 
 	def prot(model, name, loc = 'cyt', new_value = 0):
-		return set_initial.monomers(model, 't0_prot_' + name, loc, new_value)
+		model, notFound = set_initial.monomers(model, 't0_prot_' + name, '', loc, new_value)
+		if notFound:
+			model = alias_model_components(model)
+			exec('Initial(prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None), ' \
+				'Parameter(\'t0_prot_{:s}_{:s}\', {:f}))'.format(name, loc.lower(), name, loc.lower(), new_value))
+			exec('Observable(\'obs_prot_{:s}_{:s}\', ' \
+				'prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None))'.format(name, loc.lower(), name, loc.lower()))
+		return model
 
-	def rna(model, name, loc = 'cyt', new_value = 0):
-		return set_initial.monomers(model, 't0_rna_' + name, loc, new_value)
+	def rna(model, name, type = '', loc = 'cyt', new_value = 0):
+		model, notFound = set_initial.monomers(model, 't0_rna_' + name, type, loc, new_value)
+		if notFound:
+			model = alias_model_components(model)
+			exec('Initial(rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', dna = None, met = None, prot = None, rna = None, up = None, dw = None), ' \
+				'Parameter(\'t0_rna_{:s}\', {:f}))'.format(name, type, name, new_value))
+			exec('Observable(\'obs_rna_{:s}_{:s}\', ' \
+				'rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', dna = None, met = None, prot = None, rna = None, up = ANY, dw = ANY))'.format(name, type, name, type))
+		return model
 
 	def from_pattern(model, pattern, alias = 'alias_pattern', new_value = 0):
 		model = alias_model_components(model)

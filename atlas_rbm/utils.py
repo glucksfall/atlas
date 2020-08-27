@@ -290,7 +290,7 @@ def analyzeConnectivity(model, path = 'kasa'):
 	if output[1] == b'\nevery rule may be applied\n':
 		print('Every rule may be applied.')
 	else:
-		print('There are some non applyable rules:', output[2].decode())
+		print('There are some non applicable rules:', output[2].decode())
 	if output[2] == b'\nevery agent may occur in the model\n\n' or output[3] == b'\nevery agent may occur in the model\n\n':
 		print('Every monomer and complex of monomers may occur in the model.')
 		try:

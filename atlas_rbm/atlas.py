@@ -50,12 +50,12 @@ def _combine_two_models(model1, model2, verbose = False):
 	for common in commons:
 		for monomer in model1.monomers:
 			if common == monomer.name:
-				sites_in_model = monomer.sites
-				names_in_model = monomer.site_states['name']
+				sites_in_model1 = monomer.sites
+				names_in_model1 = monomer.site_states['name']
 				if (common == 'dna' or common == 'rna'):
-					types_in_model = monomer.site_states['type']
+					types_in_model1 = monomer.site_states['type']
 				else:
-					loc_in_model = monomer.site_states['loc']
+					loc_in_model1 = monomer.site_states['loc']
 		for monomer in model2.monomers:
 			if common == monomer.name:
 				sites_in_model2 = monomer.sites
@@ -67,18 +67,18 @@ def _combine_two_models(model1, model2, verbose = False):
 
 		if (common == 'dna' or common == 'rna'):
 			new_monomers.append(
-				"Monomer('{:s}', {:s}, {{'name': {:s}, 'type': {:s}}})".format(
+				"Monomer('{:s}', {:s}, {{'name': {:s}, 'loc' : ['cyt'], 'type': {:s}}})".format(
 					str(common),
-					str(sorted(set(sites_in_model + sites_in_model2))),
-					str(sorted(set(names_in_model + names_in_model2))),
-					str(sorted(set(types_in_model + types_in_model2)))))
+					str(sorted(set(sites_in_model1 + sites_in_model2))),
+					str(sorted(set(names_in_model1 + names_in_model2))),
+					str(sorted(set(types_in_model1 + types_in_model2)))))
 		else:
 			new_monomers.append(
 				"Monomer('{:s}', {:s}, {{'name': {:s}, 'loc': {:s}}})".format(
 					str(common),
-					str(sorted(set(sites_in_model + sites_in_model2))),
-					str(sorted(set(names_in_model + names_in_model2))),
-					str(sorted(set(loc_in_model + loc_in_model2)))))
+					str(sorted(set(sites_in_model1 + sites_in_model2))),
+					str(sorted(set(names_in_model1 + names_in_model2))),
+					str(sorted(set(loc_in_model1 + loc_in_model2)))))
 
 	new_rules = []
 	for rule in model1.rules:
@@ -229,6 +229,64 @@ def modify_rules(model, names, oldString, newString, verbose = False):
 
 	for name in names:
 		model = modify_rule(model, name, oldString, newString, verbose = verbose)
+
+	return model
+
+def add_regulation(model, name = '', conditions = [], replace = False, verbose = False):
+	for rule in model.rules:
+		if name.replace('-','_') == rule.name:
+			reactant_pattern = str(rule.reactant_pattern)
+			product_pattern = str(rule.product_pattern)
+			break
+
+	alias_model_components(model)
+	monomers = []
+	regulators = []
+	for condition in conditions:
+		cond_monomers = condition.split(',')
+
+		LHS = []
+		next_in_complex = False
+		for monomer in cond_monomers:
+			if monomer[0] == '[': # we are dealing with the first monomer of a complex
+				molecule = monomer[1:]
+				next_in_complex = True
+			elif monomer[-1] == ']': # we are dealing with the last monomer of a complex
+				molecule = monomer[:-1]
+				next_in_complex = False
+			elif next_in_complex: # we are dealing with a monomer part of a complex
+				molecule = monomer
+			else:
+				molecule = monomer
+
+			if molecule.split('-')[-1][0:3].lower() in ['pro', 'rbs', 'cds', 'ter']:
+				LHS.append('dna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule.split('-')[-2], molecule.split('-')[-1]))
+			elif molecule.startswith('BS-'):
+				LHS.append('dna(name = \'{:s}\', type = \'BS\', loc = \'cyt\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule.replace('BS-', '')))
+				regulators.append(molecule.split('-')[1])
+			elif molecule.startswith('SMALL'):
+				LHS.append('met(name = \'{:s}\', loc = \'cyt\', prot = met_link)'.format(molecule.replace('SMALL-', '')))
+			else:
+				LHS.append('prot(name = \'{:s}\', loc = \'cyt\', dna = dna_link, met = met_link, up = prot_link, dw = prot_link)'.format(molecule))
+
+		LHS = connectAgents(condition, LHS)
+		LHS = ' '.join(LHS)
+		monomers.append(LHS)
+
+	reactant_pattern = ' +\n\t'.join(monomers + [reactant_pattern])
+	product_pattern = ' +\n\t'.join(monomers + [product_pattern])
+	regulators = '_and_'.join(regulators)
+	name = '{:s}_regulated_by_{:s}'.format(name, regulators)
+
+	code = 'Rule(\'{:s}\',\n\t{:s} |\n\t{:s},\n\tParameter(\'fwd_{:s}\', 0),\n\tParameter(\'rvs_{:s}\', 0))'.format(name, reactant_pattern, product_pattern, name, name)
+	code = code.replace('-', '_')
+
+	if verbose:
+		print(code)
+	exec(code)
+
+	if replace:
+		model = remove_rule(model, name, verbose = verbose)
 
 	return model
 
