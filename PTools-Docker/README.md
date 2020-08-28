@@ -21,6 +21,8 @@ Please do:
 
 Explanation:
 
+                  |
+------------------|--------------------------------------------------------
 --detach          | Run container in background and print container ID<br/>
 --rm              | Automatically remove the container when it exits<br/>
 --network network | Connect a container to a network<br/>
