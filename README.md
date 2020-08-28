@@ -14,7 +14,7 @@ Affiliations:
 
 ## Prerequisites
 
-1. PathwayTools must be installed and running to obtain data from the EcoCyc database. Please, run ```pathway-tools -lisp -python-local-only``` before to obtain any data.<br/>
+1. PathwayTools must be installed and running to obtain data from the BioCyc databases. Please, run ```pathway-tools -lisp -python-local-only``` before to obtain any data.<br/>
    (Optional) The PathwayTools software could be executed in the background, with help of ```nohup pathway-tools -lisp -python-local-only > /dev/null 2> /dev/null &```.<br/>
    Please follow instructions at http://pathwaytools.org/ to obtain a licensed copy of the software from https://biocyc.org/download-bundle.shtml. However, data could be manually formatted using a text-based editor or a spreadsheet software.
 
