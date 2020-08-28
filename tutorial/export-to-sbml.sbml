@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version2/core" level="3" version="2">
+  <model name="atlas_rbm.construct_model_from_metabolic_network">
+    <listOfCompartments>
+      <compartment id="default" spatialDimensions="3" size="1" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="__s0" name="met(name=&apos;ACETYL_COA&apos;, loc=&apos;cyt&apos;, dna=None, met=None, prot=None, rna=None)" compartment="default" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species id="__s1" name="met(name=&apos;ALLOLACTOSE&apos;, loc=&apos;cyt&apos;, dna=None, met=None, prot=None, rna=None)" compartment="default" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species id="__s2" name="met(name=&apos;Alpha_lactose&apos;, loc=&apos;cyt&apos;, dna=None, met=None, prot=None, rna=None)" compartment="default" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species id="__s3" name="met(name=&apos;Beta_D_Galactosides&apos;, loc=&apos;cyt&apos;, dna=None, met=None, prot=None, rna=None)" compartment="default" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species id="__s4" name="met(name=&apos;CO_A&apos;, loc=&apos;cyt&apos;, dna=None, met=None, prot=None, rna=None)" compartment="default" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species id="__s5" name="met(name=&apos;CPD_15972&apos;, loc=&apos;cyt&apos;, dna=None, met=None, prot=None, rna=None)" compartment="default" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species id="__s6" name="met(name=&apos;CPD_3561&apos;, loc=&apos;cyt&apos;, dna=None, met=None, prot=None, rna=None)" compartment="default" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species id="__s7" name="met(name=&apos;CPD_3785&apos;, loc=&apos;cyt&apos;, dna=None, met=None, prot=None, rna=None)" compartment="default" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species id="__s8" name="met(name=&apos;CPD_3801&apos;, loc=&apos;cyt&apos;, dna=None, met=None, prot=None, rna=None)" compartment="default" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species id="__s9" name="met(name=&apos;D_ARABINOSE&apos;, loc=&apos;cyt&apos;, dna=None, met=None, prot=None, rna=None)" compartment="default" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species id="__s10" name="met(name=&apos;Fructofuranose&apos;, loc=&apos;cyt&apos;, dna=None, met=None, prot=None, rna=None)" compartment="default" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species id="__s11" name="met(name=&apos;GALACTOSE&apos;, loc=&apos;cyt&apos;, dna=None, met=None, prot=None, rna=None)" compartment="default" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species id="__s12" name="met(name=&apos;Glucopyranose&apos;, loc=&apos;cyt&apos;, dna=None, met=None, prot=None, rna=None)" compartment="default" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species id="__s13" name="met(name=&apos;MELIBIOSE&apos;, loc=&apos;cyt&apos;, dna=None, met=None, prot=None, rna=None)" compartment="default" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species id="__s14" name="met(name=&apos;PROTON&apos;, loc=&apos;cyt&apos;, dna=None, met=None, prot=None, rna=None)" compartment="default" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species id="__s15" name="met(name=&apos;WATER&apos;, loc=&apos;cyt&apos;, dna=None, met=None, prot=None, rna=None)" compartment="default" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species id="__s16" name="met(name=&apos;_6_Acetyl_Beta_D_Galactosides&apos;, loc=&apos;cyt&apos;, dna=None, met=None, prot=None, rna=None)" compartment="default" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species id="__s17" name="prot(name=&apos;lacA&apos;, loc=&apos;cyt&apos;, dna=None, met=None, prot=None, rna=None, up=None, dw=None)" compartment="default" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species id="__s18" name="prot(name=&apos;lacY&apos;, loc=&apos;cyt&apos;, dna=None, met=None, prot=None, rna=None, up=None, dw=None)" compartment="default" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species id="__s19" name="prot(name=&apos;lacZ&apos;, loc=&apos;cyt&apos;, dna=None, met=None, prot=None, rna=None, up=None, dw=None)" compartment="default" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species id="__s20" name="met(name=&apos;Alpha_lactose&apos;, loc=&apos;per&apos;, dna=None, met=None, prot=None, rna=None)" compartment="default" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species id="__s21" name="met(name=&apos;PROTON&apos;, loc=&apos;per&apos;, dna=None, met=None, prot=None, rna=None)" compartment="default" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species id="__s22" name="prot(name=&apos;lacY&apos;, loc=&apos;imem&apos;, dna=None, met=None, prot=None, rna=None, up=None, dw=None)" compartment="default" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species id="__s23" name="met(name=&apos;MELIBIOSE&apos;, loc=&apos;per&apos;, dna=None, met=None, prot=None, rna=None)" compartment="default" initialAmount="0" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species id="__s24" name="met(name=&apos;CPD_3561&apos;, loc=&apos;per&apos;, dna=None, met=None, prot=None, rna=None)" compartment="default" initialAmount="0" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species id="__s25" name="met(name=&apos;CPD_3785&apos;, loc=&apos;per&apos;, dna=None, met=None, prot=None, rna=None)" compartment="default" initialAmount="0" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species id="__s26" name="met(name=&apos;CPD_3801&apos;, loc=&apos;per&apos;, dna=None, met=None, prot=None, rna=None)" compartment="default" initialAmount="0" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="t0_met_ACETYL_COA_cyt" name="t0_met_ACETYL_COA_cyt" value="0" constant="true"/>
+      <parameter id="t0_met_ALLOLACTOSE_cyt" name="t0_met_ALLOLACTOSE_cyt" value="0" constant="true"/>
+      <parameter id="t0_met_Alpha_lactose_cyt" name="t0_met_Alpha_lactose_cyt" value="0" constant="true"/>
+      <parameter id="t0_met_Beta_D_Galactosides_cyt" name="t0_met_Beta_D_Galactosides_cyt" value="0" constant="true"/>
+      <parameter id="t0_met_CO_A_cyt" name="t0_met_CO_A_cyt" value="0" constant="true"/>
+      <parameter id="t0_met_CPD_15972_cyt" name="t0_met_CPD_15972_cyt" value="0" constant="true"/>
+      <parameter id="t0_met_CPD_3561_cyt" name="t0_met_CPD_3561_cyt" value="0" constant="true"/>
+      <parameter id="t0_met_CPD_3785_cyt" name="t0_met_CPD_3785_cyt" value="0" constant="true"/>
+      <parameter id="t0_met_CPD_3801_cyt" name="t0_met_CPD_3801_cyt" value="0" constant="true"/>
+      <parameter id="t0_met_D_ARABINOSE_cyt" name="t0_met_D_ARABINOSE_cyt" value="0" constant="true"/>
+      <parameter id="t0_met_Fructofuranose_cyt" name="t0_met_Fructofuranose_cyt" value="0" constant="true"/>
+      <parameter id="t0_met_GALACTOSE_cyt" name="t0_met_GALACTOSE_cyt" value="0" constant="true"/>
+      <parameter id="t0_met_Glucopyranose_cyt" name="t0_met_Glucopyranose_cyt" value="0" constant="true"/>
+      <parameter id="t0_met_MELIBIOSE_cyt" name="t0_met_MELIBIOSE_cyt" value="0" constant="true"/>
+      <parameter id="t0_met_PROTON_cyt" name="t0_met_PROTON_cyt" value="0" constant="true"/>
+      <parameter id="t0_met_WATER_cyt" name="t0_met_WATER_cyt" value="100" constant="true"/>
+      <parameter id="t0_met__6_Acetyl_Beta_D_Galactosides_cyt" name="t0_met__6_Acetyl_Beta_D_Galactosides_cyt" value="0" constant="true"/>
+      <parameter id="t0_prot_lacA_cyt" name="t0_prot_lacA_cyt" value="0" constant="true"/>
+      <parameter id="t0_prot_lacY_cyt" name="t0_prot_lacY_cyt" value="0" constant="true"/>
+      <parameter id="t0_prot_lacZ_cyt" name="t0_prot_lacZ_cyt" value="1" constant="true"/>
+      <parameter id="fwd_GALACTOACETYLTRAN_RXN" name="fwd_GALACTOACETYLTRAN_RXN" value="1" constant="true"/>
+      <parameter id="rvs_GALACTOACETYLTRAN_RXN" name="rvs_GALACTOACETYLTRAN_RXN" value="0" constant="true"/>
+      <parameter id="fwd_TRANS_RXN_24" name="fwd_TRANS_RXN_24" value="1" constant="true"/>
+      <parameter id="rvs_TRANS_RXN_24" name="rvs_TRANS_RXN_24" value="0" constant="true"/>
+      <parameter id="fwd_TRANS_RXN_94" name="fwd_TRANS_RXN_94" value="1" constant="true"/>
+      <parameter id="rvs_TRANS_RXN_94" name="rvs_TRANS_RXN_94" value="0" constant="true"/>
+      <parameter id="fwd_RXN0_7215" name="fwd_RXN0_7215" value="1" constant="true"/>
+      <parameter id="rvs_RXN0_7215" name="rvs_RXN0_7215" value="0" constant="true"/>
+      <parameter id="fwd_RXN0_7217" name="fwd_RXN0_7217" value="1" constant="true"/>
+      <parameter id="rvs_RXN0_7217" name="rvs_RXN0_7217" value="0" constant="true"/>
+      <parameter id="fwd_RXN_17755" name="fwd_RXN_17755" value="1" constant="true"/>
+      <parameter id="rvs_RXN_17755" name="rvs_RXN_17755" value="0" constant="true"/>
+      <parameter id="fwd_BETAGALACTOSID_RXN" name="fwd_BETAGALACTOSID_RXN" value="1" constant="true"/>
+      <parameter id="rvs_BETAGALACTOSID_RXN" name="rvs_BETAGALACTOSID_RXN" value="0" constant="true"/>
+      <parameter id="fwd_RXN0_5363" name="fwd_RXN0_5363" value="1" constant="true"/>
+      <parameter id="rvs_RXN0_5363" name="rvs_RXN0_5363" value="1" constant="true"/>
+      <parameter id="fwd_RXN_17726" name="fwd_RXN_17726" value="1" constant="true"/>
+      <parameter id="rvs_RXN_17726" name="rvs_RXN_17726" value="0" constant="true"/>
+      <parameter id="fwd_RXN0_7219" name="fwd_RXN0_7219" value="1" constant="true"/>
+      <parameter id="rvs_RXN0_7219" name="rvs_RXN0_7219" value="0" constant="true"/>
+      <parameter id="t0_dna_Alpha_lactose_per" name="t0_dna_Alpha_lactose_per" value="100" constant="true"/>
+      <parameter id="t0_dna_PROTON_per" name="t0_dna_PROTON_per" value="100" constant="true"/>
+      <parameter id="t0_prot_lacY_imem" name="t0_prot_lacY_imem" value="1" constant="true"/>
+      <parameter id="__obs0" name="obs_met_ACETYL_COA_cyt" constant="false"/>
+      <parameter id="__obs1" name="obs_met_ALLOLACTOSE_cyt" constant="false"/>
+      <parameter id="__obs2" name="obs_met_Alpha_lactose_cyt" constant="false"/>
+      <parameter id="__obs3" name="obs_met_Beta_D_Galactosides_cyt" constant="false"/>
+      <parameter id="__obs4" name="obs_met_CO_A_cyt" constant="false"/>
+      <parameter id="__obs5" name="obs_met_CPD_15972_cyt" constant="false"/>
+      <parameter id="__obs6" name="obs_met_CPD_3561_cyt" constant="false"/>
+      <parameter id="__obs7" name="obs_met_CPD_3785_cyt" constant="false"/>
+      <parameter id="__obs8" name="obs_met_CPD_3801_cyt" constant="false"/>
+      <parameter id="__obs9" name="obs_met_D_ARABINOSE_cyt" constant="false"/>
+      <parameter id="__obs10" name="obs_met_Fructofuranose_cyt" constant="false"/>
+      <parameter id="__obs11" name="obs_met_GALACTOSE_cyt" constant="false"/>
+      <parameter id="__obs12" name="obs_met_Glucopyranose_cyt" constant="false"/>
+      <parameter id="__obs13" name="obs_met_MELIBIOSE_cyt" constant="false"/>
+      <parameter id="__obs14" name="obs_met_PROTON_cyt" constant="false"/>
+      <parameter id="__obs15" name="obs_met_WATER_cyt" constant="false"/>
+      <parameter id="__obs16" name="obs_met__6_Acetyl_Beta_D_Galactosides_cyt" constant="false"/>
+      <parameter id="__obs17" name="obs_met_Alpha_lactose_per" constant="false"/>
+      <parameter id="__obs18" name="obs_met_PROTON_per" constant="false"/>
+      <parameter id="__obs19" name="obs_prot_lacY_imem" constant="false"/>
+    </listOfParameters>
+    <listOfInitialAssignments>
+      <initialAssignment symbol="__s0">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> t0_met_ACETYL_COA_cyt </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="__s1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> t0_met_ALLOLACTOSE_cyt </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="__s2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> t0_met_Alpha_lactose_cyt </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="__s3">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> t0_met_Beta_D_Galactosides_cyt </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="__s4">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> t0_met_CO_A_cyt </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="__s5">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> t0_met_CPD_15972_cyt </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="__s6">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> t0_met_CPD_3561_cyt </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="__s7">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> t0_met_CPD_3785_cyt </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="__s8">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> t0_met_CPD_3801_cyt </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="__s9">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> t0_met_D_ARABINOSE_cyt </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="__s10">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> t0_met_Fructofuranose_cyt </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="__s11">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> t0_met_GALACTOSE_cyt </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="__s12">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> t0_met_Glucopyranose_cyt </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="__s13">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> t0_met_MELIBIOSE_cyt </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="__s14">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> t0_met_PROTON_cyt </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="__s15">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> t0_met_WATER_cyt </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="__s16">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> t0_met__6_Acetyl_Beta_D_Galactosides_cyt </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="__s17">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> t0_prot_lacA_cyt </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="__s18">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> t0_prot_lacY_cyt </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="__s19">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> t0_prot_lacZ_cyt </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="__s20">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> t0_dna_Alpha_lactose_per </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="__s21">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> t0_dna_PROTON_per </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="__s22">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> t0_prot_lacY_imem </ci>
+        </math>
+      </initialAssignment>
+    </listOfInitialAssignments>
+    <listOfRules>
+      <assignmentRule variable="__obs0">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> __s0 </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="__obs1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> __s1 </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="__obs2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> __s2 </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="__obs3">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> __s3 </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="__obs4">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> __s4 </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="__obs5">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> __s5 </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="__obs6">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> __s6 </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="__obs7">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> __s7 </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="__obs8">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> __s8 </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="__obs9">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> __s9 </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="__obs10">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> __s10 </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="__obs11">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> __s11 </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="__obs12">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> __s12 </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="__obs13">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> __s13 </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="__obs14">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> __s14 </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="__obs15">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> __s15 </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="__obs16">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> __s16 </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="__obs17">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> __s20 </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="__obs18">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> __s21 </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="__obs19">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> __s22 </ci>
+        </math>
+      </assignmentRule>
+    </listOfRules>
+    <listOfReactions>
+      <reaction id="r0" name="GALACTOACETYLTRAN_RXN" reversible="true">
+        <listOfReactants>
+          <speciesReference species="__s0" constant="true"/>
+          <speciesReference species="__s3" constant="true"/>
+          <speciesReference species="__s17" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="__s4" constant="true"/>
+          <speciesReference species="__s16" constant="true"/>
+          <speciesReference species="__s17" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s0 </ci>
+                <ci> __s17 </ci>
+                <ci> __s3 </ci>
+                <ci> fwd_GALACTOACETYLTRAN_RXN </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s16 </ci>
+                <ci> __s17 </ci>
+                <ci> __s4 </ci>
+                <ci> rvs_GALACTOACETYLTRAN_RXN </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r1" name="TRANS_RXN_24" reversible="true">
+        <listOfReactants>
+          <speciesReference species="__s20" constant="true"/>
+          <speciesReference species="__s21" constant="true"/>
+          <speciesReference species="__s22" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="__s2" constant="true"/>
+          <speciesReference species="__s14" constant="true"/>
+          <speciesReference species="__s22" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <plus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> __s14 </ci>
+                  <ci> __s2 </ci>
+                  <ci> __s22 </ci>
+                  <ci> rvs_TRANS_RXN_24 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s20 </ci>
+                <ci> __s21 </ci>
+                <ci> __s22 </ci>
+                <ci> fwd_TRANS_RXN_24 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r2" name="TRANS_RXN_94" reversible="true">
+        <listOfReactants>
+          <speciesReference species="__s21" constant="true"/>
+          <speciesReference species="__s22" constant="true"/>
+          <speciesReference species="__s23" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="__s13" constant="true"/>
+          <speciesReference species="__s14" constant="true"/>
+          <speciesReference species="__s22" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> __s13 </ci>
+                  <ci> __s14 </ci>
+                  <ci> __s22 </ci>
+                  <ci> rvs_TRANS_RXN_94 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> __s21 </ci>
+                  <ci> __s22 </ci>
+                  <ci> __s23 </ci>
+                  <ci> fwd_TRANS_RXN_94 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r3" name="RXN0_7215" reversible="true">
+        <listOfReactants>
+          <speciesReference species="__s21" constant="true"/>
+          <speciesReference species="__s22" constant="true"/>
+          <speciesReference species="__s24" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="__s6" constant="true"/>
+          <speciesReference species="__s14" constant="true"/>
+          <speciesReference species="__s22" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> __s14 </ci>
+                  <ci> __s22 </ci>
+                  <ci> __s6 </ci>
+                  <ci> rvs_RXN0_7215 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> __s21 </ci>
+                  <ci> __s22 </ci>
+                  <ci> __s24 </ci>
+                  <ci> fwd_RXN0_7215 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r4" name="RXN0_7217" reversible="true">
+        <listOfReactants>
+          <speciesReference species="__s21" constant="true"/>
+          <speciesReference species="__s22" constant="true"/>
+          <speciesReference species="__s25" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="__s7" constant="true"/>
+          <speciesReference species="__s14" constant="true"/>
+          <speciesReference species="__s22" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> __s14 </ci>
+                  <ci> __s22 </ci>
+                  <ci> __s7 </ci>
+                  <ci> rvs_RXN0_7217 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> __s21 </ci>
+                  <ci> __s22 </ci>
+                  <ci> __s25 </ci>
+                  <ci> fwd_RXN0_7217 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r5" name="RXN_17755" reversible="true">
+        <listOfReactants>
+          <speciesReference species="__s21" constant="true"/>
+          <speciesReference species="__s22" constant="true"/>
+          <speciesReference species="__s26" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="__s8" constant="true"/>
+          <speciesReference species="__s14" constant="true"/>
+          <speciesReference species="__s22" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> __s14 </ci>
+                  <ci> __s22 </ci>
+                  <ci> __s8 </ci>
+                  <ci> rvs_RXN_17755 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> __s21 </ci>
+                  <ci> __s22 </ci>
+                  <ci> __s26 </ci>
+                  <ci> fwd_RXN_17755 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r6" name="BETAGALACTOSID_RXN" reversible="true">
+        <listOfReactants>
+          <speciesReference species="__s5" constant="true"/>
+          <speciesReference species="__s15" constant="true"/>
+          <speciesReference species="__s19" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="__s11" constant="true"/>
+          <speciesReference species="__s12" constant="true"/>
+          <speciesReference species="__s19" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <plus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> __s11 </ci>
+                  <ci> __s12 </ci>
+                  <ci> __s19 </ci>
+                  <ci> rvs_BETAGALACTOSID_RXN </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s15 </ci>
+                <ci> __s19 </ci>
+                <ci> __s5 </ci>
+                <ci> fwd_BETAGALACTOSID_RXN </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r7" name="RXN0_5363" reversible="true">
+        <listOfReactants>
+          <speciesReference species="__s2" constant="true"/>
+          <speciesReference species="__s19" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="__s1" constant="true"/>
+          <speciesReference species="__s19" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <plus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> __s1 </ci>
+                  <ci> __s19 </ci>
+                  <ci> rvs_RXN0_5363 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s19 </ci>
+                <ci> __s2 </ci>
+                <ci> fwd_RXN0_5363 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r8" name="RXN_17726" reversible="true">
+        <listOfReactants>
+          <speciesReference species="__s6" constant="true"/>
+          <speciesReference species="__s15" constant="true"/>
+          <speciesReference species="__s19" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="__s10" constant="true"/>
+          <speciesReference species="__s11" constant="true"/>
+          <speciesReference species="__s19" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <plus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> __s10 </ci>
+                  <ci> __s11 </ci>
+                  <ci> __s19 </ci>
+                  <ci> rvs_RXN_17726 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s15 </ci>
+                <ci> __s19 </ci>
+                <ci> __s6 </ci>
+                <ci> fwd_RXN_17726 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r9" name="RXN0_7219" reversible="true">
+        <listOfReactants>
+          <speciesReference species="__s7" constant="true"/>
+          <speciesReference species="__s15" constant="true"/>
+          <speciesReference species="__s19" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="__s9" constant="true"/>
+          <speciesReference species="__s11" constant="true"/>
+          <speciesReference species="__s19" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <plus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> __s11 </ci>
+                  <ci> __s19 </ci>
+                  <ci> __s9 </ci>
+                  <ci> rvs_RXN0_7219 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s15 </ci>
+                <ci> __s19 </ci>
+                <ci> __s7 </ci>
+                <ci> fwd_RXN0_7219 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>
