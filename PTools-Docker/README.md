@@ -18,7 +18,11 @@ Please do:
 3. **Run the docker**: In a terminal, execute `docker run --detach --network host --rm --volume /opt:/opt ptools-v24` (employ the tag)
 
 Explanation:
+
 --detach                         Run container in background and print container ID
+
 --rm                             Automatically remove the container when it exits
+
 --network network                Connect a container to a network
+
 --volume list                    Bind mount a volume
