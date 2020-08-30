@@ -264,7 +264,7 @@ def observables_from_metabolic_network(model, data, monomers, verbose = False, t
 	locations = ['cyt']
 	if not noObservables:
 		for name in sorted(monomers[0]):
-			name = name.replace('-','_')
+			name = name.replace('-', '_').replace('+', 'plus')
 			for loc in locations:
 				code = 'Observable(\'obs_met_{:s}_{:s}\', met(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None))\n'
 				code = code.format(name, loc.lower(), name, loc.lower())
@@ -278,7 +278,7 @@ def observables_from_metabolic_network(model, data, monomers, verbose = False, t
 
 	if not noInitials:
 		for name in sorted(monomers[0]):
-			name = name.replace('-','_')
+			name = name.replace('-', '_').replace('+', 'plus')
 			for loc in locations:
 				code = 'Initial(met(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None), Parameter(\'t0_met_{:s}_{:s}\', 0))\n'
 				code = code.format(name, loc.lower(), name, loc.lower())
@@ -390,4 +390,7 @@ def construct_model_from_metabolic_network(network, verbose = False, toFile = Fa
 	observables_from_metabolic_network(model, data, [metabolites, p_monomers, complexes, hypernodes], verbose, toFile, noInitials, noObservables)
 	rules_from_metabolic_network(model, data, verbose, toFile)
 
-	return model
+	if toFile:
+		return None
+	else:
+		return model

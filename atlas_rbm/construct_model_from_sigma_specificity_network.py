@@ -824,6 +824,8 @@ def construct_model_from_sigma_specificity_network(promoters, architecture, verb
 	ribosome_falloff_rules(data_architecture, verbose, toFile)
 
 	# TODO
+	# write docking, slide, and falloff of RNASE-CPLX from RNA
+	# write docking, slide, and falloff of PROTEASE-CPLX from protein
 	observables_from_genome_graph(data_architecture, verbose, toFile)
 
 	if toFile:
