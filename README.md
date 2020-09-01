@@ -12,6 +12,8 @@ Affiliations:
 1. Centro de Genómica y Bioinformática, Facultad de Ciencias, Universidad Mayor, Santiago, 8580745, Chile.
 2. Department of Chemical and Bioprocess Engineering, School of Engineering, Pontificia Universidad Católica de Chile, Santiago, 7820436, Chile
 
+![Graphical abstract][graphical_abstract]
+
 ## Prerequisites
 
 1. PathwayTools must be installed and running to obtain data from the BioCyc databases. Please, run ```pathway-tools -lisp -python-local-only``` before to obtain any data.<br/>
