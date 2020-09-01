@@ -12,7 +12,7 @@ Affiliations:
 1. Centro de Genómica y Bioinformática, Facultad de Ciencias, Universidad Mayor, Santiago, 8580745, Chile.
 2. Department of Chemical and Bioprocess Engineering, School of Engineering, Pontificia Universidad Católica de Chile, Santiago, 7820436, Chile
 
-![Graphical abstract](https://github.com/glucksfall/atlas/raw/master/graphical_abstract.tif)
+![Graphical abstract](https://github.com/glucksfall/atlas/blob/master/graphical_abstract.png)
 
 ## Prerequisites
 
