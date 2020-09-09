@@ -318,6 +318,7 @@ def analyseConnectivity(model, path = 'kasa'):
 def location_keys():
 	dct = {
 		'CYT' : 'cytosol',
+		'pMEM' : 'plasma membrane', # from BSUB
 		'iMEM' : 'inner membrane',
 		'PER' : 'periplasmic space',
 		'MEM' : 'membrane',
@@ -335,6 +336,7 @@ def location_values():
 	dct = {
 		'unknown' : 'CYT',
 		'cytosol' : 'CYT',
+		'plasma membrane' : 'pMEM', # from BSUB
 		'inner membrane' : 'iMEM',
 		'inner membrane (sensu Actinobacteria)' : 'iMEM',
 		'inner membrane (sensu Gram-negative Bacteria)' : 'iMEM',

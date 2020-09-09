@@ -19,7 +19,7 @@ import pandas
 
 from .utils import read_network, check_metabolic_network, location_keys, location_values
 
-def monomers_from_metabolic_network(model, data, verbose = False, toFile = False):
+def monomers_from_metabolic_network(model, data, strain, verbose = False, toFile = False):
 	# find unique metabolites and correct names
 	tmp = list(data['SUBSTRATES'].values) + list(data['PRODUCTS'].values)
 	tmp = ','.join(tmp)
@@ -37,11 +37,12 @@ def monomers_from_metabolic_network(model, data, verbose = False, toFile = False
 	code = "Monomer('met',\n" \
 		"	['name', 'loc', 'dna', 'met', 'prot', 'rna'],\n" \
 		"	{{ 'name' : [ {:s} ],\n" \
-		"	'loc' : [{:s}]}})\n"
+		"	'loc' : [{:s}],\n" \
+		"	'strain' : [{:s}]}})\n"
 
 	all_mets = [ '\'' + x.replace('-', '_').replace('+', 'plus') + '\'' for x in sorted(metabolites) ]
 	all_locs = [ '\'' + x.lower() + '\'' for x in sorted(location_keys().keys()) ]
-	code = code.format(', '.join(all_mets), ', '.join(all_locs))
+	code = code.format(', '.join(all_mets), ', '.join(all_locs), '\'' + strain + '\'')
 
 	if verbose:
 		print(code)
@@ -75,10 +76,11 @@ def monomers_from_metabolic_network(model, data, verbose = False, toFile = False
 	code = "Monomer('prot',\n" \
 		"	['name', 'loc', 'dna', 'met', 'prot', 'rna', 'up', 'dw'],\n" \
 		"	{{ 'name' : [ {:s} ],\n" \
-		"	'loc' : [{:s}]}})\n"
+		"	'loc' : [{:s}],\n" \
+		"	'strain' : [{:s}]}})\n"
 
 	all_proteins = [ '\'' + x.replace('-', '_') + '\'' for x in sorted(p_monomers)]
-	code = code.format(', '.join(all_proteins), ', '.join(all_locs))
+	code = code.format(', '.join(all_proteins), ', '.join(all_locs), '\'' + strain + '\'')
 
 	if verbose:
 		print(code)
@@ -92,14 +94,15 @@ def monomers_from_metabolic_network(model, data, verbose = False, toFile = False
 		code = "Monomer('cplx',\n" \
 			"	['name', 'loc', 'dna', 'met', 'prot', 'rna', 'up', 'dw'],\n" \
 			"	{{ 'name' : [ {:s} ],\n" \
-			"	'loc' : [{:s}]}})\n"
+			"	'loc' : [{:s}],\n" \
+			"	'strain' : [{:s}]}})\n"
 
 		for index, cplx in enumerate(complexes):
 			if cplx[0].isdigit():
 				complexes[index] = '_' + cplx
 
 		all_cplx = [ '\'' + x.replace('-', '_') + '\'' for x in sorted(complexes)]
-		code = code.format(', '.join(all_cplx), ', '.join(all_locs))
+		code = code.format(', '.join(all_cplx), ', '.join(all_locs), '\'' + strain + '\'')
 
 		if verbose:
 			print(code)
@@ -111,7 +114,7 @@ def monomers_from_metabolic_network(model, data, verbose = False, toFile = False
 
 	return metabolites, p_monomers, complexes, list(data['GENE OR COMPLEX'].values)
 
-def rules_from_metabolic_network(model, data, verbose = False, toFile = False):
+def rules_from_metabolic_network(model, data, strain, verbose = False, toFile = False):
 	for idx in data.index:
 		rxn = data.loc[idx]
 		if isinstance(rxn['ENZYME LOCATION'], str):
@@ -196,20 +199,26 @@ def rules_from_metabolic_network(model, data, verbose = False, toFile = False):
 			for loc in locations:
 				loc = location_values()[loc]
 				if subs.startswith(loc + '_'):
-					LHS.append('met(name = \'{:s}\', loc = \'{:s}\', prot = None)'.format(subs[len(loc + '_'):], loc.lower()))
+					if loc != 'ex':
+						LHS.append('met(name = \'{:s}\', loc = \'{:s}\', prot = None)'.format(subs[len(loc + '_'):], loc.lower()))
+					else:
+						LHS.append('met(name = \'{:s}\', loc = \'{:s}\', strain = \'{:s}\', prot = None)'.format(subs[len(loc + '_'):], loc.lower(), strain))
 					islocated = True
 			if not islocated:
-				LHS.append('met(name = \'{:s}\', loc = \'{:s}\', prot = None)'.format(subs, 'cyt'))
+				LHS.append('met(name = \'{:s}\', loc = \'{:s}\', strain = \'{:s}\', prot = None)'.format(subs, 'cyt', strain))
 
 		for prod in products:
 			islocated = False
 			for loc in locations:
 				loc = location_values()[loc]
 				if prod.startswith(loc + '_'):
-					RHS.append('met(name = \'{:s}\', loc = \'{:s}\', prot = None)'.format(prod[len(loc + '_'):], loc.lower()))
+					if loc != 'ex':
+						RHS.append('met(name = \'{:s}\', loc = \'{:s}\', prot = None)'.format(prod[len(loc + '_'):], loc.lower()))
+					else:
+						RHS.append('met(name = \'{:s}\', loc = \'{:s}\', strain = \'{:s}\', prot = None)'.format(prod[len(loc + '_'):], loc.lower(), strain))
 					islocated = True
 			if not islocated:
-				RHS.append('met(name = \'{:s}\', loc = \'{:s}\', prot = None)'.format(prod, 'cyt'))
+				RHS.append('met(name = \'{:s}\', loc = \'{:s}\', strain = \'{:s}\', prot = None)'.format(prod, 'cyt', strain))
 
 		# fifth: match the number of agents at both sides of the Rule (pySB checks and kappa v4 requires the matching)
 		if len(substrates) < len(products):
@@ -259,15 +268,15 @@ def rules_from_metabolic_network(model, data, verbose = False, toFile = False):
 			else:
 				exec(code.replace('\t', ' ').replace('\n', ' '))
 
-def observables_from_metabolic_network(model, data, monomers, verbose = False, toFile = False, noInitials = False, noObservables = False):
+def observables_from_metabolic_network(model, data, monomers, strain, verbose = False, toFile = False, noInitials = False, noObservables = False):
 	#locations = location_keys().keys() # reduce compilation time
 	locations = ['cyt']
 	if not noObservables:
 		for name in sorted(monomers[0]):
 			name = name.replace('-', '_').replace('+', 'plus')
 			for loc in locations:
-				code = 'Observable(\'obs_met_{:s}_{:s}\', met(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None))\n'
-				code = code.format(name, loc.lower(), name, loc.lower())
+				code = 'Observable(\'obs_met_{:s}_{:s}_{:s}\', met(name = \'{:s}\', loc = \'{:s}\', strain = \'{:s}\', dna = None, met = None, prot = None, rna = None))\n'
+				code = code.format(strain, name, loc.lower(), name, loc.lower(), strain)
 				if verbose:
 					print(code)
 				if toFile:
@@ -280,8 +289,8 @@ def observables_from_metabolic_network(model, data, monomers, verbose = False, t
 		for name in sorted(monomers[0]):
 			name = name.replace('-', '_').replace('+', 'plus')
 			for loc in locations:
-				code = 'Initial(met(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None), Parameter(\'t0_met_{:s}_{:s}\', 0))\n'
-				code = code.format(name, loc.lower(), name, loc.lower())
+				code = 'Initial(met(name = \'{:s}\', loc = \'{:s}\', strain = \'{:s}\', dna = None, met = None, prot = None, rna = None), Parameter(\'t0_met_{:s}_{:s}_{:s}\', 0))\n'
+				code = code.format(name, loc.lower(), strain, strain, name, loc.lower())
 				if verbose:
 					print(code)
 				if toFile:
@@ -293,8 +302,8 @@ def observables_from_metabolic_network(model, data, monomers, verbose = False, t
 		for name in sorted(monomers[1]):
 			name = name.replace('-','_')
 			for loc in locations:
-				code = 'Initial(prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None), Parameter(\'t0_prot_{:s}_{:s}\', 0))\n'
-				code = code.format(name, loc.lower(), name, loc.lower())
+				code = 'Initial(prot(name = \'{:s}\', loc = \'{:s}\', strain = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None), Parameter(\'t0_prot_{:s}_{:s}_{:s}\', 0))\n'
+				code = code.format(name, loc.lower(), strain, strain, name, loc.lower())
 				if verbose:
 					print(code)
 				if toFile:
@@ -306,8 +315,8 @@ def observables_from_metabolic_network(model, data, monomers, verbose = False, t
 		for name in sorted(monomers[2]):
 			name = name.replace('-','_')
 			for loc in locations:
-				code = 'Initial(cplx(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None), Parameter(\'t0_cplx_{:s}_{:s}\', 0))\n'
-				code = code.format(name, loc.lower(), name, loc.lower())
+				code = 'Initial(cplx(name = \'{:s}\', loc = \'{:s}\', strain = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None), Parameter(\'t0_cplx_{:s}_{:s}_{:s}\', 0))\n'
+				code = code.format(name, loc.lower(), strain, strain, name, loc.lower())
 				if verbose:
 					print(code)
 				if toFile:
@@ -340,14 +349,14 @@ def observables_from_metabolic_network(model, data, monomers, verbose = False, t
 				for location in locations:
 					complex_pysb = []
 					for index, monomer in enumerate(monomers):
-						complex_pysb.append('prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = {:s}, dw = {:s})'.format(
-							monomer, location.lower(), str(up[index]), str(dw[index])))
+						complex_pysb.append('prot(name = \'{:s}\', loc = \'{:s}\', strain = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = {:s}, dw = {:s})'.format(
+							monomer, location.lower(), strain, str(up[index]), str(dw[index])))
 
 					complex_pysb = ' %\n	'.join(complex_pysb)
 
 					if not noInitials:
-						code = 'Initial({:s},\n\tParameter(\'t0_cplx{:s}_{:s}\', 0))\n'
-						code = code.format(complex_pysb, cplx_composition, location.lower())
+						code = 'Initial({:s},\n\tParameter(\'t0_cplx_{:s}_{:s}_{:s}\', 0))\n'
+						code = code.format(complex_pysb, strain, cplx_composition, location.lower())
 
 						if verbose:
 							print(code)
@@ -358,8 +367,8 @@ def observables_from_metabolic_network(model, data, monomers, verbose = False, t
 							exec(code.replace('\t', ' ').replace('\n', ' '))
 
 					if not noObservables:
-						code = 'Observable(\'obs_cplx{:s}_{:s}\',\n\t{:s})\n'
-						code = code.format(cplx_composition, location.lower(), complex_pysb)
+						code = 'Observable(\'obs_cplx_{:s}_{:s}_{:s}\',\n\t{:s})\n'
+						code = code.format(strain, cplx_composition, location.lower(), complex_pysb)
 
 						if verbose:
 							print(code)
@@ -369,7 +378,7 @@ def observables_from_metabolic_network(model, data, monomers, verbose = False, t
 						else:
 							exec(code.replace('\t', ' ').replace('\n', ' '))
 
-def construct_model_from_metabolic_network(network, verbose = False, toFile = False, noInitials = False, noObservables = False):
+def construct_model_from_metabolic_network(network, strain, verbose = False, toFile = False, noInitials = False, noObservables = False):
 	if toFile:
 		with open(toFile, 'w') as outfile:
 			outfile.write('from pysb import *\nModel()\n\n')
@@ -386,9 +395,9 @@ def construct_model_from_metabolic_network(network, verbose = False, toFile = Fa
 
 	model = Model()
 	[metabolites, p_monomers, complexes, hypernodes] = \
-		monomers_from_metabolic_network(model, data, verbose, toFile)
-	observables_from_metabolic_network(model, data, [metabolites, p_monomers, complexes, hypernodes], verbose, toFile, noInitials, noObservables)
-	rules_from_metabolic_network(model, data, verbose, toFile)
+		monomers_from_metabolic_network(model, data, strain, verbose, toFile)
+	observables_from_metabolic_network(model, data, [metabolites, p_monomers, complexes, hypernodes], strain, verbose, toFile, noInitials, noObservables)
+	rules_from_metabolic_network(model, data, strain, verbose, toFile)
 
 	if toFile:
 		return None
