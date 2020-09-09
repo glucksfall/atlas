@@ -37,7 +37,7 @@ def main():
 		#version=versioneer.get_version(),
 		description='Atlas: Reconstruction of Rule-Based Models from biological networks',
 		long_description=long_description,
-		#long_description_content_type='text/markdown',
+		long_description_content_type='text/markdown',
 		url='https://github.com/glucksfall/atlas',
 		author='Rodrigo Santibáñez',
 		author_email='glucksfall@users.noreply.github.com',
