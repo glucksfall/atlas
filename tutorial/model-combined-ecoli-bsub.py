@@ -3,19 +3,4175 @@ Model()
 
 Monomer('met',
 	['name', 'loc', 'strain', 'dna', 'met', 'prot', 'rna'],
-	{ 'name' : [ 'A_5_prime_PP_5_prime_DNA', 'A_5_prime_PP_5_prime_RNA', 'A_DOUBLE_STRANDED_DNA_WITH_A_3_OVERHANG', 'A_REDUCED_TORY_PROTEIN', 'ACEF_LIPOATE', 'ACET', 'ACETALD', 'ACETOACETYL_COA', 'ACETOIN', 'ACETOL', 'ACETYL_ACP', 'ACETYL_COA', 'ACETYL_D_GLUCOSAMINYLDIPHOSPHO_UNDECAPRE', 'ACETYL_GLU', 'ACETYL_P', 'ACETYLSERINE', 'ACP', 'ACRYLYL_COA', 'ACYL_ACP', 'ACYL_COA', 'ACYL_SN_GLYCEROL_3P', 'ADENINE', 'ADENOSINE', 'ADENOSINE5TRIPHOSPHO5ADENOSINE', 'ADENOSINE_DIPHOSPHATE_RIBOSE', 'ADENOSYL_HOMO_CYS', 'ADENOSYL_P4', 'ADENOSYLCOBALAMIN', 'ADENOSYLCOBALAMIN_5_P', 'ADENOSYLCOBINAMIDE', 'ADENOSYLCOBINAMIDE_GDP', 'ADENOSYLCOBINAMIDE_P', 'ADENYLOSUCC', 'ADP', 'ADP_D_GLUCOSE', 'ADP_D_GLYCERO_D_MANNO_HEPTOSE', 'ADP_L_GLYCERO_D_MANNO_HEPTOSE', 'ADP_SUGARS', 'AGMATHINE', 'AICAR', 'ALA_tRNAs', 'ALLANTOATE', 'ALLO_THR', 'ALLOLACTOSE', 'ALPHA_D_GALACTOSE', 'ALPHA_GLUCOSE', 'ALPHA_RIBAZOLE', 'ALPHA_RIBAZOLE_5_P', 'AMINO_ACETONE', 'AMINO_HYDROXYMETHYL_METHYL_PYR_P', 'AMINO_HYDROXYMETHYL_METHYLPYRIMIDINE_PP', 'AMINO_OH_HYDROXYMETHYL_DIHYDROPTERIDINE', 'AMINO_OXOBUT', 'AMINO_RIBOSYLAMINO_1H_3H_PYR_DIONE', 'AMINOMETHYLDIHYDROLIPOYL_GCVH', 'AMMONIA', 'AMMONIUM', 'AMP', 'ANTHRANILATE', 'APO_CITRATE_LYASE', 'APS', 'ARABINOSE_5P', 'ARCB_MONOMER', 'ARG', 'ARG_tRNAs', 'ARSENATE', 'ASN', 'ASN_tRNAs', 'ASP_tRNAs', 'ATP', 'Acceptor', 'Acetate_esters', 'Acetoacetyl_ACPs', 'Acetylated_S18_N_terminal_L_alanine', 'Acetylated_S5_N_terminal_L_alanine', 'Acyl_Phosphates', 'Adenylated_ThiS_Proteins', 'Alcohols', 'Aldehydes', 'Aldonic_Acids', 'Aldoses', 'Aliphatic_Alpha_Omega_Diamines', 'Aliphatic_Amines', 'Aliphatic_N_Acetyl_Diamines', 'Aliphatic_Omega_Amino_Aldehydes', 'Alkanesulfonates', 'Alkyl_Hydro_Peroxides', 'Alkylated_Bases', 'Alkylated_DNAs', 'All_apo_ACPs', 'All_holo_ACPs', 'All_tRNAs', 'Alpha_D_aldose_1_phosphates', 'Alpha_lactose', 'Aminated_Amine_Donors', 'Amino_Acids', 'Amino_Acids_20', 'Aminopeptidase_Substrates', 'Apo_EntB', 'Apo_EntF', 'Aromatic_Amino_Acids', 'Aromatic_Oxoacids', 'Aryl_Amines', 'Aryl_sulfates', 'B_ALANINE', 'B_KETOACYL_ACP', 'B12_Corrinoid_Adenosyltranferase', 'BCCP_L_lysine', 'BCCP_biotin_L_lysine', 'BENZALDEHYDE', 'BETA_D_FRUCTOSE', 'BETAINE', 'BETAINE_ALDEHYDE_HYDRATE', 'BETAINE_ALDEHYDE', 'BIO_5_AMP', 'BIOTIN', 'BISOHMYR_GLC', 'BISOHMYR_GLUCOSAMINYL_1P', 'BR_', 'BROMOACETATE', 'Beta_3_hydroxybutyryl_ACPs', 'Beta_D_Galactosides', 'Beta_D_Glucuronides', 'Beta_D_glucosides', 'Beta_Lactams', 'Beta_hydroxydecanoyl_ACPs', 'Butanoyl_ACPs', 'C_DI_GMP', 'C_terminal_32_aminoacid_Peptides', 'C1', 'C5', 'C55_PP_GLCNAC_MANNACA', 'C55_PP_GLCNAC_MANNACA_FUC4NAC', 'C6', 'CADAVERINE', 'CAMP', 'CARBAMATE', 'CARBAMOYL_P', 'CARBAMYUL_L_ASPARTATE', 'CARBON_DIOXIDE', 'CARBON_MONOXIDE', 'CARBOXYETHYL_3_5_CYCLOHEXADIENE_1_2_DIOL', 'CARBOXYPHENYLAMINO_DEOXYRIBULOSE_P', 'CARDIOLIPIN', 'CARNITINE', 'CDP', 'CDP_2_3_4_Saturated_Diacylglycerols', 'CDPDIACYLGLYCEROL', 'CELLULOSE', 'CGMP', 'CH33ADO', 'CH4', 'CHEY_MONOMER', 'CHITIN', 'CHITOBIOSE', 'CHOLANATE2', 'CHOLATE', 'CHOLINE', 'CHORISMATE', 'CIS_ACONITATE', 'CIS_DELTA3_ENOYL_COA', 'CIT', 'CITRATE_LYASE', 'CL_', 'CMP', 'CMP_KDO', 'CO_A', 'COPROPORPHYRINOGEN_III', 'CPD_10247', 'CPD_10269', 'CPD_10329', 'CPD_10551', 'CPD_10796', 'CPD_10797', 'CPD_108', 'CPD_1086', 'CPD_1091', 'CPD_1093', 'CPD_1106', 'CPD_1136', 'CPD_11592', 'CPD_1162', 'CPD_11653', 'CPD_11770', 'CPD_1181', 'CPD_12115', 'CPD_12255', 'CPD_12274', 'CPD_12279', 'CPD_12284', 'CPD_12365', 'CPD_12366', 'CPD_12367', 'CPD_12427', 'CPD_12575', 'CPD_12587', 'CPD_12773', 'CPD_12797', 'CPD_12991', 'CPD_1301', 'CPD_1302', 'CPD_13025', 'CPD_13034', 'CPD_13043', 'CPD_13059', 'CPD_13118', 'CPD_13314', 'CPD_13315', 'CPD_13357', 'CPD_13469', 'CPD_13575', 'CPD_13851', 'CPD_13852', 'CPD_13853', 'CPD_13927', 'CPD_13930', 'CPD_14101', 'CPD_14133', 'CPD_14332', 'CPD_14443', 'CPD_14447', 'CPD_14553', 'CPD_14736', 'CPD_14762', 'CPD_14925', 'CPD_15016', 'CPD_15158', 'CPD_15237', 'CPD_15238', 'CPD_15242', 'CPD_15244', 'CPD_15317', 'CPD_15373', 'CPD_15382', 'CPD_15384', 'CPD_15390', 'CPD_15391', 'CPD_15392', 'CPD_15393', 'CPD_15403', 'CPD_15435', 'CPD_15436', 'CPD_15530', 'CPD_15633', 'CPD_157', 'CPD_15709', 'CPD_15818', 'CPD_15826', 'CPD_15873', 'CPD_15874', 'CPD_15972', 'CPD_15978', 'CPD_15979', 'CPD_16009', 'CPD_16398', 'CPD_16400', 'CPD_16401', 'CPD_16491', 'CPD_16500', 'CPD_16501', 'CPD_16502', 'CPD_16566', 'CPD_16567', 'CPD_16569', 'CPD_16618', 'CPD_16716', 'CPD_16720', 'CPD_16843', 'CPD_17063', 'CPD_173', 'CPD_17523', 'CPD_17530', 'CPD_17573', 'CPD_17574', 'CPD_1772', 'CPD_17752', 'CPD_17753', 'CPD_17926', 'CPD_17927', 'CPD_17931', 'CPD_17932', 'CPD_17947', 'CPD_17968', 'CPD_17969', 'CPD_17989', 'CPD_18118', 'CPD_18259', 'CPD_18260', 'CPD_18346', 'CPD_18348', 'CPD_18379', 'CPD_1843', 'CPD_18529', 'CPD_18717', 'CPD_18804', 'CPD_18805', 'CPD_18806', 'CPD_18807', 'CPD_18808', 'CPD_18901', 'CPD_18902', 'CPD_18903', 'CPD_19111', 'CPD_19144', 'CPD_19147', 'CPD_19148', 'CPD_19150', 'CPD_19151', 'CPD_19153', 'CPD_19154', 'CPD_19155', 'CPD_19157', 'CPD_19158', 'CPD_19159', 'CPD_19160', 'CPD_19161', 'CPD_19162', 'CPD_19163', 'CPD_19167', 'CPD_19168', 'CPD_19169', 'CPD_19170', 'CPD_19171', 'CPD_19172', 'CPD_19179', 'CPD_19181', 'CPD_19185', 'CPD_19186', 'CPD_19233', 'CPD_19235', 'CPD_19236', 'CPD_19237', 'CPD_19240', 'CPD_19241', 'CPD_19242', 'CPD_19243', 'CPD_19395', 'CPD_194', 'CPD_195', 'CPD_20035', 'CPD_20036', 'CPD_207', 'CPD_20746', 'CPD_20750', 'CPD_20756', 'CPD_20757', 'CPD_20903', 'CPD_20905', 'CPD_20966', 'CPD_20969', 'CPD_21359', 'CPD_21406', 'CPD_21407', 'CPD_21409', 'CPD_21531', 'CPD_225', 'CPD_2343', 'CPD_239', 'CPD_253', 'CPD_264', 'CPD_2961', 'CPD_3', 'CPD_316', 'CPD_330', 'CPD_334', 'CPD_335', 'CPD_343', 'CPD_3462', 'CPD_347', 'CPD_3561', 'CPD_3564', 'CPD_358', 'CPD_37', 'CPD_3705', 'CPD_3706', 'CPD_3707', 'CPD_3708', 'CPD_3709', 'CPD_3710', 'CPD_3711', 'CPD_3713', 'CPD_3721', 'CPD_3723', 'CPD_3724', 'CPD_3725', 'CPD_3728', 'CPD_3734', 'CPD_3745', 'CPD_3766', 'CPD_377', 'CPD_3785', 'CPD_3801', 'CPD_381', 'CPD_389', 'CPD_397', 'CPD_4', 'CPD_421', 'CPD_4211', 'CPD_448', 'CPD_4544', 'CPD_469', 'CPD_476', 'CPD_479', 'CPD_497', 'CPD_520', 'CPD_534', 'CPD_536', 'CPD_548', 'CPD_558', 'CPD_560', 'CPD_564', 'CPD_568', 'CPD_582', 'CPD_5821', 'CPD_602', 'CPD_606', 'CPD_618', 'CPD_622', 'CPD_644', 'CPD_650', 'CPD_653', 'CPD_66', 'CPD_660', 'CPD_6602', 'CPD_67', 'CPD_674', 'CPD_6746', 'CPD_69', 'CPD_6972', 'CPD_6982', 'CPD_7000', 'CPD_702', 'CPD_703', 'CPD_7046', 'CPD_722', 'CPD_7221', 'CPD_7248', 'CPD_7249', 'CPD_763', 'CPD_7670', 'CPD_782', 'CPD_7867', 'CPD_8122', 'CPD_8123', 'CPD_8180', 'CPD_8199', 'CPD_8200', 'CPD_822', 'CPD_8521', 'CPD_8524', 'CPD_8534', 'CPD_8550', 'CPD_8624', 'CPD_8625', 'CPD_8876', 'CPD_8887', 'CPD_8891', 'CPD_8989', 'CPD_8990', 'CPD_9000', 'CPD_9038', 'CPD_9190', 'CPD_9245', 'CPD_9247', 'CPD_9385', 'CPD_9646', 'CPD_9728', 'CPD_9923', 'CPD_9924', 'CPD_9925', 'CPD_9956', 'CPD0_1027', 'CPD0_1032', 'CPD0_1048', 'CPD0_1049', 'CPD0_1063', 'CPD0_1065', 'CPD0_1068', 'CPD0_1074', 'CPD0_1080', 'CPD0_1081', 'CPD0_1082', 'CPD0_1083', 'CPD0_1085', 'CPD0_1090', 'CPD0_1095', 'CPD0_1101', 'CPD0_1107', 'CPD0_1108', 'CPD0_1110', 'CPD0_1112', 'CPD0_1122', 'CPD0_1123', 'CPD0_1133', 'CPD0_1147', 'CPD0_1148', 'CPD0_1151', 'CPD0_1156', 'CPD0_1157', 'CPD0_1158', 'CPD0_1159', 'CPD0_1162', 'CPD0_1163', 'CPD0_1171', 'CPD0_1181', 'CPD0_1182', 'CPD0_1183', 'CPD0_1184', 'CPD0_1185', 'CPD0_1189', 'CPD0_1192', 'CPD0_1193', 'CPD0_1202', 'CPD0_1283', 'CPD0_1442', 'CPD0_1445', 'CPD0_1456', 'CPD0_1699', 'CPD0_1719', 'CPD0_181', 'CPD0_1882', 'CPD0_1885', 'CPD0_1905', 'CPD0_1965', 'CPD0_2015', 'CPD0_2030', 'CPD0_2101', 'CPD0_2167', 'CPD0_2184', 'CPD0_2189', 'CPD0_2190', 'CPD0_2283', 'CPD0_2298', 'CPD0_2331', 'CPD0_2338', 'CPD0_2339', 'CPD0_2340', 'CPD0_2350', 'CPD0_2351', 'CPD0_2352', 'CPD0_2353', 'CPD0_2354', 'CPD0_2362', 'CPD0_2363', 'CPD0_2364', 'CPD0_2370', 'CPD0_2381', 'CPD0_2461', 'CPD0_2463', 'CPD0_2467', 'CPD0_2468', 'CPD0_2471', 'CPD0_2472', 'CPD0_2474', 'CPD0_2479', 'CPD0_2480', 'CPD0_2482', 'CPD0_2483', 'CPD0_2499', 'CPD0_2501', 'CPD0_2511', 'CPD0_2518', 'CPD0_2521', 'CPD0_2552', 'CPD0_2558', 'CPD0_2559', 'CPD0_2582', 'CPD0_2634', 'CPD0_881', 'CPD0_882', 'CPD0_888', 'CPD0_889', 'CPD0_903', 'CPD0_929', 'CPD0_930', 'CPD0_932', 'CPD0_933', 'CPD0_934', 'CPD0_935', 'CPD0_936', 'CPD0_937', 'CPD0_938', 'CPD0_939', 'CPD0_944', 'CPD0_971', 'CPD3O_0', 'CPD66_39', 'CPDMETA_13650', 'CPLX0_1', 'CPLX0_2', 'CPLX0_7748', 'CPLX0_7849', 'CPXR_MONOMER', 'CRplus3', 'CRplus6', 'CREATINE', 'CREATINE_P', 'CROTONOBETAINYL_COA', 'CROTONYL_COA', 'CTP', 'CUplus', 'CUplus2', 'CYS', 'CYS_GLY', 'CYS_tRNAs', 'CYTIDINE', 'CYTOSINE', 'Carboxyadenylated_MPT_synthases', 'Carboxylates', 'Carboxylic_esters', 'Cellodextrins', 'Chap_ADP_apo_SP_Complex', 'Charged_ALA_tRNAs', 'Charged_ARG_tRNAs', 'Charged_ASN_tRNAs', 'Charged_ASP_tRNAs', 'Charged_CYS_tRNAs', 'Charged_GLN_tRNAs', 'Charged_GLT_tRNAs', 'Charged_GLY_tRNAs', 'Charged_HIS_tRNAs', 'Charged_ILE_tRNAs', 'Charged_LEU_tRNAs', 'Charged_LYS_tRNAs', 'Charged_MET_tRNAs', 'Charged_PHE_tRNAs', 'Charged_PRO_tRNAs', 'Charged_SEC_tRNAs', 'Charged_SER_tRNAs', 'Charged_THR_tRNAs', 'Charged_TRP_tRNAs', 'Charged_TYR_tRNAs', 'Charged_VAL_tRNAs', 'Chitodextrins', 'Cis_Delta5_dodecenoyl_ACPs', 'Cis_Delta7_tetradecenoyl_ACPs', 'Cis_delta_3_decenoyl_ACPs', 'Cis_vaccenoyl_ACPs', 'Citrate_Lyase_Citryl_Form', 'Cleaved_DNA', 'Cleaved_Type_IV_Prepillins', 'Cleaved_type_1_transmembrane_domains', 'Crotonyl_ACPs', 'Cyclic_2_3_Ribonucleoside_Monophosphates', 'Cyclic_N6_threonylcarbamoyl_A37_tRNAs', 'Cyclic_Phosphate_Terminated_RNAs', 'Cysteine_Desulfurase_L_cysteine', 'Cytidine_32_tRNAs', 'Cytidine_34_tRNAIle2', 'Cytidine_34_tRNAmet', 'Cytidine_34_tRNAs', 'Cytochromes_C_Oxidized', 'Cytochromes_C_Reduced', 'Cytosine_32_In_tRNAs', 'D_3_HYDROXYACYL_COA', 'D_6_P_GLUCONO_DELTA_LACTONE', 'D_ALA_D_ALA', 'D_ALANINE', 'D_ALLOSE_6_PHOSPHATE', 'D_ALLULOSE_6_PHOSPHATE', 'D_ALPHABETA_D_HEPTOSE_7_PHOSPHATE', 'D_ALTRONATE', 'D_ARABINOSE', 'D_Allopyranose', 'D_Amino_Acids', 'D_BETA_D_HEPTOSE_1_P', 'D_BETA_D_HEPTOSE_17_DIPHOSPHATE', 'D_CYSTEINE', 'D_ERYTHRO_IMIDAZOLE_GLYCEROL_P', 'D_GALACTARATE', 'D_GALACTONATE', 'D_GALACTONO_1_4_LACTONE', 'D_GALACTOSAMINE_6_PHOSPHATE', 'D_GLT', 'D_GLUCARATE', 'D_GLUCOSAMINE_6_P', 'D_Glucopyranuronate', 'D_LACTATE', 'D_MANNONATE', 'D_METHYL_MALONYL_COA', 'D_MYO_INOSITOL_1_MONOPHOSPHATE', 'D_RIBULOSE', 'D_RIBULOSE_1_P', 'D_Ribofuranose', 'D_SEDOHEPTULOSE_1_7_P2', 'D_SEDOHEPTULOSE_7_P', 'D_SERINE', 'D_SORBITOL_6_P', 'D_TAGATURONATE', 'D_TARTRATE', 'D_TYROSINE', 'D_TYROSYL_TRNATYR', 'D_XYLONATE', 'D_XYLULOSE', 'D_Xylopyranose', 'D_aminoacyl_tRNAs', 'D_arabinopyranose', 'D_form_FeS_Cluster_Scaffold_Proteins', 'D_galactopyranose', 'D_glucopyranose_6_phosphate', 'D_glucose_1_phosphates', 'D_mannopyranose', 'DADP', 'DAMP', 'DATP', 'DCDP', 'DCMP', 'DCTP', 'DEAMIDO_NAD', 'DEHYDRO_3_DEOXY_L_RHAMNONATE', 'DEHYDRO_DEOXY_GALACTONATE_PHOSPHATE', 'DEHYDROQUINATE', 'DELTA1_PIPERIDEINE_2_6_DICARBOXYLATE', 'DELTA3_ISOPENTENYL_PP', 'DEOXY_D_RIBOSE_1_PHOSPHATE', 'DEOXY_RIBOSE_5P', 'DEOXYADENOSINE', 'DEOXYCYTIDINE', 'DEOXYGUANOSINE', 'DEOXYINOSINE', 'DEOXYURIDINE', 'DEOXYXYLULOSE_5P', 'DEPHOSPHO_COA', 'DETHIOBIOTIN', 'DGDP', 'DGMP', 'DGTP', 'DHB_Seryl_EntF', 'DI_H_OROTATE', 'DI_H_URACIL', 'DIACETYL', 'DIACETYLCHITOBIOSE_6_PHOSPHATE', 'DIACYLGLYCEROL', 'DIACYLGLYCEROL_PYROPHOSPHATE', 'DIAMINO_OH_PHOSPHORIBOSYLAMINO_PYR', 'DIAMINONONANOATE', 'DIHYDRO_DIOH_BENZOATE', 'DIHYDRO_NEO_PTERIN', 'DIHYDRO_THYMINE', 'DIHYDROFOLATE', 'DIHYDROFOLATE_GLU_N', 'DIHYDROLIPOYL_GCVH', 'DIHYDROMONAPTERIN_TRIPHOSPHATE', 'DIHYDRONEOPTERIN_P', 'DIHYDRONEOPTERIN_P3', 'DIHYDROPTERIN_CH2OH_PP', 'DIHYDROSIROHYDROCHLORIN', 'DIHYDROXY_ACETONE_PHOSPHATE', 'DIHYDROXY_BUTANONE_P', 'DIHYDROXYACETONE', 'DIHYDROXYNAPHTHOATE', 'DIHYDROXYPENTANEDIONE', 'DIMETHYL_D_RIBITYL_LUMAZINE', 'DIMETHYLBENZIMIDAZOLE', 'DIMP', 'DIPEPTIDES', 'DITP', 'DMSO', 'DNA_3_methyladenines', 'DNA_6_O_Methyl_Guanines', 'DNA_Adenines', 'DNA_Cleaved_Recognition_Site', 'DNA_Combined_With_Exogenous_DNA', 'DNA_Containing_N6_Methyladenine', 'DNA_Cytidines', 'DNA_Cytosines', 'DNA_Guanines', 'DNA_Holder', 'DNA_N', 'DNA_Segment_Placeholder', 'DNA_Segment_in_Reverse_Orientations', 'DNA_With_GO', 'DNA_With_GO_A_Mismatch', 'DNA_With_Recognition_Site', 'DNA_containing_a_Apyrimidinic_Sites', 'DNA_containing_aPurinic_Sites', 'DNA_containing_abasic_Sites', 'DNA_containing_diamino_hydro_formamidops', 'DNA_deoxycytidine_dimer', 'DNA_deoxycytidine_thymidine_dimer', 'DNA_thymidine_dimer', 'DNA_thymidines', 'DNA_with_Holiday_Junctions', 'DNA_with_Uracils', 'DPG', 'DTDP_D_GLUCOSE', 'DTDP_DEOH_DEOXY_GLUCOSE', 'DTDP_DEOH_DEOXY_MANNOSE', 'DTDP_RHAMNOSE', 'DUDP', 'DUMP', 'DUTP', 'Damaged_DNA_Pyrimidine', 'Deaminated_Amine_Donors', 'Decanoyl_ACPs', 'Deoxy_Ribonucleoside_3P', 'Deoxy_Ribonucleoside_Diphosphates', 'Deoxy_Ribonucleoside_Monophosphates', 'Deoxy_Ribonucleoside_Triphosphates', 'Deoxy_Ribonucleosides', 'Diacylglycerol_Prolipoproteins', 'Dihydro_Lipoyl_Proteins', 'Dipeptides_With_Asp_At_N_Terminal', 'Dipeptides_With_Proline_Carboxy', 'Diribonucleotide', 'Disulfide_Isomerase_with_Disulfide_Bond', 'Dodec_2_enoyl_ACPs', 'Dodecanoyl_ACPs', 'Donor_H2', 'Double_Stranded_DNA_with_terminal_PO4s', 'Double_Stranded_DNAs', 'E_', 'E2O_MONOMER', 'E2P_MONOMER', 'EF_P_L_lysine', 'EF_P_lysyl_hydroxylysine', 'EG10443_MONOMER', 'EG10544_MONOMER', 'EG10823_MONOMER', 'EG10873_MONOMER', 'EG11171_MONOMER', 'ENOL_OXALOACETATE', 'ENTB_CPLX', 'ENTEROBACTIN', 'ERYTHRONATE_4P', 'ERYTHROSE_4P', 'ETF_Oxidized', 'ETF_Reduced', 'ETHANOL_AMINE', 'ETHYL_2_METHYLACETOACETATE', 'ETHYL_2R_METHYL_3S_HYDROXYBUTANOATE', 'ETOH', 'ETR_Quinols', 'ETR_Quinones', 'Elongation_tRNAMet', 'Elongator_tRNAMet_acetylcytidine', 'Enoylglutaryl_ACP_methyl_esters', 'Enoylpimeloyl_ACP_methyl_esters', 'Exoaminopeptidase_Substrates', 'FAD', 'FADH2', 'FARNESYL_PP', 'FEplus2', 'FEplus3', 'FERRIC_ENTEROBACTIN_COMPLEX', 'FMN', 'FMNH2', 'FORMALDEHYDE', 'FORMATE', 'FORMYL_COA', 'FORMYL_L_METHIONYL_PEPTIDE', 'FORMYL_THF_GLU_N', 'FRU1P', 'FRUCTOSE_16_DIPHOSPHATE', 'FRUCTOSE_6P', 'FRUCTOSELYSINE', 'FRUCTOSELYSINE_6_PHOSPHATE', 'FRUCTURONATE', 'FUCULOSE_1P', 'FUM', 'Fatty_Acids', 'Fe3_siderophores', 'Fe4S4_Cluster_Protein', 'FeS_Cluster_Chaperones_ATP', 'Flavodoxins_Semiquinones', 'Fructofuranose', 'G3P', 'GALACTITOL_1_PHOSPHATE', 'GALACTOSE', 'GALACTOSE_1P', 'GAMMA_BUTYROBETAINE', 'GAMMA_BUTYROBETAINYL_COA', 'GAMMA_GLUTAMYL_GAMMA_AMINOBUTYRALDEH', 'GAMMA_GLUTAMYL_PUTRESCINE', 'GAP', 'GDP', 'GDP_4_DEHYDRO_6_DEOXY_D_MANNOSE', 'GDP_D_GLUCOSE', 'GDP_MANNOSE', 'GDP_TP', 'GERANYL_PP', 'GLC', 'GLC_1_P', 'GLC_6_P', 'GLC_D_LACTONE', 'GLN', 'GLN_tRNAs', 'GLT', 'GLT_tRNAs', 'GLUCONATE', 'GLUCOSAMINE', 'GLUCOSAMINE_1P', 'GLUTAMATE_1_SEMIALDEHYDE', 'GLUTATHIONE', 'GLUTATHIONYLSPERMIDINE', 'GLY', 'GLY_tRNAs', 'GLYCERALD', 'GLYCERATE', 'GLYCEROL', 'GLYCEROL_3P', 'GLYCEROPHOSPHOGLYCEROL', 'GLYCOL', 'GLYCOLALDEHYDE', 'GLYCOLLATE', 'GLYCYLGLYCINE', 'GLYOX', 'GMP', 'GMP_LYSINE_PHOSPHORAMIDATE', 'GTP', 'GUANINE', 'GUANOSINE', 'GUANOSINE_5DP_3DP', 'Gcv_H', 'General_Protein_Substrates', 'GlcNAc_1_6_anhydro_MurNAc_pentapeptide', 'Gln_B', 'Glucopyranose', 'Glucosyl_Lipopolysaccharides', 'Glutamine_synthetase_Tyr', 'Glutamine_synthetase_adenylyl_Tyr', 'Glutaryl_ACP_methyl_esters', 'Glycerol_1_phosphate', 'Glycerophosphodiesters', 'Glycogens', 'Guanine34_in_tRNAs', 'Guanine37_in_tRNA', 'Guanine46_in_tRNA', 'HCN', 'HCO3', 'HEME_D', 'HEPTA_ACYLATED_LIPID_A', 'HEPTOSYL_KDO2_LIPID_IVA', 'HIPA_P', 'HIS', 'HIS_tRNAs', 'HISTIDINAL', 'HISTIDINOL', 'HMP', 'HOLO_CITRATE_LYASE', 'HOMO_CYS', 'HOMO_SER', 'HS', 'HSCN', 'HYDROGEN_MOLECULE', 'HYDROGEN_PEROXIDE', 'HYDROQUINONE', 'HYDROXY_METHYL_BUTENYL_DIP', 'HYDROXYLAMINE', 'HYDROXYMETHYLBILANE', 'HYDROXYPROPANAL', 'HYPOXANTHINE', 'Heme_b', 'Hex_2_enoyl_ACPs', 'Hexanoyl_ACPs', 'Holo_EntB', 'Holo_EntF', 'HypE_Proteins', 'HypE_S_carboxamide', 'HypE_S_cyanate', 'IDP', 'ILE', 'ILE_tRNAs', 'IMIDAZOLE_ACETOL_P', 'IMINOASPARTATE', 'IMP', 'INDOLE', 'INDOLE_3_GLYCEROL_P', 'INOSINE', 'IS30_Insertion_Sequences', 'IS30_with_Integrated_Transposon', 'ISOBUTANOL', 'ISOCHORISMATE', 'ISOVALERYL_COA', 'ITP', 'Initiation_tRNAmet', 'Iron_Sulfur_Cluster_Scaffold_Proteins', 'Iso_Cit', 'KDO', 'KDO_8P', 'KDO_LIPID_IVA', 'KDO2_LAUROYL_LIPID_IVA', 'KDO2_LIPID_A', 'KDO2_LIPID_IVA', 'KDO2_PALMITOLEOYL_LIPID_IVA', 'KETOBUTFORMLY_INACT_MONOMER', 'KETOBUTFORMLY_MONOMER', 'L_1_GLYCERO_PHOSPHORYLCHOLINE', 'L_1_GLYCEROPHOSPHORYLETHANOL_AMINE', 'L_1_PHOSPHATIDYL_ETHANOLAMINE', 'L_1_PHOSPHATIDYL_GLYCEROL', 'L_1_PHOSPHATIDYL_GLYCEROL_P', 'L_1_PHOSPHATIDYL_SERINE', 'L_3_HYDROXYACYL_COA', 'L_ALA_GAMMA_D_GLU_DAP', 'L_ALLO_THREONINE', 'L_ALPHA_ALANINE', 'L_ARA4N_MODIFIED_KDO2_LIPID_A', 'L_ARGININO_SUCCINATE', 'L_ASCORBATE_6_PHOSPHATE', 'L_ASPARTATE', 'L_ASPARTATE_SEMIALDEHYDE', 'L_BETA_ASPARTYL_P', 'L_CARNITINYL_COA', 'L_CITRULLINE', 'L_CYSTATHIONINE', 'L_Cysteine_Desulfurase_persulfide', 'L_Cysteine_Desulfurases', 'L_DELTA1_PYRROLINE_5_CARBOXYLATE', 'L_DI_GMP', 'L_DIHYDROXY_PHENYLALANINE', 'L_FUCULOSE', 'L_GAMMA_GLUTAMYLCYSTEINE', 'L_GLUTAMATE_5_P', 'L_GLUTAMATE_GAMMA_SEMIALDEHYDE', 'L_GLYCERALDEHYDE', 'L_GLYCERALDEHYDE_3_PHOSPHATE', 'L_HISTIDINOL_P', 'L_IDONATE', 'L_LACTATE', 'L_LYXOSE', 'L_ORNITHINE', 'L_PANTOATE', 'L_PHOSPHATIDATE', 'L_RHAMNONATE', 'L_RIBULOSE', 'L_RIBULOSE_5_P', 'L_SELENOCYSTEINE', 'L_THREONINE_O_3_PHOSPHATE', 'L_XYLULOSE', 'L_XYLULOSE_5_P', 'L_arabinopyranose', 'L_leucyl_L_arginyl_Protein', 'L_leucyl_L_lysyl_Protein', 'L_methionyl_tRNAfmet', 'L_phenylalanyl_L_arginyl_Protein', 'L_phenylalanyl_L_lysyl_Protein', 'L_seryl_SEC_tRNAs', 'LACTALD', 'LEU', 'LEU_tRNAs', 'LIPID_IV_A', 'LIPOIC_ACID', 'LIPOYL_ACP', 'LIPOYL_AMP', 'LL_DIAMINOPIMELATE', 'LYS', 'LYS_tRNAs', 'Leader_Sequences', 'Light', 'Lipopolysaccharides', 'Lipoprotein_signal_peptide', 'Lipoyl_ACPs', 'Lipoyl_Protein_L_Lysine', 'Lipoyl_Protein_N6_lipoyllysine', 'Long_Chain_Polyphosphate', 'Lysidine_tRNA_Ile2', 'Lysophospholipids', 'MAL', 'MALONATE_S_ALD', 'MALONYL_ACP', 'MALONYL_COA', 'MALTOHEXAOSE', 'MALTOPENTAOSE', 'MALTOSE', 'MALTOTETRAOSE', 'MANNITOL', 'MANNITOL_1P', 'MANNOSE', 'MANNOSE_1P', 'MDO_D_Glucoses', 'MELIBIOSE', 'MENADIOL', 'MESO_DIAMINOPIMELATE', 'MET', 'METHIONYL_PEPTIDE', 'METHYL_GLYOXAL', 'METHYL_MALONYL_COA', 'METHYLENE_THF_GLU_N', 'METOH', 'MI_HEXAKISPHOSPHATE', 'MI_PENTAKISPHOSPHATE', 'MONOMER0_2811', 'MONOMER0_4152', 'MONOMER0_4170', 'MONOMER0_4342', 'MONOMER0_4438', 'MONOMETHYL_ESTER_OF_TRANS_ACONITATE', 'MPT_Synthase_small_subunits', 'MUTATED_TRNA', 'MYO_INOSITOL', 'Malonyl_acp_methyl_ester', 'Mannose_6_phosphate', 'Menaquinols', 'Menaquinones', 'Methylated_Ribosomal_Protein_L11s', 'Mnm5Se2U_containing_tRNAs', 'Modified_Bases', 'Myristoyl_ACPs', 'N_23_DIHYDROXYBENZOYL_L_SERINE', 'N_5_PHOSPHORIBOSYL_ANTHRANILATE', 'N_ACETYL_9_O_ACETYLNEURAMINATE', 'N_ACETYL_D_GLUCOSAMINE', 'N_ACETYL_D_GLUCOSAMINE_1_P', 'N_ACETYL_D_GLUCOSAMINE_6_P', 'N_ACETYL_D_MANNOSAMINE', 'N_ACETYL_D_MANNOSAMINE_6P', 'N_ACETYL_GLUTAMYL_P', 'N_ACETYLNEURAMINATE', 'N_ALPHA_ACETYLORNITHINE', 'N_Acetoxy_Arylamines', 'N_Acetyl_beta_D_Hexosaminides', 'N_ETHYLMALEIMIDE', 'N_Hydroxy_Arylamines', 'N_METHYLTRYPTOPHAN', 'N_SUCCINYL_2_AMINO_6_KETOPIMELATE', 'N_SUCCINYLLL_2_6_DIAMINOPIMELATE', 'N_Substituted_Amino_Acids', 'N_Substituted_Aminoacyl_tRNA', 'N_acetyl_D_glucosamine', 'N_acetyl_D_mannosamine', 'N_acetyl_beta_D_hexosamines', 'N_acetylarylamines', 'N_formyl_L_methionyl_tRNAfmet', 'N2_SUCCINYLGLUTAMATE', 'N2_SUCCINYLORNITHINE', 'N5_Formyl_THF_Glu_N', 'N6_L_threonylcarbamoyladenine37_tRNAs', 'N6_met_threonylcarbamoyl_A37_tRNAs', 'NAD', 'NAD_P_OR_NOP', 'NADH', 'NADH_P_OR_NOP', 'NADP', 'NADPH', 'NARL_MONOMER', 'NAcMur_Peptide_NAcGlc_Undecaprenols', 'NAcMur_Peptide_Undecaprenols', 'NIACINAMIDE', 'NIACINE', 'NICOTINAMIDE_NUCLEOTIDE', 'NICOTINAMIDE_RIBOSE', 'NICOTINATE_NUCLEOTIDE', 'NITRATE', 'NITRIC_OXIDE', 'NITRITE', 'NMNH', 'Negatively_super_coiled_DNAs', 'Nitroaromatic_Ox_Compounds', 'Nitroaromatic_Red_Compounds', 'Non_Glucosylated_Glucose_Acceptors', 'Nonmethylated_Ribosomal_Protein_L11s', 'Nucleoside_3_5_bisphosphate', 'Nucleoside_Diphosphates', 'Nucleoside_Monophosphates', 'Nucleoside_Triphosphates', 'Nucleosides', 'O_PHOSPHO_L_HOMOSERINE', 'O_SUCCINYL_L_HOMOSERINE', 'O_SUCCINYLBENZOATE', 'OCTAPRENYL_DIPHOSPHATE', 'OCTAPRENYL_METHOXY_BENZOQUINONE', 'OCTAPRENYL_METHYL_METHOXY_BENZQ', 'OCTAPRENYL_METHYL_OH_METHOXY_BENZQ', 'OH_ACYL_ACP', 'OH_MYRISTOYL', 'OH_PYR', 'OLEATE_CPD', 'OLEOYL_COA', 'OLIGOPEPTIDES', 'OROTATE', 'OROTIDINE_5_PHOSPHATE', 'OXALACETIC_ACID', 'OXALATE', 'OXALYL_COA', 'OXIDIZED_GLUTATHIONE', 'OXYGEN_MOLECULE', 'Octanoyl_ACPs', 'Octanoylated_domains', 'Oligonucleotides', 'Orthophosphoric_Monoesters', 'Ox_Glutaredoxins', 'Ox_Hybrid_Cluster_Proteins', 'Ox_Thioredoxin', 'Oxidized_2Fe_2S_Ferredoxins', 'Oxidized_Disulfide_Carrier_Proteins', 'Oxidized_Flavoproteins', 'Oxidized_NapC_proteins', 'Oxidized_NrdH_Proteins', 'Oxidized_ferredoxins', 'Oxidized_flavodoxins', 'Oxidized_hydrogenase_3', 'Oxo_glutarate_dehydro_suc_DH_lipoyl', 'Oxo_glutarate_dehydrogenase_DH_lipoyl', 'Oxo_glutarate_dehydrogenase_lipoyl', 'P_AMINO_BENZOATE', 'P_BENZOQUINONE', 'P_HYDROXY_PHENYLPYRUVATE', 'P_NITROPHENOL', 'P_RIBOSYL_4_SUCCCARB_AMINOIMIDAZOLE', 'P3I', 'PANTETHEINE_P', 'PANTOTHENATE', 'PANTOYL_LACTONE', 'PAPS', 'PHE', 'PHE_tRNAs', 'PHENYL_PYRUVATE', 'PHENYLACETALDEHYDE', 'PHENYLACETATE', 'PHENYLETHYLAMINE', 'PHENYLHYDANTOIN', 'PHOSPHATIDYLETHANOLAMINE_KDO2', 'PHOSPHO_ARCB717', 'PHOSPHO_CHEY', 'PHOSPHO_ENOL_PYRUVATE', 'PHOSPHO_NARL', 'PHOSPHORIBOSYL_AMP', 'PHOSPHORIBOSYL_ATP', 'PHOSPHORIBOSYL_CARBOXY_AMINOIMIDAZOLE', 'PHOSPHORIBOSYL_FORMAMIDO_CARBOXAMIDE', 'PHOSPHORIBOSYL_FORMIMINO_AICAR_P', 'PHOSPHORIBULOSYL_FORMIMINO_AICAR_P', 'PHOSPHORYL_CHOLINE', 'PHOSPHORYL_ETHANOLAMINE', 'PORPHOBILINOGEN', 'PPI', 'PRECURSOR_Z', 'PRENOL', 'PREPHENATE', 'PRO', 'PRO_tRNAs', 'PROPANE_1_2_DIOL', 'PROPIONATE', 'PROPIONYL_COA', 'PROPIONYL_P', 'PROT_CYS', 'PROTEIN_L_BETA_ISOASPARTATES', 'PROTEIN_L_BETA_ISOSPARTATE_METHYL_ESTERS', 'PROTEIN_LIPOYLLYSINE', 'PROTEIN_N_UBIQUITYL_LYSINE', 'PROTEIN_PII2', 'PROTOHEME', 'PROTON', 'PROTOPORPHYRINOGEN', 'PROTOPORPHYRIN_IX', 'PRPP', 'PSEUDOURIDINE_5_P', 'PSICOSELYSINE', 'PUTRESCINE', 'PYRAZINAMIDE', 'PYRAZINOIC_ACID', 'PYRIDOXAL', 'PYRIDOXAL_PHOSPHATE', 'PYRIDOXAMINE', 'PYRIDOXAMINE_5P', 'PYRIDOXINE', 'PYRIDOXINE_5P', 'PYRUVATE', 'PYRUVFORMLY_CPLX', 'PYRUVFORMLY_INACTIVE_CPLX', 'Palmitoleoyl_ACPs', 'Palmitoyl_ACPs', 'PepB_Aminopeptidase_Substrates', 'Peptide_Holder_Alternative', 'Peptide_with_N_terminal_Alanine', 'Peptides_holder', 'Peptides_with_Leader_Sequence', 'Peptidoglycan_dimer', 'Peptidoglycans', 'Peptidyl_Dipeptidase_Dcp_Substrates', 'Persulfurated_L_cysteine_desulfurases', 'Phenols', 'Phosphoglycerides', 'Phospholipid_Cyclopropane_Fatty_Acids', 'Phospholipid_Olefinic_Fatty_Acids', 'Pi', 'Pimeloyl_ACP_methyl_esters', 'Pimeloyl_ACPs', 'Poly_Hydroxybutyrate', 'Pre_crRNAs', 'Pre_tRNA_3_prime_half_molecules', 'Pre_tRNA_5_prime_half_molecules', 'Precursor_of_hydrogenase_3', 'Primary_Alcohols', 'Primary_Amines', 'Prolipoprotein_Cysteines', 'Protein_Arginine_Aminocarbinol', 'Protein_Cysteine_Hemithioacetal', 'Protein_Disulfides', 'Protein_Dithiols', 'Protein_L_Arginines', 'Protein_L_glutamine', 'Protein_L_lysine', 'Protein_L_methionine', 'Protein_L_methionine_R_S_oxides', 'Protein_L_methionine_S_S_oxides', 'Protein_L_serine_or_L_threonine', 'Protein_Lysine_Aminocarbinol', 'Protein_N_terminal_L_Arginine', 'Protein_N_terminal_L_Lysine', 'Protein_Ox_Disulfides', 'Protein_Red_Disulfides', 'Protein_S_methyl_L_cysteine', 'Protein_Ser_or_Thr_phosphate', 'Protein_Tyrosines', 'Protein_With_N_Terminal_Met', 'Protein_With_N_Terminal_Pro', 'Protein_With_N_Terminal_X_Pro', 'Protein_alpha_L_Glutamates', 'Protein_tyrosine_phosphates', 'Proteins_with_N_terminal_L_arginine', 'Proteins_with_correct_disulfides', 'Proteins_with_incorrect_disulfides', 'Purine_Bases', 'Purine_Ribonucleosides', 'Pyrimidine_Bases', 'Pyrimidine_Nucleosides', 'Pyrimidine_ribonucleotides', 'Pyruvate_dehydrogenase_acetylDHlipoyl', 'Pyruvate_dehydrogenase_dihydrolipoate', 'Pyruvate_dehydrogenase_lipoate', 'QUINATE', 'QUINOLINATE', 'Quinones', 'R_2_HYDROXYGLUTARATE', 'R_3_Hydroxypalmitoyl_ACPs', 'R_3_hydroxy_cis_vaccenoyl_ACPs', 'R_3_hydroxydodecanoyl_ACPs', 'R_3_hydroxyhexanoyl_ACPs', 'R_3_hydroxymyristoyl_ACPs', 'R_4_PHOSPHOPANTOTHENOYL_L_CYSTEINE', 'REDUCED_MENAQUINONE', 'RHAMNOSE', 'RHAMNULOSE_1P', 'RIBOFLAVIN', 'RIBOSE_15_BISPHOSPHATE', 'RIBOSE_1P', 'RIBOSE_5P', 'RIBULOSE_5P', 'RNA_DNA_hybrids', 'RNA_Holder', 'RNASE_E_DEGRADATION_SUBSTRATE_MRNA', 'RNASE_E_MRNA_PROCESSING_SUBSTRATE', 'RNASE_E_PROCESSING_PRODUCT_MRNA', 'RNASE_G_DEGRADATION_SUBSTRATE_MRNA', 'RNASE_II_DEGRADATION_SUBSTRATE_MRNA', 'RNASE_II_POLY_A_SUBSTRATE_MRNA', 'RNASE_II_SUBSTRATE_WITH_NO_POLY_A_TAIL', 'RNASE_III_MRNA_PROCESSING_SUBSTRATE', 'RNASE_III_PROCESSING_PRODUCT_MRNA', 'RNASE_R_DEGRADATION_SUBSTRATE_RNA', 'Red_Glutaredoxins', 'Red_Hybrid_Cluster_Proteins', 'Red_Thioredoxin', 'Reduced_2Fe_2S_Ferredoxins', 'Reduced_Disulfide_Carrier_Proteins', 'Reduced_Disulfide_Isomerases', 'Reduced_Flavoproteins', 'Reduced_NapC_proteins', 'Reduced_NrdH_Proteins', 'Reduced_ferredoxins', 'Reduced_flavodoxins', 'Reduced_hydrogenase_3', 'Relaxed_DNAs', 'Release_factor_L_glutamine', 'Release_factor_N5_Methyl_L_glutamine', 'Resolution_of_Recombinational_Junction', 'Ribonuc_tri_P_reductases_active', 'Ribonuc_tri_P_reductases_inactive', 'Ribonucleoside_Diphosphates', 'Ribonucleoside_Monophosphates', 'Ribonucleoside_Triphosphates', 'Ribonucleosides', 'Ribosomal_protein_L3_L_glutamine', 'Ribosomal_protein_L3_N5M_L_glutamine', 'Ribosomal_protein_S12_3_methylthio_Asp89', 'Ribosomal_protein_S12_Asp89', 'S_24_DINITROPHENYLGLUTATHIONE', 'S_3_HYDROXYBUTANOYL_COA', 'S_ADENOSYL_4_METHYLTHIO_2_OXOBUTANOATE', 'S_ADENOSYLMETHIONINAMINE', 'S_ADENOSYLMETHIONINE', 'S_ALLANTOIN', 'S_CARBOXYMETHYL_D_CYSTEINE', 'S_CD_Apo_SP_Complex', 'S_HYDROXYMETHYLGLUTATHIONE', 'S_LACTOYL_GLUTATHIONE', 'S_METHYLGLUTATHIONE', 'S18_N_terminal_L_alanine', 'S2O3', 'S5_N_terminal_L_alanine', 'SE_2', 'SELENATE', 'SELENITE', 'SEPO3', 'SER', 'SER_tRNAs', 'SHIKIMATE', 'SHIKIMATE_5P', 'SIROHEME', 'SIROHYDROCHLORIN', 'SN_GLYCEROL_1_PHOSPHATE', 'SO3', 'SORBITOL', 'SPERMIDINE', 'SS_Oligodeoxyribonucleotides', 'SS_Oligoribonucleotides', 'SUC', 'SUC_COA', 'SUCB_LIPOATE', 'SUCC_S_ALD', 'SULFATE', 'SULFO_CYSTEINE', 'SULFOQUINOVOSYLDIACYLGLYCEROL', 'SUPER_OXIDE', 'Saturated_Fatty_Acyl_ACPs', 'Saturated_Fatty_Acyl_CoA', 'Semiquinones', 'Seryl_EntF', 'Siderophore', 'Single_Stranded_DNAs', 'Stabilized_RecA_Filament_DNA_Complex', 'Sugar', 'Sugar_Phosphate', 'Sulfur_Carrier_Proteins_ThiI', 'Sulfurated_Sulfur_Acceptors', 'Sulfurylated_ThiI', 'Supercoiled_Duplex_DNAs', 'T2_C4_DECADIENYL_COA', 'T2_DECENOYL_COA', 'TAGATOSE_1_6_DIPHOSPHATE', 'TAGATOSE_6_PHOSPHATE', 'TAP_GLN', 'TAP_GLU', 'TAP_GLUME', 'TAR_GLN', 'TAR_GLU', 'TAR_GLUME', 'TARTRATE', 'TARTRONATE_S_ALD', 'TAURINE', 'TDP', 'TDP_D_FUCOSAMINE', 'TDP_FUC4NAC', 'THF_GLU_N', 'THIAMINE', 'THIAMINE_P', 'THIAMINE_PYROPHOSPHATE', 'THIOGLYCOLATE', 'THR', 'THR_tRNAs', 'THREO_DS_ISO_CITRATE', 'THYMIDINE', 'THYMINE', 'THZ', 'THZ_P', 'TMP', 'TRANS_23_DEHYDROADIPYL_COA', 'TRANS_D2_ENOYL_ACP', 'TRANS_D2_ENOYL_COA', 'TREHALOSE', 'TREHALOSE_6P', 'TRG_GLN', 'TRG_GLU', 'TRG_GLUME', 'TRIMETHYLAMINE', 'TRIMETHYLAMINE_N_O', 'TRIPEPTIDES', 'TRP', 'TRP_tRNAs', 'TSR_GLN', 'TSR_GLU', 'TSR_GLUME', 'TTP', 'TYR', 'TYR_tRNAs', 'Tetradec_2_enoyl_ACPs', 'Thi_S', 'Thiocarboxyadenylated_ThiS_Proteins', 'Thiocarboxylated_MPT_synthases', 'Trans_D2_cis_D7_tetradecenoyl_ACPs', 'Trans_D2_decenoyl_ACPs', 'Trans_D3_cis_D5_dodecenoyl_ACPs', 'Trans_D3_cis_D9_hexadecenoyl_ACPs', 'TusA_L_cysteine', 'TusA_Persulfides', 'TusD_L_cysteine', 'TusD_Persulfides', 'TusE_L_cysteine', 'TusE_S_sulfanylcysteine', 'Type_1_transmemberane_domains', 'UBIQUINONE_8', 'UDP', 'UDP_4_AMINO_4_DEOXY_L_ARABINOSE', 'UDP_AA_GLUTAMATE', 'UDP_AAGM_DIAMINOHEPTANEDIOATE', 'UDP_ACETYL_CARBOXYVINYL_GLUCOSAMINE', 'UDP_D_GALACTO_14_FURANOSE', 'UDP_GLUCURONATE', 'UDP_L_ARA4_FORMYL_N', 'UDP_MANNAC', 'UDP_MANNACA', 'UDP_MURNAC_TETRAPEPTIDE', 'UDP_N_ACETYL_D_GLUCOSAMINE', 'UDP_N_ACETYLMURAMATE', 'UDP_OHMYR_ACETYLGLUCOSAMINE', 'UDP_OHMYR_GLUCOSAMINE', 'UDP_sugar', 'UMP', 'UNDECAPRENYL_DIPHOSPHATE', 'URACIL', 'URATE', 'UREA', 'URIDINE', 'URIDYLYL_PII2', 'URIDYLYL_PROTEIN_PII', 'UROPORPHYRINOGEN_III', 'UTP', 'Ubiquinols', 'Ubiquinones', 'Ubiquitin_C_Terminal_Glycine', 'Unstable_RecA_Filament_DNA_Complex', 'Unsulfurated_Sulfur_Acceptors', 'Unwound_RNA', 'Uracil_54_in_tRNA', 'Uracil_tRNAs', 'Uridine32_in_tRNA', 'VAL', 'VAL_tRNAs', 'Val_tRNA1_Adenine37', 'Val_tRNA1_N6_MeAdenine37', 'WATER', 'Wound_RNA', 'XANTHINE', 'XANTHOSINE', 'XANTHOSINE_5_PHOSPHATE', 'XDP', 'XTP', 'XYLOSE', 'XYLULOSE_5_PHOSPHATE', 'Xylans', 'YHAV_DEGRADATION_SUBSTRATE_MRNA', '_1_2_Diglycerides', '_1_4_alpha_D_Glucan', '_1_AMINO_PROPAN_2_OL', '_1_AMINO_PROPAN_2_ONE_3_PHOSPHATE', '_1_CHLORO_24_DINITROBENZENE', '_1_KETO_2_METHYLVALERATE', '_1_Lyso_phospholipids', '_1_PALMITOYLGLYCEROL_3_PHOSPHATE', '_11_DEOXYCORTICOSTERONE', '_16S_rRNA_2_O_methylcytidine1402', '_16S_rRNA_5_O_methylcytosine1407', '_16S_rRNA_5_O_methylcytosine967', '_16S_rRNA_N2_methylguanine1207', '_16S_rRNA_N2_methylguanine966', '_16S_rRNA_N2methylguanine1516', '_16S_rRNA_N3_methyluracil1498', '_16S_rRNA_N4_methylcytidine1402', '_16S_rRNA_N6_dimethyladenine1518_1519', '_16S_rRNA_N7_methylguanine527', '_16S_rRNA_adenine1518_adenine1519', '_16S_rRNA_cytidine1402', '_16S_rRNA_cytosine1407', '_16S_rRNA_cytosine967', '_16S_rRNA_guanine_1207', '_16S_rRNA_guanine_527', '_16S_rRNA_guanine_966', '_16S_rRNA_guanine1516', '_16S_rRNA_pseudouridine516', '_16S_rRNA_uracil1498', '_16S_rRNA_uridine516', '_1iNisup6sup_ethenoadenine_in_DNA', '_2_3_4_Saturated_L_Phosphatidates', '_2_3_DIHYDROXYBENZOATE', '_2_3_DIHYDROXYPHENYL_PROPIONATE', '_2_3_dihydroxypropane_1_sulfonate', '_2_5_TRIPHOSPHORIBOSYL_3_DEPHOSPHO_', '_2_ACETO_2_HYDROXY_BUTYRATE', '_2_ACETO_LACTATE', '_2_ACYL_GPE', '_2_AMINOMALONATE_SEMIALDEHYDE', '_2_Acylglycero_Phosphocholines', '_2_Aminobutyrate', '_2_C_METHYL_D_ERYTHRITOL_4_PHOSPHATE', '_2_CARBOXYMUCONATE', '_2_D_THREO_HYDROXY_3_CARBOXY_ISOCAPROATE', '_2_DEHYDRO_3_DEOXY_D_GALACTONATE', '_2_DEHYDRO_3_DEOXY_D_GLUCONATE', '_2_DEHYDROPANTOATE', '_2_DEHYDROPANTOYL_LACTONE', '_2_DEOXY_D_GLUCOSE', '_2_DEOXY_D_GLUCOSE_6_PHOSPHATE', '_2_DH_3_DO_D_ARABINONATE', '_2_HYDROXYGLUTARIC_ACID', '_2_Hexadecenoyl_ACPs', '_2_KETO_3_DEOXY_6_P_GLUCONATE', '_2_KETO_3_METHYL_VALERATE', '_2_KETO_GLUTARAMATE', '_2_KETO_ISOVALERATE', '_2_KETOGLUTARATE', '_2_LYSOPHOSPHATIDYLETHANOLAMINES', '_2_Lysophosphatidylcholines', '_2_MERCAPTOETHANOL', '_2_O_Methylcytidine_32_tRNAs', '_2_O_Methylcytidine_34_tRNAs', '_2_O_Methylguanosine18', '_2_O_Methyluridine32_tRNA', '_2_OCTAPRENYL_6_HYDROXYPHENOL', '_2_OCTAPRENYL_6_METHOXYPHENOL', '_2_OCTAPRENYLPHENOL', '_2_OXOBUTANOATE', '_2_Octenoyl_ACPs', '_2_Oxo_carboxylates', '_2_PG', '_2_PHOSPHO_4_CYTIDINE_5_DIPHOSPHO_2_C_MET', '_2_PROTOCATECHUOYLPHLOROGLUCINOLCARBOXYLA', '_2_Prime_Phosphate_Terminated_RNAs', '_2_Thiocytosine_32_In_tRNAs', '_23_Diaminopropanoate', '_23DHB_EntB', '_23S_RRNA_N2_METHYLGUANINE2445', '_23S_rRNA_2_O_methylcytidine2498', '_23S_rRNA_2_O_methylguanosine2251', '_23S_rRNA_2_O_methyluridine2552', '_23S_rRNA_2_methyladenine2503', '_23S_rRNA_5_methylcytosine1962', '_23S_rRNA_5_methyluracil1939', '_23S_rRNA_5_methyluracil747', '_23S_rRNA_N1_methylguanine745', '_23S_rRNA_N2_methylguanine1835', '_23S_rRNA_N3_methylpseudouridine1915', '_23S_rRNA_N6_m_adenine1618', '_23S_rRNA_N6_methyladenine_2030', '_23S_rRNA_N7_methylguanine_2069', '_23S_rRNA_adenine_1618', '_23S_rRNA_adenine_2030', '_23S_rRNA_adenine_2503', '_23S_rRNA_cytidine_2498', '_23S_rRNA_cytosine_1962', '_23S_rRNA_guanine_1835', '_23S_rRNA_guanine_2069', '_23S_rRNA_guanine_2445', '_23S_rRNA_guanine_2551', '_23S_rRNA_guanine_745', '_23S_rRNA_pseudouridine1911_1915_1917', '_23S_rRNA_pseudouridine1915', '_23S_rRNA_pseudouridine2457', '_23S_rRNA_pseudouridine2604', '_23S_rRNA_pseudouridine2605', '_23S_rRNA_pseudouridine746', '_23S_rRNA_pseudouridine955_2504_2580', '_23S_rRNA_uracil_1939', '_23S_rRNA_uracil_747', '_23S_rRNA_uridine_2552', '_23S_rRNA_uridine1911_1915_1917', '_23S_rRNA_uridine2457', '_23S_rRNA_uridine2604', '_23S_rRNA_uridine2605', '_23S_rRNA_uridine746', '_23S_rRNA_uridine955_2504_2580', '_23S_rRNAs', '_25_DIDEHYDRO_D_GLUCONATE', '_2C_METH_D_ERYTHRITOL_CYCLODIPHOSPHATE', '_2K_4CH3_PENTANOATE', '_3_5_ADP', '_3_BETA_D_GLUCOSYLGLUCOSE', '_3_CARBOXY_3_HYDROXY_ISOCAPROATE', '_3_CHLORO_D_ALANINE', '_3_DEHYDRO_SHIKIMATE', '_3_DEOXY_D_ARABINO_HEPTULOSONATE_7_P', '_3_ENOLPYRUVYL_SHIKIMATE_5P', '_3_HYDROXY_PROPIONATE', '_3_HYDROXYADIPYL_COA', '_3_HYDROXYBENZOATE', '_3_HYDROXYPHENYL_PROPIONATE', '_3_Hydroxy_Terminated_DNAs', '_3_Hydroxy_octanoyl_ACPs', '_3_Hydroxyglutaryl_ACP_methyl_ester', '_3_KETO_ADIPYL_COA', '_3_KETO_L_GULONATE', '_3_KETOACYL_COA', '_3_KETOBUTYRATE', '_3_Ketoglutaryl_ACP_methyl_ester', '_3_Ketopimeloyl_ACP_methyl_esters', '_3_MERCAPTO_PYRUVATE', '_3_METHYL_CROTONYL_COA', '_3_Methyl_Adenines', '_3_OCTAPRENYL_4_HYDROXYBENZOATE', '_3_Oxo_octanoyl_ACPs', '_3_P_HYDROXYPYRUVATE', '_3_P_SERINE', '_3_PHENYLPROPIONATE', '_3_Phosphomonucleotides', '_3_Prime_Phosphate_Terminated_RNAs', '_3_SULFINOALANINE', '_3_hydroxy_cis_D7_tetraecenoyl_ACPs', '_3_hydroxy_cis_D9_hexaecenoyl_ACPs', '_3_hydroxypimeloyl_ACP_methyl_esters', '_3_oxo_cis_D7_tetradecenoyl_ACPs', '_3_oxo_cis_D9_hexadecenoyl_ACPs', '_3_oxo_cis_vaccenoyl_ACPs', '_3_oxo_decanoyl_ACPs', '_3_oxo_dodecanoyl_ACPs', '_3_oxo_hexanoyl_ACPs', '_3_oxo_myristoyl_ACPs', '_3_oxo_palmitoyl_ACPs', '_3_terminal_unsaturated_sugars', '_34_DIHYDROXYPHENYLACETYL_COA', '_34_DIHYDROXYPHENYLPYRUVATE', '_3OH_4P_OH_ALPHA_KETOBUTYRATE', '_4_AMINO_4_DEOXYCHORISMATE', '_4_AMINO_BUTYRALDEHYDE', '_4_AMINO_BUTYRATE', '_4_CYTIDINE_5_DIPHOSPHO_2_C', '_4_HYDROXY_2_KETOVALERATE', '_4_HYDROXY_BUTYRATE', '_4_NITROANILINE', '_4_P_PANTOTHENATE', '_4_PHOSPHONOOXY_THREONINE', '_4_hydroxybenzoate', '_5_10_METHENYL_THF_GLU_N', '_5_AMINO_LEVULINATE', '_5_BETA_L_THREO_PENTAPYRANOSYL_4_ULOSE_', '_5_CarboxyMeAmMe_2_O_MeU34_tRNALeu', '_5_DEHYDROGLUCONATE', '_5_HYDROXY_CTP', '_5_HYDROXYISOURATE', '_5_HYDROXYU34_TRNA', '_5_KETO_4_DEOXY_D_GLUCARATE', '_5_L_GLUTAMYL_AMINO_ACID', '_5_L_GLUTAMYL_PEPTIDE', '_5_METHYL_THF_GLU_N', '_5_METHYLTHIOADENOSINE', '_5_Methylcytosine_DNA', '_5_OXOPROLINE', '_5_P_BETA_D_RIBOSYL_AMINE', '_5_P_RIBOSYL_N_FORMYLGLYCINEAMIDE', '_5_PHOSPHO_RIBOSYL_GLYCINEAMIDE', '_5_PHOSPHORIBOSYL_5_AMINOIMIDAZOLE', '_5_PHOSPHORIBOSYL_N_FORMYLGLYCINEAMIDINE', '_5_Phospho_DNA', '_5_Phospho_RNA', '_5_Phospho_terminated_DNAs', '_5_Phosphomononucleotides', '_5_carbo_me_ami_me_ur_34_tRNALeu', '_5_methoxycarbonylmethoxyU34_tRNA', '_5_oxyacetylU34_tRNA', '_5_phosphooligonucleotides', '_50S_Ribo_protein_L16_Hydroxylarginine', '_50S_Ribosomal_subunit_protein_L16_Arg', '_5678_TETRAHYDROPTERIDINE', '_5Prime_OH_Terminated_RNAs', '_5S_rRNAs', '_6_Acetyl_Beta_D_Galactosides', '_6_Dimethylallyladenosine37_tRNAs', '_67_DIHYDROPTERIDINE', '_7_8_DIHYDROPTEROATE', '_7_AMINOMETHYL_7_DEAZAGUANINE', '_7_CYANO_7_DEAZAGUANINE', '_7_METHYLGUANOSINE_5_PHOSPHATE', '_8_AMINO_7_OXONONANOATE', '_9S_RRNA', 'a_double_stranded_DNA_with_a_blunt_end', 'a_mature_triacylated_lipoprotein', 'a_precursor_of_large_subunit_of_hydrogen', 'a_reduced_NrfB_protein', 'a_reduced_TorC_protein', 'a_thymine_in_DNA', 'alpha_N_Peptidyl_LGlutamate', 'an_Nsup1sup_methyladenine_in_DNA', 'an_Nsup3sup_methylcytosine_in_DNA', 'an_iNisup1sup_ethyladenine_in_DNA', 'an_oxidized_NrfB_protein', 'an_oxidized_TorC_protein', 'an_oxidized_TorY_protein', 'b_Hydroxy_cis_D5_dodecenoyl_ACPs', 'b_Keto_cis_D5_dodecenoyl_ACPs', 'biotin_L_lysine_in_BCCP_dimers', 'carboxybiotin_L_lysine_in_BCCP_dimers', 'cis_vaccen_2_enoyl_ACPs', 'crRNAs', 'isocitrate_dehydrogenase', 'ligated_tRNAs_with_2prime_5prime_linkage', 'mRNA_Fragments', 'mRNAs', 'mRNAs_with_5_diphosphate', 'mRNAs_with_5_monophosphate', 'mRNAs_with_5_triphosphate', 'mature_tRNA', 'mcmo5U34m_tRNA', 'phosphoethanolamine_cellulose', 'protein_L_glutamate_O4_methyl_ester', 'rRNA_fragments', 'signal_peptide', 'ssDNA_RNA_primer_hybrid', 'ssRNA_with_3phosphate', 'ssRNA_with_5OH', 'ssRNAs', 'tRNA_2_thiouridine34', 'tRNA_2methyladenine_37', 'tRNA_4_thiouridine', 'tRNA_Adenosines_37', 'tRNA_Arg_adenosine34', 'tRNA_Arg_inosine34', 'tRNA_Containing_5AminoMe_2_ThioUrdines', 'tRNA_Containing_5MeAminoMe_2_ThioU', 'tRNA_Containing_N1_Methylguanine_37', 'tRNA_Containing_N7_Methylguanine_46', 'tRNA_Dihydrouridines', 'tRNA_Sec', 'tRNA_adenine_37', 'tRNA_containing_5_CarbMeAminome_2_ThioU', 'tRNA_containing_5_CarbMeAminome_uridine', 'tRNA_containing_5Me_uridine54', 'tRNA_fragment', 'tRNA_guanosine18', 'tRNA_precursors', 'tRNA_pseudouridine_38_40', 'tRNA_pseudouridine13', 'tRNA_pseudouridine32', 'tRNA_pseudouridine35', 'tRNA_pseudouridine55', 'tRNA_pseudouridine65', 'tRNA_uridine_38_40', 'tRNA_uridine13', 'tRNA_uridine34', 'tRNA_uridine35', 'tRNA_uridine55', 'tRNA_uridine65', 'tRNA_uridines', 'tRNA_with_7_aminomethyl_7_deazaguanine', 'tRNAs', 'tRNAs_Asp_with_queuosine', 'tRNAs_containing_epoxy_quenosine', 'tRNAs_with_CCA', 'tRNAs_with_glutamylated_queuosine', 'tRNAs_with_queuine', 'type_IV_prepillin' ],
+	{ 'name' : [ 'A_3_OXO_ACID', 'A_5_prime_PP_5_prime_DNA', 'A_5_prime_PP_5_prime_RNA', 'A_DOUBLE_STRANDED_DNA_WITH_A_3_OVERHANG', 'A_REDUCED_TORY_PROTEIN', 'ACEF_LIPOATE', 'ACET', 'ACETALD', 'ACETOACETYL_COA', 'ACETOIN', 'ACETOL', 'ACETYL_ACP', 'ACETYL_COA', 'ACETYL_D_GLUCOSAMINYLDIPHOSPHO_UNDECAPRE', 'ACETYL_ETCETERA_GLUCOSAMINYLDIPHOSPHOUND', 'ACETYL_GLU', 'ACETYL_P', 'ACETYLSERINE', 'ACP', 'ACRYLYL_COA', 'ACYL_ACP', 'ACYL_COA', 'ACYL_SN_GLYCEROL_3P', 'ADENINE', 'ADENOSINE', 'ADENOSINE5TRIPHOSPHO5ADENOSINE', 'ADENOSINE_DIPHOSPHATE_RIBOSE', 'ADENOSYL_HOMO_CYS', 'ADENOSYL_P4', 'ADENOSYLCOBALAMIN', 'ADENOSYLCOBALAMIN_5_P', 'ADENOSYLCOBINAMIDE', 'ADENOSYLCOBINAMIDE_GDP', 'ADENOSYLCOBINAMIDE_P', 'ADENYLOSUCC', 'ADP', 'ADP_D_GLUCOSE', 'ADP_D_GLYCERO_D_MANNO_HEPTOSE', 'ADP_L_GLYCERO_D_MANNO_HEPTOSE', 'ADP_SUGARS', 'AGplus', 'AGMATHINE', 'AICAR', 'ALA_tRNAs', 'ALL_TRANS_HEPTAPRENYL_DIPHOSPHATE', 'ALLANTOATE', 'ALLO_THR', 'ALLOLACTOSE', 'ALLOSE', 'ALLYSINE', 'ALPHA_D_GALACTOSE', 'ALPHA_GLC_6_P', 'ALPHA_GLUCOSE', 'ALPHA_GLUCOSE_16_BISPHOSPHATE', 'ALPHA_MALTOSE', 'ALPHA_RIBAZOLE', 'ALPHA_RIBAZOLE_5_P', 'AMINO_ACETONE', 'AMINO_HYDROXYMETHYL_METHYL_PYR_P', 'AMINO_HYDROXYMETHYL_METHYLPYRIMIDINE_PP', 'AMINO_OH_HYDROXYMETHYL_DIHYDROPTERIDINE', 'AMINO_OXOBUT', 'AMINO_RIBOSYLAMINO_1H_3H_PYR_DIONE', 'AMINOMETHYLDIHYDROLIPOYL_GCVH', 'AMMONIA', 'AMMONIUM', 'AMP', 'ANTHRANILATE', 'APO_CITRATE_LYASE', 'APS', 'ARABINOSE_5P', 'ARCB_MONOMER', 'ARG', 'ARG_tRNAs', 'ARSENATE', 'ASCORBATE', 'ASN', 'ASN_tRNAs', 'ASP_tRNAs', 'ATP', 'Acceptor', 'Acetate_esters', 'Acetoacetyl_ACPs', 'Acetylated_S18_N_terminal_L_alanine', 'Acetylated_S5_N_terminal_L_alanine', 'Acyl_Phosphates', 'Adenylated_ThiS_Proteins', 'Alcohols', 'Aldehydes', 'Aldonic_Acids', 'Aldoses', 'Aliphatic_Alpha_Omega_Diamines', 'Aliphatic_Amines', 'Aliphatic_N_Acetyl_Diamines', 'Aliphatic_Omega_Amino_Aldehydes', 'Aliphatic_Sulfonates', 'Alkanesulfonates', 'Alkyl_Hydro_Peroxides', 'Alkylated_Bases', 'Alkylated_DNAs', 'Alkylphosphonates', 'All_Amines', 'All_apo_ACPs', 'All_holo_ACPs', 'All_tRNAs', 'Alpha_Amino_Acids', 'Alpha_D_aldose_1_phosphates', 'Alpha_lactose', 'Amides', 'Aminated_Amine_Donors', 'Amino_Acids', 'Amino_Acids_20', 'Aminoalkylphosphonates', 'Aminopeptidase_Substrates', 'Antibiotics', 'Apo_EntB', 'Apo_EntF', 'Aromatic_Amino_Acids', 'Aromatic_Oxoacids', 'Aromatics', 'Aryl_Amines', 'Aryl_sulfates', 'B_ALANINE', 'B_KETOACYL_ACP', 'B12_Corrinoid_Adenosyltranferase', 'BCAA_dehydrogenase_2MB_DH_lipoyl', 'BCAA_dehydrogenase_2MP_DH_lipoyl', 'BCAA_dehydrogenase_3MB_DH_lipoyl', 'BCAA_dehydrogenase_DH_lipoyl', 'BCAA_dehydrogenase_lipoyl', 'BCCP_L_lysine', 'BCCP_biotin_L_lysine', 'BENZALDEHYDE', 'BETA_D_FRUCTOSE', 'BETA_D_XYLOSE', 'BETA_GLUCOSIDES', 'BETAINE', 'BETAINE_ALDEHYDE_HYDRATE', 'BETAINE_ALDEHYDE', 'BIFURCOSE', 'BIO_5_AMP', 'BIOTIN', 'BISOHMYR_GLC', 'BISOHMYR_GLUCOSAMINYL_1P', 'BR_', 'BROMOACETATE', 'BUTANAL', 'BUTANEDIOL', 'BUTANOL', 'BUTYRYL_COA', 'BUTYRYL_P', 'Bases', 'Beta_3_hydroxybutyryl_ACPs', 'Beta_D_Fructofuranosides', 'Beta_D_Galactosides', 'Beta_D_Glucans', 'Beta_D_Glucuronides', 'Beta_D_glucan_w_C_3_substitution', 'Beta_D_glucosides', 'Beta_Glucoside_6_P', 'Beta_Lactams', 'Beta_hydroxydecanoyl_ACPs', 'Butanoyl_ACPs', 'C_DI_GMP', 'C_terminal_32_aminoacid_Peptides', 'C1', 'C3', 'C4_dicarboxylates', 'C5', 'C55_PP_GLCNAC_MANNACA', 'C55_PP_GLCNAC_MANNACA_FUC4NAC', 'C6', 'CAplus2', 'CADAVERINE', 'CAMP', 'CANAVANINE', 'CANAVANINOSUCCINATE', 'CARBAMATE', 'CARBAMOYL_P', 'CARBAMYUL_L_ASPARTATE', 'CARBON_DIOXIDE', 'CARBON_MONOXIDE', 'CARBOXYETHYL_3_5_CYCLOHEXADIENE_1_2_DIOL', 'CARBOXYPHENYLAMINO_DEOXYRIBULOSE_P', 'CARDIOLIPIN', 'CARNITINE', 'CATECHOL', 'CDplus2', 'CDP', 'CDP_2_3_4_Saturated_Diacylglycerols', 'CDP_D_GLUCOSE', 'CDPDIACYLGLYCEROL', 'CELLOBIOSE', 'CELLULOSE', 'CGMP', 'CH33ADO', 'CH4', 'CHEY_MONOMER', 'CHITIN', 'CHITOBIOSE', 'CHLORAMPHENICOL', 'CHOLANATE2', 'CHOLATE', 'CHOLINE', 'CHORISMATE', 'CIS_ACONITATE', 'CIS_DELTA3_ENOYL_COA', 'CIT', 'CITRATE_LYASE', 'CL_', 'CMP', 'CMP_KDO', 'COplus2', 'CO_A', 'COB_I_ALAMIN', 'COBINAMIDE', 'COPROPORPHYRINOGEN_I', 'COPROPORPHYRINOGEN_III', 'COPROPORPHYRIN_III', 'COUMARATE', 'CPD_10224', 'CPD_10225', 'CPD_10226', 'CPD_10227', 'CPD_10247', 'CPD_10269', 'CPD_10329', 'CPD_10353', 'CPD_10551', 'CPD_1063', 'CPD_1072', 'CPD_1075', 'CPD_10774', 'CPD_10796', 'CPD_10797', 'CPD_108', 'CPD_1083', 'CPD_1086', 'CPD_1091', 'CPD_1093', 'CPD_1106', 'CPD_11244', 'CPD_1133', 'CPD_1136', 'CPD_1142', 'CPD_11444', 'CPD_11520', 'CPD_11521', 'CPD_11524', 'CPD_11525', 'CPD_11528', 'CPD_11529', 'CPD_11592', 'CPD_1162', 'CPD_11643', 'CPD_11653', 'CPD_11654', 'CPD_11770', 'CPD_1181', 'CPD_12045', 'CPD_12115', 'CPD_12117', 'CPD_12125', 'CPD_12173', 'CPD_12179', 'CPD_12231', 'CPD_12255', 'CPD_12261', 'CPD_12274', 'CPD_12279', 'CPD_12284', 'CPD_12365', 'CPD_12366', 'CPD_12367', 'CPD_12427', 'CPD_1244', 'CPD_12575', 'CPD_12587', 'CPD_12773', 'CPD_12797', 'CPD_12980', 'CPD_12991', 'CPD_1301', 'CPD_1302', 'CPD_13025', 'CPD_13034', 'CPD_13043', 'CPD_13059', 'CPD_13118', 'CPD_13121', 'CPD_13122', 'CPD_13314', 'CPD_13315', 'CPD_13337', 'CPD_13339', 'CPD_13357', 'CPD_13469', 'CPD_13575', 'CPD_13576', 'CPD_13577', 'CPD_13578', 'CPD_13725', 'CPD_13734', 'CPD_13851', 'CPD_13852', 'CPD_13853', 'CPD_13927', 'CPD_13930', 'CPD_14101', 'CPD_14133', 'CPD_14332', 'CPD_14375', 'CPD_14443', 'CPD_14447', 'CPD_14545', 'CPD_14553', 'CPD_14736', 'CPD_14762', 'CPD_14795', 'CPD_14808', 'CPD_14925', 'CPD_15016', 'CPD_15127', 'CPD_15158', 'CPD_15189', 'CPD_15210', 'CPD_15211', 'CPD_15225', 'CPD_15237', 'CPD_15238', 'CPD_15242', 'CPD_15244', 'CPD_15317', 'CPD_15373', 'CPD_15382', 'CPD_15384', 'CPD_15390', 'CPD_15391', 'CPD_15392', 'CPD_15393', 'CPD_15403', 'CPD_15417', 'CPD_15435', 'CPD_15436', 'CPD_15530', 'CPD_15554', 'CPD_15616', 'CPD_15633', 'CPD_157', 'CPD_15709', 'CPD_15716', 'CPD_15797', 'CPD_15818', 'CPD_15826', 'CPD_15867', 'CPD_15873', 'CPD_15874', 'CPD_15895', 'CPD_15972', 'CPD_15978', 'CPD_15979', 'CPD_15999', 'CPD_16009', 'CPD_16398', 'CPD_16400', 'CPD_16401', 'CPD_16491', 'CPD_16500', 'CPD_16501', 'CPD_16502', 'CPD_16566', 'CPD_16567', 'CPD_16569', 'CPD_16618', 'CPD_16619', 'CPD_16716', 'CPD_16720', 'CPD_16843', 'CPD_16983', 'CPD_17063', 'CPD_17070', 'CPD_173', 'CPD_17508', 'CPD_17509', 'CPD_17510', 'CPD_17511', 'CPD_17523', 'CPD_17530', 'CPD_17531', 'CPD_17536', 'CPD_17551', 'CPD_17552', 'CPD_17573', 'CPD_17574', 'CPD_17583', 'CPD_1771', 'CPD_1772', 'CPD_17752', 'CPD_17753', 'CPD_17926', 'CPD_17927', 'CPD_17931', 'CPD_17932', 'CPD_17947', 'CPD_17968', 'CPD_17969', 'CPD_17989', 'CPD_18', 'CPD_18118', 'CPD_18254', 'CPD_18259', 'CPD_18260', 'CPD_18346', 'CPD_18348', 'CPD_18379', 'CPD_1843', 'CPD_18499', 'CPD_18500', 'CPD_18501', 'CPD_18529', 'CPD_18717', 'CPD_18719', 'CPD_18804', 'CPD_18805', 'CPD_18806', 'CPD_18807', 'CPD_18808', 'CPD_18901', 'CPD_18902', 'CPD_18903', 'CPD_19111', 'CPD_19144', 'CPD_19147', 'CPD_19148', 'CPD_19150', 'CPD_19151', 'CPD_19153', 'CPD_19154', 'CPD_19155', 'CPD_19157', 'CPD_19158', 'CPD_19159', 'CPD_19160', 'CPD_19161', 'CPD_19162', 'CPD_19163', 'CPD_19167', 'CPD_19168', 'CPD_19169', 'CPD_19170', 'CPD_19171', 'CPD_19172', 'CPD_19179', 'CPD_19181', 'CPD_19185', 'CPD_19186', 'CPD_19233', 'CPD_19235', 'CPD_19236', 'CPD_19237', 'CPD_19240', 'CPD_19241', 'CPD_19242', 'CPD_19243', 'CPD_19395', 'CPD_194', 'CPD_195', 'CPD_196', 'CPD_19847', 'CPD_19953', 'CPD_20035', 'CPD_20036', 'CPD_20111', 'CPD_20112', 'CPD_205', 'CPD_207', 'CPD_20746', 'CPD_20750', 'CPD_20756', 'CPD_20757', 'CPD_20888', 'CPD_20890', 'CPD_20894', 'CPD_209', 'CPD_20903', 'CPD_20905', 'CPD_20909', 'CPD_20921', 'CPD_20940', 'CPD_20966', 'CPD_20969', 'CPD_21004', 'CPD_21015', 'CPD_21025', 'CPD_21070', 'CPD_21167', 'CPD_21359', 'CPD_21406', 'CPD_21407', 'CPD_21409', 'CPD_21531', 'CPD_218', 'CPD_225', 'CPD_233', 'CPD_2343', 'CPD_239', 'CPD_2482', 'CPD_253', 'CPD_26', 'CPD_264', 'CPD_280', 'CPD_282', 'CPD_2961', 'CPD_3', 'CPD_302', 'CPD_316', 'CPD_330', 'CPD_334', 'CPD_335', 'CPD_343', 'CPD_3462', 'CPD_347', 'CPD_3561', 'CPD_3564', 'CPD_3565', 'CPD_3570', 'CPD_358', 'CPD_3582', 'CPD_3617', 'CPD_365', 'CPD_366', 'CPD_367', 'CPD_369', 'CPD_37', 'CPD_3705', 'CPD_3706', 'CPD_3707', 'CPD_3708', 'CPD_3709', 'CPD_3710', 'CPD_3711', 'CPD_3713', 'CPD_3721', 'CPD_3723', 'CPD_3724', 'CPD_3725', 'CPD_3728', 'CPD_3734', 'CPD_3736', 'CPD_3738', 'CPD_3740', 'CPD_3745', 'CPD_3766', 'CPD_377', 'CPD_3785', 'CPD_3801', 'CPD_381', 'CPD_389', 'CPD_397', 'CPD_4', 'CPD_421', 'CPD_4211', 'CPD_444', 'CPD_448', 'CPD_4544', 'CPD_469', 'CPD_476', 'CPD_479', 'CPD_4841', 'CPD_497', 'CPD_507', 'CPD_520', 'CPD_534', 'CPD_536', 'CPD_543', 'CPD_548', 'CPD_558', 'CPD_560', 'CPD_564', 'CPD_568', 'CPD_5725', 'CPD_5802', 'CPD_582', 'CPD_5821', 'CPD_602', 'CPD_606', 'CPD_611', 'CPD_618', 'CPD_622', 'CPD_644', 'CPD_645', 'CPD_650', 'CPD_653', 'CPD_654', 'CPD_658', 'CPD_66', 'CPD_660', 'CPD_6602', 'CPD_665', 'CPD_667', 'CPD_67', 'CPD_674', 'CPD_6746', 'CPD_69', 'CPD_690', 'CPD_6972', 'CPD_6982', 'CPD_7000', 'CPD_702', 'CPD_703', 'CPD_7046', 'CPD_7100', 'CPD_722', 'CPD_7221', 'CPD_7229', 'CPD_7248', 'CPD_7249', 'CPD_75', 'CPD_763', 'CPD_7670', 'CPD_7672', 'CPD_7695', 'CPD_782', 'CPD_786', 'CPD_7867', 'CPD_787', 'CPD_7970', 'CPD_8050', 'CPD_8052', 'CPD_8122', 'CPD_8123', 'CPD_8180', 'CPD_8199', 'CPD_8200', 'CPD_822', 'CPD_827', 'CPD_85', 'CPD_8521', 'CPD_8524', 'CPD_8534', 'CPD_8550', 'CPD_8624', 'CPD_8625', 'CPD_8876', 'CPD_8887', 'CPD_8891', 'CPD_8978', 'CPD_8989', 'CPD_8990', 'CPD_8999', 'CPD_9000', 'CPD_9038', 'CPD_9190', 'CPD_9245', 'CPD_9247', 'CPD_9288', 'CPD_9385', 'CPD_9451', 'CPD_9452', 'CPD_9453', 'CPD_9454', 'CPD_9455', 'CPD_9456', 'CPD_9457', 'CPD_9550', 'CPD_9646', 'CPD_9647', 'CPD_9728', 'CPD_9923', 'CPD_9924', 'CPD_9925', 'CPD_9956', 'CPD_9984', 'CPD_9985', 'CPD_9999', 'CPD0_1027', 'CPD0_1028', 'CPD0_1032', 'CPD0_1048', 'CPD0_1049', 'CPD0_1063', 'CPD0_1065', 'CPD0_1068', 'CPD0_1074', 'CPD0_1080', 'CPD0_1081', 'CPD0_1082', 'CPD0_1083', 'CPD0_1085', 'CPD0_1090', 'CPD0_1095', 'CPD0_1101', 'CPD0_1107', 'CPD0_1108', 'CPD0_1110', 'CPD0_1112', 'CPD0_1113', 'CPD0_1122', 'CPD0_1123', 'CPD0_1133', 'CPD0_1147', 'CPD0_1148', 'CPD0_1151', 'CPD0_1156', 'CPD0_1157', 'CPD0_1158', 'CPD0_1159', 'CPD0_1162', 'CPD0_1163', 'CPD0_1171', 'CPD0_1181', 'CPD0_1182', 'CPD0_1183', 'CPD0_1184', 'CPD0_1185', 'CPD0_1189', 'CPD0_1192', 'CPD0_1193', 'CPD0_1202', 'CPD0_1283', 'CPD0_1442', 'CPD0_1445', 'CPD0_1456', 'CPD0_1470', 'CPD0_1551', 'CPD0_1564', 'CPD0_1699', 'CPD0_1719', 'CPD0_181', 'CPD0_1882', 'CPD0_1885', 'CPD0_1905', 'CPD0_1938', 'CPD0_1965', 'CPD0_2015', 'CPD0_2030', 'CPD0_2039', 'CPD0_2101', 'CPD0_2167', 'CPD0_2184', 'CPD0_2189', 'CPD0_2190', 'CPD0_2241', 'CPD0_2279', 'CPD0_2283', 'CPD0_2298', 'CPD0_2331', 'CPD0_2338', 'CPD0_2339', 'CPD0_2340', 'CPD0_2350', 'CPD0_2351', 'CPD0_2352', 'CPD0_2353', 'CPD0_2354', 'CPD0_2362', 'CPD0_2363', 'CPD0_2364', 'CPD0_2370', 'CPD0_2381', 'CPD0_2461', 'CPD0_2463', 'CPD0_2467', 'CPD0_2468', 'CPD0_2471', 'CPD0_2472', 'CPD0_2474', 'CPD0_2479', 'CPD0_2480', 'CPD0_2482', 'CPD0_2483', 'CPD0_2485', 'CPD0_2486', 'CPD0_2499', 'CPD0_2501', 'CPD0_2511', 'CPD0_2518', 'CPD0_2521', 'CPD0_2552', 'CPD0_2558', 'CPD0_2559', 'CPD0_2582', 'CPD0_2634', 'CPD0_2640', 'CPD0_441', 'CPD0_621', 'CPD0_881', 'CPD0_882', 'CPD0_888', 'CPD0_889', 'CPD0_903', 'CPD0_929', 'CPD0_930', 'CPD0_932', 'CPD0_933', 'CPD0_934', 'CPD0_935', 'CPD0_936', 'CPD0_937', 'CPD0_938', 'CPD0_939', 'CPD0_944', 'CPD0_971', 'CPD3O_0', 'CPD66_39', 'CPD8J2_1', 'CPD8J2_11', 'CPD8J2_12', 'CPD8J2_18', 'CPD8J2_19', 'CPD8J2_2', 'CPD8J2_22', 'CPD8J2_3', 'CPD8J2_4', 'CPD8J2_5', 'CPD8J2_6', 'CPD8J2_7', 'CPDMETA_13650', 'CPLX0_1', 'CPLX0_2', 'CPLX0_7748', 'CPLX0_7849', 'CPXR_MONOMER', 'CRplus3', 'CRplus6', 'CREATINE', 'CREATINE_P', 'CROTONOBETAINYL_COA', 'CROTONYL_COA', 'CTP', 'CUplus', 'CUplus2', 'CYCLOHEXANONE', 'CYS', 'CYS_GLY', 'CYS_tRNAs', 'CYSTINE', 'CYTIDINE', 'CYTOSINE', 'Carboxyadenylated_MPT_synthases', 'Carboxylates', 'Carboxylic_esters', 'Cellodextrins', 'Chap_ADP_apo_SP_Complex', 'Charged_ALA_tRNAs', 'Charged_ARG_tRNAs', 'Charged_ASN_tRNAs', 'Charged_ASP_tRNAs', 'Charged_CYS_tRNAs', 'Charged_GLN_tRNAs', 'Charged_GLT_tRNAs', 'Charged_GLY_tRNAs', 'Charged_HIS_tRNAs', 'Charged_ILE_tRNAs', 'Charged_LEU_tRNAs', 'Charged_LYS_tRNAs', 'Charged_MET_tRNAs', 'Charged_PHE_tRNAs', 'Charged_PRO_tRNAs', 'Charged_SEC_tRNAs', 'Charged_SER_tRNAs', 'Charged_THR_tRNAs', 'Charged_TRP_tRNAs', 'Charged_TYR_tRNAs', 'Charged_VAL_tRNAs', 'Chitodextrins', 'Chitosan', 'Chitosan_fragments', 'Cis_Delta5_dodecenoyl_ACPs', 'Cis_Delta7_tetradecenoyl_ACPs', 'Cis_delta_3_decenoyl_ACPs', 'Cis_vaccenoyl_ACPs', 'Citrate_Lyase_Citryl_Form', 'Cleaved_DNA', 'Cleaved_Type_IV_Prepillins', 'Cleaved_type_1_transmembrane_domains', 'Corrinoid_Adenosyltransferases', 'Crotonyl_ACPs', 'Cyclic_2_3_Ribonucleoside_Monophosphates', 'Cyclic_N6_threonylcarbamoyl_A37_tRNAs', 'Cyclic_Phosphate_Terminated_RNAs', 'Cysteine_Desulfurase_L_cysteine', 'Cytidine_32_tRNAs', 'Cytidine_34_tRNAIle2', 'Cytidine_34_tRNAmet', 'Cytidine_34_tRNAs', 'Cytochromes_C_Oxidized', 'Cytochromes_C_Reduced', 'Cytosine_32_In_tRNAs', 'D_3_HYDROXYACYL_COA', 'D_6_P_GLUCONO_DELTA_LACTONE', 'D_ALA_D_ALA', 'D_ALANINE', 'D_ALLOSE_6_PHOSPHATE', 'D_ALLULOSE_6_PHOSPHATE', 'D_ALPHABETA_D_HEPTOSE_7_PHOSPHATE', 'D_ALTRONATE', 'D_ARABINOSE', 'D_Ala_DltC', 'D_Allopyranose', 'D_Amino_Acids', 'D_BETA_D_HEPTOSE_1_P', 'D_BETA_D_HEPTOSE_17_DIPHOSPHATE', 'D_CYSTEINE', 'D_ERYTHRO_IMIDAZOLE_GLYCEROL_P', 'D_Fructopyranose', 'D_GALACTARATE', 'D_GALACTONATE', 'D_GALACTONO_1_4_LACTONE', 'D_GALACTOSAMINE_6_PHOSPHATE', 'D_GALACTURONATE', 'D_GLT', 'D_GLUCARATE', 'D_GLUCOSAMINE_6_P', 'D_Galactopyranuronate', 'D_Glucopyranuronate', 'D_LACTATE', 'D_MANNONATE', 'D_METHYL_MALONYL_COA', 'D_MYO_INOSITOL_1_MONOPHOSPHATE', 'D_RIBULOSE', 'D_RIBULOSE_1_P', 'D_Ribofuranose', 'D_Ribopyranose', 'D_SEDOHEPTULOSE_1_7_P2', 'D_SEDOHEPTULOSE_7_P', 'D_SERINE', 'D_SORBITOL_6_P', 'D_TAGATURONATE', 'D_TARTRATE', 'D_TYROSINE', 'D_TYROSYL_TRNATYR', 'D_XYLONATE', 'D_XYLULOSE', 'D_Xylopyranose', 'D_Xylose', 'D_alanine_carrier_protein', 'D_aminoacyl_tRNAs', 'D_arabinopyranose', 'D_aspartate_peptidoglycan', 'D_form_FeS_Cluster_Scaffold_Proteins', 'D_fructofuranose_1_phosphate', 'D_fructopyranose_1_phosphate', 'D_fructose_1_phosphate', 'D_galactopyranose', 'D_galacturonate_rhamnogalacturonan', 'D_glucopyranose_6_phosphate', 'D_glucose_1_phosphates', 'D_mannopyranose', 'DADP', 'DAMP', 'DATP', 'DCDP', 'DCMP', 'DCTP', 'DE_O_GLUCONATE', 'DE_O_K_GLUCONATE', 'DEAMIDO_NAD', 'DEHYDRO_3_DEOXY_L_RHAMNONATE', 'DEHYDRO_DEOXY_GALACTONATE_PHOSPHATE', 'DEHYDROQUINATE', 'DELTA1_PIPERIDEINE_2_6_DICARBOXYLATE', 'DELTA3_ISOPENTENYL_PP', 'DEOXY_D_RIBOSE_1_PHOSPHATE', 'DEOXY_RIBOSE_5P', 'DEOXYADENOSINE', 'DEOXYCHOLATE', 'DEOXYCYTIDINE', 'DEOXYGUANOSINE', 'DEOXYINOSINE', 'DEOXYURIDINE', 'DEOXYXYLULOSE_5P', 'DEPHOSPHO_COA', 'DETHIOBIOTIN', 'DGDP', 'DGMP', 'DGTP', 'DHB_Seryl_EntF', 'DHB_glycyl_DhbF', 'DHB_glycyl_arginyl_DhbF', 'DI_H_OROTATE', 'DI_H_URACIL', 'DIACETYL', 'DIACETYLCHITOBIOSE_6_PHOSPHATE', 'DIACYLGLYCEROL', 'DIACYLGLYCEROL_PYROPHOSPHATE', 'DIAMINO_OH_PHOSPHORIBOSYLAMINO_PYR', 'DIAMINONONANOATE', 'DIHYDRO_DIOH_BENZOATE', 'DIHYDRO_NEO_PTERIN', 'DIHYDRO_THYMINE', 'DIHYDROFOLATE', 'DIHYDROFOLATE_GLU_N', 'DIHYDROLIPOAMIDE', 'DIHYDROLIPOYL_GCVH', 'DIHYDROMONAPTERIN_TRIPHOSPHATE', 'DIHYDRONEOPTERIN_P', 'DIHYDRONEOPTERIN_P3', 'DIHYDROPTERIN_CH2OH_PP', 'DIHYDROSIROHYDROCHLORIN', 'DIHYDROXY_ACETONE_PHOSPHATE', 'DIHYDROXY_BUTANONE_P', 'DIHYDROXYACETONE', 'DIHYDROXYNAPHTHOATE', 'DIHYDROXYPENTANEDIONE', 'DIMETHYL_D_RIBITYL_LUMAZINE', 'DIMETHYLBENZIMIDAZOLE', 'DIMP', 'DIPEPTIDES', 'DITP', 'DMSO', 'DNA_3_methyladenines', 'DNA_6_O_Methyl_Guanines', 'DNA_Adenines', 'DNA_Cleaved_Recognition_Site', 'DNA_Combined_With_Exogenous_DNA', 'DNA_Containing_N6_Methyladenine', 'DNA_Cytidines', 'DNA_Cytosines', 'DNA_Guanines', 'DNA_Holder', 'DNA_N', 'DNA_Segment_Placeholder', 'DNA_Segment_in_Reverse_Orientations', 'DNA_With_GO', 'DNA_With_GO_A_Mismatch', 'DNA_With_Hypoxanthines', 'DNA_With_Recognition_Site', 'DNA_containing_a_Apyrimidinic_Sites', 'DNA_containing_aPurinic_Sites', 'DNA_containing_abasic_Sites', 'DNA_containing_diamino_hydro_formamidops', 'DNA_deoxycytidine_dimer', 'DNA_deoxycytidine_thymidine_dimer', 'DNA_thymidine_dimer', 'DNA_thymidines', 'DNA_with_Holiday_Junctions', 'DNA_with_Uracils', 'DPG', 'DTDP_D_GLUCOSE', 'DTDP_DEOH_DEOXY_GLUCOSE', 'DTDP_DEOH_DEOXY_MANNOSE', 'DTDP_RHAMNOSE', 'DUDP', 'DUMP', 'DUTP', 'Damaged_DNA_Pyrimidine', 'Deaminated_Amine_Donors', 'Decanoyl_ACPs', 'Delta_GalA_rhamnogalacturonan', 'Deoxy_Ribonucleoside_3P', 'Deoxy_Ribonucleoside_Diphosphates', 'Deoxy_Ribonucleoside_Monophosphates', 'Deoxy_Ribonucleoside_Triphosphates', 'Deoxy_Ribonucleosides', 'Deoxystreptamine_Antib', 'DhbF', 'Diacylglycerol_Prolipoproteins', 'Dihydro_Lipoyl_Proteins', 'Dipeptides_With_Asp_At_N_Terminal', 'Dipeptides_With_Proline_Carboxy', 'Diribonucleotide', 'Disaccharides', 'Disulfide_Isomerase_with_Disulfide_Bond', 'Dodec_2_enoyl_ACPs', 'Dodecanoyl_ACPs', 'Donor_H2', 'Double_Stranded_DNA_with_terminal_PO4s', 'Double_Stranded_DNAs', 'Drugs', 'E_', 'E2O_MONOMER', 'E2P_MONOMER', 'EF_P_L_lysine', 'EF_P_lysyl_hydroxylysine', 'EG10443_MONOMER', 'EG10544_MONOMER', 'EG10823_MONOMER', 'EG10873_MONOMER', 'EG11171_MONOMER', 'EG11489_MONOMER', 'ENOL_OXALOACETATE', 'ENOL_PHENYLPYRUVATE', 'ENTB_CPLX', 'ENTEROBACTIN', 'ERYTHRONATE_4P', 'ERYTHROSE_4P', 'ETF_Oxidized', 'ETF_Reduced', 'ETHANOL_AMINE', 'ETHYL_2_METHYLACETOACETATE', 'ETHYL_2R_METHYL_3S_HYDROXYBUTANOATE', 'ETOH', 'ETR_Quinols', 'ETR_Quinones', 'Elongation_tRNAMet', 'Elongator_tRNAMet_acetylcytidine', 'Enoylglutaryl_ACP_methyl_esters', 'Enoylpimeloyl_ACP_methyl_esters', 'Erythromycins', 'Exoaminopeptidase_Substrates', 'F_', 'FAD', 'FADH2', 'FARNESYL_PP', 'FEplus2', 'FEplus3', 'FERRIC_CITRATE_COMPLEX', 'FERRIC_ENTEROBACTIN_COMPLEX', 'FERULIC_ACID', 'FMN', 'FMNH2', 'FORMALDEHYDE', 'FORMAMIDE', 'FORMATE', 'FORMYL_COA', 'FORMYL_L_METHIONYL_PEPTIDE', 'FORMYL_THF_GLU_N', 'FRU', 'FRU1P', 'FRUCTOSE_16_DIPHOSPHATE', 'FRUCTOSE_6P', 'FRUCTOSELYSINE', 'FRUCTOSELYSINE_6_PHOSPHATE', 'FRUCTURONATE', 'FUCULOSE_1P', 'FUM', 'Fatty_Acids', 'Fe3_siderophores', 'Fe4S4_Cluster_Protein', 'FeS_Cluster_Chaperones_ATP', 'Ferric_Hydroxamate_Complexes', 'Flavodoxins_Semiquinones', 'Folatepolyglutamate_n', 'Fructofuranose', 'Fructooligosaccharides', 'G3P', 'GALACTITOL', 'GALACTITOL_1_PHOSPHATE', 'GALACTOSE', 'GALACTOSE_1P', 'GAMMA_BUTYROBETAINE', 'GAMMA_BUTYROBETAINYL_COA', 'GAMMA_GLUTAMYL_GAMMA_AMINOBUTYRALDEH', 'GAMMA_GLUTAMYL_PUTRESCINE', 'GAP', 'GDP', 'GDP_4_DEHYDRO_6_DEOXY_D_MANNOSE', 'GDP_D_GLUCOSE', 'GDP_MANNOSE', 'GDP_TP', 'GERANYL_PP', 'GERANYLGERANYL_PP', 'GLC', 'GLC_1_P', 'GLC_6_P', 'GLC_D_LACTONE', 'GLN', 'GLN_tRNAs', 'GLT', 'GLT_tRNAs', 'GLUCONATE', 'GLUCOSAMINE', 'GLUCOSAMINE_1P', 'GLUCURONATE', 'GLUTAMATE_1_SEMIALDEHYDE', 'GLUTATHIONE', 'GLUTATHIONYLSPERMIDINE', 'GLY', 'GLY_tRNAs', 'GLYCERALD', 'GLYCERATE', 'GLYCEROL', 'GLYCEROL_3P', 'GLYCEROPHOSPHOGLYCEROL', 'GLYCOL', 'GLYCOLALDEHYDE', 'GLYCOLLATE', 'GLYCYLGLYCINE', 'GLYOX', 'GMP', 'GMP_LYSINE_PHOSPHORAMIDATE', 'GTP', 'GUANINE', 'GUANOSINE', 'GUANOSINE_5DP_3DP', 'Gcv_H', 'General_Phos_Protein_Substrates', 'General_Protein_Substrates', 'Gentamycins', 'GlcNAc_1_6_anhydro_MurNAc_pentapeptide', 'Gln_B', 'Glucopyranose', 'Glucosyl_Lipopolysaccharides', 'Glucuronides', 'Glucuronoarabinoxylan_Oligosaccharides', 'Glucuronoarabinoxylans', 'Glucuronoxylan_Oligosaccharides', 'Glucuronoxylans', 'Glutamine_synthetase_Tyr', 'Glutamine_synthetase_adenylyl_Tyr', 'Glutaryl_ACP_methyl_esters', 'Glycerol_1_phosphate', 'Glycerophosphodiesters', 'Glycogens', 'Glycosides', 'Glycyl_DhbF', 'Gro_P_Teichoic_peptidoglycan', 'Guanine34_in_tRNAs', 'Guanine37_in_tRNA', 'Guanine46_in_tRNA', 'H2CO3', 'HCN', 'HCO3', 'HEME_D', 'HEPTA_ACYLATED_LIPID_A', 'HEPTOSYL_KDO2_LIPID_IVA', 'HIPA_P', 'HIS', 'HIS_tRNAs', 'HISTIDINAL', 'HISTIDINOL', 'HMP', 'HOLO_CITRATE_LYASE', 'HOMO_CYS', 'HOMO_SER', 'HOMOCYSTINE', 'HOP_2229_ENE', 'HS', 'HSCN', 'HYDROGEN_MOLECULE', 'HYDROGEN_PEROXIDE', 'HYDROQUINONE', 'HYDROQUINONE_O_BETA_D_GLUCOPYRANOSIDE', 'HYDROXY_METHYL_BUTENYL_DIP', 'HYDROXYLAMINE', 'HYDROXYMETHYLBILANE', 'HYDROXYMUCONATE_SALD', 'HYDROXYPROPANAL', 'HYPOXANTHINE', 'Heme_b', 'Hex_2_enoyl_ACPs', 'Hexanoyl_ACPs', 'Holo_DhbB', 'Holo_EntB', 'Holo_EntF', 'Hpr_Histidine', 'Hpr_pi_phospho_L_histidines', 'Hydrophilic_Solute_Or_Ion_LT_600Da', 'Hydroxy_carboxylates', 'HypE_Proteins', 'HypE_S_carboxamide', 'HypE_S_cyanate', 'IDP', 'ILE', 'ILE_tRNAs', 'IMIDAZOLE_ACETOL_P', 'IMINOASPARTATE', 'IMP', 'INDOLE', 'INDOLE_3_GLYCEROL_P', 'INOSINE', 'IS30_Insertion_Sequences', 'IS30_with_Integrated_Transposon', 'ISOBUTANOATE_P', 'ISOBUTANOL', 'ISOBUTYRATE', 'ISOBUTYRYL_COA', 'ISOCHORISMATE', 'ISOVALERYL_COA', 'ITP', 'Initiation_tRNAmet', 'Inositols', 'Ions', 'Iron_Sulfur_Cluster_Scaffold_Proteins', 'Iso_Cit', 'Isomaltose', 'Kplus', 'KDO', 'KDO_8P', 'KDO_LIPID_IVA', 'KDO2_LAUROYL_LIPID_IVA', 'KDO2_LIPID_A', 'KDO2_LIPID_IVA', 'KDO2_PALMITOLEOYL_LIPID_IVA', 'KETOBUTFORMLY_INACT_MONOMER', 'KETOBUTFORMLY_MONOMER', 'L_1_GLYCERO_PHOSPHORYLCHOLINE', 'L_1_GLYCEROPHOSPHORYLETHANOL_AMINE', 'L_1_PHOSPHATIDYL_ETHANOLAMINE', 'L_1_PHOSPHATIDYL_GLYCEROL', 'L_1_PHOSPHATIDYL_GLYCEROL_P', 'L_1_PHOSPHATIDYL_SERINE', 'L_3_HYDROXYACYL_COA', 'L_ALA_GAMMA_D_GLU_DAP', 'L_ALLO_THREONINE', 'L_ALPHA_ALANINE', 'L_ARA4N_MODIFIED_KDO2_LIPID_A', 'L_ARABINOSE', 'L_ARGININO_SUCCINATE', 'L_ASCORBATE_6_PHOSPHATE', 'L_ASPARTATE', 'L_ASPARTATE_SEMIALDEHYDE', 'L_Amino_Acids', 'L_Arabinans', 'L_BETA_ASPARTYL_P', 'L_CANALINE', 'L_CARNITINYL_COA', 'L_CITRULLINE', 'L_CYSTATHIONINE', 'L_Cysteine_Desulfurase_persulfide', 'L_Cysteine_Desulfurases', 'L_DELTA1_PYRROLINE_5_CARBOXYLATE', 'L_DI_GMP', 'L_DIHYDROXY_PHENYLALANINE', 'L_FUCULOSE', 'L_GAMMA_GLUTAMYLCYSTEINE', 'L_GLUTAMATE_5_P', 'L_GLUTAMATE_GAMMA_SEMIALDEHYDE', 'L_GLYCERALDEHYDE', 'L_GLYCERALDEHYDE_3_PHOSPHATE', 'L_Galactose', 'L_Glutamyl_Peptides', 'L_HISTIDINOL_P', 'L_IDONATE', 'L_LACTATE', 'L_LYXOSE', 'L_Methionine_sulfoxides', 'L_ORNITHINE', 'L_PANTOATE', 'L_PHOSPHATIDATE', 'L_PHOSPHINOTHRICIN', 'L_RHAMNONATE', 'L_RIBULOSE', 'L_RIBULOSE_5_P', 'L_SELENOCYSTEINE', 'L_THREONINE_O_3_PHOSPHATE', 'L_XYLULOSE', 'L_XYLULOSE_5_P', 'L_arabinopyranose', 'L_fucoses', 'L_glutamyl_tRNAGln', 'L_leucyl_L_arginyl_Protein', 'L_leucyl_L_lysyl_Protein', 'L_methionyl_tRNAfmet', 'L_phenylalanyl_L_arginyl_Protein', 'L_phenylalanyl_L_lysyl_Protein', 'L_rhamnopyranose', 'L_rhamnose', 'L_seryl_SEC_tRNAs', 'LACTALD', 'LEU', 'LEU_tRNAs', 'LIplus', 'LINOLEIC_ACID', 'LIPID_IV_A', 'LIPOAMIDE', 'LIPOIC_ACID', 'LIPOYL_ACP', 'LIPOYL_AMP', 'LL_DIAMINOPIMELATE', 'LOS', 'LYS', 'LYS_tRNAs', 'Lactones', 'Large_branched_glucans', 'Leader_Sequences', 'Levan', 'Lichenin', 'Light', 'Linear_Malto_Oligosaccharides', 'Lipopolysaccharides', 'Lipoprotein_signal_peptide', 'Lipoyl_ACPs', 'Lipoyl_Protein_L_Lysine', 'Lipoyl_Protein_N6_lipoyllysine', 'Long_Chain_3S_Hydroxyacyl_CoAs', 'Long_Chain_Acyl_ACPs', 'Long_Chain_Acyl_CoAs', 'Long_Chain_Fatty_Acids', 'Long_Chain_Polyphosphate', 'Long_Chain_oxoacyl_CoAs', 'Long_linear_glucans', 'Lysidine_tRNA_Ile2', 'Lysophosphatidylglycerols', 'Lysophospholipids', 'MAL', 'MALONATE_S_ALD', 'MALONYL_ACP', 'MALONYL_COA', 'MALTOHEXAOSE', 'MALTOPENTAOSE', 'MALTOSE', 'MALTOTETRAOSE', 'MALTOTRIOSE', 'MANNITOL', 'MANNITOL_1P', 'MANNOSE', 'MANNOSE_1P', 'MANNOSE_6P', 'MDO_D_Glucoses', 'MELIBIOSE', 'MENADIOL', 'MESO_DIAMINOPIMELATE', 'MESO_TARTRATE', 'MET', 'METHACRYLYL_COA', 'METHIONYL_PEPTIDE', 'METHYL_BETA_D_GALACTOSIDE', 'METHYL_GLYOXAL', 'METHYL_MALONYL_COA', 'METHYLENE_THF_GLU_N', 'METOH', 'MGplus2', 'MI_HEXAKISPHOSPHATE', 'MI_PENTAKISPHOSPHATE', 'MNplus2', 'MONOMER0_2811', 'MONOMER0_4152', 'MONOMER0_4170', 'MONOMER0_4342', 'MONOMER0_4438', 'MONOMETHYL_ESTER_OF_TRANS_ACONITATE', 'MPT_Synthase_small_subunits', 'MUTATED_TRNA', 'MYO_INOSITOL', 'Macrolide_Antibiotics', 'Malonyl_acp_methyl_ester', 'Maltodextrins', 'Mannose_6_phosphate', 'Mature_5S_rRNAs', 'Medium_chain_fatty_acids', 'Menaquinols', 'Menaquinones', 'Methylated_Ribosomal_Protein_L11s', 'Mnm5Se2U_containing_tRNAs', 'Modified_Bases', 'Monocarboxylates', 'Myristoyl_ACPs', 'N_23_DIHYDROXYBENZOYL_L_SERINE', 'N_5_PHOSPHORIBOSYL_ANTHRANILATE', 'N_ACETYL_9_O_ACETYLNEURAMINATE', 'N_ACETYL_D_GALACTOSAMINE_6_PHOSPHATE', 'N_ACETYL_D_GLUCOSAMINE', 'N_ACETYL_D_GLUCOSAMINE_1_P', 'N_ACETYL_D_GLUCOSAMINE_6_P', 'N_ACETYL_D_MANNOSAMINE', 'N_ACETYL_D_MANNOSAMINE_6P', 'N_ACETYL_GLUTAMYL_P', 'N_ACETYL_L_2_AMINO_6_OXO_PIMELATE', 'N_ACETYLNEURAMINATE', 'N_ALPHA_ACETYLORNITHINE', 'N_Acetoxy_Arylamines', 'N_Acetyl_Peptides', 'N_Acetyl_beta_D_Hexosaminides', 'N_Acylated_Amino_Acids', 'N_ETHYLMALEIMIDE', 'N_FORMIMINO_L_GLUTAMATE', 'N_Hydroxy_Arylamines', 'N_METHYLTRYPTOPHAN', 'N_SUCCINYL_2_AMINO_6_KETOPIMELATE', 'N_SUCCINYLLL_2_6_DIAMINOPIMELATE', 'N_Substituted_Amino_Acids', 'N_Substituted_Aminoacyl_tRNA', 'N_acetyl_D_glucosamine', 'N_acetyl_D_glucosamine_asparagine', 'N_acetyl_D_mannosamine', 'N_acetyl_beta_D_hexosamines', 'N_acetylarylamines', 'N_formyl_L_methionyl_tRNAfmet', 'N1_ACETYLSPERMINE', 'N2_SUCCINYLGLUTAMATE', 'N2_SUCCINYLORNITHINE', 'N3_Acetal_deoxystreptamine_antib', 'N5_Formyl_THF_Glu_N', 'N6_L_threonylcarbamoyladenine37_tRNAs', 'N6_met_threonylcarbamoyl_A37_tRNAs', 'NAplus', 'NACMUR', 'NAD', 'NAD_P_OR_NOP', 'NADH', 'NADH_P_OR_NOP', 'NADP', 'NADPH', 'NARL_MONOMER', 'NAcMur_4Peptide_NAcGlc_Undecaprenols', 'NAcMur_Peptide_NAcGlc_Undecaprenols', 'NAcMur_Peptide_Undecaprenols', 'NIplus2', 'NIACINAMIDE', 'NIACINE', 'NICOTINAMIDE_NUCLEOTIDE', 'NICOTINAMIDE_RIBOSE', 'NICOTINATE_NUCLEOTIDE', 'NITRATE', 'NITRIC_OXIDE', 'NITRITE', 'NITROUS_OXIDE', 'NMNH', 'NUCLEOTIDE_SUGARS', 'Negatively_super_coiled_DNAs', 'Nitroaromatic_Ox_Compounds', 'Nitroaromatic_Red_Compounds', 'Non_Galactosylated_Galactose_Acceptors', 'Non_Glucosylated_Glucose_Acceptors', 'Nonmethylated_Ribosomal_Protein_L11s', 'Nucleoside_3_5_bisphosphate', 'Nucleoside_Diphosphates', 'Nucleoside_Monophosphates', 'Nucleoside_Triphosphates', 'Nucleosides', 'Nucleotides', 'O_PHOSPHO_L_HOMOSERINE', 'O_SUCCINYL_L_HOMOSERINE', 'O_SUCCINYLBENZOATE', 'O_UREIDOHOMOSERINE', 'OCTAPRENYL_DIPHOSPHATE', 'OCTAPRENYL_METHOXY_BENZOQUINONE', 'OCTAPRENYL_METHYL_METHOXY_BENZQ', 'OCTAPRENYL_METHYL_OH_METHOXY_BENZQ', 'OH_ACYL_ACP', 'OH_MYRISTOYL', 'OH_PYR', 'OLEATE_CPD', 'OLEOYL_COA', 'OLIGOPEPTIDES', 'ORGANOSULFUR', 'OROTATE', 'OROTIDINE_5_PHOSPHATE', 'OXALACETIC_ACID', 'OXALATE', 'OXALO_SUCCINATE', 'OXALYL_COA', 'OXIDIZED_GLUTATHIONE', 'OXOPENTENOATE', 'OXYGEN_MOLECULE', 'Octanoyl_ACPs', 'Octanoylated_Gcv_H', 'Octanoylated_domains', 'Oligonucleotides', 'Organophosphorus_Compounds', 'Orthophosphoric_Monoesters', 'Ox_Glutaredoxins', 'Ox_Hybrid_Cluster_Proteins', 'Ox_NADPH_Hemoprotein_Reductases', 'Ox_Thioredoxin', 'Oxidized_2Fe_2S_Ferredoxins', 'Oxidized_Disulfide_Carrier_Proteins', 'Oxidized_Flavoproteins', 'Oxidized_NapC_proteins', 'Oxidized_NrdH_Proteins', 'Oxidized_ferredoxins', 'Oxidized_flavodoxins', 'Oxidized_hydrogenase_3', 'Oxo_glutarate_dehydro_suc_DH_lipoyl', 'Oxo_glutarate_dehydrogenase_DH_lipoyl', 'Oxo_glutarate_dehydrogenase_lipoyl', 'P_AMINO_BENZOATE', 'P_BENZOQUINONE', 'P_HYDROXY_PHENYLPYRUVATE', 'P_NITROPHENOL', 'P_RIBOSYL_4_SUCCCARB_AMINOIMIDAZOLE', 'P3I', 'PALMITATE', 'PALMITYL_COA', 'PANTETHEINE_P', 'PANTOTHENATE', 'PANTOYL_LACTONE', 'PAPS', 'PENICILLIN', 'PHE', 'PHE_tRNAs', 'PHENYL_PYRUVATE', 'PHENYLACETALDEHYDE', 'PHENYLACETATE', 'PHENYLETHYLAMINE', 'PHENYLHYDANTOIN', 'PHOSPHATIDYLETHANOLAMINE_KDO2', 'PHOSPHO_ARCB717', 'PHOSPHO_CHEY', 'PHOSPHO_ENOL_PYRUVATE', 'PHOSPHO_NARL', 'PHOSPHORIBOSYL_AMP', 'PHOSPHORIBOSYL_ATP', 'PHOSPHORIBOSYL_CARBOXY_AMINOIMIDAZOLE', 'PHOSPHORIBOSYL_FORMAMIDO_CARBOXAMIDE', 'PHOSPHORIBOSYL_FORMIMINO_AICAR_P', 'PHOSPHORIBULOSYL_FORMIMINO_AICAR_P', 'PHOSPHORYL_CHOLINE', 'PHOSPHORYL_ETHANOLAMINE', 'POLY_GLUCOSYLATED_GLYCOGENINS', 'POLYPEPTIDE', 'PORPHOBILINOGEN', 'PPI', 'PRECURSOR_Z', 'PRENOL', 'PREPHENATE', 'PRO', 'PRO_tRNAs', 'PROPANE_1_2_DIOL', 'PROPANOL', 'PROPIONATE', 'PROPIONYL_COA', 'PROPIONYL_P', 'PROT_CYS', 'PROTEIN_L_BETA_ISOASPARTATES', 'PROTEIN_L_BETA_ISOSPARTATE_METHYL_ESTERS', 'PROTEIN_LIPOYLLYSINE', 'PROTEIN_N_UBIQUITYL_LYSINE', 'PROTEIN_PII2', 'PROTOHEME', 'PROTON', 'PROTOPORPHYRINOGEN', 'PROTOPORPHYRIN_IX', 'PRPP', 'PSEUDOURIDINE_5_P', 'PSICOSELYSINE', 'PTSH_MONOMER', 'PTSH_PHOSPHORYLATED', 'PTSI_MONOMER', 'PTSI_PHOSPHORYLATED', 'PUTRESCINE', 'PYRAZINAMIDE', 'PYRAZINOIC_ACID', 'PYRIDOXAL', 'PYRIDOXAL_PHOSPHATE', 'PYRIDOXAMINE', 'PYRIDOXAMINE_5P', 'PYRIDOXINE', 'PYRIDOXINE_5P', 'PYRUVATE', 'PYRUVFORMLY_CPLX', 'PYRUVFORMLY_INACTIVE_CPLX', 'Palmitoleoyl_ACPs', 'Palmitoyl_ACPs', 'Pectin', 'PepB_Aminopeptidase_Substrates', 'Peptide_Antibiotics', 'Peptide_Holder_Alternative', 'Peptide_with_N_terminal_Alanine', 'Peptides_holder', 'Peptides_with_Leader_Sequence', 'Peptidoglycan_dimer', 'Peptidoglycans', 'Peptidyl_Dipeptidase_Dcp_Substrates', 'Persulfurated_L_cysteine_desulfurases', 'Phenolic_Donors', 'Phenols', 'Phenoxyl_rad_of_phenolic_donors', 'Phosphoglycerides', 'Phospholipid_Cyclopropane_Fatty_Acids', 'Phospholipid_Olefinic_Fatty_Acids', 'Pi', 'Pimeloyl_ACP_methyl_esters', 'Pimeloyl_ACPs', 'Plant_Arabinogalactans_I', 'Poly_Hydroxybutyrate', 'Polymyxins', 'Polynucleotide_Holder', 'Pre_crRNAs', 'Pre_tRNA_3_prime_half_molecules', 'Pre_tRNA_5_prime_half_molecules', 'Precursor_of_hydrogenase_3', 'Primary_Alcohols', 'Primary_Amines', 'Prolipoprotein_Cysteines', 'Protein_Arginine_Aminocarbinol', 'Protein_Arginine_Phosphates', 'Protein_Cysteine_Hemithioacetal', 'Protein_Disulfides', 'Protein_Dithiols', 'Protein_Histidines', 'Protein_L_Arginines', 'Protein_L_glutamine', 'Protein_L_lysine', 'Protein_L_methionine', 'Protein_L_methionine_R_S_oxides', 'Protein_L_methionine_S_S_oxides', 'Protein_L_serine_or_L_threonine', 'Protein_L_serines', 'Protein_Lysine_Aminocarbinol', 'Protein_N_terminal_5_oxo_prolines', 'Protein_N_terminal_L_Arginine', 'Protein_N_terminal_L_Lysine', 'Protein_N6_5_glutamyl_lysine_crosslinks', 'Protein_Ox_Disulfides', 'Protein_Phosphoserines', 'Protein_Phosphothreonines', 'Protein_Red_Disulfides', 'Protein_S_methyl_L_cysteine', 'Protein_Ser_or_Thr_phosphate', 'Protein_Tyrosines', 'Protein_With_N_Terminal_Met', 'Protein_With_N_Terminal_Pro', 'Protein_With_N_Terminal_X_Pro', 'Protein_alpha_L_Glutamates', 'Protein_phospho_L_histidines', 'Protein_tyrosine_phosphates', 'Proteins_L_Threonines', 'Proteins_with_N_terminal_L_arginine', 'Proteins_with_correct_disulfides', 'Proteins_with_incorrect_disulfides', 'Purine_Bases', 'Purine_Ribonucleosides', 'Pyrimidine_Bases', 'Pyrimidine_Nucleosides', 'Pyrimidine_ribonucleotides', 'Pyruvate_dehydrogenase_acetylDHlipoyl', 'Pyruvate_dehydrogenase_dihydrolipoate', 'Pyruvate_dehydrogenase_lipoate', 'QUINATE', 'QUINOLINATE', 'Quaternary_Amines', 'Quinones', 'R_2_HYDROXYGLUTARATE', 'R_3_Hydroxypalmitoyl_ACPs', 'R_3_hydroxy_cis_vaccenoyl_ACPs', 'R_3_hydroxydodecanoyl_ACPs', 'R_3_hydroxyhexanoyl_ACPs', 'R_3_hydroxymyristoyl_ACPs', 'R_4_PHOSPHOPANTOTHENOYL_L_CYSTEINE', 'REDUCED_MENAQUINONE', 'RH_Group', 'RHAMNOSE', 'RHAMNULOSE_1P', 'RIBOFLAVIN', 'RIBOSE_15_BISPHOSPHATE', 'RIBOSE_1P', 'RIBOSE_5P', 'RIBULOSE_5P', 'RNA_DNA_hybrids', 'RNA_Holder', 'RNASE_E_DEGRADATION_SUBSTRATE_MRNA', 'RNASE_E_MRNA_PROCESSING_SUBSTRATE', 'RNASE_E_PROCESSING_PRODUCT_MRNA', 'RNASE_G_DEGRADATION_SUBSTRATE_MRNA', 'RNASE_II_DEGRADATION_SUBSTRATE_MRNA', 'RNASE_II_POLY_A_SUBSTRATE_MRNA', 'RNASE_II_SUBSTRATE_WITH_NO_POLY_A_TAIL', 'RNASE_III_MRNA_PROCESSING_SUBSTRATE', 'RNASE_III_PROCESSING_PRODUCT_MRNA', 'RNASE_R_DEGRADATION_SUBSTRATE_RNA', 'Red_Glutaredoxins', 'Red_Hybrid_Cluster_Proteins', 'Red_NADPH_Hemoprotein_Reductases', 'Red_Thioredoxin', 'Reduced_2Fe_2S_Ferredoxins', 'Reduced_Disulfide_Carrier_Proteins', 'Reduced_Disulfide_Isomerases', 'Reduced_Flavoproteins', 'Reduced_NapC_proteins', 'Reduced_NrdH_Proteins', 'Reduced_Quinones', 'Reduced_ferredoxins', 'Reduced_flavodoxins', 'Reduced_hydrogenase_3', 'Relaxed_DNAs', 'Release_factor_L_glutamine', 'Release_factor_N5_Methyl_L_glutamine', 'Resolution_of_Recombinational_Junction', 'Rhamnogalacturonan_L_Rhamnose', 'Rhamnogalacturonans_I', 'Ribonuc_tri_P_reductases_active', 'Ribonuc_tri_P_reductases_inactive', 'Ribonucleoside_Diphosphates', 'Ribonucleoside_Monophosphates', 'Ribonucleoside_Triphosphates', 'Ribonucleosides', 'Ribosomal_protein_L3_L_glutamine', 'Ribosomal_protein_L3_N5M_L_glutamine', 'Ribosomal_protein_S12_3_methylthio_Asp89', 'Ribosomal_protein_S12_Asp89', 'Ribulose_phosphates', 'Ribuloses', 'S_24_DINITROPHENYLGLUTATHIONE', 'S_3_HYDROXYBUTANOYL_COA', 'S_ACETYLDIHYDROLIPOAMIDE', 'S_ADENOSYL_4_METHYLTHIO_2_OXOBUTANOATE', 'S_ADENOSYLMETHIONINAMINE', 'S_ADENOSYLMETHIONINE', 'S_ALLANTOIN', 'S_CARBOXYMETHYL_D_CYSTEINE', 'S_CD_Apo_SP_Complex', 'S_HYDROXYMETHYLGLUTATHIONE', 'S_LACTOYL_GLUTATHIONE', 'S_METHYLGLUTATHIONE', 'S18_N_terminal_L_alanine', 'S2O3', 'S5_N_terminal_L_alanine', 'SE_2', 'SELENATE', 'SELENITE', 'SEPO3', 'SER', 'SER_tRNAs', 'SHIKIMATE', 'SHIKIMATE_5P', 'SIROHEME', 'SIROHYDROCHLORIN', 'SN_GERANYLGERANYLGLYCERYL_1_PHOSPHATE', 'SN_GLYCEROL_1_PHOSPHATE', 'SO3', 'SORBITOL', 'SPERMIDINE', 'SPERMINE', 'SQUALENE', 'SS_Oligodeoxyribonucleotides', 'SS_Oligoribonucleotides', 'SUC', 'SUC_COA', 'SUCB_LIPOATE', 'SUCC_S_ALD', 'SUCROSE', 'SULFATE', 'SULFO_CYSTEINE', 'SULFOQUINOVOSYLDIACYLGLYCEROL', 'SUPER_OXIDE', 'Saturated_2_Lysophosphatidates', 'Saturated_Fatty_Acyl_ACPs', 'Saturated_Fatty_Acyl_CoA', 'Semiquinones', 'Seryl_EntF', 'Short_Chain_Alcohols', 'Short_Chain_Carboxylates', 'Short_Mannan', 'Short_glucans', 'Siderophore', 'Single_Stranded_DNAs', 'Stabilized_RecA_Filament_DNA_Complex', 'Starch', 'Sugar', 'Sugar_Phosphate', 'Sugar_alcohols', 'Sulfur_Carrier_Proteins_ThiI', 'Sulfurated_Sulfur_Acceptors', 'Sulfurylated_ThiI', 'Supercoiled_Duplex_DNAs', 'T2_C4_DECADIENYL_COA', 'T2_DECENOYL_COA', 'TAGATOSE_1_6_DIPHOSPHATE', 'TAGATOSE_6_PHOSPHATE', 'TAP_GLN', 'TAP_GLU', 'TAP_GLUME', 'TAR_GLN', 'TAR_GLU', 'TAR_GLUME', 'TARTRATE', 'TARTRONATE_S_ALD', 'TAURINE', 'TDP', 'TDP_D_FUCOSAMINE', 'TDP_FUC4NAC', 'TETRADEHYDROACYL_COA', 'THF', 'THF_GLU_N', 'THIAMINE', 'THIAMINE_P', 'THIAMINE_PYROPHOSPHATE', 'THIOGLYCOLATE', 'THR', 'THR_tRNAs', 'THREO_DS_ISO_CITRATE', 'THYMIDINE', 'THYMINE', 'THZ', 'THZ_P', 'TMP', 'TRANS_23_DEHYDROADIPYL_COA', 'TRANS_3_METHYL_GLUTACONYL_COA', 'TRANS_D2_ENOYL_ACP', 'TRANS_D2_ENOYL_COA', 'TREHALOSE', 'TREHALOSE_6P', 'TRG_GLN', 'TRG_GLU', 'TRG_GLUME', 'TRIMETHYLAMINE', 'TRIMETHYLAMINE_N_O', 'TRIPEPTIDES', 'TRP', 'TRP_tRNAs', 'TSR_GLN', 'TSR_GLU', 'TSR_GLUME', 'TTP', 'TYR', 'TYR_tRNAs', 'Teichoic_P_Gro', 'Teichoic_P_Gro_Glc', 'Tetradec_2_enoyl_ACPs', 'Thi_S', 'Thiocarboxyadenylated_ThiS_Proteins', 'Thiocarboxylated_MPT_synthases', 'Threonyl_DhbF', 'Trans_3_enoyl_CoAs', 'Trans_D2_cis_D7_tetradecenoyl_ACPs', 'Trans_D2_decenoyl_ACPs', 'Trans_D3_cis_D5_dodecenoyl_ACPs', 'Trans_D3_cis_D9_hexadecenoyl_ACPs', 'Triacylglycerides', 'Trisaccharides', 'TusA_L_cysteine', 'TusA_Persulfides', 'TusD_L_cysteine', 'TusD_Persulfides', 'TusE_L_cysteine', 'TusE_S_sulfanylcysteine', 'Type_1_transmemberane_domains', 'UBIQUINONE_8', 'UDP', 'UDP_4_AMINO_4_DEOXY_L_ARABINOSE', 'UDP_AA_GLUTAMATE', 'UDP_AAGM_DIAMINOHEPTANEDIOATE', 'UDP_ACETYL_CARBOXYVINYL_GLUCOSAMINE', 'UDP_D_GALACTO_14_FURANOSE', 'UDP_GLUCURONATE', 'UDP_L_ARA4_FORMYL_N', 'UDP_MANNAC', 'UDP_MANNACA', 'UDP_MURNAC_TETRAPEPTIDE', 'UDP_N_ACETYL_D_GLUCOSAMINE', 'UDP_N_ACETYLMURAMATE', 'UDP_N_acetylmuramoyl_Tripeptide', 'UDP_NAcMur_Peptides', 'UDP_OHMYR_ACETYLGLUCOSAMINE', 'UDP_OHMYR_GLUCOSAMINE', 'UDP_sugar', 'UMP', 'UNDECAPRENYL_DIPHOSPHATE', 'URACIL', 'URATE', 'UREA', 'URIDINE', 'URIDYLYL_PII2', 'URIDYLYL_PROTEIN_PII', 'UROCANATE', 'UROPORPHYRINOGEN_III', 'UTP', 'Ubiquinols', 'Ubiquinones', 'Ubiquitin_C_Terminal_Glycine', 'Unfolded_Proteins', 'Unspecified_Ion_Or_Solute', 'Unstable_RecA_Filament_DNA_Complex', 'Unsulfurated_Sulfur_Acceptors', 'Unwound_RNA', 'Uracil_54_in_tRNA', 'Uracil_tRNAs', 'Uridine32_in_tRNA', 'VAL', 'VAL_tRNAs', 'Val_tRNA1_Adenine37', 'Val_tRNA1_N6_MeAdenine37', 'WATER', 'Wound_RNA', 'XANTHINE', 'XANTHOSINE', 'XANTHOSINE_5_PHOSPHATE', 'XDP', 'XTP', 'XYLOSE', 'XYLULOSE_5_PHOSPHATE', 'Xenobiotic', 'Xylans', 'YHAV_DEGRADATION_SUBSTRATE_MRNA', 'ZNplus2', '_1_2_Diglycerides', '_1_4_D_xylooligosaccharides', '_1_4_Mannan', '_1_4_alpha_D_Glucan', '_1_4_alpha_D_galacturonosyl', '_1_4_beta_Xylan', '_1_5_L_Arabinooligosaccharides', '_1_AMINO_PROPAN_2_OL', '_1_AMINO_PROPAN_2_ONE_3_PHOSPHATE', '_1_CHLORO_24_DINITROBENZENE', '_1_KESTOTRIOSE', '_1_KETO_2_METHYLVALERATE', '_1_Lyso_phospholipids', '_1_PALMITOYLGLYCEROL_3_PHOSPHATE', '_1_Phosphatidyl_2_O_D_Ala_Glycerol', '_11_DEOXYCORTICOSTERONE', '_16S_rRNA_2_O_methylcytidine1402', '_16S_rRNA_5_O_methylcytosine1407', '_16S_rRNA_5_O_methylcytosine967', '_16S_rRNA_N2_methylguanine1207', '_16S_rRNA_N2_methylguanine966', '_16S_rRNA_N2methylguanine1516', '_16S_rRNA_N3_methyluracil1498', '_16S_rRNA_N4_methylcytidine1402', '_16S_rRNA_N6_dimethyladenine1518_1519', '_16S_rRNA_N7_methylguanine527', '_16S_rRNA_adenine1518_adenine1519', '_16S_rRNA_cytidine1402', '_16S_rRNA_cytosine1407', '_16S_rRNA_cytosine967', '_16S_rRNA_guanine_1207', '_16S_rRNA_guanine_527', '_16S_rRNA_guanine_966', '_16S_rRNA_guanine1516', '_16S_rRNA_pseudouridine516', '_16S_rRNA_uracil1498', '_16S_rRNA_uridine516', '_1iNisup6sup_ethenoadenine_in_DNA', '_2_3_4_Saturated_L_Phosphatidates', '_2_3_DIHYDRODIPICOLINATE', '_2_3_DIHYDROXYBENZOATE', '_2_3_DIHYDROXYPHENYL_PROPIONATE', '_2_3_dihydroxypropane_1_sulfonate', '_2_5_TRIPHOSPHORIBOSYL_3_DEPHOSPHO_', '_2_ACETO_2_HYDROXY_BUTYRATE', '_2_ACETO_LACTATE', '_2_ACYL_GPE', '_2_AMINOMALONATE_SEMIALDEHYDE', '_2_Acylglycero_Phosphocholines', '_2_Aminobutyrate', '_2_C_METHYL_D_ERYTHRITOL_4_PHOSPHATE', '_2_CARBOXYMUCONATE', '_2_D_THREO_HYDROXY_3_CARBOXY_ISOCAPROATE', '_2_DEHYDRO_3_DEOXY_D_GALACTONATE', '_2_DEHYDRO_3_DEOXY_D_GLUCONATE', '_2_DEHYDROPANTOATE', '_2_DEHYDROPANTOYL_LACTONE', '_2_DEOXY_D_GLUCOSE', '_2_DEOXY_D_GLUCOSE_6_PHOSPHATE', '_2_DH_3_DO_D_ARABINONATE', '_2_HYDROXY_3_KETO_5_METHYLTHIO_1_PHOSPHOP', '_2_HYDROXYGLUTARIC_ACID', '_2_Hexadecenoyl_ACPs', '_2_KETO_3_DEOXY_6_P_GLUCONATE', '_2_KETO_3_METHYL_VALERATE', '_2_KETO_GLUTARAMATE', '_2_KETO_ISOVALERATE', '_2_KETOGLUTARATE', '_2_LYSOPHOSPHATIDYLETHANOLAMINES', '_2_Lysophosphatidylcholines', '_2_MERCAPTOETHANOL', '_2_METHYL_3_HYDROXY_BUTYRYL_COA', '_2_METHYL_BUTYRYL_COA', '_2_O_ALPHA_MANNOSYL_D_GLYCERATE', '_2_O_Methylcytidine_32_tRNAs', '_2_O_Methylcytidine_34_tRNAs', '_2_O_Methylguanosine18', '_2_O_Methyluridine32_tRNA', '_2_OCTAPRENYL_6_HYDROXYPHENOL', '_2_OCTAPRENYL_6_METHOXYPHENOL', '_2_OCTAPRENYLPHENOL', '_2_OXOBUTANOATE', '_2_Octenoyl_ACPs', '_2_Oxo_carboxylates', '_2_PG', '_2_PHOSPHO_4_CYTIDINE_5_DIPHOSPHO_2_C_MET', '_2_PROTOCATECHUOYLPHLOROGLUCINOLCARBOXYLA', '_2_Prime_Phosphate_Terminated_RNAs', '_2_TRANS6_TRANS_FARNESOL', '_2_Thiocytosine_32_In_tRNAs', '_2_trans_4_cis_dienoyl_CoAs', '_23_Diaminopropanoate', '_23_dihydroxybenzoyl_DhbB', '_23DHB_EntB', '_23S_RRNA_N2_METHYLGUANINE2445', '_23S_rRNA_2_O_methylcytidine2498', '_23S_rRNA_2_O_methylguanosine2251', '_23S_rRNA_2_O_methyluridine2552', '_23S_rRNA_2_methyladenine2503', '_23S_rRNA_5_methylcytosine1962', '_23S_rRNA_5_methyluracil1939', '_23S_rRNA_5_methyluracil747', '_23S_rRNA_N1_methylguanine745', '_23S_rRNA_N2_methylguanine1835', '_23S_rRNA_N3_methylpseudouridine1915', '_23S_rRNA_N6_m_adenine1618', '_23S_rRNA_N6_methyladenine_2030', '_23S_rRNA_N7_methylguanine_2069', '_23S_rRNA_adenine_1618', '_23S_rRNA_adenine_2030', '_23S_rRNA_adenine_2503', '_23S_rRNA_cytidine_2498', '_23S_rRNA_cytosine_1962', '_23S_rRNA_guanine_1835', '_23S_rRNA_guanine_2069', '_23S_rRNA_guanine_2445', '_23S_rRNA_guanine_2551', '_23S_rRNA_guanine_745', '_23S_rRNA_pseudouridine1911_1915_1917', '_23S_rRNA_pseudouridine1915', '_23S_rRNA_pseudouridine2457', '_23S_rRNA_pseudouridine2604', '_23S_rRNA_pseudouridine2605', '_23S_rRNA_pseudouridine746', '_23S_rRNA_pseudouridine955_2504_2580', '_23S_rRNA_uracil_1939', '_23S_rRNA_uracil_747', '_23S_rRNA_uridine_2552', '_23S_rRNA_uridine1911_1915_1917', '_23S_rRNA_uridine2457', '_23S_rRNA_uridine2604', '_23S_rRNA_uridine2605', '_23S_rRNA_uridine746', '_23S_rRNA_uridine955_2504_2580', '_23S_rRNAs', '_25_DIDEHYDRO_D_GLUCONATE', '_2C_METH_D_ERYTHRITOL_CYCLODIPHOSPHATE', '_2K_4CH3_PENTANOATE', '_3_5_ADP', '_3_BETA_D_GLUCOSYLGLUCOSE', '_3_CARBOXY_3_HYDROXY_ISOCAPROATE', '_3_CHLORO_D_ALANINE', '_3_DEHYDRO_SHIKIMATE', '_3_DEOXY_D_ARABINO_HEPTULOSONATE_7_P', '_3_ENOLPYRUVYL_SHIKIMATE_5P', '_3_HYDROXY_3_METHYL_GLUTARYL_COA', '_3_HYDROXY_PROPIONATE', '_3_HYDROXYADIPYL_COA', '_3_HYDROXYBENZOATE', '_3_HYDROXYPHENYL_PROPIONATE', '_3_Hydroxy_Terminated_DNAs', '_3_Hydroxy_octanoyl_ACPs', '_3_Hydroxyglutaryl_ACP_methyl_ester', '_3_KETO_ADIPYL_COA', '_3_KETO_L_GULONATE', '_3_KETOACYL_COA', '_3_KETOBUTYRATE', '_3_Ketoglutaryl_ACP_methyl_ester', '_3_Ketopimeloyl_ACP_methyl_esters', '_3_MERCAPTO_PYRUVATE', '_3_METHYL_CROTONYL_COA', '_3_Methyl_Adenines', '_3_OCTAPRENYL_4_HYDROXYBENZOATE', '_3_Oxo_octanoyl_ACPs', '_3_P_HYDROXYPYRUVATE', '_3_P_SERINE', '_3_PHENYLPROPIONATE', '_3_Phosphomonucleotides', '_3_Prime_Nucleoside_Monophosphates', '_3_Prime_Phosphate_Terminated_RNAs', '_3_SULFINOALANINE', '_3_SULFINYL_PYRUVATE', '_3_hydroxy_cis_D7_tetraecenoyl_ACPs', '_3_hydroxy_cis_D9_hexaecenoyl_ACPs', '_3_hydroxypimeloyl_ACP_methyl_esters', '_3_oxo_D_glucose_6_phosphate', '_3_oxo_cis_D7_tetradecenoyl_ACPs', '_3_oxo_cis_D9_hexadecenoyl_ACPs', '_3_oxo_cis_vaccenoyl_ACPs', '_3_oxo_decanoyl_ACPs', '_3_oxo_dodecanoyl_ACPs', '_3_oxo_hexanoyl_ACPs', '_3_oxo_myristoyl_ACPs', '_3_oxo_palmitoyl_ACPs', '_3_phosphooligonucleotides', '_3_phosphooligoribonucleotides', '_3_terminal_unsaturated_sugars', '_34_DIHYDROXYPHENYLACETYL_COA', '_34_DIHYDROXYPHENYLPYRUVATE', '_3OH_4P_OH_ALPHA_KETOBUTYRATE', '_4_AMINO_4_DEOXYCHORISMATE', '_4_AMINO_BUTYRALDEHYDE', '_4_AMINO_BUTYRATE', '_4_CYTIDINE_5_DIPHOSPHO_2_C', '_4_HYDROXY_2_KETOVALERATE', '_4_HYDROXY_BUTYRATE', '_4_HYDROXYPHENYLACETATE', '_4_IMIDAZOLONE_5_PROPIONATE', '_4_NITROANILINE', '_4_P_PANTOTHENATE', '_4_PHOSPHONOOXY_THREONINE', '_4_hydroxybenzoate', '_5_10_METHENYL_THF_GLU_N', '_5_AMINO_LEVULINATE', '_5_AMINOPENTANOATE', '_5_BETA_L_THREO_PENTAPYRANOSYL_4_ULOSE_', '_5_CarboxyMeAmMe_2_O_MeU34_tRNALeu', '_5_DEHYDROGLUCONATE', '_5_HYDROXY_CTP', '_5_HYDROXYISOURATE', '_5_HYDROXYU34_TRNA', '_5_KETO_4_DEOXY_D_GLUCARATE', '_5_L_GLUTAMYL_AMINO_ACID', '_5_L_GLUTAMYL_L_AMINO_ACID', '_5_L_GLUTAMYL_PEPTIDE', '_5_METHYL_THF_GLU_N', '_5_METHYLTHIOADENOSINE', '_5_Methylcytosine_DNA', '_5_OXOPROLINE', '_5_P_BETA_D_RIBOSYL_AMINE', '_5_P_RIBOSYL_N_FORMYLGLYCINEAMIDE', '_5_PHOSPHO_RIBOSYL_GLYCINEAMIDE', '_5_PHOSPHORIBOSYL_5_AMINOIMIDAZOLE', '_5_PHOSPHORIBOSYL_N_FORMYLGLYCINEAMIDINE', '_5_Phospho_DNA', '_5_Phospho_RNA', '_5_Phospho_terminated_DNAs', '_5_Phosphomononucleotides', '_5_carbo_me_ami_me_ur_34_tRNALeu', '_5_methoxycarbonylmethoxyU34_tRNA', '_5_oxyacetylU34_tRNA', '_5_phosphooligonucleotides', '_50S_Ribo_protein_L16_Hydroxylarginine', '_50S_Ribosomal_subunit_protein_L16_Arg', '_5678_TETRAHYDROPTERIDINE', '_5Prime_OH_Terminated_RNAs', '_5S_RRNA_Precursors', '_5S_rRNAs', '_6_AMINOPENICILLANATE', '_6_Acetyl_Beta_D_Galactosides', '_6_Dimethylallyladenosine37_tRNAs', '_6_KESTOSE', '_67_DIHYDROPTERIDINE', '_7_8_DIHYDROPTEROATE', '_7_AMINOMETHYL_7_DEAZAGUANINE', '_7_CYANO_7_DEAZAGUANINE', '_7_METHYLGUANOSINE_5_PHOSPHATE', '_8_AMINO_7_OXONONANOATE', '_9S_RRNA', 'a_double_stranded_DNA_with_a_blunt_end', 'a_galctotetrose', 'a_glycopeptide_D_mannosyl_Nsup4sup_N_ace', 'a_mature_triacylated_lipoprotein', 'a_precursor_of_large_subunit_of_hydrogen', 'a_reduced_NrfB_protein', 'a_reduced_TorC_protein', 'a_thymine_in_DNA', 'alpha_N_Peptidyl_LGlutamate', 'an_Nsup1sup_methyladenine_in_DNA', 'an_Nsup3sup_methylcytosine_in_DNA', 'an_iNisup1sup_ethyladenine_in_DNA', 'an_oxidized_NrfB_protein', 'an_oxidized_TorC_protein', 'an_oxidized_TorY_protein', 'b_Hydroxy_cis_D5_dodecenoyl_ACPs', 'b_Keto_cis_D5_dodecenoyl_ACPs', 'bacitracin', 'biotin_L_lysine_in_BCCP_dimers', 'carboxybiotin_L_lysine_in_BCCP_dimers', 'cis_vaccen_2_enoyl_ACPs', 'crRNAs', 'cystine', 'dicarboxylate', 'isocitrate_dehydrogenase', 'ligated_tRNAs_with_2prime_5prime_linkage', 'mRNA_Fragments', 'mRNAs', 'mRNAs_with_5_diphosphate', 'mRNAs_with_5_monophosphate', 'mRNAs_with_5_triphosphate', 'mature_tRNA', 'mcmo5U34m_tRNA', 'metthio_threonylcarbamoylated_tRNAs', 'n_Alkanals', 'phosphoethanolamine_cellulose', 'protein_L_glutamate_O4_methyl_ester', 'rRNA_fragments', 'signal_peptide', 'ssDNA_RNA_primer_hybrid', 'ssRNA_with_3phosphate', 'ssRNA_with_5OH', 'ssRNAs', 'tRNA_2_thiouridine34', 'tRNA_2methyladenine_37', 'tRNA_4_thiouridine', 'tRNA_Adenine_22', 'tRNA_Adenosines_37', 'tRNA_Arg_adenosine34', 'tRNA_Arg_inosine34', 'tRNA_Containing_5AminoMe_2_ThioUrdines', 'tRNA_Containing_5MeAminoMe_2_ThioU', 'tRNA_Containing_N1_MethylAdenine_22', 'tRNA_Containing_N1_Methylguanine_37', 'tRNA_Containing_N7_Methylguanine_46', 'tRNA_Dihydrouridines', 'tRNA_Sec', 'tRNA_adenine_37', 'tRNA_containing_5_CarbMeAminome_2_ThioU', 'tRNA_containing_5_CarbMeAminome_uridine', 'tRNA_containing_5Me_uridine54', 'tRNA_fragment', 'tRNA_guanosine18', 'tRNA_precursors', 'tRNA_pseudouridine_38_40', 'tRNA_pseudouridine13', 'tRNA_pseudouridine32', 'tRNA_pseudouridine35', 'tRNA_pseudouridine55', 'tRNA_pseudouridine65', 'tRNA_uridine_38_40', 'tRNA_uridine13', 'tRNA_uridine34', 'tRNA_uridine35', 'tRNA_uridine55', 'tRNA_uridine65', 'tRNA_uridines', 'tRNA_with_7_aminomethyl_7_deazaguanine', 'tRNAs', 'tRNAs_Asp_with_queuosine', 'tRNAs_containing_epoxy_quenosine', 'tRNAs_with_CCA', 'tRNAs_with_glutamylated_queuosine', 'tRNAs_with_queuine', 'threonylcarbamoyladenosine_tRNAs', 'type_IV_prepillin' ],
 	'loc' : ['cyt', 'cytosk', 'ex', 'mem', 'per', 'wall', 'bnuc', 'cproj', 'imem', 'omem', 'pmem'],
-	'strain' : ['ECOLI']})
+	'strain' : ['BSUB', 'ECOLI']})
 Monomer('prot',
 	['name', 'loc', 'strain', 'dna', 'met', 'prot', 'rna', 'up', 'dw'],
-	{ 'name' : [ 'AAS_MONOMER', 'ACECOATRANS_MONOMER', 'ACETATEKINA_MONOMER', 'ACS_MONOMER', 'ACYLCOADEHYDROG_MONOMER', 'ADENODEAMIN_MONOMER', 'ADENYL_KIN_MONOMER', 'ADENYLATECYC_MONOMER', 'ALDHDEHYDROG_MONOMER', 'ALDOSE1EPIM_MONOMER', 'ALPHA_AMYL_CYTO_MONOMER', 'ALPHA_AMYL_PERI_MONOMER', 'ALTRO_OXIDOREDUCT_MONOMER', 'ALTRODEHYDRAT_MONOMER', 'AMYLOMALT_MONOMER', 'ANTHRANSYNCOMPII_MONOMER', 'ARGS_MONOMER', 'ARGSUCCINLYA_MONOMER', 'ARGSUCCTRAN_MONOMER', 'AROA_MONOMER', 'AROB_MONOMER', 'AROE_MONOMER', 'AROK_MONOMER', 'ARYLSULFAT_MONOMER', 'BIOTINLIG_MONOMER', 'BTUE_MONOMER', 'CAIC_MONOMER', 'CARDIOLIPSYN_MONOMER', 'CARNRACE_MONOMER', 'CDPDIGLYPYPHOSPHA_MONOMER', 'CDPDIGLYSYN_MONOMER', 'CHD_MONOMER', 'CHER_MONOMER', 'CHORPYRLY_MONOMER', 'CITC_MONOMER', 'CITRATE_SI_SYNTHASE', 'CMPKI_MONOMER', 'COBALADENOSYLTRANS_MONOMER', 'COBS_MONOMER', 'CPDB_MONOMER', 'CPM_KDOSYNTH_MONOMER', 'CROBETREDUCT_MONOMER', 'CYSS_MONOMER', 'CYTOCHROMEC552_MONOMER', 'DALADALALIGA_MONOMER', 'DEHYDDEOXGALACTKIN_MONOMER', 'DEHYDDEOXPHOSGALACT_ALDOL_MONOMER', 'DEHYDROPANTLACRED_MONOMER', 'DEOXYGLUCONOKIN_MONOMER', 'DEOXYRIBOSE_P_ALD_MONOMER', 'DIENOYLCOAREDUCT_MONOMER', 'DIHYDROFOLATEREDUCT_MONOMER', 'DIHYDRONEOPTERIN_MONO_P_DEPHOS_MONOMER', 'DIHYDROOROTOX_MONOMER', 'DLACTDEHYDROGFAD_MONOMER', 'DMK_MONOMER', 'DSBBPROT_MONOMER', 'DSBD_MONOMER', 'DSERDEAM_MONOMER', 'DTDPDEHYDRHAMEPIM_MONOMER', 'DTDPDEHYRHAMREDUCT_MONOMER', 'E1O', 'E2O', 'E2P_MONOMER', 'EG10037_MONOMER', 'EG10041_MONOMER', 'EG10043_MONOMER', 'EG10048_MONOMER', 'EG10085_MONOMER', 'EG10114_MONOMER', 'EG10119_MONOMER', 'EG10122_MONOMER', 'EG10124_MONOMER', 'EG10136_MONOMER', 'EG10168_MONOMER', 'EG10204_MONOMER', 'EG10211_MONOMER', 'EG10212_MONOMER', 'EG10239_MONOMER', 'EG10243_MONOMER', 'EG10246_MONOMER', 'EG10299_MONOMER', 'EG10329_MONOMER', 'EG10343_MONOMER', 'EG10370_MONOMER', 'EG10376_MONOMER', 'EG10381_MONOMER', 'EG10397_MONOMER', 'EG10443_MONOMER', 'EG10456_MONOMER', 'EG10487_MONOMER', 'EG10488_MONOMER', 'EG10523_MONOMER', 'EG10530_MONOMER', 'EG10534_MONOMER', 'EG10548_MONOMER', 'EG10570_MONOMER', 'EG10573_MONOMER', 'EG10595_MONOMER', 'EG10626_MONOMER', 'EG10627_MONOMER', 'EG10651_MONOMER', 'EG10662_MONOMER', 'EG10668_MONOMER', 'EG10673_MONOMER', 'EG10689_MONOMER', 'EG10690_MONOMER', 'EG10696_MONOMER', 'EG10719_MONOMER', 'EG10722_MONOMER', 'EG10723_MONOMER', 'EG10724_MONOMER', 'EG10736_MONOMER', 'EG10737_MONOMER', 'EG10739_MONOMER', 'EG10746_MONOMER', 'EG10760_MONOMER', 'EG10785_MONOMER', 'EG10786_MONOMER', 'EG10812_MONOMER', 'EG10829_MONOMER', 'EG10850_MONOMER', 'EG10851_MONOMER', 'EG10853_MONOMER', 'EG10856_MONOMER', 'EG10858_MONOMER', 'EG10860_MONOMER', 'EG10863_MONOMER', 'EG10926_MONOMER', 'EG10967_MONOMER', 'EG10983_MONOMER', 'EG10986_MONOMER', 'EG11004_MONOMER', 'EG11013_MONOMER', 'EG11022_MONOMER', 'EG11058_MONOMER', 'EG11073_MONOMER', 'EG11082_MONOMER', 'EG11095_MONOMER', 'EG11112_MONOMER', 'EG11118_MONOMER', 'EG11121_MONOMER', 'EG11158_MONOMER', 'EG11162_MONOMER', 'EG11166_MONOMER', 'EG11177_MONOMER', 'EG11189_MONOMER', 'EG11202_MONOMER', 'EG11222_MONOMER', 'EG11237_MONOMER', 'EG11247_MONOMER', 'EG11253_MONOMER', 'EG11259_MONOMER', 'EG11266_MONOMER', 'EG11268_MONOMER', 'EG11288_MONOMER', 'EG11292_MONOMER', 'EG11309_MONOMER', 'EG11311_MONOMER', 'EG11333_MONOMER', 'EG11336_MONOMER', 'EG11339_MONOMER', 'EG11340_MONOMER', 'EG11341_MONOMER', 'EG11344_MONOMER', 'EG11350_MONOMER', 'EG11351_MONOMER', 'EG11352_MONOMER', 'EG11353_MONOMER', 'EG11359_MONOMER', 'EG11362_MONOMER', 'EG11371_MONOMER', 'EG11423_MONOMER', 'EG11424_MONOMER', 'EG11425_MONOMER', 'EG11426_MONOMER', 'EG11433_MONOMER', 'EG11437_MONOMER', 'EG11438_MONOMER', 'EG11440_MONOMER', 'EG11441_MONOMER', 'EG11494_MONOMER', 'EG11497_MONOMER', 'EG11503_MONOMER', 'EG11507_MONOMER', 'EG11538_MONOMER', 'EG11551_MONOMER', 'EG11579_MONOMER', 'EG11581_MONOMER', 'EG11591_MONOMER', 'EG11595_MONOMER', 'EG11600_MONOMER', 'EG11613_MONOMER', 'EG11620_MONOMER', 'EG11646_MONOMER', 'EG11665_MONOMER', 'EG11736_MONOMER', 'EG11750_MONOMER', 'EG11758_MONOMER', 'EG11768_MONOMER', 'EG11779_MONOMER', 'EG11794_MONOMER', 'EG11796_MONOMER', 'EG11822_MONOMER', 'EG11826_MONOMER', 'EG11829_MONOMER', 'EG11831_MONOMER', 'EG11843_MONOMER', 'EG11846_MONOMER', 'EG11848_MONOMER', 'EG11850_MONOMER', 'EG11914_MONOMER', 'EG11915_MONOMER', 'EG11920_MONOMER', 'EG11921_MONOMER', 'EG11955_MONOMER', 'EG11956_MONOMER', 'EG11957_MONOMER', 'EG11983_MONOMER', 'EG12013_MONOMER', 'EG12019_MONOMER', 'EG12044_MONOMER', 'EG12069_MONOMER', 'EG12096_MONOMER', 'EG12097_MONOMER', 'EG12098_MONOMER', 'EG12128_MONOMER', 'EG12130_MONOMER', 'EG12159_MONOMER', 'EG12163_MONOMER', 'EG12167_MONOMER', 'EG12198_MONOMER', 'EG12207_MONOMER', 'EG12210_MONOMER', 'EG12216_MONOMER', 'EG12221_MONOMER', 'EG12233_MONOMER', 'EG12234_MONOMER', 'EG12237_MONOMER', 'EG12244_MONOMER', 'EG12258_MONOMER', 'EG12265_MONOMER', 'EG12267_MONOMER', 'EG12286_MONOMER', 'EG12287_MONOMER', 'EG12293_MONOMER', 'EG12312_MONOMER', 'EG12318_MONOMER', 'EG12330_MONOMER', 'EG12384_MONOMER', 'EG12387_MONOMER', 'EG12394_MONOMER', 'EG12401_MONOMER', 'EG12403_MONOMER', 'EG12424_MONOMER', 'EG12433_MONOMER', 'EG12436_MONOMER', 'EG12438_MONOMER', 'EG12440_MONOMER', 'EG12449_MONOMER', 'EG12450_MONOMER', 'EG12609_MONOMER', 'EG12666_MONOMER', 'EG12693_MONOMER', 'EG12712_MONOMER', 'EG12717_MONOMER', 'EG12876_MONOMER', 'EG13236_MONOMER', 'ENTC_MONOMER', 'ENTD_MONOMER', 'ENTF_PANT', 'FGAMSYN_MONOMER', 'FLAVONADPREDUCT_MONOMER', 'FMNREDUCT_MONOMER', 'FOLC_MONOMER', 'FORMATEDEHYDROGH_MONOMER', 'FPPSYN_MONOMER', 'FRUCBISALD_CLASSII', 'FUCULOKIN_MONOMER', 'FUMARASE_A', 'FUMARASE_B', 'FUMARATE_REDUCTASE', 'G495_MONOMER', 'G6096_MONOMER', 'G6103_MONOMER', 'G6131_MONOMER', 'G6141_MONOMER', 'G6190_MONOMER', 'G6199_MONOMER', 'G6236_MONOMER', 'G6244_MONOMER', 'G6245_MONOMER', 'G6246_MONOMER', 'G6275_MONOMER', 'G6284_MONOMER', 'G6310_MONOMER', 'G6329_MONOMER', 'G6339_MONOMER', 'G6340_MONOMER', 'G6364_MONOMER', 'G6406_MONOMER', 'G6416_MONOMER', 'G6418_MONOMER', 'G6422_MONOMER', 'G6435_MONOMER', 'G6437_MONOMER', 'G6438_MONOMER', 'G6449_MONOMER', 'G6456_MONOMER', 'G6457_MONOMER', 'G6468_MONOMER', 'G6488_MONOMER', 'G6502_MONOMER', 'G6503_MONOMER', 'G6520_MONOMER', 'G6521_MONOMER', 'G6522_MONOMER', 'G6523_MONOMER', 'G6530_MONOMER', 'G6551_MONOMER', 'G6567_MONOMER', 'G6576_MONOMER', 'G6577_MONOMER', 'G6580_MONOMER', 'G6581_MONOMER', 'G6621_MONOMER', 'G6634_MONOMER', 'G6646_MONOMER', 'G6647_MONOMER', 'G6654_MONOMER', 'G6655_MONOMER', 'G6661_MONOMER', 'G6701_MONOMER', 'G6708_MONOMER', 'G6714_MONOMER', 'G6715_MONOMER', 'G6716_MONOMER', 'G6718_MONOMER', 'G6719_MONOMER', 'G6782_MONOMER', 'G6798_MONOMER', 'G6805_MONOMER', 'G6806_MONOMER', 'G6862_MONOMER', 'G6880_MONOMER', 'G6886_MONOMER', 'G6890_MONOMER', 'G6932_MONOMER', 'G6952_MONOMER', 'G6954_MONOMER', 'G6958_MONOMER', 'G6986_MONOMER', 'G6991_MONOMER', 'G7008_MONOMER', 'G7011_MONOMER', 'G7022_MONOMER', 'G7063_MONOMER', 'G7098_MONOMER', 'G7123_MONOMER', 'G7146_MONOMER', 'G7164_MONOMER', 'G7166_MONOMER', 'G7167_MONOMER', 'G7169_MONOMER', 'G7170_MONOMER', 'G7176_MONOMER', 'G7187_MONOMER', 'G7193_MONOMER', 'G7199_MONOMER', 'G7201_MONOMER', 'G7211_MONOMER', 'G7212_MONOMER', 'G7220_MONOMER', 'G7221_MONOMER', 'G7247_MONOMER', 'G7297_MONOMER', 'G7324_MONOMER', 'G7408_MONOMER', 'G7414_MONOMER', 'G7422_MONOMER', 'G7449_MONOMER', 'G7458_MONOMER', 'G7459_MONOMER', 'G7496_MONOMER', 'G7502_MONOMER', 'G7517_MONOMER', 'G7558_MONOMER', 'G7579_MONOMER', 'G7593_MONOMER', 'G7599_MONOMER', 'G7603_MONOMER', 'G7629_MONOMER', 'G7634_MONOMER', 'G7698_MONOMER', 'G7726_MONOMER', 'G7742_MONOMER', 'G7750_MONOMER', 'G7751_MONOMER', 'G7756_MONOMER', 'G7800_MONOMER', 'G7836_MONOMER', 'G7843_MONOMER', 'G7868_MONOMER', 'G7919_MONOMER', 'G7945_MONOMER', 'G7950_MONOMER', 'GALACTARDEHYDRA_MONOMER', 'GALACTOKIN_MONOMER', 'GALACTONATE_DEHYDRATASE_MONOMER', 'GALPMUT_MONOMER', 'GART_MONOMER', 'GARTRANSFORMYL2_MONOMER', 'GCVT_MONOMER', 'GKI_MONOMER', 'GLND_MONOMER', 'GLNE_MONOMER', 'GLNS_MONOMER', 'GLU6PDEHYDROG_MONOMER', 'GLUCARDEHYDRA_MONOMER', 'GLUCDEHYDROG_MONOMER', 'GLUCOKIN_MONOMER', 'GLUCONOKINI_MONOMER', 'GLUCONOLACT_MONOMER', 'GLUCONREDUCT_MONOMER', 'GLURS_MONOMER', 'GLUTAMINESYN_OLIGOMER', 'GLUTCYSLIG_MONOMER', 'GLUTRACE_MONOMER', 'GLYCEROL_3_P_ACYLTRANSFER_MONOMER', 'GLYCOGEN_BRANCH_MONOMER', 'GLYCOGENSYN_MONOMER', 'GLYCPDIESTER_CYTO_MONOMER', 'GLYCRIBONUCSYN_MONOMER', 'GRXB_MONOMER', 'GUANYLCYC_MONOMER', 'H2NEOPTERINP3PYROPHOSPHOHYDRO_MONOMER', 'H2PTERIDINEPYROPHOSPHOKIN_MONOMER', 'HEMEOSYN_MONOMER', 'HEMN_MONOMER', 'HISTCYCLOPRATPPHOS', 'HOMOCYSMET_MONOMER', 'HOMOCYSMETB12_MONOMER', 'HYDGLUTSYN_MONOMER', 'IDONDEHYD_MONOMER', 'ILES_MONOMER', 'IPPISOM_MONOMER', 'ISOCIT_LYASE', 'KDOTRANS_MONOMER', 'KDUD_MONOMER', 'KETOBUTFORMLY_MONOMER', 'L_ASPARTATE_OXID_MONOMER', 'L_LACTDEHYDROGFMN_MONOMER', 'LAUROYLACYLTRAN_MONOMER', 'LEUS_MONOMER', 'MALATE_DEHASE', 'MALATE_SYNTHASE', 'MALONYL_COA_ACP_TRANSACYL_MONOMER', 'MANNKIN_MONOMER', 'MANNONDEHYDRAT_MONOMER', 'MANNONOXIDOREDUCT_MONOMER', 'MANNPDEHYDROG_MONOMER', 'MANNPGUANYLTRANGDP_MONOMER', 'MANNPISOM_MONOMER', 'METHYLGLYREDUCT_MONOMER', 'METHYLMALONYL_COA_EPIM_MONOMER', 'MHPELY_MONOMER', 'MHPHYDROXY_MONOMER', 'MMUM_MONOMER', 'MONOMER0_1041', 'MONOMER0_148', 'MONOMER0_149', 'MONOMER0_2838', 'MONOMER0_702', 'N_ACETYLGLUTPREDUCT_MONOMER', 'NACGLCTRANS_MONOMER', 'NADH_DHII_MONOMER', 'NADNUCLEOSID_MONOMER', 'NANE_MONOMER', 'NANK_MONOMER', 'NAPC_MONOMER', 'NICONUCADENYLYLTRAN_MONOMER', 'NICOTINAMID_MONOMER', 'NICOTINATEPRIBOSYLTRANS_MONOMER', 'NMNNUCLEOSID_MONOMER', 'O_SUCCINYLBENZOATE_COA_SYN_MONOMER', 'OCTAPRENYL_METHOXYPHENOL_OH_MONOMER', 'OCTAPRENYL_METHYL_METHOXY_BENZOQ_OH_MON', 'OHMETHYLBILANESYN_MONOMER', 'PALMITOTRANS_MONOMER', 'PD00230', 'PEPCARBOXYKIN_MONOMER', 'PFLACTENZ_MONOMER', 'PGK', 'PGLUCONDEHYDRAT_MONOMER', 'PGLYCEROLTRANSI_MONOMER', 'PGMI_MONOMER', 'PGPPHOSPHAB_MONOMER', 'PHENPRODIOLDEHYDROG_MONOMER', 'PHOSGLUCOSAMINEMUT_MONOMER', 'PHOSGLYCMUTASE', 'PHOSMANMUT_MONOMER', 'PHOSNACMURPENTATRANS_MONOMER', 'PHOSPHAGLYPSYN_MONOMER', 'PHOSPHO_CHEB', 'PHOSPHOGLUCMUT_MONOMER', 'PPENTOMUT_MONOMER', 'PRAI_IGPS', 'PRIBFAICARPISOM_MONOMER', 'PROPIONYL_COA_CARBOXY_MONOMER', 'PRPPSYN_MONOMER', 'PYRDAMPTRANS_MONOMER', 'PYROXALTRANSAM_MONOMER', 'PYRUFLAVREDUCT_MONOMER', 'RECBCD', 'RED_GLUTAREDOXIN', 'RELA_MONOMER', 'RHAMNULOKIN_MONOMER', 'RIBAZOLEPHOSPHAT_MONOMER', 'RIBF_MONOMER', 'RIBULP3EPIM_MONOMER', 'SARCOX_MONOMER', 'SPOT_MONOMER', 'SUCCCOASYN', 'SUCCGLUALDDEHYD_MONOMER', 'SUCCGLUDESUCC_MONOMER', 'TDPFUCACTRANS_MONOMER', 'TETRAACYLDISACC4KIN_MONOMER', 'THI_P_KIN_MONOMER', 'THIC_MONOMER', 'THIE_MONOMER', 'THIF_MONOMER', 'THIG_MONOMER', 'THIH_MONOMER', 'THII_MONOMER', 'THIKIN_MONOMER', 'THRESYN_MONOMER', 'TORA_MONOMER', 'TPI', 'TRANSALDOLA_MONOMER', 'TRE6PHYDRO_MONOMER', 'TREHALACYTO_MONOMER', 'TREHALOSE6PSYN_MONOMER', 'TREHALOSEPHOSPHASYN_MONOMER', 'TRYPSYN', 'TRYPSYN_APROTEIN', 'TSA_REDUCT_MONOMER', 'UBIX_MONOMER', 'UDK_MONOMER', 'UDP_NACMURALA_GLU_LIG_MONOMER', 'UDP_NACMURALGLDAPAALIG_MONOMER', 'UDP_NACMURALGLDAPLIG_MONOMER', 'UDPACYLGLCNACDEACETYL_MONOMER', 'UDPMANACATRANS_MONOMER', 'UDPNACETYLGLUCOSAMENOLPYRTRANS_MONOMER', 'UDPNACETYLMURAMATEDEHYDROG_MONOMER', 'UROGENDECARBOX_MONOMER', 'UROGENIIISYN_MONOMER', 'USHA_MONOMER', 'UXAC_MONOMER', 'VALINE_PYRUVATE_AMINOTRANSFER_MONOMER', 'VALS_MONOMER', 'YDCS_MONOMER', '_1_PFK', '_2_DEHYDROPANTOATE_REDUCT_MONOMER', '_2_ISOPROPYLMALATESYN_MONOMER', '_2_OCTAPRENYL_METHOXY_BENZOQ_METH_MONOMER', '_4OHBENZOATE_OCTAPRENYLTRANSFER_MONOMER', '_6PFK_1_CPX', '_6PFK_2_CPX', '_6PGLUCONOLACT_MONOMER' ],
+	{ 'name' : [ 'AAS_MONOMER', 'ABGT_MONOMER', 'ACECOATRANS_MONOMER', 'ACETATEKINA_MONOMER', 'ACS_MONOMER', 'ACYLCOADEHYDROG_MONOMER', 'ADENODEAMIN_MONOMER', 'ADENYL_KIN_MONOMER', 'ADENYLATECYC_MONOMER', 'ALDHDEHYDROG_MONOMER', 'ALDOSE1EPIM_MONOMER', 'ALPHA_AMYL_CYTO_MONOMER', 'ALPHA_AMYL_PERI_MONOMER', 'ALTRO_OXIDOREDUCT_MONOMER', 'ALTRODEHYDRAT_MONOMER', 'AMPG_MONOMER', 'AMYLOMALT_MONOMER', 'ANSP_MONOMER', 'ANTHRANSYNCOMPII_MONOMER', 'ARAE_MONOMER', 'ARGS_MONOMER', 'ARGSUCCINLYA_MONOMER', 'ARGSUCCTRAN_MONOMER', 'AROA_MONOMER', 'AROB_MONOMER', 'AROE_MONOMER', 'AROK_MONOMER', 'AROP_MONOMER', 'ARYLSULFAT_MONOMER', 'B0070_MONOMER', 'B0260_MONOMER', 'B0612_MONOMER', 'B0709_MONOMER', 'B0752_MONOMER', 'B1006_MONOMER', 'B1296_MONOMER', 'B1634_MONOMER', 'B1791_MONOMER', 'B2789_MONOMER', 'B2975_MONOMER', 'B4141_MONOMER', 'BCR_MONOMER', 'BETT_MONOMER', 'BIOTINLIG_MONOMER', 'BRNQ_MONOMER', 'BSU00100_MONOMER', 'BSU00140_MONOMER', 'BSU00150_MONOMER', 'BSU00410_MONOMER', 'BSU00850_MONOMER', 'BSU00880_MONOMER', 'BSU01140_MONOMER', 'BSU01530_MONOMER', 'BSU01680_MONOMER', 'BSU01860_MONOMER', 'BSU02140_MONOMER', 'BSU02170_MONOMER', 'BSU02340_MONOMER', 'BSU02350_MONOMER', 'BSU02400_MONOMER', 'BSU02410_MONOMER', 'BSU02420_MONOMER', 'BSU02460_MONOMER', 'BSU02470_MONOMER', 'BSU02650_MONOMER', 'BSU02700_MONOMER', 'BSU03040_MONOMER', 'BSU03050_MONOMER', 'BSU03200_MONOMER', 'BSU03210_MONOMER', 'BSU03220_MONOMER', 'BSU03330_MONOMER', 'BSU03450_MONOMER', 'BSU03460_MONOMER', 'BSU03910_MONOMER', 'BSU04000_MONOMER', 'BSU04170_MONOMER', 'BSU04360_MONOMER', 'BSU04570_MONOMER', 'BSU04970_MONOMER', 'BSU05630_MONOMER', 'BSU05740_MONOMER', 'BSU05800_MONOMER', 'BSU05880_MONOMER', 'BSU05910_MONOMER', 'BSU06150_MONOMER', 'BSU06160_MONOMER', 'BSU06230_MONOMER', 'BSU06240_MONOMER', 'BSU06310_MONOMER', 'BSU06420_MONOMER', 'BSU06600_MONOMER', 'BSU07000_MONOMER', 'BSU07050_MONOMER', 'BSU07060_MONOMER', 'BSU07130_MONOMER', 'BSU07250_MONOMER', 'BSU07270_MONOMER', 'BSU07280_MONOMER', 'BSU07560_MONOMER', 'BSU07570_MONOMER', 'BSU07700_MONOMER', 'BSU07800_MONOMER', 'BSU07840_MONOMER', 'BSU08080_MONOMER', 'BSU08090_MONOMER', 'BSU08180_MONOMER', 'BSU08200_MONOMER', 'BSU08230_MONOMER', 'BSU08480_MONOMER', 'BSU09190_MONOMER', 'BSU09280_MONOMER', 'BSU09300_MONOMER', 'BSU09540_MONOMER', 'BSU09570_MONOMER', 'BSU09670_MONOMER', 'BSU10130_MONOMER', 'BSU10140_MONOMER', 'BSU10270_MONOMER', 'BSU10300_MONOMER', 'BSU10530_MONOMER', 'BSU10540_MONOMER', 'BSU10810_MONOMER', 'BSU10850_MONOMER', 'BSU10940_MONOMER', 'BSU10950_MONOMER', 'BSU11200_MONOMER', 'BSU11650_MONOMER', 'BSU11660_MONOMER', 'BSU11870_MONOMER', 'BSU12010_MONOMER', 'BSU12290_MONOMER', 'BSU13550_MONOMER', 'BSU13560_MONOMER', 'BSU13580_MONOMER', 'BSU13600_MONOMER', 'BSU13620_MONOMER', 'BSU13740_MONOMER', 'BSU13890_MONOMER', 'BSU13910_MONOMER', 'BSU13930_MONOMER', 'BSU14060_MONOMER', 'BSU14110_MONOMER', 'BSU14180_MONOMER', 'BSU14400_MONOMER', 'BSU14860_MONOMER', 'BSU14870_MONOMER', 'BSU15170_MONOMER', 'BSU15190_MONOMER', 'BSU15350_MONOMER', 'BSU15770_MONOMER', 'BSU15800_MONOMER', 'BSU15910_MONOMER', 'BSU16130_MONOMER', 'BSU16530_MONOMER', 'BSU16825_MONOMER', 'BSU17580_MONOMER', 'BSU17890_MONOMER', 'BSU18000_MONOMER', 'BSU18070_MONOMER', 'BSU18150_MONOMER', 'BSU18160_MONOMER', 'BSU18210_MONOMER', 'BSU18230_MONOMER', 'BSU18260_MONOMER', 'BSU18410_MONOMER', 'BSU18620_MONOMER', 'BSU18650_MONOMER', 'BSU18670_MONOMER', 'BSU19320_MONOMER', 'BSU19390_MONOMER', 'BSU19460_MONOMER', 'BSU19700_MONOMER', 'BSU19740_MONOMER', 'BSU21630_MONOMER', 'BSU21680_MONOMER', 'BSU21900_MONOMER', 'BSU21910_MONOMER', 'BSU22140_MONOMER', 'BSU22320_MONOMER', 'BSU22370_MONOMER', 'BSU22420_MONOMER', 'BSU22750_MONOMER', 'BSU22960_MONOMER', 'BSU23050_MONOMER', 'BSU23820_MONOMER', 'BSU23920_MONOMER', 'BSU24030_MONOMER', 'BSU24040_MONOMER', 'BSU24070_MONOMER', 'BSU24090_MONOMER', 'BSU24160_MONOMER', 'BSU24530_MONOMER', 'BSU25070_MONOMER', 'BSU25090_MONOMER', 'BSU25180_MONOMER', 'BSU25310_MONOMER', 'BSU25430_MONOMER', 'BSU25580_MONOMER', 'BSU26600_MONOMER', 'BSU26890_MONOMER', 'BSU27010_MONOMER', 'BSU27030_MONOMER', 'BSU27250_MONOMER', 'BSU27260_MONOMER', 'BSU28080_MONOMER', 'BSU28270_MONOMER', 'BSU28360_MONOMER', 'BSU28510_MONOMER', 'BSU28540_MONOMER', 'BSU28790_MONOMER', 'BSU28810_MONOMER', 'BSU29020_MONOMER', 'BSU29130_MONOMER', 'BSU29440_MONOMER', 'BSU29450_MONOMER', 'BSU29590_MONOMER', 'BSU29860_MONOMER', 'BSU29930_MONOMER', 'BSU29980_MONOMER', 'BSU30190_MONOMER', 'BSU30230_MONOMER', 'BSU30630_MONOMER', 'BSU30720_MONOMER', 'BSU30940_MONOMER', 'BSU30980_MONOMER', 'BSU31050_MONOMER', 'BSU31120_MONOMER', 'BSU31140_MONOMER', 'BSU31170_MONOMER', 'BSU31270_MONOMER', 'BSU31290_MONOMER', 'BSU31350_MONOMER', 'BSU31360_MONOMER', 'BSU31450_MONOMER', 'BSU31580_MONOMER', 'BSU31930_MONOMER', 'BSU31960_MONOMER', 'BSU32020_MONOMER', 'BSU32230_MONOMER', 'BSU32450_MONOMER', 'BSU32520_MONOMER', 'BSU32570_MONOMER', 'BSU32610_MONOMER', 'BSU32660_MONOMER', 'BSU32830_MONOMER', 'BSU33150_MONOMER', 'BSU33400_MONOMER', 'BSU34120_MONOMER', 'BSU34130_MONOMER', 'BSU34400_MONOMER', 'BSU34430_MONOMER', 'BSU34450_MONOMER', 'BSU34550_MONOMER', 'BSU34570_MONOMER', 'BSU34620_MONOMER', 'BSU34820_MONOMER', 'BSU34910_MONOMER', 'BSU35010_MONOMER', 'BSU35060_MONOMER', 'BSU35070_MONOMER', 'BSU35520_MONOMER', 'BSU35720_MONOMER', 'BSU35730_MONOMER', 'BSU35750_MONOMER', 'BSU35760_MONOMER', 'BSU35780_MONOMER', 'BSU35990_MONOMER', 'BSU36000_MONOMER', 'BSU36510_MONOMER', 'BSU36560_MONOMER', 'BSU36930_MONOMER', 'BSU37120_MONOMER', 'BSU37640_MONOMER', 'BSU37680_MONOMER', 'BSU37690_MONOMER', 'BSU37710_MONOMER', 'BSU37720_MONOMER', 'BSU37730_MONOMER', 'BSU37740_MONOMER', 'BSU38040_MONOMER', 'BSU38050_MONOMER', 'BSU38190_MONOMER', 'BSU38290_MONOMER', 'BSU38470_MONOMER', 'BSU38490_MONOMER', 'BSU38500_MONOMER', 'BSU38510_MONOMER', 'BSU38530_MONOMER', 'BSU38620_MONOMER', 'BSU38830_MONOMER', 'BSU38860_MONOMER', 'BSU39070_MONOMER', 'BSU39270_MONOMER', 'BSU39350_MONOMER', 'BSU39360_MONOMER', 'BSU39370_MONOMER', 'BSU39380_MONOMER', 'BSU39390_MONOMER', 'BSU39400_MONOMER', 'BSU39670_MONOMER', 'BSU39680_MONOMER', 'BSU39720_MONOMER', 'BSU39730_MONOMER', 'BSU39740_MONOMER', 'BSU39750_MONOMER', 'BSU39900_MONOMER', 'BSU40040_MONOMER', 'BSU40080_MONOMER', 'BSU40090_MONOMER', 'BSU40320_MONOMER', 'BSU40340_MONOMER', 'BTUE_MONOMER', 'CADB_MONOMER', 'CAIC_MONOMER', 'CARDIOLIPSYN_MONOMER', 'CARNRACE_MONOMER', 'CDPDIGLYPYPHOSPHA_MONOMER', 'CDPDIGLYSYN_MONOMER', 'CHAA_MONOMER', 'CHD_MONOMER', 'CHER_MONOMER', 'CHORPYRLY_MONOMER', 'CITC_MONOMER', 'CITRATE_SI_SYNTHASE', 'CMPKI_MONOMER', 'CMR_MONOMER', 'COBALADENOSYLTRANS_MONOMER', 'COBS_MONOMER', 'CODB_MONOMER', 'CORA_MONOMER', 'CPDB_MONOMER', 'CPM_KDOSYNTH_MONOMER', 'CROBETREDUCT_MONOMER', 'CYCA_MONOMER', 'CYNX_MONOMER', 'CYSS_MONOMER', 'CYTOCHROMEC552_MONOMER', 'DALADALALIGA_MONOMER', 'DCTA_MONOMER', 'DCUA_MONOMER', 'DCUB_MONOMER', 'DCUC_MONOMER', 'DEHYDDEOXGALACTKIN_MONOMER', 'DEHYDDEOXPHOSGALACT_ALDOL_MONOMER', 'DEHYDROPANTLACRED_MONOMER', 'DEOXYGLUCONOKIN_MONOMER', 'DEOXYRIBOSE_P_ALD_MONOMER', 'DIENOYLCOAREDUCT_MONOMER', 'DIHYDROFOLATEREDUCT_MONOMER', 'DIHYDRONEOPTERIN_MONO_P_DEPHOS_MONOMER', 'DIHYDROOROTOX_MONOMER', 'DLACTDEHYDROGFAD_MONOMER', 'DMK_MONOMER', 'DSBBPROT_MONOMER', 'DSBD_MONOMER', 'DSDX_MONOMER', 'DSERDEAM_MONOMER', 'DTDPDEHYDRHAMEPIM_MONOMER', 'DTDPDEHYRHAMREDUCT_MONOMER', 'E1O', 'E2O', 'E2P_MONOMER', 'EG10003_MONOMER', 'EG10037_MONOMER', 'EG10041_MONOMER', 'EG10043_MONOMER', 'EG10048_MONOMER', 'EG10085_MONOMER', 'EG10114_MONOMER', 'EG10119_MONOMER', 'EG10122_MONOMER', 'EG10124_MONOMER', 'EG10136_MONOMER', 'EG10155_MONOMER', 'EG10168_MONOMER', 'EG10204_MONOMER', 'EG10211_MONOMER', 'EG10212_MONOMER', 'EG10239_MONOMER', 'EG10243_MONOMER', 'EG10246_MONOMER', 'EG10280_MONOMER', 'EG10299_MONOMER', 'EG10329_MONOMER', 'EG10343_MONOMER', 'EG10370_MONOMER', 'EG10376_MONOMER', 'EG10381_MONOMER', 'EG10397_MONOMER', 'EG10443_MONOMER', 'EG10456_MONOMER', 'EG10487_MONOMER', 'EG10488_MONOMER', 'EG10523_MONOMER', 'EG10530_MONOMER', 'EG10534_MONOMER', 'EG10548_MONOMER', 'EG10570_MONOMER', 'EG10573_MONOMER', 'EG10595_MONOMER', 'EG10626_MONOMER', 'EG10627_MONOMER', 'EG10651_MONOMER', 'EG10662_MONOMER', 'EG10668_MONOMER', 'EG10673_MONOMER', 'EG10689_MONOMER', 'EG10690_MONOMER', 'EG10696_MONOMER', 'EG10719_MONOMER', 'EG10722_MONOMER', 'EG10723_MONOMER', 'EG10724_MONOMER', 'EG10736_MONOMER', 'EG10737_MONOMER', 'EG10739_MONOMER', 'EG10746_MONOMER', 'EG10760_MONOMER', 'EG10785_MONOMER', 'EG10786_MONOMER', 'EG10812_MONOMER', 'EG10829_MONOMER', 'EG10850_MONOMER', 'EG10851_MONOMER', 'EG10853_MONOMER', 'EG10856_MONOMER', 'EG10858_MONOMER', 'EG10860_MONOMER', 'EG10863_MONOMER', 'EG10926_MONOMER', 'EG10967_MONOMER', 'EG10983_MONOMER', 'EG10986_MONOMER', 'EG11004_MONOMER', 'EG11013_MONOMER', 'EG11022_MONOMER', 'EG11035_MONOMER', 'EG11058_MONOMER', 'EG11073_MONOMER', 'EG11082_MONOMER', 'EG11095_MONOMER', 'EG11112_MONOMER', 'EG11118_MONOMER', 'EG11121_MONOMER', 'EG11158_MONOMER', 'EG11162_MONOMER', 'EG11166_MONOMER', 'EG11167_MONOMER', 'EG11177_MONOMER', 'EG11189_MONOMER', 'EG11202_MONOMER', 'EG11222_MONOMER', 'EG11237_MONOMER', 'EG11247_MONOMER', 'EG11253_MONOMER', 'EG11259_MONOMER', 'EG11266_MONOMER', 'EG11268_MONOMER', 'EG11288_MONOMER', 'EG11292_MONOMER', 'EG11309_MONOMER', 'EG11311_MONOMER', 'EG11333_MONOMER', 'EG11336_MONOMER', 'EG11339_MONOMER', 'EG11340_MONOMER', 'EG11341_MONOMER', 'EG11344_MONOMER', 'EG11350_MONOMER', 'EG11351_MONOMER', 'EG11352_MONOMER', 'EG11353_MONOMER', 'EG11359_MONOMER', 'EG11362_MONOMER', 'EG11371_MONOMER', 'EG11423_MONOMER', 'EG11424_MONOMER', 'EG11425_MONOMER', 'EG11426_MONOMER', 'EG11433_MONOMER', 'EG11437_MONOMER', 'EG11438_MONOMER', 'EG11440_MONOMER', 'EG11441_MONOMER', 'EG11471_MONOMER', 'EG11486_MONOMER', 'EG11494_MONOMER', 'EG11497_MONOMER', 'EG11503_MONOMER', 'EG11507_MONOMER', 'EG11512_MONOMER', 'EG11538_MONOMER', 'EG11551_MONOMER', 'EG11579_MONOMER', 'EG11581_MONOMER', 'EG11591_MONOMER', 'EG11595_MONOMER', 'EG11600_MONOMER', 'EG11613_MONOMER', 'EG11620_MONOMER', 'EG11639_MONOMER', 'EG11646_MONOMER', 'EG11665_MONOMER', 'EG11671_MONOMER', 'EG11691_MONOMER', 'EG11724_MONOMER', 'EG11736_MONOMER', 'EG11750_MONOMER', 'EG11758_MONOMER', 'EG11768_MONOMER', 'EG11779_MONOMER', 'EG11794_MONOMER', 'EG11796_MONOMER', 'EG11822_MONOMER', 'EG11826_MONOMER', 'EG11829_MONOMER', 'EG11831_MONOMER', 'EG11843_MONOMER', 'EG11846_MONOMER', 'EG11848_MONOMER', 'EG11850_MONOMER', 'EG11902_MONOMER', 'EG11914_MONOMER', 'EG11915_MONOMER', 'EG11919_MONOMER', 'EG11920_MONOMER', 'EG11921_MONOMER', 'EG11939_MONOMER', 'EG11955_MONOMER', 'EG11956_MONOMER', 'EG11957_MONOMER', 'EG11983_MONOMER', 'EG12013_MONOMER', 'EG12019_MONOMER', 'EG12044_MONOMER', 'EG12069_MONOMER', 'EG12096_MONOMER', 'EG12097_MONOMER', 'EG12098_MONOMER', 'EG12128_MONOMER', 'EG12130_MONOMER', 'EG12134_MONOMER', 'EG12159_MONOMER', 'EG12163_MONOMER', 'EG12167_MONOMER', 'EG12198_MONOMER', 'EG12207_MONOMER', 'EG12210_MONOMER', 'EG12216_MONOMER', 'EG12221_MONOMER', 'EG12233_MONOMER', 'EG12234_MONOMER', 'EG12237_MONOMER', 'EG12244_MONOMER', 'EG12258_MONOMER', 'EG12265_MONOMER', 'EG12267_MONOMER', 'EG12286_MONOMER', 'EG12287_MONOMER', 'EG12293_MONOMER', 'EG12312_MONOMER', 'EG12318_MONOMER', 'EG12330_MONOMER', 'EG12384_MONOMER', 'EG12387_MONOMER', 'EG12394_MONOMER', 'EG12401_MONOMER', 'EG12403_MONOMER', 'EG12424_MONOMER', 'EG12433_MONOMER', 'EG12436_MONOMER', 'EG12438_MONOMER', 'EG12440_MONOMER', 'EG12449_MONOMER', 'EG12450_MONOMER', 'EG12455_MONOMER', 'EG12609_MONOMER', 'EG12666_MONOMER', 'EG12693_MONOMER', 'EG12712_MONOMER', 'EG12713_MONOMER', 'EG12717_MONOMER', 'EG12876_MONOMER', 'EG13236_MONOMER', 'EIISGA', 'EMRD_MONOMER', 'ENTC_MONOMER', 'ENTD_MONOMER', 'ENTF_PANT', 'EXUT_MONOMER', 'FGAMSYN_MONOMER', 'FLAVONADPREDUCT_MONOMER', 'FMNREDUCT_MONOMER', 'FOLC_MONOMER', 'FORMATEDEHYDROGH_MONOMER', 'FPPSYN_MONOMER', 'FRUCBISALD_CLASSII', 'FSR_MONOMER', 'FUCP_MONOMER', 'FUCULOKIN_MONOMER', 'FUMARASE_A', 'FUMARASE_B', 'FUMARATE_REDUCTASE', 'G495_MONOMER', 'G6096_MONOMER', 'G6103_MONOMER', 'G6131_MONOMER', 'G6141_MONOMER', 'G6190_MONOMER', 'G6199_MONOMER', 'G6236_MONOMER', 'G6244_MONOMER', 'G6245_MONOMER', 'G6246_MONOMER', 'G6260_MONOMER', 'G6275_MONOMER', 'G6284_MONOMER', 'G6310_MONOMER', 'G6329_MONOMER', 'G6339_MONOMER', 'G6340_MONOMER', 'G6364_MONOMER', 'G6370_MONOMER', 'G6406_MONOMER', 'G6416_MONOMER', 'G6418_MONOMER', 'G6422_MONOMER', 'G6435_MONOMER', 'G6437_MONOMER', 'G6438_MONOMER', 'G6449_MONOMER', 'G6456_MONOMER', 'G6457_MONOMER', 'G6458_MONOMER', 'G6468_MONOMER', 'G6488_MONOMER', 'G6502_MONOMER', 'G6503_MONOMER', 'G6520_MONOMER', 'G6521_MONOMER', 'G6522_MONOMER', 'G6523_MONOMER', 'G6530_MONOMER', 'G6531_MONOMER', 'G6551_MONOMER', 'G6561_MONOMER', 'G6567_MONOMER', 'G6576_MONOMER', 'G6577_MONOMER', 'G6580_MONOMER', 'G6581_MONOMER', 'G6621_MONOMER', 'G6634_MONOMER', 'G6646_MONOMER', 'G6647_MONOMER', 'G6654_MONOMER', 'G6655_MONOMER', 'G6657_MONOMER', 'G6661_MONOMER', 'G6674_MONOMER', 'G6701_MONOMER', 'G6708_MONOMER', 'G6714_MONOMER', 'G6715_MONOMER', 'G6716_MONOMER', 'G6718_MONOMER', 'G6719_MONOMER', 'G6782_MONOMER', 'G6798_MONOMER', 'G6805_MONOMER', 'G6806_MONOMER', 'G6859_MONOMER', 'G6862_MONOMER', 'G6880_MONOMER', 'G6886_MONOMER', 'G6890_MONOMER', 'G6932_MONOMER', 'G6934_MONOMER', 'G6952_MONOMER', 'G6954_MONOMER', 'G6958_MONOMER', 'G6986_MONOMER', 'G6991_MONOMER', 'G6999_MONOMER', 'G7008_MONOMER', 'G7011_MONOMER', 'G7022_MONOMER', 'G7063_MONOMER', 'G7097_MONOMER', 'G7098_MONOMER', 'G7123_MONOMER', 'G7138_MONOMER', 'G7146_MONOMER', 'G7164_MONOMER', 'G7166_MONOMER', 'G7167_MONOMER', 'G7169_MONOMER', 'G7170_MONOMER', 'G7176_MONOMER', 'G7187_MONOMER', 'G7193_MONOMER', 'G7199_MONOMER', 'G7201_MONOMER', 'G7211_MONOMER', 'G7212_MONOMER', 'G7220_MONOMER', 'G7221_MONOMER', 'G7247_MONOMER', 'G7297_MONOMER', 'G7324_MONOMER', 'G7399_MONOMER', 'G7408_MONOMER', 'G7414_MONOMER', 'G7422_MONOMER', 'G7449_MONOMER', 'G7458_MONOMER', 'G7459_MONOMER', 'G7496_MONOMER', 'G7502_MONOMER', 'G7517_MONOMER', 'G7558_MONOMER', 'G7579_MONOMER', 'G7593_MONOMER', 'G7599_MONOMER', 'G7603_MONOMER', 'G7629_MONOMER', 'G7634_MONOMER', 'G7698_MONOMER', 'G7726_MONOMER', 'G7742_MONOMER', 'G7750_MONOMER', 'G7751_MONOMER', 'G7756_MONOMER', 'G7800_MONOMER', 'G7836_MONOMER', 'G7843_MONOMER', 'G7868_MONOMER', 'G7919_MONOMER', 'G7921_MONOMER', 'G7942_MONOMER', 'G7945_MONOMER', 'G7950_MONOMER', 'GABP_MONOMER', 'GALACTARDEHYDRA_MONOMER', 'GALACTOKIN_MONOMER', 'GALACTONATE_DEHYDRATASE_MONOMER', 'GALP_MONOMER', 'GALPMUT_MONOMER', 'GART_MONOMER', 'GARTRANSFORMYL2_MONOMER', 'GCVT_MONOMER', 'GKI_MONOMER', 'GLND_MONOMER', 'GLNE_MONOMER', 'GLNS_MONOMER', 'GLPT_MONOMER', 'GLTP_MONOMER', 'GLTS_MONOMER', 'GLU6PDEHYDROG_MONOMER', 'GLUCARDEHYDRA_MONOMER', 'GLUCDEHYDROG_MONOMER', 'GLUCOKIN_MONOMER', 'GLUCONOKINI_MONOMER', 'GLUCONOLACT_MONOMER', 'GLUCONREDUCT_MONOMER', 'GLURS_MONOMER', 'GLUTAMINESYN_OLIGOMER', 'GLUTCYSLIG_MONOMER', 'GLUTRACE_MONOMER', 'GLYCEROL_3_P_ACYLTRANSFER_MONOMER', 'GLYCOGEN_BRANCH_MONOMER', 'GLYCOGENSYN_MONOMER', 'GLYCPDIESTER_CYTO_MONOMER', 'GLYCRIBONUCSYN_MONOMER', 'GNTP_MONOMER', 'GRXB_MONOMER', 'GUANYLCYC_MONOMER', 'H2NEOPTERINP3PYROPHOSPHOHYDRO_MONOMER', 'H2PTERIDINEPYROPHOSPHOKIN_MONOMER', 'HCAT_MONOMER', 'HEMEOSYN_MONOMER', 'HEMN_MONOMER', 'HISTCYCLOPRATPPHOS', 'HOMOCYSMET_MONOMER', 'HOMOCYSMETB12_MONOMER', 'HRSA_MONOMER', 'HYDGLUTSYN_MONOMER', 'IDONDEHYD_MONOMER', 'ILES_MONOMER', 'IPPISOM_MONOMER', 'ISOCIT_LYASE', 'KDGT_MONOMER', 'KDOTRANS_MONOMER', 'KDUD_MONOMER', 'KETOBUTFORMLY_MONOMER', 'KGTP_MONOMER', 'KUP_MONOMER', 'L_ASPARTATE_OXID_MONOMER', 'L_LACTDEHYDROGFMN_MONOMER', 'LACY_MONOMER', 'LAUROYLACYLTRAN_MONOMER', 'LEUS_MONOMER', 'LYSP_MONOMER', 'MALATE_DEHASE', 'MALATE_SYNTHASE', 'MALONYL_COA_ACP_TRANSACYL_MONOMER', 'MALX_MONOMER', 'MANNKIN_MONOMER', 'MANNONDEHYDRAT_MONOMER', 'MANNONOXIDOREDUCT_MONOMER', 'MANNPDEHYDROG_MONOMER', 'MANNPGUANYLTRANGDP_MONOMER', 'MANNPISOM_MONOMER', 'MELB_MONOMER', 'METHYLGLYREDUCT_MONOMER', 'METHYLMALONYL_COA_EPIM_MONOMER', 'MGTA_MONOMER', 'MHPELY_MONOMER', 'MHPHYDROXY_MONOMER', 'MHPT_MONOMER', 'MMUM_MONOMER', 'MONOMER0_1041', 'MONOMER0_148', 'MONOMER0_149', 'MONOMER0_2797', 'MONOMER0_2798', 'MONOMER0_2799', 'MONOMER0_2838', 'MONOMER0_5', 'MONOMER0_702', 'MTR_MONOMER', 'N_ACETYLGLUTPREDUCT_MONOMER', 'NACGLCTRANS_MONOMER', 'NADH_DHII_MONOMER', 'NADNUCLEOSID_MONOMER', 'NANE_MONOMER', 'NANK_MONOMER', 'NANT_MONOMER', 'NAPC_MONOMER', 'NARK_MONOMER', 'NHAB_MONOMER', 'NICONUCADENYLYLTRAN_MONOMER', 'NICOTINAMID_MONOMER', 'NICOTINATEPRIBOSYLTRANS_MONOMER', 'NMNNUCLEOSID_MONOMER', 'NUPC_MONOMER', 'NUPG_MONOMER', 'O_SUCCINYLBENZOATE_COA_SYN_MONOMER', 'OCTAPRENYL_METHOXYPHENOL_OH_MONOMER', 'OCTAPRENYL_METHYL_METHOXY_BENZOQ_OH_MON', 'OHMETHYLBILANESYN_MONOMER', 'PALMITOTRANS_MONOMER', 'PANF_MONOMER', 'PD00230', 'PEPCARBOXYKIN_MONOMER', 'PFLACTENZ_MONOMER', 'PGK', 'PGLUCONDEHYDRAT_MONOMER', 'PGLYCEROLTRANSI_MONOMER', 'PGMI_MONOMER', 'PGPPHOSPHAB_MONOMER', 'PHENPRODIOLDEHYDROG_MONOMER', 'PHOSGLUCOSAMINEMUT_MONOMER', 'PHOSGLYCMUTASE', 'PHOSMANMUT_MONOMER', 'PHOSNACMURPENTATRANS_MONOMER', 'PHOSPHAGLYPSYN_MONOMER', 'PHOSPHO_CHEB', 'PHOSPHOGLUCMUT_MONOMER', 'PITA_MONOMER', 'PNUC_MONOMER', 'POTE_MONOMER', 'PPENTOMUT_MONOMER', 'PRAI_IGPS', 'PRIBFAICARPISOM_MONOMER', 'PROPIONYL_COA_CARBOXY_MONOMER', 'PRPPSYN_MONOMER', 'PUTP_MONOMER', 'PYRDAMPTRANS_MONOMER', 'PYROXALTRANSAM_MONOMER', 'PYRUFLAVREDUCT_MONOMER', 'RECBCD', 'RED_GLUTAREDOXIN', 'RELA_MONOMER', 'RFBX_MONOMER', 'RHAMNULOKIN_MONOMER', 'RHAT_MONOMER', 'RHTB_MONOMER', 'RIBAZOLEPHOSPHAT_MONOMER', 'RIBF_MONOMER', 'RIBULP3EPIM_MONOMER', 'SARCOX_MONOMER', 'SDAC_MONOMER', 'SHIA_MONOMER', 'SPOT_MONOMER', 'SUCCCOASYN', 'SUCCGLUALDDEHYD_MONOMER', 'SUCCGLUDESUCC_MONOMER', 'TDCC_MONOMER', 'TDPFUCACTRANS_MONOMER', 'TEHA_MONOMER', 'TETRAACYLDISACC4KIN_MONOMER', 'THI_P_KIN_MONOMER', 'THIC_MONOMER', 'THIE_MONOMER', 'THIF_MONOMER', 'THIG_MONOMER', 'THIH_MONOMER', 'THII_MONOMER', 'THIKIN_MONOMER', 'THRESYN_MONOMER', 'TORA_MONOMER', 'TPI', 'TRANSALDOLA_MONOMER', 'TRE6PHYDRO_MONOMER', 'TREHALACYTO_MONOMER', 'TREHALOSE6PSYN_MONOMER', 'TREHALOSEPHOSPHASYN_MONOMER', 'TRYPSYN', 'TRYPSYN_APROTEIN', 'TSA_REDUCT_MONOMER', 'UBIX_MONOMER', 'UDK_MONOMER', 'UDP_NACMURALA_GLU_LIG_MONOMER', 'UDP_NACMURALGLDAPAALIG_MONOMER', 'UDP_NACMURALGLDAPLIG_MONOMER', 'UDPACYLGLCNACDEACETYL_MONOMER', 'UDPMANACATRANS_MONOMER', 'UDPNACETYLGLUCOSAMENOLPYRTRANS_MONOMER', 'UDPNACETYLMURAMATEDEHYDROG_MONOMER', 'UHPT_MONOMER', 'UIDB_MONOMER', 'UROGENDECARBOX_MONOMER', 'UROGENIIISYN_MONOMER', 'USHA_MONOMER', 'UXAC_MONOMER', 'VALINE_PYRUVATE_AMINOTRANSFER_MONOMER', 'VALS_MONOMER', 'XAPB_MONOMER', 'XASA_MONOMER', 'XYLE_MONOMER', 'YBDA_MONOMER', 'YCEE_MONOMER', 'YDCS_MONOMER', 'YDEA_MONOMER', 'YDHE_MONOMER', 'YEEO_MONOMER', 'YEIM_MONOMER', 'YFEP_MONOMER', 'YGFU_MONOMER', 'YGGA_MONOMER', 'YGJE_MONOMER', 'YGJU_MONOMER', 'YHFM_MONOMER', 'YHHO_MONOMER', 'YICM_MONOMER', 'YIDT_MONOMER', 'YIDY_MONOMER', 'YIHO_MONOMER', 'YJGT_MONOMER', 'YJIO_MONOMER', 'YJIZ_MONOMER', '_1_PFK', '_2_DEHYDROPANTOATE_REDUCT_MONOMER', '_2_ISOPROPYLMALATESYN_MONOMER', '_2_OCTAPRENYL_METHOXY_BENZOQ_METH_MONOMER', '_4OHBENZOATE_OCTAPRENYLTRANSFER_MONOMER', '_6PFK_1_CPX', '_6PFK_2_CPX', '_6PGLUCONOLACT_MONOMER' ],
 	'loc' : ['cyt', 'cytosk', 'ex', 'mem', 'per', 'wall', 'bnuc', 'cproj', 'imem', 'omem', 'pmem'],
-	'strain' : ['ECOLI']})
+	'strain' : ['BSUB', 'ECOLI']})
 Monomer('cplx',
 	['name', 'loc', 'strain', 'dna', 'met', 'prot', 'rna', 'up', 'dw'],
-	{ 'name' : [ 'ACECITLY_CPLX', 'ACETOACETYL_COA_TRANSFER_CPLX', 'ACETOLACTSYNI_CPLX', 'ACETYL_COA_ACETYLTRANSFER_CPLX', 'ACETYL_COA_CARBOXYLTRANSFER_CPLX', 'ACETYLGLUTKIN_CPLX', 'ACETYLORNDEACET_CPLX', 'ACETYLORNTRANSAM_CPLX', 'ACNEULY_CPLX', 'ACSERLYA_CPLX', 'ACSERLYB_CPLX', 'ACYLCOASYN_CPLX', 'ADCLY_CPLX', 'ADENPRIBOSYLTRAN_CPLX', 'ADENYLOSUCCINATE_SYN_DIMER', 'ADENYLYLSULFKIN_CPLX', 'ADHC_CPLX', 'ADHE_CPLX', 'AERGLYC3PDEHYDROG_CPLX', 'AGMATIN_CPLX', 'AICARTRANSIMPCYCLO_CPLX', 'AIRS_CPLX', 'AKBLIG_CPLX', 'ALAS_CPLX', 'ALD_CPLX', 'ALKAPHOSPHA_CPLX', 'ALPHAGALACTOSID_CPLX', 'AMINEOXID_CPLX', 'AMP_NUCLEOSID_CPLX', 'ANGLYC3PDEHYDROG_CPLX', 'ANSA_CPLX', 'ANTHRANSYN_CPLX', 'APHA_CPLX', 'APORNAP_CPLX', 'APP_UBIOX_CPLX', 'ARABISOM_CPLX', 'ARGDECARBOXBIO_CPLX', 'AROC_CPLX', 'AROD_CPLX', 'AROF_CPLX', 'ASNS_CPLX', 'ASNSYNA_CPLX', 'ASNSYNB_CPLX', 'ASP_SEMIALDEHYDE_DEHYDROGENASE_CPLX', 'ASPAMINOTRANS_DIMER', 'ASPARTASE_CPLX', 'ASPCARBTRANS_CPLX', 'ASPKINIHOMOSERDEHYDROGI_CPLX', 'ASPS_CPLX', 'BADH_CPLX', 'BETAGALACTOSID_CPLX', 'BIOTIN_CARBOXYL_CPLX', 'BIOTIN_SYN_CPLX', 'BRANCHED_CHAINAMINOTRANSFER_CPLX', 'CARBODEHYDRAT_CPLX', 'CARBPSYN_CPLX', 'CARNDEHYDRA_CPLX', 'CFA_CPLX', 'CHEZ_CPLX', 'CHORISMUTPREPHENDEHYDRAT_CPLX', 'CHORISMUTPREPHENDEHYDROG_CPLX', 'COADTRI_CPLX', 'COBU_CPLX', 'CPLX_171', 'CPLX_3942', 'CPLX_3946', 'CPLX_64', 'CPLX_722', 'CPLX_7524', 'CPLX_8331', 'CPLX_8401', 'CPLX0_1021', 'CPLX0_1101', 'CPLX0_1121', 'CPLX0_1141', 'CPLX0_1142', 'CPLX0_1163', 'CPLX0_1221', 'CPLX0_1261', 'CPLX0_1262', 'CPLX0_1382', 'CPLX0_1401', 'CPLX0_1421', 'CPLX0_1541', 'CPLX0_1581', 'CPLX0_1601', 'CPLX0_1621', 'CPLX0_1683', 'CPLX0_1762', 'CPLX0_1821', 'CPLX0_1962', 'CPLX0_201', 'CPLX0_2061', 'CPLX0_224', 'CPLX0_225', 'CPLX0_227', 'CPLX0_229', 'CPLX0_230', 'CPLX0_234', 'CPLX0_235', 'CPLX0_236', 'CPLX0_237', 'CPLX0_238', 'CPLX0_240', 'CPLX0_2401', 'CPLX0_242', 'CPLX0_2425', 'CPLX0_244', 'CPLX0_245', 'CPLX0_246', 'CPLX0_248', 'CPLX0_250', 'CPLX0_2502', 'CPLX0_251', 'CPLX0_252', 'CPLX0_253', 'CPLX0_254', 'CPLX0_255', 'CPLX0_263', 'CPLX0_2661', 'CPLX0_2881', 'CPLX0_2901', 'CPLX0_2921', 'CPLX0_2941', 'CPLX0_2982', 'CPLX0_3001', 'CPLX0_301', 'CPLX0_3041', 'CPLX0_3061', 'CPLX0_3081', 'CPLX0_3101', 'CPLX0_3121', 'CPLX0_3161', 'CPLX0_3181', 'CPLX0_3201', 'CPLX0_321', 'CPLX0_322', 'CPLX0_3241', 'CPLX0_3281', 'CPLX0_341', 'CPLX0_3461', 'CPLX0_3482', 'CPLX0_3501', 'CPLX0_3521', 'CPLX0_3541', 'CPLX0_3581', 'CPLX0_3601', 'CPLX0_3602', 'CPLX0_3621', 'CPLX0_3661', 'CPLX0_3681', 'CPLX0_3721', 'CPLX0_3741', 'CPLX0_3841', 'CPLX0_3861', 'CPLX0_3881', 'CPLX0_3901', 'CPLX0_3924', 'CPLX0_3925', 'CPLX0_3927', 'CPLX0_3931', 'CPLX0_3936', 'CPLX0_3941', 'CPLX0_3943', 'CPLX0_3948', 'CPLX0_3950', 'CPLX0_3951', 'CPLX0_3952', 'CPLX0_3954', 'CPLX0_3957', 'CPLX0_3958', 'CPLX0_3961', 'CPLX0_3969', 'CPLX0_3971', 'CPLX0_682', 'CPLX0_721', 'CPLX0_7415', 'CPLX0_7420', 'CPLX0_7421', 'CPLX0_7423', 'CPLX0_7426', 'CPLX0_743', 'CPLX0_7458', 'CPLX0_7462', 'CPLX0_7465', 'CPLX0_7466', 'CPLX0_7525', 'CPLX0_7564', 'CPLX0_7609', 'CPLX0_761', 'CPLX0_7614', 'CPLX0_7615', 'CPLX0_7616', 'CPLX0_7622', 'CPLX0_7625', 'CPLX0_7630', 'CPLX0_7631', 'CPLX0_7633', 'CPLX0_7643', 'CPLX0_7645', 'CPLX0_7646', 'CPLX0_7647', 'CPLX0_7649', 'CPLX0_7652', 'CPLX0_7658', 'CPLX0_7659', 'CPLX0_7660', 'CPLX0_7662', 'CPLX0_7667', 'CPLX0_7683', 'CPLX0_7685', 'CPLX0_7688', 'CPLX0_7691', 'CPLX0_7692', 'CPLX0_7693', 'CPLX0_7709', 'CPLX0_7712', 'CPLX0_7718', 'CPLX0_7719', 'CPLX0_7722', 'CPLX0_7723', 'CPLX0_7725', 'CPLX0_7726', 'CPLX0_7727', 'CPLX0_7728', 'CPLX0_7732', 'CPLX0_7741', 'CPLX0_7744', 'CPLX0_7747', 'CPLX0_7755', 'CPLX0_7758', 'CPLX0_7760', 'CPLX0_7761', 'CPLX0_7766', 'CPLX0_7788', 'CPLX0_7794', 'CPLX0_7802', 'CPLX0_7805', 'CPLX0_7806', 'CPLX0_7808', 'CPLX0_7810', 'CPLX0_7811', 'CPLX0_782', 'CPLX0_7820', 'CPLX0_7826', 'CPLX0_7841', 'CPLX0_7844', 'CPLX0_7847', 'CPLX0_7848', 'CPLX0_7877', 'CPLX0_7878', 'CPLX0_7882', 'CPLX0_7885', 'CPLX0_7887', 'CPLX0_7904', 'CPLX0_7912', 'CPLX0_7913', 'CPLX0_7927', 'CPLX0_7932', 'CPLX0_7936', 'CPLX0_7940', 'CPLX0_7944', 'CPLX0_7946', 'CPLX0_7947', 'CPLX0_7950', 'CPLX0_7951', 'CPLX0_7957', 'CPLX0_7958', 'CPLX0_7959', 'CPLX0_7960', 'CPLX0_7962', 'CPLX0_7974', 'CPLX0_7975', 'CPLX0_7977', 'CPLX0_7979', 'CPLX0_7984', 'CPLX0_7989', 'CPLX0_7990', 'CPLX0_7993', 'CPLX0_7994', 'CPLX0_7997', 'CPLX0_8005', 'CPLX0_8006', 'CPLX0_8008', 'CPLX0_8010', 'CPLX0_8011', 'CPLX0_8012', 'CPLX0_8013', 'CPLX0_8014', 'CPLX0_8015', 'CPLX0_8016', 'CPLX0_8031', 'CPLX0_8032', 'CPLX0_8033', 'CPLX0_8045', 'CPLX0_8092', 'CPLX0_8095', 'CPLX0_8098', 'CPLX0_8106', 'CPLX0_8109', 'CPLX0_8112', 'CPLX0_8121', 'CPLX0_8122', 'CPLX0_8123', 'CPLX0_8124', 'CPLX0_8125', 'CPLX0_8127', 'CPLX0_8128', 'CPLX0_8156', 'CPLX0_8158', 'CPLX0_8159', 'CPLX0_8160', 'CPLX0_8163', 'CPLX0_8164', 'CPLX0_8167', 'CPLX0_8176', 'CPLX0_8182', 'CPLX0_8183', 'CPLX0_8186', 'CPLX0_8189', 'CPLX0_8190', 'CPLX0_8191', 'CPLX0_8205', 'CPLX0_821', 'CPLX0_8211', 'CPLX0_8212', 'CPLX0_8213', 'CPLX0_8214', 'CPLX0_8217', 'CPLX0_8228', 'CPLX0_8231', 'CPLX0_8232', 'CPLX0_8233', 'CPLX0_8238', 'CPLX0_8249', 'CPLX0_8251', 'CPLX0_8252', 'CPLX0_8254', 'CPLX0_8260', 'CPLX0_8261', 'CPLX0_8262', 'CPLX0_8270', 'CPLX0_861', 'CPLX0_901', 'CPLXECOLI_7943', 'CTPSYN_CPLX', 'CYANLY_CPLX', 'CYT_D_UBIOX_CPLX', 'CYT_O_UBIOX_CPLX', 'CYTIDEAM_CPLX', 'DALADEHYDROG_CPLX', 'DAPASYN_CPLX', 'DCTP_DEAM_CPLX', 'DCYSDESULF_CPLX', 'DEOA_CPLX', 'DEOD_CPLX', 'DETHIOBIOTIN_SYN_CPLX', 'DGTPTRIPHYDRO_CPLX', 'DHHB_METHYLTRANSFER_CPLX', 'DHPDIOXYGEN_CPLX', 'DIACYLGLYKIN_CPLX', 'DIAMINOPIMDECARB_CPLX', 'DIHYDRODIPICSYN_CPLX', 'DIHYDROOROT_CPLX', 'DIHYDROPICRED_CPLX', 'DIHYDROPTERIREDUCT_CPLX', 'DIHYDROXYACIDDEHYDRAT_CPLX', 'DIMESULFREDUCT_CPLX', 'DIOHBUTANONEPSYN_CPLX', 'DMBPPRIBOSYLTRANS_CPLX', 'DSBC_CPLX', 'DTDPGLUCDEHYDRAT_CPLX', 'DUTP_PYROP_CPLX', 'DXPREDISOM_CPLX', 'E1P_CPLX', 'E3_CPLX', 'ENOLASE_CPLX', 'ENTA_CPLX', 'ENTB_CPLX', 'ENTE_CPLX', 'ENTMULTI_CPLX', 'ERYTH4PDEHYDROG_CPLX', 'ETHAMLY_CPLX', 'FABA_CPLX', 'FABB_CPLX', 'FABZ_CPLX', 'FADA_CPLX', 'FADB_CPLX', 'FHLMULTI_CPLX', 'FOLD_CPLX', 'FOLE_CPLX', 'FOLXTET_CPLX', 'FORMATEDEHYDROGN_CPLX', 'FORMYLTHFDEFORMYL_CPLX', 'GALACTOACETYLTRAN_CPLX', 'GALACTURIDYLYLTRANS_CPLX', 'GAPDH_A_CPLX', 'GCVMULTI_CPLX', 'GCVP_CPLX', 'GDHA_CPLX', 'GDPMANDEHYDRA_CPLX', 'GLUC1PADENYLTRANS_CPLX', 'GLUCOSAMINE_6_P_DEAMIN_CPLX', 'GLUCOSE_1_PHOSPHAT_CPLX', 'GLUTAMATESYN_CPLX', 'GLUTAMIDOTRANS_CPLX', 'GLUTATHIONE_REDUCT_NADPH_CPLX', 'GLUTATHIONE_SYN_CPLX', 'GLUTDECARBOXA_CPLX', 'GLUTKIN_CPLX', 'GLUTSEMIALDEHYDROG_CPLX', 'GLYC3PDEHYDROGBIOSYN_CPLX', 'GLYCDEH_CPLX', 'GLYCEROL_KIN_CPLX', 'GLYCOPHOSPHORYL_CPLX', 'GLYOCARBOLIG_CPLX', 'GLYOHMETRANS_CPLX', 'GLYOXI_CPLX', 'GLYS_CPLX', 'GMP_REDUCT_CPLX', 'GMP_SYN_CPLX', 'GPT_CPLX', 'GSAAMINOTRANS_CPLX', 'GSP_CPLX', 'GTP_CYCLOHYDRO_II_CPLX', 'GUANYL_KIN_CPLX', 'H2PTEROATESYNTH_CPLX', 'HCAMULTI_CPLX', 'HISS_CPLX', 'HISTDEHYD_CPLX', 'HISTPHOSTRANS_CPLX', 'HMP_P_KIN_CPLX', 'HOMOSERKIN_CPLX', 'HOMSUCTRAN_CPLX', 'HYDROG3_CPLX', 'HYDROPEROXIDI_CPLX', 'HYDROPEROXIDII_CPLX', 'IMIDHISTID_CPLX', 'IMP_DEHYDROG_CPLX', 'ISOCITHASE_CPLX', 'KDO_8PPHOSPHAT_CPLX', 'KDO_8PSYNTH_CPLX', 'KDPGALDOL_4OH2OXOGLUTARALDOL_CPLX', 'L_GLN_FRUCT_6_P_AMINOTRANS_CPLX', 'LACTALDREDUCT_CPLX', 'LDC2_CPLX', 'LTAA_CPLX', 'LTARTDEHYDRA_CPLX', 'LUMAZINESYN_CPLX', 'LYSS_CPLX', 'LYSU_CPLX', 'LYXK_CPLX', 'MALDEXPHOSPHORYL_CPLX', 'MALIC_NAD_CPLX', 'MALIC_NADP_CPLX', 'MALTACETYLTRAN_CPLX', 'MENE_CPLX', 'METG_CPLX', 'METHGLYSYN_CPLX', 'METHYLENETHFREDUCT_CPLX', 'MUTHLS_CPLX', 'N_ACETYLTRANSFER_CPLX', 'NAD_SYNTH_CPLX', 'NADH_DHI_CPLX', 'NAG1P_URIDYLTRANS_CPLX', 'NAG6PDEACET_CPLX', 'NAP_CPLX', 'NARX_CPLX', 'NITRATREDUCTA_CPLX', 'NITRITREDUCT_CPLX', 'NQOR_CPLX', 'NUCLEOSIDE_DIP_KIN_CPLX', 'O_SUCCHOMOSERLYASE_CPLX', 'ORNCARBAMTRANSFERF_CPLX', 'ORNDECARBOX_BIO_CPLX', 'OROPRIBTRANS_CPLX', 'OROTPDECARB_CPLX', 'PABASYN_CPLX', 'PANTOATE_BETA_ALANINE_LIG_CPLX', 'PANTOTHENATE_KIN_CPLX', 'PAPSSULFOTRANS_CPLX', 'PDXH_CPLX', 'PDXK_CPLX', 'PEPCARBOX_CPLX', 'PEPSYNTH_CPLX', 'PGLYCDEHYDROG_CPLX', 'PHENDEHYD_CPLX', 'PHES_CPLX', 'PHOSACETYLTRANS_CPLX', 'PHOSPHASERDECARB_DIMER', 'PHOSPHASERSYN_CPLX', 'PKI_COMPLEX', 'PORPHOBILSYNTH_CPLX', 'PPK_CPLX', 'PPPGPPHYDRO_CPLX', 'PPX_CPLX', 'PROS_CPLX', 'PRPPAMIDOTRANS_CPLX', 'PSERTRANSAM_CPLX', 'PURE_CPLX', 'PURK_CPLX', 'PUTA_CPLX', 'PYRROLINECARBREDUCT_CPLX', 'PYRUVATEDEH_CPLX', 'PYRUVOXID_CPLX', 'QOR_CPLX', 'QUINOPRIBOTRANS_CPLX', 'RECFOR_CPLX', 'RHAMNULPALDOL_CPLX', 'RIB5PISOMA_CPLX', 'RIB5PISOMB_CPLX', 'RIBONUCLEOSIDE_DIP_REDUCTI_CPLX', 'RIBONUCLEOSIDE_DIP_REDUCTII_CPLX', 'RIBONUCLEOSIDE_TRIP_REDUCT_CPLX', 'RIBULOKIN_CPLX', 'RUVABC_CPLX', 'S_ADENMETSYN_CPLX', 'SAICARSYN_CPLX', 'SAMDECARB_CPLX', 'SERS_CPLX', 'SIROHEMESYN_CPLX', 'SORB6PDEHYDROG_CPLX', 'SPERMACTRAN_CPLX', 'SPERMIDINESYN_CPLX', 'SUCCORNTRANSAM_CPLX', 'SULFATE_ADENYLYLTRANS_CPLX', 'SULFITE_REDUCT_CPLX', 'THIOESTERII_CPLX', 'THIOREDOXIN_REDUCT_NADPH_CPLX', 'THREDEHYDCAT_CPLX', 'THRS_CPLX', 'THYMIDYLATESYN_CPLX', 'TMAOREDUCTI_CPLX', 'TRANSENOYLCOARED_CPLX', 'TRPS_CPLX', 'TRYPTOPHAN_CPLX', 'TYRB_DIMER', 'TYRS_CPLX', 'UDHA_CPLX', 'UDPGLUCEPIM_CPLX', 'UDPNACETYLGLUCOSAMACYLTRANS_CPLX', 'UMPKI_CPLX', 'UPPSYN_CPLX', 'URACIL_PRIBOSYLTRANS_CPLX', 'UVRABC_CPLX', 'XANTHOSINEPHOSPHORY_CPLX', 'XYLISOM_CPLX', '_2OXOGLUTARATEDEH_CPLX', '_3_ISOPROPYLMALDEHYDROG_CPLX', '_3_ISOPROPYLMALISOM_CPLX', '_3_METHYL_2_OXOBUT_OHCH3XFER_CPLX', '_3_OXOACYL_ACP_SYNTHII_CPLX', '_6PGLUCONDEHYDROG_CPLX', '_7_ALPHA_HYDROXYSTEROID_DEH_CPLX', '_7KAPSYN_CPLX' ],
+	{ 'name' : [ 'ABC_10_CPLX', 'ABC_11_CPLX', 'ABC_12_CPLX', 'ABC_13_CPLX', 'ABC_14_CPLX', 'ABC_15_CPLX', 'ABC_16_CPLX', 'ABC_18_CPLX', 'ABC_19_CPLX', 'ABC_2_CPLX', 'ABC_20_CPLX', 'ABC_22_CPLX', 'ABC_23_CPLX', 'ABC_24_CPLX', 'ABC_26_CPLX', 'ABC_27_CPLX', 'ABC_28_CPLX', 'ABC_29_CPLX', 'ABC_3_CPLX', 'ABC_32_CPLX', 'ABC_33_CPLX', 'ABC_34_CPLX', 'ABC_35_CPLX', 'ABC_40_CPLX', 'ABC_42_CPLX', 'ABC_46_CPLX', 'ABC_49_CPLX', 'ABC_5_CPLX', 'ABC_56_CPLX', 'ABC_57_CPLX', 'ABC_58_CPLX', 'ABC_6_CPLX', 'ABC_63_CPLX', 'ABC_64_CPLX', 'ABC_7_CPLX', 'ABC_8_CPLX', 'ABC_9_CPLX', 'ACECITLY_CPLX', 'ACETOACETYL_COA_TRANSFER_CPLX', 'ACETOLACTSYNI_CPLX', 'ACETYL_COA_ACETYLTRANSFER_CPLX', 'ACETYL_COA_CARBOXYLTRANSFER_CPLX', 'ACETYLGLUTKIN_CPLX', 'ACETYLORNDEACET_CPLX', 'ACETYLORNTRANSAM_CPLX', 'ACNEULY_CPLX', 'ACSERLYA_CPLX', 'ACSERLYB_CPLX', 'ACYLCOASYN_CPLX', 'ADCLY_CPLX', 'ADENPRIBOSYLTRAN_CPLX', 'ADENYLOSUCCINATE_SYN_DIMER', 'ADENYLYLSULFKIN_CPLX', 'ADHC_CPLX', 'ADHE_CPLX', 'AERGLYC3PDEHYDROG_CPLX', 'AGMATIN_CPLX', 'AICARTRANSIMPCYCLO_CPLX', 'AIRS_CPLX', 'AKBLIG_CPLX', 'ALAS_CPLX', 'ALD_CPLX', 'ALKAPHOSPHA_CPLX', 'ALPHAGALACTOSID_CPLX', 'AMINEOXID_CPLX', 'AMP_NUCLEOSID_CPLX', 'ANGLYC3PDEHYDROG_CPLX', 'ANSA_CPLX', 'ANTHRANSYN_CPLX', 'APHA_CPLX', 'APORNAP_CPLX', 'APP_UBIOX_CPLX', 'ARABISOM_CPLX', 'ARGDECARBOXBIO_CPLX', 'AROC_CPLX', 'AROD_CPLX', 'AROF_CPLX', 'ASNS_CPLX', 'ASNSYNA_CPLX', 'ASNSYNB_CPLX', 'ASP_SEMIALDEHYDE_DEHYDROGENASE_CPLX', 'ASPAMINOTRANS_DIMER', 'ASPARTASE_CPLX', 'ASPCARBTRANS_CPLX', 'ASPKINIHOMOSERDEHYDROGI_CPLX', 'ASPS_CPLX', 'ATPASE_1_CPLX', 'ATPSYN_CPLX', 'BADH_CPLX', 'BETAGALACTOSID_CPLX', 'BIOTIN_CARBOXYL_CPLX', 'BIOTIN_SYN_CPLX', 'BRANCHED_CHAINAMINOTRANSFER_CPLX', 'CARBODEHYDRAT_CPLX', 'CARBPSYN_CPLX', 'CARNDEHYDRA_CPLX', 'CFA_CPLX', 'CHEZ_CPLX', 'CHORISMUTPREPHENDEHYDRAT_CPLX', 'CHORISMUTPREPHENDEHYDROG_CPLX', 'COADTRI_CPLX', 'COBU_CPLX', 'CPLX_153', 'CPLX_154', 'CPLX_155', 'CPLX_156', 'CPLX_157', 'CPLX_158', 'CPLX_165', 'CPLX_166', 'CPLX_168', 'CPLX_171', 'CPLX_3942', 'CPLX_3945', 'CPLX_3946', 'CPLX_5322', 'CPLX_64', 'CPLX_7', 'CPLX_722', 'CPLX_7445', 'CPLX_7524', 'CPLX_7604', 'CPLX_8331', 'CPLX_8352', 'CPLX_8401', 'CPLX_8648', 'CPLX_8649', 'CPLX_9083', 'CPLX_9084', 'CPLX_9195', 'CPLX_9285', 'CPLX0_1021', 'CPLX0_1101', 'CPLX0_1121', 'CPLX0_1141', 'CPLX0_1142', 'CPLX0_1163', 'CPLX0_1221', 'CPLX0_1261', 'CPLX0_1262', 'CPLX0_1382', 'CPLX0_1401', 'CPLX0_1421', 'CPLX0_1541', 'CPLX0_1581', 'CPLX0_1601', 'CPLX0_1621', 'CPLX0_1683', 'CPLX0_1721', 'CPLX0_1762', 'CPLX0_1821', 'CPLX0_1924', 'CPLX0_1941', 'CPLX0_1942', 'CPLX0_1943', 'CPLX0_1962', 'CPLX0_201', 'CPLX0_2061', 'CPLX0_2121', 'CPLX0_2141', 'CPLX0_224', 'CPLX0_225', 'CPLX0_227', 'CPLX0_229', 'CPLX0_230', 'CPLX0_231', 'CPLX0_234', 'CPLX0_235', 'CPLX0_236', 'CPLX0_237', 'CPLX0_238', 'CPLX0_240', 'CPLX0_2401', 'CPLX0_242', 'CPLX0_2425', 'CPLX0_244', 'CPLX0_245', 'CPLX0_246', 'CPLX0_248', 'CPLX0_250', 'CPLX0_2502', 'CPLX0_251', 'CPLX0_252', 'CPLX0_253', 'CPLX0_254', 'CPLX0_255', 'CPLX0_263', 'CPLX0_2661', 'CPLX0_2881', 'CPLX0_2901', 'CPLX0_2921', 'CPLX0_2941', 'CPLX0_2982', 'CPLX0_3001', 'CPLX0_301', 'CPLX0_3041', 'CPLX0_3061', 'CPLX0_3081', 'CPLX0_3101', 'CPLX0_3121', 'CPLX0_3161', 'CPLX0_3181', 'CPLX0_3201', 'CPLX0_321', 'CPLX0_322', 'CPLX0_3241', 'CPLX0_3281', 'CPLX0_341', 'CPLX0_3461', 'CPLX0_3482', 'CPLX0_3501', 'CPLX0_3521', 'CPLX0_3541', 'CPLX0_3581', 'CPLX0_3601', 'CPLX0_3602', 'CPLX0_3621', 'CPLX0_3661', 'CPLX0_3681', 'CPLX0_3721', 'CPLX0_3741', 'CPLX0_3841', 'CPLX0_3861', 'CPLX0_3881', 'CPLX0_3901', 'CPLX0_3924', 'CPLX0_3925', 'CPLX0_3927', 'CPLX0_3931', 'CPLX0_3932', 'CPLX0_3936', 'CPLX0_3941', 'CPLX0_3943', 'CPLX0_3948', 'CPLX0_3950', 'CPLX0_3951', 'CPLX0_3952', 'CPLX0_3954', 'CPLX0_3957', 'CPLX0_3958', 'CPLX0_3961', 'CPLX0_3969', 'CPLX0_3970', 'CPLX0_3971', 'CPLX0_4', 'CPLX0_682', 'CPLX0_7', 'CPLX0_721', 'CPLX0_7415', 'CPLX0_7420', 'CPLX0_7421', 'CPLX0_7423', 'CPLX0_7426', 'CPLX0_743', 'CPLX0_7458', 'CPLX0_7462', 'CPLX0_7465', 'CPLX0_7466', 'CPLX0_7525', 'CPLX0_7530', 'CPLX0_7532', 'CPLX0_7533', 'CPLX0_7535', 'CPLX0_7564', 'CPLX0_7609', 'CPLX0_761', 'CPLX0_7614', 'CPLX0_7615', 'CPLX0_7616', 'CPLX0_7622', 'CPLX0_7625', 'CPLX0_7626', 'CPLX0_7629', 'CPLX0_7630', 'CPLX0_7631', 'CPLX0_7633', 'CPLX0_7641', 'CPLX0_7642', 'CPLX0_7643', 'CPLX0_7645', 'CPLX0_7646', 'CPLX0_7647', 'CPLX0_7649', 'CPLX0_7652', 'CPLX0_7653', 'CPLX0_7654', 'CPLX0_7655', 'CPLX0_7658', 'CPLX0_7659', 'CPLX0_7660', 'CPLX0_7662', 'CPLX0_7667', 'CPLX0_7683', 'CPLX0_7684', 'CPLX0_7685', 'CPLX0_7688', 'CPLX0_7691', 'CPLX0_7692', 'CPLX0_7693', 'CPLX0_7704', 'CPLX0_7709', 'CPLX0_7712', 'CPLX0_7718', 'CPLX0_7719', 'CPLX0_7720', 'CPLX0_7722', 'CPLX0_7723', 'CPLX0_7725', 'CPLX0_7726', 'CPLX0_7727', 'CPLX0_7728', 'CPLX0_7732', 'CPLX0_7741', 'CPLX0_7744', 'CPLX0_7747', 'CPLX0_7755', 'CPLX0_7758', 'CPLX0_7760', 'CPLX0_7761', 'CPLX0_7766', 'CPLX0_7788', 'CPLX0_7794', 'CPLX0_7802', 'CPLX0_7805', 'CPLX0_7806', 'CPLX0_7807', 'CPLX0_7808', 'CPLX0_7810', 'CPLX0_7811', 'CPLX0_782', 'CPLX0_7820', 'CPLX0_7826', 'CPLX0_7841', 'CPLX0_7843', 'CPLX0_7844', 'CPLX0_7847', 'CPLX0_7848', 'CPLX0_7877', 'CPLX0_7878', 'CPLX0_7882', 'CPLX0_7885', 'CPLX0_7887', 'CPLX0_7904', 'CPLX0_7906', 'CPLX0_7912', 'CPLX0_7913', 'CPLX0_7927', 'CPLX0_7932', 'CPLX0_7936', 'CPLX0_7940', 'CPLX0_7944', 'CPLX0_7946', 'CPLX0_7947', 'CPLX0_7950', 'CPLX0_7951', 'CPLX0_7952', 'CPLX0_7955', 'CPLX0_7957', 'CPLX0_7958', 'CPLX0_7959', 'CPLX0_7960', 'CPLX0_7961', 'CPLX0_7962', 'CPLX0_7963', 'CPLX0_7974', 'CPLX0_7975', 'CPLX0_7977', 'CPLX0_7979', 'CPLX0_7984', 'CPLX0_7989', 'CPLX0_7990', 'CPLX0_7992', 'CPLX0_7993', 'CPLX0_7994', 'CPLX0_7997', 'CPLX0_8005', 'CPLX0_8006', 'CPLX0_8008', 'CPLX0_8010', 'CPLX0_8011', 'CPLX0_8012', 'CPLX0_8013', 'CPLX0_8014', 'CPLX0_8015', 'CPLX0_8016', 'CPLX0_8031', 'CPLX0_8032', 'CPLX0_8033', 'CPLX0_8045', 'CPLX0_8092', 'CPLX0_8095', 'CPLX0_8097', 'CPLX0_8098', 'CPLX0_8106', 'CPLX0_8109', 'CPLX0_8112', 'CPLX0_8121', 'CPLX0_8122', 'CPLX0_8123', 'CPLX0_8124', 'CPLX0_8125', 'CPLX0_8127', 'CPLX0_8128', 'CPLX0_8152', 'CPLX0_8156', 'CPLX0_8158', 'CPLX0_8159', 'CPLX0_8160', 'CPLX0_8163', 'CPLX0_8164', 'CPLX0_8167', 'CPLX0_8176', 'CPLX0_8182', 'CPLX0_8183', 'CPLX0_8186', 'CPLX0_8189', 'CPLX0_8190', 'CPLX0_8191', 'CPLX0_8205', 'CPLX0_821', 'CPLX0_8211', 'CPLX0_8212', 'CPLX0_8213', 'CPLX0_8214', 'CPLX0_8217', 'CPLX0_8228', 'CPLX0_8231', 'CPLX0_8232', 'CPLX0_8233', 'CPLX0_8238', 'CPLX0_8249', 'CPLX0_8251', 'CPLX0_8252', 'CPLX0_8254', 'CPLX0_8260', 'CPLX0_8261', 'CPLX0_8262', 'CPLX0_8263', 'CPLX0_8270', 'CPLX0_8271', 'CPLX0_861', 'CPLX0_901', 'CPLX8J2_1', 'CPLX8J2_104', 'CPLX8J2_105', 'CPLX8J2_106', 'CPLX8J2_117', 'CPLX8J2_119', 'CPLX8J2_125', 'CPLX8J2_128', 'CPLX8J2_13', 'CPLX8J2_131', 'CPLX8J2_141', 'CPLX8J2_142', 'CPLX8J2_144', 'CPLX8J2_147', 'CPLX8J2_15', 'CPLX8J2_161', 'CPLX8J2_180', 'CPLX8J2_184', 'CPLX8J2_189', 'CPLX8J2_192', 'CPLX8J2_194', 'CPLX8J2_21', 'CPLX8J2_22', 'CPLX8J2_24', 'CPLX8J2_27', 'CPLX8J2_28', 'CPLX8J2_34', 'CPLX8J2_37', 'CPLX8J2_38', 'CPLX8J2_4', 'CPLX8J2_41', 'CPLX8J2_43', 'CPLX8J2_65', 'CPLX8J2_80', 'CPLX8J2_81', 'CPLX8J2_86', 'CPLX8J2_87', 'CPLX8J2_93', 'CPLXECOLI_7943', 'CTPSYN_CPLX', 'CYANLY_CPLX', 'CYT_D_UBIOX_CPLX', 'CYT_O_UBIOX_CPLX', 'CYTIDEAM_CPLX', 'DALADEHYDROG_CPLX', 'DAPASYN_CPLX', 'DCTP_DEAM_CPLX', 'DCYSDESULF_CPLX', 'DEOA_CPLX', 'DEOD_CPLX', 'DETHIOBIOTIN_SYN_CPLX', 'DGTPTRIPHYDRO_CPLX', 'DHHB_METHYLTRANSFER_CPLX', 'DHPDIOXYGEN_CPLX', 'DIACYLGLYKIN_CPLX', 'DIAMINOPIMDECARB_CPLX', 'DIHYDRODIPICSYN_CPLX', 'DIHYDROOROT_CPLX', 'DIHYDROPICRED_CPLX', 'DIHYDROPTERIREDUCT_CPLX', 'DIHYDROXYACIDDEHYDRAT_CPLX', 'DIMESULFREDUCT_CPLX', 'DIOHBUTANONEPSYN_CPLX', 'DMBPPRIBOSYLTRANS_CPLX', 'DSBC_CPLX', 'DTDPGLUCDEHYDRAT_CPLX', 'DUTP_PYROP_CPLX', 'DXPREDISOM_CPLX', 'E1P_CPLX', 'E3_CPLX', 'ENOLASE_CPLX', 'ENTA_CPLX', 'ENTB_CPLX', 'ENTE_CPLX', 'ENTMULTI_CPLX', 'ERYTH4PDEHYDROG_CPLX', 'ETHAMLY_CPLX', 'FABA_CPLX', 'FABB_CPLX', 'FABZ_CPLX', 'FADA_CPLX', 'FADB_CPLX', 'FHLMULTI_CPLX', 'FOLD_CPLX', 'FOLE_CPLX', 'FOLXTET_CPLX', 'FORMATEDEHYDROGN_CPLX', 'FORMYLTHFDEFORMYL_CPLX', 'GALACTOACETYLTRAN_CPLX', 'GALACTURIDYLYLTRANS_CPLX', 'GAPDH_A_CPLX', 'GCVMULTI_CPLX', 'GCVP_CPLX', 'GDHA_CPLX', 'GDPMANDEHYDRA_CPLX', 'GLUC1PADENYLTRANS_CPLX', 'GLUCOSAMINE_6_P_DEAMIN_CPLX', 'GLUCOSE_1_PHOSPHAT_CPLX', 'GLUTAMATESYN_CPLX', 'GLUTAMIDOTRANS_CPLX', 'GLUTATHIONE_REDUCT_NADPH_CPLX', 'GLUTATHIONE_SYN_CPLX', 'GLUTDECARBOXA_CPLX', 'GLUTKIN_CPLX', 'GLUTSEMIALDEHYDROG_CPLX', 'GLYC3PDEHYDROGBIOSYN_CPLX', 'GLYCDEH_CPLX', 'GLYCEROL_KIN_CPLX', 'GLYCOPHOSPHORYL_CPLX', 'GLYOCARBOLIG_CPLX', 'GLYOHMETRANS_CPLX', 'GLYOXI_CPLX', 'GLYS_CPLX', 'GMP_REDUCT_CPLX', 'GMP_SYN_CPLX', 'GPT_CPLX', 'GSAAMINOTRANS_CPLX', 'GSP_CPLX', 'GTP_CYCLOHYDRO_II_CPLX', 'GUANYL_KIN_CPLX', 'H2PTEROATESYNTH_CPLX', 'HCAMULTI_CPLX', 'HISS_CPLX', 'HISTDEHYD_CPLX', 'HISTPHOSTRANS_CPLX', 'HMP_P_KIN_CPLX', 'HOMOSERKIN_CPLX', 'HOMSUCTRAN_CPLX', 'HYDROG3_CPLX', 'HYDROPEROXIDI_CPLX', 'HYDROPEROXIDII_CPLX', 'IMIDHISTID_CPLX', 'IMP_DEHYDROG_CPLX', 'ISOCITHASE_CPLX', 'KDO_8PPHOSPHAT_CPLX', 'KDO_8PSYNTH_CPLX', 'KDPGALDOL_4OH2OXOGLUTARALDOL_CPLX', 'L_GLN_FRUCT_6_P_AMINOTRANS_CPLX', 'LACTALDREDUCT_CPLX', 'LDC2_CPLX', 'LTAA_CPLX', 'LTARTDEHYDRA_CPLX', 'LUMAZINESYN_CPLX', 'LYSS_CPLX', 'LYSU_CPLX', 'LYXK_CPLX', 'MALDEXPHOSPHORYL_CPLX', 'MALIC_NAD_CPLX', 'MALIC_NADP_CPLX', 'MALTACETYLTRAN_CPLX', 'MENE_CPLX', 'METG_CPLX', 'METHGLYSYN_CPLX', 'METHYLENETHFREDUCT_CPLX', 'METNIQ_METHIONINE_ABC_CPLX', 'MUTHLS_CPLX', 'N_ACETYLTRANSFER_CPLX', 'NAD_SYNTH_CPLX', 'NADH_DHI_CPLX', 'NAG1P_URIDYLTRANS_CPLX', 'NAG6PDEACET_CPLX', 'NAP_CPLX', 'NARX_CPLX', 'NITRATREDUCTA_CPLX', 'NITRITREDUCT_CPLX', 'NQOR_CPLX', 'NUCLEOSIDE_DIP_KIN_CPLX', 'O_SUCCHOMOSERLYASE_CPLX', 'ORNCARBAMTRANSFERF_CPLX', 'ORNDECARBOX_BIO_CPLX', 'OROPRIBTRANS_CPLX', 'OROTPDECARB_CPLX', 'PABASYN_CPLX', 'PANTOATE_BETA_ALANINE_LIG_CPLX', 'PANTOTHENATE_KIN_CPLX', 'PAPSSULFOTRANS_CPLX', 'PDXH_CPLX', 'PDXK_CPLX', 'PEPCARBOX_CPLX', 'PEPSYNTH_CPLX', 'PGLYCDEHYDROG_CPLX', 'PHENDEHYD_CPLX', 'PHES_CPLX', 'PHOSACETYLTRANS_CPLX', 'PHOSPHASERDECARB_DIMER', 'PHOSPHASERSYN_CPLX', 'PKI_COMPLEX', 'PORPHOBILSYNTH_CPLX', 'PPK_CPLX', 'PPPGPPHYDRO_CPLX', 'PPX_CPLX', 'PROS_CPLX', 'PRPPAMIDOTRANS_CPLX', 'PSERTRANSAM_CPLX', 'PURE_CPLX', 'PURK_CPLX', 'PUTA_CPLX', 'PYRNUTRANSHYDROGEN_CPLX', 'PYRROLINECARBREDUCT_CPLX', 'PYRUVATEDEH_CPLX', 'PYRUVOXID_CPLX', 'QOR_CPLX', 'QUINOPRIBOTRANS_CPLX', 'RECFOR_CPLX', 'RHAMNULPALDOL_CPLX', 'RIB5PISOMA_CPLX', 'RIB5PISOMB_CPLX', 'RIBONUCLEOSIDE_DIP_REDUCTI_CPLX', 'RIBONUCLEOSIDE_DIP_REDUCTII_CPLX', 'RIBONUCLEOSIDE_TRIP_REDUCT_CPLX', 'RIBULOKIN_CPLX', 'RUVABC_CPLX', 'S_ADENMETSYN_CPLX', 'SAICARSYN_CPLX', 'SAMDECARB_CPLX', 'SERS_CPLX', 'SIROHEMESYN_CPLX', 'SORB6PDEHYDROG_CPLX', 'SPERMACTRAN_CPLX', 'SPERMIDINESYN_CPLX', 'SUCCORNTRANSAM_CPLX', 'SULFATE_ADENYLYLTRANS_CPLX', 'SULFITE_REDUCT_CPLX', 'TATABCE_CPLX', 'THIOESTERII_CPLX', 'THIOREDOXIN_REDUCT_NADPH_CPLX', 'THREDEHYDCAT_CPLX', 'THRS_CPLX', 'THYMIDYLATESYN_CPLX', 'TMAOREDUCTI_CPLX', 'TRANS_200_CPLX', 'TRANS_CPLX_201', 'TRANS_CPLX_202', 'TRANS_CPLX_203', 'TRANSENOYLCOARED_CPLX', 'TRPS_CPLX', 'TRYPTOPHAN_CPLX', 'TYRB_DIMER', 'TYRS_CPLX', 'UDHA_CPLX', 'UDPGLUCEPIM_CPLX', 'UDPNACETYLGLUCOSAMACYLTRANS_CPLX', 'UMPKI_CPLX', 'UPPSYN_CPLX', 'URACIL_PRIBOSYLTRANS_CPLX', 'UVRABC_CPLX', 'XANTHOSINEPHOSPHORY_CPLX', 'XYLISOM_CPLX', 'YDGEF_CPLX', '_2OXOGLUTARATEDEH_CPLX', '_3_ISOPROPYLMALDEHYDROG_CPLX', '_3_ISOPROPYLMALISOM_CPLX', '_3_METHYL_2_OXOBUT_OHCH3XFER_CPLX', '_3_OXOACYL_ACP_SYNTHII_CPLX', '_6PGLUCONDEHYDROG_CPLX', '_7_ALPHA_HYDROXYSTEROID_DEH_CPLX', '_7KAPSYN_CPLX' ],
 	'loc' : ['cyt', 'cytosk', 'ex', 'mem', 'per', 'wall', 'bnuc', 'cproj', 'imem', 'omem', 'pmem'],
-	'strain' : ['ECOLI']})
+	'strain' : ['BSUB', 'ECOLI']})
+Rule('ABC_10_RXN',
+	cplx(name = 'ABC_10_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'FERRIC_ENTEROBACTIN_COMPLEX', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_10_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'FERRIC_ENTEROBACTIN_COMPLEX', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_10_RXN', 1.000000), 
+	Parameter('rvs_ABC_10_RXN', 0.000000))
+Rule('ABC_11_RXN',
+	cplx(name = 'ABC_11_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Ferric_Hydroxamate_Complexes', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'ABC_11_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Ferric_Hydroxamate_Complexes', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_11_RXN', 1.000000), 
+	Parameter('rvs_ABC_11_RXN', 0.000000))
+Rule('TRANS_RXN_297',
+	cplx(name = 'ABC_11_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_621', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_11_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_621', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_297', 1.000000), 
+	Parameter('rvs_TRANS_RXN_297', 0.000000))
+Rule('TRANS_RXN_298',
+	cplx(name = 'ABC_11_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_2241', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_11_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_2241', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_298', 1.000000), 
+	Parameter('rvs_TRANS_RXN_298', 0.000000))
+Rule('ABC_12_RXN',
+	cplx(name = 'ABC_12_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'GLN', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_12_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'GLN', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_12_RXN', 1.000000), 
+	Parameter('rvs_ABC_12_RXN', 0.000000))
+Rule('TRANS_RXN0_222',
+	cplx(name = 'ABC_13_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'L_ASPARTATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_13_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'L_ASPARTATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_222', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_222', 0.000000))
+Rule('ABC_13_RXN',
+	cplx(name = 'ABC_13_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'GLT', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_13_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'GLT', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_13_RXN', 1.000000), 
+	Parameter('rvs_ABC_13_RXN', 0.000000))
+Rule('ABC_14_RXN',
+	cplx(name = 'ABC_14_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'HIS', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_14_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'HIS', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_14_RXN', 1.000000), 
+	Parameter('rvs_ABC_14_RXN', 0.000000))
+Rule('ABC_35_RXN',
+	cplx(name = 'ABC_15_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'LEU', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_15_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'LEU', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_35_RXN', 1.000000), 
+	Parameter('rvs_ABC_35_RXN', 0.000000))
+Rule('ABC_36_RXN',
+	cplx(name = 'ABC_15_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'VAL', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_15_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'VAL', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_36_RXN', 1.000000), 
+	Parameter('rvs_ABC_36_RXN', 0.000000))
+Rule('ABC_15_RXN',
+	cplx(name = 'ABC_15_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ILE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_15_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ILE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_15_RXN', 1.000000), 
+	Parameter('rvs_ABC_15_RXN', 0.000000))
+Rule('TRANS_RXN_312',
+	cplx(name = 'ABC_15_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PHE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_15_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PHE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_312', 1.000000), 
+	Parameter('rvs_TRANS_RXN_312', 0.000000))
+Rule('ABC_16_RXN',
+	cplx(name = 'ABC_16_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'MALTOSE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_16_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'MALTOSE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_16_RXN', 1.000000), 
+	Parameter('rvs_ABC_16_RXN', 0.000000))
+Rule('TRANS_RXN0_504',
+	cplx(name = 'ABC_16_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'MALTOTETRAOSE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_16_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'MALTOTETRAOSE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_504', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_504', 0.000000))
+Rule('TRANS_RXN0_503',
+	cplx(name = 'ABC_16_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'MALTOTRIOSE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_16_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'MALTOTRIOSE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_503', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_503', 0.000000))
+Rule('ABC_18_RXN',
+	cplx(name = 'ABC_18_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'D_galactopyranose', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_18_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'D_galactopyranose', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_18_RXN', 1.000000), 
+	Parameter('rvs_ABC_18_RXN', 0.000000))
+Rule('TRANS_RXN0_541',
+	cplx(name = 'ABC_18_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'METHYL_BETA_D_GALACTOSIDE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_18_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'METHYL_BETA_D_GALACTOSIDE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_541', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_541', 0.000000))
+Rule('ABC_19_RXN',
+	cplx(name = 'ABC_19_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD_3', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_19_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD_3', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_19_RXN', 1.000000), 
+	Parameter('rvs_ABC_19_RXN', 0.000000))
+Rule('ABC_2_RXN',
+	cplx(name = 'ABC_2_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'L_ARABINOSE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_2_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'L_ARABINOSE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_2_RXN', 1.000000), 
+	Parameter('rvs_ABC_2_RXN', 0.000000))
+Rule('ABC_20_RXN',
+	cplx(name = 'ABC_20_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NIplus2', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_20_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NIplus2', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_20_RXN', 1.000000), 
+	Parameter('rvs_ABC_20_RXN', 0.000000))
+Rule('_3dot6dot3dot23_RXN',
+	cplx(name = 'ABC_22_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'OLIGOPEPTIDES', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_22_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'OLIGOPEPTIDES', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd__3dot6dot3dot23_RXN', 1.000000), 
+	Parameter('rvs__3dot6dot3dot23_RXN', 0.000000))
+Rule('ABC_23_RXN',
+	cplx(name = 'ABC_23_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Alkylphosphonates', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_23_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Alkylphosphonates', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_23_RXN', 1.000000), 
+	Parameter('rvs_ABC_23_RXN', 0.000000))
+Rule('TRANS_RXN_238',
+	cplx(name = 'ABC_23_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Aminoalkylphosphonates', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_23_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Aminoalkylphosphonates', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_238', 1.000000), 
+	Parameter('rvs_TRANS_RXN_238', 0.000000))
+Rule('ABC_24_RXN',
+	cplx(name = 'ABC_24_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'SPERMIDINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_24_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'SPERMIDINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_24_RXN', 1.000000), 
+	Parameter('rvs_ABC_24_RXN', 0.000000))
+Rule('ABC_25_RXN',
+	cplx(name = 'ABC_24_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PUTRESCINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_24_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PUTRESCINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_25_RXN', 1.000000), 
+	Parameter('rvs_ABC_25_RXN', 0.000000))
+Rule('RXN_8638',
+	cplx(name = 'ABC_26_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Quaternary_Amines', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_26_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Quaternary_Amines', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN_8638', 1.000000), 
+	Parameter('rvs_RXN_8638', 0.000000))
+Rule('ABC_26_RXN',
+	cplx(name = 'ABC_26_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PRO', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_26_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PRO', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_26_RXN', 1.000000), 
+	Parameter('rvs_ABC_26_RXN', 0.000000))
+Rule('ABC_27_RXN',
+	cplx(name = 'ABC_27_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'ABC_27_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_27_RXN', 1.000000), 
+	Parameter('rvs_ABC_27_RXN', 0.000000))
+Rule('ABC_28_RXN',
+	cplx(name = 'ABC_28_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'D_Ribopyranose', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_28_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'D_Ribopyranose', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_28_RXN', 1.000000), 
+	Parameter('rvs_ABC_28_RXN', 0.000000))
+Rule('TRANS_RXN_328',
+	cplx(name = 'ABC_29_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PUTRESCINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_29_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PUTRESCINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_328', 1.000000), 
+	Parameter('rvs_TRANS_RXN_328', 0.000000))
+Rule('ABC_37_RXN',
+	cplx(name = 'ABC_3_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'L_ORNITHINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_3_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'L_ORNITHINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_37_RXN', 1.000000), 
+	Parameter('rvs_ABC_37_RXN', 0.000000))
+Rule('ABC_4_RXN',
+	cplx(name = 'ABC_3_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ARG', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_3_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ARG', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_4_RXN', 1.000000), 
+	Parameter('rvs_ABC_4_RXN', 0.000000))
+Rule('ABC_3_RXN',
+	cplx(name = 'ABC_3_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'LYS', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_3_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'LYS', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_3_RXN', 1.000000), 
+	Parameter('rvs_ABC_3_RXN', 0.000000))
+Rule('ABC_32_RXN',
+	cplx(name = 'ABC_32_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'THIAMINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_32_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'THIAMINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_32_RXN', 1.000000), 
+	Parameter('rvs_ABC_32_RXN', 0.000000))
+Rule('ABC_33_RXN',
+	cplx(name = 'ABC_33_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'D_Xylose', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_33_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'D_Xylose', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_33_RXN', 1.000000), 
+	Parameter('rvs_ABC_33_RXN', 0.000000))
+Rule('ABC_34_RXN',
+	cplx(name = 'ABC_34_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'GLYCEROL_3P', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_34_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'GLYCEROL_3P', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_34_RXN', 1.000000), 
+	Parameter('rvs_ABC_34_RXN', 0.000000))
+Rule('TRANS_RXN0_573',
+	cplx(name = 'ABC_34_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Glycerophosphodiesters', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_34_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Glycerophosphodiesters', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_573', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_573', 0.000000))
+Rule('TRANS_RXN0_162',
+	cplx(name = 'ABC_35_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTOHEME', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_35_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTOHEME', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_162', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_162', 0.000000))
+Rule('TRANS_RXN_283',
+	cplx(name = 'ABC_40_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'BETAINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_40_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'BETAINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_283', 1.000000), 
+	Parameter('rvs_TRANS_RXN_283', 0.000000))
+Rule('ABC_42_RXN',
+	cplx(name = 'ABC_42_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ALLOSE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_42_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ALLOSE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_42_RXN', 1.000000), 
+	Parameter('rvs_ABC_42_RXN', 0.000000))
+Rule('TRANS_RXN0_492',
+	cplx(name = 'ABC_46_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_2485', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_46_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_2485', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_492', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_492', 0.000000))
+Rule('TRANS_RXN0_491',
+	cplx(name = 'ABC_46_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_2486', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_46_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_2486', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_491', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_491', 0.000000))
+Rule('RXN0_11',
+	cplx(name = 'ABC_49_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'GLUTATHIONE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_49_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'GLUTATHIONE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_11', 1.000000), 
+	Parameter('rvs_RXN0_11', 0.000000))
+Rule('ABC_5_RXN',
+	cplx(name = 'ABC_5_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'COB_I_ALAMIN', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_5_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'COB_I_ALAMIN', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_5_RXN', 1.000000), 
+	Parameter('rvs_ABC_5_RXN', 0.000000))
+Rule('TRANS_RXN_296',
+	cplx(name = 'ABC_5_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'COBINAMIDE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_5_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'COBINAMIDE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_296', 1.000000), 
+	Parameter('rvs_TRANS_RXN_296', 0.000000))
+Rule('ABC_56_RXN',
+	cplx(name = 'ABC_56_CPLX', loc = 'per', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Aliphatic_Sulfonates', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_56_CPLX', loc = 'per', strain = 'ECOLI') +
+	met(name = 'Aliphatic_Sulfonates', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_56_RXN', 1.000000), 
+	Parameter('rvs_ABC_56_RXN', 0.000000))
+Rule('TRANS_RXN_366',
+	cplx(name = 'ABC_57_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_19953', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_57_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_19953', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_366', 1.000000), 
+	Parameter('rvs_TRANS_RXN_366', 0.000000))
+Rule('TRANS_RXN0_454',
+	cplx(name = 'ABC_58_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_10774', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_58_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_10774', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_454', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_454', 0.000000))
+Rule('RXN0_21',
+	cplx(name = 'ABC_6_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'GLUTATHIONE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_6_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'GLUTATHIONE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_21', 1.000000), 
+	Parameter('rvs_RXN0_21', 0.000000))
+Rule('RXN0_3',
+	cplx(name = 'ABC_6_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CYS', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_6_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CYS', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_3', 1.000000), 
+	Parameter('rvs_RXN0_3', 0.000000))
+Rule('ABC_63_RXN',
+	cplx(name = 'ABC_63_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ZNplus2', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_63_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ZNplus2', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_63_RXN', 1.000000), 
+	Parameter('rvs_ABC_63_RXN', 0.000000))
+Rule('ABC_64_RXN',
+	cplx(name = 'ABC_64_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'TAURINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_64_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'TAURINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_64_RXN', 1.000000), 
+	Parameter('rvs_ABC_64_RXN', 0.000000))
+Rule('ABC_7_RXN',
+	cplx(name = 'ABC_7_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'S2O3', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_7_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'S2O3', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_7_RXN', 1.000000), 
+	Parameter('rvs_ABC_7_RXN', 0.000000))
+Rule('ABC_70_RXN',
+	cplx(name = 'ABC_7_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'SULFATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_7_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'SULFATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_70_RXN', 1.000000), 
+	Parameter('rvs_ABC_70_RXN', 0.000000))
+Rule('TRANS_RXN0_478',
+	cplx(name = 'ABC_7_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'SELENATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_7_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'SELENATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_478', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_478', 0.000000))
+Rule('TRANS_RXN0_479',
+	cplx(name = 'ABC_7_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'SELENITE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_7_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'SELENITE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_479', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_479', 0.000000))
+Rule('ABC_8_RXN',
+	cplx(name = 'ABC_8_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'DIPEPTIDES', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_8_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'DIPEPTIDES', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_8_RXN', 1.000000), 
+	Parameter('rvs_ABC_8_RXN', 0.000000))
+Rule('ABC_9_RXN',
+	cplx(name = 'ABC_9_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'FERRIC_CITRATE_COMPLEX', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ABC_9_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'FERRIC_CITRATE_COMPLEX', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ABC_9_RXN', 1.000000), 
+	Parameter('rvs_ABC_9_RXN', 0.000000))
+Rule('TRANS_RXN0_452',
+	prot(name = 'ABGT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_889', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'ABGT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_889', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_452', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_452', 1.000000))
+Rule('ACYLCOASYN_RXN',
+	cplx(name = 'ACYLCOASYN_CPLX', loc = 'cyt', strain = 'ECOLI') +
+	met(name = 'CPD66_39', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'ACYLCOASYN_CPLX', loc = 'cyt', strain = 'ECOLI') +
+	met(name = 'Saturated_Fatty_Acyl_CoA', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'AMP', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ACYLCOASYN_RXN', 1.000000), 
+	Parameter('rvs_ACYLCOASYN_RXN', 0.000000))
+Rule('TRANS_RXN0_623',
+	cplx(name = 'ACYLCOASYN_CPLX', loc = 'cyt', strain = 'ECOLI') +
+	met(name = 'CPD66_39', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'ACYLCOASYN_CPLX', loc = 'cyt', strain = 'ECOLI') +
+	met(name = 'Saturated_Fatty_Acyl_CoA', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'AMP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_623', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_623', 0.000000))
+Rule('RXN0_7238',
+	cplx(name = 'ACYLCOASYN_CPLX', loc = 'cyt', strain = 'ECOLI') +
+	met(name = 'CPD_9247', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'ACYLCOASYN_CPLX', loc = 'cyt', strain = 'ECOLI') +
+	met(name = 'CPD_18346', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'AMP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7238', 1.000000), 
+	Parameter('rvs_RXN0_7238', 0.000000))
+Rule('RXN0_7239',
+	cplx(name = 'ACYLCOASYN_CPLX', loc = 'cyt', strain = 'ECOLI') +
+	met(name = 'OLEATE_CPD', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'ACYLCOASYN_CPLX', loc = 'cyt', strain = 'ECOLI') +
+	met(name = 'OLEOYL_COA', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'AMP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7239', 1.000000), 
+	Parameter('rvs_RXN0_7239', 0.000000))
+Rule('RXN0_7248',
+	cplx(name = 'ACYLCOASYN_CPLX', loc = 'cyt', strain = 'ECOLI') +
+	met(name = 'CPD_9245', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'ACYLCOASYN_CPLX', loc = 'cyt', strain = 'ECOLI') +
+	met(name = 'CPD_10269', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'AMP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7248', 1.000000), 
+	Parameter('rvs_RXN0_7248', 0.000000))
+Rule('TRANS_RXN0_258',
+	prot(name = 'AMPG_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD0_1081', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'AMPG_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD0_1081', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_258', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_258', 1.000000))
+Rule('TRANS_RXN0_226',
+	prot(name = 'AMPG_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD0_1080', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'AMPG_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD0_1080', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_226', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_226', 1.000000))
+Rule('TRANS_RXN_262',
+	prot(name = 'ANSP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ASN', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'ANSP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ASN', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_262', 1.000000), 
+	Parameter('rvs_TRANS_RXN_262', 1.000000))
+Rule('RXN0_5266',
+	cplx(name = 'APP_UBIOX_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'OXYGEN_MOLECULE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Ubiquinols', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'APP_UBIOX_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Ubiquinones', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_5266', 1.000000), 
+	Parameter('rvs_RXN0_5266', 0.000000))
+Rule('TRANS_RXN_10',
+	prot(name = 'ARAE_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'L_ARABINOSE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'ARAE_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'L_ARABINOSE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_10', 1.000000), 
+	Parameter('rvs_TRANS_RXN_10', 1.000000))
+Rule('TRANS_RXN_76',
+	prot(name = 'AROP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'TRP', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'AROP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'TRP', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_76', 1.000000), 
+	Parameter('rvs_TRANS_RXN_76', 1.000000))
+Rule('TRANS_RXN_77',
+	prot(name = 'AROP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'TYR', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'AROP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'TYR', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_77', 1.000000), 
+	Parameter('rvs_TRANS_RXN_77', 1.000000))
+Rule('TRANS_RXN_56',
+	prot(name = 'AROP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PHE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'AROP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PHE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_56', 1.000000), 
+	Parameter('rvs_TRANS_RXN_56', 1.000000))
+Rule('TRANS_RXN_2',
+	cplx(name = 'ATPASE_1_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Kplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'ATPASE_1_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Kplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_2', 1.000000), 
+	Parameter('rvs_TRANS_RXN_2', 0.000000))
+Rule('ATPSYN_RXN',
+	cplx(name = 'ATPSYN_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'ATPSYN_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_ATPSYN_RXN', 1.000000), 
+	Parameter('rvs_ATPSYN_RXN', 1.000000))
+Rule('RXN0_7041',
+	cplx(name = 'ATPSYN_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'THIAMINE_PYROPHOSPHATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'ATPSYN_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_611', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7041', 1.000000), 
+	Parameter('rvs_RXN0_7041', 0.000000))
+Rule('TRANS_RXN_82',
+	prot(name = 'B0070_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Alpha_lactose', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'B0070_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Alpha_lactose', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_82', 1.000000), 
+	Parameter('rvs_TRANS_RXN_82', 1.000000))
+Rule('TRANS_RXN0_486',
+	prot(name = 'B0260_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_397', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'B0260_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_397', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_486', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_486', 0.000000))
+Rule('TRANS_RXN0_201',
+	prot(name = 'B0612_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'SUC', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CIT', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'B0612_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CIT', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'SUC', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_201', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_201', 1.000000))
+Rule('TRANS_RXN0_288',
+	prot(name = 'B0709_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'DIPEPTIDES', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'B0709_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'DIPEPTIDES', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_288', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_288', 1.000000))
+Rule('TRANS_RXN0_200',
+	prot(name = 'B0752_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ZNplus2', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'B0752_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ZNplus2', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_200', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_200', 1.000000))
+Rule('TRANS_RXN_132',
+	prot(name = 'B1006_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'URACIL', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'B1006_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'URACIL', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_132', 1.000000), 
+	Parameter('rvs_TRANS_RXN_132', 1.000000))
+Rule('TRANS_RXN_362',
+	prot(name = 'B1006_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'THYMINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'B1006_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'THYMINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_362', 1.000000), 
+	Parameter('rvs_TRANS_RXN_362', 1.000000))
+Rule('RXN_5076',
+	prot(name = 'B1006_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'XANTHINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'B1006_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'XANTHINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN_5076', 1.000000), 
+	Parameter('rvs_RXN_5076', 1.000000))
+Rule('TRANS_RXN_69',
+	prot(name = 'B1296_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PUTRESCINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'B1296_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PUTRESCINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_69', 1.000000), 
+	Parameter('rvs_TRANS_RXN_69', 1.000000))
+Rule('TRANS_RXN0_267',
+	prot(name = 'B1634_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'TRIPEPTIDES', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'B1634_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'TRIPEPTIDES', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_267', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_267', 1.000000))
+Rule('TRANS_RXN0_596',
+	prot(name = 'B1791_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Drugs', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'B1791_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Drugs', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_596', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_596', 0.000000))
+Rule('TRANS_RXN_273',
+	prot(name = 'B1791_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_14545', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'B1791_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_14545', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_273', 1.000000), 
+	Parameter('rvs_TRANS_RXN_273', 0.000000))
+Rule('TRANS_RXN0_523',
+	prot(name = 'B2789_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'GLYCERATE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'B2789_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'GLYCERATE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_523', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_523', 0.000000))
+Rule('TRANS_RXN0_204',
+	prot(name = 'B2789_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'D_GLUCARATE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'B2789_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'D_GLUCARATE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_204', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_204', 0.000000))
+Rule('TRANS_RXN0_203',
+	prot(name = 'B2789_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'D_GALACTARATE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'B2789_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'D_GALACTARATE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_203', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_203', 0.000000))
+Rule('TRANS_RXN_105',
+	prot(name = 'B2975_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'GLYCOLLATE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'B2975_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'GLYCOLLATE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_105', 1.000000), 
+	Parameter('rvs_TRANS_RXN_105', 1.000000))
+Rule('TRANS_RXN_104',
+	prot(name = 'B2975_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'L_LACTATE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'B2975_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'L_LACTATE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_104', 1.000000), 
+	Parameter('rvs_TRANS_RXN_104', 1.000000))
+Rule('TRANS_RXN0_515',
+	prot(name = 'B2975_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'D_LACTATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'B2975_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'D_LACTATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_515', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_515', 1.000000))
+Rule('TRANS_RXN0_622',
+	prot(name = 'B2975_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_3564', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'B2975_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_3564', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_622', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_622', 1.000000))
+Rule('RXN0_7050',
+	prot(name = 'B4141_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'MET', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'B4141_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'MET', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7050', 1.000000), 
+	Parameter('rvs_RXN0_7050', 1.000000))
+Rule('TRANS_RXN_282',
+	prot(name = 'B4141_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'VAL', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'B4141_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'VAL', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_282', 1.000000), 
+	Parameter('rvs_TRANS_RXN_282', 1.000000))
+Rule('TRANS_RXN_281',
+	prot(name = 'B4141_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ILE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'B4141_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ILE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_281', 1.000000), 
+	Parameter('rvs_TRANS_RXN_281', 1.000000))
+Rule('TRANS_RXN0_270',
+	prot(name = 'B4141_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'LEU', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'B4141_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'LEU', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_270', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_270', 1.000000))
+Rule('TRANS_RXN_340',
+	prot(name = 'BCR_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_20921', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'BCR_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_20921', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_340', 1.000000), 
+	Parameter('rvs_TRANS_RXN_340', 1.000000))
+Rule('TRANS_RXN_44',
+	prot(name = 'BCR_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Drugs', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'BCR_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Drugs', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_44', 1.000000), 
+	Parameter('rvs_TRANS_RXN_44', 1.000000))
+Rule('TRANS_RXN_99',
+	prot(name = 'BETT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CHOLINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'BETT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CHOLINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_99', 1.000000), 
+	Parameter('rvs_TRANS_RXN_99', 1.000000))
+Rule('TRANS_RXN_126B',
+	prot(name = 'BRNQ_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'LEU', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'BRNQ_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'LEU', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_126B', 1.000000), 
+	Parameter('rvs_TRANS_RXN_126B', 1.000000))
+Rule('TRANS_RXN_126A',
+	prot(name = 'BRNQ_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'VAL', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'BRNQ_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'VAL', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_126A', 1.000000), 
+	Parameter('rvs_TRANS_RXN_126A', 1.000000))
+Rule('TRANS_RXN_126',
+	prot(name = 'BRNQ_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ILE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'BRNQ_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ILE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_126', 1.000000), 
+	Parameter('rvs_TRANS_RXN_126', 1.000000))
+Rule('TRANS_RXN_68',
+	prot(name = 'CADB_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CADAVERINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'LYS', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'CADB_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CADAVERINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'LYS', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_68', 1.000000), 
+	Parameter('rvs_TRANS_RXN_68', 1.000000))
+Rule('TRANS_RXN0_212',
+	prot(name = 'CADB_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CADAVERINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'CADB_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CADAVERINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_212', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_212', 1.000000))
+Rule('TRANS_RXN_42',
+	prot(name = 'CHAA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Kplus', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'CHAA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Kplus', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_42', 1.000000), 
+	Parameter('rvs_TRANS_RXN_42', 1.000000))
+Rule('TRANS_RXN_101',
+	prot(name = 'CHAA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'CHAA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_101', 1.000000), 
+	Parameter('rvs_TRANS_RXN_101', 1.000000))
+Rule('TRANS_RXN_338',
+	prot(name = 'CMR_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_1938', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'CMR_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_1938', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_338', 1.000000), 
+	Parameter('rvs_TRANS_RXN_338', 1.000000))
+Rule('TRANS_RXN_337',
+	prot(name = 'CMR_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_20894', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'CMR_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_20894', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_337', 1.000000), 
+	Parameter('rvs_TRANS_RXN_337', 1.000000))
+Rule('TRANS_RXN_116',
+	prot(name = 'CODB_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CYTOSINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'CODB_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CYTOSINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_116', 1.000000), 
+	Parameter('rvs_TRANS_RXN_116', 1.000000))
+Rule('TRANS_RXN_141B',
+	prot(name = 'CORA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NIplus2', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'CORA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NIplus2', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_141B', 1.000000), 
+	Parameter('rvs_TRANS_RXN_141B', 0.000000))
+Rule('TRANS_RXN_141A',
+	prot(name = 'CORA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'COplus2', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'CORA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'COplus2', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_141A', 1.000000), 
+	Parameter('rvs_TRANS_RXN_141A', 0.000000))
+Rule('TRANS_RXN_141',
+	prot(name = 'CORA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'MGplus2', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'CORA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'MGplus2', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_141', 1.000000), 
+	Parameter('rvs_TRANS_RXN_141', 0.000000))
+Rule('TRANS_RXN_155',
+	cplx(name = 'CPLX_153', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PTSH_PHOSPHORYLATED', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CELLOBIOSE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX_153', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_507', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSH_MONOMER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_155', 1.000000), 
+	Parameter('rvs_TRANS_RXN_155', 0.000000))
+Rule('TRANS_RXN_153A',
+	cplx(name = 'CPLX_153', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PTSH_PHOSPHORYLATED', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD_1142', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX_153', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_1181', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSH_MONOMER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_153A', 1.000000), 
+	Parameter('rvs_TRANS_RXN_153A', 0.000000))
+Rule('TRANS_RXN_153',
+	cplx(name = 'CPLX_153', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'HYDROQUINONE_O_BETA_D_GLUCOPYRANOSIDE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSH_PHOSPHORYLATED', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX_153', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_1162', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSH_MONOMER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_153', 1.000000), 
+	Parameter('rvs_TRANS_RXN_153', 0.000000))
+Rule('TRANS_RXN0_518',
+	cplx(name = 'CPLX_154', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_3570', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSH_PHOSPHORYLATED', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX_154', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_2499', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSH_MONOMER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_518', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_518', 0.000000))
+Rule('TRANS_RXN_157',
+	cplx(name = 'CPLX_154', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PTSH_PHOSPHORYLATED', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Glucopyranose', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX_154', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'D_glucopyranose_6_phosphate', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSH_MONOMER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_157', 1.000000), 
+	Parameter('rvs_TRANS_RXN_157', 0.000000))
+Rule('TRANS_RXN_155B',
+	cplx(name = 'CPLX_155', loc = 'cyt', strain = 'ECOLI') +
+	met(name = 'PTSH_PHOSPHORYLATED', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CHITOBIOSE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX_155', loc = 'cyt', strain = 'ECOLI') +
+	met(name = 'DIACETYLCHITOBIOSE_6_PHOSPHATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSH_MONOMER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_155B', 1.000000), 
+	Parameter('rvs_TRANS_RXN_155B', 0.000000))
+Rule('TRANS_RXN_156',
+	cplx(name = 'CPLX_156', loc = 'cyt', strain = 'ECOLI') +
+	met(name = 'PTSH_PHOSPHORYLATED', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'MANNITOL', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX_156', loc = 'cyt', strain = 'ECOLI') +
+	met(name = 'MANNITOL_1P', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSH_MONOMER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_156', 1.000000), 
+	Parameter('rvs_TRANS_RXN_156', 0.000000))
+Rule('TRANS_RXN0_583',
+	cplx(name = 'CPLX_157', loc = 'cyt', strain = 'ECOLI') +
+	met(name = 'CPD_3582', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSH_PHOSPHORYLATED', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX_157', loc = 'cyt', strain = 'ECOLI') +
+	met(name = 'PTSH_MONOMER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD_16619', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_583', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_583', 0.000000))
+Rule('TRANS_RXN0_582',
+	cplx(name = 'CPLX_158', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'FRU', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSI_PHOSPHORYLATED', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX_158', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'D_fructose_1_phosphate', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSI_MONOMER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_582', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_582', 0.000000))
+Rule('TRANS_RXN0_618',
+	cplx(name = 'CPLX_158', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PTSI_PHOSPHORYLATED', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'D_Fructopyranose', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX_158', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PTSI_MONOMER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'D_fructopyranose_1_phosphate', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_618', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_618', 0.000000))
+Rule('TRANS_RXN_158',
+	cplx(name = 'CPLX_158', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Fructofuranose', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSI_PHOSPHORYLATED', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX_158', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'D_fructofuranose_1_phosphate', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSI_MONOMER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_158', 1.000000), 
+	Parameter('rvs_TRANS_RXN_158', 0.000000))
+Rule('TRANS_RXN_165',
+	cplx(name = 'CPLX_165', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'D_mannopyranose', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSH_PHOSPHORYLATED', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX_165', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_15979', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSH_MONOMER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_165', 1.000000), 
+	Parameter('rvs_TRANS_RXN_165', 0.000000))
+Rule('TRANS_RXN0_540',
+	cplx(name = 'CPLX_165', loc = 'imem', strain = 'ECOLI') +
+	met(name = '_2_DEOXY_D_GLUCOSE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSH_PHOSPHORYLATED', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX_165', loc = 'imem', strain = 'ECOLI') +
+	met(name = '_2_DEOXY_D_GLUCOSE_6_PHOSPHATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSH_MONOMER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_540', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_540', 0.000000))
+Rule('TRANS_RXN0_446',
+	cplx(name = 'CPLX_165', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'N_acetyl_D_mannosamine', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSH_PHOSPHORYLATED', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX_165', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'N_ACETYL_D_MANNOSAMINE_6P', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSH_MONOMER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_446', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_446', 0.000000))
+Rule('TRANS_RXN_167A',
+	cplx(name = 'CPLX_165', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PTSH_PHOSPHORYLATED', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'GLUCOSAMINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX_165', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'D_GLUCOSAMINE_6_P', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSH_MONOMER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_167A', 1.000000), 
+	Parameter('rvs_TRANS_RXN_167A', 0.000000))
+Rule('TRANS_RXN_167',
+	cplx(name = 'CPLX_165', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PTSH_PHOSPHORYLATED', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'N_acetyl_D_glucosamine', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX_165', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'N_ACETYL_D_GLUCOSAMINE_6_P', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSH_MONOMER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_167', 1.000000), 
+	Parameter('rvs_TRANS_RXN_167', 0.000000))
+Rule('TRANS_RXN_158A',
+	cplx(name = 'CPLX_165', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Fructofuranose', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSH_PHOSPHORYLATED', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX_165', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_18719', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSH_MONOMER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_158A', 1.000000), 
+	Parameter('rvs_TRANS_RXN_158A', 0.000000))
+Rule('TRANS_RXN_169',
+	cplx(name = 'CPLX_166', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PTSH_PHOSPHORYLATED', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'SORBITOL', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX_166', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'D_SORBITOL_6_P', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSH_MONOMER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_169', 1.000000), 
+	Parameter('rvs_TRANS_RXN_169', 0.000000))
+Rule('TRANS_RXN_168',
+	cplx(name = 'CPLX_168', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PTSH_PHOSPHORYLATED', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'TREHALOSE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX_168', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'TREHALOSE_6P', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSH_MONOMER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_168', 1.000000), 
+	Parameter('rvs_TRANS_RXN_168', 0.000000))
+Rule('RXN_5068',
+	cplx(name = 'CPLX_3945', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'EG11489_MONOMER', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX_3945', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'EG11489_MONOMER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN_5068', 1.000000), 
+	Parameter('rvs_RXN_5068', 0.000000))
+Rule('RXN0_7190',
+	cplx(name = 'CPLX_7', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD0_2039', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX_7', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD0_2039', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7190', 1.000000), 
+	Parameter('rvs_RXN0_7190', 1.000000))
+Rule('TRANS_RXN0_264',
+	cplx(name = 'CPLX_7', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD_763', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX_7', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD_763', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_264', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_264', 1.000000))
+Rule('TRANS_RXN0_280',
+	cplx(name = 'CPLX0_1721', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CUplus', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_1721', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CUplus', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_280', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_280', 0.000000))
+Rule('TRANS_RXN_90',
+	cplx(name = 'CPLX0_1721', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'AGplus', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_1721', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'AGplus', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_90', 1.000000), 
+	Parameter('rvs_TRANS_RXN_90', 0.000000))
+Rule('TRANS_RXN0_283',
+	cplx(name = 'CPLX0_1924', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'COBINAMIDE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_1924', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'COBINAMIDE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_283', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_283', 0.000000))
+Rule('RXN0_1565',
+	cplx(name = 'CPLX0_1924', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'COB_I_ALAMIN', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_1924', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'COB_I_ALAMIN', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_1565', 1.000000), 
+	Parameter('rvs_RXN0_1565', 0.000000))
+Rule('RXN0_1682',
+	cplx(name = 'CPLX0_1941', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'FERRIC_ENTEROBACTIN_COMPLEX', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_1941', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'FERRIC_ENTEROBACTIN_COMPLEX', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_1682', 1.000000), 
+	Parameter('rvs_RXN0_1682', 0.000000))
+Rule('RXN0_1701',
+	cplx(name = 'CPLX0_1942', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_2241', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_1942', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_2241', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_1701', 1.000000), 
+	Parameter('rvs_RXN0_1701', 0.000000))
+Rule('RXN0_1684',
+	cplx(name = 'CPLX0_1943', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'FERRIC_CITRATE_COMPLEX', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_1943', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'FERRIC_CITRATE_COMPLEX', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_1684', 1.000000), 
+	Parameter('rvs_RXN0_1684', 0.000000))
+Rule('TRANS_RXN_365',
+	cplx(name = 'CPLX0_2121', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'DEOXYCHOLATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_2121', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'DEOXYCHOLATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_365', 1.000000), 
+	Parameter('rvs_TRANS_RXN_365', 0.000000))
+Rule('TRANS_RXN_364',
+	cplx(name = 'CPLX0_2121', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD_7970', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_2121', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD_7970', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_364', 1.000000), 
+	Parameter('rvs_TRANS_RXN_364', 0.000000))
+Rule('TRANS_RXN_363',
+	cplx(name = 'CPLX0_2121', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD_21025', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_2121', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD_21025', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_363', 1.000000), 
+	Parameter('rvs_TRANS_RXN_363', 0.000000))
+Rule('TRANS_RXN_352',
+	cplx(name = 'CPLX0_2141', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'DEOXYCHOLATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_2141', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'DEOXYCHOLATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_352', 1.000000), 
+	Parameter('rvs_TRANS_RXN_352', 0.000000))
+Rule('TRANS_RXN_367',
+	cplx(name = 'CPLX0_2141', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Erythromycins', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_2141', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Erythromycins', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_367', 1.000000), 
+	Parameter('rvs_TRANS_RXN_367', 0.000000))
+Rule('TRANS_RXN_354',
+	cplx(name = 'CPLX0_2141', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD_21070', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_2141', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD_21070', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_354', 1.000000), 
+	Parameter('rvs_TRANS_RXN_354', 0.000000))
+Rule('TRANS_RXN_355',
+	cplx(name = 'CPLX0_2141', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD_9288', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_2141', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD_9288', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_355', 1.000000), 
+	Parameter('rvs_TRANS_RXN_355', 0.000000))
+Rule('TRANS_RXN_161',
+	cplx(name = 'CPLX0_231', loc = 'cyt', strain = 'ECOLI') +
+	met(name = 'Hpr_pi_phospho_L_histidines', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'GALACTITOL', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_231', loc = 'cyt', strain = 'ECOLI') +
+	met(name = 'GALACTITOL_1_PHOSPHATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Hpr_Histidine', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_161', 1.000000), 
+	Parameter('rvs_TRANS_RXN_161', 0.000000))
+Rule('TRANS_RXN_360',
+	cplx(name = 'CPLX0_3932', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Gentamycins', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_3932', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Gentamycins', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_360', 1.000000), 
+	Parameter('rvs_TRANS_RXN_360', 0.000000))
+Rule('TRANS_RXN0_268',
+	cplx(name = 'CPLX0_3970', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'L_ALA_GAMMA_D_GLU_DAP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'CPLX0_3970', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'L_ALA_GAMMA_D_GLU_DAP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_268', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_268', 0.000000))
+Rule('TRANS_RXN0_233',
+	cplx(name = 'CPLX0_4', loc = 'imem', strain = 'ECOLI') +
+	met(name = '_4_hydroxybenzoate', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_4', loc = 'imem', strain = 'ECOLI') +
+	met(name = '_4_hydroxybenzoate', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_233', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_233', 1.000000))
+Rule('RXN0_2481',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Hydrophilic_Solute_Or_Ion_LT_600Da', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Hydrophilic_Solute_Or_Ion_LT_600Da', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_2481', 1.000000), 
+	Parameter('rvs_RXN0_2481', 1.000000))
+Rule('RXN0_7241',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Medium_chain_fatty_acids', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Medium_chain_fatty_acids', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7241', 1.000000), 
+	Parameter('rvs_RXN0_7241', 1.000000))
+Rule('RXN0_7211',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Organophosphorus_Compounds', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Organophosphorus_Compounds', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7211', 1.000000), 
+	Parameter('rvs_RXN0_7211', 1.000000))
+Rule('RXN0_7210',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Glycosides', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Glycosides', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7210', 1.000000), 
+	Parameter('rvs_RXN0_7210', 1.000000))
+Rule('RXN0_7209',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Sugar', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Sugar', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7209', 1.000000), 
+	Parameter('rvs_RXN0_7209', 1.000000))
+Rule('RXN0_7208',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Sugar_Phosphate', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Sugar_Phosphate', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7208', 1.000000), 
+	Parameter('rvs_RXN0_7208', 1.000000))
+Rule('RXN0_7207',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Monocarboxylates', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Monocarboxylates', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7207', 1.000000), 
+	Parameter('rvs_RXN0_7207', 1.000000))
+Rule('RXN0_7206',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Aromatics', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Aromatics', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7206', 1.000000), 
+	Parameter('rvs_RXN0_7206', 1.000000))
+Rule('RXN0_7204',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Trisaccharides', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Trisaccharides', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7204', 1.000000), 
+	Parameter('rvs_RXN0_7204', 1.000000))
+Rule('RXN0_7203',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Disaccharides', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Disaccharides', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7203', 1.000000), 
+	Parameter('rvs_RXN0_7203', 1.000000))
+Rule('RXN0_7202',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'OLIGOPEPTIDES', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'OLIGOPEPTIDES', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7202', 1.000000), 
+	Parameter('rvs_RXN0_7202', 1.000000))
+Rule('RXN0_7201',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'NUCLEOTIDE_SUGARS', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'NUCLEOTIDE_SUGARS', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7201', 1.000000), 
+	Parameter('rvs_RXN0_7201', 1.000000))
+Rule('RXN0_7200',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Nucleotides', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Nucleotides', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7200', 1.000000), 
+	Parameter('rvs_RXN0_7200', 1.000000))
+Rule('RXN0_7199',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Nucleosides', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Nucleosides', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7199', 1.000000), 
+	Parameter('rvs_RXN0_7199', 1.000000))
+Rule('RXN0_7247',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Aldehydes', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Aldehydes', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7247', 1.000000), 
+	Parameter('rvs_RXN0_7247', 1.000000))
+Rule('RXN0_7246',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Lactones', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Lactones', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7246', 1.000000), 
+	Parameter('rvs_RXN0_7246', 1.000000))
+Rule('RXN0_7245',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Amides', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Amides', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7245', 1.000000), 
+	Parameter('rvs_RXN0_7245', 1.000000))
+Rule('RXN0_7244',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'All_Amines', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'All_Amines', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7244', 1.000000), 
+	Parameter('rvs_RXN0_7244', 1.000000))
+Rule('RXN0_7243',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Hydroxy_carboxylates', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Hydroxy_carboxylates', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7243', 1.000000), 
+	Parameter('rvs_RXN0_7243', 1.000000))
+Rule('RXN0_7242',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Aldonic_Acids', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Aldonic_Acids', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7242', 1.000000), 
+	Parameter('rvs_RXN0_7242', 1.000000))
+Rule('TRANS_RXN0_615',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD_560', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD_560', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_615', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_615', 1.000000))
+Rule('TRANS_RXN0_614',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Inositols', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Inositols', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_614', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_614', 1.000000))
+Rule('TRANS_RXN0_612',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Amino_Acids', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Amino_Acids', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_612', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_612', 1.000000))
+Rule('TRANS_RXN0_611',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Bases', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Bases', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_611', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_611', 1.000000))
+Rule('TRANS_RXN0_609',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'dicarboxylate', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'dicarboxylate', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_609', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_609', 1.000000))
+Rule('TRANS_RXN0_608',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Sugar_alcohols', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Sugar_alcohols', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_608', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_608', 1.000000))
+Rule('TRANS_RXN0_607',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Short_Chain_Alcohols', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Short_Chain_Alcohols', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_607', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_607', 1.000000))
+Rule('TRANS_RXN0_606',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Short_Chain_Carboxylates', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Short_Chain_Carboxylates', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_606', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_606', 1.000000))
+Rule('TRANS_RXN0_604',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'ORGANOSULFUR', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'ORGANOSULFUR', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_604', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_604', 1.000000))
+Rule('TRANS_RXN0_603',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_603', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_603', 1.000000))
+Rule('TRANS_RXN0_601',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Ions', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Ions', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_601', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_601', 1.000000))
+Rule('TRANS_RXN0_598',
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Glycerol_1_phosphate', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7530', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Glycerol_1_phosphate', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_598', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_598', 1.000000))
+Rule('TRANS_RXN0_206',
+	cplx(name = 'CPLX0_7532', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'AMMONIUM', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7532', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'AMMONIUM', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_206', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_206', 0.000000))
+Rule('TRANS_RXN0_490',
+	cplx(name = 'CPLX0_7533', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'BETAINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7533', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'BETAINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_490', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_490', 1.000000))
+Rule('RXN0_2162',
+	cplx(name = 'CPLX0_7535', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'AGMATHINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ARG', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7535', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'AGMATHINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ARG', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_2162', 1.000000), 
+	Parameter('rvs_RXN0_2162', 1.000000))
+Rule('TRANS_RXN_86',
+	cplx(name = 'CPLX0_7626', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Unspecified_Ion_Or_Solute', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7626', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Unspecified_Ion_Or_Solute', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_86', 1.000000), 
+	Parameter('rvs_TRANS_RXN_86', 0.000000))
+Rule('TRANS_RXN_129',
+	cplx(name = 'CPLX0_7629', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7629', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_129', 1.000000), 
+	Parameter('rvs_TRANS_RXN_129', 1.000000))
+Rule('TRANS_RXN_292',
+	cplx(name = 'CPLX0_7629', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'LIplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7629', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'LIplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_292', 1.000000), 
+	Parameter('rvs_TRANS_RXN_292', 1.000000))
+Rule('TRANS_RXN0_244',
+	cplx(name = 'CPLX0_7641', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CDplus2', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7641', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CDplus2', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_244', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_244', 1.000000))
+Rule('RXN0_6',
+	cplx(name = 'CPLX0_7641', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'FEplus2', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7641', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'FEplus2', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_6', 1.000000), 
+	Parameter('rvs_RXN0_6', 1.000000))
+Rule('TRANS_RXN_29',
+	cplx(name = 'CPLX0_7642', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PRO', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7642', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PRO', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_29', 1.000000), 
+	Parameter('rvs_TRANS_RXN_29', 1.000000))
+Rule('TRANS_RXN_29A',
+	cplx(name = 'CPLX0_7642', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'BETAINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7642', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'BETAINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_29A', 1.000000), 
+	Parameter('rvs_TRANS_RXN_29A', 1.000000))
+Rule('TRANS_RXN_145',
+	cplx(name = 'CPLX0_7653', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7653', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_145', 1.000000), 
+	Parameter('rvs_TRANS_RXN_145', 1.000000))
+Rule('TRANS_RXN_131',
+	cplx(name = 'CPLX0_7654', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'GLYCEROL', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7654', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'GLYCEROL', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_131', 1.000000), 
+	Parameter('rvs_TRANS_RXN_131', 1.000000))
+Rule('RXN0_7189',
+	cplx(name = 'CPLX0_7654', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Sugar_alcohols', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7654', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Sugar_alcohols', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7189', 1.000000), 
+	Parameter('rvs_RXN0_7189', 1.000000))
+Rule('TRANS_RXN0_536',
+	cplx(name = 'CPLX0_7654', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_1551', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7654', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_1551', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_536', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_536', 1.000000))
+Rule('TRANS_RXN0_537',
+	cplx(name = 'CPLX0_7654', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'GLY', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7654', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'GLY', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_537', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_537', 1.000000))
+Rule('TRANS_RXN0_460',
+	cplx(name = 'CPLX0_7654', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'UREA', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7654', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'UREA', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_460', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_460', 1.000000))
+Rule('TRANS_RXN0_551',
+	cplx(name = 'CPLX0_7654', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_763', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7654', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_763', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_551', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_551', 1.000000))
+Rule('RXN0_7191',
+	cplx(name = 'CPLX0_7654', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_2039', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7654', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_2039', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7191', 1.000000), 
+	Parameter('rvs_RXN0_7191', 1.000000))
+Rule('RXN0_1741',
+	cplx(name = 'CPLX0_7655', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'MALTOSE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7655', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'MALTOSE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_1741', 1.000000), 
+	Parameter('rvs_RXN0_1741', 0.000000))
+Rule('RXN0_1804',
+	cplx(name = 'CPLX0_7655', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Unspecified_Ion_Or_Solute', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7655', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Unspecified_Ion_Or_Solute', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_1804', 1.000000), 
+	Parameter('rvs_RXN0_1804', 0.000000))
+Rule('TRANS_RXN0_269',
+	cplx(name = 'CPLX0_7684', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'VAL', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7684', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'VAL', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_269', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_269', 1.000000))
+Rule('TRANS_RXN_236',
+	cplx(name = 'CPLX0_7704', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'LOS', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'CPLX0_7704', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'LOS', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_236', 1.000000), 
+	Parameter('rvs_TRANS_RXN_236', 0.000000))
+Rule('_3dot6dot3dot39_RXN',
+	cplx(name = 'CPLX0_7704', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Lipopolysaccharides', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'CPLX0_7704', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Lipopolysaccharides', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd__3dot6dot3dot39_RXN', 1.000000), 
+	Parameter('rvs__3dot6dot3dot39_RXN', 0.000000))
+Rule('TRANS_RXN0_276',
+	cplx(name = 'CPLX0_7720', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_1189', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7720', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_1189', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_276', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_276', 0.000000))
+Rule('TRANS_RXN_351',
+	cplx(name = 'CPLX0_7807', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD_20940', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7807', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD_20940', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_351', 1.000000), 
+	Parameter('rvs_TRANS_RXN_351', 0.000000))
+Rule('TRANS_RXN_1',
+	cplx(name = 'CPLX0_7843', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'FORMATE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7843', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'FORMATE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_1', 1.000000), 
+	Parameter('rvs_TRANS_RXN_1', 1.000000))
+Rule('TRANS_RXN_100',
+	cplx(name = 'CPLX0_7906', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'GAMMA_BUTYROBETAINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CARNITINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7906', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'GAMMA_BUTYROBETAINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CARNITINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_100', 1.000000), 
+	Parameter('rvs_TRANS_RXN_100', 1.000000))
+Rule('RXN0_1702',
+	cplx(name = 'CPLX0_7952', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD0_621', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7952', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD0_621', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_1702', 1.000000), 
+	Parameter('rvs_RXN0_1702', 0.000000))
+Rule('RXN0_1981',
+	cplx(name = 'CPLX0_7955', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ACET', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7955', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ACET', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_1981', 1.000000), 
+	Parameter('rvs_RXN0_1981', 1.000000))
+Rule('RXN0_5111',
+	cplx(name = 'CPLX0_7955', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'GLYCOLLATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7955', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'GLYCOLLATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_5111', 1.000000), 
+	Parameter('rvs_RXN0_5111', 1.000000))
+Rule('TRANS_RXN0_576',
+	cplx(name = 'CPLX0_7955', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_4544', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7955', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_4544', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_576', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_576', 1.000000))
+Rule('RXN0_2501',
+	cplx(name = 'CPLX0_7961', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CL_', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7961', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CL_', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_2501', 1.000000), 
+	Parameter('rvs_RXN0_2501', 1.000000))
+Rule('TRANS_RXN0_628',
+	cplx(name = 'CPLX0_7963', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Drugs', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7963', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Drugs', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_628', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_628', 1.000000))
+Rule('TRANS_RXN0_493',
+	cplx(name = 'CPLX0_7963', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_20940', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7963', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD_20940', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_493', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_493', 1.000000))
+Rule('TRANS_RXN_344',
+	cplx(name = 'CPLX0_7963', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_1938', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7963', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_1938', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_344', 1.000000), 
+	Parameter('rvs_TRANS_RXN_344', 1.000000))
+Rule('TRANS_RXN0_533',
+	cplx(name = 'CPLX0_7963', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CHOLINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7963', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CHOLINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_533', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_533', 1.000000))
+Rule('TRANS_RXN0_532',
+	cplx(name = 'CPLX0_7963', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'BETAINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7963', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'BETAINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_532', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_532', 1.000000))
+Rule('TRANS_RXN_237',
+	cplx(name = 'CPLX0_7992', loc = 'per', strain = 'ECOLI') +
+	met(name = 'Lipopolysaccharides', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'CPLX0_7992', loc = 'per', strain = 'ECOLI') +
+	met(name = 'Lipopolysaccharides', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_237', 1.000000), 
+	Parameter('rvs_TRANS_RXN_237', 0.000000))
+Rule('TRANS_RXN0_549',
+	cplx(name = 'CPLX0_7994', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_1192', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7994', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_1192', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_549', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_549', 0.000000))
+Rule('RXN0_5413',
+	cplx(name = 'CPLX0_7994', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'UDP_N_ACETYL_D_GLUCOSAMINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'N_acetyl_D_glucosamine', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7994', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_1192', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'UDP', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_5413', 1.000000), 
+	Parameter('rvs_RXN0_5413', 0.000000))
+Rule('RXN0_17',
+	cplx(name = 'CPLX0_7', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NACMUR', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSH_PHOSPHORYLATED', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_7', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_881', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSH_MONOMER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_17', 1.000000), 
+	Parameter('rvs_RXN0_17', 0.000000))
+Rule('TRANS_RXN_205A',
+	cplx(name = 'CPLX0_8097', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Peptide_Antibiotics', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_8097', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Peptide_Antibiotics', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_205A', 1.000000), 
+	Parameter('rvs_TRANS_RXN_205A', 0.000000))
+Rule('TRANS_RXN0_593',
+	cplx(name = 'CPLX0_8152', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CYSTINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'CPLX0_8152', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CYSTINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_593', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_593', 0.000000))
+Rule('TRANS_RXN_291',
+	cplx(name = 'CPLX0_8152', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'MESO_DIAMINOPIMELATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'CPLX0_8152', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'MESO_DIAMINOPIMELATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_291', 1.000000), 
+	Parameter('rvs_TRANS_RXN_291', 0.000000))
+Rule('TRANS_RXN0_508',
+	cplx(name = 'CPLX0_8152', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_3740', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'CPLX0_8152', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_3740', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_508', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_508', 0.000000))
+Rule('TRANS_RXN0_513',
+	cplx(name = 'CPLX0_8152', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_3736', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'CPLX0_8152', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_3736', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_513', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_513', 0.000000))
+Rule('TRANS_RXN_290',
+	cplx(name = 'CPLX0_8152', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_1564', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'CPLX0_8152', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_1564', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_290', 1.000000), 
+	Parameter('rvs_TRANS_RXN_290', 0.000000))
+Rule('TRANS_RXN0_617',
+	cplx(name = 'CPLX0_8152', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'HOMOCYSTINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'CPLX0_8152', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'HOMOCYSTINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_617', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_617', 0.000000))
+Rule('RXN0_5256',
+	cplx(name = 'CPLX0_8167', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Menaquinones', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'HYDROGEN_MOLECULE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_8167', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Menaquinols', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None, 
+	Parameter('fwd_RXN0_5256', 1.000000), 
+	Parameter('rvs_RXN0_5256', 1.000000))
+Rule('RXN_16420',
+	cplx(name = 'CPLX0_8167', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'HYDROGEN_MOLECULE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'OXYGEN_MOLECULE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_8167', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None, 
+	Parameter('fwd_RXN_16420', 1.000000), 
+	Parameter('rvs_RXN_16420', 0.000000))
+Rule('TRANS_RXN_369',
+	cplx(name = 'CPLX0_8263', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_1470', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_8263', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_1470', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_369', 1.000000), 
+	Parameter('rvs_TRANS_RXN_369', 1.000000))
+Rule('TRANS_RXN_368',
+	cplx(name = 'CPLX0_8263', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_20888', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_8263', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_20888', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_368', 1.000000), 
+	Parameter('rvs_TRANS_RXN_368', 1.000000))
+Rule('TRANS_RXN0_498',
+	cplx(name = 'CPLX0_8271', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'F_', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CPLX0_8271', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'F_', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_498', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_498', 1.000000))
+Rule('RXN0_5203',
+	prot(name = 'CYCA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD_2482', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'CYCA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD_2482', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_5203', 1.000000), 
+	Parameter('rvs_RXN0_5203', 1.000000))
+Rule('RXN0_5202',
+	prot(name = 'CYCA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'L_ALPHA_ALANINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'CYCA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'L_ALPHA_ALANINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_5202', 1.000000), 
+	Parameter('rvs_RXN0_5202', 1.000000))
+Rule('RXN0_5201',
+	prot(name = 'CYCA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'B_ALANINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'CYCA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'B_ALANINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_5201', 1.000000), 
+	Parameter('rvs_RXN0_5201', 1.000000))
+Rule('RXN0_5130',
+	prot(name = 'CYCA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'D_SERINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'CYCA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'D_SERINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_5130', 1.000000), 
+	Parameter('rvs_RXN0_5130', 1.000000))
+Rule('TRANS_RXN_62B',
+	prot(name = 'CYCA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'GLY', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'CYCA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'GLY', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_62B', 1.000000), 
+	Parameter('rvs_TRANS_RXN_62B', 1.000000))
+Rule('TRANS_RXN_62A',
+	prot(name = 'CYCA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'D_ALANINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'CYCA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'D_ALANINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_62A', 1.000000), 
+	Parameter('rvs_TRANS_RXN_62A', 1.000000))
+Rule('TRANS_RXN_14',
+	prot(name = 'CYNX_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_69', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'CYNX_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_69', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_14', 1.000000), 
+	Parameter('rvs_TRANS_RXN_14', 0.000000))
+Rule('RXN_19778',
+	cplx(name = 'CYT_D_UBIOX_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Ubiquinols', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'HYDROGEN_PEROXIDE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CYT_D_UBIOX_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Ubiquinones', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN_19778', 1.000000), 
+	Parameter('rvs_RXN_19778', 0.000000))
+Rule('RXN_19777',
+	cplx(name = 'CYT_D_UBIOX_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_7249', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'HYDROGEN_PEROXIDE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CYT_D_UBIOX_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_7248', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN_19777', 1.000000), 
+	Parameter('rvs_RXN_19777', 1.000000))
+Rule('RXN0_5268',
+	cplx(name = 'CYT_O_UBIOX_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'OXYGEN_MOLECULE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Ubiquinols', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'CYT_O_UBIOX_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Ubiquinones', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_5268', 1.000000), 
+	Parameter('rvs_RXN0_5268', 0.000000))
+Rule('TRANS_RXN0_517',
+	prot(name = 'DCTA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'C4_dicarboxylates', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'DCTA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'C4_dicarboxylates', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_517', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_517', 1.000000))
+Rule('TRANS_RXN0_451',
+	prot(name = 'DCTA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_660', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'DCTA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_660', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_451', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_451', 1.000000))
+Rule('TRANS_RXN_122A',
+	prot(name = 'DCTA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'L_ASPARTATE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'DCTA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'L_ASPARTATE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_122A', 1.000000), 
+	Parameter('rvs_TRANS_RXN_122A', 1.000000))
+Rule('TRANS_RXN_121C',
+	prot(name = 'DCTA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'OROTATE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'DCTA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'OROTATE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_121C', 1.000000), 
+	Parameter('rvs_TRANS_RXN_121C', 1.000000))
+Rule('TRANS_RXN0_553',
+	prot(name = 'DCTA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'FUM', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'DCTA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'FUM', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_553', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_553', 1.000000))
+Rule('TRANS_RXN_121A',
+	prot(name = 'DCTA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'MAL', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'DCTA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'MAL', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_121A', 1.000000), 
+	Parameter('rvs_TRANS_RXN_121A', 1.000000))
+Rule('TRANS_RXN_121',
+	prot(name = 'DCTA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'SUC', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'DCTA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'SUC', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_121', 1.000000), 
+	Parameter('rvs_TRANS_RXN_121', 1.000000))
+Rule('TRANS_RXN_379',
+	prot(name = 'DCUA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'L_ASPARTATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'FUM', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'DCUA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'L_ASPARTATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'FUM', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_379', 1.000000), 
+	Parameter('rvs_TRANS_RXN_379', 1.000000))
+Rule('TRANS_RXN_106',
+	prot(name = 'DCUA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'SUC', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'FUM', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'DCUA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'FUM', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'SUC', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_106', 1.000000), 
+	Parameter('rvs_TRANS_RXN_106', 1.000000))
+Rule('TRANS_RXN_106B',
+	prot(name = 'DCUA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'SUC', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'MAL', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'DCUA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'MAL', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'SUC', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_106B', 1.000000), 
+	Parameter('rvs_TRANS_RXN_106B', 1.000000))
+Rule('TRANS_RXN_106A',
+	prot(name = 'DCUA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'SUC', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'L_ASPARTATE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'DCUA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'L_ASPARTATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'SUC', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_106A', 1.000000), 
+	Parameter('rvs_TRANS_RXN_106A', 1.000000))
+Rule('TRANS_RXN_299',
+	prot(name = 'DCUA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'FUM', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'DCUA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'FUM', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_299', 1.000000), 
+	Parameter('rvs_TRANS_RXN_299', 1.000000))
+Rule('TRANS_RXN0_499',
+	prot(name = 'DCUB_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'D_TARTRATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'SUC', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'DCUB_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'SUC', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'D_TARTRATE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_499', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_499', 1.000000))
+Rule('TRANS_RXN_300',
+	prot(name = 'DCUC_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'SUC', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'DCUC_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'SUC', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_300', 1.000000), 
+	Parameter('rvs_TRANS_RXN_300', 1.000000))
+Rule('TRANS_RXN0_495',
+	prot(name = 'DSDX_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'D_SERINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'DSDX_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'D_SERINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_495', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_495', 0.000000))
+Rule('TRANS_RXN0_586',
+	prot(name = 'EG10003_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'SULFATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EG10003_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'SULFATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_586', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_586', 1.000000))
+Rule('RXN0_1721',
+	prot(name = 'EG10155_MONOMER', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD0_2482', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EG10155_MONOMER', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD0_2482', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_1721', 1.000000), 
+	Parameter('rvs_RXN0_1721', 0.000000))
+Rule('RXN0_1802',
+	prot(name = 'EG10280_MONOMER', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Long_Chain_Fatty_Acids', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EG10280_MONOMER', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Long_Chain_Fatty_Acids', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_1802', 1.000000), 
+	Parameter('rvs_RXN0_1802', 0.000000))
+Rule('TRANS_RXN0_468',
+	prot(name = 'EG11035_MONOMER', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Nucleosides', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EG11035_MONOMER', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Nucleosides', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_468', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_468', 0.000000))
+Rule('RXN0_16',
+	prot(name = 'EG11167_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'MNplus2', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EG11167_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'MNplus2', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_16', 1.000000), 
+	Parameter('rvs_RXN0_16', 0.000000))
+Rule('RXN0_14',
+	prot(name = 'EG11167_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CUplus2', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EG11167_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CUplus2', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_14', 1.000000), 
+	Parameter('rvs_RXN0_14', 0.000000))
+Rule('RXN0_12',
+	prot(name = 'EG11167_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ZNplus2', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EG11167_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ZNplus2', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_12', 1.000000), 
+	Parameter('rvs_RXN0_12', 0.000000))
+Rule('RXN0_10',
+	prot(name = 'EG11167_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CDplus2', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EG11167_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CDplus2', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_10', 1.000000), 
+	Parameter('rvs_RXN0_10', 0.000000))
+Rule('TRANS_RXN_8',
+	prot(name = 'EG11167_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'FEplus2', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EG11167_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'FEplus2', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_8', 1.000000), 
+	Parameter('rvs_TRANS_RXN_8', 0.000000))
+Rule('TRANS_RXN0_240',
+	prot(name = 'EG11471_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'BIOTIN', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EG11471_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'BIOTIN', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_240', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_240', 0.000000))
+Rule('TRANS_RXN0_279',
+	prot(name = 'EG11486_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'C55_PP_GLCNAC_MANNACA_FUC4NAC', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EG11486_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'C55_PP_GLCNAC_MANNACA_FUC4NAC', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_279', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_279', 0.000000))
+Rule('TRANS_RXN0_571',
+	prot(name = 'EG11512_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ACET', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EG11512_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ACET', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_571', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_571', 1.000000))
+Rule('RXN0_1924',
+	prot(name = 'EG11639_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CYS', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EG11639_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CYS', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_1924', 1.000000), 
+	Parameter('rvs_RXN0_1924', 0.000000))
+Rule('RXN0_1923',
+	prot(name = 'EG11639_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ACETYLSERINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EG11639_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ACETYLSERINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_1923', 1.000000), 
+	Parameter('rvs_RXN0_1923', 0.000000))
+Rule('TRANS_RXN0_281',
+	prot(name = 'EG11671_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = '_3_KETOBUTYRATE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EG11671_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = '_3_KETOBUTYRATE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_281', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_281', 0.000000))
+Rule('TRANS_RXN0_577',
+	prot(name = 'EG11691_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADENINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EG11691_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADENINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_577', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_577', 0.000000))
+Rule('TRANS_RXN0_447',
+	prot(name = 'EG11724_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADENINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EG11724_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ADENINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_447', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_447', 1.000000))
+Rule('TRANS_RXN_267',
+	prot(name = 'EG11902_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'cystine', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EG11902_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'cystine', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_267', 1.000000), 
+	Parameter('rvs_TRANS_RXN_267', 0.000000))
+Rule('TRANS_RXN0_470',
+	prot(name = 'EG11919_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EG11919_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_470', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_470', 0.000000))
+Rule('TRANS_RXN0_562',
+	prot(name = 'EG11939_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'HYPOXANTHINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EG11939_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'HYPOXANTHINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_562', 0.000000), 
+	Parameter('rvs_TRANS_RXN0_562', 1.000000))
+Rule('TRANS_RXN0_578',
+	prot(name = 'EG11939_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'GUANINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EG11939_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'GUANINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_578', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_578', 0.000000))
+Rule('TRANS_RXN_242',
+	prot(name = 'EG12134_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'HOMO_SER', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EG12134_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'HOMO_SER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_242', 1.000000), 
+	Parameter('rvs_TRANS_RXN_242', 1.000000))
+Rule('TRANS_RXN0_0244',
+	prot(name = 'EG12134_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'THR', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EG12134_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'THR', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_0244', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_0244', 1.000000))
+Rule('TRANS_RXN_294',
+	prot(name = 'EG12455_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = '_2_ACYL_GPE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EG12455_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = '_2_ACYL_GPE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_294', 1.000000), 
+	Parameter('rvs_TRANS_RXN_294', 1.000000))
+Rule('TRANS_RXN_295',
+	prot(name = 'EG12455_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Lysophosphatidylglycerols', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EG12455_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Lysophosphatidylglycerols', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_295', 1.000000), 
+	Parameter('rvs_TRANS_RXN_295', 1.000000))
+Rule('TRANS_RXN0_265',
+	prot(name = 'EG12713_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Aromatic_Amino_Acids', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EG12713_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Aromatic_Amino_Acids', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_265', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_265', 0.000000))
+Rule('RXN0_2461',
+	prot(name = 'EIISGA', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PTSH_PHOSPHORYLATED', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ASCORBATE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EIISGA', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'L_ASCORBATE_6_PHOSPHATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSH_MONOMER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_2461', 1.000000), 
+	Parameter('rvs_RXN0_2461', 0.000000))
+Rule('TRANS_RXN_339',
+	prot(name = 'EMRD_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_7970', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EMRD_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_7970', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_339', 1.000000), 
+	Parameter('rvs_TRANS_RXN_339', 1.000000))
+Rule('TRANS_RXN_123',
+	prot(name = 'EXUT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'D_GALACTURONATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EXUT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'D_GALACTURONATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_123', 1.000000), 
+	Parameter('rvs_TRANS_RXN_123', 1.000000))
+Rule('TRANS_RXN_35',
+	prot(name = 'EXUT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'GLUCURONATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'EXUT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'GLUCURONATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_35', 1.000000), 
+	Parameter('rvs_TRANS_RXN_35', 1.000000))
+Rule('FORMATEDEHYDROG_RXN',
+	cplx(name = 'FORMATEDEHYDROGN_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'FORMATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Menaquinones', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'FORMATEDEHYDROGN_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CARBON_DIOXIDE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Menaquinols', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_FORMATEDEHYDROG_RXN', 1.000000), 
+	Parameter('rvs_FORMATEDEHYDROG_RXN', 0.000000))
+Rule('TRANS_RXN_41',
+	prot(name = 'FSR_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_441', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'FSR_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_441', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_41', 1.000000), 
+	Parameter('rvs_TRANS_RXN_41', 1.000000))
+Rule('TRANS_RXN_20',
+	prot(name = 'FUCP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'L_fucoses', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'FUCP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'L_fucoses', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_20', 1.000000), 
+	Parameter('rvs_TRANS_RXN_20', 1.000000))
+Rule('RXN0_7221',
+	prot(name = 'FUCP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'D_ARABINOSE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'FUCP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'D_ARABINOSE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7221', 1.000000), 
+	Parameter('rvs_RXN0_7221', 1.000000))
+Rule('RXN0_7222',
+	prot(name = 'FUCP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'L_Galactose', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'FUCP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'L_Galactose', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7222', 1.000000), 
+	Parameter('rvs_RXN0_7222', 1.000000))
+Rule('TRANS_RXN0_207',
+	prot(name = 'G6260_MONOMER', loc = 'cyt', strain = 'ECOLI') +
+	met(name = 'CUplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	prot(name = 'G6260_MONOMER', loc = 'cyt', strain = 'ECOLI') +
+	met(name = 'CUplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_207', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_207', 0.000000))
+Rule('TRANS_RXN0_445',
+	prot(name = 'G6370_MONOMER', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CHITOBIOSE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'G6370_MONOMER', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CHITOBIOSE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_445', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_445', 0.000000))
+Rule('TRANS_RXN0_569',
+	prot(name = 'G6458_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'LYS', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'G6458_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'LYS', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_569', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_569', 0.000000))
+Rule('TRANS_RXN0_275',
+	prot(name = 'G6531_MONOMER', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD0_1193', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'G6531_MONOMER', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD0_1193', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_275', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_275', 0.000000))
+Rule('TRANS_RXN0_286',
+	prot(name = 'G6561_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'C6', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'G6561_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'C6', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_286', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_286', 0.000000))
+Rule('RXN0_2542',
+	prot(name = 'G6657_MONOMER', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD_18254', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'G6657_MONOMER', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD_18254', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_2542', 1.000000), 
+	Parameter('rvs_RXN0_2542', 0.000000))
+Rule('TRANS_RXN_346',
+	prot(name = 'G6674_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ZNplus2', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'G6674_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ZNplus2', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_346', 1.000000), 
+	Parameter('rvs_TRANS_RXN_346', 1.000000))
+Rule('TRANS_RXN0_453',
+	prot(name = 'G6859_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_10774', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'G6859_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_10774', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_453', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_453', 1.000000))
+Rule('TRANS_RXN_285',
+	prot(name = 'G6934_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CYSTINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'G6934_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CYSTINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_285', 1.000000), 
+	Parameter('rvs_TRANS_RXN_285', 1.000000))
+Rule('TRANS_RXN_330',
+	prot(name = 'G6934_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'SULFO_CYSTEINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'G6934_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'SULFO_CYSTEINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_330', 1.000000), 
+	Parameter('rvs_TRANS_RXN_330', 1.000000))
+Rule('TRANS_RXN0_616',
+	prot(name = 'G6934_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_1564', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'G6934_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_1564', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_616', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_616', 1.000000))
+Rule('TRANS_RXN_286',
+	prot(name = 'G6934_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'HOMOCYSTINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'G6934_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'HOMOCYSTINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_286', 1.000000), 
+	Parameter('rvs_TRANS_RXN_286', 1.000000))
+Rule('TRANS_RXN0_487',
+	prot(name = 'G6999_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'MNplus2', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'G6999_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'MNplus2', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_487', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_487', 0.000000))
+Rule('TRANS_RXN_376',
+	prot(name = 'G7097_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_2640', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'G7097_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_2640', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_376', 1.000000), 
+	Parameter('rvs_TRANS_RXN_376', 0.000000))
+Rule('TRANS_RXN0_585',
+	prot(name = 'G7138_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'COplus2', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'G7138_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'COplus2', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_585', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_585', 0.000000))
+Rule('TRANS_RXN0_584',
+	prot(name = 'G7138_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NIplus2', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'G7138_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NIplus2', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_584', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_584', 0.000000))
+Rule('TRANS_RXN0_469',
+	prot(name = 'G7399_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'L_ALPHA_ALANINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'G7399_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'L_ALPHA_ALANINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_469', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_469', 1.000000))
+Rule('RXN_15315',
+	prot(name = 'G7921_MONOMER', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD0_1123', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'G7921_MONOMER', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD0_1123', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN_15315', 1.000000), 
+	Parameter('rvs_RXN_15315', 0.000000))
+Rule('RXN0_0',
+	prot(name = 'G7921_MONOMER', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'N_ACETYLNEURAMINATE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'G7921_MONOMER', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'N_ACETYLNEURAMINATE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_0', 1.000000), 
+	Parameter('rvs_RXN0_0', 0.000000))
+Rule('TRANS_RXN_335',
+	prot(name = 'G7942_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PYRUVATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'G7942_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PYRUVATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_335', 1.000000), 
+	Parameter('rvs_TRANS_RXN_335', 1.000000))
+Rule('TRANS_RXN_57',
+	prot(name = 'GABP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = '_4_AMINO_BUTYRATE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'GABP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = '_4_AMINO_BUTYRATE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_57', 1.000000), 
+	Parameter('rvs_TRANS_RXN_57', 1.000000))
+Rule('TRANS_RXN_21',
+	prot(name = 'GALP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'D_galactopyranose', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'GALP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'D_galactopyranose', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_21', 1.000000), 
+	Parameter('rvs_TRANS_RXN_21', 1.000000))
+Rule('RXN0_7077',
+	prot(name = 'GALP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Glucopyranose', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'GALP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Glucopyranose', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7077', 1.000000), 
+	Parameter('rvs_RXN0_7077', 0.000000))
+Rule('TRANS_RXN_22',
+	prot(name = 'GLPT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'GLYCEROL_3P', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'GLPT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'GLYCEROL_3P', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_22', 1.000000), 
+	Parameter('rvs_TRANS_RXN_22', 1.000000))
+Rule('TRANS_RXN_162',
+	prot(name = 'GLTP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'GLT', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'GLTP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'GLT', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_162', 1.000000), 
+	Parameter('rvs_TRANS_RXN_162', 1.000000))
+Rule('TRANS_RXN_122',
+	prot(name = 'GLTS_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'GLT', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'GLTS_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'GLT', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_122', 1.000000), 
+	Parameter('rvs_TRANS_RXN_122', 1.000000))
+Rule('TRANS_RXN_81',
+	prot(name = 'GNTP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'FRUCTURONATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'GNTP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'FRUCTURONATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_81', 1.000000), 
+	Parameter('rvs_TRANS_RXN_81', 1.000000))
+Rule('TRANS_RXN0_209',
+	prot(name = 'GNTP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'GLUCONATE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'GNTP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'GLUCONATE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_209', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_209', 1.000000))
+Rule('TRANS_RXN0_282',
+	prot(name = 'HCAT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = '_3_PHENYLPROPIONATE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'HCAT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = '_3_PHENYLPROPIONATE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_282', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_282', 0.000000))
+Rule('RXN0_2522',
+	prot(name = 'HRSA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PTSH_PHOSPHORYLATED', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = '_2_O_ALPHA_MANNOSYL_D_GLYCERATE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'HRSA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_1063', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PTSH_MONOMER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_2522', 1.000000), 
+	Parameter('rvs_RXN0_2522', 0.000000))
+Rule('TRANS_RXN_113',
+	prot(name = 'KDGT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = '_2_DEHYDRO_3_DEOXY_D_GLUCONATE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'KDGT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = '_2_DEHYDRO_3_DEOXY_D_GLUCONATE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_113', 1.000000), 
+	Parameter('rvs_TRANS_RXN_113', 1.000000))
+Rule('TRANS_RXN_23',
+	prot(name = 'KGTP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = '_2_KETOGLUTARATE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'KGTP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = '_2_KETOGLUTARATE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_23', 1.000000), 
+	Parameter('rvs_TRANS_RXN_23', 1.000000))
+Rule('TRANS_RXN_3',
+	prot(name = 'KUP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Kplus', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'KUP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Kplus', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_3', 1.000000), 
+	Parameter('rvs_TRANS_RXN_3', 1.000000))
+Rule('TRANS_RXN_24',
+	prot(name = 'LACY_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Alpha_lactose', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'LACY_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Alpha_lactose', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_24', 1.000000), 
+	Parameter('rvs_TRANS_RXN_24', 1.000000))
+Rule('TRANS_RXN_94',
+	prot(name = 'LACY_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'MELIBIOSE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'LACY_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'MELIBIOSE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_94', 1.000000), 
+	Parameter('rvs_TRANS_RXN_94', 1.000000))
+Rule('RXN0_7215',
+	prot(name = 'LACY_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD_3561', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'LACY_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD_3561', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7215', 1.000000), 
+	Parameter('rvs_RXN0_7215', 1.000000))
+Rule('RXN0_7217',
+	prot(name = 'LACY_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD_3785', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'LACY_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD_3785', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7217', 1.000000), 
+	Parameter('rvs_RXN0_7217', 1.000000))
+Rule('RXN_17755',
+	prot(name = 'LACY_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD_3801', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'LACY_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD_3801', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN_17755', 1.000000), 
+	Parameter('rvs_RXN_17755', 1.000000))
+Rule('TRANS_RXN_58',
+	prot(name = 'LYSP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'LYS', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'LYSP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'LYS', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_58', 1.000000), 
+	Parameter('rvs_TRANS_RXN_58', 1.000000))
+Rule('TRANS_RXN0_575',
+	prot(name = 'MALX_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'MALTOSE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'MALX_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'MALTOSE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_575', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_575', 0.000000))
+Rule('TRANS_RXN0_574',
+	prot(name = 'MALX_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Glucopyranose', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'MALX_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Glucopyranose', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_574', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_574', 0.000000))
+Rule('TRANS_RXN_94B',
+	prot(name = 'MELB_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'LIplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'MELIBIOSE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'MELB_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'LIplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'MELIBIOSE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_94B', 1.000000), 
+	Parameter('rvs_TRANS_RXN_94B', 1.000000))
+Rule('TRANS_RXN_94A',
+	prot(name = 'MELB_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'MELIBIOSE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'MELB_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'MELIBIOSE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_94A', 1.000000), 
+	Parameter('rvs_TRANS_RXN_94A', 1.000000))
+Rule('TRANS_RXN0_520',
+	prot(name = 'MELB_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'METHYL_BETA_D_GALACTOSIDE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'MELB_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'METHYL_BETA_D_GALACTOSIDE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_520', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_520', 1.000000))
+Rule('TRANS_RXN0_519',
+	prot(name = 'MELB_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_3565', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'MELB_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_3565', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_519', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_519', 1.000000))
+Rule('RXN0_4522',
+	cplx(name = 'METNIQ_METHIONINE_ABC_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'MET', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'METNIQ_METHIONINE_ABC_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'MET', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_4522', 1.000000), 
+	Parameter('rvs_RXN0_4522', 0.000000))
+Rule('TRANS_RXN0_202',
+	cplx(name = 'METNIQ_METHIONINE_ABC_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD_218', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'METNIQ_METHIONINE_ABC_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD_218', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_202', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_202', 0.000000))
+Rule('TRANS_RXN0_511',
+	cplx(name = 'METNIQ_METHIONINE_ABC_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'L_Methionine_sulfoxides', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'METNIQ_METHIONINE_ABC_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'L_Methionine_sulfoxides', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_511', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_511', 0.000000))
+Rule('TRANS_RXN0_510',
+	cplx(name = 'METNIQ_METHIONINE_ABC_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_3738', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'METNIQ_METHIONINE_ABC_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_3738', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_510', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_510', 0.000000))
+Rule('TRANS_RXN_250',
+	prot(name = 'MGTA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'MGplus2', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	prot(name = 'MGTA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'MGplus2', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_250', 1.000000), 
+	Parameter('rvs_TRANS_RXN_250', 0.000000))
+Rule('TRANS_RXN0_457',
+	prot(name = 'MHPT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_10797', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'MHPT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_10797', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_457', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_457', 1.000000))
+Rule('TRANS_RXN_61',
+	prot(name = 'MHPT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = '_3_HYDROXYPHENYL_PROPIONATE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'MHPT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = '_3_HYDROXYPHENYL_PROPIONATE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_61', 1.000000), 
+	Parameter('rvs_TRANS_RXN_61', 1.000000))
+Rule('TRANS_RXN0_205',
+	prot(name = 'MONOMER0_2797', loc = 'cyt', strain = 'ECOLI') +
+	met(name = 'PYRIDOXINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'MONOMER0_2797', loc = 'cyt', strain = 'ECOLI') +
+	met(name = 'PYRIDOXINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_205', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_205', 0.000000))
+Rule('TRANS_RXN0_213',
+	prot(name = 'MONOMER0_2798', loc = 'cyt', strain = 'ECOLI') +
+	met(name = 'PYRIDOXAMINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'MONOMER0_2798', loc = 'cyt', strain = 'ECOLI') +
+	met(name = 'PYRIDOXAMINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_213', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_213', 0.000000))
+Rule('TRANS_RXN0_214',
+	prot(name = 'MONOMER0_2799', loc = 'cyt', strain = 'ECOLI') +
+	met(name = 'PYRIDOXAL', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'MONOMER0_2799', loc = 'cyt', strain = 'ECOLI') +
+	met(name = 'PYRIDOXAL', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_214', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_214', 0.000000))
+Rule('TRANS_RXN0_587',
+	prot(name = 'MONOMER0_5', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_882', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'MONOMER0_5', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_882', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_587', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_587', 0.000000))
+Rule('TRANS_RXN_142',
+	prot(name = 'MTR_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'INDOLE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'MTR_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'INDOLE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_142', 1.000000), 
+	Parameter('rvs_TRANS_RXN_142', 1.000000))
+Rule('NADH_DEHYDROG_A_RXN',
+	cplx(name = 'NADH_DHI_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NADH', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Ubiquinones', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'NADH_DHI_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Ubiquinols', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_NADH_DEHYDROG_A_RXN', 1.000000), 
+	Parameter('rvs_NADH_DEHYDROG_A_RXN', 1.000000))
+Rule('RXN0_5388',
+	cplx(name = 'NADH_DHI_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Menaquinones', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'NADH_DHI_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Menaquinols', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_5388', 1.000000), 
+	Parameter('rvs_RXN0_5388', 0.000000))
+Rule('TRANS_RXN_25',
+	prot(name = 'NANT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'N_ACETYLNEURAMINATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'NANT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'N_ACETYLNEURAMINATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_25', 1.000000), 
+	Parameter('rvs_TRANS_RXN_25', 1.000000))
+Rule('RXN_15314',
+	prot(name = 'NANT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_1123', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'NANT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_1123', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN_15314', 1.000000), 
+	Parameter('rvs_RXN_15314', 1.000000))
+Rule('TRANS_RXN_137',
+	prot(name = 'NARK_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NITRITE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'NARK_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NITRITE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_137', 1.000000), 
+	Parameter('rvs_TRANS_RXN_137', 0.000000))
+Rule('TRANS_RXN0_239',
+	prot(name = 'NARK_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NITRATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NITRITE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'NARK_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NITRATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NITRITE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_239', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_239', 0.000000))
+Rule('TRANS_RXN_130',
+	prot(name = 'NHAB_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'NHAB_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_130', 1.000000), 
+	Parameter('rvs_TRANS_RXN_130', 1.000000))
+Rule('RXN0_3501',
+	cplx(name = 'NITRATREDUCTA_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Menaquinols', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NITRATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'NITRATREDUCTA_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Menaquinones', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NITRITE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_3501', 1.000000), 
+	Parameter('rvs_RXN0_3501', 0.000000))
+Rule('RXN0_7124',
+	cplx(name = 'NITRATREDUCTA_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Ubiquinols', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NITRATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'NITRATREDUCTA_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Ubiquinones', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NITRITE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_7124', 1.000000), 
+	Parameter('rvs_RXN0_7124', 0.000000))
+Rule('RXN_15119',
+	cplx(name = 'NITRATREDUCTA_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_4544', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Donor_H2', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'NITRATREDUCTA_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_16009', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Acceptor', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN_15119', 1.000000), 
+	Parameter('rvs_RXN_15119', 0.000000))
+Rule('TRANS_RXN_108E',
+	prot(name = 'NUPC_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'DEOXYINOSINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'NUPC_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'DEOXYINOSINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_108E', 1.000000), 
+	Parameter('rvs_TRANS_RXN_108E', 1.000000))
+Rule('TRANS_RXN_108G',
+	prot(name = 'NUPC_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'INOSINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'NUPC_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'INOSINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_108G', 1.000000), 
+	Parameter('rvs_TRANS_RXN_108G', 1.000000))
+Rule('TRANS_RXN_108I',
+	prot(name = 'NUPC_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'URIDINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'NUPC_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'URIDINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_108I', 1.000000), 
+	Parameter('rvs_TRANS_RXN_108I', 1.000000))
+Rule('TRANS_RXN_108H',
+	prot(name = 'NUPC_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'THYMIDINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'NUPC_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'THYMIDINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_108H', 1.000000), 
+	Parameter('rvs_TRANS_RXN_108H', 1.000000))
+Rule('TRANS_RXN_108F',
+	prot(name = 'NUPC_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'DEOXYURIDINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'NUPC_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'DEOXYURIDINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_108F', 1.000000), 
+	Parameter('rvs_TRANS_RXN_108F', 1.000000))
+Rule('TRANS_RXN_108D',
+	prot(name = 'NUPC_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'DEOXYCYTIDINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'NUPC_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'DEOXYCYTIDINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_108D', 1.000000), 
+	Parameter('rvs_TRANS_RXN_108D', 1.000000))
+Rule('TRANS_RXN_108C',
+	prot(name = 'NUPC_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'DEOXYADENOSINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'NUPC_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'DEOXYADENOSINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_108C', 1.000000), 
+	Parameter('rvs_TRANS_RXN_108C', 1.000000))
+Rule('TRANS_RXN_108B',
+	prot(name = 'NUPC_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CYTIDINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'NUPC_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CYTIDINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_108B', 1.000000), 
+	Parameter('rvs_TRANS_RXN_108B', 1.000000))
+Rule('TRANS_RXN_108A',
+	prot(name = 'NUPC_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADENOSINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'NUPC_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADENOSINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_108A', 1.000000), 
+	Parameter('rvs_TRANS_RXN_108A', 1.000000))
+Rule('TRANS_RXN_108',
+	prot(name = 'NUPG_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Nucleosides', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'NUPG_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Nucleosides', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_108', 1.000000), 
+	Parameter('rvs_TRANS_RXN_108', 1.000000))
+Rule('TRANS_RXN_117',
+	prot(name = 'PANF_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PANTOTHENATE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'PANF_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PANTOTHENATE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_117', 1.000000), 
+	Parameter('rvs_TRANS_RXN_117', 1.000000))
+Rule('TRANS_RXN_114',
+	prot(name = 'PITA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'PITA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_114', 1.000000), 
+	Parameter('rvs_TRANS_RXN_114', 1.000000))
+Rule('TRANS_RXN_279',
+	prot(name = 'PITA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_18501', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'PITA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_18501', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_279', 1.000000), 
+	Parameter('rvs_TRANS_RXN_279', 1.000000))
+Rule('TRANS_RXN_278',
+	prot(name = 'PITA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_18500', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'PITA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_18500', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_278', 1.000000), 
+	Parameter('rvs_TRANS_RXN_278', 1.000000))
+Rule('TRANS_RXN_277',
+	prot(name = 'PITA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_18499', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'PITA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_18499', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_277', 1.000000), 
+	Parameter('rvs_TRANS_RXN_277', 1.000000))
+Rule('TRANS_RXN0_550',
+	prot(name = 'PITA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ARSENATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'PITA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ARSENATE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_550', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_550', 1.000000))
+Rule('TRANS_RXN_280',
+	prot(name = 'PITA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_4544', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'PITA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_4544', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_280', 1.000000), 
+	Parameter('rvs_TRANS_RXN_280', 1.000000))
+Rule('TRANS_RXN0_481',
+	prot(name = 'PNUC_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NICOTINAMIDE_RIBOSE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'PNUC_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NICOTINAMIDE_RIBOSE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_481', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_481', 0.000000))
+Rule('TRANS_RXN0_211',
+	prot(name = 'POTE_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PUTRESCINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'L_ORNITHINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'POTE_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PUTRESCINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'L_ORNITHINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_211', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_211', 1.000000))
+Rule('TRANS_RXN_118',
+	prot(name = 'PUTP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PRO', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'PUTP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PRO', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_118', 1.000000), 
+	Parameter('rvs_TRANS_RXN_118', 1.000000))
+Rule('TRANS_RXN0_505',
+	prot(name = 'PUTP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROPIONATE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'PUTP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROPIONATE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_505', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_505', 0.000000))
+Rule('TRANS_RXN0_277',
+	cplx(name = 'PYRNUTRANSHYDROGEN_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NADPH', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'PYRNUTRANSHYDROGEN_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_277', 0.000000), 
+	Parameter('rvs_TRANS_RXN0_277', 1.000000))
+Rule('TRANS_RXN_146',
+	prot(name = 'RFBX_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_2279', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'RFBX_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_2279', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_146', 1.000000), 
+	Parameter('rvs_TRANS_RXN_146', 0.000000))
+Rule('TRANS_RXN_112',
+	prot(name = 'RHAT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'L_rhamnose', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'RHAT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'L_rhamnose', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_112', 1.000000), 
+	Parameter('rvs_TRANS_RXN_112', 1.000000))
+Rule('TRANS_RXN0_236',
+	prot(name = 'RHAT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD_15867', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'RHAT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD_15867', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_236', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_236', 1.000000))
+Rule('TRANS_RXN_242A',
+	prot(name = 'RHTB_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_15554', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'RHTB_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_15554', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_242A', 1.000000), 
+	Parameter('rvs_TRANS_RXN_242A', 1.000000))
+Rule('TRANS_RXN_71',
+	prot(name = 'SDAC_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'SER', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'SDAC_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'SER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_71', 1.000000), 
+	Parameter('rvs_TRANS_RXN_71', 1.000000))
+Rule('TRANS_RXN_27',
+	prot(name = 'SHIA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'SHIKIMATE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'SHIA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'SHIKIMATE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_27', 1.000000), 
+	Parameter('rvs_TRANS_RXN_27', 1.000000))
+Rule('TRANS_RXN0_181',
+	cplx(name = 'TATABCE_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'POLYPEPTIDE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'TATABCE_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'POLYPEPTIDE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_181', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_181', 0.000000))
+Rule('TRANS_RXN_72',
+	prot(name = 'TDCC_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'THR', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'TDCC_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'THR', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_72', 1.000000), 
+	Parameter('rvs_TRANS_RXN_72', 1.000000))
+Rule('TRANS_RXN0_539',
+	prot(name = 'TEHA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_1938', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'TEHA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_1938', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_539', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_539', 0.000000))
+Rule('TRANS_RXN0_224',
+	cplx(name = 'TRANS_200_CPLX', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Macrolide_Antibiotics', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'TRANS_200_CPLX', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Macrolide_Antibiotics', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_224', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_224', 0.000000))
+Rule('TRANS_RXN_377',
+	cplx(name = 'TRANS_200_CPLX', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'bacitracin', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'TRANS_200_CPLX', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'bacitracin', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_377', 1.000000), 
+	Parameter('rvs_TRANS_RXN_377', 0.000000))
+Rule('TRANS_RXN_378',
+	cplx(name = 'TRANS_200_CPLX', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Polymyxins', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	cplx(name = 'TRANS_200_CPLX', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'Polymyxins', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_378', 1.000000), 
+	Parameter('rvs_TRANS_RXN_378', 0.000000))
+Rule('TRANS_RXN_359',
+	cplx(name = 'TRANS_CPLX_201', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD0_1938', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'TRANS_CPLX_201', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD0_1938', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_359', 1.000000), 
+	Parameter('rvs_TRANS_RXN_359', 0.000000))
+Rule('TRANS_RXN0_592',
+	cplx(name = 'TRANS_CPLX_201', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD_15189', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'TRANS_CPLX_201', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD_15189', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_592', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_592', 0.000000))
+Rule('TRANS_RXN_356',
+	cplx(name = 'TRANS_CPLX_201', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD_3617', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'TRANS_CPLX_201', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD_3617', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_356', 1.000000), 
+	Parameter('rvs_TRANS_RXN_356', 0.000000))
+Rule('TRANS_RXN_357',
+	cplx(name = 'TRANS_CPLX_201', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'ENTEROBACTIN', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'TRANS_CPLX_201', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'ENTEROBACTIN', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_357', 1.000000), 
+	Parameter('rvs_TRANS_RXN_357', 0.000000))
+Rule('TRANS_RXN_353',
+	cplx(name = 'TRANS_CPLX_202', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD_15417', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'TRANS_CPLX_202', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD_15417', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_353', 1.000000), 
+	Parameter('rvs_TRANS_RXN_353', 0.000000))
+Rule('TRANS_RXN_92',
+	cplx(name = 'TRANS_CPLX_202', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD_16983', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'TRANS_CPLX_202', loc = 'omem', strain = 'ECOLI') +
+	met(name = 'CPD_16983', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_92', 1.000000), 
+	Parameter('rvs_TRANS_RXN_92', 0.000000))
+Rule('TRANS_RXN0_235',
+	cplx(name = 'TRANS_CPLX_203', loc = 'per', strain = 'ECOLI') +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD_334', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'TRANS_CPLX_203', loc = 'per', strain = 'ECOLI') +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD_334', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_235', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_235', 0.000000))
+Rule('TRANS_RXN_33',
+	prot(name = 'UHPT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'D_glucopyranose_6_phosphate', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'UHPT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'D_glucopyranose_6_phosphate', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_33', 1.000000), 
+	Parameter('rvs_TRANS_RXN_33', 1.000000))
+Rule('TRANS_RXN0_502',
+	prot(name = 'UHPT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_15979', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'UHPT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD_15979', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_502', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_502', 1.000000))
+Rule('TRANS_RXN0_501',
+	prot(name = 'UHPT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_18719', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'UHPT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD_18719', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_501', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_501', 1.000000))
+Rule('TRANS_RXN0_534',
+	prot(name = 'UHPT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'L_GLYCERALDEHYDE_3_PHOSPHATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'UHPT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'L_GLYCERALDEHYDE_3_PHOSPHATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_534', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_534', 1.000000))
+Rule('TRANS_RXN_98',
+	prot(name = 'UIDB_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Glucuronides', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'UIDB_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Glucuronides', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_98', 1.000000), 
+	Parameter('rvs_TRANS_RXN_98', 1.000000))
+Rule('TRANS_RXN_31',
+	prot(name = 'XAPB_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'XANTHOSINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'XAPB_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'XANTHOSINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_31', 1.000000), 
+	Parameter('rvs_TRANS_RXN_31', 1.000000))
+Rule('TRANS_RXN_261',
+	prot(name = 'XASA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = '_4_AMINO_BUTYRATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'GLT', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'XASA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'GLT', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = '_4_AMINO_BUTYRATE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_261', 1.000000), 
+	Parameter('rvs_TRANS_RXN_261', 1.000000))
+Rule('TRANS_RXN_30',
+	prot(name = 'XYLE_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'D_Xylose', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'XYLE_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'D_Xylose', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_30', 1.000000), 
+	Parameter('rvs_TRANS_RXN_30', 1.000000))
+Rule('TRANS_RXN0_496',
+	prot(name = 'YBDA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ENTEROBACTIN', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YBDA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ENTEROBACTIN', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_496', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_496', 1.000000))
+Rule('TRANS_RXN_342',
+	prot(name = 'YCEE_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_1113', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YCEE_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_1113', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_342', 1.000000), 
+	Parameter('rvs_TRANS_RXN_342', 1.000000))
+Rule('TRANS_RXN0_589',
+	prot(name = 'YCEE_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'DEOXYCHOLATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YCEE_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'DEOXYCHOLATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_589', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_589', 1.000000))
+Rule('TRANS_RXN_40',
+	prot(name = 'YDEA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'L_ARABINOSE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YDEA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'L_ARABINOSE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_40', 1.000000), 
+	Parameter('rvs_TRANS_RXN_40', 1.000000))
+Rule('TRANS_RXN0_266',
+	cplx(name = 'YDGEF_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'SPERMIDINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'YDGEF_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'SPERMIDINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_266', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_266', 1.000000))
+Rule('TRANS_RXN_350',
+	cplx(name = 'YDGEF_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_21025', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	cplx(name = 'YDGEF_CPLX', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_21025', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_350', 1.000000), 
+	Parameter('rvs_TRANS_RXN_350', 1.000000))
+Rule('RXN0_2561',
+	prot(name = 'YDHE_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Drugs', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YDHE_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Drugs', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_2561', 1.000000), 
+	Parameter('rvs_RXN0_2561', 1.000000))
+Rule('TRANS_RXN_347',
+	prot(name = 'YDHE_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_21015', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YDHE_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_21015', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_347', 1.000000), 
+	Parameter('rvs_TRANS_RXN_347', 1.000000))
+Rule('TRANS_RXN_348',
+	prot(name = 'YDHE_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_20890', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YDHE_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_20890', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_348', 1.000000), 
+	Parameter('rvs_TRANS_RXN_348', 1.000000))
+Rule('TRANS_RXN_349',
+	prot(name = 'YDHE_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'DEOXYCHOLATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YDHE_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'DEOXYCHOLATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_349', 1.000000), 
+	Parameter('rvs_TRANS_RXN_349', 1.000000))
+Rule('TRANS_RXN_272',
+	prot(name = 'YEEO_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'FAD', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YEEO_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'FAD', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_272', 1.000000), 
+	Parameter('rvs_TRANS_RXN_272', 0.000000))
+Rule('TRANS_RXN0_595',
+	prot(name = 'YEEO_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'FMN', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YEEO_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'FMN', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_595', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_595', 0.000000))
+Rule('TRANS_RXN0_538',
+	prot(name = 'YEIM_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_497', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YEIM_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_497', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_538', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_538', 1.000000))
+Rule('RXN0_2421',
+	prot(name = 'YFEP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'FEplus2', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YFEP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'FEplus2', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_2421', 1.000000), 
+	Parameter('rvs_RXN0_2421', 1.000000))
+Rule('TRANS_RXN_241',
+	prot(name = 'YFEP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'MNplus2', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YFEP_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'MNplus2', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_241', 1.000000), 
+	Parameter('rvs_TRANS_RXN_241', 1.000000))
+Rule('TRANS_RXN0_530',
+	prot(name = 'YGFU_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'URATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YGFU_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'URATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_530', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_530', 1.000000))
+Rule('RXN66_448',
+	prot(name = 'YGGA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ARG', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YGGA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ARG', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN66_448', 0.000000), 
+	Parameter('rvs_RXN66_448', 1.000000))
+Rule('TRANS_RXN_325',
+	prot(name = 'YGGA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CANAVANINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YGGA_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CANAVANINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_325', 1.000000), 
+	Parameter('rvs_TRANS_RXN_325', 0.000000))
+Rule('TRANS_RXN_127',
+	prot(name = 'YGJE_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'TARTRATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'SUC', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YGJE_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'TARTRATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'SUC', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_127', 1.000000), 
+	Parameter('rvs_TRANS_RXN_127', 1.000000))
+Rule('RXN0_4083',
+	prot(name = 'YGJU_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'SER', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YGJU_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'NAplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'SER', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_4083', 1.000000), 
+	Parameter('rvs_RXN0_4083', 1.000000))
+Rule('TRANS_RXN0_418',
+	prot(name = 'YHFM_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PSICOSELYSINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YHFM_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PSICOSELYSINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_418', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_418', 0.000000))
+Rule('TRANS_RXN0_417',
+	prot(name = 'YHFM_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'FRUCTOSELYSINE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YHFM_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'FRUCTOSELYSINE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_417', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_417', 0.000000))
+Rule('RXN0_5205',
+	prot(name = 'YHHO_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ZNplus2', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	None | 
+	prot(name = 'YHHO_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'ZNplus2', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_5205', 1.000000), 
+	Parameter('rvs_RXN0_5205', 0.000000))
+Rule('RXN0_22',
+	prot(name = 'YICM_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'GUANOSINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YICM_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'GUANOSINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_22', 1.000000), 
+	Parameter('rvs_RXN0_22', 1.000000))
+Rule('RXN0_18',
+	prot(name = 'YICM_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'INOSINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YICM_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'INOSINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_RXN0_18', 1.000000), 
+	Parameter('rvs_RXN0_18', 1.000000))
+Rule('TRANS_RXN_16',
+	prot(name = 'YIDT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'D_GALACTONATE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YIDT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'D_GALACTONATE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_16', 1.000000), 
+	Parameter('rvs_TRANS_RXN_16', 1.000000))
+Rule('TRANS_RXN_341',
+	prot(name = 'YIDY_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CHLORAMPHENICOL', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YIDY_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CHLORAMPHENICOL', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_341', 1.000000), 
+	Parameter('rvs_TRANS_RXN_341', 1.000000))
+Rule('TRANS_RXN0_580',
+	prot(name = 'YIHO_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_10247', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YIHO_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD_10247', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_580', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_580', 0.000000))
+Rule('TRANS_RXN0_228',
+	prot(name = 'YJGT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = '_5_DEHYDROGLUCONATE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YJGT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = '_5_DEHYDROGLUCONATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_228', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_228', 1.000000))
+Rule('TRANS_RXN_181A',
+	prot(name = 'YJGT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'L_IDONATE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YJGT_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'L_IDONATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_181A', 1.000000), 
+	Parameter('rvs_TRANS_RXN_181A', 1.000000))
+Rule('TRANS_RXN_336',
+	prot(name = 'YJIO_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Kplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YJIO_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'Kplus', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN_336', 1.000000), 
+	Parameter('rvs_TRANS_RXN_336', 1.000000))
+Rule('TRANS_RXN0_588',
+	prot(name = 'YJIO_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CHOLATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YJIO_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CHOLATE', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_588', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_588', 1.000000))
+Rule('TRANS_RXN0_227',
+	prot(name = 'YJIZ_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'CPD0_1083', loc = 'cyt', strain = 'ECOLI', prot = None) | 
+	prot(name = 'YJIZ_MONOMER', loc = 'imem', strain = 'ECOLI') +
+	met(name = 'CPD0_1083', loc = 'cyt', strain = 'ECOLI', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
+	Parameter('fwd_TRANS_RXN0_227', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_227', 1.000000))
 Rule('_1PFRUCTPHOSN_RXN',
 	prot(name = '_1_PFK', loc = 'cyt', strain = 'ECOLI') +
 	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
@@ -572,69 +4728,6 @@ Rule('RXN_17796',
 	None, 
 	Parameter('fwd_RXN_17796', 1.000000), 
 	Parameter('rvs_RXN_17796', 0.000000))
-Rule('ACYLCOASYN_RXN',
-	cplx(name = 'ACYLCOASYN_CPLX', loc = 'cyt', strain = 'ECOLI') +
-	met(name = 'CPD66_39', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'CO_A', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) | 
-	cplx(name = 'ACYLCOASYN_CPLX', loc = 'cyt', strain = 'ECOLI') +
-	met(name = 'Saturated_Fatty_Acyl_CoA', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'PPI', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'AMP', loc = 'cyt', strain = 'ECOLI', prot = None), 
-	Parameter('fwd_ACYLCOASYN_RXN', 1.000000), 
-	Parameter('rvs_ACYLCOASYN_RXN', 0.000000))
-Rule('TRANS_RXN0_623',
-	cplx(name = 'ACYLCOASYN_CPLX', loc = 'cyt', strain = 'ECOLI') +
-	met(name = 'CPD66_39', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'CO_A', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
-	cplx(name = 'ACYLCOASYN_CPLX', loc = 'cyt', strain = 'ECOLI') +
-	met(name = 'Saturated_Fatty_Acyl_CoA', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'AMP', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'PPI', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
-	Parameter('fwd_TRANS_RXN0_623', 1.000000), 
-	Parameter('rvs_TRANS_RXN0_623', 0.000000))
-Rule('RXN0_7238',
-	cplx(name = 'ACYLCOASYN_CPLX', loc = 'cyt', strain = 'ECOLI') +
-	met(name = 'CPD_9247', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'CO_A', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
-	cplx(name = 'ACYLCOASYN_CPLX', loc = 'cyt', strain = 'ECOLI') +
-	met(name = 'CPD_18346', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'AMP', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'PPI', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
-	Parameter('fwd_RXN0_7238', 1.000000), 
-	Parameter('rvs_RXN0_7238', 0.000000))
-Rule('RXN0_7239',
-	cplx(name = 'ACYLCOASYN_CPLX', loc = 'cyt', strain = 'ECOLI') +
-	met(name = 'OLEATE_CPD', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'CO_A', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
-	cplx(name = 'ACYLCOASYN_CPLX', loc = 'cyt', strain = 'ECOLI') +
-	met(name = 'OLEOYL_COA', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'AMP', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'PPI', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
-	Parameter('fwd_RXN0_7239', 1.000000), 
-	Parameter('rvs_RXN0_7239', 0.000000))
-Rule('RXN0_7248',
-	cplx(name = 'ACYLCOASYN_CPLX', loc = 'cyt', strain = 'ECOLI') +
-	met(name = 'CPD_9245', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'ATP', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'CO_A', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) | 
-	cplx(name = 'ACYLCOASYN_CPLX', loc = 'cyt', strain = 'ECOLI') +
-	met(name = 'CPD_10269', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'AMP', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'PPI', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
-	Parameter('fwd_RXN0_7248', 1.000000), 
-	Parameter('rvs_RXN0_7248', 0.000000))
 Rule('ADCLY_RXN',
 	cplx(name = 'ADCLY_CPLX', loc = 'cyt', strain = 'ECOLI') +
 	met(name = '_4_AMINO_4_DEOXYCHORISMATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
@@ -1646,17 +5739,6 @@ Rule('DNA_DIRECTED_RNA_POLYMERASE_RXN',
 	met(name = 'RNA_Holder', loc = 'cyt', strain = 'ECOLI', prot = None), 
 	Parameter('fwd_DNA_DIRECTED_RNA_POLYMERASE_RXN', 1.000000), 
 	Parameter('rvs_DNA_DIRECTED_RNA_POLYMERASE_RXN', 0.000000))
-Rule('RXN0_5266',
-	cplx(name = 'APP_UBIOX_CPLX', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'OXYGEN_MOLECULE', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'Ubiquinols', loc = 'cyt', strain = 'ECOLI', prot = None) | 
-	cplx(name = 'APP_UBIOX_CPLX', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'Ubiquinones', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
-	Parameter('fwd_RXN0_5266', 1.000000), 
-	Parameter('rvs_RXN0_5266', 0.000000))
 Rule('ARABISOM_RXN',
 	cplx(name = 'ARABISOM_CPLX', loc = 'cyt', strain = 'ECOLI') +
 	met(name = 'L_arabinopyranose', loc = 'cyt', strain = 'ECOLI', prot = None) | 
@@ -5667,22 +9749,6 @@ Rule('RXN0_7024',
 	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
 	Parameter('fwd_RXN0_7024', 1.000000), 
 	Parameter('rvs_RXN0_7024', 0.000000))
-Rule('TRANS_RXN0_549',
-	cplx(name = 'CPLX0_7994', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'CPD0_1192', loc = 'cyt', strain = 'ECOLI', prot = None) | 
-	cplx(name = 'CPLX0_7994', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'CPD0_1192', loc = 'cyt', strain = 'ECOLI', prot = None), 
-	Parameter('fwd_TRANS_RXN0_549', 1.000000), 
-	Parameter('rvs_TRANS_RXN0_549', 0.000000))
-Rule('RXN0_5413',
-	cplx(name = 'CPLX0_7994', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'UDP_N_ACETYL_D_GLUCOSAMINE', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'N_acetyl_D_glucosamine', loc = 'cyt', strain = 'ECOLI', prot = None) | 
-	cplx(name = 'CPLX0_7994', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'CPD0_1192', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'UDP', loc = 'cyt', strain = 'ECOLI', prot = None), 
-	Parameter('fwd_RXN0_5413', 1.000000), 
-	Parameter('rvs_RXN0_5413', 0.000000))
 Rule('DIAMINOPIMEPIM_RXN',
 	cplx(name = 'CPLX0_7997', loc = 'cyt', strain = 'ECOLI') +
 	met(name = 'LL_DIAMINOPIMELATE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
@@ -6303,26 +10369,6 @@ Rule('RXN_11361',
 	None, 
 	Parameter('fwd_RXN_11361', 1.000000), 
 	Parameter('rvs_RXN_11361', 0.000000))
-Rule('RXN0_5256',
-	cplx(name = 'CPLX0_8167', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'Menaquinones', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'HYDROGEN_MOLECULE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
-	cplx(name = 'CPLX0_8167', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'Menaquinols', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	None, 
-	Parameter('fwd_RXN0_5256', 1.000000), 
-	Parameter('rvs_RXN0_5256', 1.000000))
-Rule('RXN_16420',
-	cplx(name = 'CPLX0_8167', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'HYDROGEN_MOLECULE', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'OXYGEN_MOLECULE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
-	cplx(name = 'CPLX0_8167', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	None, 
-	Parameter('fwd_RXN_16420', 1.000000), 
-	Parameter('rvs_RXN_16420', 0.000000))
 Rule('RXN0_7115',
 	cplx(name = 'CPLX0_8176', loc = 'mem', strain = 'ECOLI') +
 	met(name = 'N6_L_threonylcarbamoyladenine37_tRNAs', loc = 'cyt', strain = 'ECOLI', prot = None) +
@@ -6807,35 +10853,6 @@ Rule('CYSTEINE__TRNA_LIGASE_RXN',
 	met(name = 'AMP', loc = 'cyt', strain = 'ECOLI', prot = None), 
 	Parameter('fwd_CYSTEINE__TRNA_LIGASE_RXN', 1.000000), 
 	Parameter('rvs_CYSTEINE__TRNA_LIGASE_RXN', 0.000000))
-Rule('RXN_19778',
-	cplx(name = 'CYT_D_UBIOX_CPLX', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'Ubiquinols', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'HYDROGEN_PEROXIDE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
-	cplx(name = 'CYT_D_UBIOX_CPLX', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'Ubiquinones', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None), 
-	Parameter('fwd_RXN_19778', 1.000000), 
-	Parameter('rvs_RXN_19778', 0.000000))
-Rule('RXN_19777',
-	cplx(name = 'CYT_D_UBIOX_CPLX', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'CPD_7249', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'HYDROGEN_PEROXIDE', loc = 'cyt', strain = 'ECOLI', prot = None) | 
-	cplx(name = 'CYT_D_UBIOX_CPLX', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'CPD_7248', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None), 
-	Parameter('fwd_RXN_19777', 1.000000), 
-	Parameter('rvs_RXN_19777', 1.000000))
-Rule('RXN0_5268',
-	cplx(name = 'CYT_O_UBIOX_CPLX', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'OXYGEN_MOLECULE', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'Ubiquinols', loc = 'cyt', strain = 'ECOLI', prot = None) | 
-	cplx(name = 'CYT_O_UBIOX_CPLX', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'Ubiquinones', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
-	Parameter('fwd_RXN0_5268', 1.000000), 
-	Parameter('rvs_RXN0_5268', 0.000000))
 Rule('CYTIDEAM2_RXN',
 	cplx(name = 'CYTIDEAM_CPLX', loc = 'cyt', strain = 'ECOLI') +
 	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
@@ -7527,15 +11544,6 @@ Rule('RXN_7716',
 	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
 	Parameter('fwd_RXN_7716', 1.000000), 
 	Parameter('rvs_RXN_7716', 0.000000))
-Rule('RXN_15119',
-	cplx(name = 'E3_CPLX', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'CPD_4544', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'Donor_H2', loc = 'cyt', strain = 'ECOLI', prot = None) | 
-	cplx(name = 'E3_CPLX', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'CPD_16009', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'Acceptor', loc = 'cyt', strain = 'ECOLI', prot = None), 
-	Parameter('fwd_RXN_15119', 1.000000), 
-	Parameter('rvs_RXN_15119', 0.000000))
 Rule('RXN_18737',
 	prot(name = 'EG10037_MONOMER', loc = 'cyt', strain = 'ECOLI') +
 	met(name = 'an_Nsup1sup_methyladenine_in_DNA', loc = 'cyt', strain = 'ECOLI', prot = None) +
@@ -11012,17 +15020,6 @@ Rule('RXN0_3281',
 	None, 
 	Parameter('fwd_RXN0_3281', 1.000000), 
 	Parameter('rvs_RXN0_3281', 0.000000))
-Rule('FORMATEDEHYDROG_RXN',
-	cplx(name = 'FORMATEDEHYDROGN_CPLX', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'FORMATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'Menaquinones', loc = 'cyt', strain = 'ECOLI', prot = None) | 
-	cplx(name = 'FORMATEDEHYDROGN_CPLX', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'CARBON_DIOXIDE', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'Menaquinols', loc = 'cyt', strain = 'ECOLI', prot = None), 
-	Parameter('fwd_FORMATEDEHYDROG_RXN', 1.000000), 
-	Parameter('rvs_FORMATEDEHYDROG_RXN', 0.000000))
 Rule('FORMYLTHFDEFORMYL_RXN',
 	cplx(name = 'FORMYLTHFDEFORMYL_CPLX', loc = 'cyt', strain = 'ECOLI') +
 	met(name = 'FORMYL_THF_GLU_N', loc = 'cyt', strain = 'ECOLI', prot = None) +
@@ -14613,28 +18610,6 @@ Rule('NAD_SYNTH_NH3_RXN',
 	met(name = 'NAD', loc = 'cyt', strain = 'ECOLI', prot = None), 
 	Parameter('fwd_NAD_SYNTH_NH3_RXN', 1.000000), 
 	Parameter('rvs_NAD_SYNTH_NH3_RXN', 0.000000))
-Rule('NADH_DEHYDROG_A_RXN',
-	cplx(name = 'NADH_DHI_CPLX', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'NADH', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'Ubiquinones', loc = 'cyt', strain = 'ECOLI', prot = None) | 
-	cplx(name = 'NADH_DHI_CPLX', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'NAD', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'Ubiquinols', loc = 'cyt', strain = 'ECOLI', prot = None), 
-	Parameter('fwd_NADH_DEHYDROG_A_RXN', 1.000000), 
-	Parameter('rvs_NADH_DEHYDROG_A_RXN', 1.000000))
-Rule('RXN0_5388',
-	cplx(name = 'NADH_DHI_CPLX', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'Menaquinones', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'NADH', loc = 'cyt', strain = 'ECOLI', prot = None) | 
-	cplx(name = 'NADH_DHI_CPLX', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'Menaquinols', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'NAD', loc = 'cyt', strain = 'ECOLI', prot = None), 
-	Parameter('fwd_RXN0_5388', 1.000000), 
-	Parameter('rvs_RXN0_5388', 0.000000))
 Rule('RXN0_5330',
 	prot(name = 'NADH_DHII_MONOMER', loc = 'imem', strain = 'ECOLI') +
 	met(name = 'Ubiquinones', loc = 'cyt', strain = 'ECOLI', prot = None) +
@@ -14803,32 +18778,6 @@ Rule('NICOTINATEPRIBOSYLTRANS_RXN',
 	met(name = 'Pi', loc = 'cyt', strain = 'ECOLI', prot = None), 
 	Parameter('fwd_NICOTINATEPRIBOSYLTRANS_RXN', 1.000000), 
 	Parameter('rvs_NICOTINATEPRIBOSYLTRANS_RXN', 0.000000))
-Rule('RXN0_3501',
-	cplx(name = 'NITRATREDUCTA_CPLX', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'Menaquinols', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'NITRATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	None | 
-	cplx(name = 'NITRATREDUCTA_CPLX', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'Menaquinones', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'NITRITE', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None), 
-	Parameter('fwd_RXN0_3501', 1.000000), 
-	Parameter('rvs_RXN0_3501', 0.000000))
-Rule('RXN0_7124',
-	cplx(name = 'NITRATREDUCTA_CPLX', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'Ubiquinols', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'NITRATE', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	None | 
-	cplx(name = 'NITRATREDUCTA_CPLX', loc = 'imem', strain = 'ECOLI') +
-	met(name = 'Ubiquinones', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'PROTON', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'WATER', loc = 'cyt', strain = 'ECOLI', prot = None) +
-	met(name = 'NITRITE', loc = 'cyt', strain = 'ECOLI', prot = None), 
-	Parameter('fwd_RXN0_7124', 1.000000), 
-	Parameter('rvs_RXN0_7124', 0.000000))
 Rule('RXN_13854',
 	cplx(name = 'NITRITREDUCT_CPLX', loc = 'cyt', strain = 'ECOLI') +
 	met(name = 'AMMONIUM', loc = 'cyt', strain = 'ECOLI', prot = None) +
@@ -17021,3 +20970,3894 @@ Rule('RXN1_42',
 	met(name = 'CO_A', loc = 'cyt', strain = 'ECOLI', prot = None), 
 	Parameter('fwd_RXN1_42', 1.000000), 
 	Parameter('rvs_RXN1_42', 0.000000))
+Rule('_2dot7dot1dot69_RXN',
+	prot(name = 'BSU01680_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'Hpr_pi_phospho_L_histidines', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Sugar', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU01680_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'Hpr_Histidine', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Sugar_Phosphate', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__2dot7dot1dot69_RXN', 1.000000), 
+	Parameter('rvs__2dot7dot1dot69_RXN', 0.000000))
+Rule('TRANS_RXN8J2_6',
+	prot(name = 'BSU02140_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'GLYCEROL_3P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU02140_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'GLYCEROL_3P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_6', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_6', 0.000000))
+Rule('TRANS_RXN8J2_7',
+	prot(name = 'BSU02170_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'Carboxylates', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU02170_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'Carboxylates', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_7', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_7', 0.000000))
+Rule('TRANS_RXN8J2_8',
+	prot(name = 'BSU02340_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'GLT', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU02340_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'GLT', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_8', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_8', 0.000000))
+Rule('TRANS_RXN8J2_104',
+	prot(name = 'BSU02350_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'GLUCOSAMINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PHOSPHO_ENOL_PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU02350_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'D_GLUCOSAMINE_6_P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_104', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_104', 0.000000))
+Rule('TRANS_RXN8J2_5',
+	prot(name = 'BSU02400_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'Amino_Acids_20', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU02400_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'Amino_Acids_20', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_5', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_5', 0.000000))
+Rule('TRANS_RXN8J2_9',
+	prot(name = 'BSU02420_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'GLN', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU02420_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'GLN', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_9', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_9', 0.000000))
+Rule('TRANS_RXN8J2_27',
+	prot(name = 'BSU03220_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'PRO', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAplus', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU03220_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'PRO', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAplus', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_27', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_27', 0.000000))
+Rule('TRANS_RXN8J2_13',
+	prot(name = 'BSU03330_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'NITRATE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU03330_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'NITRATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_13', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_13', 0.000000))
+Rule('TRANS_RXN8J2_17',
+	prot(name = 'BSU04360_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'MNplus2', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU04360_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'MNplus2', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_17', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_17', 0.000000))
+Rule('TRANS_RXN8J2_21',
+	prot(name = 'BSU05800_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'HYPOXANTHINE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU05800_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'HYPOXANTHINE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_21', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_21', 0.000000))
+Rule('TRANS_RXN8J2_22',
+	prot(name = 'BSU06160_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'SORBITOL', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU06160_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'SORBITOL', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_22', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_22', 0.000000))
+Rule('TRANS_RXN8J2_24',
+	prot(name = 'BSU06230_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'MYO_INOSITOL', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU06230_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'MYO_INOSITOL', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_24', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_24', 0.000000))
+Rule('TRANS_RXN8J2_115',
+	prot(name = 'BSU06310_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = '_4_AMINO_BUTYRATE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU06310_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = '_4_AMINO_BUTYRATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_115', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_115', 0.000000))
+Rule('TRANS_RXN8J2_116',
+	prot(name = 'BSU06310_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'PRO', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU06310_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'PRO', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_116', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_116', 0.000000))
+Rule('TRANS_RXN8J2_28',
+	prot(name = 'BSU07570_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = '_2_KETOGLUTARATE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU07570_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = '_2_KETOGLUTARATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_28', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_28', 0.000000))
+Rule('TRANS_RXN8J2_110',
+	prot(name = 'BSU07700_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'N_acetyl_D_glucosamine', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PHOSPHO_ENOL_PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU07700_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'N_ACETYL_D_GLUCOSAMINE_6_P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_110', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_110', 0.000000))
+Rule('TRANS_RXN8J2_105',
+	prot(name = 'BSU07800_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'TREHALOSE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PHOSPHO_ENOL_PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU07800_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'TREHALOSE_6P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_105', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_105', 0.000000))
+Rule('TRANS_RXN8J2_111',
+	prot(name = 'BSU08200_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'MALTOSE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PHOSPHO_ENOL_PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU08200_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'CPD_1244', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_111', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_111', 0.000000))
+Rule('TRANS_RXN8J2_34',
+	prot(name = 'BSU09280_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'GLYCEROL', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU09280_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'GLYCEROL', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_34', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_34', 0.000000))
+Rule('TRANS_RXN8J2_106',
+	prot(name = 'BSU12010_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'MANNOSE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PHOSPHO_ENOL_PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU12010_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'MANNOSE_6P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_106', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_106', 0.000000))
+Rule('TRANS_RXN8J2_107',
+	prot(name = 'BSU13890_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'GLC', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PHOSPHO_ENOL_PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU13890_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'GLC_6_P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_107', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_107', 0.000000))
+Rule('RXN_15084',
+	prot(name = 'BSU14400_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'Hpr_pi_phospho_L_histidines', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'FRU', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU14400_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'D_fructose_1_phosphate', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Hpr_Histidine', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_15084', 1.000000), 
+	Parameter('rvs_RXN_15084', 0.000000))
+Rule('TRANS_RXN8J2_101',
+	prot(name = 'BSU16825_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'Antibiotics', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU16825_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'Antibiotics', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_101', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_101', 0.000000))
+Rule('TRANS_RXN8J2_1',
+	prot(name = 'BSU23050_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'RIBOFLAVIN', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU23050_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'RIBOFLAVIN', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_1', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_1', 0.000000))
+Rule('CYT_UBIQUINOL_OXID_RXN',
+	prot(name = 'BSU30720_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'CPD_9956', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'OXYGEN_MOLECULE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU30720_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'UBIQUINONE_8', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_CYT_UBIQUINOL_OXID_RXN', 1.000000), 
+	Parameter('rvs_CYT_UBIQUINOL_OXID_RXN', 0.000000))
+Rule('TRANS_RXN8J2_103',
+	prot(name = 'BSU31580_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'MAL', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAplus', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU31580_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'MAL', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAplus', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_103', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_103', 0.000000))
+Rule('_3dot6dot3dot44_RXN',
+	prot(name = 'BSU34820_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'Xenobiotic', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU34820_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'Xenobiotic', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__3dot6dot3dot44_RXN', 1.000000), 
+	Parameter('rvs__3dot6dot3dot44_RXN', 0.000000))
+Rule('RXN_9615',
+	prot(name = 'BSU36510_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'AMMONIUM', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU36510_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'AMMONIUM', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_9615', 1.000000), 
+	Parameter('rvs_RXN_9615', 0.000000))
+Rule('SUCROSEPHOSPHO_RXN',
+	prot(name = 'BSU38050_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'Hpr_pi_phospho_L_histidines', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'SUCROSE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU38050_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'Hpr_Histidine', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_15716', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_SUCROSEPHOSPHO_RXN', 1.000000), 
+	Parameter('rvs_SUCROSEPHOSPHO_RXN', 0.000000))
+Rule('TRANS_RXN8J2_109',
+	prot(name = 'BSU39270_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'BETA_GLUCOSIDES', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PHOSPHO_ENOL_PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU39270_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'Beta_Glucoside_6_P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_109', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_109', 0.000000))
+Rule('TRANS_RXN8J2_102',
+	prot(name = 'BSU39390_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'HIS', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU39390_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'HIS', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_102', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_102', 0.000000))
+Rule('TRANS_RXN8J2_108',
+	cplx(name = 'CPLX8J2_117', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'FRU', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PHOSPHO_ENOL_PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX8J2_117', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'FRUCTOSE_6P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_108', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_108', 0.000000))
+Rule('TRANS_RXN8J2_112',
+	cplx(name = 'CPLX8J2_119', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'Maltodextrins', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	cplx(name = 'CPLX8J2_119', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'Maltodextrins', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_112', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_112', 0.000000))
+Rule('TRANS_RXN8J2_113',
+	cplx(name = 'CPLX8J2_141', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'FEplus3', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX8J2_141', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'FEplus3', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_113', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_113', 0.000000))
+Rule('TRANS_RXN8J2_114',
+	cplx(name = 'CPLX8J2_142', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'CAplus2', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX8J2_142', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'CAplus2', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_114', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_114', 0.000000))
+Rule('RXN_18028',
+	cplx(name = 'CPLX8J2_161', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'Teichoic_P_Gro_Glc', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	cplx(name = 'CPLX8J2_161', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'Teichoic_P_Gro_Glc', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_18028', 1.000000), 
+	Parameter('rvs_RXN_18028', 0.000000))
+Rule('TRANS_RXN0_506',
+	cplx(name = 'CPLX8J2_189', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX8J2_189', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN0_506', 1.000000), 
+	Parameter('rvs_TRANS_RXN0_506', 0.000000))
+Rule('CYTOCHROME_C_OXIDASE_RXN',
+	cplx(name = 'CPLX8J2_22', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'OXYGEN_MOLECULE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Cytochromes_C_Reduced', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX8J2_22', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Cytochromes_C_Oxidized', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_CYTOCHROME_C_OXIDASE_RXN', 1.000000), 
+	Parameter('rvs_CYTOCHROME_C_OXIDASE_RXN', 0.000000))
+Rule('TRANS_RXN8J2_99',
+	cplx(name = 'CPLX8J2_37', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'Antibiotics', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX8J2_37', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'Antibiotics', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_99', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_99', 0.000000))
+Rule('TRANS_RXN8J2_98',
+	cplx(name = 'CPLX8J2_38', loc = 'ex', strain = 'BSUB') +
+	met(name = 'CPD_9985', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	cplx(name = 'CPLX8J2_38', loc = 'ex', strain = 'BSUB') +
+	met(name = 'CPD_9985', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_98', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_98', 0.000000))
+Rule('RXN_12164',
+	cplx(name = 'CPLX8J2_43', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'Menaquinols', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'OXYGEN_MOLECULE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX8J2_43', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'Menaquinones', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_12164', 1.000000), 
+	Parameter('rvs_RXN_12164', 0.000000))
+Rule('TRANS_RXN8J2_97',
+	cplx(name = 'CPLX8J2_65', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'CHOLINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	cplx(name = 'CPLX8J2_65', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'CHOLINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_97', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_97', 0.000000))
+Rule('TRANS_RXN8J2_95',
+	cplx(name = 'CPLX8J2_81', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'Antibiotics', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX8J2_81', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'Antibiotics', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_95', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_95', 0.000000))
+Rule('TRANS_RXN8J2_96',
+	cplx(name = 'CPLX8J2_93', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'CPD_543', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	cplx(name = 'CPLX8J2_93', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'CPD_543', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_RXN8J2_96', 1.000000), 
+	Parameter('rvs_TRANS_RXN8J2_96', 0.000000))
+Rule('_3dot4dot16dot4_RXN',
+	prot(name = 'BSU00100_MONOMER', loc = 'wall', strain = 'BSUB') +
+	met(name = 'NAcMur_Peptide_NAcGlc_Undecaprenols', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU00100_MONOMER', loc = 'wall', strain = 'BSUB') +
+	met(name = 'NAcMur_4Peptide_NAcGlc_Undecaprenols', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'D_ALANINE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__3dot4dot16dot4_RXN', 1.000000), 
+	Parameter('rvs__3dot4dot16dot4_RXN', 0.000000))
+Rule('DEOXYCYTIDINE_KINASE_RXN',
+	prot(name = 'BSU00140_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'DEOXYCYTIDINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Nucleoside_Triphosphates', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU00140_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'DCMP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Nucleoside_Diphosphates', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_DEOXYCYTIDINE_KINASE_RXN', 1.000000), 
+	Parameter('rvs_DEOXYCYTIDINE_KINASE_RXN', 0.000000))
+Rule('DEOXYADENOSINE_KINASE_RXN',
+	prot(name = 'BSU00140_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'DEOXYADENOSINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU00140_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'DAMP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_DEOXYADENOSINE_KINASE_RXN', 1.000000), 
+	Parameter('rvs_DEOXYADENOSINE_KINASE_RXN', 0.000000))
+Rule('DEOXYGUANOSINE_KINASE_RXN',
+	prot(name = 'BSU00150_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'DEOXYGUANOSINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU00150_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'DGMP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_DEOXYGUANOSINE_KINASE_RXN', 1.000000), 
+	Parameter('rvs_DEOXYGUANOSINE_KINASE_RXN', 0.000000))
+Rule('_3dot1dot26dot8_RXN',
+	prot(name = 'BSU00410_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_5S_RRNA_Precursors', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU00410_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Mature_5S_rRNAs', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Oligonucleotides', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__3dot1dot26dot8_RXN', 1.000000), 
+	Parameter('rvs__3dot1dot26dot8_RXN', 0.000000))
+Rule('RXN8J2_140',
+	prot(name = 'BSU00850_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Protein_L_Arginines', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU00850_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Protein_Arginine_Phosphates', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN8J2_140', 1.000000), 
+	Parameter('rvs_RXN8J2_140', 0.000000))
+Rule('RXN_14338',
+	prot(name = 'BSU00880_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU00880_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_15225', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_14338', 1.000000), 
+	Parameter('rvs_RXN_14338', 0.000000))
+Rule('_3dot4dot11dot5_RXN',
+	prot(name = 'BSU01140_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Protein_With_N_Terminal_Pro', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU01140_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Peptides_holder', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PRO', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__3dot4dot11dot5_RXN', 1.000000), 
+	Parameter('rvs__3dot4dot11dot5_RXN', 0.000000))
+Rule('_3dot4dot24dot32_RXN',
+	prot(name = 'BSU01530_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'Peptidoglycans', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU01530_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'CPD_15797', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_17583', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__3dot4dot24dot32_RXN', 1.000000), 
+	Parameter('rvs__3dot4dot24dot32_RXN', 0.000000))
+Rule('CARBODEHYDRAT_RXN',
+	prot(name = 'BSU01860_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'H2CO3', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU01860_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CARBON_DIOXIDE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_CARBODEHYDRAT_RXN', 1.000000), 
+	Parameter('rvs_CARBODEHYDRAT_RXN', 1.000000))
+Rule('HOMOCYSTEINE_S_METHYLTRANSFERASE_RXN',
+	prot(name = 'BSU02410_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'S_ADENOSYLMETHIONINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'HOMO_CYS', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU02410_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADENOSYL_HOMO_CYS', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'MET', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_HOMOCYSTEINE_S_METHYLTRANSFERASE_RXN', 1.000000), 
+	Parameter('rvs_HOMOCYSTEINE_S_METHYLTRANSFERASE_RXN', 0.000000))
+Rule('_4dot2dot1dot41_RXN',
+	prot(name = 'BSU02460_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = '_5_KETO_4_DEOXY_D_GLUCARATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU02460_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CARBON_DIOXIDE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_654', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__4dot2dot1dot41_RXN', 1.000000), 
+	Parameter('rvs__4dot2dot1dot41_RXN', 0.000000))
+Rule('RXN_8775',
+	prot(name = 'BSU02470_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_654', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD_P_OR_NOP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU02470_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_2_KETOGLUTARATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH_P_OR_NOP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_8775', 1.000000), 
+	Parameter('rvs_RXN_8775', 0.000000))
+Rule('PYROGLUTAMYL_PEPTIDASE_I_RXN',
+	prot(name = 'BSU02650_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Protein_N_terminal_5_oxo_prolines', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU02650_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_5_OXOPROLINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'General_Protein_Substrates', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_PYROGLUTAMYL_PEPTIDASE_I_RXN', 1.000000), 
+	Parameter('rvs_PYROGLUTAMYL_PEPTIDASE_I_RXN', 0.000000))
+Rule('TRIACYLGLYCEROL_LIPASE_RXN',
+	prot(name = 'BSU02700_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'Triacylglycerides', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU02700_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = '_1_2_Diglycerides', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Fatty_Acids', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRIACYLGLYCEROL_LIPASE_RXN', 1.000000), 
+	Parameter('rvs_TRIACYLGLYCEROL_LIPASE_RXN', 0.000000))
+Rule('RXN_1823',
+	prot(name = 'BSU03040_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'Starch', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU03040_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'Large_branched_glucans', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd_RXN_1823', 1.000000), 
+	Parameter('rvs_RXN_1823', 0.000000))
+Rule('RXN_1825',
+	prot(name = 'BSU03040_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'Long_linear_glucans', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU03040_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'Linear_Malto_Oligosaccharides', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd_RXN_1825', 1.000000), 
+	Parameter('rvs_RXN_1825', 0.000000))
+Rule('L_LACTATE_DEHYDROGENASE_RXN',
+	prot(name = 'BSU03050_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'L_LACTATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU03050_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_L_LACTATE_DEHYDROGENASE_RXN', 0.000000), 
+	Parameter('rvs_L_LACTATE_DEHYDROGENASE_RXN', 1.000000))
+Rule('RXN_14903',
+	prot(name = 'BSU03200_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ETR_Quinones', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PRO', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU03200_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ETR_Quinols', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'L_DELTA1_PYRROLINE_5_CARBOXYLATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_14903', 1.000000), 
+	Parameter('rvs_RXN_14903', 0.000000))
+Rule('PYRROLINECARBDEHYDROG_RXN',
+	prot(name = 'BSU03210_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'L_DELTA1_PYRROLINE_5_CARBOXYLATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU03210_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'GLT', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_PYRROLINECARBDEHYDROG_RXN', 1.000000), 
+	Parameter('rvs_PYRROLINECARBDEHYDROG_RXN', 0.000000))
+Rule('RXN_11632',
+	prot(name = 'BSU03210_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'L_DELTA1_PYRROLINE_5_CARBOXYLATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD_P_OR_NOP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU03210_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'GLT', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH_P_OR_NOP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_11632', 1.000000), 
+	Parameter('rvs_RXN_11632', 0.000000))
+Rule('R12_RXN',
+	prot(name = 'BSU03450_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_26', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU03450_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'FRUCTOSE_6P', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_R12_RXN', 1.000000), 
+	Parameter('rvs_R12_RXN', 0.000000))
+Rule('R10_RXN',
+	prot(name = 'BSU03460_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_26', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU03460_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'RIBULOSE_5P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'FORMALDEHYDE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_R10_RXN', 0.000000), 
+	Parameter('rvs_R10_RXN', 1.000000))
+Rule('RXN0_5293',
+	prot(name = 'BSU03910_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'SUCC_S_ALD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD_P_OR_NOP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU03910_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'NADH_P_OR_NOP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'SUC', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN0_5293', 1.000000), 
+	Parameter('rvs_RXN0_5293', 0.000000))
+Rule('RXN_8643',
+	prot(name = 'BSU04000_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'MESO_TARTRATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU04000_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_66', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_8643', 1.000000), 
+	Parameter('rvs_RXN_8643', 0.000000))
+Rule('RXN_7904',
+	prot(name = 'BSU04170_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Long_Chain_Fatty_Acids', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU04170_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Long_Chain_Acyl_CoAs', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'AMP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_7904', 1.000000), 
+	Parameter('rvs_RXN_7904', 0.000000))
+Rule('_6dot3dot2dot10_RXN',
+	prot(name = 'BSU04570_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'D_ALA_D_ALA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_209', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU04570_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'C3', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__6dot3dot2dot10_RXN', 1.000000), 
+	Parameter('rvs__6dot3dot2dot10_RXN', 0.000000))
+Rule('RXN_8973',
+	prot(name = 'BSU04570_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'UDP_N_acetylmuramoyl_Tripeptide', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'D_ALA_D_ALA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU04570_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'UDP_NAcMur_Peptides', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_8973', 1.000000), 
+	Parameter('rvs_RXN_8973', 0.000000))
+Rule('_3dot2dot1dot92_RXN',
+	prot(name = 'BSU04970_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_13725', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU04970_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'NACMUR', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'N_acetyl_D_glucosamine', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__3dot2dot1dot92_RXN', 1.000000), 
+	Parameter('rvs__3dot2dot1dot92_RXN', 0.000000))
+Rule('RXN8J2_145',
+	prot(name = 'BSU05630_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD8J2_3', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_21167', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU05630_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD8J2_22', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CL_', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN8J2_145', 1.000000), 
+	Parameter('rvs_RXN8J2_145', 0.000000))
+Rule('RXN_8748',
+	prot(name = 'BSU05740_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_8978', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU05740_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ETOH', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_8748', 1.000000), 
+	Parameter('rvs_RXN_8748', 0.000000))
+Rule('_3dot2dot1dot78_RXN',
+	prot(name = 'BSU05880_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = '_1_4_Mannan', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU05880_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'Short_Mannan', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd__3dot2dot1dot78_RXN', 1.000000), 
+	Parameter('rvs__3dot2dot1dot78_RXN', 0.000000))
+Rule('RXN_14906',
+	prot(name = 'BSU05910_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Proteins_L_Threonines', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU05910_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Protein_Phosphothreonines', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_14906', 1.000000), 
+	Parameter('rvs_RXN_14906', 0.000000))
+Rule('_2dot7dot12dot1_RXN',
+	prot(name = 'BSU05910_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Protein_L_serines', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU05910_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Protein_Phosphoserines', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__2dot7dot12dot1_RXN', 1.000000), 
+	Parameter('rvs__2dot7dot12dot1_RXN', 0.000000))
+Rule('L_IDITOL_2_DEHYDROGENASE_RXN',
+	prot(name = 'BSU06150_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_369', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU06150_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_15616', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_L_IDITOL_2_DEHYDROGENASE_RXN', 1.000000), 
+	Parameter('rvs_L_IDITOL_2_DEHYDROGENASE_RXN', 1.000000))
+Rule('RXN_7644',
+	prot(name = 'BSU06150_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'SORBITOL', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU06150_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_15382', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_7644', 1.000000), 
+	Parameter('rvs_RXN_7644', 0.000000))
+Rule('RR_BUTANEDIOL_DEHYDROGENASE_RXN',
+	prot(name = 'BSU06240_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'BUTANEDIOL', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU06240_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_10353', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RR_BUTANEDIOL_DEHYDROGENASE_RXN', 1.000000), 
+	Parameter('rvs_RR_BUTANEDIOL_DEHYDROGENASE_RXN', 1.000000))
+Rule('AIRCARBOXY_RXN',
+	prot(name = 'BSU06420_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PHOSPHORIBOSYL_CARBOXY_AMINOIMIDAZOLE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU06420_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_5_PHOSPHORIBOSYL_5_AMINOIMIDAZOLE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CARBON_DIOXIDE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_AIRCARBOXY_RXN', 1.000000), 
+	Parameter('rvs_AIRCARBOXY_RXN', 1.000000))
+Rule('_2dot5dot1dot41_RXN',
+	prot(name = 'BSU06600_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'SN_GLYCEROL_1_PHOSPHATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'GERANYLGERANYL_PP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU06600_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'SN_GERANYLGERANYLGLYCERYL_1_PHOSPHATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__2dot5dot1dot41_RXN', 1.000000), 
+	Parameter('rvs__2dot5dot1dot41_RXN', 0.000000))
+Rule('RXN_12174',
+	prot(name = 'BSU07000_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_13121', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU07000_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_13122', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'L_rhamnopyranose', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_12174', 1.000000), 
+	Parameter('rvs_RXN_12174', 0.000000))
+Rule('RXN_12173',
+	prot(name = 'BSU07050_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'Rhamnogalacturonans_I', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU07050_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'Rhamnogalacturonan_L_Rhamnose', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Delta_GalA_rhamnogalacturonan', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_12173', 1.000000), 
+	Parameter('rvs_RXN_12173', 0.000000))
+Rule('RXN_12268',
+	prot(name = 'BSU07060_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'Delta_GalA_rhamnogalacturonan', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU07060_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'CPD_13121', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'D_galacturonate_rhamnogalacturonan', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_12268', 1.000000), 
+	Parameter('rvs_RXN_12268', 0.000000))
+Rule('GALACTURAN_14_ALPHA_GALACTURONIDASE_RXN',
+	prot(name = 'BSU07130_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_1_4_alpha_D_galacturonosyl', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU07130_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_1_4_alpha_D_galacturonosyl', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'D_Galactopyranuronate', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_GALACTURAN_14_ALPHA_GALACTURONIDASE_RXN', 1.000000), 
+	Parameter('rvs_GALACTURAN_14_ALPHA_GALACTURONIDASE_RXN', 0.000000))
+Rule('RXN8J2_109',
+	prot(name = 'BSU07250_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_8876', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADPH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'OXYGEN_MOLECULE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU07250_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD8J2_18', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd_RXN8J2_109', 1.000000), 
+	Parameter('rvs_RXN8J2_109', 0.000000))
+Rule('UNSPECIFIC_MONOOXYGENASE_RXN',
+	prot(name = 'BSU07250_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'RH_Group', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Red_NADPH_Hemoprotein_Reductases', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'OXYGEN_MOLECULE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU07250_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Alcohols', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Ox_NADPH_Hemoprotein_Reductases', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_UNSPECIFIC_MONOOXYGENASE_RXN', 1.000000), 
+	Parameter('rvs_UNSPECIFIC_MONOOXYGENASE_RXN', 0.000000))
+Rule('_2dot7dot7dot33_RXN',
+	prot(name = 'BSU07270_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'GLC_1_P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CTP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU07270_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CDP_D_GLUCOSE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd__2dot7dot7dot33_RXN', 1.000000), 
+	Parameter('rvs__2dot7dot7dot33_RXN', 0.000000))
+Rule('CDP_GLUCOSE_46_DEHYDRATASE_RXN',
+	prot(name = 'BSU07280_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CDP_D_GLUCOSE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU07280_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_658', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_CDP_GLUCOSE_46_DEHYDRATASE_RXN', 1.000000), 
+	Parameter('rvs_CDP_GLUCOSE_46_DEHYDRATASE_RXN', 0.000000))
+Rule('_4dot2dot2dot2_RXN',
+	prot(name = 'BSU07560_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = '_1_4_alpha_D_galacturonosyl', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU07560_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = '_1_4_alpha_D_galacturonosyl', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_11244', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__4dot2dot2dot2_RXN', 1.000000), 
+	Parameter('rvs__4dot2dot2dot2_RXN', 0.000000))
+Rule('RXN_5841',
+	prot(name = 'BSU07840_MONOMER', loc = 'wall', strain = 'BSUB') +
+	met(name = 'NICOTINAMIDE_NUCLEOTIDE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU07840_MONOMER', loc = 'wall', strain = 'BSUB') +
+	met(name = 'NICOTINAMIDE_RIBOSE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_5841', 1.000000), 
+	Parameter('rvs_RXN_5841', 0.000000))
+Rule('XMPXAN_RXN',
+	prot(name = 'BSU07840_MONOMER', loc = 'wall', strain = 'BSUB') +
+	met(name = 'XANTHOSINE_5_PHOSPHATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU07840_MONOMER', loc = 'wall', strain = 'BSUB') +
+	met(name = 'XANTHOSINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_XMPXAN_RXN', 1.000000), 
+	Parameter('rvs_XMPXAN_RXN', 0.000000))
+Rule('DIHYDLIPACETRANS_RXN',
+	prot(name = 'BSU08080_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ACETYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'DIHYDROLIPOAMIDE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU08080_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CO_A', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'S_ACETYLDIHYDROLIPOAMIDE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_DIHYDLIPACETRANS_RXN', 1.000000), 
+	Parameter('rvs_DIHYDLIPACETRANS_RXN', 0.000000))
+Rule('RXN_7719',
+	prot(name = 'BSU08090_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'BCAA_dehydrogenase_DH_lipoyl', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU08090_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'BCAA_dehydrogenase_lipoyl', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_7719', 1.000000), 
+	Parameter('rvs_RXN_7719', 1.000000))
+Rule('MALTOSE_6_PHOSPHATE_GLUCOSIDASE_RXN',
+	prot(name = 'BSU08180_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_1244', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU08180_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Glucopyranose', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'D_glucopyranose_6_phosphate', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_MALTOSE_6_PHOSPHATE_GLUCOSIDASE_RXN', 1.000000), 
+	Parameter('rvs_MALTOSE_6_PHOSPHATE_GLUCOSIDASE_RXN', 0.000000))
+Rule('CATECHOL_23_DIOXYGENASE_RXN',
+	prot(name = 'BSU08230_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'CATECHOL', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'OXYGEN_MOLECULE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU08230_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'HYDROXYMUCONATE_SALD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_CATECHOL_23_DIOXYGENASE_RXN', 1.000000), 
+	Parameter('rvs_CATECHOL_23_DIOXYGENASE_RXN', 0.000000))
+Rule('RXN_8771',
+	prot(name = 'BSU08480_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'FMNH2', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'OXYGEN_MOLECULE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU08480_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'DIMETHYLBENZIMIDAZOLE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ERYTHROSE_4P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_15999', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_8771', 1.000000), 
+	Parameter('rvs_RXN_8771', 0.000000))
+Rule('_3dot1dot31dot1_RXN',
+	prot(name = 'BSU09190_MONOMER', loc = 'wall', strain = 'BSUB') +
+	met(name = 'Polynucleotide_Holder', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU09190_MONOMER', loc = 'wall', strain = 'BSUB') +
+	met(name = '_3_phosphooligonucleotides', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = '_3_Prime_Nucleoside_Monophosphates', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__3dot1dot31dot1_RXN', 1.000000), 
+	Parameter('rvs__3dot1dot31dot1_RXN', 0.000000))
+Rule('GLYCEROL_3_PHOSPHATE_OXIDASE_RXN',
+	prot(name = 'BSU09300_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'OXYGEN_MOLECULE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'GLYCEROL_3P', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU09300_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'HYDROGEN_PEROXIDE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'DIHYDROXY_ACETONE_PHOSPHATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_GLYCEROL_3_PHOSPHATE_OXIDASE_RXN', 1.000000), 
+	Parameter('rvs_GLYCEROL_3_PHOSPHATE_OXIDASE_RXN', 0.000000))
+Rule('_1_ACYLGLYCEROL_3_P_ACYLTRANSFER_RXN',
+	prot(name = 'BSU09540_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'ACYL_SN_GLYCEROL_3P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ACYL_ACP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU09540_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'L_PHOSPHATIDATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ACP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__1_ACYLGLYCEROL_3_P_ACYLTRANSFER_RXN', 1.000000), 
+	Parameter('rvs__1_ACYLGLYCEROL_3_P_ACYLTRANSFER_RXN', 0.000000))
+Rule('RXN_1623',
+	prot(name = 'BSU09540_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'ACYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ACYL_SN_GLYCEROL_3P', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU09540_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'L_PHOSPHATIDATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_1623', 1.000000), 
+	Parameter('rvs_RXN_1623', 0.000000))
+Rule('RXN0_5514',
+	prot(name = 'BSU09540_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'Saturated_2_Lysophosphatidates', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Saturated_Fatty_Acyl_ACPs', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU09540_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = '_2_3_4_Saturated_L_Phosphatidates', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ACP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN0_5514', 1.000000), 
+	Parameter('rvs_RXN0_5514', 0.000000))
+Rule('PHEAMINOTRANS_RXN',
+	prot(name = 'BSU09570_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PHENYL_PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'GLT', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU09570_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PHE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = '_2_KETOGLUTARATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_PHEAMINOTRANS_RXN', 1.000000), 
+	Parameter('rvs_PHEAMINOTRANS_RXN', 1.000000))
+Rule('D_ALANINE_AMINOTRANSFERASE_RXN',
+	prot(name = 'BSU09670_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_2_KETOGLUTARATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'D_ALANINE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU09670_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'D_GLT', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_D_ALANINE_AMINOTRANSFERASE_RXN', 1.000000), 
+	Parameter('rvs_D_ALANINE_AMINOTRANSFERASE_RXN', 1.000000))
+Rule('RXN_17518',
+	prot(name = 'BSU10130_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'COPROPORPHYRIN_III', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'FEplus2', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU10130_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_17070', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_17518', 1.000000), 
+	Parameter('rvs_RXN_17518', 0.000000))
+Rule('RXN_17517',
+	prot(name = 'BSU10140_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'COPROPORPHYRINOGEN_III', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'OXYGEN_MOLECULE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU10140_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'COPROPORPHYRIN_III', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'HYDROGEN_PEROXIDE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_17517', 1.000000), 
+	Parameter('rvs_RXN_17517', 0.000000))
+Rule('R223_RXN',
+	prot(name = 'BSU10270_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_195', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU10270_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_196', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'AMP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_R223_RXN', 1.000000), 
+	Parameter('rvs_R223_RXN', 0.000000))
+Rule('RXN_9623',
+	prot(name = 'BSU10270_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PALMITATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU10270_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PALMITYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'AMP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_9623', 1.000000), 
+	Parameter('rvs_RXN_9623', 0.000000))
+Rule('RXN_9644',
+	prot(name = 'BSU10270_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'OLEATE_CPD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU10270_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'OLEOYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'AMP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_9644', 1.000000), 
+	Parameter('rvs_RXN_9644', 0.000000))
+Rule('RXN_9673',
+	prot(name = 'BSU10270_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'LINOLEIC_ACID', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU10270_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_18', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'AMP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_9673', 1.000000), 
+	Parameter('rvs_RXN_9673', 0.000000))
+Rule('_3dot4dot21dot62_RXN',
+	prot(name = 'BSU10300_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'General_Protein_Substrates', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU10300_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'Peptides_holder', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd__3dot4dot21dot62_RXN', 1.000000), 
+	Parameter('rvs__3dot4dot21dot62_RXN', 0.000000))
+Rule('RXN8J2_136',
+	prot(name = 'BSU10530_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'D_glucopyranose_6_phosphate', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU10530_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_3_oxo_D_glucose_6_phosphate', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN8J2_136', 1.000000), 
+	Parameter('rvs_RXN8J2_136', 0.000000))
+Rule('RXN8J2_138',
+	prot(name = 'BSU10540_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_10225', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU10540_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_10224', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN8J2_138', 1.000000), 
+	Parameter('rvs_RXN8J2_138', 0.000000))
+Rule('RXN_8617',
+	prot(name = 'BSU10810_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'FARNESYL_PP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU10810_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_2_TRANS6_TRANS_FARNESOL', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_8617', 1.000000), 
+	Parameter('rvs_RXN_8617', 0.000000))
+Rule('RXN_13779',
+	prot(name = 'BSU10850_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_8050', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU10850_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_14808', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_13779', 1.000000), 
+	Parameter('rvs_RXN_13779', 1.000000))
+Rule('R229_RXN',
+	prot(name = 'BSU10940_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_366', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU10940_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_367', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_R229_RXN', 1.000000), 
+	Parameter('rvs_R229_RXN', 0.000000))
+Rule('_4dot4dot1dot19_RXN',
+	prot(name = 'BSU10950_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_366', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None +
+	None | 
+	prot(name = 'BSU10950_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PHOSPHO_ENOL_PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'SO3', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__4dot4dot1dot19_RXN', 0.000000), 
+	Parameter('rvs__4dot4dot1dot19_RXN', 1.000000))
+Rule('GLUTAMATE_N_ACETYLTRANSFERASE_RXN',
+	prot(name = 'BSU11200_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'GLT', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'N_ALPHA_ACETYLORNITHINE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU11200_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ACETYL_GLU', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'L_ORNITHINE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_GLUTAMATE_N_ACETYLTRANSFERASE_RXN', 1.000000), 
+	Parameter('rvs_GLUTAMATE_N_ACETYLTRANSFERASE_RXN', 0.000000))
+Rule('RXN_12613',
+	prot(name = 'BSU11650_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_13578', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU11650_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'HMP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'AMMONIUM', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_12613', 1.000000), 
+	Parameter('rvs_RXN_12613', 0.000000))
+Rule('THIAMINASE_RXN',
+	prot(name = 'BSU11650_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'THIAMINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU11650_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'THZ', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'HMP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_THIAMINASE_RXN', 1.000000), 
+	Parameter('rvs_THIAMINASE_RXN', 0.000000))
+Rule('RXN_12609',
+	prot(name = 'BSU11660_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_13575', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU11660_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_13576', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_12609', 1.000000), 
+	Parameter('rvs_RXN_12609', 0.000000))
+Rule('RXN_721',
+	prot(name = 'BSU11870_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_667', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CYS', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU11870_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'L_CYSTATHIONINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ACET', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_721', 1.000000), 
+	Parameter('rvs_RXN_721', 0.000000))
+Rule('ACETYLHOMOSER_CYS_RXN',
+	prot(name = 'BSU11870_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_667', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'HS', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU11870_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'HOMO_CYS', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ACET', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_ACETYLHOMOSER_CYS_RXN', 1.000000), 
+	Parameter('rvs_ACETYLHOMOSER_CYS_RXN', 0.000000))
+Rule('NADH_DEHYDROGENASE_RXN',
+	prot(name = 'BSU12290_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Acceptor', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU12290_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Donor_H2', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd_NADH_DEHYDROGENASE_RXN', 1.000000), 
+	Parameter('rvs_NADH_DEHYDROGENASE_RXN', 1.000000))
+Rule('_5dot3dot1dot23_RXN',
+	prot(name = 'BSU13550_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_444', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU13550_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_1063', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__5dot3dot1dot23_RXN', 1.000000), 
+	Parameter('rvs__5dot3dot1dot23_RXN', 0.000000))
+Rule('_5_METHYLTHIORIBOSE_KINASE_RXN',
+	prot(name = 'BSU13560_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_560', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU13560_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_444', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__5_METHYLTHIORIBOSE_KINASE_RXN', 1.000000), 
+	Parameter('rvs__5_METHYLTHIORIBOSE_KINASE_RXN', 0.000000))
+Rule('RXN_15650',
+	prot(name = 'BSU13580_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'MET', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = '_2_KETO_GLUTARAMATE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU13580_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_479', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'GLN', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_15650', 1.000000), 
+	Parameter('rvs_RXN_15650', 1.000000))
+Rule('R83_RXN',
+	prot(name = 'BSU13600_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_2_HYDROXY_3_KETO_5_METHYLTHIO_1_PHOSPHOP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU13600_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_85', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_R83_RXN', 1.000000), 
+	Parameter('rvs_R83_RXN', 0.000000))
+Rule('R147_RXN',
+	prot(name = 'BSU13620_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_85', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'OXYGEN_MOLECULE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU13620_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_479', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'FORMATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_R147_RXN', 1.000000), 
+	Parameter('rvs_R147_RXN', 0.000000))
+Rule('R146_RXN',
+	prot(name = 'BSU13620_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_85', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'OXYGEN_MOLECULE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None +
+	None | 
+	prot(name = 'BSU13620_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_7672', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'FORMATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CARBON_MONOXIDE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_R146_RXN', 1.000000), 
+	Parameter('rvs_R146_RXN', 0.000000))
+Rule('RXN0_6575',
+	prot(name = 'BSU13740_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD0_1699', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU13740_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_13043', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'AMMONIUM', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN0_6575', 1.000000), 
+	Parameter('rvs_RXN0_6575', 0.000000))
+Rule('_2dot7dot3dot9_RXN',
+	prot(name = 'BSU13910_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PHOSPHO_ENOL_PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Hpr_Histidine', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU13910_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Hpr_pi_phospho_L_histidines', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__2dot7dot3dot9_RXN', 1.000000), 
+	Parameter('rvs__2dot7dot3dot9_RXN', 0.000000))
+Rule('RXN_11051',
+	prot(name = 'BSU13930_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_11654', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU13930_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_11643', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_11051', 1.000000), 
+	Parameter('rvs_RXN_11051', 0.000000))
+Rule('RXN_7835',
+	prot(name = 'BSU14060_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_2_trans_4_cis_dienoyl_CoAs', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADPH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU14060_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Trans_3_enoyl_CoAs', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_7835', 1.000000), 
+	Parameter('rvs_RXN_7835', 0.000000))
+Rule('RXN_7911',
+	prot(name = 'BSU14060_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'TRANS_D2_ENOYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU14060_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'TETRADEHYDROACYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADPH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_7911', 0.000000), 
+	Parameter('rvs_RXN_7911', 1.000000))
+Rule('_3dot1dot27dot5_RXN',
+	prot(name = 'BSU14110_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'RNA_Holder', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU14110_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_3_Phosphomonucleotides', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = '_3_phosphooligoribonucleotides', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__3dot1dot27dot5_RXN', 1.000000), 
+	Parameter('rvs__3dot1dot27dot5_RXN', 0.000000))
+Rule('_2dot3dot1dot89_RXN',
+	prot(name = 'BSU14180_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ACETYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'DELTA1_PIPERIDEINE_2_6_DICARBOXYLATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU14180_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CO_A', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'N_ACETYL_L_2_AMINO_6_OXO_PIMELATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd__2dot3dot1dot89_RXN', 1.000000), 
+	Parameter('rvs__2dot3dot1dot89_RXN', 0.000000))
+Rule('PYRUVATE_CARBOXYLASE_RXN',
+	prot(name = 'BSU14860_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'HCO3', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU14860_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'OXALACETIC_ACID', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_PYRUVATE_CARBOXYLASE_RXN', 1.000000), 
+	Parameter('rvs_PYRUVATE_CARBOXYLASE_RXN', 0.000000))
+Rule('RXN_18399',
+	prot(name = 'BSU14870_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'CPD_17063', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'OXYGEN_MOLECULE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Donor_H2', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU14870_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'CPD_13734', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Acceptor', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_18399', 1.000000), 
+	Parameter('rvs_RXN_18399', 0.000000))
+Rule('RXN_11302',
+	prot(name = 'BSU15170_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'CPD_12231', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU15170_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'CPD_12261', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'D_ALANINE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_11302', 1.000000), 
+	Parameter('rvs_RXN_11302', 0.000000))
+Rule('RXN_9671',
+	prot(name = 'BSU15190_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'UDP_NAcMur_Peptides', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_9646', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU15190_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'NAcMur_Peptide_Undecaprenols', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'UMP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_9671', 1.000000), 
+	Parameter('rvs_RXN_9671', 0.000000))
+Rule('RXN_12612',
+	prot(name = 'BSU15350_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_13577', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU15350_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_13578', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'FORMATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_12612', 1.000000), 
+	Parameter('rvs_RXN_12612', 0.000000))
+Rule('_2dot7dot11dot13_RXN',
+	prot(name = 'BSU15770_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'General_Protein_Substrates', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU15770_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'General_Phos_Protein_Substrates', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__2dot7dot11dot13_RXN', 1.000000), 
+	Parameter('rvs__2dot7dot11dot13_RXN', 0.000000))
+Rule('THIAMIN_PYROPHOSPHOKINASE_RXN',
+	prot(name = 'BSU15800_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'THIAMINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU15800_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'THIAMINE_PYROPHOSPHATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'AMP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_THIAMIN_PYROPHOSPHOKINASE_RXN', 1.000000), 
+	Parameter('rvs_THIAMIN_PYROPHOSPHOKINASE_RXN', 0.000000))
+Rule('RXN_9518',
+	prot(name = 'BSU15910_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'R_3_hydroxyhexanoyl_ACPs', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU15910_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_3_oxo_hexanoyl_ACPs', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADPH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_9518', 0.000000), 
+	Parameter('rvs_RXN_9518', 1.000000))
+Rule('RXN_9524',
+	prot(name = 'BSU15910_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_3_Hydroxy_octanoyl_ACPs', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU15910_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_3_Oxo_octanoyl_ACPs', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADPH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_9524', 0.000000), 
+	Parameter('rvs_RXN_9524', 1.000000))
+Rule('RXN_9528',
+	prot(name = 'BSU15910_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Beta_hydroxydecanoyl_ACPs', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU15910_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_3_oxo_decanoyl_ACPs', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADPH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_9528', 0.000000), 
+	Parameter('rvs_RXN_9528', 1.000000))
+Rule('RXN_9532',
+	prot(name = 'BSU15910_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'R_3_hydroxydodecanoyl_ACPs', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU15910_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_3_oxo_dodecanoyl_ACPs', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADPH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_9532', 0.000000), 
+	Parameter('rvs_RXN_9532', 1.000000))
+Rule('RXN_9536',
+	prot(name = 'BSU15910_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'R_3_hydroxymyristoyl_ACPs', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU15910_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_3_oxo_myristoyl_ACPs', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADPH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_9536', 0.000000), 
+	Parameter('rvs_RXN_9536', 1.000000))
+Rule('RXN_9540',
+	prot(name = 'BSU15910_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'R_3_Hydroxypalmitoyl_ACPs', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU15910_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_3_oxo_palmitoyl_ACPs', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADPH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_9540', 0.000000), 
+	Parameter('rvs_RXN_9540', 1.000000))
+Rule('_2dot1dot1dot74_RXN',
+	prot(name = 'BSU16130_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'METHYLENE_THF_GLU_N', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Uracil_54_in_tRNA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'FADH2', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU16130_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'THF_GLU_N', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'tRNA_containing_5Me_uridine54', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'FAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__2dot1dot1dot74_RXN', 1.000000), 
+	Parameter('rvs__2dot1dot1dot74_RXN', 0.000000))
+Rule('RXN_8993',
+	prot(name = 'BSU16530_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD0_1028', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'DELTA3_ISOPENTENYL_PP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU16530_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_9457', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_8993', 1.000000), 
+	Parameter('rvs_RXN_8993', 0.000000))
+Rule('RXN_8994',
+	prot(name = 'BSU16530_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_9457', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'DELTA3_ISOPENTENYL_PP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU16530_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_9456', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_8994', 1.000000), 
+	Parameter('rvs_RXN_8994', 0.000000))
+Rule('RXN_8995',
+	prot(name = 'BSU16530_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_9456', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'DELTA3_ISOPENTENYL_PP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU16530_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_9455', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_8995', 1.000000), 
+	Parameter('rvs_RXN_8995', 0.000000))
+Rule('RXN_8996',
+	prot(name = 'BSU16530_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_9455', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'DELTA3_ISOPENTENYL_PP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU16530_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_9454', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_8996', 1.000000), 
+	Parameter('rvs_RXN_8996', 0.000000))
+Rule('RXN_8997',
+	prot(name = 'BSU16530_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_9454', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'DELTA3_ISOPENTENYL_PP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU16530_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_9453', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_8997', 1.000000), 
+	Parameter('rvs_RXN_8997', 0.000000))
+Rule('RXN_8998',
+	prot(name = 'BSU16530_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_9453', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'DELTA3_ISOPENTENYL_PP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU16530_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_9452', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_8998', 1.000000), 
+	Parameter('rvs_RXN_8998', 0.000000))
+Rule('RXN0_5180',
+	prot(name = 'BSU16530_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'FARNESYL_PP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'DELTA3_ISOPENTENYL_PP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU16530_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD0_1028', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN0_5180', 1.000000), 
+	Parameter('rvs_RXN0_5180', 0.000000))
+Rule('_3dot2dot1dot37_RXN',
+	prot(name = 'BSU17580_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = '_1_4_D_xylooligosaccharides', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU17580_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'BETA_D_XYLOSE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd__3dot2dot1dot37_RXN', 1.000000), 
+	Parameter('rvs__3dot2dot1dot37_RXN', 0.000000))
+Rule('RXN_9583',
+	prot(name = 'BSU17890_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_15895', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_10226', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU17890_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'D_SEDOHEPTULOSE_7_P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_10227', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_9583', 1.000000), 
+	Parameter('rvs_RXN_9583', 0.000000))
+Rule('RXN_14047',
+	prot(name = 'BSU18000_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CIT', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU18000_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'THREO_DS_ISO_CITRATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_14047', 1.000000), 
+	Parameter('rvs_RXN_14047', 1.000000))
+Rule('RXN_9591',
+	prot(name = 'BSU18070_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'GLYCEROL_3P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Acyl_Phosphates', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU18070_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'ACYL_SN_GLYCEROL_3P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_9591', 1.000000), 
+	Parameter('rvs_RXN_9591', 0.000000))
+Rule('_3dot2dot1dot136_RXN',
+	prot(name = 'BSU18150_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'Glucuronoarabinoxylans', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU18150_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'Glucuronoarabinoxylan_Oligosaccharides', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd__3dot2dot1dot136_RXN', 1.000000), 
+	Parameter('rvs__3dot2dot1dot136_RXN', 0.000000))
+Rule('RXN_12344',
+	prot(name = 'BSU18150_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'Glucuronoxylans', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU18150_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'Glucuronoxylan_Oligosaccharides', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd_RXN_12344', 1.000000), 
+	Parameter('rvs_RXN_12344', 0.000000))
+Rule('_3dot2dot1dot8_RXN',
+	prot(name = 'BSU18160_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = '_1_4_beta_Xylan', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU18160_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = '_1_4_D_xylooligosaccharides', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd__3dot2dot1dot8_RXN', 1.000000), 
+	Parameter('rvs__3dot2dot1dot8_RXN', 0.000000))
+Rule('METHYLCROTONYL_COA_CARBOXYLASE_RXN',
+	prot(name = 'BSU18210_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_3_METHYL_CROTONYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'HCO3', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU18210_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'TRANS_3_METHYL_GLUTACONYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_METHYLCROTONYL_COA_CARBOXYLASE_RXN', 1.000000), 
+	Parameter('rvs_METHYLCROTONYL_COA_CARBOXYLASE_RXN', 0.000000))
+Rule('HYDROXYMETHYLGLUTARYL_COA_LYASE_RXN',
+	prot(name = 'BSU18230_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_3_HYDROXY_3_METHYL_GLUTARYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU18230_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_3_KETOBUTYRATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ACETYL_COA', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_HYDROXYMETHYLGLUTARYL_COA_LYASE_RXN', 1.000000), 
+	Parameter('rvs_HYDROXYMETHYLGLUTARYL_COA_LYASE_RXN', 0.000000))
+Rule('BUTYRYL_COA_DEHYDROGENASE_RXN',
+	prot(name = 'BSU18260_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'BUTYRYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ETF_Oxidized', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU18260_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CROTONYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ETF_Reduced', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd_BUTYRYL_COA_DEHYDROGENASE_RXN', 0.000000), 
+	Parameter('rvs_BUTYRYL_COA_DEHYDROGENASE_RXN', 1.000000))
+Rule('RXN_6601',
+	prot(name = 'BSU18410_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'GLUTATHIONE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Amino_Acids_20', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU18410_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'CYS_GLY', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = '_5_L_GLUTAMYL_L_AMINO_ACID', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_6601', 1.000000), 
+	Parameter('rvs_RXN_6601', 0.000000))
+Rule('RXN_8505',
+	prot(name = 'BSU18620_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'OXYGEN_MOLECULE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'FADH2', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = '_4_HYDROXYPHENYLACETATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU18620_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_782', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'FAD', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_8505', 1.000000), 
+	Parameter('rvs_RXN_8505', 0.000000))
+Rule('_4dot2dot2dot10_RXN',
+	prot(name = 'BSU18650_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'Pectin', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU18650_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'CPD_12980', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__4dot2dot2dot10_RXN', 1.000000), 
+	Parameter('rvs__4dot2dot2dot10_RXN', 0.000000))
+Rule('OXALATE_DECARBOXYLASE_RXN',
+	prot(name = 'BSU18670_MONOMER', loc = 'wall', strain = 'BSUB') +
+	met(name = 'OXALATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU18670_MONOMER', loc = 'wall', strain = 'BSUB') +
+	met(name = 'FORMATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CARBON_DIOXIDE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_OXALATE_DECARBOXYLASE_RXN', 1.000000), 
+	Parameter('rvs_OXALATE_DECARBOXYLASE_RXN', 0.000000))
+Rule('_5dot4dot99dot17_RXN',
+	prot(name = 'BSU19320_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'SQUALENE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU19320_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'HOP_2229_ENE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__5dot4dot99dot17_RXN', 1.000000), 
+	Parameter('rvs__5dot4dot99dot17_RXN', 0.000000))
+Rule('NITRIC_OXIDE_REDUCTASE_RXN',
+	prot(name = 'BSU19390_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'NITRIC_OXIDE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Cytochromes_C_Reduced', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU19390_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NITROUS_OXIDE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Cytochromes_C_Oxidized', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_NITRIC_OXIDE_REDUCTASE_RXN', 1.000000), 
+	Parameter('rvs_NITRIC_OXIDE_REDUCTASE_RXN', 0.000000))
+Rule('RXN8J2_2',
+	prot(name = 'BSU19460_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD8J2_1', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU19460_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD8J2_2', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ACET', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN8J2_2', 1.000000), 
+	Parameter('rvs_RXN8J2_2', 0.000000))
+Rule('RXN_18530',
+	prot(name = 'BSU19700_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_233', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ACETYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU19700_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_19847', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_18530', 1.000000), 
+	Parameter('rvs_RXN_18530', 0.000000))
+Rule('VAGL_RXN',
+	prot(name = 'BSU19740_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_5_AMINOPENTANOATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = '_2_KETOGLUTARATE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU19740_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'GLT', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_280', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_VAGL_RXN', 1.000000), 
+	Parameter('rvs_VAGL_RXN', 1.000000))
+Rule('AMINOGLYCOSIDE_N3_ACETYLTRANSFERASE_RXN',
+	prot(name = 'BSU21630_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Deoxystreptamine_Antib', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ACETYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU21630_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'N3_Acetal_deoxystreptamine_antib', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_AMINOGLYCOSIDE_N3_ACETYLTRANSFERASE_RXN', 1.000000), 
+	Parameter('rvs_AMINOGLYCOSIDE_N3_ACETYLTRANSFERASE_RXN', 0.000000))
+Rule('RXN_8669',
+	prot(name = 'BSU21680_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'MET', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Ox_Thioredoxin', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU21680_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_8989', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Red_Thioredoxin', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd_RXN_8669', 1.000000), 
+	Parameter('rvs_RXN_8669', 0.000000))
+Rule('PEROXID_RXN',
+	prot(name = 'BSU21900_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Phenolic_Donors', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'HYDROGEN_PEROXIDE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU21900_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Phenoxyl_rad_of_phenolic_donors', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_PEROXID_RXN', 1.000000), 
+	Parameter('rvs_PEROXID_RXN', 0.000000))
+Rule('HOMOSERINE_O_ACETYLTRANSFERASE_RXN',
+	prot(name = 'BSU21910_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'HOMO_SER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ACETYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU21910_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_667', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_HOMOSERINE_O_ACETYLTRANSFERASE_RXN', 1.000000), 
+	Parameter('rvs_HOMOSERINE_O_ACETYLTRANSFERASE_RXN', 0.000000))
+Rule('KDUD_RXN',
+	prot(name = 'BSU22140_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'DE_O_GLUCONATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU22140_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'DE_O_K_GLUCONATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_KDUD_RXN', 1.000000), 
+	Parameter('rvs_KDUD_RXN', 0.000000))
+Rule('_2dot4dot1dot129_RXN',
+	prot(name = 'BSU22320_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'C6', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'C6', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU22320_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'UNDECAPRENYL_DIPHOSPHATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'C6', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__2dot4dot1dot129_RXN', 1.000000), 
+	Parameter('rvs__2dot4dot1dot129_RXN', 0.000000))
+Rule('_3_SULFINOALANINE_AMINOTRANSFERASE_RXN',
+	prot(name = 'BSU22370_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_3_SULFINOALANINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = '_2_KETOGLUTARATE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU22370_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'GLT', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = '_3_SULFINYL_PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__3_SULFINOALANINE_AMINOTRANSFERASE_RXN', 1.000000), 
+	Parameter('rvs__3_SULFINOALANINE_AMINOTRANSFERASE_RXN', 1.000000))
+Rule('RXN_6401',
+	prot(name = 'BSU22420_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PANTOYL_LACTONE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'B_ALANINE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU22420_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PANTOTHENATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_6401', 1.000000), 
+	Parameter('rvs_RXN_6401', 1.000000))
+Rule('RXN_9191',
+	prot(name = 'BSU22750_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'S_ADENOSYLMETHIONINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_12117', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU22750_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_12125', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADENOSYL_HOMO_CYS', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_9191', 1.000000), 
+	Parameter('rvs_RXN_9191', 0.000000))
+Rule('GLUTAMATE_DEHYDROGENASE_RXN',
+	prot(name = 'BSU22960_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'GLT', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU22960_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_2_KETOGLUTARATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'AMMONIUM', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_GLUTAMATE_DEHYDROGENASE_RXN', 1.000000), 
+	Parameter('rvs_GLUTAMATE_DEHYDROGENASE_RXN', 0.000000))
+Rule('CYCLOHEXANONE_DEHYDROGENASE_RXN',
+	prot(name = 'BSU23820_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CYCLOHEXANONE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Acceptor', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU23820_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_282', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Donor_H2', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_CYCLOHEXANONE_DEHYDROGENASE_RXN', 0.000000), 
+	Parameter('rvs_CYCLOHEXANONE_DEHYDROGENASE_RXN', 1.000000))
+Rule('ACETYL_COA_CARBOXYLTRANSFER_RXN',
+	prot(name = 'BSU23920_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ACETYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'HCO3', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU23920_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'MALONYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_ACETYL_COA_CARBOXYLTRANSFER_RXN', 1.000000), 
+	Parameter('rvs_ACETYL_COA_CARBOXYLTRANSFER_RXN', 0.000000))
+Rule('_2KETO_4METHYL_PENTANOATE_DEHYDROG_RXN',
+	prot(name = 'BSU24030_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_2K_4CH3_PENTANOATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU24030_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ISOVALERYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CARBON_DIOXIDE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__2KETO_4METHYL_PENTANOATE_DEHYDROG_RXN', 1.000000), 
+	Parameter('rvs__2KETO_4METHYL_PENTANOATE_DEHYDROG_RXN', 0.000000))
+Rule('_2KETO_3METHYLVALERATE_RXN',
+	prot(name = 'BSU24030_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_2_KETO_3_METHYL_VALERATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU24030_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_2_METHYL_BUTYRYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CARBON_DIOXIDE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__2KETO_3METHYLVALERATE_RXN', 1.000000), 
+	Parameter('rvs__2KETO_3METHYLVALERATE_RXN', 1.000000))
+Rule('RXN_7790',
+	prot(name = 'BSU24030_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_2_OXOBUTANOATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU24030_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROPIONYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CARBON_DIOXIDE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_7790', 1.000000), 
+	Parameter('rvs_RXN_7790', 0.000000))
+Rule('_1dot2dot1dot25_RXN',
+	prot(name = 'BSU24030_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_2_KETO_ISOVALERATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU24030_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ISOBUTYRYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CARBON_DIOXIDE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__1dot2dot1dot25_RXN', 1.000000), 
+	Parameter('rvs__1dot2dot1dot25_RXN', 0.000000))
+Rule('_2dot3dot1dot168_RXN',
+	prot(name = 'BSU24030_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ISOBUTYRYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'BCAA_dehydrogenase_DH_lipoyl', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU24030_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'BCAA_dehydrogenase_2MP_DH_lipoyl', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__2dot3dot1dot168_RXN', 1.000000), 
+	Parameter('rvs__2dot3dot1dot168_RXN', 1.000000))
+Rule('_1dot2dot4dot4_RXN',
+	prot(name = 'BSU24040_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_2_KETO_ISOVALERATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'BCAA_dehydrogenase_lipoyl', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU24040_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'BCAA_dehydrogenase_2MP_DH_lipoyl', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CARBON_DIOXIDE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd__1dot2dot4dot4_RXN', 1.000000), 
+	Parameter('rvs__1dot2dot4dot4_RXN', 0.000000))
+Rule('KETOISOCAPROATE_RXN',
+	prot(name = 'BSU24040_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_2K_4CH3_PENTANOATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'BCAA_dehydrogenase_lipoyl', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU24040_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'BCAA_dehydrogenase_3MB_DH_lipoyl', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CARBON_DIOXIDE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd_KETOISOCAPROATE_RXN', 1.000000), 
+	Parameter('rvs_KETOISOCAPROATE_RXN', 0.000000))
+Rule('METHYLVALERATE_RXN',
+	prot(name = 'BSU24040_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_2_KETO_3_METHYL_VALERATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'BCAA_dehydrogenase_lipoyl', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU24040_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'BCAA_dehydrogenase_2MB_DH_lipoyl', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CARBON_DIOXIDE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd_METHYLVALERATE_RXN', 1.000000), 
+	Parameter('rvs_METHYLVALERATE_RXN', 1.000000))
+Rule('BRANCHED_CHAIN_FATTY_ACID_KINASE_RXN',
+	prot(name = 'BSU24070_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ISOBUTYRATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU24070_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ISOBUTANOATE_P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_BRANCHED_CHAIN_FATTY_ACID_KINASE_RXN', 1.000000), 
+	Parameter('rvs_BRANCHED_CHAIN_FATTY_ACID_KINASE_RXN', 0.000000))
+Rule('PHOSPHATE_BUTYRYLTRANSFERASE_RXN',
+	prot(name = 'BSU24090_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'BUTYRYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU24090_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'BUTYRYL_P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_PHOSPHATE_BUTYRYLTRANSFERASE_RXN', 1.000000), 
+	Parameter('rvs_PHOSPHATE_BUTYRYLTRANSFERASE_RXN', 0.000000))
+Rule('_3_HYDROXYBUTYRYL_COA_DEHYDROGENASE_RXN',
+	prot(name = 'BSU24160_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'NADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'S_3_HYDROXYBUTANOYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU24160_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ACETOACETYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADPH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__3_HYDROXYBUTYRYL_COA_DEHYDROGENASE_RXN', 0.000000), 
+	Parameter('rvs__3_HYDROXYBUTYRYL_COA_DEHYDROGENASE_RXN', 1.000000))
+Rule('RXN_13037',
+	prot(name = 'BSU24530_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Octanoyl_ACPs', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Gcv_H', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU24530_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Octanoylated_Gcv_H', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ACP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_13037', 1.000000), 
+	Parameter('rvs_RXN_13037', 0.000000))
+Rule('RXN0_882',
+	prot(name = 'BSU25070_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'HYDROXY_METHYL_BUTENYL_DIP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Oxidized_ferredoxins', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU25070_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_2C_METH_D_ERYTHRITOL_CYCLODIPHOSPHATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Reduced_ferredoxins', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN0_882', 1.000000), 
+	Parameter('rvs_RXN0_882', 0.000000))
+Rule('NUCLEOTIDASE_RXN',
+	prot(name = 'BSU25090_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Nucleotides', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU25090_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Nucleosides', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_NUCLEOTIDASE_RXN', 1.000000), 
+	Parameter('rvs_NUCLEOTIDASE_RXN', 0.000000))
+Rule('RXN_12472',
+	prot(name = 'BSU25180_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'S_ADENOSYLMETHIONINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'tRNA_Adenine_22', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU25180_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'tRNA_Containing_N1_MethylAdenine_22', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADENOSYL_HOMO_CYS', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_12472', 1.000000), 
+	Parameter('rvs_RXN_12472', 0.000000))
+Rule('UNDECAPRENOL_KINASE_RXN',
+	prot(name = 'BSU25310_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'CPD_9647', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU25310_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_9646', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_UNDECAPRENOL_KINASE_RXN', 1.000000), 
+	Parameter('rvs_UNDECAPRENOL_KINASE_RXN', 0.000000))
+Rule('RXN8J2_8',
+	prot(name = 'BSU25430_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'threonylcarbamoyladenosine_tRNAs', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU25430_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'metthio_threonylcarbamoylated_tRNAs', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN8J2_8', 1.000000), 
+	Parameter('rvs_RXN8J2_8', 0.000000))
+Rule('DCMP_DEAMINASE_RXN',
+	prot(name = 'BSU25580_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'DCMP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU25580_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'AMMONIUM', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'DUMP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd_DCMP_DEAMINASE_RXN', 1.000000), 
+	Parameter('rvs_DCMP_DEAMINASE_RXN', 0.000000))
+Rule('RXN_9939',
+	prot(name = 'BSU26600_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'SPERMINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ACETYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU26600_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'N1_ACETYLSPERMINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_9939', 1.000000), 
+	Parameter('rvs_RXN_9939', 0.000000))
+Rule('_3dot2dot1dot132_RXN',
+	prot(name = 'BSU26890_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'Chitosan', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU26890_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'Chitosan_fragments', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd__3dot2dot1dot132_RXN', 1.000000), 
+	Parameter('rvs__3dot2dot1dot132_RXN', 0.000000))
+Rule('RXN_18814',
+	prot(name = 'BSU27010_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_20111', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU27010_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_20112', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_18814', 1.000000), 
+	Parameter('rvs_RXN_18814', 0.000000))
+Rule('_3dot2dot1dot65_RXN',
+	prot(name = 'BSU27030_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'Levan', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU27030_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'Fructooligosaccharides', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd__3dot2dot1dot65_RXN', 1.000000), 
+	Parameter('rvs__3dot2dot1dot65_RXN', 0.000000))
+Rule('RXN_15130',
+	prot(name = 'BSU27250_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'L_CYSTATHIONINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU27250_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CYS', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = '_2_OXOBUTANOATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'AMMONIUM', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_15130', 1.000000), 
+	Parameter('rvs_RXN_15130', 0.000000))
+Rule('HOMOCYSTEINE_DESULFHYDRASE_RXN',
+	prot(name = 'BSU27250_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'HOMO_CYS', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU27250_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'HS', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = '_2_OXOBUTANOATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'AMMONIUM', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_HOMOCYSTEINE_DESULFHYDRASE_RXN', 1.000000), 
+	Parameter('rvs_HOMOCYSTEINE_DESULFHYDRASE_RXN', 0.000000))
+Rule('RXN8J2_90',
+	prot(name = 'BSU27260_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ACETYLSERINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'HOMO_CYS', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU27260_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'L_CYSTATHIONINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ACET', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN8J2_90', 1.000000), 
+	Parameter('rvs_RXN8J2_90', 0.000000))
+Rule('RXN_3742',
+	prot(name = 'BSU28080_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Folatepolyglutamate_n', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'GLT', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU28080_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Folatepolyglutamate_n', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_3742', 1.000000), 
+	Parameter('rvs_RXN_3742', 0.000000))
+Rule('RXN_6102',
+	prot(name = 'BSU28080_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'THF', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'GLT', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU28080_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_5725', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_6102', 1.000000), 
+	Parameter('rvs_RXN_6102', 0.000000))
+Rule('_3_ISOPROPYLMALDEHYDROG_RXN',
+	prot(name = 'BSU28270_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_2_D_THREO_HYDROXY_3_CARBOXY_ISOCAPROATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU28270_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_7100', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__3_ISOPROPYLMALDEHYDROG_RXN', 1.000000), 
+	Parameter('rvs__3_ISOPROPYLMALDEHYDROG_RXN', 0.000000))
+Rule('NUCLEOSIDE_TRIPHOSPHATASE_RXN',
+	prot(name = 'BSU28360_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Nucleoside_Triphosphates', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU28360_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Nucleoside_Diphosphates', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_NUCLEOSIDE_TRIPHOSPHATASE_RXN', 1.000000), 
+	Parameter('rvs_NUCLEOSIDE_TRIPHOSPHATASE_RXN', 0.000000))
+Rule('_3dot2dot1dot55_RXN',
+	prot(name = 'BSU28510_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_1_5_L_Arabinooligosaccharides', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU28510_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_12045', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd__3dot2dot1dot55_RXN', 1.000000), 
+	Parameter('rvs__3dot2dot1dot55_RXN', 0.000000))
+Rule('METHYLACYLYLCOA_HYDROXY_RXN',
+	prot(name = 'BSU28540_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_12173', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU28540_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'METHACRYLYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_METHYLACYLYLCOA_HYDROXY_RXN', 0.000000), 
+	Parameter('rvs_METHYLACYLYLCOA_HYDROXY_RXN', 1.000000))
+Rule('TIGLYLCOA_HYDROXY_RXN',
+	prot(name = 'BSU28540_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_2_METHYL_3_HYDROXY_BUTYRYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU28540_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_1083', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TIGLYLCOA_HYDROXY_RXN', 0.000000), 
+	Parameter('rvs_TIGLYLCOA_HYDROXY_RXN', 1.000000))
+Rule('_1dot1dot1dot211_RXN',
+	prot(name = 'BSU28540_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Long_Chain_3S_Hydroxyacyl_CoAs', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU28540_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Long_Chain_oxoacyl_CoAs', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__1dot1dot1dot211_RXN', 1.000000), 
+	Parameter('rvs__1dot1dot1dot211_RXN', 1.000000))
+Rule('RIBULOKIN_RXN',
+	prot(name = 'BSU28790_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Ribuloses', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU28790_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Ribulose_phosphates', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RIBULOKIN_RXN', 1.000000), 
+	Parameter('rvs_RIBULOKIN_RXN', 0.000000))
+Rule('_3dot2dot1dot99_RXN',
+	prot(name = 'BSU28810_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'L_Arabinans', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU28810_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = '_1_5_L_Arabinooligosaccharides', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd__3dot2dot1dot99_RXN', 1.000000), 
+	Parameter('rvs__3dot2dot1dot99_RXN', 0.000000))
+Rule('_1dot2dot1dot13_RXN',
+	prot(name = 'BSU29020_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'GAP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU29020_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'DPG', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADPH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__1dot2dot1dot13_RXN', 0.000000), 
+	Parameter('rvs__1dot2dot1dot13_RXN', 1.000000))
+Rule('RXN_8642',
+	prot(name = 'BSU29130_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'OXALO_SUCCINATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU29130_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_2_KETOGLUTARATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CARBON_DIOXIDE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_8642', 1.000000), 
+	Parameter('rvs_RXN_8642', 1.000000))
+Rule('RXN_9951',
+	prot(name = 'BSU29130_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'THREO_DS_ISO_CITRATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU29130_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'OXALO_SUCCINATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADPH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_9951', 1.000000), 
+	Parameter('rvs_RXN_9951', 1.000000))
+Rule('RXN_22',
+	prot(name = 'BSU29440_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CANAVANINOSUCCINATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU29440_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CANAVANINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'FUM', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_22', 1.000000), 
+	Parameter('rvs_RXN_22', 0.000000))
+Rule('RXN_10',
+	prot(name = 'BSU29450_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'O_UREIDOHOMOSERINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'L_ASPARTATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU29450_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CANAVANINOSUCCINATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'AMP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_10', 1.000000), 
+	Parameter('rvs_RXN_10', 0.000000))
+Rule('RXN_12621',
+	prot(name = 'BSU29590_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'L_Cysteine_Desulfurase_persulfide', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Adenylated_ThiS_Proteins', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Donor_H2', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None +
+	None | 
+	prot(name = 'BSU29590_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Thiocarboxyadenylated_ThiS_Proteins', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Cysteine_Desulfurase_L_cysteine', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'AMP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Acceptor', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_12621', 1.000000), 
+	Parameter('rvs_RXN_12621', 0.000000))
+Rule('_3dot4dot11dot7_RXN',
+	prot(name = 'BSU29860_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'L_Glutamyl_Peptides', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU29860_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'GLT', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'General_Protein_Substrates', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__3dot4dot11dot7_RXN', 1.000000), 
+	Parameter('rvs__3dot4dot11dot7_RXN', 0.000000))
+Rule('RXN_1824',
+	prot(name = 'BSU29930_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Large_branched_glucans', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU29930_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Long_linear_glucans', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd_RXN_1824', 1.000000), 
+	Parameter('rvs_RXN_1824', 0.000000))
+Rule('_3dot4dot13dot19_RXN',
+	prot(name = 'BSU29980_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'DIPEPTIDES', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU29980_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Amino_Acids_20', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd__3dot4dot13dot19_RXN', 1.000000), 
+	Parameter('rvs__3dot4dot13dot19_RXN', 0.000000))
+Rule('RXN_13834',
+	prot(name = 'BSU30190_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Long_Chain_Acyl_ACPs', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Reduced_flavodoxins', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'OXYGEN_MOLECULE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None +
+	None | 
+	prot(name = 'BSU30190_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Pimeloyl_ACPs', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'n_Alkanals', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Oxidized_flavodoxins', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_13834', 1.000000), 
+	Parameter('rvs_RXN_13834', 0.000000))
+Rule('RXN_14930',
+	prot(name = 'BSU30230_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'LYS', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = '_8_AMINO_7_OXONONANOATE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU30230_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ALLYSINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'DIAMINONONANOATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_14930', 1.000000), 
+	Parameter('rvs_RXN_14930', 0.000000))
+Rule('RXN_12199',
+	prot(name = 'BSU30630_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'UTP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU30630_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'UMP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_12199', 1.000000), 
+	Parameter('rvs_RXN_12199', 0.000000))
+Rule('RXN_12200',
+	prot(name = 'BSU30630_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CTP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU30630_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CMP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_12200', 1.000000), 
+	Parameter('rvs_RXN_12200', 0.000000))
+Rule('GLYMALTOPHOSPHORYL_RXN',
+	prot(name = 'BSU30940_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Glycogens', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU30940_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'GLC_1_P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'MALTOTETRAOSE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_GLYMALTOPHOSPHORYL_RXN', 1.000000), 
+	Parameter('rvs_GLYMALTOPHOSPHORYL_RXN', 0.000000))
+Rule('RXN_1826',
+	prot(name = 'BSU30940_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Long_linear_glucans', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU30940_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Long_linear_glucans', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'GLC_1_P', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_1826', 1.000000), 
+	Parameter('rvs_RXN_1826', 0.000000))
+Rule('RXN0_5182',
+	prot(name = 'BSU30940_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'MALTOTETRAOSE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU30940_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'MALTOTRIOSE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'GLC_1_P', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN0_5182', 1.000000), 
+	Parameter('rvs_RXN0_5182', 0.000000))
+Rule('RXN0_5184',
+	prot(name = 'BSU30940_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_1_4_alpha_D_Glucan', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU30940_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_1_4_alpha_D_Glucan', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'GLC_1_P', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN0_5184', 1.000000), 
+	Parameter('rvs_RXN0_5184', 0.000000))
+Rule('RXN_7669',
+	prot(name = 'BSU30980_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'POLY_GLUCOSYLATED_GLYCOGENINS', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU30980_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Glycogens', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_7669', 1.000000), 
+	Parameter('rvs_RXN_7669', 0.000000))
+Rule('RXN_7710',
+	prot(name = 'BSU30980_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_1_4_alpha_D_Glucan', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU30980_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Starch', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_7710', 1.000000), 
+	Parameter('rvs_RXN_7710', 0.000000))
+Rule('RXN_6021',
+	prot(name = 'BSU31050_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CHOLINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU31050_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'BETAINE_ALDEHYDE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_6021', 1.000000), 
+	Parameter('rvs_RXN_6021', 0.000000))
+Rule('RXN8J2_144',
+	prot(name = 'BSU31120_MONOMER', loc = 'wall', strain = 'BSUB') +
+	met(name = 'C6', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU31120_MONOMER', loc = 'wall', strain = 'BSUB') +
+	met(name = 'C5', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'N_ACETYL_D_GLUCOSAMINE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN8J2_144', 1.000000), 
+	Parameter('rvs_RXN8J2_144', 0.000000))
+Rule('CYSTEINE_DIOXYGENASE_RXN',
+	prot(name = 'BSU31140_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'OXYGEN_MOLECULE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CYS', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU31140_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = '_3_SULFINOALANINE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_CYSTEINE_DIOXYGENASE_RXN', 1.000000), 
+	Parameter('rvs_CYSTEINE_DIOXYGENASE_RXN', 0.000000))
+Rule('RXN_14347',
+	prot(name = 'BSU31170_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_8050', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU31170_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_14808', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADPH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_14347', 1.000000), 
+	Parameter('rvs_RXN_14347', 1.000000))
+Rule('_2dot3dot2dot13_RXN',
+	prot(name = 'BSU31270_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Protein_L_glutamine', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Protein_L_lysine', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU31270_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Protein_N6_5_glutamyl_lysine_crosslinks', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'AMMONIUM', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__2dot3dot2dot13_RXN', 1.000000), 
+	Parameter('rvs__2dot3dot2dot13_RXN', 0.000000))
+Rule('_3dot2dot1dot10_RXN',
+	prot(name = 'BSU31290_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Isomaltose', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU31290_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ALPHA_GLUCOSE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Glucopyranose', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__3dot2dot1dot10_RXN', 1.000000), 
+	Parameter('rvs__3dot2dot1dot10_RXN', 0.000000))
+Rule('RXN_6182',
+	prot(name = 'BSU31350_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ALPHA_GLC_6_P', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU31350_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'FRUCTOSE_6P', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_6182', 1.000000), 
+	Parameter('rvs_RXN_6182', 0.000000))
+Rule('RXN_161',
+	prot(name = 'BSU31360_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'BUTANOL', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU31360_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'BUTANAL', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_161', 1.000000), 
+	Parameter('rvs_RXN_161', 1.000000))
+Rule('_2dot7dot13dot3_RXN',
+	prot(name = 'BSU31450_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Protein_Histidines', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU31450_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Protein_phospho_L_histidines', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__2dot7dot13dot3_RXN', 1.000000), 
+	Parameter('rvs__2dot7dot13dot3_RXN', 0.000000))
+Rule('ALANINE_DEHYDROGENASE_RXN',
+	prot(name = 'BSU31930_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'L_ALPHA_ALANINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU31930_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'AMMONIUM', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_ALANINE_DEHYDROGENASE_RXN', 1.000000), 
+	Parameter('rvs_ALANINE_DEHYDROGENASE_RXN', 0.000000))
+Rule('RXN_19461',
+	prot(name = 'BSU31960_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'DHB_glycyl_DhbF', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Threonyl_DhbF', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU31960_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'DHB_glycyl_arginyl_DhbF', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'DhbF', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_19461', 1.000000), 
+	Parameter('rvs_RXN_19461', 0.000000))
+Rule('RXN_19462',
+	prot(name = 'BSU31960_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'DHB_glycyl_arginyl_DhbF', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU31960_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_9984', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'DhbF', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_19462', 1.000000), 
+	Parameter('rvs_RXN_19462', 0.000000))
+Rule('RXN_19460',
+	prot(name = 'BSU31960_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_23_dihydroxybenzoyl_DhbB', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Glycyl_DhbF', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU31960_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'DHB_glycyl_DhbF', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Holo_DhbB', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_19460', 1.000000), 
+	Parameter('rvs_RXN_19460', 0.000000))
+Rule('RXN_19451',
+	prot(name = 'BSU31960_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'THR', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'DhbF', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU31960_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Threonyl_DhbF', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'AMP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_19451', 1.000000), 
+	Parameter('rvs_RXN_19451', 0.000000))
+Rule('RXN_19459',
+	prot(name = 'BSU31960_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'GLY', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'DhbF', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU31960_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Glycyl_DhbF', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'AMP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_19459', 1.000000), 
+	Parameter('rvs_RXN_19459', 0.000000))
+Rule('RXN_9374',
+	prot(name = 'BSU31960_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_2_3_DIHYDROXYBENZOATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'GLY', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'THR', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU31960_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_9984', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'AMP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_9374', 1.000000), 
+	Parameter('rvs_RXN_9374', 0.000000))
+Rule('SULFITE_OXIDASE_RXN',
+	prot(name = 'BSU32020_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'SO3', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'OXYGEN_MOLECULE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU32020_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'HYDROGEN_PEROXIDE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'SULFATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd_SULFITE_OXIDASE_RXN', 1.000000), 
+	Parameter('rvs_SULFITE_OXIDASE_RXN', 0.000000))
+Rule('ACYLAMINOACYL_PEPTIDASE_RXN',
+	prot(name = 'BSU32230_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'N_Acetyl_Peptides', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU32230_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Peptides_holder', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'N_Acylated_Amino_Acids', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_ACYLAMINOACYL_PEPTIDASE_RXN', 1.000000), 
+	Parameter('rvs_ACYLAMINOACYL_PEPTIDASE_RXN', 0.000000))
+Rule('URATE_OXIDASE_RXN',
+	prot(name = 'BSU32450_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'URATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'OXYGEN_MOLECULE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU32450_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_5_HYDROXYISOURATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'HYDROGEN_PEROXIDE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd_URATE_OXIDASE_RXN', 1.000000), 
+	Parameter('rvs_URATE_OXIDASE_RXN', 0.000000))
+Rule('RXN_11141',
+	prot(name = 'BSU32520_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD0_2298', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'GLYOX', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU32520_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_389', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'GLY', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_11141', 1.000000), 
+	Parameter('rvs_RXN_11141', 1.000000))
+Rule('RXN8J2_82',
+	prot(name = 'BSU32570_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD8J2_11', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU32570_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD8J2_12', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN8J2_82', 1.000000), 
+	Parameter('rvs_RXN8J2_82', 0.000000))
+Rule('RXN8J2_83',
+	prot(name = 'BSU32610_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD8J2_12', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU32610_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'GLC_6_P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'VAL', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN8J2_83', 1.000000), 
+	Parameter('rvs_RXN8J2_83', 0.000000))
+Rule('RXN8J2_142',
+	prot(name = 'BSU32660_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD8J2_19', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU32660_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD8J2_3', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'D_LACTATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN8J2_142', 1.000000), 
+	Parameter('rvs_RXN8J2_142', 0.000000))
+Rule('RXN_10699',
+	prot(name = 'BSU32830_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_11521', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ACETYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU32830_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_11520', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_10699', 1.000000), 
+	Parameter('rvs_RXN_10699', 0.000000))
+Rule('RXN_10700',
+	prot(name = 'BSU32830_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_11525', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ACETYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU32830_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_11524', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_10700', 1.000000), 
+	Parameter('rvs_RXN_10700', 0.000000))
+Rule('RXN_10701',
+	prot(name = 'BSU32830_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_11529', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ACETYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU32830_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_11528', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_10701', 1.000000), 
+	Parameter('rvs_RXN_10701', 0.000000))
+Rule('R344_RXN',
+	prot(name = 'BSU33150_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_20909', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU33150_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_690', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'P3I', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Corrinoid_Adenosyltransferases', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_R344_RXN', 1.000000), 
+	Parameter('rvs_R344_RXN', 0.000000))
+Rule('RXN_19387',
+	prot(name = 'BSU33400_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'GLYCOLALDEHYDE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD_P_OR_NOP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU33400_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_8887', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH_P_OR_NOP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_19387', 0.000000), 
+	Parameter('rvs_RXN_19387', 1.000000))
+Rule('_3dot2dot1dot89_RXN',
+	prot(name = 'BSU34120_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'Plant_Arabinogalactans_I', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU34120_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'a_galctotetrose', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd__3dot2dot1dot89_RXN', 1.000000), 
+	Parameter('rvs__3dot2dot1dot89_RXN', 0.000000))
+Rule('_3dot2dot1dot23_RXN',
+	prot(name = 'BSU34130_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Beta_D_Galactosides', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU34130_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Non_Galactosylated_Galactose_Acceptors', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'D_galactopyranose', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__3dot2dot1dot23_RXN', 1.000000), 
+	Parameter('rvs__3dot2dot1dot23_RXN', 0.000000))
+Rule('RXN_802',
+	prot(name = 'BSU34400_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'COUMARATE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU34400_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_1075', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CARBON_DIOXIDE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_802', 1.000000), 
+	Parameter('rvs_RXN_802', 0.000000))
+Rule('RXN_801',
+	prot(name = 'BSU34400_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'FERULIC_ACID', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU34400_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_1072', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CARBON_DIOXIDE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_801', 1.000000), 
+	Parameter('rvs_RXN_801', 0.000000))
+Rule('AMINO_ACID_RACEMASE_RXN',
+	prot(name = 'BSU34430_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'L_Amino_Acids', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU34430_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'D_Amino_Acids', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_AMINO_ACID_RACEMASE_RXN', 1.000000), 
+	Parameter('rvs_AMINO_ACID_RACEMASE_RXN', 0.000000))
+Rule('LEVANSUCRASE_RXN',
+	prot(name = 'BSU34450_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'SUCROSE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Levan', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU34450_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'Levan', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Glucopyranose', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_LEVANSUCRASE_RXN', 1.000000), 
+	Parameter('rvs_LEVANSUCRASE_RXN', 0.000000))
+Rule('RXN_1803',
+	prot(name = 'BSU34450_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'SUCROSE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU34450_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = '_6_KESTOSE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Glucopyranose', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_1803', 1.000000), 
+	Parameter('rvs_RXN_1803', 0.000000))
+Rule('RXN_1804',
+	prot(name = 'BSU34450_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = '_1_KESTOTRIOSE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'SUCROSE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU34450_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'BIFURCOSE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Glucopyranose', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_1804', 1.000000), 
+	Parameter('rvs_RXN_1804', 0.000000))
+Rule('RXN_9068',
+	prot(name = 'BSU34450_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'SUCROSE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = '_6_KESTOSE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU34450_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'CPD_9550', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Glucopyranose', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_9068', 1.000000), 
+	Parameter('rvs_RXN_9068', 0.000000))
+Rule('GLUCOSE_1_PHOSPHATE_PHOSPHODISMUTASE_RXN',
+	prot(name = 'BSU34550_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'GLC_1_P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU34550_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ALPHA_GLUCOSE_16_BISPHOSPHATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Glucopyranose', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_GLUCOSE_1_PHOSPHATE_PHOSPHODISMUTASE_RXN', 1.000000), 
+	Parameter('rvs_GLUCOSE_1_PHOSPHATE_PHOSPHODISMUTASE_RXN', 0.000000))
+Rule('MALTOSE_PHOSPHORYLASE_RXN',
+	prot(name = 'BSU34570_MONOMER', loc = 'wall', strain = 'BSUB') +
+	met(name = 'MALTOSE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU34570_MONOMER', loc = 'wall', strain = 'BSUB') +
+	met(name = 'CPD_448', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Glucopyranose', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_MALTOSE_PHOSPHORYLASE_RXN', 1.000000), 
+	Parameter('rvs_MALTOSE_PHOSPHORYLASE_RXN', 0.000000))
+Rule('_3dot2dot1dot133_RXN',
+	prot(name = 'BSU34620_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Starch', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU34620_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ALPHA_MALTOSE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd__3dot2dot1dot133_RXN', 1.000000), 
+	Parameter('rvs__3dot2dot1dot133_RXN', 0.000000))
+Rule('RXN_8001',
+	prot(name = 'BSU34910_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'HISTIDINOL', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU34910_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'HIS', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_8001', 1.000000), 
+	Parameter('rvs_RXN_8001', 0.000000))
+Rule('_3dot5dot1dot80_RXN',
+	prot(name = 'BSU35010_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'N_ACETYL_D_GALACTOSAMINE_6_PHOSPHATE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU35010_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ACET', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'D_GALACTOSAMINE_6_PHOSPHATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__3dot5dot1dot80_RXN', 1.000000), 
+	Parameter('rvs__3dot5dot1dot80_RXN', 0.000000))
+Rule('RXN_14312',
+	prot(name = 'BSU35060_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_15210', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Reduced_ferredoxins', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'OXYGEN_MOLECULE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU35060_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_15211', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Oxidized_ferredoxins', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd_RXN_14312', 1.000000), 
+	Parameter('rvs_RXN_14312', 0.000000))
+Rule('RXN8J2_80',
+	prot(name = 'BSU35070_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Charged_LEU_tRNAs', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None +
+	None | 
+	prot(name = 'BSU35070_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_15210', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'LEU_tRNAs', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN8J2_80', 1.000000), 
+	Parameter('rvs_RXN8J2_80', 0.000000))
+Rule('TEICHOICSYN8_RXN',
+	prot(name = 'BSU35520_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'CPD_75', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'C6', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU35520_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'Gro_P_Teichoic_peptidoglycan', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_9646', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'UNDECAPRENYL_DIPHOSPHATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TEICHOICSYN8_RXN', 1.000000), 
+	Parameter('rvs_TEICHOICSYN8_RXN', 0.000000))
+Rule('TEICHOICSYN4_RXN',
+	prot(name = 'BSU35720_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'CPD_5802', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_606', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU35720_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'Teichoic_P_Gro', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CMP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TEICHOICSYN4_RXN', 1.000000), 
+	Parameter('rvs_TEICHOICSYN4_RXN', 0.000000))
+Rule('TEICHOICSYN5_RXN',
+	prot(name = 'BSU35730_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_12575', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Teichoic_P_Gro', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU35730_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Teichoic_P_Gro_Glc', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'UDP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TEICHOICSYN5_RXN', 1.000000), 
+	Parameter('rvs_TEICHOICSYN5_RXN', 0.000000))
+Rule('TEICHOICSYN2_RXN',
+	prot(name = 'BSU35750_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ACETYL_D_GLUCOSAMINYLDIPHOSPHO_UNDECAPRE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'UDP_MANNAC', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU35750_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ACETYL_ETCETERA_GLUCOSAMINYLDIPHOSPHOUND', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'UDP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TEICHOICSYN2_RXN', 1.000000), 
+	Parameter('rvs_TEICHOICSYN2_RXN', 0.000000))
+Rule('TEICHOICSYN3_RXN',
+	prot(name = 'BSU35760_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'ACETYL_ETCETERA_GLUCOSAMINYLDIPHOSPHOUND', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_606', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU35760_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_5802', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CMP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TEICHOICSYN3_RXN', 1.000000), 
+	Parameter('rvs_TEICHOICSYN3_RXN', 0.000000))
+Rule('_3dot2dot1dot96_RXN',
+	prot(name = 'BSU35780_MONOMER', loc = 'wall', strain = 'BSUB') +
+	met(name = 'a_glycopeptide_D_mannosyl_Nsup4sup_N_ace', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU35780_MONOMER', loc = 'wall', strain = 'BSUB') +
+	met(name = 'N_acetyl_D_glucosamine_asparagine', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_14375', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__3dot2dot1dot96_RXN', 1.000000), 
+	Parameter('rvs__3dot2dot1dot96_RXN', 0.000000))
+Rule('_1dot10dot99dot2_RXN',
+	prot(name = 'BSU35990_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_7229', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Quinones', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU35990_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Reduced_Quinones', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NICOTINAMIDE_RIBOSE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd__1dot10dot99dot2_RXN', 1.000000), 
+	Parameter('rvs__1dot10dot99dot2_RXN', 0.000000))
+Rule('ACETOLACTATE_DECARBOXYLASE_RXN',
+	prot(name = 'BSU36000_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = '_2_ACETO_LACTATE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU36000_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_10353', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CARBON_DIOXIDE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_ACETOLACTATE_DECARBOXYLASE_RXN', 1.000000), 
+	Parameter('rvs_ACETOLACTATE_DECARBOXYLASE_RXN', 0.000000))
+Rule('RXN_9382',
+	prot(name = 'BSU36560_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'L_PHOSPHINOTHRICIN', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ACETYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU36560_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_9999', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_9382', 1.000000), 
+	Parameter('rvs_RXN_9382', 0.000000))
+Rule('RXN8J2_139',
+	prot(name = 'BSU36930_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Protein_Arginine_Phosphates', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU36930_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Protein_L_Arginines', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN8J2_139', 1.000000), 
+	Parameter('rvs_RXN8J2_139', 0.000000))
+Rule('RXN_8631',
+	prot(name = 'BSU37120_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'FRU1P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU37120_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'DIHYDROXY_ACETONE_PHOSPHATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'GLYCERALD', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_8631', 1.000000), 
+	Parameter('rvs_RXN_8631', 0.000000))
+Rule('RXN_13036',
+	prot(name = 'BSU37640_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Octanoylated_Gcv_H', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Lipoyl_Protein_L_Lysine', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU37640_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Gcv_H', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Octanoylated_domains', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_13036', 1.000000), 
+	Parameter('rvs_RXN_13036', 0.000000))
+Rule('RXN_16298',
+	prot(name = 'BSU37680_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_17536', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD_P_OR_NOP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU37680_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_17551', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH_P_OR_NOP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_16298', 0.000000), 
+	Parameter('rvs_RXN_16298', 1.000000))
+Rule('RXN_16265',
+	prot(name = 'BSU37680_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_17536', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD_P_OR_NOP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU37680_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_17552', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH_P_OR_NOP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_16265', 0.000000), 
+	Parameter('rvs_RXN_16265', 1.000000))
+Rule('RXN8J2_6',
+	prot(name = 'BSU37680_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD8J2_5', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU37680_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD8J2_6', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd_RXN8J2_6', 1.000000), 
+	Parameter('rvs_RXN8J2_6', 0.000000))
+Rule('RXN_16297',
+	prot(name = 'BSU37690_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_17536', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PHE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU37690_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_17531', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PHENYL_PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_16297', 1.000000), 
+	Parameter('rvs_RXN_16297', 1.000000))
+Rule('RXN8J2_7',
+	prot(name = 'BSU37690_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD8J2_6', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PHE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU37690_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD8J2_7', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PHENYL_PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN8J2_7', 1.000000), 
+	Parameter('rvs_RXN8J2_7', 0.000000))
+Rule('RXN_16296',
+	prot(name = 'BSU37710_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'L_ALPHA_ALANINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_17509', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU37710_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_17508', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_16296', 1.000000), 
+	Parameter('rvs_RXN_16296', 0.000000))
+Rule('RXN_16285',
+	prot(name = 'BSU37720_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_17531', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU37720_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_17509', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_16285', 1.000000), 
+	Parameter('rvs_RXN_16285', 0.000000))
+Rule('RXN_16300',
+	prot(name = 'BSU37730_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_17551', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU37730_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_17552', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_16300', 1.000000), 
+	Parameter('rvs_RXN_16300', 0.000000))
+Rule('RXN_16264',
+	prot(name = 'BSU37730_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_17510', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU37730_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_17511', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_16264', 1.000000), 
+	Parameter('rvs_RXN_16264', 0.000000))
+Rule('RXN8J2_5',
+	prot(name = 'BSU37730_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD8J2_4', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU37730_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD8J2_5', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN8J2_5', 1.000000), 
+	Parameter('rvs_RXN8J2_5', 0.000000))
+Rule('RXN_16263',
+	prot(name = 'BSU37740_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PREPHENATE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU37740_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_17510', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CARBON_DIOXIDE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_16263', 1.000000), 
+	Parameter('rvs_RXN_16263', 0.000000))
+Rule('RXN8J2_4',
+	prot(name = 'BSU37740_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PREPHENATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU37740_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD8J2_4', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CARBON_DIOXIDE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN8J2_4', 1.000000), 
+	Parameter('rvs_RXN8J2_4', 0.000000))
+Rule('_3dot2dot1dot26_RXN',
+	prot(name = 'BSU38040_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_15716', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU38040_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'GLC_6_P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'BETA_D_FRUCTOSE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__3dot2dot1dot26_RXN', 1.000000), 
+	Parameter('rvs__3dot2dot1dot26_RXN', 0.000000))
+Rule('_3dot2dot1dot48_RXN',
+	prot(name = 'BSU38040_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'SUCROSE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU38040_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'BETA_D_FRUCTOSE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Glucopyranose', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__3dot2dot1dot48_RXN', 1.000000), 
+	Parameter('rvs__3dot2dot1dot48_RXN', 0.000000))
+Rule('RXN_9985',
+	prot(name = 'BSU38040_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Beta_D_Fructofuranosides', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU38040_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'BETA_D_FRUCTOSE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Glycosides', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_9985', 1.000000), 
+	Parameter('rvs_RXN_9985', 0.000000))
+Rule('UTPHEXPURIDYLYLTRANS_RXN',
+	prot(name = 'BSU38190_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'GALACTOSE_1P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'UTP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU38190_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_14553', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd_UTPHEXPURIDYLYLTRANS_RXN', 1.000000), 
+	Parameter('rvs_UTPHEXPURIDYLYLTRANS_RXN', 0.000000))
+Rule('RXN_12610',
+	prot(name = 'BSU38290_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_13576', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'AMINO_HYDROXYMETHYL_METHYLPYRIMIDINE_PP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU38290_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'THIAMINE_P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CARBON_DIOXIDE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_12610', 1.000000), 
+	Parameter('rvs_RXN_12610', 0.000000))
+Rule('_3dot4dot11dot24_RXN',
+	prot(name = 'BSU38470_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Peptides_holder', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU38470_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'Peptides_holder', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Alpha_Amino_Acids', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__3dot4dot11dot24_RXN', 1.000000), 
+	Parameter('rvs__3dot4dot11dot24_RXN', 0.000000))
+Rule('RXN_9190',
+	prot(name = 'BSU38490_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ALL_TRANS_HEPTAPRENYL_DIPHOSPHATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'DIHYDROXYNAPHTHOATE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU38490_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'CPD_12117', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CARBON_DIOXIDE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_9190', 1.000000), 
+	Parameter('rvs_RXN_9190', 0.000000))
+Rule('RXN_18014',
+	prot(name = 'BSU38500_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'D_ALANINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'D_alanine_carrier_protein', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU38500_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'D_Ala_DltC', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'AMP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_18014', 1.000000), 
+	Parameter('rvs_RXN_18014', 0.000000))
+Rule('_6dot3dot2dot16_RXN',
+	prot(name = 'BSU38510_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = '_1_Phosphatidyl_2_O_D_Ala_Glycerol', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Teichoic_P_Gro_Glc', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU38510_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'CPD_75', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'L_1_PHOSPHATIDYL_GLYCEROL', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__6dot3dot2dot16_RXN', 1.000000), 
+	Parameter('rvs__6dot3dot2dot16_RXN', 0.000000))
+Rule('RXN_18013',
+	prot(name = 'BSU38530_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'D_Ala_DltC', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'L_1_PHOSPHATIDYL_GLYCEROL', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU38530_MONOMER', loc = 'pmem', strain = 'BSUB') +
+	met(name = '_1_Phosphatidyl_2_O_D_Ala_Glycerol', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'D_alanine_carrier_protein', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_18013', 1.000000), 
+	Parameter('rvs_RXN_18013', 0.000000))
+Rule('_3dot2dot2dot15_RXN',
+	prot(name = 'BSU38620_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'DNA_With_Hypoxanthines', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU38620_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'DNA_containing_aPurinic_Sites', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'HYPOXANTHINE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__3dot2dot2dot15_RXN', 1.000000), 
+	Parameter('rvs__3dot2dot2dot15_RXN', 0.000000))
+Rule('ALDHDEHYDROG_RXN',
+	prot(name = 'BSU38830_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Aldehydes', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU38830_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Carboxylates', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_ALDHDEHYDROG_RXN', 1.000000), 
+	Parameter('rvs_ALDHDEHYDROG_RXN', 0.000000))
+Rule('UDP_N_ACETYLGLUCOSAMINE_4_EPIMERASE_RXN',
+	prot(name = 'BSU38860_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'UDP_N_ACETYL_D_GLUCOSAMINE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU38860_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_14795', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_UDP_N_ACETYLGLUCOSAMINE_4_EPIMERASE_RXN', 1.000000), 
+	Parameter('rvs_UDP_N_ACETYLGLUCOSAMINE_4_EPIMERASE_RXN', 0.000000))
+Rule('_3dot2dot1dot6_RXN',
+	prot(name = 'BSU39070_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'Beta_D_glucan_w_C_3_substitution', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU39070_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'Beta_D_Glucans', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd__3dot2dot1dot6_RXN', 1.000000), 
+	Parameter('rvs__3dot2dot1dot6_RXN', 0.000000))
+Rule('_3dot2dot1dot73_RXN',
+	prot(name = 'BSU39070_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'Lichenin', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU39070_MONOMER', loc = 'ex', strain = 'BSUB') +
+	met(name = 'Short_glucans', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd__3dot2dot1dot73_RXN', 1.000000), 
+	Parameter('rvs__3dot2dot1dot73_RXN', 0.000000))
+Rule('HISTIDINE_AMMONIA_LYASE_RXN',
+	prot(name = 'BSU39350_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'HIS', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU39350_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'AMMONIUM', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'UROCANATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_HISTIDINE_AMMONIA_LYASE_RXN', 1.000000), 
+	Parameter('rvs_HISTIDINE_AMMONIA_LYASE_RXN', 0.000000))
+Rule('UROCANATE_HYDRATASE_RXN',
+	prot(name = 'BSU39360_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_4_IMIDAZOLONE_5_PROPIONATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU39360_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'UROCANATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_UROCANATE_HYDRATASE_RXN', 0.000000), 
+	Parameter('rvs_UROCANATE_HYDRATASE_RXN', 1.000000))
+Rule('IMIDAZOLONEPROPIONASE_RXN',
+	prot(name = 'BSU39370_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_4_IMIDAZOLONE_5_PROPIONATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU39370_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'N_FORMIMINO_L_GLUTAMATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd_IMIDAZOLONEPROPIONASE_RXN', 1.000000), 
+	Parameter('rvs_IMIDAZOLONEPROPIONASE_RXN', 0.000000))
+Rule('FORMIMINOGLUTAMASE_RXN',
+	prot(name = 'BSU39380_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'N_FORMIMINO_L_GLUTAMATE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU39380_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'GLT', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'FORMAMIDE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_FORMIMINOGLUTAMASE_RXN', 1.000000), 
+	Parameter('rvs_FORMIMINOGLUTAMASE_RXN', 0.000000))
+Rule('PYRIMIDINE_NUCLEOSIDE_PHOSPHORYLASE_RXN',
+	prot(name = 'BSU39400_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Pyrimidine_Nucleosides', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU39400_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Pyrimidine_Bases', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'RIBOSE_1P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd_PYRIMIDINE_NUCLEOSIDE_PHOSPHORYLASE_RXN', 1.000000), 
+	Parameter('rvs_PYRIMIDINE_NUCLEOSIDE_PHOSPHORYLASE_RXN', 0.000000))
+Rule('_4dot1dot2dot29_RXN',
+	prot(name = 'BSU39670_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_645', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU39670_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'MALONATE_S_ALD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'DIHYDROXY_ACETONE_PHOSPHATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__4dot1dot2dot29_RXN', 1.000000), 
+	Parameter('rvs__4dot1dot2dot29_RXN', 0.000000))
+Rule('RXN_14178',
+	prot(name = 'BSU39680_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_14808', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU39680_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_365', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_14178', 1.000000), 
+	Parameter('rvs_RXN_14178', 1.000000))
+Rule('MYO_INOSOSE_2_DEHYDRATASE_RXN',
+	prot(name = 'BSU39720_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_14808', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU39720_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_1133', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_MYO_INOSOSE_2_DEHYDRATASE_RXN', 1.000000), 
+	Parameter('rvs_MYO_INOSOSE_2_DEHYDRATASE_RXN', 0.000000))
+Rule('RXN_14149',
+	prot(name = 'BSU39730_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_1133', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU39730_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_15127', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_14149', 1.000000), 
+	Parameter('rvs_RXN_14149', 0.000000))
+Rule('_5_DEHYDRO_2_DEOXYGLUCONOKINASE_RXN',
+	prot(name = 'BSU39740_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_827', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU39740_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_645', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__5_DEHYDRO_2_DEOXYGLUCONOKINASE_RXN', 1.000000), 
+	Parameter('rvs__5_DEHYDRO_2_DEOXYGLUCONOKINASE_RXN', 0.000000))
+Rule('RXN_14150',
+	prot(name = 'BSU39750_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_15127', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU39750_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_827', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_14150', 1.000000), 
+	Parameter('rvs_RXN_14150', 1.000000))
+Rule('_6dot3dot1dot12_RXN',
+	prot(name = 'BSU39900_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_7695', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_302', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU39900_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'D_aspartate_peptidoglycan', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__6dot3dot1dot12_RXN', 1.000000), 
+	Parameter('rvs__6dot3dot1dot12_RXN', 0.000000))
+Rule('GLY3KIN_RXN',
+	prot(name = 'BSU40040_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'GLYCERATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU40040_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'G3P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_GLY3KIN_RXN', 1.000000), 
+	Parameter('rvs_GLY3KIN_RXN', 0.000000))
+Rule('RXN_3341',
+	prot(name = 'BSU40080_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_2961', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU40080_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'RIBULOSE_5P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CARBON_DIOXIDE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_3341', 1.000000), 
+	Parameter('rvs_RXN_3341', 0.000000))
+Rule('CYTOCHROME_C_PEROXIDASE_RXN',
+	prot(name = 'BSU40090_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'HYDROGEN_PEROXIDE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Cytochromes_C_Reduced', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU40090_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Cytochromes_C_Oxidized', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd_CYTOCHROME_C_PEROXIDASE_RXN', 1.000000), 
+	Parameter('rvs_CYTOCHROME_C_PEROXIDASE_RXN', 0.000000))
+Rule('ARGINASE_RXN',
+	prot(name = 'BSU40320_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ARG', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU40320_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'UREA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'L_ORNITHINE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_ARGINASE_RXN', 1.000000), 
+	Parameter('rvs_ARGINASE_RXN', 0.000000))
+Rule('RXN_34',
+	prot(name = 'BSU40320_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CANAVANINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	prot(name = 'BSU40320_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'L_CANALINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'UREA', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_34', 1.000000), 
+	Parameter('rvs_RXN_34', 0.000000))
+Rule('ORNITHINE__OXO_ACID_AMINOTRANSFERASE_RXN',
+	prot(name = 'BSU40340_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'L_ORNITHINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = '_2_Oxo_carboxylates', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU40340_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Amino_Acids_20', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'L_GLUTAMATE_GAMMA_SEMIALDEHYDE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_ORNITHINE__OXO_ACID_AMINOTRANSFERASE_RXN', 1.000000), 
+	Parameter('rvs_ORNITHINE__OXO_ACID_AMINOTRANSFERASE_RXN', 0.000000))
+Rule('ORNITHINE_GLU_AMINOTRANSFERASE_RXN',
+	prot(name = 'BSU40340_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'L_ORNITHINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = '_2_KETOGLUTARATE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	prot(name = 'BSU40340_MONOMER', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'GLT', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'L_GLUTAMATE_GAMMA_SEMIALDEHYDE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_ORNITHINE_GLU_AMINOTRANSFERASE_RXN', 1.000000), 
+	Parameter('rvs_ORNITHINE_GLU_AMINOTRANSFERASE_RXN', 0.000000))
+Rule('_2dot7dot7dot39_RXN',
+	cplx(name = 'CPLX_5322', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'GLYCEROL_3P', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CTP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX_5322', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_606', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd__2dot7dot7dot39_RXN', 1.000000), 
+	Parameter('rvs__2dot7dot7dot39_RXN', 0.000000))
+Rule('R82_RXN',
+	cplx(name = 'CPLX_7445', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_8999', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	cplx(name = 'CPLX_7445', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = '_2_HYDROXY_3_KETO_5_METHYLTHIO_1_PHOSPHOP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_R82_RXN', 1.000000), 
+	Parameter('rvs_R82_RXN', 0.000000))
+Rule('RXN_19450',
+	cplx(name = 'CPLX_7604', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_2_3_DIHYDROXYBENZOATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Holo_DhbB', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX_7604', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_23_dihydroxybenzoyl_DhbB', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'AMP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_19450', 1.000000), 
+	Parameter('rvs_RXN_19450', 0.000000))
+Rule('RXN_12614',
+	cplx(name = 'CPLX_8352', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'GLY', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'OXYGEN_MOLECULE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	cplx(name = 'CPLX_8352', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_12279', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'HYDROGEN_PEROXIDE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_12614', 1.000000), 
+	Parameter('rvs_RXN_12614', 0.000000))
+Rule('_1dot2dot1dot27_RXN',
+	cplx(name = 'CPLX_8648', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_12179', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX_8648', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROPIONYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'HCO3', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__1dot2dot1dot27_RXN', 1.000000), 
+	Parameter('rvs__1dot2dot1dot27_RXN', 0.000000))
+Rule('RXN_2902',
+	cplx(name = 'CPLX_8648', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'MALONATE_S_ALD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX_8648', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ACETYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CARBON_DIOXIDE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_2902', 1.000000), 
+	Parameter('rvs_RXN_2902', 0.000000))
+Rule('RXN_14148',
+	cplx(name = 'CPLX_8649', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_8052', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	cplx(name = 'CPLX_8649', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_365', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_14148', 1.000000), 
+	Parameter('rvs_RXN_14148', 1.000000))
+Rule('MYO_INOSITOL_2_DEHYDROGENASE_RXN',
+	cplx(name = 'CPLX_8649', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'MYO_INOSITOL', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	cplx(name = 'CPLX_8649', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_14808', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_MYO_INOSITOL_2_DEHYDROGENASE_RXN', 1.000000), 
+	Parameter('rvs_MYO_INOSITOL_2_DEHYDROGENASE_RXN', 1.000000))
+Rule('RXN_17519',
+	cplx(name = 'CPLX_9083', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_17070', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Acceptor', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX_9083', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTOHEME', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CARBON_DIOXIDE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Donor_H2', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_17519', 1.000000), 
+	Parameter('rvs_RXN_17519', 0.000000))
+Rule('RXN_10642',
+	cplx(name = 'CPLX_9084', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_11444', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX_9084', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'COPROPORPHYRINOGEN_I', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CARBON_DIOXIDE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_10642', 1.000000), 
+	Parameter('rvs_RXN_10642', 0.000000))
+Rule('RXN_13568',
+	cplx(name = 'CPLX_9195', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ARG', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Reduced_flavodoxins', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'OXYGEN_MOLECULE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None +
+	None | 
+	cplx(name = 'CPLX_9195', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'L_CITRULLINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NITRIC_OXIDE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Oxidized_flavodoxins', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_13568', 1.000000), 
+	Parameter('rvs_RXN_13568', 0.000000))
+Rule('RXN1K_87',
+	cplx(name = 'CPLX_9285', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_787', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX_9285', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_786', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN1K_87', 1.000000), 
+	Parameter('rvs_RXN1K_87', 0.000000))
+Rule('RXN_19491',
+	cplx(name = 'CPLX_9285', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_21004', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX_9285', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'P_HYDROXY_PHENYLPYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_19491', 1.000000), 
+	Parameter('rvs_RXN_19491', 1.000000))
+Rule('RXN_12354',
+	cplx(name = 'CPLX_9285', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_13339', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX_9285', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_13337', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_12354', 1.000000), 
+	Parameter('rvs_RXN_12354', 0.000000))
+Rule('PHENYLPYRUVATE_TAUTOMERASE_RXN',
+	cplx(name = 'CPLX_9285', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PHENYL_PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX_9285', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ENOL_PHENYLPYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_PHENYLPYRUVATE_TAUTOMERASE_RXN', 1.000000), 
+	Parameter('rvs_PHENYLPYRUVATE_TAUTOMERASE_RXN', 1.000000))
+Rule('RXN_7282',
+	cplx(name = 'CPLX_9285', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'OXOPENTENOATE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX_9285', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_14447', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_7282', 1.000000), 
+	Parameter('rvs_RXN_7282', 1.000000))
+Rule('RXN_11136',
+	cplx(name = 'CPLX8J2_104', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'General_Protein_Substrates', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX8J2_104', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Peptides_holder', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_11136', 1.000000), 
+	Parameter('rvs_RXN_11136', 0.000000))
+Rule('OROTATE_REDUCTASE_NADH_RXN',
+	cplx(name = 'CPLX8J2_105', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'DI_H_OROTATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	cplx(name = 'CPLX8J2_105', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'OROTATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_OROTATE_REDUCTASE_NADH_RXN', 1.000000), 
+	Parameter('rvs_OROTATE_REDUCTASE_NADH_RXN', 0.000000))
+Rule('GLUCOSE_1_DEHYDROGENASE_RXN',
+	cplx(name = 'CPLX8J2_106', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Glucopyranose', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD_P_OR_NOP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	cplx(name = 'CPLX8J2_106', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'GLC_D_LACTONE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH_P_OR_NOP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_GLUCOSE_1_DEHYDROGENASE_RXN', 1.000000), 
+	Parameter('rvs_GLUCOSE_1_DEHYDROGENASE_RXN', 0.000000))
+Rule('PENICILLIN_AMIDASE_RXN',
+	cplx(name = 'CPLX8J2_125', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PENICILLIN', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX8J2_125', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_6_AMINOPENICILLANATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Carboxylates', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_PENICILLIN_AMIDASE_RXN', 1.000000), 
+	Parameter('rvs_PENICILLIN_AMIDASE_RXN', 0.000000))
+Rule('RXN8J2_1',
+	cplx(name = 'CPLX8J2_128', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'UDP_N_ACETYL_D_GLUCOSAMINE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'MAL', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	cplx(name = 'CPLX8J2_128', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD8J2_1', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'UDP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN8J2_1', 1.000000), 
+	Parameter('rvs_RXN8J2_1', 0.000000))
+Rule('RXN_11322',
+	cplx(name = 'CPLX8J2_131', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_15895', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'GAP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'GLN', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None +
+	None | 
+	cplx(name = 'CPLX8J2_131', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PYRIDOXAL_PHOSPHATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'GLT', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_11322', 1.000000), 
+	Parameter('rvs_RXN_11322', 0.000000))
+Rule('PYRUVATEDECARB_RXN',
+	cplx(name = 'CPLX8J2_13', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PYRUVATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'LIPOAMIDE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX8J2_13', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'S_ACETYLDIHYDROLIPOAMIDE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CARBON_DIOXIDE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd_PYRUVATEDECARB_RXN', 1.000000), 
+	Parameter('rvs_PYRUVATEDECARB_RXN', 0.000000))
+Rule('RXN8J2_137',
+	cplx(name = 'CPLX8J2_144', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_10225', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = '_2_KETOGLUTARATE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX8J2_144', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_3_oxo_D_glucose_6_phosphate', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'GLT', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN8J2_137', 1.000000), 
+	Parameter('rvs_RXN8J2_137', 1.000000))
+Rule('N_ACETYLDIAMINOPIMELATE_DEACETYLASE_RXN',
+	cplx(name = 'CPLX8J2_147', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_1771', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX8J2_147', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'LL_DIAMINOPIMELATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ACET', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_N_ACETYLDIAMINOPIMELATE_DEACETYLASE_RXN', 1.000000), 
+	Parameter('rvs_N_ACETYLDIAMINOPIMELATE_DEACETYLASE_RXN', 0.000000))
+Rule('RXN_14971',
+	cplx(name = 'CPLX8J2_15', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'ETR_Quinones', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'SUC', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX8J2_15', loc = 'pmem', strain = 'BSUB') +
+	met(name = 'ETR_Quinols', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'FUM', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_14971', 1.000000), 
+	Parameter('rvs_RXN_14971', 0.000000))
+Rule('LYSINE_23_AMINOMUTASE_RXN',
+	cplx(name = 'CPLX8J2_180', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'LYS', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX8J2_180', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_233', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_LYSINE_23_AMINOMUTASE_RXN', 1.000000), 
+	Parameter('rvs_LYSINE_23_AMINOMUTASE_RXN', 0.000000))
+Rule('_6_CARBOXYHEXANOATE__COA_LIGASE_RXN',
+	cplx(name = 'CPLX8J2_184', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CO_A', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CPD_205', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX8J2_184', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_558', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'AMP', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__6_CARBOXYHEXANOATE__COA_LIGASE_RXN', 1.000000), 
+	Parameter('rvs__6_CARBOXYHEXANOATE__COA_LIGASE_RXN', 0.000000))
+Rule('RXN8J2_3',
+	cplx(name = 'CPLX8J2_192', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD8J2_2', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CYS', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX8J2_192', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD8J2_3', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN8J2_3', 1.000000), 
+	Parameter('rvs_RXN8J2_3', 0.000000))
+Rule('RXN_13198',
+	cplx(name = 'CPLX8J2_194', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROPANOL', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	cplx(name = 'CPLX8J2_194', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_665', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_13198', 1.000000), 
+	Parameter('rvs_RXN_13198', 1.000000))
+Rule('ACETOINDEHYDROG_RXN',
+	cplx(name = 'CPLX8J2_1', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ACETOIN', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	cplx(name = 'CPLX8J2_1', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'DIACETYL', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_ACETOINDEHYDROG_RXN', 1.000000), 
+	Parameter('rvs_ACETOINDEHYDROG_RXN', 0.000000))
+Rule('RXN_9718',
+	cplx(name = 'CPLX8J2_1', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ACETOIN', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CO_A', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	cplx(name = 'CPLX8J2_1', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ACETALD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ACETYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_9718', 1.000000), 
+	Parameter('rvs_RXN_9718', 0.000000))
+Rule('_3_ISOPROPYLMALISOM_RXN',
+	cplx(name = 'CPLX8J2_21', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_9451', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX8J2_21', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_3_CARBOXY_3_HYDROXY_ISOCAPROATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd__3_ISOPROPYLMALISOM_RXN', 1.000000), 
+	Parameter('rvs__3_ISOPROPYLMALISOM_RXN', 1.000000))
+Rule('RXN_8991',
+	cplx(name = 'CPLX8J2_21', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_2_D_THREO_HYDROXY_3_CARBOXY_ISOCAPROATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	cplx(name = 'CPLX8J2_21', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_9451', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_8991', 1.000000), 
+	Parameter('rvs_RXN_8991', 1.000000))
+Rule('RXN0_1061',
+	cplx(name = 'CPLX8J2_24', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Unfolded_Proteins', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	cplx(name = 'CPLX8J2_24', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'General_Protein_Substrates', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN0_1061', 1.000000), 
+	Parameter('rvs_RXN0_1061', 0.000000))
+Rule('RXN_11458',
+	cplx(name = 'CPLX8J2_27', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'GERANYLGERANYL_PP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'DELTA3_ISOPENTENYL_PP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX8J2_27', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ALL_TRANS_HEPTAPRENYL_DIPHOSPHATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_11458', 1.000000), 
+	Parameter('rvs_RXN_11458', 0.000000))
+Rule('TRANS_HEXAPRENYLTRANSTRANSFERASE_RXN',
+	cplx(name = 'CPLX8J2_27', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'FARNESYL_PP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'DELTA3_ISOPENTENYL_PP', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX8J2_27', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'ALL_TRANS_HEPTAPRENYL_DIPHOSPHATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PPI', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_TRANS_HEXAPRENYLTRANSTRANSFERASE_RXN', 1.000000), 
+	Parameter('rvs_TRANS_HEXAPRENYLTRANSTRANSFERASE_RXN', 0.000000))
+Rule('UREASE_RXN',
+	cplx(name = 'CPLX8J2_28', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'UREA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX8J2_28', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'AMMONIUM', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'CARBON_DIOXIDE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd_UREASE_RXN', 1.000000), 
+	Parameter('rvs_UREASE_RXN', 0.000000))
+Rule('RXNI_2',
+	cplx(name = 'CPLX8J2_34', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'SUC_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = '_3_KETOBUTYRATE', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX8J2_34', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'SUC', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ACETOACETYL_COA', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXNI_2', 1.000000), 
+	Parameter('rvs_RXNI_2', 1.000000))
+Rule('_3_OXOACID_COA_TRANSFERASE_RXN',
+	cplx(name = 'CPLX8J2_34', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'A_3_OXO_ACID', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'SUC_COA', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX8J2_34', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_3_KETOACYL_COA', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'SUC', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__3_OXOACID_COA_TRANSFERASE_RXN', 1.000000), 
+	Parameter('rvs__3_OXOACID_COA_TRANSFERASE_RXN', 1.000000))
+Rule('R145_RXN',
+	cplx(name = 'CPLX8J2_41', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_1063', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	cplx(name = 'CPLX8J2_41', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_8999', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_R145_RXN', 1.000000), 
+	Parameter('rvs_R145_RXN', 0.000000))
+Rule('_6dot3dot5dot7_RXN',
+	cplx(name = 'CPLX8J2_4', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'GLN', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'L_glutamyl_tRNAGln', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ATP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	cplx(name = 'CPLX8J2_4', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'GLT', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Charged_GLN_tRNAs', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Pi', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'ADP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd__6dot3dot5dot7_RXN', 1.000000), 
+	Parameter('rvs__6dot3dot5dot7_RXN', 0.000000))
+Rule('RXN_5041',
+	cplx(name = 'CPLX8J2_80', loc = 'cyt', strain = 'BSUB') +
+	met(name = '_2_3_DIHYDRODIPICOLINATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None | 
+	cplx(name = 'CPLX8J2_80', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'CPD_4841', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN_5041', 1.000000), 
+	Parameter('rvs_RXN_5041', 0.000000))
+Rule('NITRATREDUCT_RXN',
+	cplx(name = 'CPLX8J2_86', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'NITRITE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'Acceptor', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX8J2_86', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'Donor_H2', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NITRATE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	None, 
+	Parameter('fwd_NITRATREDUCT_RXN', 0.000000), 
+	Parameter('rvs_NITRATREDUCT_RXN', 1.000000))
+Rule('RXN0_6377',
+	cplx(name = 'CPLX8J2_87', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'AMMONIUM', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NAD_P_OR_NOP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'WATER', loc = 'cyt', strain = 'BSUB', prot = None) | 
+	cplx(name = 'CPLX8J2_87', loc = 'cyt', strain = 'BSUB') +
+	met(name = 'NITRITE', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'NADH_P_OR_NOP', loc = 'cyt', strain = 'BSUB', prot = None) +
+	met(name = 'PROTON', loc = 'cyt', strain = 'BSUB', prot = None), 
+	Parameter('fwd_RXN0_6377', 1.000000), 
+	Parameter('rvs_RXN0_6377', 0.000000))

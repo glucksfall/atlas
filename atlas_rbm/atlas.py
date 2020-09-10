@@ -52,14 +52,17 @@ def _combine_two_models(model1, model2, verbose = False):
 			if common == monomer.name:
 				sites_in_model1 = monomer.sites
 				names_in_model1 = monomer.site_states['name']
+				strain_in_model1 = monomer.site_states['strain']
 				if (common == 'dna' or common == 'rna'):
 					types_in_model1 = monomer.site_states['type']
 				else:
 					loc_in_model1 = monomer.site_states['loc']
+
 		for monomer in model2.monomers:
 			if common == monomer.name:
 				sites_in_model2 = monomer.sites
 				names_in_model2 = monomer.site_states['name']
+				strain_in_model2 = monomer.site_states['strain']
 				if (common == 'dna' or common == 'rna'):
 					types_in_model2 = monomer.site_states['type']
 				else:
@@ -74,11 +77,12 @@ def _combine_two_models(model1, model2, verbose = False):
 					str(sorted(set(types_in_model1 + types_in_model2)))))
 		else:
 			new_monomers.append(
-				"Monomer('{:s}', {:s}, {{'name': {:s}, 'loc': {:s}}})".format(
+				"Monomer('{:s}', {:s}, {{'name': {:s}, 'loc': {:s}, 'strain': {:s}}})".format(
 					str(common),
 					str(sorted(set(sites_in_model1 + sites_in_model2))),
 					str(sorted(set(names_in_model1 + names_in_model2))),
-					str(sorted(set(loc_in_model1 + loc_in_model2)))))
+					str(sorted(set(loc_in_model1 + loc_in_model2))),
+					str(sorted(set(strain_in_model1 + strain_in_model2)))))
 
 	new_rules = []
 	for rule in model1.rules:

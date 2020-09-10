@@ -19,7 +19,12 @@ import pandas
 
 from .utils import read_network, check_metabolic_network, location_keys, location_values
 
-def monomers_from_metabolic_network(model, data, strain, verbose = False, toFile = False):
+def monomers_from_metabolic_network(model, data, verbose = False, toFile = False):
+	# find strains
+	tmp = list(data['STRAIN'].values)
+	tmp = list(set(tmp))
+	strains = [ '\'' + x + '\'' for x in tmp ]
+
 	# find unique metabolites and correct names
 	tmp = list(data['SUBSTRATES'].values) + list(data['PRODUCTS'].values)
 	tmp = ','.join(tmp)
@@ -35,14 +40,14 @@ def monomers_from_metabolic_network(model, data, strain, verbose = False, toFile
 	metabolites = sorted(set(metabolites))
 
 	code = "Monomer('met',\n" \
-		"	['name', 'loc', 'dna', 'met', 'prot', 'rna'],\n" \
+		"	['name', 'loc', 'strain', 'dna', 'met', 'prot', 'rna'],\n" \
 		"	{{ 'name' : [ {:s} ],\n" \
 		"	'loc' : [{:s}],\n" \
 		"	'strain' : [{:s}]}})\n"
 
 	all_mets = [ '\'' + x.replace('-', '_').replace('+', 'plus') + '\'' for x in sorted(metabolites) ]
 	all_locs = [ '\'' + x.lower() + '\'' for x in sorted(location_keys().keys()) ]
-	code = code.format(', '.join(all_mets), ', '.join(all_locs), '\'' + strain + '\'')
+	code = code.format(', '.join(all_mets), ', '.join(all_locs), ', '.join(strains))
 
 	if verbose:
 		print(code)
@@ -74,13 +79,13 @@ def monomers_from_metabolic_network(model, data, strain, verbose = False, toFile
 				p_monomers.append(protein)
 
 	code = "Monomer('prot',\n" \
-		"	['name', 'loc', 'dna', 'met', 'prot', 'rna', 'up', 'dw'],\n" \
+		"	['name', 'loc', 'strain', 'dna', 'met', 'prot', 'rna', 'up', 'dw'],\n" \
 		"	{{ 'name' : [ {:s} ],\n" \
 		"	'loc' : [{:s}],\n" \
 		"	'strain' : [{:s}]}})\n"
 
 	all_proteins = [ '\'' + x.replace('-', '_') + '\'' for x in sorted(p_monomers)]
-	code = code.format(', '.join(all_proteins), ', '.join(all_locs), '\'' + strain + '\'')
+	code = code.format(', '.join(all_proteins), ', '.join(all_locs), ', '.join(strains))
 
 	if verbose:
 		print(code)
@@ -92,7 +97,7 @@ def monomers_from_metabolic_network(model, data, strain, verbose = False, toFile
 
 	if len(complexes) > 0:
 		code = "Monomer('cplx',\n" \
-			"	['name', 'loc', 'dna', 'met', 'prot', 'rna', 'up', 'dw'],\n" \
+			"	['name', 'loc', 'strain', 'dna', 'met', 'prot', 'rna', 'up', 'dw'],\n" \
 			"	{{ 'name' : [ {:s} ],\n" \
 			"	'loc' : [{:s}],\n" \
 			"	'strain' : [{:s}]}})\n"
@@ -102,7 +107,7 @@ def monomers_from_metabolic_network(model, data, strain, verbose = False, toFile
 				complexes[index] = '_' + cplx
 
 		all_cplx = [ '\'' + x.replace('-', '_') + '\'' for x in sorted(complexes)]
-		code = code.format(', '.join(all_cplx), ', '.join(all_locs), '\'' + strain + '\'')
+		code = code.format(', '.join(all_cplx), ', '.join(all_locs), ', '.join(strains))
 
 		if verbose:
 			print(code)
@@ -112,11 +117,14 @@ def monomers_from_metabolic_network(model, data, strain, verbose = False, toFile
 		else:
 			exec(code.replace('\t', ' ').replace('\n', ' '))
 
-	return metabolites, p_monomers, complexes, list(data['GENE OR COMPLEX'].values)
+	return metabolites, p_monomers, complexes, list(data['GENE OR COMPLEX'].values), strains
 
-def rules_from_metabolic_network(model, data, strain, verbose = False, toFile = False):
-	for idx in data.index:
-		rxn = data.loc[idx]
+def rules_from_metabolic_network(model, data, verbose = False, toFile = False):
+	for idx, _ in enumerate(data.index):
+		rxn = data.iloc[idx]
+		# set strain
+		strain = rxn['STRAIN']
+
 		if isinstance(rxn['ENZYME LOCATION'], str):
 			rxn['ENZYME LOCATION'] = rxn['ENZYME LOCATION'].replace('[', '').replace(']', '').split(',')
 
@@ -128,7 +136,7 @@ def rules_from_metabolic_network(model, data, strain, verbose = False, toFile = 
 
 			if len(rxn['ENZYME LOCATION']) == 1:
 				location = location_values()[rxn['ENZYME LOCATION'][0]].lower()
-				enzyme = 'cplx(name = \'{:s}\', loc = \'{:s}\')'.format(rxn['GENE OR COMPLEX'].replace('-', '_'), location)
+				enzyme = 'cplx(name = \'{:s}\', loc = \'{:s}\', strain = \'{:s}\')'.format(rxn['GENE OR COMPLEX'].replace('-', '_'), location, strain)
 
 		elif rxn['GENE OR COMPLEX'].startswith('['): # an enzymatic complex described by its monomers
 			monomers = rxn['GENE OR COMPLEX'][1:-1].split(',')
@@ -150,17 +158,17 @@ def rules_from_metabolic_network(model, data, strain, verbose = False, toFile = 
 			if len(monomers) == len(rxn['ENZYME LOCATION']):
 				for index, (monomer, location) in enumerate(zip(monomers, rxn['ENZYME LOCATION'])):
 					loc = location_values()[location].lower()
-					enzyme.append('prot(name = \'{:s}\', loc = \'{:s}\', up = {:s}, dw = {:s})'.format(monomer, loc, str(up[index]), str(dw[index])))
+					enzyme.append('prot(name = \'{:s}\', loc = \'{:s}\', strain = \'{:s}\', up = {:s}, dw = {:s})'.format(monomer, loc, strain, str(up[index]), str(dw[index])))
 
 			elif len(rxn['ENZYME LOCATION']) == 1:
 				for index, monomer in enumerate(monomers):
 					loc = location_values()[rxn['ENZYME LOCATION']].lower()
-					enzyme.append('prot(name = \'{:s}\', loc = \'{:s}\', up = {:s}, dw = {:s})'.format(monomer, loc, str(up[index]), str(dw[index])))
+					enzyme.append('prot(name = \'{:s}\', loc = \'{:s}\', strain = \'{:s}\', up = {:s}, dw = {:s})'.format(monomer, loc, strain, str(up[index]), str(dw[index])))
 
 			elif len(monomers) != len(rxn['ENZYME LOCATION']):
 				for index, monomer in enumerate(monomers):
 					loc = location_values()[rxn['ENZYME LOCATION'][0]].lower()
-					enzyme.append('prot(name = \'{:s}\', loc = \'{:s}\', up = {:s}, dw = {:s})'.format(monomer, loc, str(up[index]), str(dw[index])))
+					enzyme.append('prot(name = \'{:s}\', loc = \'{:s}\', strain = \'{:s}\', up = {:s}, dw = {:s})'.format(monomer, loc, strain, str(up[index]), str(dw[index])))
 
 			enzyme = ' %\n	'.join(enzyme)
 
@@ -170,7 +178,7 @@ def rules_from_metabolic_network(model, data, strain, verbose = False, toFile = 
 				rxn['GENE OR COMPLEX'] = '_' + rxn['GENE OR COMPLEX']
 
 			loc = location_values()[rxn['ENZYME LOCATION'][0]].lower()
-			enzyme = 'prot(name = \'{:s}\', loc = \'{:s}\')'.format(rxn['GENE OR COMPLEX'].replace('-', '_'), loc)
+			enzyme = 'prot(name = \'{:s}\', loc = \'{:s}\', strain = \'{:s}\')'.format(rxn['GENE OR COMPLEX'].replace('-', '_'), loc, strain)
 
 		# second: correct reaction names starting with a digit
 		name = rxn['REACTION'].replace('-', '_').replace('.', 'dot').replace('+', 'plus')
@@ -268,117 +276,121 @@ def rules_from_metabolic_network(model, data, strain, verbose = False, toFile = 
 			else:
 				exec(code.replace('\t', ' ').replace('\n', ' '))
 
-def observables_from_metabolic_network(model, data, monomers, strain, verbose = False, toFile = False, noInitials = False, noObservables = False):
+def observables_from_metabolic_network(model, data, verbose = False, toFile = False, noInitials = False, noObservables = False):
+	strains = data[4]
+
 	#locations = location_keys().keys() # reduce compilation time
 	locations = ['cyt']
-	if not noObservables:
-		for name in sorted(monomers[0]):
-			name = name.replace('-', '_').replace('+', 'plus')
-			for loc in locations:
-				code = 'Observable(\'obs_met_{:s}_{:s}_{:s}\', met(name = \'{:s}\', loc = \'{:s}\', strain = \'{:s}\', dna = None, met = None, prot = None, rna = None))\n'
-				code = code.format(strain, name, loc.lower(), name, loc.lower(), strain)
-				if verbose:
-					print(code)
-				if toFile:
-					with open(toFile, 'a+') as outfile:
-						outfile.write(code)
-				else:
-					exec(code.replace('\t', ' ').replace('\n', ' '))
 
-	if not noInitials:
-		for name in sorted(monomers[0]):
-			name = name.replace('-', '_').replace('+', 'plus')
-			for loc in locations:
-				code = 'Initial(met(name = \'{:s}\', loc = \'{:s}\', strain = \'{:s}\', dna = None, met = None, prot = None, rna = None), Parameter(\'t0_met_{:s}_{:s}_{:s}\', 0))\n'
-				code = code.format(name, loc.lower(), strain, strain, name, loc.lower())
-				if verbose:
-					print(code)
-				if toFile:
-					with open(toFile, 'a+') as outfile:
-						outfile.write(code)
-				else:
-					exec(code.replace('\t', ' ').replace('\n', ' '))
+	for strain in strains:
+		if not noObservables:
+			for name in sorted(data[0]):
+				name = name.replace('-', '_').replace('+', 'plus')
+				for loc in locations:
+					code = 'Observable(\'obs_met_{:s}_{:s}_{:s}\', met(name = \'{:s}\', loc = \'{:s}\', strain = \'{:s}\', dna = None, met = None, prot = None, rna = None))\n'
+					code = code.format(strain, name, loc.lower(), name, loc.lower(), strain)
+					if verbose:
+						print(code)
+					if toFile:
+						with open(toFile, 'a+') as outfile:
+							outfile.write(code)
+					else:
+						exec(code.replace('\t', ' ').replace('\n', ' '))
 
-		for name in sorted(monomers[1]):
-			name = name.replace('-','_')
-			for loc in locations:
-				code = 'Initial(prot(name = \'{:s}\', loc = \'{:s}\', strain = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None), Parameter(\'t0_prot_{:s}_{:s}_{:s}\', 0))\n'
-				code = code.format(name, loc.lower(), strain, strain, name, loc.lower())
-				if verbose:
-					print(code)
-				if toFile:
-					with open(toFile, 'a+') as outfile:
-						outfile.write(code)
-				else:
-					exec(code.replace('\t', ' ').replace('\n', ' '))
+		if not noInitials:
+			for name in sorted(data[0]):
+				name = name.replace('-', '_').replace('+', 'plus')
+				for loc in locations:
+					code = 'Initial(met(name = \'{:s}\', loc = \'{:s}\', strain = \'{:s}\', dna = None, met = None, prot = None, rna = None), Parameter(\'t0_met_{:s}_{:s}_{:s}\', 0))\n'
+					code = code.format(name, loc.lower(), strain, strain, name, loc.lower())
+					if verbose:
+						print(code)
+					if toFile:
+						with open(toFile, 'a+') as outfile:
+							outfile.write(code)
+					else:
+						exec(code.replace('\t', ' ').replace('\n', ' '))
 
-		for name in sorted(monomers[2]):
-			name = name.replace('-','_')
-			for loc in locations:
-				code = 'Initial(cplx(name = \'{:s}\', loc = \'{:s}\', strain = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None), Parameter(\'t0_cplx_{:s}_{:s}_{:s}\', 0))\n'
-				code = code.format(name, loc.lower(), strain, strain, name, loc.lower())
-				if verbose:
-					print(code)
-				if toFile:
-					with open(toFile, 'a+') as outfile:
-						outfile.write(code)
-				else:
-					exec(code.replace('\t', ' ').replace('\n', ' '))
+			for name in sorted(data[1]):
+				name = name.replace('-','_')
+				for loc in locations:
+					code = 'Initial(prot(name = \'{:s}\', loc = \'{:s}\', strain = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None), Parameter(\'t0_prot_{:s}_{:s}_{:s}\', 0))\n'
+					code = code.format(name, loc.lower(), strain, strain, name, loc.lower())
+					if verbose:
+						print(code)
+					if toFile:
+						with open(toFile, 'a+') as outfile:
+							outfile.write(code)
+					else:
+						exec(code.replace('\t', ' ').replace('\n', ' '))
 
-	if not noInitials or not noObservables:
-		names = monomers[3]
-		for name in sorted(set(names)):
-			if name.startswith('['):
-				monomers = name[1:-1].split(',')
-				complex_pysb = []
+			for name in sorted(data[2]):
+				name = name.replace('-','_')
+				for loc in locations:
+					code = 'Initial(cplx(name = \'{:s}\', loc = \'{:s}\', strain = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None), Parameter(\'t0_cplx_{:s}_{:s}_{:s}\', 0))\n'
+					code = code.format(name, loc.lower(), strain, strain, name, loc.lower())
+					if verbose:
+						print(code)
+					if toFile:
+						with open(toFile, 'a+') as outfile:
+							outfile.write(code)
+					else:
+						exec(code.replace('\t', ' ').replace('\n', ' '))
 
-				from collections import Counter
-				stoichiometry = Counter(monomers)
-				cplx_composition = ''
-				for key, value in stoichiometry.items():
-					cplx_composition += '_{:s}x{:d}'.format(key, value)
-
-				## create link indexes
-				dw = [None] * len(monomers)
-				start_link = 1
-				for index in range(len(monomers)-1):
-					dw[index] = start_link
-					start_link += 1
-				up = dw[-1:] + dw[:-1]
-
-				for location in locations:
+		if not noInitials or not noObservables:
+			names = data[3]
+			for name in sorted(set(names)):
+				if name.startswith('['):
+					monomers = name[1:-1].split(',')
 					complex_pysb = []
-					for index, monomer in enumerate(monomers):
-						complex_pysb.append('prot(name = \'{:s}\', loc = \'{:s}\', strain = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = {:s}, dw = {:s})'.format(
-							monomer, location.lower(), strain, str(up[index]), str(dw[index])))
 
-					complex_pysb = ' %\n	'.join(complex_pysb)
+					from collections import Counter
+					stoichiometry = Counter(monomers)
+					cplx_composition = ''
+					for key, value in stoichiometry.items():
+						cplx_composition += '_{:s}x{:d}'.format(key, value)
 
-					if not noInitials:
-						code = 'Initial({:s},\n\tParameter(\'t0_cplx_{:s}_{:s}_{:s}\', 0))\n'
-						code = code.format(complex_pysb, strain, cplx_composition, location.lower())
+					## create link indexes
+					dw = [None] * len(monomers)
+					start_link = 1
+					for index in range(len(monomers)-1):
+						dw[index] = start_link
+						start_link += 1
+					up = dw[-1:] + dw[:-1]
 
-						if verbose:
-							print(code)
-						if toFile:
-							with open(toFile, 'a+') as outfile:
-								outfile.write(code)
-						else:
-							exec(code.replace('\t', ' ').replace('\n', ' '))
+					for location in locations:
+						complex_pysb = []
+						for index, monomer in enumerate(monomers):
+							complex_pysb.append('prot(name = \'{:s}\', loc = \'{:s}\', strain = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = {:s}, dw = {:s})'.format(
+								monomer, location.lower(), strain, str(up[index]), str(dw[index])))
 
-					if not noObservables:
-						code = 'Observable(\'obs_cplx_{:s}_{:s}_{:s}\',\n\t{:s})\n'
-						code = code.format(strain, cplx_composition, location.lower(), complex_pysb)
+						complex_pysb = ' %\n	'.join(complex_pysb)
 
-						if verbose:
-							print(code)
-						if toFile:
-							with open(toFile, 'a+') as outfile:
-								outfile.write(code)
-						else:
-							exec(code.replace('\t', ' ').replace('\n', ' '))
+						if not noInitials:
+							code = 'Initial({:s},\n\tParameter(\'t0_cplx_{:s}_{:s}_{:s}\', 0))\n'
+							code = code.format(complex_pysb, strain, cplx_composition, location.lower())
 
-def construct_model_from_metabolic_network(network, strain, verbose = False, toFile = False, noInitials = False, noObservables = False):
+							if verbose:
+								print(code)
+							if toFile:
+								with open(toFile, 'a+') as outfile:
+									outfile.write(code)
+							else:
+								exec(code.replace('\t', ' ').replace('\n', ' '))
+
+						if not noObservables:
+							code = 'Observable(\'obs_cplx_{:s}_{:s}_{:s}\',\n\t{:s})\n'
+							code = code.format(strain, cplx_composition, location.lower(), complex_pysb)
+
+							if verbose:
+								print(code)
+							if toFile:
+								with open(toFile, 'a+') as outfile:
+									outfile.write(code)
+							else:
+								exec(code.replace('\t', ' ').replace('\n', ' '))
+
+def construct_model_from_metabolic_network(network, verbose = False, toFile = False, noInitials = False, noObservables = False):
 	if toFile:
 		with open(toFile, 'w') as outfile:
 			outfile.write('from pysb import *\nModel()\n\n')
@@ -394,10 +406,10 @@ def construct_model_from_metabolic_network(network, strain, verbose = False, toF
 	data = check_metabolic_network(data)
 
 	model = Model()
-	[metabolites, p_monomers, complexes, hypernodes] = \
-		monomers_from_metabolic_network(model, data, strain, verbose, toFile)
-	observables_from_metabolic_network(model, data, [metabolites, p_monomers, complexes, hypernodes], strain, verbose, toFile, noInitials, noObservables)
-	rules_from_metabolic_network(model, data, strain, verbose, toFile)
+	[metabolites, p_monomers, complexes, hypernodes, strains] = \
+		monomers_from_metabolic_network(model, data, verbose, toFile)
+	observables_from_metabolic_network(model, [metabolites, p_monomers, complexes, hypernodes, strains], verbose, toFile, noInitials, noObservables)
+	rules_from_metabolic_network(model, data, verbose, toFile)
 
 	if toFile:
 		return None

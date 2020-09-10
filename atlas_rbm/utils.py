@@ -453,12 +453,12 @@ class metabolicNetwork:
 				if 'genes' in fmt:
 					for loc in locations[0]:
 						location = getData(code, loc)['common_name']
-						Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(gene, location, rxn, left, right, fwd, rvs)
+						Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(code, gene, location, rxn, left, right, fwd, rvs)
 
 				elif 'product' in fmt:
 					for loc in locations[0]:
 						location = getData(code, loc)['common_name']
-						Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(prod, location, rxn, left, right, fwd, rvs)
+						Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(code, prod, location, rxn, left, right, fwd, rvs)
 
 				elif 'complex' in fmt:
 					organism = selectOrganism(code)
@@ -494,10 +494,10 @@ class metabolicNetwork:
 						else:
 							cplx = cplx[0]
 
-						Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(cplx, loc, rxn, left, right, fwd, rvs)
+						Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(code, cplx, loc, rxn, left, right, fwd, rvs)
 
 		infile = io.StringIO(Network.replace('|',''))
-		header = ['GENE OR COMPLEX', 'ENZYME LOCATION', 'REACTION', 'SUBSTRATES', 'PRODUCTS', 'FWD_RATE', 'RVS_RATE']
+		header = ['STRAIN', 'GENE OR COMPLEX', 'ENZYME LOCATION', 'REACTION', 'SUBSTRATES', 'PRODUCTS', 'FWD_RATE', 'RVS_RATE']
 		return pandas.read_csv(infile, delimiter = '\t', names = header)
 
 	def FromEnzymeList(code, enzymes, fmt = 'product'):
@@ -563,25 +563,25 @@ class metabolicNetwork:
 										if locations != None:
 											for location in locations:
 												loc = getData(code, location)['common_name']
-												Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(name, loc, rxn[0], left, right, fwd, rvs)
+												Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(code, name, loc, rxn[0], left, right, fwd, rvs)
 										else:
-											Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(name, 'unknown', rxn[0], left, right, fwd, rvs)
+											Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(code, name, 'unknown', rxn[0], left, right, fwd, rvs)
 
 						elif 'product' in fmt:
 							locations = getData(code, enzyme)['locations']
 							if isinstance(locations, list):
 								for location in locations:
 									loc = getData(code, location)['common_name']
-									Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(enzyme, loc, rxn[0], left, right, fwd, rvs)
+									Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(code, enzyme, loc, rxn[0], left, right, fwd, rvs)
 							else:
 								for monomer in monomers:
 									locations = getData(code, monomer)['locations']
 									if locations != None:
 										for location in locations:
 											loc = getData(code, location)['common_name']
-											Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(enzyme, loc, rxn[0], left, right, fwd, rvs)
+											Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(code, enzyme, loc, rxn[0], left, right, fwd, rvs)
 									else:
-										Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(enzyme, 'unknown', rxn[0], left, right, fwd, rvs)
+										Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(code, enzyme, 'unknown', rxn[0], left, right, fwd, rvs)
 
 						elif 'complex' in fmt:
 							locations = []
@@ -615,9 +615,9 @@ class metabolicNetwork:
 									else:
 										cplx = cplx[0]
 
-									Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(cplx, loc, rxn[0], left, right, fwd, rvs)
+									Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(code, cplx, loc, rxn[0], left, right, fwd, rvs)
 							else:
-								Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format('unknown', 'unknown', rxn[0], left, right, fwd, rvs)
+								Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(code, 'unknown', 'unknown', rxn[0], left, right, fwd, rvs)
 
 				except:
 					enzyme = enzyme.replace('|', '')
@@ -627,7 +627,7 @@ class metabolicNetwork:
 						'and post an issue at https://github.com/networkbiolab/atlas if you believe it is a software error.'.format(enzyme, code, enzyme))
 
 		infile = io.StringIO(Network.replace('|',''))
-		header = ['GENE OR COMPLEX', 'ENZYME LOCATION', 'REACTION', 'SUBSTRATES', 'PRODUCTS', 'FWD_RATE', 'RVS_RATE']
+		header = ['STRAIN', 'GENE OR COMPLEX', 'ENZYME LOCATION', 'REACTION', 'SUBSTRATES', 'PRODUCTS', 'FWD_RATE', 'RVS_RATE']
 		return pandas.read_csv(infile, delimiter = '\t', names = header)
 
 	def addReaction(network, gene = 'spontaneous', location = [], reaction = 'RXN-', substrates = [], products = [], fwd_rate = 1.0, rvs_rate = 1.0):
