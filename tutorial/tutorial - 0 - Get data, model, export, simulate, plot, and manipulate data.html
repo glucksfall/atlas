@@ -13294,6 +13294,8 @@ You should install, configure, and run the jupyter notebook on your own: example
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">utils</span><span class="o">.</span><span class="n">execPToolsDocker</span><span class="p">(</span><span class="s1">&#39;ptools-v24&#39;</span><span class="p">)</span>
+<span class="c1"># execute this inside the docker will fail.</span>
+<span class="c1"># Please, execute `docker run --rm -d --network host ptools-v24` in a terminal</span>
 </pre></div>
 
     </div>
@@ -13604,7 +13606,7 @@ Wall time: 570 ms
 <span class="o">%</span><span class="k">time</span> utils.metabolicNetwork.expand_network(network, &#39;ecocyc-v24-enz-cytoscape.txt&#39;)
 <span class="n">network</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;ecoli-enz-v24.txt&#39;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 <span class="o">%</span><span class="k">time</span> atlas.construct_model_from_metabolic_network(&#39;ecoli-enz-v24.txt&#39;, noObservables=True, noInitials=True, toFile = &#39;model-enzymes.py&#39;)
-<span class="nb">len</span><span class="p">(</span><span class="n">network</span><span class="p">[</span><span class="n">network</span><span class="p">[</span><span class="s1">&#39;ENZYME LOCATION&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;unknown&#39;</span><span class="p">)])</span> <span class="c1"># how many reactions are not mapped to a gene product</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">network</span><span class="p">[</span><span class="n">network</span><span class="p">[</span><span class="s1">&#39;ENZYME LOCATION&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;unknown&#39;</span><span class="p">)])</span> <span class="c1"># how many reactions do not have location</span>
 </pre></div>
 
     </div>
