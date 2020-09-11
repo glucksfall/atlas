@@ -125,7 +125,7 @@ def rules_from_metabolic_network(model, data, verbose = False, toFile = False):
 
 			if len(rxn['ENZYME LOCATION']) == 1:
 				location = location_values()[rxn['ENZYME LOCATION'][0]].lower()
-				enzyme = 'cplx(name = \'{:s}\', loc = \'{:s}\')'.format(rxn['GENE OR COMPLEX'].replace('-', '_'), location)
+				enzyme = 'cplx(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None)'.format(rxn['GENE OR COMPLEX'].replace('-', '_'), location)
 
 		elif rxn['GENE OR COMPLEX'].startswith('['): # an enzymatic complex described by its monomers
 			monomers = rxn['GENE OR COMPLEX'][1:-1].split(',')
@@ -147,17 +147,17 @@ def rules_from_metabolic_network(model, data, verbose = False, toFile = False):
 			if len(monomers) == len(rxn['ENZYME LOCATION']):
 				for index, (monomer, location) in enumerate(zip(monomers, rxn['ENZYME LOCATION'])):
 					loc = location_values()[location].lower()
-					enzyme.append('prot(name = \'{:s}\', loc = \'{:s}\', up = {:s}, dw = {:s})'.format(monomer, loc, str(up[index]), str(dw[index])))
+					enzyme.append('prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = {:s}, dw = {:s})'.format(monomer, loc, str(up[index]), str(dw[index])))
 
 			elif len(rxn['ENZYME LOCATION']) == 1:
 				for index, monomer in enumerate(monomers):
 					loc = location_values()[rxn['ENZYME LOCATION']].lower()
-					enzyme.append('prot(name = \'{:s}\', loc = \'{:s}\', up = {:s}, dw = {:s})'.format(monomer, loc, str(up[index]), str(dw[index])))
+					enzyme.append('prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = {:s}, dw = {:s})'.format(monomer, loc, str(up[index]), str(dw[index])))
 
 			elif len(monomers) != len(rxn['ENZYME LOCATION']):
 				for index, monomer in enumerate(monomers):
 					loc = location_values()[rxn['ENZYME LOCATION'][0]].lower()
-					enzyme.append('prot(name = \'{:s}\', loc = \'{:s}\', up = {:s}, dw = {:s})'.format(monomer, loc, str(up[index]), str(dw[index])))
+					enzyme.append('prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = {:s}, dw = {:s})'.format(monomer, loc, str(up[index]), str(dw[index])))
 
 			enzyme = ' %\n	'.join(enzyme)
 
@@ -167,7 +167,7 @@ def rules_from_metabolic_network(model, data, verbose = False, toFile = False):
 				rxn['GENE OR COMPLEX'] = '_' + rxn['GENE OR COMPLEX']
 
 			loc = location_values()[rxn['ENZYME LOCATION'][0]].lower()
-			enzyme = 'prot(name = \'{:s}\', loc = \'{:s}\')'.format(rxn['GENE OR COMPLEX'].replace('-', '_'), loc)
+			enzyme = 'prot(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = None, dw = None)'.format(rxn['GENE OR COMPLEX'].replace('-', '_'), loc)
 
 		# second: correct reaction names starting with a digit
 		name = rxn['REACTION'].replace('-', '_').replace('.', 'dot').replace('+', 'plus')
@@ -196,20 +196,20 @@ def rules_from_metabolic_network(model, data, verbose = False, toFile = False):
 			for loc in locations:
 				loc = location_values()[loc]
 				if subs.startswith(loc + '_'):
-					LHS.append('met(name = \'{:s}\', loc = \'{:s}\', prot = None)'.format(subs[len(loc + '_'):], loc.lower()))
+					LHS.append('met(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None)'.format(subs[len(loc + '_'):], loc.lower()))
 					islocated = True
 			if not islocated:
-				LHS.append('met(name = \'{:s}\', loc = \'{:s}\', prot = None)'.format(subs, 'cyt'))
+				LHS.append('met(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None)'.format(subs, 'cyt'))
 
 		for prod in products:
 			islocated = False
 			for loc in locations:
 				loc = location_values()[loc]
 				if prod.startswith(loc + '_'):
-					RHS.append('met(name = \'{:s}\', loc = \'{:s}\', prot = None)'.format(prod[len(loc + '_'):], loc.lower()))
+					RHS.append('met(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None)'.format(prod[len(loc + '_'):], loc.lower()))
 					islocated = True
 			if not islocated:
-				RHS.append('met(name = \'{:s}\', loc = \'{:s}\', prot = None)'.format(prod, 'cyt'))
+				RHS.append('met(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None)'.format(prod, 'cyt'))
 
 		# fifth: match the number of agents at both sides of the Rule (pySB checks and kappa v4 requires the matching)
 		if len(substrates) < len(products):

@@ -1,7 +1,7 @@
 GENE OR COMPLEX	ENZYME LOCATION	REACTION	SUBSTRATES	PRODUCTS	FWD_RATE	RVS_RATE
-spontaneous	[cytosol,periplasmic space]	LACTOSE-MUTAROTATION	alpha-lactose	beta-lactose	1	1
-spontaneous	[cytosol,periplasmic space]	GALACTOSE-MUTAROTATION	alpha-GALACTOSE	beta-GALACTOSE	1	1
-spontaneous	[cytosol,periplasmic space]	GLUCOSE-MUTAROTATION	alpha-glucose	beta-glucose	1	1
+spontaneous	cytosol	LACTOSE-MUTAROTATION	alpha-lactose	beta-lactose	1	1
+spontaneous	cytosol	GALACTOSE-MUTAROTATION	alpha-GALACTOSE	beta-GALACTOSE	1	1
+spontaneous	cytosol	GLUCOSE-MUTAROTATION	alpha-glucose	beta-glucose	1	1
 lacY	inner membrane	TRANS-RXN-24	PER-PROTON,PER-alpha-lactose	PROTON,alpha-lactose	1	0
 lacY	inner membrane	TRANS-RXN-24-beta	PER-PROTON,PER-beta-lactose	PROTON,beta-lactose	1	0
 lacY	inner membrane	TRANS-RXN-94	PER-PROTON,PER-MELIBIOSE	PROTON,MELIBIOSE	1	0

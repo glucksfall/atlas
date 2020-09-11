@@ -75,7 +75,7 @@ class set_initial:
 		if notFound:
 			model = alias_model_components(model)
 			exec('Initial(met(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None), ' \
-				'Parameter(\'t0_dna_{:s}_{:s}\', {:f}))'.format(name, loc.lower(), name, loc.lower(), new_value))
+				'Parameter(\'t0_met_{:s}_{:s}\', {:f}))'.format(name, loc.lower(), name, loc.lower(), new_value))
 			exec('Observable(\'obs_met_{:s}_{:s}\', ' \
 				'met(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None))'.format(name, loc.lower(), name, loc.lower()))
 		return model
