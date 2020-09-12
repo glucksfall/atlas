@@ -17,7 +17,7 @@ import re
 import numpy
 import pandas
 
-from .utils import read_network, check_genome_graph
+from .utils import read_network, check_genome_graph, location_keys, location_values
 
 def monomers_from_genome_graph(data, verbose = False, toFile = False):
 	# find DNA parts
@@ -28,7 +28,7 @@ def monomers_from_genome_graph(data, verbose = False, toFile = False):
 	types = []
 	for dna_part in sorted(set(architecture)):
 		if dna_part.startswith('BS'):
-			names.append('_'.join(dna_part.replace('BS-', '').split('-')))
+			names.append(dna_part.replace('-', '_'))
 		else:
 			names.append(dna_part.split('-')[0])
 			types.append(dna_part.split('-')[1])
@@ -41,7 +41,7 @@ def monomers_from_genome_graph(data, verbose = False, toFile = False):
 		"	'loc' : ['cyt']}})\n"
 
 	code = code.format(
-		', '.join([ '\'' + x + '\'' for x in sorted(set(names))]),
+		', '.join([ '\'' + x.replace('BS_', '') + '\'' for x in sorted(set(names))]),
 		', '.join([ '\'' + x + '\'' for x in sorted(set(types + ['BS']))]))
 
 	if verbose:
@@ -60,7 +60,7 @@ def monomers_from_genome_graph(data, verbose = False, toFile = False):
 		"	'loc' : ['cyt']}})\n"
 
 	code = code.format(
-		', '.join([ '\'' + x + '\'' for x in sorted(set(names))]),
+		', '.join([ '\'' + x.replace('BS_', '') + '\'' for x in sorted(set(names))]),
 		', '.join([ '\'' + x + '\'' for x in sorted(set(types + ['BS']))]))
 
 	if verbose:
@@ -75,9 +75,10 @@ def monomers_from_genome_graph(data, verbose = False, toFile = False):
 	code = "Monomer('prot',\n" \
 		"	['name', 'loc', 'dna', 'met', 'prot', 'rna', 'up', 'dw'],\n" \
 		"	{{ 'name' : [{:s}],\n" \
-		"	'loc' : ['cyt', 'mem']}})\n"
+		"	'loc' : [{:s}]}})\n"
 	names = [ x for x in names if not x.startswith('BS') ]
-	code = code.format(', '.join([ '\'' + x + '\'' for x in sorted(set(names))]))
+	all_locs = [ '\'' + x.lower() + '\'' for x in sorted(location_keys().keys()) ]
+	code = code.format(', '.join([ '\'' + x + '\'' for x in sorted(set(names))]), ', '.join(all_locs))
 
 	if verbose:
 		print(code)
@@ -142,24 +143,34 @@ def polymerase_sliding_rules(data, verbose = False, toFile = False):
 			operon.append(dna_part.split(',')[1][:-1])
 			operons.append(','.join(operon))
 		else:
-			operon.append(dna_part.split(',')[0])
+			if 'operon' in locals():
+				operon.append(dna_part.split(',')[0])
 
 	for rna_form in operons:
 		UPSTREAM = rna_form.split(',')[:-1]
 		DOWNSTREAM = rna_form.split(',')[1:]
 
 		for idx, (dna_part1, dna_part2) in enumerate(zip(UPSTREAM, DOWNSTREAM)):
-			name1 = dna_part1.split('-')[0]
-			type1 = dna_part1.split('-')[1]
-			name2 = dna_part2.split('-')[0]
-			type2 = dna_part2.split('-')[1]
-
 			if 'BS' in dna_part1:  # catch DNA binding sites to add to sliding rules
 				name1 = dna_part1.replace('BS-', '')
 				type1 = 'BS'
+				name2 = dna_part2.split('-')[0]
+				type2 = dna_part2.split('-')[1]
 			elif 'BS' in dna_part2:
+				name1 = dna_part1.split('-')[0]
+				type1 = dna_part1.split('-')[1]
 				name2 = dna_part2.replace('BS-', '')
 				type2 = 'BS'
+			elif 'BS' in dna_part1 and 'BS' in dna_part2:
+				name1 = dna_part1.replace('BS-', '')
+				type1 = 'BS'
+				name2 = dna_part2.replace('BS-', '')
+				type2 = 'BS'
+			else:
+				name1 = dna_part1.split('-')[0]
+				type1 = dna_part1.split('-')[1]
+				name2 = dna_part2.split('-')[0]
+				type2 = dna_part2.split('-')[1]
 
 			code = 'Rule(\'sliding_{:s}\',\n' \
 				'	cplx(name = \'RNAP-CPLX\', loc = \'cyt\', dna = 1) %\n' \
@@ -177,6 +188,8 @@ def polymerase_sliding_rules(data, verbose = False, toFile = False):
 
 			code = code.replace('-', '_').replace('[', '').replace(']', '')
 
+			if verbose:
+				print(code)
 			if toFile:
 				with open(toFile, 'a+') as outfile:
 					outfile.write(code)
@@ -246,7 +259,16 @@ def ribosome_sliding_rules(data, verbose = False, toFile = False):
 		if 'BS' in dna_part1:  # catch DNA binding sites to add to sliding rules
 			name1 = dna_part1.replace('BS-', '')
 			type1 = 'BS'
+			name2 = dna_part2.split('-')[0]
+			type2 = dna_part2.split('-')[1]
 		elif 'BS' in dna_part2:
+			name1 = dna_part1.split('-')[0]
+			type1 = dna_part1.split('-')[1]
+			name2 = dna_part2.replace('BS-', '')
+			type2 = 'BS'
+		elif 'BS' in dna_part1 and 'BS' in dna_part2:
+			name1 = dna_part1.replace('BS-', '')
+			type1 = 'BS'
 			name2 = dna_part2.replace('BS-', '')
 			type2 = 'BS'
 		else:
@@ -261,7 +283,7 @@ def ribosome_sliding_rules(data, verbose = False, toFile = False):
 				'	rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = 1) +\n' \
 				'	rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = None) +\n' \
 				'	None >>\n' \
-				'	cplx(name = \'RIBOSOME-CPLX\', rna = 1) %\n' \
+				'	cplx(name = \'RIBOSOME-CPLX\', loc = \'cyt\', rna = 1) %\n' \
 				'	rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = 1) +\n' \
 				'	rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = None) +\n' \
 				'	prot(name = \'{:s}\', loc = \'cyt\', dna = None, met = None, prot = None, rna = None, up = None, dw = None),\n' \
@@ -323,7 +345,8 @@ def observables_from_genome_graph(data, verbose = False, toFile = False):
 			operon.append(dna_part.split(',')[1][:-1])
 			operons.append(','.join(operon))
 		else:
-			operon.append(dna_part.split(',')[0])
+			if 'operon' in locals():
+				operon.append(dna_part.split(',')[0])
 
 	# prots
 	for operon in sorted(set(operons)):

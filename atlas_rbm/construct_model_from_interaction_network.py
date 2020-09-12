@@ -174,13 +174,13 @@ def from_interaction_network(data, i):
 			molecule = name
 
 		if molecule.split('-')[-1][0:3].lower() in ['pro', 'rbs', 'cds', 'ter']:
-			LHS.append('dna(name = \'{:s}\', type = \'{:s}\', loc = \'{:s}\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule.split('-')[-2], molecule.split('-')[-1], loc.lower()))
+			LHS.append('dna(name = \'{:s}\', type = \'{:s}\', loc = \'{:s}\', dna = None, prot = dna_link, met = None, rna = None, up = bs_link, dw = bs_link)'.format(molecule.split('-')[-2], molecule.split('-')[-1], loc.lower()))
 		elif molecule.startswith('BS-'):
-			LHS.append('dna(name = \'{:s}\', type = \'BS\', loc = \'{:s}\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule.replace('BS-', ''), loc.lower()))
+			LHS.append('dna(name = \'{:s}\', type = \'BS\', loc = \'{:s}\', dna = None, prot = dna_link, met = None, rna = None, up = bs_link, dw = bs_link)'.format(molecule.replace('BS-', ''), loc.lower()))
 		elif molecule.startswith('SMALL'):
-			LHS.append('met(name = \'{:s}\', loc = \'{:s}\', prot = met_link)'.format(molecule.replace('SMALL-', ''), loc.lower()))
+			LHS.append('met(name = \'{:s}\', loc = \'{:s}\', dna = None, prot = met_link, met = None, rna = None)'.format(molecule.replace('SMALL-', ''), loc.lower()))
 		else:
-			LHS.append('prot(name = \'{:s}\', loc = \'{:s}\', dna = dna_link, met = met_link, up = prot_link, dw = prot_link)'.format(molecule, loc.lower()))
+			LHS.append('prot(name = \'{:s}\', loc = \'{:s}\', dna = dna_link, prot = None, met = met_link, rna = None, up = prot_link, dw = prot_link)'.format(molecule, loc.lower()))
 
 	## join complexes
 	LHS = connectAgents(agents, LHS)
@@ -208,13 +208,13 @@ def from_interaction_network(data, i):
 			molecule = name
 
 		if molecule.split('-')[-1][0:3].lower() in ['pro', 'rbs', 'cds', 'ter']:
-			RHS.append('dna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule.split('-')[-2], molecule.split('-')[-1]))
+			RHS.append('dna(name = \'{:s}\', type = \'{:s}\', loc = \'{:s}\', dna = None, prot = dna_link, met = None, rna = None, up = bs_link, dw = bs_link)'.format(molecule.split('-')[-2], molecule.split('-')[-1], loc.lower()))
 		elif molecule.startswith('BS-'):
-			RHS.append('dna(name = \'{:s}\', type = \'BS\', prot = dna_link, up = bs_link, dw = bs_link)'.format(molecule.replace('BS-', '')))
+			RHS.append('dna(name = \'{:s}\', type = \'BS\', loc = \'{:s}\', dna = None, prot = dna_link, met = None, rna = None, up = bs_link, dw = bs_link)'.format(molecule.replace('BS-', ''), loc.lower()))
 		elif molecule.startswith('SMALL'):
-			RHS.append('met(name = \'{:s}\', loc = \'cyt\', prot = met_link)'.format(molecule.replace('SMALL-', '')))
+			RHS.append('met(name = \'{:s}\', loc = \'cyt\', dna = None, prot = met_link, met = None, rna = None)'.format(molecule.replace('SMALL-', '')))
 		else:
-			RHS.append('prot(name = \'{:s}\', loc = \'cyt\', dna = dna_link, met = met_link, up = prot_link, dw = prot_link)'.format(molecule))
+			RHS.append('prot(name = \'{:s}\', loc = \'cyt\', dna = dna_link, prot = None, met = met_link, rna = None, up = prot_link, dw = prot_link)'.format(molecule))
 
 	## join complexes
 	RHS = connectAgents(agents, RHS)
