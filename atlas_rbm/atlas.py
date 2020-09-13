@@ -234,6 +234,9 @@ def add_regulation(model, name = '', conditions = [], replace = False, verbose =
 			product_pattern = str(rule.product_pattern)
 			break
 
+	if replace:
+		model = remove_rule(model, name, verbose = verbose)
+
 	alias_model_components(model)
 	monomers = []
 	regulators = []
@@ -268,20 +271,32 @@ def add_regulation(model, name = '', conditions = [], replace = False, verbose =
 		LHS = ' '.join(LHS)
 		monomers.append(LHS)
 
-	reactant_pattern = ' +\n\t'.join(monomers + [reactant_pattern])
-	product_pattern = ' +\n\t'.join(monomers + [product_pattern])
+	monomers = ' +\n\t'.join(monomers)
+	# renumber patterns
+	links = [int(x[1:]) for x in set(re.findall(r'= \d+', monomers))]
+	if len(links) > 0: # require renumbering only if the regulator is a complex
+		max_link_monomers = max(links)
+		for link in reversed(sorted([int(x[1:]) for x in set(re.findall(r'=\d+', reactant_pattern))])):
+			reactant_pattern = reactant_pattern.replace('={:d}'.format(link), '={:d}'.format(link + max_link_monomers))
+		for link in reversed(sorted([int(x[1:]) for x in set(re.findall(r'=\d+', product_pattern))])):
+			product_pattern = product_pattern.replace('={:d}'.format(link), '={:d}'.format(link + max_link_monomers))
+
+	reactant_pattern = monomers + ' +\n\t' + reactant_pattern
+	product_pattern = monomers + ' +\n\t' + product_pattern
+
 	regulators = '_and_'.join(regulators)
 	name = '{:s}_regulated_by_{:s}'.format(name, regulators)
 
-	code = 'Rule(\'{:s}\',\n\t{:s} |\n\t{:s},\n\tParameter(\'fwd_{:s}\', 0),\n\tParameter(\'rvs_{:s}\', 0))'.format(name, reactant_pattern, product_pattern, name, name)
+	code = 'Rule(\'{:s}\', \n' \
+		'	{:s} |\n\t{:s}, \n' \
+		'	Parameter(\'fwd_{:s}\', 0), \n' \
+		'	Parameter(\'rvs_{:s}\', 0))'
+	code = code.format(name, reactant_pattern, product_pattern, name, name)
 	code = code.replace('-', '_')
 
 	if verbose:
 		print(code)
 	exec(code)
-
-	if replace:
-		model = remove_rule(model, name, verbose = verbose)
 
 	return model
 

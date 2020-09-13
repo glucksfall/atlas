@@ -266,7 +266,7 @@ def observables_from_metabolic_network(model, data, monomers, verbose = False, t
 		for name in sorted(monomers[0]):
 			name = name.replace('-', '_').replace('+', 'plus')
 			for loc in locations:
-				code = 'Observable(\'obs_met_{:s}_{:s}\', met(name = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None))\n'
+				code = 'Observable(\'obs_met_{:s}_{:s}\', met(name = \'{:s}\', loc = \'{:s}\'))\n'
 				code = code.format(name, loc.lower(), name, loc.lower())
 				if verbose:
 					print(code)

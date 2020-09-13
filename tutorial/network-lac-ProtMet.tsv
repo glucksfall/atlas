@@ -1,5 +1,5 @@
 SOURCE	TARGET	FWD_RATE	RVS_RATE	LOCATION
-[lacI,lacI]	SMALL-alpha-ALLOLACTOSE	1.0	1.0	cytosol
-[lacI,SMALL-alpha-ALLOLACTOSE,lacI]	SMALL-alpha-ALLOLACTOSE	1.0	1.0	cytosol
-[lacI,lacI]	SMALL-beta-ALLOLACTOSE	1.0	1.0	cytosol
-[lacI,SMALL-beta-ALLOLACTOSE,lacI]	SMALL-beta-ALLOLACTOSE	1.0	1.0	cytosol
+[lacI,lacI]	SMALL-alpha-ALLOLACTOSE	10.0	0.01	cytosol
+[lacI,lacI,SMALL-alpha-ALLOLACTOSE]	SMALL-beta-ALLOLACTOSE	10.0	0.01	cytosol
+[lacI,lacI]	SMALL-beta-ALLOLACTOSE	10.0	0.01	cytosol
+[lacI,lacI,SMALL-beta-ALLOLACTOSE]	SMALL-beta-ALLOLACTOSE	10.0	0.01	cytosol

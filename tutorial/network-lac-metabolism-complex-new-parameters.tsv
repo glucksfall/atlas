@@ -10,10 +10,10 @@ lacY	inner membrane	RXN0-7217	PER-PROTON,PER-CPD-3785	PROTON,CPD-3785	0.0001	0
 lacY	inner membrane	RXN-17755	PER-PROTON,PER-CPD-3801	PROTON,CPD-3801	0.0001	0
 [lacZ,lacZ,lacZ,lacZ]	[cytosol,cytosol,cytosol,cytosol]	BETAGALACTOSID-RXN	beta-lactose,WATER	beta-GALACTOSE,beta-glucose	0.01	0
 [lacZ,lacZ,lacZ,lacZ]	[cytosol,cytosol,cytosol,cytosol]	BETAGALACTOSID-RXN-alpha	alpha-lactose,WATER	alpha-GALACTOSE,alpha-glucose	0.01	0
-[lacZ,lacZ,lacZ,lacZ]	[cytosol,cytosol,cytosol,cytosol]	RXN0-5363	alpha-lactose	alpha-ALLOLACTOSE	1	0.1
-[lacZ,lacZ,lacZ,lacZ]	[cytosol,cytosol,cytosol,cytosol]	RXN0-5363-beta	beta-lactose	beta-ALLOLACTOSE	1	0.1
-[lacZ,lacZ,lacZ,lacZ]	[cytosol,cytosol,cytosol,cytosol]	ALLOLACTOSE-DEG-alpha	alpha-ALLOLACTOSE,WATER	alpha-GALACTOSE,alpha-glucose	0.0001	0
-[lacZ,lacZ,lacZ,lacZ]	[cytosol,cytosol,cytosol,cytosol]	ALLOLACTOSE-DEG-beta	beta-ALLOLACTOSE,WATER	beta-GALACTOSE,beta-glucose	0.0001	0
+[lacZ,lacZ,lacZ,lacZ]	[cytosol,cytosol,cytosol,cytosol]	RXN0-5363	alpha-lactose	alpha-ALLOLACTOSE	10.0	0.1
+[lacZ,lacZ,lacZ,lacZ]	[cytosol,cytosol,cytosol,cytosol]	RXN0-5363-beta	beta-lactose	beta-ALLOLACTOSE	10.0	0.1
+[lacZ,lacZ,lacZ,lacZ]	[cytosol,cytosol,cytosol,cytosol]	ALLOLACTOSE-DEG-alpha	alpha-ALLOLACTOSE,WATER	alpha-GALACTOSE,alpha-glucose	0.01	0
+[lacZ,lacZ,lacZ,lacZ]	[cytosol,cytosol,cytosol,cytosol]	ALLOLACTOSE-DEG-beta	beta-ALLOLACTOSE,WATER	beta-GALACTOSE,beta-glucose	0.01	0
 [lacZ,lacZ,lacZ,lacZ]	[cytosol,cytosol,cytosol,cytosol]	RXN-17726	CPD-3561,WATER	beta-GALACTOSE,Fructofuranose	1	0
 [lacZ,lacZ,lacZ,lacZ]	[cytosol,cytosol,cytosol,cytosol]	RXN0-7219	CPD-3785,WATER	beta-GALACTOSE,D-ARABINOSE	1	0
 [lacA,lacA,lacA]	[cytosol,cytosol,cytosol]	GALACTOACETYLTRAN-RXN-galactose	beta-GALACTOSE,ACETYL-COA	6-Acetyl-beta-D-Galactose,CO-A	1	0

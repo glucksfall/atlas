@@ -19,7 +19,7 @@ import pandas
 
 from .utils import read_network, check_genome_graph, location_keys, location_values
 
-def monomers_from_genome_graph(data, verbose = False, toFile = False):
+def monomers_from_genome_graph(data, additionalProteins, verbose = False, toFile = False):
 	# find DNA parts
 	architecture = list(data['UPSTREAM']) + list(data['DOWNSTREAM'])
 	architecture = [ x.replace('[', '').replace(']', '') for x in architecture ]
@@ -76,7 +76,7 @@ def monomers_from_genome_graph(data, verbose = False, toFile = False):
 		"	['name', 'loc', 'dna', 'met', 'prot', 'rna', 'up', 'dw'],\n" \
 		"	{{ 'name' : [{:s}],\n" \
 		"	'loc' : [{:s}]}})\n"
-	names = [ x for x in names if not x.startswith('BS') ]
+	names = [ x for x in names if not x.startswith('BS') ] + additionalProteins
 	all_locs = [ '\'' + x.lower() + '\'' for x in sorted(location_keys().keys()) ]
 	code = code.format(', '.join([ '\'' + x + '\'' for x in sorted(set(names))]), ', '.join(all_locs))
 
@@ -151,7 +151,12 @@ def polymerase_sliding_rules(data, verbose = False, toFile = False):
 		DOWNSTREAM = rna_form.split(',')[1:]
 
 		for idx, (dna_part1, dna_part2) in enumerate(zip(UPSTREAM, DOWNSTREAM)):
-			if 'BS' in dna_part1:  # catch DNA binding sites to add to sliding rules
+			if 'BS' in dna_part1 and 'BS' in dna_part2:
+				name1 = dna_part1.replace('BS-', '')
+				type1 = 'BS'
+				name2 = dna_part2.replace('BS-', '')
+				type2 = 'BS'
+			elif 'BS' in dna_part1:  # catch DNA binding sites to add to sliding rules
 				name1 = dna_part1.replace('BS-', '')
 				type1 = 'BS'
 				name2 = dna_part2.split('-')[0]
@@ -159,11 +164,6 @@ def polymerase_sliding_rules(data, verbose = False, toFile = False):
 			elif 'BS' in dna_part2:
 				name1 = dna_part1.split('-')[0]
 				type1 = dna_part1.split('-')[1]
-				name2 = dna_part2.replace('BS-', '')
-				type2 = 'BS'
-			elif 'BS' in dna_part1 and 'BS' in dna_part2:
-				name1 = dna_part1.replace('BS-', '')
-				type1 = 'BS'
 				name2 = dna_part2.replace('BS-', '')
 				type2 = 'BS'
 			else:
@@ -478,7 +478,7 @@ def observables_from_genome_graph(data, verbose = False, toFile = False):
 			else:
 				exec(code)
 
-def construct_model_from_genome_graph(network, verbose = False, toFile = False):
+def construct_model_from_genome_graph(network, additionalProteins = [], verbose = False, toFile = False):
 	if toFile:
 		with open(toFile, 'w') as outfile:
 			outfile.write('from pysb import *\nModel()\n\n')
@@ -506,7 +506,7 @@ def construct_model_from_genome_graph(network, verbose = False, toFile = False):
 	data = check_genome_graph(data)
 
 	model = Model()
-	monomers_from_genome_graph(data, verbose, toFile)
+	monomers_from_genome_graph(data, additionalProteins, verbose, toFile)
 
 	# write docking, slide, and falloff of RNAP-CPLX (without sigma factor) from DNA
 	polymerase_docking_rules(data, verbose, toFile)
