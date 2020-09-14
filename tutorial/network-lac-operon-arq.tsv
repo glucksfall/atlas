@@ -1,14 +1,14 @@
 UPSTREAM	DOWNSTREAM	RNAP_FWD_DOCK_RATE	RNAP_RVS_DOCK_RATE	RNAP_FWD_SLIDE_RATE	RNAP_FWD_FALL_RATE	RIB_FWD_DOCK_RATE	RIB_RVS_DOCK_RATE	RIB_FWD_SLIDE_RATE	RIB_FWD_FALL_RATE
-[lacZ-pro4	lacZ-pro3	0	1	1
-lacZ-pro3	lacZ-pro2	0	1	1
-lacZ-pro2	BS-lacI-72-92	0	1	1
+[lacZ-pro4	lacZ-pro3	1	1	1
+lacZ-pro3	lacZ-pro2	1	1	1
+lacZ-pro2	BS-lacI-72-92	1	1	1
 BS-lacI-72-92	BS-lacI-21-1			1
 BS-lacI-21-1	lacZ-pro1			1
 lacZ-pro1	lacZ-rbs	1	1	1
 lacZ-rbs	lacZ-cds			1		1	1	1	1
 lacZ-cds	BS-lacI-422-402			1
 BS-lacI-422-402	lacY-pro1			1
-lacY-pro1	lacY-rbs	0	1	1
+lacY-pro1	lacY-rbs	0	0	1
 lacY-rbs	lacY-cds			1		1	1	1	1
 lacY-cds	lacA-rbs			1
 lacA-rbs	lacA-cds			1		1	1	1	1

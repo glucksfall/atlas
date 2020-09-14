@@ -284,19 +284,25 @@ def add_regulation(model, name = '', conditions = [], replace = False, verbose =
 	reactant_pattern = monomers + ' +\n\t' + reactant_pattern
 	product_pattern = monomers + ' +\n\t' + product_pattern
 
+	rule_index = 1
+	added = False
 	regulators = '_and_'.join(regulators)
 	name = '{:s}_regulated_by_{:s}'.format(name, regulators)
+	while not added:
+		try:
+			code = 'Rule(\'{:s}_{:d}\', \n' \
+				'	{:s} |\n\t{:s}, \n' \
+				'	Parameter(\'fwd_{:s}_{:d}\', 0), \n' \
+				'	Parameter(\'rvs_{:s}_{:d}\', 0))'
+			code = code.format(name, rule_index, reactant_pattern, product_pattern, name, rule_index, name, rule_index)
+			code = code.replace('-', '_')
 
-	code = 'Rule(\'{:s}\', \n' \
-		'	{:s} |\n\t{:s}, \n' \
-		'	Parameter(\'fwd_{:s}\', 0), \n' \
-		'	Parameter(\'rvs_{:s}\', 0))'
-	code = code.format(name, reactant_pattern, product_pattern, name, name)
-	code = code.replace('-', '_')
-
-	if verbose:
-		print(code)
-	exec(code)
+			exec(code)
+			added = True
+			if verbose:
+				print(code)
+		except:
+			rule_index += 1
 
 	return model
 
