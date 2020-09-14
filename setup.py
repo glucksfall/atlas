@@ -33,7 +33,7 @@ def main():
 	setup(
 		name='atlas_rbm',
 		license='GPLv3+',
-		version='1.2.0',
+		version='1.3.0',
 		#version=versioneer.get_version(),
 		description='Atlas: Reconstruction of Rule-Based Models from biological networks',
 		long_description=long_description,
