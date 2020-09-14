@@ -102,11 +102,11 @@ def main():
 		# WARNING: use this way to install in the package folder and
 		# to have access to files using importlib_resources or importlib.resources
 		# bdist_wheel only
-		package_data = {
-			'atlas_rbm' : [
-				'notebooks/*',
-				]
-			},
+		#package_data = {
+			#'atlas_rbm' : [
+				#'notebooks/*',
+				#]
+			#},
 
 		# WARNING: do not use data_files as the installation path is hard to determine
 		# e.g.: ubuntu 18.04 install to /usr/local/installation_path or /$USER/.local/installation_path
