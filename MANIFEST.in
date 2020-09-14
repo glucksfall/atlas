@@ -7,8 +7,7 @@ recursive-exclude cytoscape-sessions *
 recursive-exclude docs *
 recursive-exclude examples *
 recursive-exclude notebooks *
-recursive-exclude PTools-22 *
-recursive-exclude PTools-24 *
+recursive-exclude PTools-Docker *
 recursive-exclude tutorial *
 
 recursive-exclude arabinose *
