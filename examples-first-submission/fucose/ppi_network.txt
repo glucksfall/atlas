@@ -1,0 +1,20 @@
+fucU	fucU
+[fucU, fucU]	[fucU, fucU]
+[fucU, fucU]	[fucU, fucU, fucU, fucU]
+[fucU, fucU]	[fucU, fucU, fucU, fucU, fucU, fucU]
+[fucU, fucU]	[fucU, fucU, fucU, fucU, fucU, fucU, fucU, fucU]
+
+[fucU, fucU, fucU, fucU]	[fucU, fucU, fucU, fucU]
+[fucU, fucU, fucU, fucU]	[fucU, fucU, fucU, fucU, fucU, fucU]
+
+fucI	fucI
+[fucI, fucI]	[fucI, fucI]
+[fucI, fucI]	[fucI, fucI, fucI, fucI]
+
+fucA	fucA
+[fucA, fucA]	[fucA, fucA]
+
+fucO	fucO
+
+aldA	aldA
+[aldA, aldA]	[aldA, aldA]

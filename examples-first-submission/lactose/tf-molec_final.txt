@@ -1,0 +1,4 @@
+lacI	beta-ALLOLACTOSE
+{lacI, beta-ALLOLACTOSE}	{lacI, beta-ALLOLACTOSE}
+{crp, crp}	CAMP
+{crp, crp, CAMP}	CAMP
