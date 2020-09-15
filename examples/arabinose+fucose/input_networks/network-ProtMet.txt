@@ -1,0 +1,15 @@
+SOURCE	TARGET	FWD_RATE	RVS_RATE	LOCATION
+araF	SMALL-alpha-L-arabinofuranose	1	1	[periplasmic space,periplasmic space]
+araF	SMALL-beta-L-arabinofuranose	1	1	[periplasmic space,periplasmic space]
+araF	SMALL-alpha-L-arabinopyranose	1	1	[periplasmic space,periplasmic space]
+araF	SMALL-beta-L-arabinopyranose	1	1	[periplasmic space,periplasmic space]
+
+araC	SMALL-alpha-L-arabinopyranose	1	1	cytosol
+
+[araC,araC]	SMALL-alpha-L-arabinopyranose	1	1	cytosol
+[araC,SMALL-alpha-L-arabinopyranose,araC]	SMALL-alpha-L-arabinopyranose	1	1	cytosol
+
+#[araG,araG,araH,araH]	[araF,SMALL-alpha-L-arabinofuranose]	1	1	[cytosol,cytosol,inner membrane,inner membrane,periplasmic space,periplasmic space]
+#[araG,araG,araH,araH]	[araF,SMALL-beta-L-arabinofuranose]	1	1	[cytosol,cytosol,inner membrane,inner membrane,periplasmic space,periplasmic space]
+[araG,araG,araH,araH]	[araF,SMALL-alpha-L-arabinopyranose]	1	1	[cytosol,cytosol,inner membrane,inner membrane,periplasmic space,periplasmic space]
+#[araG,araG,araH,araH]	[araF,SMALL-beta-L-arabinopyranose]	1	1	[cytosol,cytosol,inner membrane,inner membrane,periplasmic space,periplasmic space]

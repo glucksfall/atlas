@@ -1,0 +1,16 @@
+SOURCE	TARGET	FWD_RATE	RVS_RATE	LOCATION
+araA	araA	1	0	cytosol
+[araA,araA]	[araA,araA]	1	0	cytosol
+[araA,araA]	[araA,araA,araA,araA]	1	0	cytosol
+
+araB	araB	1	0	cytosol
+
+araD	araD	1	0	cytosol
+[araD,araD]	[araD,araD]	1	0	cytosol
+
+araG	araG	1	0	cytosol
+araH	araH	1	0	inner membrane
+
+[araG,araG]	[araH,araH]	1	1	[cytosol,cytosol,inner membrane,inner membrane]
+
+[araG,araG,araH,araH]	araF	1	1	[cytosol,cytosol,inner membrane,inner membrane,periplasmic space]

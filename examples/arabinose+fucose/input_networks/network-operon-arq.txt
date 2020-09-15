@@ -1,0 +1,35 @@
+UPSTREAM	DOWNSTREAM	RNAP_FWD_DOCK_RATE	RNAP_RVS_DOCK_RATE	RNAP_FWD_SLIDE_RATE	RNAP_FWD_FALL_RATE	RIB_FWD_DOCK_RATE	RIB_RVS_DOCK_RATE	RIB_FWD_SLIDE_RATE	RIB_FWD_FALL_RATE
+[araC-pro1	BS-araC-267-283	1	1	1
+BS-araC-267-283	araC-rbs			1
+araC-rbs	araC-cds			1		0.01	1	1	1
+araC-cds	araC-ter1]			1	1
+
+[BS-araC-130-146	BS-araC-109-125			1
+BS-araC-109-125	BS-araC-56-72			1
+BS-araC-56-72	BS-araC-35-51			1
+BS-araC-35-51	araB-pro1			1
+araB-pro1	araB-rbs	0.001	1	1
+araB-rbs	araB-cds			1		0.01	1	1	1
+araB-cds	araA-rbs			1
+araA-rbs	araA-cds			1		0.01	1	1	1
+araA-cds	araD-rbs			1
+araD-rbs	araD-cds			1		0.01	1	1	1
+araD-cds	araD-ter1]			1	1
+
+[BS-araC-57-73	BS-araC-36-52			1
+BS-araC-36-52	araE-pro1			1
+araE-pro1	araE-rbs	0.01	1	1
+araE-rbs	araE-cds			1		0.01	1	1	1
+araE-cds	araE-ter1]			1	1
+
+[BS-araC-158-174	BS-araC-137-153			1
+BS-araC-137-153	BS-araC-83-99			1
+BS-araC-83-99	BS-araC-62-78			1
+BS-araC-62-78	araF-pro1			1
+araF-pro1	araF-rbs	0.001	1	1
+araF-rbs	araF-cds			1		0.01	1	1	1
+araF-cds	araG-rbs			1
+araG-rbs	araG-cds			1		0.01	1	1	1
+araG-cds	araH-rbs			1
+araH-rbs	araH-cds			1		0.01	1	1	1
+araH-cds	araH-ter1]			1	1

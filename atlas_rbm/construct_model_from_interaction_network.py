@@ -195,7 +195,7 @@ def from_interaction_network(data, i):
 	agents = '[' + (data['SOURCE'].iloc[i] + ',' + data['TARGET'].iloc[i]).replace('[', '').replace(']', '') + ']'
 	names = agents.split(',')
 
-	for name in names:
+	for name, loc in zip(names, location):
 		if name[0] == '[': # we are dealing with the first monomer of a complex
 			molecule = name[1:]
 			next_in_complex = True
@@ -212,9 +212,9 @@ def from_interaction_network(data, i):
 		elif molecule.startswith('BS-'):
 			RHS.append('dna(name = \'{:s}\', type = \'BS\', loc = \'{:s}\', dna = None, prot = dna_link, met = None, rna = None, up = bs_link, dw = bs_link)'.format(molecule.replace('BS-', ''), loc.lower()))
 		elif molecule.startswith('SMALL'):
-			RHS.append('met(name = \'{:s}\', loc = \'cyt\', dna = None, prot = met_link, met = None, rna = None)'.format(molecule.replace('SMALL-', '')))
+			RHS.append('met(name = \'{:s}\', loc = \'{:s}\', dna = None, prot = met_link, met = None, rna = None)'.format(molecule.replace('SMALL-', ''), loc.lower()))
 		else:
-			RHS.append('prot(name = \'{:s}\', loc = \'cyt\', dna = dna_link, prot = None, met = met_link, rna = None, up = prot_link, dw = prot_link)'.format(molecule))
+			RHS.append('prot(name = \'{:s}\', loc = \'{:s}\', dna = dna_link, prot = None, met = met_link, rna = None, up = prot_link, dw = prot_link)'.format(molecule, loc.lower()))
 
 	## join complexes
 	RHS = connectAgents(agents, RHS)

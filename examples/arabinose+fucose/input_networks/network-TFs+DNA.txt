@@ -1,0 +1,29 @@
+SOURCE	TARGET	FWD_RATE	RVS_RATE	LOCATION
+# araBAD and araC
+araC	BS-araC-35-51	1	1	cytosol
+araC	BS-araC-56-72	1	1	cytosol
+araC	BS-araC-109-125	1	1	cytosol
+araC	BS-araC-130-146	1	1	cytosol
+araC	BS-araC-267-283	1	1	cytosol
+
+[araC,BS-araC-56-72]	[araC,BS-araC-267-283]	1	1	cytosol
+
+[araC,SMALL-alpha-L-arabinopyranose]	BS-araC-35-51	1	1	cytosol
+[araC,BS-araC-56-72]	SMALL-alpha-L-arabinopyranose	1	1	cytosol
+[araC,BS-araC-267-283]	SMALL-alpha-L-arabinopyranose	1	1	cytosol
+
+[araC,SMALL-alpha-L-arabinopyranose,BS-araC-56-72]	[araC,SMALL-alpha-L-arabinopyranose,BS-araC-35-51]	1	1	cytosol
+
+# araFGH
+[araC,SMALL-alpha-L-arabinopyranose]	BS-araC-158-174	1	0	cytosol
+[araC,SMALL-alpha-L-arabinopyranose]	BS-araC-137-153	1	0	cytosol
+[araC,SMALL-alpha-L-arabinopyranose]	BS-araC-83-99	1	0	cytosol
+[araC,SMALL-alpha-L-arabinopyranose]	BS-araC-62-78	1	0	cytosol
+
+[araC,SMALL-alpha-L-arabinopyranose,BS-araC-83-99]	[araC,SMALL-alpha-L-arabinopyranose,BS-araC-62-78]	1	1	cytosol
+
+# araE
+[araC,SMALL-alpha-L-arabinopyranose]	BS-araC-57-73	1	1	cytosol
+[araC,SMALL-alpha-L-arabinopyranose]	BS-araC-36-52	1	1	cytosol
+
+[araC,SMALL-alpha-L-arabinopyranose,BS-araC-57-73]	[araC,SMALL-alpha-L-arabinopyranose,BS-araC-36-52]	1	1	cytosol
