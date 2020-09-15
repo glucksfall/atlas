@@ -45,7 +45,7 @@ class set_initial:
 					notFound = False
 
 		if notFound:
-			print('Initial {:s} not found. Creating Initial {:s}...'.format(name, name))
+			print('Initial {:s} not found. Creating Initial {:s}...'.format(name + '_' + loc.lower(), name + '_' + loc.lower()))
 		return model, notFound
 
 	def cplx(model, name, loc = 'cyt', new_value = 0):
