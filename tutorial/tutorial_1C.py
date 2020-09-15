@@ -6,9 +6,9 @@ Model()
 
 Monomer('cplx', ['name', 'loc', 'dna', 'met', 'prot', 'rna'], {'name': ['RNAP_CPLX', 'RIBOSOME_CPLX'], 'loc': ['cyt']})
 Monomer('rna', ['name', 'type', 'loc', 'dna', 'met', 'prot', 'rna', 'up', 'dw'], {'name': ['lacI_21_1', 'lacI_422_402', 'lacI_72_92', 'lacA', 'lacY', 'lacZ'], 'type': ['BS', 'cds', 'pro1', 'pro2', 'pro3', 'pro4', 'rbs', 'ter1', 'ter2'], 'loc': ['cyt']})
-Monomer('prot', ['dna', 'dw', 'loc', 'met', 'name', 'prot', 'rna', 'up'], {'name': ['lacA', 'lacI', 'lacY', 'lacZ', 'spontaneous'], 'loc': ['bnuc', 'cproj', 'cyt', 'cytosk', 'ex', 'imem', 'mem', 'omem', 'per', 'wall']})
 Monomer('dna', ['dna', 'dw', 'loc', 'met', 'name', 'prot', 'rna', 'type', 'up'], {'name': ['lacA', 'lacI_21_1', 'lacI_422_402', 'lacI_72_92', 'lacY', 'lacZ'], 'loc': ['cyt'], 'type': ['BS', 'cds', 'pro1', 'pro2', 'pro3', 'pro4', 'rbs', 'ter1', 'ter2']})
 Monomer('met', ['dna', 'loc', 'met', 'name', 'prot', 'rna'], {'name': ['ACETYL_COA', 'CO_A', 'CPD_3561', 'CPD_3785', 'CPD_3801', 'D_ARABINOSE', 'Fructofuranose', 'MELIBIOSE', 'PROTON', 'WATER', '_6_Acetyl_beta_D_Galactose', 'alpha_ALLOLACTOSE', 'alpha_GALACTOSE', 'alpha_glucose', 'alpha_lactose', 'beta_ALLOLACTOSE', 'beta_GALACTOSE', 'beta_glucose', 'beta_lactose'], 'loc': ['bnuc', 'cproj', 'cyt', 'cytosk', 'ex', 'imem', 'mem', 'omem', 'per', 'wall']})
+Monomer('prot', ['dna', 'dw', 'loc', 'met', 'name', 'prot', 'rna', 'up'], {'name': ['lacA', 'lacI', 'lacY', 'lacZ', 'spontaneous'], 'loc': ['bnuc', 'cproj', 'cyt', 'cytosk', 'ex', 'imem', 'mem', 'omem', 'per', 'wall']})
 
 Parameter('t0_met_alpha_ALLOLACTOSE_cyt', 0.0)
 Parameter('t0_met_beta_ALLOLACTOSE_cyt', 0.0)

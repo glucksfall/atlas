@@ -6,6 +6,7 @@ exclude __pycache__
 recursive-exclude cytoscape-sessions *
 recursive-exclude docs *
 recursive-exclude examples *
+recursive-exclude examples-old *
 recursive-exclude notebooks *
 recursive-exclude PTools-Docker *
 recursive-exclude tutorial *

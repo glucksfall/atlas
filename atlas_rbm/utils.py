@@ -373,126 +373,145 @@ class metabolicNetwork:
 		Network = ''
 		# get reactions of product of gene, and complexes of product of gene:
 		for gene in genes:
-			rxns = []
-			prods = getData(code, df_genes.loc[gene, 'gene name'])['product'] # always a list
+			try:
+				rxns = []
+				prods = getData(code, df_genes.loc[gene, 'gene name'])['product'] # always a list
 
-			if prods != None:
-				for prod in prods:
-					enzrxns = getData(code, prod)['catalyzes'] # always a list
+				if prods != None:
+					for prod in prods:
+						enzrxns = getData(code, prod)['catalyzes'] # always a list
 
-					if enzrxns != None:
-						for enzrxn in enzrxns:
-							rxns.append([prod, getData(code, enzrxn)['reaction'][0]])
-		#             print(idx, '\t', name, '\t', prod, rxns)
+						if enzrxns != None:
+							for enzrxn in enzrxns:
+								rxns.append([prod, getData(code, enzrxn)['reaction'][0]])
+			#             print(idx, '\t', name, '\t', prod, rxns)
 
-					component_of = getData(code, prod)['component_of'] # always a list
-					if component_of != None:
-						for component in component_of:
-							enzrxns = getData(code, component)['catalyzes']
-							if enzrxns != None:
-								for enzrxn in enzrxns:
-									rxns.append([component, getData(code, enzrxn)['reaction'][0]])
-		#                     print(idx, '\t', name, '\t', component, rxns)
+						component_of = getData(code, prod)['component_of'] # always a list
+						if component_of != None:
+							for component in component_of:
+								enzrxns = getData(code, component)['catalyzes']
+								if enzrxns != None:
+									for enzrxn in enzrxns:
+										rxns.append([component, getData(code, enzrxn)['reaction'][0]])
+			#                     print(idx, '\t', name, '\t', component, rxns)
 
-							component_of = getData(code, component)['component_of'] # always a list
-							if component_of != None:
-								for component in component_of:
-									enzrxns = getData(code, component)['catalyzes']
-									if enzrxns != None:
-										for enzrxn in enzrxns:
-											rxns.append([component, getData(code, enzrxn)['reaction'][0]])
-		#                             print(idx, '\t', name, '\t', component, rxns)
+								component_of = getData(code, component)['component_of'] # always a list
+								if component_of != None:
+									for component in component_of:
+										enzrxns = getData(code, component)['catalyzes']
+										if enzrxns != None:
+											for enzrxn in enzrxns:
+												rxns.append([component, getData(code, enzrxn)['reaction'][0]])
+			#                             print(idx, '\t', name, '\t', component, rxns)
 
-									component_of = getData(code, component)['component_of'] # always a list
-									if component_of != None:
-										for component in component_of:
-											enzrxns = getData(code, component)['catalyzes']
-											if enzrxns != None:
-												for enzrxn in enzrxns:
-													rxns.append([component, getData(code, enzrxn)['reaction'][0]])
-		#                                     print(idx, '\t', name, '\t', component, rxns)
+										component_of = getData(code, component)['component_of'] # always a list
+										if component_of != None:
+											for component in component_of:
+												enzrxns = getData(code, component)['catalyzes']
+												if enzrxns != None:
+													for enzrxn in enzrxns:
+														rxns.append([component, getData(code, enzrxn)['reaction'][0]])
+			#                                     print(idx, '\t', name, '\t', component, rxns)
 
-											# CPLX0-3964 found in this level (ECOLI)
-											component_of = getData(code, component)['component_of'] # always a list
-											if component_of != None:
-												for component in component_of:
-													enzrxns = getData(code, component)['catalyzes']
-													if enzrxns != None:
-														for enzrxn in enzrxns:
-															rxns.append([component, getData(code, enzrxn)['reaction'][0]])
-		#                                             print(idx, '\t', name, '\t', component, rxns)
+												# CPLX0-3964 found in this level (ECOLI)
+												component_of = getData(code, component)['component_of'] # always a list
+												if component_of != None:
+													for component in component_of:
+														enzrxns = getData(code, component)['catalyzes']
+														if enzrxns != None:
+															for enzrxn in enzrxns:
+																rxns.append([component, getData(code, enzrxn)['reaction'][0]])
+			#                                             print(idx, '\t', name, '\t', component, rxns)
 
-			# we got all reactions from the product of a gene, now we format the network
-			for prod, rxn in rxns:
-				direction = getData(code, rxn)['reaction_direction']
-				if direction == '|PHYSIOL-LEFT-TO-RIGHT|' or direction == '|LEFT-TO-RIGHT|':
-					fwd = 1.0
-					rvs = 0.0
-				elif direction == '|PHYSIOL-RIGHT-TO-LEFT|' or direction == '|RIGHT-TO-LEFT|':
-					fwd = 0.0
-					rvs = 1.0
-				elif direction == '|REVERSIBLE|':
-					fwd = 1.0
-					rvs = 1.0
-				else:
-					fwd = 1.0
-					rvs = 0.0
+				# we got all reactions from the product of a gene, now we format the network
+				for prod, rxn in rxns:
+					direction = getData(code, rxn)['reaction_direction']
+					if direction == '|PHYSIOL-LEFT-TO-RIGHT|' or direction == '|LEFT-TO-RIGHT|':
+						fwd = 1.0
+						rvs = 0.0
+					elif direction == '|PHYSIOL-RIGHT-TO-LEFT|' or direction == '|RIGHT-TO-LEFT|':
+						fwd = 0.0
+						rvs = 1.0
+					elif direction == '|REVERSIBLE|':
+						fwd = 1.0
+						rvs = 1.0
+					else:
+						fwd = 1.0
+						rvs = 0.0
 
-				left = ','.join(getData(code, rxn)['left'])
-				right = ','.join(getData(code, rxn)['right'])
+					left = ','.join(getData(code, rxn)['left'])
+					right = ','.join(getData(code, rxn)['right'])
 
-				# location of genes products, but no complexes
-				if 'genes' in fmt or 'product' in fmt:
-					products = getData(code, df_genes.loc[gene, 'gene name'])['product']
-					locations = []
-					for product in products:
-						locations.append(getData(code, product)['locations'])
+					# location of genes products, but no complexes
+					if 'genes' in fmt or 'product' in fmt:
+						products = getData(code, df_genes.loc[gene, 'gene name'])['product']
+						locations = []
+						for product in products:
+							locations.append(getData(code, product)['locations'])
+						if locations[0] == None:
+							locations = [['unknown']]
 
-				if 'genes' in fmt:
-					for loc in locations[0]:
-						location = getData(code, loc)['common_name']
-						Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(gene, location, rxn, left, right, fwd, rvs)
+					if 'genes' in fmt:
+						for loc in locations[0]:
+							if loc != 'unknown':
+								location = getData(code, loc)['common_name']
+							else:
+								location = 'unknown'
+							Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(gene, location, rxn, left, right, fwd, rvs)
 
-				elif 'product' in fmt:
-					for loc in locations[0]:
-						location = getData(code, loc)['common_name']
-						Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(prod, location, rxn, left, right, fwd, rvs)
+					elif 'product' in fmt:
+						for loc in locations[0]:
+							if loc != 'unknown':
+								location = getData(code, loc)['common_name']
+							else:
+								location = 'unknown'
+							Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(prod, location, rxn, left, right, fwd, rvs)
 
-				elif 'complex' in fmt:
-					organism = selectOrganism(code)
-					genes = organism.genes_of_protein(prod)
-					monomers, stoichiometry = organism.monomers_of_protein(prod)
-					locations = []
-					for monomer in monomers:
-						locations.append(getData(code, monomer)['locations'])
+					elif 'complex' in fmt:
+						organism = selectOrganism(code)
+						genes = organism.genes_of_protein(prod)
+						monomers, stoichiometry = organism.monomers_of_protein(prod)
+						locations = []
+						for monomer in monomers:
+							locations.append(getData(code, monomer)['locations'])
 
-					import itertools
-					locations = list(itertools.product(*locations))
+						import itertools
+						locations = list(itertools.product(*locations))
 
-					for location in locations:
-						tmp = []
-						for loc, coefficient in zip(location, stoichiometry):
-							tmp.append([getData(code, loc)['common_name'] for x in range(coefficient)])
-						loc = [x for y in tmp for x in y]
+						for location in locations:
+							tmp = []
+							for loc, coefficient in zip(location, stoichiometry):
+								if loc != 'unknown':
+									tmp.append([getData(code, loc)['common_name'] for x in range(coefficient)])
+								else:
+									tmp.append(['unknown' for x in range(coefficient)])
+							loc = [x for y in tmp for x in y]
 
-						if len(loc) > 1:
-							loc = ','.join(loc)
-							loc = '[{:s}]'.format(loc)
-						else:
-							loc = loc[0]
+							if len(loc) > 1:
+								loc = ','.join(loc)
+								loc = '[{:s}]'.format(loc)
+							else:
+								loc = loc[0]
 
-						cplx = []
-						for gene, coefficient in zip(genes, stoichiometry):
-							cplx.append([getData(code, gene)['common_name'] for x in range(coefficient)])
-						cplx = [x for y in cplx for x in y]
+							cplx = []
+							for gene, coefficient in zip(genes, stoichiometry):
+								cplx.append([getData(code, gene)['common_name'] for x in range(coefficient)])
+							cplx = [x for y in cplx for x in y]
 
-						if len(cplx) > 1:
-							cplx = ','.join(cplx)
-							cplx = '[{:s}]'.format(cplx)
-						else:
-							cplx = cplx[0]
+							if len(cplx) > 1:
+								cplx = ','.join(cplx)
+								cplx = '[{:s}]'.format(cplx)
+							else:
+								cplx = cplx[0]
 
-						Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(cplx, loc, rxn, left, right, fwd, rvs)
+							Network += '{:s}\t{:s}\t{:s}\t{:s}\t{:s}\t{:f}\t{:f}\n'.format(cplx, loc, rxn, left, right, fwd, rvs)
+
+			except:
+				gene = gene.replace('|', '')
+				print(
+					'Unable to retrieve data for {:s}. ' \
+					'Please, review the information at https://biocyc.org/{:s}/NEW-IMAGE?object={:s} ' \
+					'and post an issue at https://github.com/networkbiolab/atlas if you believe it is a software error.'.format(gene, code, gene))
 
 		infile = io.StringIO(Network.replace('|',''))
 		header = ['GENE OR COMPLEX', 'ENZYME LOCATION', 'REACTION', 'SUBSTRATES', 'PRODUCTS', 'FWD_RATE', 'RVS_RATE']
@@ -868,88 +887,96 @@ class interactionNetwork:
 		Network = ''
 		organism = selectOrganism(code)
 		for gene in genes:
-			prod = organism.all_products_of_gene(df_genes.loc[gene, 'gene name'])
-			products = [ x.replace('|', '') for x in prod ]
+			try:
+				prod = organism.all_products_of_gene(df_genes.loc[gene, 'gene name'])
+				products = [ x.replace('|', '') for x in prod ]
 
-			for product in products:
-				monomers, stoichiometry = organism.monomers_of_protein(product)
+				for product in products:
+					monomers, stoichiometry = organism.monomers_of_protein(product)
 
-				if len(stoichiometry) == 1 and stoichiometry[0] > 1: # homomers, e.g. lacZ tetramer
-					loc = []
-					for monomer in monomers:
-						locations = getData(code, monomer)['locations']
-						for location in locations:
-							loc.append(getData(code, location)['common_name'])
-
-					Network += '{:s}\t{:s}\t[{:s}]\t1.0\t1.0\n'.format(gene, gene, ','.join(loc * 2))
-					for idx in range(3, stoichiometry[0]+1):
-						Network += '{:s}\t[{:s}]\t[{:s}]\t1.0\t1.0\n'.format(
-							gene, ','.join([gene for x in range(idx-1)]), ','.join(loc * idx))
-
-				elif len(stoichiometry) > 1: # heteromers, each index is the stoichiometry of a component
-					genes = []
-					for monomer, coefficient in zip(monomers, stoichiometry):
-						tmp = organism.genes_of_protein(monomer)
-						gene = getData(code, tmp[0])['common_name']
-						genes.append(gene)
-
-						if coefficient > 1: # assembly of homomers from the heteromer, e.g. A+A, B+B
+					if len(stoichiometry) == 1 and stoichiometry[0] > 1: # homomers, e.g. lacZ tetramer
+						loc = []
+						for monomer in monomers:
 							locations = getData(code, monomer)['locations']
 							for location in locations:
-								loc = [getData(code, location)['common_name']]
-								Network += '{:s}\t{:s}\t[{:s}]\t1.0\t1.0\n'.format(gene, gene, ','.join(loc * 2))
-								for idx in range(3, coefficient+1):
-									Network += '{:s}\t[{:s}]\t[{:s}]\t1.0\t1.0\n'.format(
-										gene, ','.join([gene for x in range(idx-1)]), ','.join(loc * idx))
+								loc.append(getData(code, location)['common_name'])
 
-					for a,b in itertools.combinations(range(len(stoichiometry)), 2): # assembly of homomers, e.g AA + BB
-						tmp = [getData(code, x)['locations'] for x in monomers]
+						Network += '{:s}\t{:s}\t[{:s}]\t1.0\t1.0\n'.format(gene, gene, ','.join(loc * 2))
+						for idx in range(3, stoichiometry[0]+1):
+							Network += '{:s}\t[{:s}]\t[{:s}]\t1.0\t1.0\n'.format(
+								gene, ','.join([gene for x in range(idx-1)]), ','.join(loc * idx))
+
+					elif len(stoichiometry) > 1: # heteromers, each index is the stoichiometry of a component
+						genes = []
+						for monomer, coefficient in zip(monomers, stoichiometry):
+							tmp = organism.genes_of_protein(monomer)
+							gene = getData(code, tmp[0])['common_name']
+							genes.append(gene)
+
+							if coefficient > 1: # assembly of homomers from the heteromer, e.g. A+A, B+B
+								locations = getData(code, monomer)['locations']
+								for location in locations:
+									loc = [getData(code, location)['common_name']]
+									Network += '{:s}\t{:s}\t[{:s}]\t1.0\t1.0\n'.format(gene, gene, ','.join(loc * 2))
+									for idx in range(3, coefficient+1):
+										Network += '{:s}\t[{:s}]\t[{:s}]\t1.0\t1.0\n'.format(
+											gene, ','.join([gene for x in range(idx-1)]), ','.join(loc * idx))
+
+						for a,b in itertools.combinations(range(len(stoichiometry)), 2): # assembly of homomers, e.g AA + BB
+							tmp = [getData(code, x)['locations'] for x in monomers]
+							tmp = list(itertools.product(*tmp))
+
+							for loc in tmp:
+								names = []
+								for location in loc:
+									names.append(getData(code, location)['common_name'])
+
+								loc = ','.join([names[a] for x in range(stoichiometry[a])] + [names[b] for x in range(stoichiometry[b])])
+								if stoichiometry[a] == 1 and stoichiometry[b] == 1:
+									Network += '{:s}\t{:s}\t[{:s}]\t1.0\t1.0\n'.format(
+										','.join([genes[a] for x in range(stoichiometry[a])]),
+										','.join([genes[b] for x in range(stoichiometry[b])]), loc)
+
+								elif stoichiometry[a] == 1 and stoichiometry[b] > 1:
+									Network += '{:s}\t[{:s}]\t[{:s}]\t1.0\t1.0\n'.format(
+										','.join([genes[a] for x in range(stoichiometry[a])]),
+										','.join([genes[b] for x in range(stoichiometry[b])]), loc)
+
+								elif stoichiometry[a] > 1 and stoichiometry[b] == 1:
+									Network += '[{:s}]\t{:s}\t[{:s}]\t1.0\t1.0\n'.format(
+										','.join([genes[a] for x in range(stoichiometry[a])]),
+										','.join([genes[b] for x in range(stoichiometry[b])]), loc)
+
+								elif stoichiometry[a] > 1 and stoichiometry[b] > 1:
+									Network += '[{:s}]\t[{:s}]\t[{:s}]\t1.0\t1.0\n'.format(
+										','.join([genes[a] for x in range(stoichiometry[a])]),
+										','.join([genes[b] for x in range(stoichiometry[b])]), loc)
+
+						# enumeration of all ordered mechanisms of assembly: e.g. ABC -> A+B+C, A+C+B, B+A+C, B+C+A, C+A+B, C+B+A
+						new = [[x] * y for x,y in zip(genes, stoichiometry)]
+						new = [x for y in new for x in y]
+
+						tmp = [[x] * y for x,y in zip(monomers, stoichiometry)]
+						tmp = [x for y in tmp for x in y]
+						tmp = [getData(code, x)['locations'] for x in tmp]
 						tmp = list(itertools.product(*tmp))
 
-						for loc in tmp:
-							names = []
-							for location in loc:
-								names.append(getData(code, location)['common_name'])
+						for locs in tmp:
+							for new2, loc2 in zip(itertools.permutations(new), itertools.permutations(locs)):
+								names = []
+								for loc in loc2:
+									names.append(getData(code, loc)['common_name'])
 
-							loc = ','.join([names[a] for x in range(stoichiometry[a])] + [names[b] for x in range(stoichiometry[b])])
-							if stoichiometry[a] == 1 and stoichiometry[b] == 1:
-								Network += '{:s}\t{:s}\t[{:s}]\t1.0\t1.0\n'.format(
-									','.join([genes[a] for x in range(stoichiometry[a])]),
-									','.join([genes[b] for x in range(stoichiometry[b])]), loc)
+								for idx in range(1,len(new2)-1):
+									Network += '{:s}\t[{:s}]\t[{:s}]\t1.0\t1.0\n'.format(
+										new2[idx+1], ','.join([x for x in new2[0:idx+1]]), ','.join(names[0:idx+2]))
 
-							elif stoichiometry[a] == 1 and stoichiometry[b] > 1:
-								Network += '{:s}\t[{:s}]\t[{:s}]\t1.0\t1.0\n'.format(
-									','.join([genes[a] for x in range(stoichiometry[a])]),
-									','.join([genes[b] for x in range(stoichiometry[b])]), loc)
-
-							elif stoichiometry[a] > 1 and stoichiometry[b] == 1:
-								Network += '[{:s}]\t{:s}\t[{:s}]\t1.0\t1.0\n'.format(
-									','.join([genes[a] for x in range(stoichiometry[a])]),
-									','.join([genes[b] for x in range(stoichiometry[b])]), loc)
-
-							elif stoichiometry[a] > 1 and stoichiometry[b] > 1:
-								Network += '[{:s}]\t[{:s}]\t[{:s}]\t1.0\t1.0\n'.format(
-									','.join([genes[a] for x in range(stoichiometry[a])]),
-									','.join([genes[b] for x in range(stoichiometry[b])]), loc)
-
-					# enumeration of all ordered mechanisms of assembly: e.g. ABC -> A+B+C, A+C+B, B+A+C, B+C+A, C+A+B, C+B+A
-					new = [[x] * y for x,y in zip(genes, stoichiometry)]
-					new = [x for y in new for x in y]
-
-					tmp = [[x] * y for x,y in zip(monomers, stoichiometry)]
-					tmp = [x for y in tmp for x in y]
-					tmp = [getData(code, x)['locations'] for x in tmp]
-					tmp = list(itertools.product(*tmp))
-
-					for locs in tmp:
-						for new2, loc2 in zip(itertools.permutations(new), itertools.permutations(locs)):
-							names = []
-							for loc in loc2:
-								names.append(getData(code, loc)['common_name'])
-
-							for idx in range(1,len(new2)-1):
-								Network += '{:s}\t[{:s}]\t[{:s}]\t1.0\t1.0\n'.format(
-									new2[idx+1], ','.join([x for x in new2[0:idx+1]]), ','.join(names[0:idx+2]))
+			except:
+				gene = gene.replace('|', '')
+				print(
+					'Unable to retrieve data for {:s}. ' \
+					'Please, review the information at https://biocyc.org/{:s}/NEW-IMAGE?object={:s} ' \
+					'and post an issue at https://github.com/networkbiolab/atlas if you believe it is a software error.'.format(gene, code, gene))
 
 		infile = io.StringIO(Network.replace('|',''))
 		header = ['SOURCE', 'TARGET', 'LOCATION', 'FWD_RATE', 'RVS_RATE']
