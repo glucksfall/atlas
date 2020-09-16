@@ -1,0 +1,40 @@
+UPSTREAM	DOWNSTREAM	RNAP_FWD_DOCK_RATE	RNAP_RVS_DOCK_RATE	RNAP_FWD_SLIDE_RATE	RNAP_FWD_FALL_RATE	RIB_FWD_DOCK_RATE	RIB_RVS_DOCK_RATE	RIB_FWD_SLIDE_RATE	RIB_FWD_FALL_RATE
+[rpoA-pro1	rpoA-rbs	1	1	1
+rpoA-rbs	rpoA-cds			1		1	1	1	1
+rpoA-cds	rpoA-ter1]			1	1
+
+[rpoB-pro1	rpoB-rbs	1	1	1
+rpoB-rbs	rpoB-cds			1		1	1	1	1
+rpoB-cds	rpoB-ter1			1	1
+rpoB-ter1	rpoC-pro1			1
+rpoC-pro1	rpoC-rbs	1	1	1
+rpoC-rbs	rpoC-cds			1		1	1	1	1
+rpoC-cds	rpoC-ter1]			1	1
+
+[rpoD-pro1	rpoD-rbs	1	1	1
+rpoD-rbs	rpoD-cds			1		1	1	1	1
+rpoD-cds	rpoD-ter1]			1	1
+
+[rpoE-pro1	rpoE-rbs	1	1	1
+rpoE-rbs	rpoE-cds			1		1	1	1	1
+rpoE-cds	rpoE-ter1]			1	1
+
+[rpoH-pro1	rpoH-rbs	1	1	1
+rpoH-rbs	rpoH-cds			1		1	1	1	1
+rpoH-cds	rpoH-ter1]			1	1
+
+[rpoN-pro1	rpoN-rbs	1	1	1
+rpoN-rbs	rpoN-cds			1		1	1	1	1
+rpoN-cds	rpoN-ter1]			1	1
+
+[rpoS-pro1	rpoS-rbs	1	1	1
+rpoS-rbs	rpoS-cds			1		1	1	1	1
+rpoS-cds	rpoS-ter1]			1	1
+
+[fliA-pro1	fliA-rbs	1	1	1
+fliA-rbs	fliA-cds			1		1	1	1	1
+fliA-cds	fliA-ter1]			1	1
+
+[fecI-pro1	fecI-rbs	1	1	1
+fecI-rbs	fecI-cds			1		1	1	1	1
+fecI-cds	fecI-ter1]			1	1

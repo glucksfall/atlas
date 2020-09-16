@@ -748,39 +748,38 @@ def observables_from_genome_graph(data, verbose = False, toFile = False):
 							'	{:s})\n'
 						code = code.format(name, cds)
 
-						if verbose:
-							print(code)
-						if toFile:
-							with open(toFile, 'a+') as outfile:
-								outfile.write(code)
-						else:
+						try:
 							exec(code)
+						except:
+							pass
+			try:
+				complex_pysb = ' %\n	'.join(complex_pysb)
 
-			complex_pysb = ' %\n	'.join(complex_pysb)
+				code = 'Initial({:s},\n' \
+					'	Parameter(\'t0_rna_{:s}_form{:d}\', 0))\n'
+				code = code.format(complex_pysb, operon_name, idx+1)
 
-			code = 'Initial({:s},\n' \
-				'	Parameter(\'t0_rna_{:s}_form{:d}\', 0))\n'
-			code = code.format(complex_pysb, operon_name, idx+1)
+				if verbose:
+					print(code)
+				if toFile:
+					with open(toFile, 'a+') as outfile:
+						outfile.write(code)
+				else:
+					exec(code)
 
-			if verbose:
-				print(code)
-			if toFile:
-				with open(toFile, 'a+') as outfile:
-					outfile.write(code)
-			else:
-				exec(code)
+				code = 'Observable(\'obs_rna_{:s}_form{:d}\',\n' \
+					'	{:s})\n'
+				code = code.format(operon_name, idx+1, complex_pysb)
 
-			code = 'Observable(\'obs_rna_{:s}_form{:d}\',\n' \
-				'	{:s})\n'
-			code = code.format(operon_name, idx+1, complex_pysb)
-
-			if verbose:
-				print(code)
-			if toFile:
-				with open(toFile, 'a+') as outfile:
-					outfile.write(code)
-			else:
-				exec(code)
+				if verbose:
+					print(code)
+				if toFile:
+					with open(toFile, 'a+') as outfile:
+						outfile.write(code)
+				else:
+					exec(code)
+			except:
+				pass
 
 def construct_model_from_sigma_specificity_network(promoters, architecture, verbose = False, toFile = False):
 	if toFile:

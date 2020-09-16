@@ -1,0 +1,37 @@
+SOURCE	TARGET	FWD_DOCK_RATE	RVS_DOCK_RATE	FWD_SLIDE_RATE
+# Docking to promoters
+[rpoA,rpoA,rpoB,rpoC,rpoD]	rpoA-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoD]	rpoB-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoD]	rpoC-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoD]	rpoD-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoD]	rpoE-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoD]	rpoH-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoD]	rpoN-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoD]	rpoS-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoD]	fliA-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoD]	fecI-pro1	1.0	1.0	1.0
+
+[rpoA,rpoA,rpoB,rpoC,rpoE]	rpoD-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoE]	rpoE-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoE]	rpoH-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoE]	rpoN-pro1	1.0	1.0	1.0
+
+[rpoA,rpoA,rpoB,rpoC,rpoH]	rpoA-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoH]	rpoD-pro1	1.0	1.0	1.0
+
+[rpoA,rpoA,rpoB,rpoC,rpoN]	rpoA-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoN]	rpoD-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoN]	rpoH-pro1	1.0	1.0	1.0
+
+[rpoA,rpoA,rpoB,rpoC,rpoS]	fecI-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoS]	rpoA-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoS]	rpoB-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoS]	rpoC-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoS]	rpoD-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoS]	rpoE-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoS]	rpoH-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,rpoS]	rpoN-pro1	1.0	1.0	1.0
+
+[rpoA,rpoA,rpoB,rpoC,fliA]	rpoD-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,fliA]	rpoN-pro1	1.0	1.0	1.0
+[rpoA,rpoA,rpoB,rpoC,fliA]	fliA-pro1	1.0	1.0	1.0
