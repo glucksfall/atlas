@@ -243,7 +243,7 @@ def polymerase_sliding_from_promoters_rules(data, data_arq, verbose = False, toF
 				RULE_LHS.append(LHS)
 
 				## form the RHS
-				agents = ','.join(data['SOURCE'].iloc[sigma].split(',')[:-1]) + ',' + dna_part2 + '],' + data['TARGET'].iloc[sigma]
+				agents = ','.join(data['SOURCE'].iloc[sigma].split(',')[:-1]) + ',' + dna_part2 + '],' + data['SOURCE'].iloc[sigma].split(',')[-1][:-1] + ',' + data['TARGET'].iloc[sigma]
 				names = agents.split(',')
 
 				RHS = []
@@ -279,6 +279,9 @@ def polymerase_sliding_from_promoters_rules(data, data_arq, verbose = False, toF
 
 				## join complexes
 				RHS = connectAgents(agents, RHS)
+
+				# reorder (KaSim compatibility)
+				RHS = [' %\n\t'.join(RHS[0].split(' %\n\t')[:-1] + [RHS[1]] + [RHS[0].split(' %\n\t')[-1]]), RHS[2], RHS[3]]
 
 				## RHS final join
 				RHS = ' +\n	'.join(RHS)
@@ -569,7 +572,7 @@ def ribosome_sliding_rules(data, verbose = False, toFile = False):
 				'	rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = 1) +\n' \
 				'	rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = None) +\n' \
 				'	None >>\n' \
-				'	cplx(name = \'RIBOSOME-CPLX\', rna = 1) %\n' \
+				'	cplx(name = \'RIBOSOME-CPLX\', loc = \'cyt\', rna = 1) %\n' \
 				'	rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = 1) +\n' \
 				'	rna(name = \'{:s}\', type = \'{:s}\', loc = \'cyt\', prot = None) +\n' \
 				'	prot(name = \'{:s}\', loc = \'cyt\', dna = None, met = None, prot = None, rna = None, up = None, dw = None),\n' \
@@ -736,6 +739,22 @@ def observables_from_genome_graph(data, verbose = False, toFile = False):
 				else:
 					complex_pysb.append('rna(name = \'{:s}\', type = \'{:s}\', loc = \'{:s}\', dna = None, met = None, prot = None, rna = None, up = {:s}, dw = {:s})'.format(
 						monomer.split('-')[0], monomer.split('-')[1], 'cyt', str(up[index]), str(dw[index])))
+
+					if monomer.split('-')[1][0:3].lower() == 'cds':
+						name = monomer.split('-')[0]
+						cds = 'rna(name = \'{:s}\', type = \'{:s}\', loc = \'{:s}\')'.format(monomer.split('-')[0], monomer.split('-')[1], 'cyt')
+
+						code = 'Observable(\'obs_rna_{:s}_CDS\',\n' \
+							'	{:s})\n'
+						code = code.format(name, cds)
+
+						if verbose:
+							print(code)
+						if toFile:
+							with open(toFile, 'a+') as outfile:
+								outfile.write(code)
+						else:
+							exec(code)
 
 			complex_pysb = ' %\n	'.join(complex_pysb)
 
