@@ -639,6 +639,8 @@ def observables_from_genome_graph(data, verbose = False, toFile = False):
 	# prots
 	for operon in sorted(set(operons)):
 		names = [(m.start(0), m.end(0)) for m in re.finditer(r'\w+-cds\d?', operon)]
+		if len(names) == 0:
+			names = [(m.start(0), m.end(0)) for m in re.finditer(r'\w+-rbs\d?', operon)]
 
 		prots = []
 		for lst in names:
