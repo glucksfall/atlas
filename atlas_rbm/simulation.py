@@ -108,11 +108,11 @@ class set_initial:
 def scipy(model, start = 0, finish = 10, points = 10):
 	return ScipyOdeSimulator(model, linspace(start, finish, points+1)).run().dataframe
 
-def bngODE(model, start = 0, finish = 10, points = 10, path = '/opt/'):
+def bngODE(model, start = 0, finish = 10, points = 10, path = '/opt/conda/bin/'):
 	set_path('bng', path)
 	return BngSimulator(model, linspace(start, finish, points+1)).run(method = 'ode').dataframe
 
-def cupsoda(model, start = 0, finish = 10, points = 10, path = '/opt/´'):
+def cupsoda(model, start = 0, finish = 10, points = 10, path = '/opt/conda/bin/´'):
 	set_path('cupsoda', path)
 	return CupSodaSimulator(model, linspace(start, finish, points+1)).run().dataframe
 
@@ -133,34 +133,34 @@ def modes(sims, n_runs):
 
 	return {'sims' : data, 'avrg' : avrg, 'stdv' : stdv}
 
-def bngSSA(model, start = 0, finish = 10, points = 10, n_runs = 20, path = '/opt/'):
+def bngSSA(model, start = 0, finish = 10, points = 10, n_runs = 20, path = '/opt/conda/bin/'):
 	set_path('bng', path)
 
 	sims = BngSimulator(model, linspace(start, finish, points+1)).run(method = 'ssa', n_runs = n_runs).dataframe
 	sims = modes(sims, n_runs)
 	return {'sims' : sims['sims'], 'avrg' : sims['avrg'], 'stdv' : sims['stdv']}
 
-def bngPLA(model, start = 0, finish = 10, points = 10, n_runs = 20, path = '/opt/'):
+def bngPLA(model, start = 0, finish = 10, points = 10, n_runs = 20, path = '/opt/conda/bin/'):
 	set_path('bng', path)
 
 	sims = BngSimulator(model, linspace(start, finish, points+1)).run(method = 'pla', n_runs = n_runs).dataframe
 	sims = modes(sims, n_runs)
 	return {'sims' : sims['sims'], 'avrg' : sims['avrg'], 'stdv' : sims['stdv']}
 
-def bngNF(model, start = 0, finish = 10, points = 10, n_runs = 20, path = '/opt/'):
+def bngNF(model, start = 0, finish = 10, points = 10, n_runs = 20, path = '/opt/conda/bin/'):
 	set_path('bng', path)
 
 	sims = BngSimulator(model, linspace(start, finish, points+1)).run(method = 'nf', n_runs = n_runs).dataframe
 	sims = modes(sims, n_runs)
 	return {'sims' : sims['sims'], 'avrg' : sims['avrg'], 'stdv' : sims['stdv']}
 
-def kasim(model, start = 0, finish = 10, points = 10, n_runs = 20, path = '/opt/'):
+def kasim(model, start = 0, finish = 10, points = 10, n_runs = 20, path = '/opt/conda/bin/'):
 	set_path('kasim', path)
 	sims = KappaSimulator(model, linspace(start, finish, points+1)).run(n_runs = n_runs).dataframe
 	sims = modes(sims, n_runs)
 	return {'sims' : sims['sims'], 'avrg' : sims['avrg'], 'stdv' : sims['stdv']}
 
-def stochkit(model, start = 0, finish = 10, points = 10, n_runs = 20, path = '/opt/'):
+def stochkit(model, start = 0, finish = 10, points = 10, n_runs = 20, path = '/opt/conda/bin/'):
 	set_path('stochkit_ssa', path)
 	sims = StochKitSimulator(model, linspace(start, finish, points+1)).run(n_runs = n_runs).dataframe
 	sims = modes(sims, n_runs)

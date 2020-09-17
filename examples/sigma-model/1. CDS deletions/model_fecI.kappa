@@ -1,6 +1,6 @@
-%agent: cplx(name{RIBOSOME_CPLX},loc{cyt},dna,met,prot,rna)
-%agent: dna(name{fecI fliA rpoA rpoB rpoC rpoD rpoE rpoH rpoN rpoS},type{BS cds pro1 rbs ter1},loc{cyt},dna,met,prot,rna,up,dw)
 %agent: rna(name{fecI fliA rpoA rpoB rpoC rpoD rpoE rpoH rpoN rpoS},type{BS cds pro1 rbs ter1},loc{cyt},dna,met,prot,rna,up,dw)
+%agent: dna(name{fecI fliA rpoA rpoB rpoC rpoD rpoE rpoH rpoN rpoS},type{BS cds pro1 rbs ter1},loc{cyt},dna,met,prot,rna,up,dw)
+%agent: cplx(name{RIBOSOME_CPLX},loc{cyt},dna,met,prot,rna)
 %agent: prot(dna,dw,loc{bnuc cproj cyt cytosk ex imem mem omem per wall},met,name{fecI fliA rpoA rpoB rpoC rpoD rpoE rpoH rpoN rpoS},prot,rna,up)
 
 %var: 't0_prot_fecI_cyt' 0.000000e+00
