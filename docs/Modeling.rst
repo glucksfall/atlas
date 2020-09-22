@@ -17,6 +17,9 @@ network
 
 #. :ref:`Net-GenomeGraphs`
 
+.. raw:: latex
+    \newpage
+
 .. toctree::
    :maxdepth: 3
    :hidden:

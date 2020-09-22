@@ -1,22 +1,53 @@
 Installation
 ============
 
-There are two different ways to install Atlas:
+There are different ways to install Atlas:
 
-1. **Install Atlas natively (Recommended).**
+1. **Install the docker Pleiades (Highly recommended).** The docker container is the easiest way to obtain
+   the software Atlas, the stochastic simulators BioNetGen and KaSim, and the Jupyter notebook.
 
    *OR*
 
-2. **Clone the Github repository.** If you are familiar with git, Atlas can
-   be cloned and the respective folder added to the python path. Further details
-   are below.
+2. **Clone the Pleiades GitHub repository.** If you are familiar with git, the docker container could
+   be obtained cloning the Pleiades repository. Further details are below.
+
+   *OR*
+
+3. **Install Atlas with pip3.**
+
+   *OR*
+
+4. **Clone the Atlas GitHub repository.** If you are familiar with git, Atlas could
+   be obtained cloning the Atlas repository and the respective directory added to `PYTHONPATH`.
+   Further details are below.
 
 .. note::
     **Need Help?**
     If you run into any problems with installation, please visit our chat room:
     https://gitter.im/glucksfall/pleiades
 
-Option 1: Install Atlas natively on your computer
+Option 1: Install the Pleiades docker container
+-----------------------------------------------
+Install the docker container is the easiest way to obtain the software Atlas.
+
+Install the docker image "pleiades" using ```docker pull networkbiolab/pleiades```.
+The container is based on the Anaconda3 software and
+it installs Atlas, and the stochastic simulators BNG2, NFsim, KaSim, and
+Stochkit. After building the image, please run the container with
+```docker run --detach --publish 10000:8888 networkbiolab/pleiades```, and go to
+```localhost:10000``` in your preferred browser. The required password is
+```pleiades```.
+
+Option 2: Clone the Pleiades repository
+---------------------------------------
+
+Download or clone the Github repository from https://github.com/networkbiolab/pleiades
+with ```git clone https://github.com/networkbiolab/pleiades foo``` (where ```foo``` is an absolute
+or relative path). Then, you could build the docker image with ```docker build foo --tag pleiades```
+and run it with ```docker run --detach --publish 10000:8888 pleiades```.
+Finally, go to ```localhost:10000``` in your preferred browser. The required password is ```pleiades```.
+
+Option 3: Install Atlas natively on your computer
 -------------------------------------------------
 
 The recommended approach is to use system tools, or install them if
@@ -26,7 +57,7 @@ the package from the `python package index <https://pypi.org/project/atlas-rbm/>
 1. **Install with system tools**
 
    With pip, you need to execute and Atlas will be installed on
-   ``$HOME/.local/lib/python3.6/site-packages`` folder or similar.
+   ``$HOME/.local/lib/python3.6/site-packages`` directory or similar.
 
    .. code-block:: bash
 
@@ -66,7 +97,7 @@ the package from the `python package index <https://pypi.org/project/atlas-rbm/>
     ``python -m site`` or ``python3 -m site`` to find out where is more likely
     Atlas will be installed.
 
-Option 2: Clone the Github repository
+Option 4: Clone the Github repository
 -------------------------------------
 
 1. **Clone with git**

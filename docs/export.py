@@ -1,5 +1,12 @@
-from pysb.export import export
-with open('model.kappa', 'w') as outfile:
-	outfile.write(export(model, 'kappa'))
-with open('model.bngl', 'w') as outfile:
-	outfile.write(export(model, 'bngl'))
+# export to
+export.to_sbml(model, 'export-to-sbml.sbml')
+export.to_matlab(model, 'export-to-matlab.m')
+export.to_mathematica(model, 'export-to-mathematica.wl')
+export.to_potterswheel(model, 'export-to-potterswheel.m')
+export.to_bngl(model, 'export-to-bngl.bngl')
+export.to_bngnet(model, 'export-to-bngnet.net')
+export.to_kappa(model, 'export-to-kappa.kappa')
+export.to_python(model, 'export-to-python.py')
+export.to_pysb(model, 'export-to-pysb.py')
+export.to_stochkit(model, 'export-to-stochkit.xml')
+export.to_json(model, 'export-to-json.json')

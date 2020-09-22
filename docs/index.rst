@@ -11,9 +11,12 @@ the `BioNetGen2`_ software, PMID `27402907`_), KaSim (`KaSim`_, PMID
 (`BioNetFit`_, PMID `26556387`_ or `pleione`_, PMID `31641245`_) and analysis
 (`sterope`_ for parameter sensibility and `alcyone`_ for parameter uncertainty).
 
+.. image:: ../graphical_abstract.png
+
 .. toctree::
    :maxdepth: 3
 
+   Requirements
    Installation
    Modeling
    Simulation

@@ -3,38 +3,41 @@
 Sigma Factor-Promoter Interaction Networks
 ==========================================
 
-The Sigma Factor-Promoter network have two columns and for the former network, the first column lists using comma all components of a TF enclosed in brackets (optionally with small compounds) and in the second column declares the DNA binding site. Users should use the prefix “SMALL-” for small compounds and the prefix “BS-” to encode DNA binding sites using unique names. The second type of GRN shows in the first column the RNA polymerase holoenzyme complex (components in brackets) and in the second the promoter. Users should name promoters with the gene name followed by the suffix “-pro#” where # is an integer.
+The Sigma Factor-Promoter network have five columns:
+
+1. The 1st declares the ``SOURCE`` and the 2nd declares the ``TARGET``.
+
+   It does not matter the order, as the two columns defines a bimolecular reaction which product is the merge of all components into one complex.
+   *Atlas* understand components inside brackets (e.g. ``[rpoA,rpoA,rpoB,rpoC,rpoD]``) as a complex, therefore, the components are internally linked.
+
+2. The 3rd, 4th, and 5th columns declare rates:
+
+   * The ``FWD_DOCK_RATE`` and the ``RVS_DOCK_RATE`` define the rates of the binding of the RNAP to the promoter and its separation, respectively.
+   * The ``FWD_SLIDE_RATE`` defines the rate of the transition from the promoter to the following DNA feature declared in the genome graph.
+
+   Note the name of the promoter: name of the gene followed by ``pro`` and a number.
 
 Examples:
 
-.. literalinclude:: ./networks/sigma_network1.tsv
+.. literalinclude:: ./networks/network-lac-sigma-specificity.tsv
    :linenos:
    :encoding: latin-1
 
-Finally, execute the "*Rules from SigmaFactors x Architecture.ipynb*" to obtain the
-*Rules* to model the defined interaction network. The complete rule-based
-model can be found in the sigma folder from the Network Biology Lab
-GitHub repository `here <https://github.com/networkbiolab/atlas/blob/master/sigma/Model%20sigma.ipynb/>`_.
-
-.. literalinclude:: ./model_sigma_network1.py
-   :language: python
-   :encoding: latin-1
-   :linenos:
+Finally, execute ``atlas_rbm.construct_model_from_sigma_specificity_network(interaction_network, genome_graph, verbose = False)`` to obtain the model.
 
 .. note::
-    **Reversibility of reactions**. Atlas writes dead *Rules* for each
-    reaction declared in the network file. The ``Parameter('fwd_ReactionName', 0))``
-    must be set to non-zero to activate the rule and ``Parameter('rvs_ReactionName', 0))``
-    must be set to non-zero to define a reversible reaction.
+    **Simulation**. The model can be simulated only with the instantiation of ``Initials``:
+
+    * ``atlas_rbm.simulation.set_initial.cplx(model, complex_name, location, positive_number)``
+    * ``atlas_rbm.simulation.set_initial.dna(model, dna_name, positive_number)``
+    * ``atlas_rbm.simulation.set_initial.met(model, metabolite, location, positive_number)``
+    * ``atlas_rbm.simulation.set_initial.prot(model, prot_name, location, positive_number)``
+    * ``atlas_rbm.simulation.set_initial.rna(model, rna_name, positive_number)``
 
 .. note::
-    **Simulation**. The model can be simulated only with the instantiation of
-    ``Monomers`` and ``Initials`` (`More here <https://pysb.readthedocs.io/en/stable/tutorial.html#introduction>`_).
-    Run *Monomer+Initials+Observables from metabolic network.ipynb* to obtain
-    automatically the necessary ``Monomers`` and ``Initials`` (including
-    proteins and enzymatic complexes).
+    Use the keyword argument ``toFile = 'name.py'`` to write the model to a file (the function will return ``None``):
 
-    **Plotting**. The model can be observed only with the instantation of
-    ``Observables`` (`More here <https://pysb.readthedocs.io/en/stable/tutorial.html#simulation-and-analysis>`_).
-    Run *Monomer+Initials+Observables from metabolic network.ipynb* to obtain
-    automatically the all possible ``Observables`` for metabolites.
+    .. literalinclude:: ./model_sigma_network1.py
+       :language: python
+       :encoding: latin-1
+       :linenos:

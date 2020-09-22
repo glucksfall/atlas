@@ -3,45 +3,47 @@
 Protein-Small compounds Interaction Networks
 ============================================
 
-Protein-small compound interaction networks have two columns. Similar to a PPI
-network, but the user should add the prefix “SMALL-” to encode a small compound
-that interacts with the protein or protein complex.
+Protein-small compound interaction networks have five columns:
 
-Examples:
+1. The 1st declares the ``SOURCE`` and the 2nd declares the ``TARGET``.
 
-.. literalinclude:: ./networks/smallcompounds_network1.tsv
+   It does not matter the order, as the two columns defines a bimolecular reaction which product is the merge of all components into one complex.
+   *Atlas* understand components inside brackets (e.g. ``[lacZ,SMALL-alpha-ALLOLACTOSE]``) as a complex, therefore, the components are internally linked.
+
+2. The 3rd and 4th columns declare the forward and the reverse reaction rates, respectively.
+3. The 5th columns declares the location of the complex components:
+
+   1. If the number of locations match the number of components of the complex, each location is mapped to the component.
+   2. If the number of locations unmatch the number of components, the first location is used for every component
+   3. If the number of locations is one, the location is used for every component.
+
+   Valid names are: ``cytosol``, ``inner membrane``, ``periplasmic space``, ``membrane``, ``outer membrane``, ``extracellular space``, ``bacterial nucleoid``, ``cell wall``, ``cell projection`` and ``cytoskeleton``
+
+Example, and note the use of the prefix ``SMALL-`` to tell *Atlas* the component is a metabolite:
+
+.. literalinclude:: ./networks/network-lac-ProtMet.tsv
    :linenos:
    :encoding: latin-1
 
-Finally, execute the "*Rules from protein-small compounds.ipynb*" to obtain the
-*Rules* to model the defined interaction network. The complete rule-based
-model can be found in the arabinose folder from the Network Biology Lab
-GitHub repository `here <https://github.com/networkbiolab/atlas/blob/master/arabinose/Model%20arabinose%20operon%20Met%20%2B%20PPI%20%2B%20TXTL%20%2B%20GRN.ipynb>`_.
-
-.. literalinclude:: ./model_smallcompounds_network1.py
-   :language: python
-   :encoding: latin-1
-   :linenos:
-
-.. note::
-    **Reversibility of Rules**. Atlas writes reversible *Rules* for each
-    reaction declared in the network file. The ``Parameter('rvs_RuleName', 1))``
-    must be set to zero to define an irreversible reaction.
+Finally, execute ``atlas_rbm.construct_model_from_interaction_network(network, verbose = False)`` to obtain the model.
 
 .. note::
     **Uniqueness of Rule names**. Atlas will write *Rules* with numbered
-    names. Use only one file to model the many interactions the system has.
+    names. Merge into one the networks (``pandas.concat(list)``) or use a single file to model interactions.
 
 .. note::
-    **Simulation**. The model can be simulated only with the instantiation of
-    ``Monomers`` and ``Initials`` (`More here <https://pysb.readthedocs.io/en/stable/tutorial.html#introduction>`_).
-    Run *Monomer+Initials+Observables from metabolic network.ipynb* to obtain
-    automatically the necessary ``Monomers`` and ``Initials`` (including
-    proteins and enzymatic complexes). Manually add the necessary ``Monomers``
-    and ``Initials`` for non-enzymatic proteins.
+    **Simulation**. The model can be simulated only with the instantiation of ``Initials``:
 
-    **Plotting**. The model can be observed only with the instantation of
-    ``Observables`` (`More here <https://pysb.readthedocs.io/en/stable/tutorial.html#simulation-and-analysis>`_).
-    Run *Monomer+Initials+Observables from metabolic network.ipynb* to obtain
-    automatically the all possible ``Observables`` for enzymatic proteins. Other
-    observables for proteins should be added manually.
+    * ``atlas_rbm.simulation.set_initial.cplx(model, complex_name, location, positive_number)``
+    * ``atlas_rbm.simulation.set_initial.dna(model, dna_name, positive_number)``
+    * ``atlas_rbm.simulation.set_initial.met(model, metabolite, location, positive_number)``
+    * ``atlas_rbm.simulation.set_initial.prot(model, prot_name, location, positive_number)``
+    * ``atlas_rbm.simulation.set_initial.rna(model, rna_name, positive_number)``
+
+.. note::
+    Use the keyword argument ``toFile = 'name.py'`` to write the model to a file (the function will return ``None``):
+
+    .. literalinclude:: ./model_smallcompounds_network1.py
+       :language: python
+       :encoding: latin-1
+       :linenos:

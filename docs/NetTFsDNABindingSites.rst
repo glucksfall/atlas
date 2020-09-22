@@ -4,46 +4,47 @@ Transcription Factor-DNA Binding Site Interaction Networks
 ==========================================================
 
 The transcription factor-DNA binding site network represents the physical
-interaction bewteen proteins and DNA. The network have two columns and for the
-former network, the first column lists using comma all components of a TF
-enclosed in brackets (optionally with small compounds) and in the second column
-declares the DNA binding site. Users should use the prefix “SMALL-” for small
-compounds and the prefix “BS-” to encode DNA binding sites using unique names.
-The second type of GRN shows in the first column the RNA polymerase holoenzyme
-complex (components in brackets) and in the second the promoter. Users should
-name promoters with the gene name followed by the suffix “-pro#” where # is an
-integer.
+interaction bewteen proteins and DNA. The network have five columns:
 
-Examples:
+1. The 1st declares the ``SOURCE`` and the 2nd declares the ``TARGET``.
 
-.. literalinclude:: ./networks/tfbs_network1.tsv
+   It does not matter the order, as the two columns defines a bimolecular reaction which product is the merge of all components into one complex.
+   *Atlas* understand components inside brackets (e.g. ``[lacI,lacI]``) as a complex, therefore, the components are internally linked.
+
+2. The 3rd and 4th columns declare the forward and the reverse reaction rates, respectively.
+3. The 5th columns declares the location of the complex components:
+
+   1. If the number of locations match the number of components of the complex, each location is mapped to the component.
+   2. If the number of locations unmatch the number of components, the first location is used for every component
+   3. If the number of locations is one, the location is used for every component.
+
+   Valid name is: ``cytosol``.
+
+Example, and note the use of the prefix ``BS-`` to tell *Atlas* the component is a DNA binding site followed by a name and two coordinates:
+
+.. literalinclude:: ./networks/network-lac-TFs+DNA.tsv
    :linenos:
    :encoding: latin-1
 
-Finally, execute the "*Rules from tf-tfbs.ipynb*" to obtain the
-*Rules* to model the defined interaction network. The complete rule-based
-model can be found in the arabinose folder from the Network Biology Lab
-GitHub repository `here <https://github.com/networkbiolab/atlas/blob/master/arabinose/Model%20arabinose%20operon%20Met%20%2B%20PPI%20%2B%20TXTL%20%2B%20GRN.ipynb>`_.
-
-.. literalinclude:: ./model_tfbs_network1.py
-   :language: python
-   :encoding: latin-1
-   :linenos:
+Finally, execute ``atlas_rbm.construct_model_from_interaction_network(network, verbose = False)`` to obtain the model.
 
 .. note::
-    **Reversibility of reactions**. Atlas writes dead *Rules* for each
-    reaction declared in the network file. The ``Parameter('fwd_ReactionName', 0))``
-    must be set to non-zero to activate the rule and ``Parameter('rvs_ReactionName', 0))``
-    must be set to non-zero to define a reversible reaction.
+    **Uniqueness of Rule names**. Atlas will write *Rules* with numbered
+    names. Merge into one the networks (``pandas.concat(list)``) or use a single file to model interactions.
 
 .. note::
-    **Simulation**. The model can be simulated only with the instantiation of
-    ``Monomers`` and ``Initials`` (`More here <https://pysb.readthedocs.io/en/stable/tutorial.html#introduction>`_).
-    Run *Monomer+Initials+Observables from metabolic network.ipynb* to obtain
-    automatically the necessary ``Monomers`` and ``Initials`` (including
-    proteins and enzymatic complexes).
+    **Simulation**. The model can be simulated only with the instantiation of ``Initials``:
 
-    **Plotting**. The model can be observed only with the instantation of
-    ``Observables`` (`More here <https://pysb.readthedocs.io/en/stable/tutorial.html#simulation-and-analysis>`_).
-    Run *Monomer+Initials+Observables from metabolic network.ipynb* to obtain
-    automatically the all possible ``Observables`` for metabolites.
+    * ``atlas_rbm.simulation.set_initial.cplx(model, complex_name, location, positive_number)``
+    * ``atlas_rbm.simulation.set_initial.dna(model, dna_name, positive_number)``
+    * ``atlas_rbm.simulation.set_initial.met(model, metabolite, location, positive_number)``
+    * ``atlas_rbm.simulation.set_initial.prot(model, prot_name, location, positive_number)``
+    * ``atlas_rbm.simulation.set_initial.rna(model, rna_name, positive_number)``
+
+.. note::
+    Use the keyword argument ``toFile = 'name.py'`` to write the model to a file (the function will return ``None``):
+
+    .. literalinclude:: ./model_tfbs_network1.py
+       :language: python
+       :encoding: latin-1
+       :linenos:

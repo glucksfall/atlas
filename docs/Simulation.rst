@@ -14,12 +14,18 @@ hood. See :ref:`Plotting-page` for a simple example on how to plot simulation re
    :language: python
    :encoding: latin-1
    :linenos:
-   :emphasize-lines: 7,8
+   :emphasize-lines: 2,3,4,5
 
 .. note::
     Please follow the instructions at `BioNetGen <https://github.com/RuleWorld/bionetgen>`_
     and at `KaSim <https://github.com/Kappa-Dev/KaSim>`_ documentations to install
-    the stochactic simulators. For network-based simulations (Ordinary Differential
-    Equations and Gillespie`s algorithm), BioNetGen is required to perform the network
-    generation. Change the corresponding paths (lines 7-8) to match the parent folder for
+    the stochactic simulators. Also, you could install the simulators from `here <https://anaconda.org/alubbock/repo>`_
+    if you have anaconda or conda installed on your system.
+
+    In the case of the cupSODA, modify the `compile.sh <https://github.com/aresio/cupSODA/blob/master/compile.sh>`_ file
+    to match the compute architecture of your NVIDIA GPU and compile the executable as ``cupSODA``.
+
+    For network-based simulations (Ordinary Differential
+    Equations and Gillespie's algorithm), BioNetGen is required to perform the network
+    generation. Change the corresponding paths (lines 2-5) to match the parent folder for
     the BNG2.pl or KaSim executable.

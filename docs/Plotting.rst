@@ -3,32 +3,45 @@
 Plotting
 ========
 
-PySB could inform the results of a simulation to dataframes (See
-:ref:`Simulation-page`) and visualization of results could be done with
-matplotlib or seaborn even (`See more here <https://seaborn.pydata.org/>`_). To
-access the data, the dataframes columns reproduce the names of the ``Observables``.
-The following example could be adapted to show the dynamics of any ``Observable``.
+The simulation functions returns a dataframe in the case of deterministic simulations
+and a dictionary in the case of stochastic simulations:
 
-.. note::
-    Importantly, PySB allows the inspection of the model to find which
-    ``Monomers`` (and complexes of monomers) exists in the model, but as the
-    simulation is network-free, the possible formed complexes are up to the user
-    concern.
+* The ``sims`` key of the dictionary is a list of dataframes, one for each simulation.
+* The ``avrg`` key is a dataframe with the average of all simulations.
+* The ``stdv`` key is a dataframe with the standard deviation of all simulations.
 
-.. note::
-    Atlas produces automatically ``Observables`` for metabolites, and other
-    components and complexes could also be observed and plotted, but their
-    declaration in the model is entirely up to the user.
+We provide three kind of plots: ``plot`` (continuous line), ``scatter``, and ``fill_between`` (avrg ± weight * stdv).
 
-.. literalinclude:: ./plotting.py
+The ``plt_kws`` is a dictionary that aids to pass arguments to the matplotlib functions used to plot the results.
+
+To plot an ``observable``, please execute one of the following functions:
+
+   * dna: ``atlas_rbm.simulation.plot.dna(data, dna_name, plt_kws, **kwargs)``
+   * rna: ``atlas_rbm.simulation.plot.rna(data, rna_name, plt_kws, **kwargs)``
+   * complexes: ``atlas_rbm.simulation.plot.cplx(data, complex_name, location, plt_kws, **kwargs)``
+   * metabolites: ``atlas_rbm.simulation.plot.metabolite(data, metabolite, location, plt_kws, **kwargs)``
+   * proteins: ``atlas_rbm.simulation.plot.protein(data, protein_name, location, plt_kws, **kwargs)``
+
+You could explore the available observables with ``model.observable.observables._map.keys()`` and use the name of the observable:
+
+   * observable: ``atlas_rbm.simulation.plot.monomer(data, observable_name, plt_kws, **kwargs)``
+
+.. literalinclude:: ./plotting1.py
        :language: python
        :encoding: latin-1
        :linenos:
 
-And the results is
+.. image:: plotA.png
+.. image:: plotB.png
 
-.. image:: Fig_Arabinose.png
+.. literalinclude:: ./plotting2.py
+       :language: python
+       :encoding: latin-1
+       :linenos:
+
+.. image:: plotC.png
 
 .. note::
-    See the `Arabinose Model <https://github.com/glucksfall/atlas/blob/master/arabinose/Model%20arabinose%20operon%20Met%20%2B%20PPI%20%2B%20TXTL%20%2B%20GRN.ipynb>`_
-    to inspect the rules and reproduce (at some extent because of stochasticity) the plot showed in this Manual.
+    *Atlas* produces automatically ``Observables`` for metabolites and other
+    components. However, *Atlas* do not produce ``Observables`` for every possible component
+    and the user could add observables with ``atlas_rbm.simulation.set_observable(model, pattern, alias)``.
