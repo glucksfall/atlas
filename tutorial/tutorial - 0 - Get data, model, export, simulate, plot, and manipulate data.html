@@ -13146,13 +13146,13 @@ div#notebook {
 <li><p>PathwayTools must be installed and running to obtain data from the EcoCyc database. Please, run <code>pathway-tools -lisp -python-local-only</code> before to obtain any data.<br/>
 (Optional) The PathwayTools software could be executed in the background, with help of <code>nohup pathway-tools -lisp -python-local-only &gt; /dev/null 2&gt; /dev/null &amp;</code>.<br/>
 Please follow instructions at <a href="http://pathwaytools.org/">http://pathwaytools.org/</a> to obtain a licensed copy of the software from <a href="https://biocyc.org/download-bundle.shtml">https://biocyc.org/download-bundle.shtml</a>. However, data could be manually formatted using a text-based editor or a spreadsheet software.</p>
-<p>Note: If you ran into the <code>pathway-tools/ptools/24.0/exe/aclssl.so: undefined symbol: CRYPTO_set_locking_callback</code> error, please follow instructions here: <a href="https://github.com/glucksfall/atlas/tree/master/PTools-v24">https://github.com/glucksfall/atlas/tree/master/PTools-v24</a>. Instructions will guide you to install a docker image that is able to run pathway tools, but does not include it, so you still need to obtain the software with a valid license.<br/><br/></p>
+<p>Note: If you ran into the <code>pathway-tools/ptools/24.0/exe/aclssl.so: undefined symbol: CRYPTO_set_locking_callback</code> error, please follow instructions here: <a href="https://github.com/networkbiolab/atlas/tree/master/PTools-Docker">https://github.com/networkbiolab/atlas/tree/master/PTools-Docker</a>. Instructions will guide you to install a docker image that is able to run pathway tools, but does not include it, so you still need to obtain the software with a valid license.<br/><br/></p>
 </li>
 <li><p>(Highly recommended) Install Docker. Please follow instructions for a supported Operating System <a href="https://docs.docker.com/engine/install/">https://docs.docker.com/engine/install/</a>:<br/>
 On Ubuntu, install it with <code>apt-get install docker.io</code>.<br/>
 On Win10, install Docker Desktop with WSL2 support <a href="https://docs.docker.com/docker-for-windows/wsl/">https://docs.docker.com/docker-for-windows/wsl/</a>.<br/>
 On MacOS, install Docker Desktop <a href="https://docs.docker.com/docker-for-mac/install/">https://docs.docker.com/docker-for-mac/install/</a>.<br/><br/>
-The Docker <code>networkbiolab/pleiades</code>installs the python packages, the jupyter server, and the stochastic simulators.<br/><br/></p>
+The Docker <code>networkbiolab/pleiades</code> installs the python packages, the jupyter server, and the stochastic simulators.<br/><br/></p>
 </li>
 <li><p>(Recommended) Jupyter notebook. We recommend the use of Anaconda3 <a href="https://www.anaconda.com/products/individual">https://www.anaconda.com/products/individual</a> because of the easier installation of the stochastic simulators from <a href="https://anaconda.org/alubbock">https://anaconda.org/alubbock</a>.<br/><br/></p>
 </li>
@@ -13266,7 +13266,8 @@ You should install, configure, and run the jupyter notebook on your own: example
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>PathwayTools is running. Available PGDB are: META, ECOLI
+<pre>PathwayTools is not running.
+Please, execute execPathwayTools(path) or execPToolsDocker(dockername).
 </pre>
 </div>
 </div>
@@ -13279,7 +13280,7 @@ You should install, configure, and run the jupyter notebook on your own: example
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>True</pre>
+<pre>False</pre>
 </div>
 
 </div>
@@ -13312,7 +13313,8 @@ You should install, configure, and run the jupyter notebook on your own: example
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Doing nothing since PathwayTools is running.
+<pre>Docker ptools-v24 is running (ID 6e8c47d8fa14b1b362c1f7bf7c4727fd721d4132045e127bd7ac6384ea068638)
+PathwayTools is running. Available PGDB are: META, ECOLI
 </pre>
 </div>
 </div>
@@ -13349,7 +13351,7 @@ You should install, configure, and run the jupyter notebook on your own: example
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">time</span> network = utils.metabolicNetwork.FromEnzymeList(&#39;ECOLI&#39;, [&#39;GALACTOACETYLTRAN-CPLX&#39;, &#39;LACY-MONOMER&#39;, &#39;BETAGALACTOSID-CPLX&#39;, &#39;ABC-2-CPLX&#39;], fmt = &#39;product&#39;)
@@ -13370,15 +13372,15 @@ You should install, configure, and run the jupyter notebook on your own: example
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 60.2 ms, sys: 37.3 ms, total: 97.5 ms
-Wall time: 879 ms
+<pre>CPU times: user 50.5 ms, sys: 40.3 ms, total: 90.8 ms
+Wall time: 877 ms
 </pre>
 </div>
 </div>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -14678,7 +14680,7 @@ Wall time: 1.03 ms
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The following image was prepared from the <code>tutorial.txt</code> file, and you could reproduce it with Cytoscape:<br/></p>
+<p>The following image was prepared from the <code>lactose-metabolism-cytoscape-v1.txt</code> file, and you could reproduce it with Cytoscape:<br/></p>
 <ol>
 <li>Click on the <code>Import Network from File System</code> icon or click on <code>File -&gt; Import -&gt; Network from File...</code>.</li>
 <li>Navigate to the file and click on <code>Open</code>.</li>
