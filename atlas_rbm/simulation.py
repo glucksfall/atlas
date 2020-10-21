@@ -112,7 +112,7 @@ def bngODE(model, start = 0, finish = 10, points = 10, path = '/opt/conda/bin/')
 	set_path('bng', path)
 	return BngSimulator(model, linspace(start, finish, points+1)).run(method = 'ode').dataframe
 
-def cupsoda(model, start = 0, finish = 10, points = 10, path = '/opt/conda/bin/´'):
+def cupsoda(model, start = 0, finish = 10, points = 10, path = '/opt/conda/bin/'):
 	set_path('cupsoda', path)
 	return CupSodaSimulator(model, linspace(start, finish, points+1)).run().dataframe
 
