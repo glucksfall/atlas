@@ -1,0 +1,6 @@
+SOURCE	TARGET	FWD_RATE	RVS_RATE	LOCATION
+lacZ	lacZ	1.0	0.0	cytosol
+[lacZ,lacZ]	[lacZ,lacZ]	1.0	0.0	cytosol
+lacA	lacA	1.0	0.0	cytosol
+lacA	[lacA,lacA]	1.0	0.0	cytosol
+lacI	lacI	1.0	0.0	cytosol
