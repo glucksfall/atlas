@@ -44,3 +44,14 @@ To install, please follow one of the following steps:<br/>
    3. Install with pip3: ```sudo -H python3 -m pip install pleiades``` or ```python3 -m pip install pleiades --user```. Pleiades is a meta-package that install Atlas (the rule-based modeller), Pleione (a genetic algorithm for parameter calibration of RBMs, compatible with SLURM), Alcyone (to perform identifiability analysis of parameters), and Sterope (to perform sensitivity analysis of parameters in kappa RBMs, compatible with SLURM).<br/>
       You should install, configure, and run the jupyter notebook on your own: example ```sudo -H pip3 install jupyter && nohup python3 -m jupyter notebook --port=8888 --no-browser --port-retries=0 > /dev/null 2> /dev/null &```.<br/>
    4. Download or clone the Github repository from https://github.com/networkbiolab/atlas with ```git clone https://github.com/networkbiolab/atlas foo``` (where ```foo``` is an absolute or relative path). Requisites must be fulfilled manually with pip3: ```sudo -H python3 -m pip install pandas pysb pythoncyc jupyter seaborn``` or ```python3 -m pip install pandas pysb pythoncyc jupyter seaborn --user```.
+
+## External resources
+
+* PySB documentation: https://pysb.readthedocs.io/en/stable/
+* Kappa and KaSim documentation: https://kappalanguage.org/sites/kappalanguage.org/files/inline-files/Kappa_Manual.pdf
+* BioNetGenLanguage and BNG2 documentation: http://bionetgen.org/
+* pyDREAM documentation: https://pydream.readthedocs.io/en/latest/
+  * pyDREAM for pySB: https://github.com/LoLab-VU/PyDREAM/tree/master/pydream/examples/robertson
+* pyBioNetFit documentation: https://pybnf.readthedocs.io/en/latest/
+* Pleione documentation: https://pleione.readthedocs.io/en/latest/
+* pyViPR documentation: https://pyvipr.readthedocs.io/en/latest/
