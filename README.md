@@ -49,9 +49,16 @@ To install, please follow one of the following steps:<br/>
 
 * PySB documentation: https://pysb.readthedocs.io/en/stable/
 * Kappa and KaSim documentation: https://kappalanguage.org/sites/kappalanguage.org/files/inline-files/Kappa_Manual.pdf
-* BioNetGenLanguage and BNG2 documentation: http://bionetgen.org/
+* BioNetGen Language and BNG2 documentation: http://bionetgen.org/
 * pyDREAM documentation: https://pydream.readthedocs.io/en/latest/
+  * pyDREAM for pySB: https://github.com/LoLab-VU/PyDREAM/tree/master/pydream/examples/corm
   * pyDREAM for pySB: https://github.com/LoLab-VU/PyDREAM/tree/master/pydream/examples/robertson
 * pyBioNetFit documentation: https://pybnf.readthedocs.io/en/latest/
+  * Examples: https://github.com/lanl/PyBNF/tree/master/examples
 * Pleione documentation: https://pleione.readthedocs.io/en/latest/
+  * Calibration with BNG2: https://github.com/networkbiolab/pleione/tree/master/examples/bng2
+  * Calibration with KaSim: https://github.com/networkbiolab/pleione/tree/master/examples/kasim
+  * Calibration with NFsim: https://github.com/networkbiolab/pleione/tree/master/examples/nfsim
+  * Calibration with PISKaS: https://github.com/networkbiolab/pleione/tree/master/examples/piskas
 * pyViPR documentation: https://pyvipr.readthedocs.io/en/latest/
+  * Tutorial: https://github.com/networkbiolab/atlas/blob/master/tutorial/tutorial%20-%202%20-%20Visualization%20of%20models.ipynb
