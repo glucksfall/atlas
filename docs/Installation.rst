@@ -21,10 +21,10 @@ There are different ways to install Atlas:
    be obtained cloning the Atlas repository and the respective directory added to `PYTHONPATH`.
    Further details are below.
 
-.. note::
-    **Need Help?**
-    If you run into any problems with installation, please visit our chat room:
-    https://gitter.im/glucksfall/pleiades
+.. .. note::
+..     **Need Help?**
+..     If you run into any problems with installation, please visit our chat room:
+..     https://gitter.im/glucksfall/pleiades
 
 Option 1: Install the Pleiades docker container
 -----------------------------------------------
@@ -32,8 +32,8 @@ Install the docker container is the easiest way to obtain the software Atlas.
 
 Install the docker image "pleiades" using ```docker pull networkbiolab/pleiades```.
 The container is based on the Anaconda3 software and
-it installs Atlas, and the stochastic simulators BNG2, NFsim, KaSim, and
-Stochkit. After building the image, please run the container with
+it installs Atlas, the stochastic simulators BNG2, NFsim, KaSim, and
+Stochkit, and the Jupyter server. After building of the image, please run the container with
 ```docker run --detach --publish 10000:8888 networkbiolab/pleiades```, and go to
 ```localhost:10000``` in your preferred browser. The required password is
 ```pleiades```.
@@ -44,7 +44,7 @@ Option 2: Clone the Pleiades repository
 Download or clone the Github repository from https://github.com/networkbiolab/pleiades
 with ```git clone https://github.com/networkbiolab/pleiades foo``` (where ```foo``` is an absolute
 or relative path). Then, you could build the docker image with ```docker build foo --tag pleiades```
-and run it with ```docker run --detach --publish 10000:8888 pleiades```.
+and execute it with ```docker run --detach --publish 10000:8888 pleiades```.
 Finally, go to ```localhost:10000``` in your preferred browser. The required password is ```pleiades```.
 
 Option 3: Install Atlas natively on your computer
@@ -86,27 +86,28 @@ the package from the `python package index <https://pypi.org/project/atlas-rbm/>
 
    .. note::
     **pip, Python, and Anaconda**:
-    Be aware which pip you invoque. You could install pip3 with
+    Be aware which ``pip`` you invoque. You could install pip3 with
     ``sudo apt-get install python3-pip`` if you have system rights, or
     install python3 from source, and adding ``<python3 path>/bin/pip3`` to the
     path, or linking it in a directory like ``$HOME/bin`` which is commonly
-    added to the path at login. Also be aware that, if you installed
+    added to the path at user login. Also be aware that, if you installed
     Anaconda, pip could be linked to the Anaconda specific version of pip, which
     will install Atlas into Anaconda's installation folder.
     Type ``which pip`` or ``which pip3`` to find out the source of pip, and type
     ``python -m site`` or ``python3 -m site`` to find out where is more likely
     Atlas will be installed.
 
-Option 4: Clone the Github repository
+Option 4: Clone the Atlas repository
 -------------------------------------
 
 1. **Clone with git**
 
    The source code is uploaded and maintained through Github at
-   `<https://github.com/networkbiolab/atlas>`_. Therefore, you could clone the
-   repository locally, and then add the folder to the ``PYTHONPATH``. Beware
+   `<https://github.com/networkbiolab/atlas>`_. Therefore, you could download or clone the
+   repository locally, and then add the directory to the ``PYTHONPATH``. Beware
    that you should install the *pysb* package (`pysb`_) and others packages
-   by any means, specially the Jupyter Notebook project (`<https://jupyter.org>`_).
+   by any mean, specially the Jupyter Notebook project (`<https://jupyter.org>`_) that
+   aid the modeling process and visualize models.
 
    .. code-block:: bash
 
@@ -116,11 +117,11 @@ Option 4: Clone the Github repository
 
    .. note::
     Adding the path to ``$HOME/.profile`` allows python to find the package
-    installation folder after each user login. Similarly, adding the path to
-    ``$HOME/.bashrc`` allows python to find the package after each terminal
+    installation directory after each user login. Similarly, adding the path to
+    ``$HOME/.bashrc`` allows python to find the package after each bash terminal
     invocation. Other options include setting the ``PYTHONPATH`` environmental
     variable in a sh file (see the example folder) or invoke ``python3 setup.py clean build install``
-    to install Atlas as it was downloaded from the PyPI server.
+    to install Atlas as if it would be downloaded from the PyPI server.
 
 .. refs
 .. _KaSim: https://github.com/Kappa-Dev/KaSim

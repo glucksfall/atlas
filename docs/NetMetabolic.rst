@@ -5,20 +5,21 @@ Metabolic Networks
 
 Metabolic networks have seven columns:
 
-1. The 1st declares a name for the enzyme, gene, or enzymatic complex. Use *spontaneous* for non-enzymatic reactions.;
+1. The 1st declares a name for the enzyme, gene, or enzymatic complex. Use *spontaneous* for non-enzymatic reactions;
 2. The 2nd declares the location of the enzyme, gene, or enzymatic complex:
+
    In the case of enzymatic complexes:
 
-   1. If the number of locations match the number of components of the complex, each location is mapped to the component.
-   2. If the number of locations unmatch the number of components, the first location is used for every component
+   1. If the number of locations match the number of components of the complex, each location is mapped in the same order to each component.
+   2. If the number of locations unmatch the number of components, the first location is used for every component. The remaining locations are disregarded.
    3. If the number of locations is one, the location is used for every component.
 
-   Valid names are: ``cytosol``, ``inner membrane``, ``periplasmic space``, ``membrane``, ``outer membrane``, ``extracellular space``, ``bacterial nucleoid``, ``cell wall``, ``cell projection`` and ``cytoskeleton``
+   Valid location names are: ``cytosol``, ``inner membrane``, ``periplasmic space``, ``membrane``, ``outer membrane``, ``extracellular space``, ``bacterial nucleoid``, ``cell wall``, ``cell projection`` and ``cytoskeleton``
 
 3. The 3rd declares a name for the reaction. If the name is not unique, Atlas drops the duplicated reaction;
 4. The 4th column lists names for substrates using comma (without spaces);
 5. The 5th column lists names for products using comma (without spaces);
-   To declare metabolites located at a compartment, prefix the name of the metabolite (e.g. "PER-lactose"):
+   To declare metabolites located at a compartment, prefix the name of the metabolite (e.g., "PER-lactose"):
 
    * 'CYT-' : 'cytosol',
    * 'iMEM-' : 'inner membrane',
@@ -31,8 +32,8 @@ Metabolic networks have seven columns:
    * 'cPROJ-' : 'cell projection',
    * 'CYTOSK-' : 'cytoskeleton'
 
-6. The 6th declares the forward reaction rate; and finally
-7. The 7th declares the reverse reaction rate.
+6. The 6th declares the forward reaction rate value; and finally
+7. The 7th declares the reverse reaction rate value.
 
 Examples:
 
@@ -96,7 +97,7 @@ Finally, execute ``atlas_rbm.construct_model_from_metabolic_network(network, ver
     * ``atlas_rbm.simulation.set_initial.rna(model, rna_name, positive_number)``
 
 .. note::
-    For large models, the ``noObservables`` and the ``noInitials`` will make a faster compilation, while later you could add ``Initials`` and ``Observables`` to the model.
+    For large models, the ``noObservables = True`` and the ``noInitials = True`` arguments will make a faster compilation, while later you could add specific ``Initials`` and ``Observables`` to the model.
 
     Use the keyword argument ``toFile = 'name.py'`` to write the model to a file (the function will return ``None``):
 
