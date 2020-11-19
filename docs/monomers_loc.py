@@ -1,0 +1,5 @@
+Monomer('rna', ['name', 'loc'], {'name': ['lacI_21_1', 'lacI_422_402', 'lacI_72_92', 'lacA', 'lacY', 'lacZ'], 'loc': ['cyt']})
+Monomer('cplx', ['name', 'loc'], {'name': ['RNAP_CPLX', 'RIBOSOME_CPLX'], 'loc': ['cyt']})
+Monomer('prot', ['name', 'loc'], {'name': ['lacA', 'lacI', 'lacY', 'lacZ'], 'loc': ['bnuc', 'cproj', 'cyt', 'cytosk', 'ex', 'imem', 'mem', 'omem', 'per', 'wall']})
+Monomer('met', ['name', 'loc'], {'name': ['ACETYL_COA', 'CO_A', 'CPD_3561', 'CPD_3785', 'CPD_3801', 'D_ARABINOSE', 'Fructofuranose', 'MELIBIOSE', 'PROTON', 'WATER', '_6_Acetyl_beta_D_Galactose', 'alpha_ALLOLACTOSE', 'alpha_GALACTOSE', 'alpha_glucose', 'alpha_lactose', 'beta_ALLOLACTOSE', 'beta_GALACTOSE', 'beta_glucose', 'beta_lactose'], 'loc': ['bnuc', 'cproj', 'cyt', 'cytosk', 'ex', 'imem', 'mem', 'omem', 'per', 'wall']})
+Monomer('dna', ['name', 'loc'], {'name': ['lacA', 'lacI_21_1', 'lacI_422_402', 'lacI_72_92', 'lacY', 'lacZ'], 'loc': ['cyt']})

@@ -9,7 +9,7 @@ The Genome Graphs have ten columns:
 
    The DNA features are five: ``pro`` followed by a number, ``rbs``, ``cds``, ``ter`` followed by a number, and ``BS-`` to define DNA binding sites.
 
-2. The next columns declare rates:
+2. The next columns declare rate values:
 
    * ``RNAP_FWD_DOCK_RATE`` and ``RNAP_RVS_DOCK_RATE`` are valid values only for the description of the reversible interaction of the RNA Polymerase to the promoters.
    * ``RNAP_FWD_SLIDE_RATE`` are valid values for the transition of the RNA Polymerase from the ``UPSTREAM`` to the ``DOWNSTREAM`` DNA parts. We describe rules where the RNA Polymerase could not move back.
@@ -33,8 +33,8 @@ Example, and note the use of the prefix ``BS-`` to tell *Atlas* the component is
 
 .. note::
     **Visualization in Cytoscape.** Colors and arrows remains to the user for
-    customization. The network could be complemented with a description of
-    sigma factor specifity for promoter, as the following network
+    customization. The genome graph (outer nodes) could be complemented with a description of
+    sigma factor specifity for promoter (inner nodes), as in the following network:
 
     .. image:: Fig_GenomeGraphs-crop.png
 

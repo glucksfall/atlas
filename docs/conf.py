@@ -21,12 +21,12 @@
 
 project = u'atlas'
 copyright = u'2020, Rodrigo Santibáñez'
-author = u'Rodrigo Santibáñez'
+author = u'Rodrigo Santibáñez, Daniel Garrido, Alberto J.M. Martin'
 
 # The short X.Y version
-version = u''
+version = u'1.4'
 # The full version, including alpha/beta/rc tags
-release = u''
+release = u'1.4'
 
 
 # -- General configuration ---------------------------------------------------
@@ -140,7 +140,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'atlas.tex', u'atlas Documentation',
-     u'Rodrigo Santibáñez', 'manual'),
+     u'Rodrigo Santibáñez\\\\Daniel Garrido\\\\Alberto J.M. Martín', 'manual'),
 ]
 
 

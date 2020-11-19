@@ -4,11 +4,12 @@ Simulation
 ==========
 
 Simulation could be done within the PySB python package (See more at `PySB
-documentation
-<https://pysb.readthedocs.io/en/stable/tutorial.html#simulation-and-analysis>`_)
-. Here is the relevant code that able the simulation of any PySB model, albeit
-PySB exports the model, calls the simulator, and imports the results under the
-hood. See :ref:`Plotting-page` for a simple example on how to plot simulation results.
+documentation <https://pysb.readthedocs.io/en/stable/tutorial.html#simulation-and-analysis>`_).
+Here is the relevant code that enable the simulation of any PySB model. Step are done internally
+by PySB: export of the model, call to the simulator, and import of the results.
+
+.. note::
+    See :ref:`Plotting-page` for a simple example on how to plot simulation results.
 
 .. literalinclude:: ./simulation.py
    :language: python
@@ -28,4 +29,5 @@ hood. See :ref:`Plotting-page` for a simple example on how to plot simulation re
     For network-based simulations (Ordinary Differential
     Equations and Gillespie's algorithm), BioNetGen is required to perform the network
     generation. Change the corresponding paths (lines 2-5) to match the parent folder for
-    the BNG2.pl or KaSim executable.
+    the BNG2.pl or KaSim executable. If using the pleiades docker instance, there is no
+    necessity to set the path.

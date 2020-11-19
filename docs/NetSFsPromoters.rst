@@ -10,10 +10,10 @@ The Sigma Factor-Promoter network have five columns:
    It does not matter the order, as the two columns defines a bimolecular reaction which product is the merge of all components into one complex.
    *Atlas* understand components inside brackets (e.g. ``[rpoA,rpoA,rpoB,rpoC,rpoD]``) as a complex, therefore, the components are internally linked.
 
-2. The 3rd, 4th, and 5th columns declare rates:
+2. The 3rd, 4th, and 5th columns declare rate values:
 
    * The ``FWD_DOCK_RATE`` and the ``RVS_DOCK_RATE`` define the rates of the binding of the RNAP to the promoter and its separation, respectively.
-   * The ``FWD_SLIDE_RATE`` defines the rate of the transition from the promoter to the following DNA feature declared in the genome graph.
+   * The ``FWD_SLIDE_RATE`` defines the rate of the transition from the promoter to the following DNA feature declared in the genome graph (see :ref:`Net-GenomeGraphs`).
 
    Note the name of the promoter: name of the gene followed by ``pro`` and a number.
 

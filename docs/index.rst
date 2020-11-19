@@ -1,14 +1,14 @@
-Welcome to Atlas v1.0 documentation!
+Welcome to Atlas v1.4 documentation!
 ====================================
 
 Atlas is a small software developed to use simple text files that encode
 biological networks and write Rule-Based Models (RBMs). Atlas writes rules and
 others model components for the PySB python package `PySB`_, PMID `23423320`_.
 The RBMs could be simulated within PySB with `NFsim`_, PMID `26556387`_ (within
-the `BioNetGen2`_ software, PMID `27402907`_), KaSim (`KaSim`_, PMID
-`29950016`_), and other software. Models could be exported to text files in *BioNetGen*
-(`BioNetGenLanguage`_) or *kappa* language (`Kappa`_) for further calibration
-(`BioNetFit`_, PMID `26556387`_ or `pleione`_, PMID `31641245`_) and analysis
+the `BioNetGen2`_ software, PMID `27402907`_), `KaSim`_ (PMID
+`29950016`_), and other software. Models could be exported to text files in `BioNetGen Language`_
+or `Kappa`_ language for further simulation, calibration
+(e.g., `BioNetFit`_, PMID `26556387`_ or `pleione`_, PMID `31641245`_) and analysis
 (`sterope`_ for parameter sensibility and `alcyone`_ for parameter uncertainty).
 
 .. image:: ../graphical_abstract.png
@@ -18,6 +18,8 @@ the `BioNetGen2`_ software, PMID `27402907`_), KaSim (`KaSim`_, PMID
 
    Requirements
    Installation
+   Overview
+   Rule_Based_Modeling_Basics
    Modeling
    Simulation
    Plotting
@@ -40,7 +42,7 @@ Indices and tables
 .. _PySB: http://pysb.org/
 
 .. _Kappa: https://www.kappalanguage.org/
-.. _BioNetGenLanguage: http://www.csb.pitt.edu/Faculty/Faeder/?page_id=409
+.. _BioNetGen Language: http://www.csb.pitt.edu/Faculty/Faeder/?page_id=409
 .. _pandas: https://pandas.pydata.org/
 
 .. _27402907: https://www.ncbi.nlm.nih.gov/pubmed/27402907

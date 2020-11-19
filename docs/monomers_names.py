@@ -1,0 +1,5 @@
+Monomer('rna', ['name'], {'name': ['lacI_21_1', 'lacI_422_402', 'lacI_72_92', 'lacA', 'lacY', 'lacZ'])
+Monomer('cplx', ['name'], {'name': ['RNAP_CPLX', 'RIBOSOME_CPLX'])
+Monomer('prot', ['name'], {'name': ['lacA', 'lacI', 'lacY', 'lacZ'])
+Monomer('met', ['name'], {'name': ['ACETYL_COA', 'CO_A', 'CPD_3561', 'CPD_3785', 'CPD_3801', 'D_ARABINOSE', 'Fructofuranose', 'MELIBIOSE', 'PROTON', 'WATER', '_6_Acetyl_beta_D_Galactose', 'alpha_ALLOLACTOSE', 'alpha_GALACTOSE', 'alpha_glucose', 'alpha_lactose', 'beta_ALLOLACTOSE', 'beta_GALACTOSE', 'beta_glucose', 'beta_lactose'])
+Monomer('dna', ['name'], {'name': ['lacA', 'lacI_21_1', 'lacI_422_402', 'lacI_72_92', 'lacY', 'lacZ'])

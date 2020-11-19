@@ -27,8 +27,8 @@ Examples:
    :encoding: latin-1
 
 .. note::
-    **Visualization in Cytoscape.** Cytoscape cannot import hyper-graphs. To do so,
-    Create simple networks and right-click to embed a subnetwork in the corresponding node.
+    **Visualization in Cytoscape.** Currently, Atlas do not export networks into graphml that could be imported into Cytoscape.
+    To construct visual representations, please create simple networks and right-click to embed a subnetwork in the corresponding node.
 
     .. image:: Fig_Lactose_PPINetwork.png
 
