@@ -24,6 +24,7 @@ or `Kappa`_ language for further simulation, calibration
    Simulation
    Plotting
    Export_to
+   Resources
 
 Indices and tables
 ==================
