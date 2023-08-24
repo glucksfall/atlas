@@ -3,7 +3,7 @@
 '''
 Project "Reconstruction of RBM from biological networks", Rodrigo Santibáñez, 2019-2020 @ NBL, UMayor
 Citation:
-DOI:
+DOI: https://doi.org/10.1093/bioinformatics/btaa1040
 '''
 
 __author__  = 'Rodrigo Santibáñez'
